@@ -77,7 +77,7 @@ Frontend
 
 		Footer
 		✔ Create Component @started(06-05-18 15:07) @done(06-05-18 15:07) @lasted(16 seconds)
-		☐ Style Component
+		✔ Style Component @started(06-05-18 15:41) @done(06-05-18 15:41) @lasted(54 seconds)
 		☐ Testing Component
 
 		Navbar
@@ -99,3 +99,7 @@ Frontend
 		☐ Create Component
 		☐ Wire Up Component
 		☐ Testing Component
+
+Mobile Responsive
+☐ Navbar
+☐ Containers
