@@ -1,27 +1,42 @@
-# DevHangout
+# Development Hangout
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+## What is it ?
+A Simple place to hangout with other developers, its ment to serve as a social place where you can show off your skills and your github repo.
+The idea came from Code Insitiute and have a location for students to show off and just have a simple registration.
 
-## Development server
+Students can share their 5 latest Github repo and make post and comments for others.
+If they also felt that could help others they could put up skills they had for others to view.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Requirements
+* Python
+* Django
+* Django Restframework
+* NPM
+* Angular
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Get Started
 
-## Build
+## Tech Used
+### Building Blocks and Frameworks
+* [Django](https://www.djangoproject.com/)
+* [Django REST framework](http://www.django-rest-framework.org/)
+* [Angular](https://angular.io/)
+* [Angular CLI](https://cli.angular.io/) - To Scaffold Code and easier workflow
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Libraries
+* [Bootstrap ](https://getbootstrap.com/)
+* [Font Awesome](https://fontawesome.com) - Font Icons
+* [Sass: Syntactically Awesome Style Sheets](https://sass-lang.com/)
+* [ECMAScript 6 (ES6)](http://es6-features.org)
+* [Bootswatch United](https://bootswatch.com) - Color Scheme for Bootstrap
 
-## Running unit tests
+## Testing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Resources
+* [Bootstrap ](https://getbootstrap.com/)
+* [Bootswatch United](https://bootswatch.com) - Color Scheme for Bootstrap
+* [Font Awesome](https://fontawesome.com) - Font Icons
+* [Angular powered Bootstrap](https://ng-bootstrap.github.io)
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Credits
