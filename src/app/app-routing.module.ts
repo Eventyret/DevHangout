@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from "./shared/page-not-found/page-not-found.co
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
+	{ path: "dashboard", component: DashboardComponent },
 	{ path: "**", component: PageNotFoundComponent } // Page not found
 ];
 
