@@ -1,73 +1,69 @@
 Frontend
 
 		Dashboard
-		☐ Create Component
+		✔ Create Component @started(06-05-18 14:50) @done(06-05-18 14:50) @lasted(56 seconds)
 		☐ Style Component
 		☐ Wire Up Component
 		☐ Testing Component
 
 			Profile (Wrapper)
-			☐ Create Component
-			☐ Style Component
-			☐ Wire Up Component
-			☐ Testing Component
-
-			Edit Profile
-			☐ Create Component
+			✔ Create Component @started(06-05-18 14:51) @done(06-05-18 14:51) @lasted(2 seconds)
 			☐ Style Component
 			☐ Wire Up Component
 			☐ Testing Component
 
 			Add / Edit Profile
-			☐ Create Component
+			✔ Create Component @started(06-05-18 14:51) @done(06-05-18 14:51) @lasted(23 seconds)
 			☐ Style Component
 			☐ Wire Up Component
 			☐ Testing Component
 
 			Add / Edit Experience
-			☐ Create Component
+			✔ Create Component @started(06-05-18 14:56) @done(06-05-18 14:56) @lasted(52 seconds)
 			☐ Style Component
 			☐ Wire Up Component
 			☐ Testing Component
 
 			Add / Edit Education
-			☐ Create Component
+			✔ Create Component @started(06-05-18 14:57) @done(06-05-18 14:57) @lasted(13 seconds)
 			☐ Style Component
 			☐ Wire Up Component
 			☐ Testing Component
 
 	Feed
-	☐ Create Component
+	✔ Create Component @started(06-05-18 15:01) @done(06-05-18 15:01) @lasted(47 seconds)
 	☐ Style Component
 	☐ Wire Up Component
 	☐ Testing Component
+	☐ Upvote Posts
+	☐ Downvote Posts
 
 	Post Updates
-	☐ Create Component
+	✔ Create Component @started(06-05-18 15:02) @done(06-05-18 15:02) @lasted(55 seconds)
 	☐ Style Component
 	☐ Wire Up Component
 	☐ Testing Component
 
 	Register
-	☐ Create Component
+	✔ Create Component @started(06-05-18 15:03) @done(06-05-18 15:03) @lasted(52 seconds)
 	☐ Style Component
 	☐ Wire Up Component
 	☐ Testing Component
 
 	Login
-	☐ Create Component
+	✔ Create Component @started(06-05-18 15:03) @done(06-05-18 15:04) @lasted(1 minute 2 seconds)
 	☐ Style Component
 	☐ Wire Up Component
 	☐ Testing Component
 
 	Landing Page
-	☐ Create Component
+	✔ Create Component @started(06-05-18 15:05) @done(06-05-18 15:05) @lasted(50 seconds)
 	☐ Style Component
 	☐ Wire Up Component
 	☐ Testing Component
 
 	View All Profiles
-	☐ Create Component
+	✔ Create Component @started(06-05-18 15:06) @done(06-05-18 15:06) @lasted(18 seconds)
 	☐ Style Component
 	☐ Wire Up Component
 	☐ Testing Component
@@ -75,13 +71,23 @@ Frontend
 	Shared Components
 
 		Header
-		☐ Create Component
+		✔ Create Component @started(06-05-18 15:07) @done(06-05-18 15:07) @lasted(17 seconds)
 		☐ Style Component
 		☐ Testing Component
 
 		Footer
-		☐ Create Component
+		✔ Create Component @started(06-05-18 15:07) @done(06-05-18 15:07) @lasted(16 seconds)
 		☐ Style Component
+		☐ Testing Component
+
+		Navbar
+		✔ Create Component @started(06-05-18 15:07) @done(06-05-18 15:07) @lasted(15 seconds)
+		☐ Style Component
+		☐ Testing Component
+
+		Wrapper (Holds the router outlet and navbar)
+		✔ Create Component @started(06-05-18 15:08) @done(06-05-18 15:08) @lasted(43 seconds)
+		☐ Wire Up Component
 		☐ Testing Component
 
 		API
