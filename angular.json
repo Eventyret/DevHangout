@@ -27,7 +27,7 @@
               "src/assets"
             ],
             "styles": [
-			"./node_modules/bootswatch/dist/sandstone/bootstrap.css",
+			"./node_modules/bootswatch/dist/united/bootstrap.css",
               "src/styles.scss"
             ],
             "scripts": []

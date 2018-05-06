@@ -10,9 +10,6 @@ import { RegisterComponent } from "./signup-login/register/register.component";
 import { LoginComponent } from "./signup-login/login/login.component";
 import { LandingComponent } from "./landing/landing.component";
 import { ProfilesComponent } from "./profiles/profiles.component";
-import { HeaderComponent } from "./shared/header/header.component";
-import { FooterComponent } from "./shared/footer/footer.component";
-import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { PageNotFoundComponent } from "./shared/page-not-found/page-not-found.component";
 
 const routes: Routes = [
@@ -22,7 +19,7 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
-	exports: [RouterModule, NavbarComponent, HeaderComponent, FooterComponent],
+	exports: [RouterModule],
 	declarations: [
 		DashboardComponent,
 		ProfileComponent,
@@ -34,9 +31,6 @@ const routes: Routes = [
 		LoginComponent,
 		LandingComponent,
 		ProfilesComponent,
-		HeaderComponent,
-		FooterComponent,
-		NavbarComponent,
 		PageNotFoundComponent
 	]
 })

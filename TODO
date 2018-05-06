@@ -82,12 +82,7 @@ Frontend
 
 		Navbar
 		✔ Create Component @started(06-05-18 15:07) @done(06-05-18 15:07) @lasted(15 seconds)
-		☐ Style Component
-		☐ Testing Component
-
-		Wrapper (Holds the router outlet and navbar)
-		✔ Create Component @started(06-05-18 15:08) @done(06-05-18 15:08) @lasted(43 seconds)
-		☐ Wire Up Component
+		✔ Style Component @done(06-05-18 18:15)
 		☐ Testing Component
 
 		API
@@ -101,5 +96,5 @@ Frontend
 		☐ Testing Component
 
 Mobile Responsive
-☐ Navbar
+✔ Navbar @done(06-05-18 18:15)
 ☐ Containers
