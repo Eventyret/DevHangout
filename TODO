@@ -1,3 +1,4 @@
+import { $ } from "protractor/built";
 Frontend
 
 		Dashboard
@@ -58,9 +59,11 @@ Frontend
 
 	Landing Page
 	✔ Create Component @started(06-05-18 15:05) @done(06-05-18 15:05) @lasted(50 seconds)
-	☐ Style Component
+	✔ Style 1st part of Component @done(06-05-18 22:00)
 	☐ Wire Up Component
 	☐ Testing Component
+	☐ Create 2nd part of component
+	☐ Style 2nd part of component
 
 	View All Profiles
 	✔ Create Component @started(06-05-18 15:06) @done(06-05-18 15:06) @lasted(18 seconds)
