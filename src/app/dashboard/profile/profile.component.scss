@@ -1,0 +1,43 @@
+.profile-image {
+	width: 250px;
+	height: 250px;
+}
+
+.profile-background {
+	background: url("../../../assets/laptop-3190194_1920.jpg") no-repeat center center; // This needs to dynamic change
+	background-size: cover;
+}
+
+.text-bg {
+	position: relative;
+	background-color: #212121;
+	border-radius: 10px;
+	width: auto;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.social-profile {
+	position: relative;
+	text-align: center;
+	margin: 0 center;
+	margin-top: 20px;
+	& a {
+		display: inline-block;
+		width: 36px;
+		height: 36px;
+		border-radius: 24px;
+		background-color: #212121;
+		margin: 0 1px;
+		color: #fff;
+		text-align: center;
+		line-height: 36px;
+		& i {
+			height: 24px;
+			width: 24px;
+		}
+		&:hover {
+			background-color: #772953;
+		}
+	}
+}
