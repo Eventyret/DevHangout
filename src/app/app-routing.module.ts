@@ -12,6 +12,7 @@ import { PostsComponent } from "./feed/posts/posts.component";
 import { LandingComponent } from "./landing/landing.component";
 import { ProfilesComponent } from "./profiles/profiles.component";
 import { PageNotFoundComponent } from "./shared/page-not-found/page-not-found.component";
+import { SignupComponent } from './shared/register/signup/signup.component';
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
@@ -33,7 +34,8 @@ const routes: Routes = [
 		LoginComponent,
 		LandingComponent,
 		ProfilesComponent,
-		PageNotFoundComponent
+		PageNotFoundComponent,
+		SignupComponent
 	]
 })
 export class AppRoutingModule {}
