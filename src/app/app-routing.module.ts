@@ -16,9 +16,9 @@ import { SignupComponent } from "./shared/register/signup/signup.component";
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
-	{ path: "login", component: LoginComponent, pathMatch: "full"}
-	{ path: "signup", component: LoginComponent, pathMatch: "full"}
-	{ path: "auth", component: RegisterComponent}
+	{ path: "login", component: LoginComponent, pathMatch: "full"},
+	{ path: "signup", component: LoginComponent, pathMatch: "full"},
+	{ path: "auth", component: RegisterComponent},
 	{ path: "dashboard", component: DashboardComponent },
 	{ path: "**", component: PageNotFoundComponent } // Page not found
 ];
