@@ -1,129 +1,124 @@
-import { $ } from "protractor/built";
 Frontend
 
 		Dashboard
-		✔ Create Component @started(06-05-18 14:50) @done(06-05-18 14:50) @lasted(56 seconds)
-		✔ Style Component @done(06-05-18 22:33)
-		✔ Created Markup @done(06-05-18 22:34)
+			✔ Create Component @started(06-05-18 14:50) @done(06-05-18 14:50) @lasted(56 seconds)
+			✔ Style Component @done(06-05-18 22:33)
+			✔ Created Markup @done(06-05-18 22:34)
+			☐ Wire Up Component
+			☐ Testing Component
+
+			Profile (Wrapper)
+				✔ Create Component @started(06-05-18 14:51) @done(06-05-18 14:51) @lasted(2 seconds)
+				☐ Style Component
+				☐ Created Markup
+				☐ Wire Up Component
+				☐ Testing Component
+
+			Add / Edit Profile
+				✔ Create Component @started(06-05-18 14:51) @done(06-05-18 14:51) @lasted(23 seconds)
+				☐ Style Component
+				☐ Created Markup
+				☐ Wire Up Component
+				☐ Testing Component
+				☐ Add Gravatar Avatar
+
+			Add / Edit Experience
+				✔ Create Component @started(06-05-18 14:56) @done(06-05-18 14:56) @lasted(52 seconds)
+				☐ Style Component
+				☐ Created Markup @started(06-05-18 22:41)
+				☐ Wire Up Component
+				☐ Testing Component
+
+			Add / Edit Education
+				✔ Create Component @started(06-05-18 14:57) @done(06-05-18 14:57) @lasted(13 seconds)
+				☐ Style Component @started(06-05-18 22:34)
+				☐ Wire Up Component
+				☐ Testing Component
+
+	Feed
+		✔ Create Component @started(06-05-18 15:01) @done(06-05-18 15:01) @lasted(47 seconds)
+		☐ Style Component
+		☐ Created Markup
+		☐ Wire Up Component
+		☐ Testing Component
+		☐ Upvote Posts
+		☐ Downvote Posts
+
+	Post Updates
+		✔ Create Component @started(06-05-18 15:02) @done(06-05-18 15:02) @lasted(55 seconds)
+		☐ Style Component
+		☐ Created Markup
 		☐ Wire Up Component
 		☐ Testing Component
 
-			Profile (Wrapper)
-			✔ Create Component @started(06-05-18 14:51) @done(06-05-18 14:51) @lasted(2 seconds)
-			☐ Style Component
-			☐ Created Markup
-			☐ Wire Up Component
-			☐ Testing Component
-
-			Add / Edit Profile
-			✔ Create Component @started(06-05-18 14:51) @done(06-05-18 14:51) @lasted(23 seconds)
-			☐ Style Component
-			☐ Created Markup
-			☐ Wire Up Component
-			☐ Testing Component
-
-			Add / Edit Experience
-			✔ Create Component @started(06-05-18 14:56) @done(06-05-18 14:56) @lasted(52 seconds)
-			☐ Style Component
-			☐ Created Markup @started(06-05-18 22:41)
-			☐ Wire Up Component
-			☐ Testing Component
-
-			Add / Edit Education
-			✔ Create Component @started(06-05-18 14:57) @done(06-05-18 14:57) @lasted(13 seconds)
-			☐ Style Component @started(06-05-18 22:34)
-			☐ Wire Up Component
-			☐ Testing Component
-
-	Feed
-	✔ Create Component @started(06-05-18 15:01) @done(06-05-18 15:01) @lasted(47 seconds)
-	☐ Style Component
-	☐ Created Markup
-	☐ Wire Up Component
-	☐ Testing Component
-	☐ Upvote Posts
-	☐ Downvote Posts
-
-	Post Updates
-	✔ Create Component @started(06-05-18 15:02) @done(06-05-18 15:02) @lasted(55 seconds)
-	☐ Style Component
-	☐ Created Markup
-	☐ Wire Up Component
-	☐ Testing Component
-
-	Register
-	✔ Create Component @started(06-05-18 15:03) @done(06-05-18 15:03) @lasted(52 seconds)
-	☐ Style Component
-	☐ Created Markup
-	☐ Wire Up Component
-	☐ Testing Component
-
-	Login
-	✔ Create Component @started(06-05-18 15:03) @done(06-05-18 15:04) @lasted(1 minute 2 seconds)
-	☐ Style Component
-	✔ Created Markup @started(07-05-18 11:14) @done(07-05-18 11:25) @lasted(11 minutes)
-	☐ Needs a redesign
-	☐ Wire Up Component
-	☐ Testing Component
-
-	✔ Create Component @started(06-05-18 15:03) @done(07-05-18 10:35)
-	☐ Style Component
-	☐ Created Markup
-	☐ Wire Up Component
-	☐ Testing Component
 
 	Auth Page
+		✔ Create Component @done(07-05-18 11:25)
+		☐ Style Component
+		☐ Created Markup
+		☐ Wire Up Component
+		☐ Testing Component
 
-	✔ Create Component @done(07-05-18 11:25)
-	☐ Style Component
-	☐ Created Markup
-	☐ Wire Up Component
-	☐ Testing Component
+		Register
+		✔ Create Component @started(06-05-18 15:03) @done(06-05-18 15:03) @lasted(52 seconds)
+		✔ Style Component @done(07-05-18 11:49)
+		✔ Created Markup @done(07-05-18 11:49)
+		☐ Revisit for redesign
+		☐ Wire Up Component
+		☐ Testing Component
+
+		Login
+		✔ Create Component @started(06-05-18 15:03) @done(06-05-18 15:04) @lasted(1 minute 2 seconds)
+		✔ Style Component @done(07-05-18 11:49)
+		✔ Created Markup @started(07-05-18 11:14) @done(07-05-18 11:25) @lasted(11 minutes)
+		☐ Revisit for redesign
+		☐ Wire Up Component
+		☐ Testing Component
 
 	Landing Page
-	✔ Create Component @started(06-05-18 15:05) @done(06-05-18 15:05) @lasted(50 seconds)
-	✔ Style 1st part of Component @done(06-05-18 22:00)
-	☐ Wire Up Component
-	☐ Testing Component
-	☐ Create 2nd part of component
-	☐ Style 2nd part of markup
+		✔ Create Component @started(06-05-18 15:05) @done(06-05-18 15:05) @lasted(50 seconds)
+		✔ Style 1st part of Component @done(06-05-18 22:00)
+		☐ Wire Up Component
+		☐ Testing Component
+		☐ Create 2nd part of component
+		☐ Style 2nd part of markup
 
 	View All Profiles
-	✔ Create Component @started(06-05-18 15:06) @done(06-05-18 15:06) @lasted(18 seconds)
-	☐ Style Component
-	☐ Created Markup
-	☐ Wire Up Component
-	☐ Testing Component
+		✔ Create Component @started(06-05-18 15:06) @done(06-05-18 15:06) @lasted(18 seconds)
+		☐ Style Component
+		☐ Created Markup
+		☐ Wire Up Component
+		☐ Testing Component
 
 	Shared Components
 
 		Header
-		✘ Create Component @cancelled(06-05-18 22:35)
-		✘ Style Component @cancelled(06-05-18 22:35)
-		✘ Testing Component @cancelled(06-05-18 22:35)
+			✘ Create Component @cancelled(06-05-18 22:35)
+			✘ Style Component @cancelled(06-05-18 22:35)
+			✘ Testing Component @cancelled(06-05-18 22:35)
 
 		Footer
-		✔ Create Component @started(06-05-18 15:07) @done(06-05-18 15:07) @lasted(16 seconds)
-		✔ Style Component @started(06-05-18 15:41) @done(06-05-18 15:41) @lasted(54 seconds)
-		☐ Testing Component
+			✔ Create Component @started(06-05-18 15:07) @done(06-05-18 15:07) @lasted(16 seconds)
+			✔ Style Component @started(06-05-18 15:41) @done(06-05-18 15:41) @lasted(54 seconds)
+			☐ Testing Component
 
 		Navbar
-		✔ Create Component @started(06-05-18 15:07) @done(06-05-18 15:07) @lasted(15 seconds)
-		✔ Style Component @done(06-05-18 18:15)
-		☐ Testing Component
+			✔ Create Component @started(06-05-18 15:07) @done(06-05-18 15:07) @lasted(15 seconds)
+			✔ Style Component @done(06-05-18 18:15)
+			☐ Testing Component
 
 		API
-		☐ Create Component
-		☐ Wire Up Component
-		☐ Testing Component
+			☐ Create Component
+			☐ Wire Up Component
+			☐ Testing Component
 
 		Page Not Found
-		☐ Create Component
-		☐ Created Markup
-		☐ Styled Component
-		☐ Wire Up Component
-		☐ Testing Component
-		☐ Make it funny
+			☐ Create Component
+			☐ Created Markup
+			☐ Styled Component
+			☐ Wire Up Component
+			☐ Testing Component
+			☐ Make it funny
 
 Mobile Responsive
 ✔ Navbar @done(06-05-18 18:15)
