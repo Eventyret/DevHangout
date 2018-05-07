@@ -61,12 +61,20 @@ Frontend
 	Login
 	✔ Create Component @started(06-05-18 15:03) @done(06-05-18 15:04) @lasted(1 minute 2 seconds)
 	☐ Style Component
-	☐ Created Markup @started(07-05-18 11:14)
+	✔ Created Markup @started(07-05-18 11:14) @done(07-05-18 11:25) @lasted(11 minutes)
 	☐ Needs a redesign
 	☐ Wire Up Component
 	☐ Testing Component
 
-	✔ Create Component @started(06-05-18 15:03) @done(07-05-18 10:35) @lasted(19 hours 32 minutes 36 seconds)
+	✔ Create Component @started(06-05-18 15:03) @done(07-05-18 10:35)
+	☐ Style Component
+	☐ Created Markup
+	☐ Wire Up Component
+	☐ Testing Component
+
+	Auth Page
+
+	✔ Create Component @done(07-05-18 11:25)
 	☐ Style Component
 	☐ Created Markup
 	☐ Wire Up Component
