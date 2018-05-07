@@ -31,8 +31,10 @@
 					</li>
 					<!-- This needs to be dynamic and needs a ngIF -->
 					<div ngbDropdown placement="bottom" #adrop="ngbDropdown">
-						<img class="rounded-circle" src="https://www.gravatar.com/avatar/anything?s=200&d=mm" alt="No Avatar / Replace with Name" id="avatar-menu" ngbDropdownToggle (mouseover)="adrop.open()">
+						 <img class="rounded-circle" src="https://www.gravatar.com/avatar/anything?s=200&d=mm" alt="No Avatar / Replace with Name" id="avatar-menu" ngbDropdownToggle (mouseover)="adrop.open()">
 						<div ngbDropdownMenu aria-labelledby="avatar-menu"  (mouseleave)="adrop.close()">
+							<h5 class="dropdown-header">Welcome Username</h5>
+							<div class="dropdown-divider"></div>
 							<a routerLink="profile" class="dropdown-item"><i class="fas fa-user"></i> My Profile</a>
 							<a href="#" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Log out</a>
 						</div>
