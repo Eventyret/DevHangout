@@ -13,18 +13,20 @@ import { LandingComponent } from "./landing/landing.component";
 import { ProfilesComponent } from "./profiles/profiles.component";
 import { PageNotFoundComponent } from "./shared/page-not-found/page-not-found.component";
 import { SignupComponent } from "./shared/register/signup/signup.component";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
-	{ path: "login", component: LoginComponent, pathMatch: "full"},
-	{ path: "signup", component: SignupComponent, pathMatch: "full"},
-	{ path: "auth", component: RegisterComponent},
+	{ path: "login", component: LoginComponent, pathMatch: "full" },
+	{ path: "signup", component: SignupComponent, pathMatch: "full" },
+	{ path: "profile", component: ProfileComponent, pathMatch: "full" },
+	{ path: "auth", component: RegisterComponent },
 	{ path: "dashboard", component: DashboardComponent },
 	{ path: "**", component: PageNotFoundComponent } // Page not found
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes)],
+	imports: [RouterModule.forRoot(routes), NgbModule.forRoot()],
 	exports: [RouterModule],
 	declarations: [
 		DashboardComponent,
