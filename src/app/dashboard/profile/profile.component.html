@@ -23,7 +23,7 @@
 									<img class="rounded-circle profile-image" src="http://simen.dehlin.info/media/img/profile.jpg" alt="Your Username">
 								</div>
 							</div>
-							<div class="text-center">
+							<div class="text-center profile-container">
 								<h1 class="text-bg">Simen Daehlin</h1>
 								<p class="lead text-bg">Front End Developer @ Intergage</p>
 								<p>Poole, UK</p>
@@ -49,7 +49,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-md-9">
 						<div class="card card-body bg-light mb-3">
 							<!-- This needs to dynamic change -->
 							<h3 class="text-center text-info">Username's Bio</h3>
@@ -59,69 +59,77 @@
 								Quasi quisquam mollitia hic magni iure libero quia enim voluptatibus? Fugiat voluptates nihil in!</p>
 						</div>
 					</div>
-					<div class="row">
+					<div class="col-md-3">
+							<div class="card card-body bg-light mb-3">
+									<!-- This needs to be dynamic -->
+									<h3 class="text-center text-info">Skillset</h3>
+										<div class="icons">
+										<i class="devicon-html5-plain-wordmark colored" ngbTooltip="HTML"></i>
+										<i class="devicon-css3-plain-wordmark colored" ngbTooltip="CSS"></i>
+										<i class="devicon-javascript-plain colored" ngbTooltip="Javascript"></i>
+										<i class="devicon-python-plain-wordmark colored" ngbTooltip="Python"></i>
+										<i class="devicon-angularjs-plain colored" ngbTooltip="Angular"></i>
+										</div>
+									</div>
+								</div>
+					<div class="row mt-5">
 						<div class="col-md-12">
 							<ngb-tabset>
-									<ngb-tab id="tab-skills">
-											<ng-template ngbTabTitle>
-												<i class="fas fa-user-astronaut"></i> Skills</ng-template>
-											<ng-template ngbTabContent>
-												<div class="card card-body bg-light mb-3">
-													<h3 class="text-center text-info">Skills</h3>
-													<p>
-														Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, molestiae! Explicabo eum nesciunt ullam quod facere molestias
-														officia ipsa nobis, repudiandae totam maiores dolorum quos, commodi sit excepturi amet enim.Quia vitae possimus
-														dicta maxime beatae optio explicabo neque non sint nisi! Voluptas nesciunt blanditiis nam deleniti, quibusdam ratione
-														doloribus vel, necessitatibus fugiat hic, architecto voluptatibus debitis minus a aliquid.
-													</p>
-												</div>
-											</ng-template>
-										</ngb-tab>
-										<ngb-tab id="tab-education">
-												<ng-template ngbTabTitle>
-													<i class="fas fa-graduation-cap"></i> Education</ng-template>
-												<ng-template ngbTabContent>
-													<div class="card card-body bg-light mb-3">
-														<h3 class="text-center text-info">Education</h3>
-														<p>
-															Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, molestiae! Explicabo eum nesciunt ullam quod facere molestias
-															officia ipsa nobis, repudiandae totam maiores dolorum quos, commodi sit excepturi amet enim.Quia vitae possimus
-															dicta maxime beatae optio explicabo neque non sint nisi! Voluptas nesciunt blanditiis nam deleniti, quibusdam ratione
-															doloribus vel, necessitatibus fugiat hic, architecto voluptatibus debitis minus a aliquid.
-														</p>
-													</div>
-												</ng-template>
-											</ngb-tab>
-											<ngb-tab id="tab-experience">
-													<ng-template ngbTabTitle>
-														<i class="fas fa-briefcase"></i> Experience</ng-template>
-													<ng-template ngbTabContent>
-														<div class="card card-body bg-light mb-3">
-															<h3 class="text-center text-info">Experience</h3>
-															<p>
-																Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, molestiae! Explicabo eum nesciunt ullam quod facere molestias
-																officia ipsa nobis, repudiandae totam maiores dolorum quos, commodi sit excepturi amet enim.Quia vitae possimus
-																dicta maxime beatae optio explicabo neque non sint nisi! Voluptas nesciunt blanditiis nam deleniti, quibusdam ratione
-																doloribus vel, necessitatibus fugiat hic, architecto voluptatibus debitis minus a aliquid.
-															</p>
-														</div>
-													</ng-template>
-												</ngb-tab>
-											<ngb-tab id="tab-github">
-													<ng-template ngbTabTitle>
-														<i class="fab fa-github"></i> Github Repo's</ng-template>
-													<ng-template ngbTabContent>
-														<div class="card card-body bg-light mb-3">
-															<h3 class="text-center text-info">Username's last 5 Repos</h3>
-															<p>
-																Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, molestiae! Explicabo eum nesciunt ullam quod facere molestias
-																officia ipsa nobis, repudiandae totam maiores dolorum quos, commodi sit excepturi amet enim.Quia vitae possimus
-																dicta maxime beatae optio explicabo neque non sint nisi! Voluptas nesciunt blanditiis nam deleniti, quibusdam ratione
-																doloribus vel, necessitatibus fugiat hic, architecto voluptatibus debitis minus a aliquid.
-															</p>
-														</div>
-													</ng-template>
-												</ngb-tab>
+								<ngb-tab id="tab-skills">
+									<ng-template ngbTabTitle>
+										<i class="fas fa-user-astronaut"></i> Skill set</ng-template>
+									<ng-template ngbTabContent>
+
+									</ng-template>
+								</ngb-tab>
+								<ngb-tab id="tab-education">
+									<ng-template ngbTabTitle>
+										<i class="fas fa-graduation-cap"></i> Education</ng-template>
+									<ng-template ngbTabContent>
+										<div class="card card-body bg-light mb-3">
+											<!-- This needs to be dynamic -->
+											<h3 class="text-center text-info">Education</h3>
+											<p>
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, molestiae! Explicabo eum nesciunt ullam quod facere molestias
+												officia ipsa nobis, repudiandae totam maiores dolorum quos, commodi sit excepturi amet enim.Quia vitae possimus
+												dicta maxime beatae optio explicabo neque non sint nisi! Voluptas nesciunt blanditiis nam deleniti, quibusdam
+												ratione doloribus vel, necessitatibus fugiat hic, architecto voluptatibus debitis minus a aliquid.
+											</p>
+										</div>
+									</ng-template>
+								</ngb-tab>
+								<ngb-tab id="tab-experience">
+									<ng-template ngbTabTitle>
+										<i class="fas fa-briefcase"></i> Experience</ng-template>
+									<ng-template ngbTabContent>
+										<div class="card card-body bg-light mb-3">
+											<!-- This needs to be dynamic -->
+											<h3 class="text-center text-info">Experience</h3>
+											<p>
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, molestiae! Explicabo eum nesciunt ullam quod facere molestias
+												officia ipsa nobis, repudiandae totam maiores dolorum quos, commodi sit excepturi amet enim.Quia vitae possimus
+												dicta maxime beatae optio explicabo neque non sint nisi! Voluptas nesciunt blanditiis nam deleniti, quibusdam
+												ratione doloribus vel, necessitatibus fugiat hic, architecto voluptatibus debitis minus a aliquid.
+											</p>
+										</div>
+									</ng-template>
+								</ngb-tab>
+								<ngb-tab id="tab-github">
+									<ng-template ngbTabTitle>
+										<i class="fab fa-github"></i> Github Repo's</ng-template>
+									<ng-template ngbTabContent>
+										<div class="card card-body bg-light mb-3">
+											<!-- This needs to be dynamic -->
+											<h3 class="text-center text-info">Username's last 5 Repos</h3>
+											<p>
+												Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, molestiae! Explicabo eum nesciunt ullam quod facere molestias
+												officia ipsa nobis, repudiandae totam maiores dolorum quos, commodi sit excepturi amet enim.Quia vitae possimus
+												dicta maxime beatae optio explicabo neque non sint nisi! Voluptas nesciunt blanditiis nam deleniti, quibusdam
+												ratione doloribus vel, necessitatibus fugiat hic, architecto voluptatibus debitis minus a aliquid.
+											</p>
+										</div>
+									</ng-template>
+								</ngb-tab>
 							</ngb-tabset>
 						</div>
 

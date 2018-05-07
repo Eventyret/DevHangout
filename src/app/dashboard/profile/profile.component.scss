@@ -8,13 +8,27 @@
 	background-size: cover;
 }
 
+.profile-container {
+	display: flex;
+	flex-direction: column
+}
+.icons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	i {
+		font-size: 30px;
+	}
+}
 .text-bg {
 	position: relative;
-	background-color: #212121;
-	border-radius: 10px;
-	width: auto;
-	text-align: center;
-	margin-top: 10px;
+    display: inline-block;
+    background-color: #212121;
+    border-radius: 10px;
+    width: auto;
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px 25px;
 }
 
 .social-profile {
