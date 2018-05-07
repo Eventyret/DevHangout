@@ -106,6 +106,7 @@ Frontend
 			✔ Create Component @started(06-05-18 15:07) @done(06-05-18 15:07) @lasted(15 seconds)
 			✔ Style Component @done(06-05-18 18:15)
 			☐ Testing Component
+			☐ Needs ngIF state for logged in and out
 
 		API
 			☐ Create Component
