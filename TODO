@@ -20,6 +20,7 @@ Frontend
 				☐ Created Markup
 				☐ Wire Up Component
 				☐ Testing Component
+				☐ Add Gravatar Avatar
 
 			Add / Edit Experience
 				✔ Create Component @started(06-05-18 14:56) @done(06-05-18 14:56) @lasted(52 seconds)
@@ -60,16 +61,17 @@ Frontend
 
 		Register
 		✔ Create Component @started(06-05-18 15:03) @done(06-05-18 15:03) @lasted(52 seconds)
-		☐ Style Component
-		☐ Created Markup
+		✔ Style Component @done(07-05-18 11:49)
+		✔ Created Markup @done(07-05-18 11:49)
+		☐ Revisit for redesign
 		☐ Wire Up Component
 		☐ Testing Component
 
 		Login
 		✔ Create Component @started(06-05-18 15:03) @done(06-05-18 15:04) @lasted(1 minute 2 seconds)
-		☐ Style Component
+		✔ Style Component @done(07-05-18 11:49)
 		✔ Created Markup @started(07-05-18 11:14) @done(07-05-18 11:25) @lasted(11 minutes)
-		☐ Needs a redesign
+		☐ Revisit for redesign
 		☐ Wire Up Component
 		☐ Testing Component
 
