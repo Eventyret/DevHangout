@@ -124,3 +124,9 @@ Frontend
 Mobile Responsive
 ✔ Navbar @done(06-05-18 18:15)
 ☐ Containers
+
+		Donate Page
+		☐ Create component
+		☐ Style Componet
+		☐ Wire up component
+		☐ Wipre up component to other services and backend
