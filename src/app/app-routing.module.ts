@@ -14,6 +14,7 @@ import { ProfilesComponent } from "./profiles/profiles.component";
 import { PageNotFoundComponent } from "./shared/page-not-found/page-not-found.component";
 import { SignupComponent } from "./shared/register/signup/signup.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { CommonModule } from "@angular/common";
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
@@ -26,7 +27,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes), NgbModule.forRoot()],
+	imports: [RouterModule.forRoot(routes), NgbModule.forRoot(), CommonModule],
 	exports: [RouterModule],
 	declarations: [
 		DashboardComponent,

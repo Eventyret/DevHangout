@@ -6,6 +6,7 @@
 					<div class="col-6">
 						<!-- This needs to be dynamic -->
 						<a href="#" class="btn btn-light mb-3 float-left">Back to Profiles</a>
+						<div class="btn btn-outline-danger" (click)="supporterTest()">Donation Toggle (For Testing)</div>
 					</div>
 					<div class="col-6">
 
@@ -17,6 +18,9 @@
 					<div class="col-md-12">
 						<!-- User needs to be able to upload image / This also needs a fallback -->
 						<div class="card card-body profile-background  text-white mb-3">
+							<div *ngIf="support">
+							<div class="ribbon ribbon-top-right"><span>Supporter <i class="fas fa-star"></i> </span></div>
+						</div>
 							<div class="row">
 								<div class=" col-4 col-md-3 m-auto">
 									<!-- This needs to be dynamic -->

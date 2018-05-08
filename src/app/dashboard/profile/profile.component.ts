@@ -13,8 +13,13 @@ export class ProfileComponent implements OnInit {
 	config.placement = "top";
 	config.triggers = "hover";
    }
+   support = true;
 
   ngOnInit() {
+  }
+
+  supporterTest() {
+	  this.support = !this.support;
   }
 
 }

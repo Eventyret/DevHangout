@@ -10,7 +10,7 @@
 
 .profile-container {
 	display: flex;
-	flex-direction: column
+	flex-direction: column;
 }
 .icons {
 	display: flex;
@@ -22,13 +22,13 @@
 }
 .text-bg {
 	position: relative;
-    display: inline-block;
-    background-color: #212121;
-    border-radius: 10px;
-    width: auto;
-    text-align: center;
-    margin: 10px auto;
-    padding: 10px 25px;
+	display: inline-block;
+	background-color: #212121;
+	border-radius: 10px;
+	width: auto;
+	text-align: center;
+	margin: 10px auto;
+	padding: 10px 25px;
 }
 
 .social-profile {
@@ -54,4 +54,60 @@
 			background-color: #772953;
 		}
 	}
+}
+
+.ribbon {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	position: absolute;
+
+	span {
+		position: absolute;
+		display: block;
+		width: 225px;
+		padding: 15px 0;
+		background-color: #FF0039;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+		color: #fff;
+		font: 700 18px/1 "Ubuntu", sans-serif;
+		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	&:before,
+	:after {
+		position: absolute;
+		z-index: -1;
+		content: "";
+		display: block;
+		border: 5px solid #FF0039;
+	}
+}
+
+.ribbon-top-right {
+	top: -10px;
+	right: -10px;
+	&:before {
+		top: 0;
+		left: 0;
+	}
+	&:before,
+	:after {
+		border-top-color: transparent;
+		border-right-color: transparent;
+	}
+	&:after {
+		bottom: 0;
+		right: 0;
+	}
+	span {
+		left: -25px;
+		top: 35px;
+		transform: rotate(45deg);
+	}
+}
+.fa-star {
+	color: #FFEA00;
 }
