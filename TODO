@@ -108,10 +108,20 @@ Frontend
 			☐ Testing Component
 			☐ Needs ngIF state for logged in and out
 
-		API
-			☐ Create Component
-			☐ Wire Up Component
-			☐ Testing Component
+		API ( Backend )
+			☐ Create Service
+			☐ Wire Up Service
+			☐ Testing Service
+
+		Devicons (For profile)
+		☐ Create Service
+		☐ Wire Up Service
+		☐ Testing Service
+
+		Github (For Profile
+		☐ Create Service
+		☐ Wire Up Service
+		☐ Testing Service
 
 		Page Not Found
 			☐ Create Component
