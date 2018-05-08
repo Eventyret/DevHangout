@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from "./shared/page-not-found/page-not-found.co
 import { SignupComponent } from "./shared/register/signup/signup.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { CommonModule } from "@angular/common";
+import { AddEducationComponent } from "./dashboard/profile/education/add-education/add-education.component";
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
@@ -41,7 +42,8 @@ const routes: Routes = [
 		LandingComponent,
 		ProfilesComponent,
 		PageNotFoundComponent,
-		SignupComponent
+		SignupComponent,
+		AddEducationComponent
 	]
 })
 export class AppRoutingModule {}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
-import { AddEducationComponent } from "./profile/education/add/add.component";
+import { AddEducationComponent } from "./profile/education/add-education/add-education.component";
 
 @Component({
   selector: "app-dashboard",
