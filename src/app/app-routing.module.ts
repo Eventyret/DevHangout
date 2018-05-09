@@ -21,6 +21,7 @@ import { AddExperienceComponent } from './dashboard/experience/add-experience/ad
 import { EditProfileComponent } from './dashboard/profile/edit-profile/edit-profile.component';
 import { AddProfileComponent } from './dashboard/profile/add-profile/add-profile.component';
 
+import { NgxSpinnerModule } from "ngx-spinner";
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
 	{ path: "login", component: LoginComponent, pathMatch: "full" },
@@ -37,7 +38,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes), NgbModule.forRoot(), CommonModule],
+	imports: [RouterModule.forRoot(routes), NgbModule.forRoot(), CommonModule, NgxSpinnerModule],
 	exports: [RouterModule],
 	declarations: [
 		DashboardComponent,
