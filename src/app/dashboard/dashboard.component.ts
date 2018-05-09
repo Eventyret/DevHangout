@@ -5,7 +5,7 @@ import { EditEducationComponent } from "./education/edit-education/edit-educatio
 import { AddEducationComponent } from "./education/add-education/add-education.component";
 import { Component, OnInit } from "@angular/core";
 import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
-import { NgxSpinnerService } from 'ngx-spinner';
+import { NgxSpinnerService } from "ngx-spinner";
 
 import { Subscription } from "rxjs";
 
@@ -15,7 +15,7 @@ import { Subscription } from "rxjs";
 	styleUrls: ["./dashboard.component.scss"]
 })
 export class DashboardComponent implements OnInit {
-	username: string = "Simen";
+	username = "Simen";
 	comp;
 
 	constructor(private modalService: NgbModal, private spinner: NgxSpinnerService) {}
@@ -28,16 +28,16 @@ export class DashboardComponent implements OnInit {
 		}, 5000);
 	}
 	open(event) {
-		let target = event.target.id;
-		if (event.target.id == "addEdu") {
+		const target = event.target.id;
+		if (event.target.id === "addEdu") {
 			this.comp = AddEducationComponent;
-		} else if (target == "addExp") {
+		} else if (target === "addExp") {
 			this.comp = AddExperienceComponent;
-		} else if (target == "editEdu") {
+		} else if (target === "editEdu") {
 			this.comp = EditEducationComponent;
-		} else if (target == "editExp") {
+		} else if (target === "editExp") {
 			this.comp = EditExperienceComponent;
-		} else if (target == "delAcc") {
+		} else if (target === "delAcc") {
 			this.comp = DeleteAccountComponent;
 		}
 		const modalRef = this.modalService.open(this.comp, {

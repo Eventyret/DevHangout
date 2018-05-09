@@ -14,12 +14,12 @@ import { PageNotFoundComponent } from "./shared/page-not-found/page-not-found.co
 import { SignupComponent } from "./shared/register/signup/signup.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { CommonModule } from "@angular/common";
-import { AddEducationComponent } from './dashboard/education/add-education/add-education.component';
-import { EditEducationComponent } from './dashboard/education/edit-education/edit-education.component';
-import { EditExperienceComponent } from './dashboard/experience/edit-experience/edit-experience.component';
-import { AddExperienceComponent } from './dashboard/experience/add-experience/add-experience.component';
-import { EditProfileComponent } from './dashboard/profile/edit-profile/edit-profile.component';
-import { AddProfileComponent } from './dashboard/profile/add-profile/add-profile.component';
+import { AddEducationComponent } from "./dashboard/education/add-education/add-education.component";
+import { EditEducationComponent } from "./dashboard/education/edit-education/edit-education.component";
+import { EditExperienceComponent } from "./dashboard/experience/edit-experience/edit-experience.component";
+import { AddExperienceComponent } from "./dashboard/experience/add-experience/add-experience.component";
+import { EditProfileComponent } from "./dashboard/profile/edit-profile/edit-profile.component";
+import { AddProfileComponent } from "./dashboard/profile/add-profile/add-profile.component";
 
 import { NgxSpinnerModule } from "ngx-spinner";
 const routes: Routes = [

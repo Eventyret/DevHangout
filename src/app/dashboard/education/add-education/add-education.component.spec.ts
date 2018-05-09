@@ -1,25 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { AddEducationComponent } from './add-education.component';
+import { AddEducationComponent } from "./add-education.component";
 
-describe('AddEducationComponent', () => {
+describe("AddEducationComponent", () => {
   let component: AddEducationComponent;
   let fixture: ComponentFixture<AddEducationComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AddEducationComponent ]
-    })
-    .compileComponents();
+	TestBed.configureTestingModule({
+		declarations: [ AddEducationComponent ]
+	})
+	.compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddEducationComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+	fixture = TestBed.createComponent(AddEducationComponent);
+	component = fixture.componentInstance;
+	fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it("should create", () => {
+	expect(component).toBeTruthy();
   });
 });
