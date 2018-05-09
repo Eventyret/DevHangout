@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-edit-experience',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditExperienceComponent implements OnInit {
 
-  constructor() { }
+	constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit() {
   }

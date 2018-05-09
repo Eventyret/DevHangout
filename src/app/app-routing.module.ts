@@ -1,3 +1,4 @@
+import { DeleteAccountComponent } from "./dashboard/profile/delete-account/delete-account.component";
 import { LoginComponent } from "./shared/register/login/login.component";
 import { RegisterComponent } from "./shared/register/register.component";
 import { NgModule } from "@angular/core";
@@ -25,9 +26,13 @@ const routes: Routes = [
 	{ path: "login", component: LoginComponent, pathMatch: "full" },
 	{ path: "signup", component: SignupComponent, pathMatch: "full" },
 	{ path: "profile/:username", component: ProfileComponent, pathMatch: "full" },
+	{ path: "profile/delete", component: DeleteAccountComponent },
 	{ path: "auth", component: RegisterComponent },
 	{ path: "dashboard", component: DashboardComponent },
-	{ path: "add/education", component: AddEducationComponent },
+	{ path: "education/add", component: AddEducationComponent },
+	{ path: "education/edit", component: EditEducationComponent },
+	{ path: "experience/add", component: AddExperienceComponent },
+	{ path: "experience/edit", component: EditExperienceComponent },
 	{ path: "**", component: PageNotFoundComponent } // Page not found
 ];
 

@@ -5,10 +5,11 @@ import { AppComponent } from "./app.component";
 import { FooterComponent } from "./shared/footer/footer.component";
 import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { DeleteAccountComponent } from './dashboard/profile/delete-account/delete-account.component';
 
 
 @NgModule({
-	declarations: [AppComponent, FooterComponent, NavbarComponent],
+	declarations: [AppComponent, FooterComponent, NavbarComponent, DeleteAccountComponent],
 	imports: [BrowserModule, AppRoutingModule, NgbModule.forRoot()],
 	providers: [],
 	bootstrap: [AppComponent]
