@@ -1,6 +1,6 @@
+import { AddEducationComponent } from "./education/add-education/add-education.component";
 import { Component, OnInit } from "@angular/core";
 import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
-import { AddEducationComponent } from "./profile/education/add-education/add-education.component";
 
 @Component({
   selector: "app-dashboard",
@@ -8,12 +8,18 @@ import { AddEducationComponent } from "./profile/education/add-education/add-edu
   styleUrls: ["./dashboard.component.scss"]
 })
 export class DashboardComponent implements OnInit {
+	username: string = "Simen"
 
   constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
   }
-  open() {
-	const modalRef = this.modalService.open(AddEducationComponent);
+  openEdu() {
+	const modalRef = this.modalService.open(AddEducationComponent, {
+		centered: true,
+		size: "lg",
+		backdropClass: "light-blue-backdrop"
+	});
+	modalRef.componentInstance.name = this.username;
 }
 }

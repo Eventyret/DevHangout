@@ -27,6 +27,7 @@ const routes: Routes = [
 	{ path: "profile/:username", component: ProfileComponent, pathMatch: "full" },
 	{ path: "auth", component: RegisterComponent },
 	{ path: "dashboard", component: DashboardComponent },
+	{ path: "add/education", component: AddEducationComponent },
 	{ path: "**", component: PageNotFoundComponent } // Page not found
 ];
 
