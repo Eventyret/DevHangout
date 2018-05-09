@@ -4,8 +4,6 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { ProfileComponent } from "./dashboard/profile/profile.component";
-import { EditComponent } from "./dashboard/profile/edit/edit.component";
-import { AddComponent } from "./dashboard/profile/add/add.component";
 import { FeedComponent } from "./feed/feed/feed.component";
 
 import { PostsComponent } from "./feed/posts/posts.component";
@@ -15,7 +13,12 @@ import { PageNotFoundComponent } from "./shared/page-not-found/page-not-found.co
 import { SignupComponent } from "./shared/register/signup/signup.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { CommonModule } from "@angular/common";
-import { AddEducationComponent } from "./dashboard/profile/education/add-education/add-education.component";
+import { AddEducationComponent } from './dashboard/education/add-education/add-education.component';
+import { EditEducationComponent } from './dashboard/education/edit-education/edit-education.component';
+import { EditExperienceComponent } from './dashboard/experience/edit-experience/edit-experience.component';
+import { AddExperienceComponent } from './dashboard/experience/add-experience/add-experience.component';
+import { EditProfileComponent } from './dashboard/profile/edit-profile/edit-profile.component';
+import { AddProfileComponent } from './dashboard/profile/add-profile/add-profile.component';
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
@@ -33,8 +36,6 @@ const routes: Routes = [
 	declarations: [
 		DashboardComponent,
 		ProfileComponent,
-		EditComponent,
-		AddComponent,
 		FeedComponent,
 		PostsComponent,
 		RegisterComponent,
@@ -43,7 +44,12 @@ const routes: Routes = [
 		ProfilesComponent,
 		PageNotFoundComponent,
 		SignupComponent,
-		AddEducationComponent
+		AddEducationComponent,
+		EditEducationComponent,
+		EditExperienceComponent,
+		AddExperienceComponent,
+		EditProfileComponent,
+		AddProfileComponent,
 	]
 })
 export class AppRoutingModule {}
