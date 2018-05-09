@@ -22,17 +22,19 @@ export class DashboardComponent implements OnInit {
 		let target = event.target.id;
 		if (event.target.id == "addEdu") {
 			this.comp = AddEducationComponent;
-		} else if (event.target.id == "addExp") {
-			this. comp = AddExperienceComponent;
-		} else if (event.target.id == "editEdu") {
+		} else if (target == "addExp") {
+			this.comp = AddExperienceComponent;
+		} else if (target == "editEdu") {
 			this.comp = EditEducationComponent;
-		} else if (event.target.id == "editExp") {
+		} else if (target == "editExp") {
 			this.comp = EditExperienceComponent;
+		} else if (target == "delAcc"){
+			this.comp = DeleteAccountComponent
 		}
 		const modalRef = this.modalService.open(this.comp, {
 			centered: true,
 			size: "lg",
-			backdropClass: "light-blue-backdrop"
+			backdropClass: "light-blue-backdrop",
 		});
 		modalRef.componentInstance.name = this.username;
 	}
