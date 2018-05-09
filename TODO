@@ -131,12 +131,18 @@ Frontend
 			☐ Testing Component
 			☐ Make it funny
 
+		Donate Page
+			☐ Create component
+			☐ Style Componet
+			☐ Wire up component
+			☐ Wipre up component to other services and backend
+
+		Loading Spinner
+			✔ Create component @done(09-05-18 13:27)
+			☐ Style Componet
+			☐ Wire up component
+			☐ Wipre up component to other services and backend
+
 Mobile Responsive
 ✔ Navbar @done(06-05-18 18:15)
 ☐ Containers
-
-		Donate Page
-		☐ Create component
-		☐ Style Componet
-		☐ Wire up component
-		☐ Wipre up component to other services and backend
