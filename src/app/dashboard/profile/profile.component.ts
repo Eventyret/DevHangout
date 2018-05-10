@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { NgbTooltipConfig } from "@ng-bootstrap/ng-bootstrap";
 import { NgxSpinnerService } from "ngx-spinner";
+import { ActivatedRoute } from "@angular/router";
+import { Users } from "../../shared/api/users";
+import { FakeService } from "../../shared/api/fake.service";
 
 @Component({
 	selector: "app-profile",
@@ -9,21 +12,29 @@ import { NgxSpinnerService } from "ngx-spinner";
 	providers: [NgbTooltipConfig]
 })
 export class ProfileComponent implements OnInit {
-	constructor(config: NgbTooltipConfig, private spinner: NgxSpinnerService) {
+	constructor(config: NgbTooltipConfig, private spinner: NgxSpinnerService, private route: ActivatedRoute, private fakeService: FakeService) {
 		config.placement = "top";
 		config.triggers = "hover";
+		this.route.params.subscribe(params => {
+			const id = params.id;
+			this.getFakeData(id);
+		});
 	}
-	support = true;
+	user: Users;
+	support: boolean;
 
 	ngOnInit() {
 		this.spinner.show();
-		setTimeout(() => {
-			/** spinner ends after 5 seconds */
-			this.spinner.hide();
-		}, 2000);
 	}
 
 	supporterTest() {
 		this.support = !this.support;
+	}
+	getFakeData(id) {
+		this.fakeService.getFakeUsers().subscribe(data => {
+			this.user = data[id];
+			this.support = data[id].supporter;
+			this.spinner.hide();
+		});
 	}
 }
