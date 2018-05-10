@@ -6,7 +6,7 @@ import "rxjs/add/operator/map";
 	providedIn: "root"
 })
 export class FakeService {
-	constructor(private http:HttpClient) {}
+	constructor(private http: HttpClient) {}
 
 	getFakeUsers() {
 		return this.http.get("/assets/fakeusers.json").map(users => users as Array<Users>);

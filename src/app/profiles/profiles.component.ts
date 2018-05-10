@@ -7,14 +7,13 @@ import { Users } from "../shared/api/users";
 	styleUrls: ["./profiles.component.scss"]
 })
 export class ProfilesComponent implements OnInit {
-	userList: Users[];
+	users: Users[];
 
 	constructor(public fakeService: FakeService) {}
 
 	ngOnInit() {
 		this.fakeService.getFakeUsers().subscribe(data => {
-			this.userList = data;
-			console.log(this.userList);
+			this.users = data;
 		});
 	}
 }

@@ -6,4 +6,5 @@ export interface Users {
 	email: string;
 	website: string;
 	company: string;
+	title: string;
 }
