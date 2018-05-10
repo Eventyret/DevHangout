@@ -16,7 +16,7 @@
                 <h3>{{user.name}}</h3>
                 <p>{{user.title}} @ {{user.company}}</p>
                 <p>Poole, UK</p>
-                <a [routerLink]="['/profile', user.username]" class="btn btn-info">View Profile</a>
+                <a [routerLink]="['/profile', user.id, user.username]" class="btn btn-info">View Profile</a>
               </div>
               <div class="col-sm-12 col-md-4">
                 <h4>Skill Set</h4>
