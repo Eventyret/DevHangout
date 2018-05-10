@@ -4,7 +4,15 @@ export interface Users {
 	name: string;
 	avatar: string;
 	email: string;
+	location: {
+		country: string,
+		countryCode: string
+	};
 	website: string;
 	company: string;
 	title: string;
+	supporter: boolean;
+	background: string;
+	bio: string;
+	skills: string;
 }
