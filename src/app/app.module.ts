@@ -32,7 +32,7 @@ const routes: Routes = [
 	{ path: "login", component: LoginComponent, pathMatch: "full" },
 	{ path: "profiles", component: ProfilesComponent, pathMatch: "full" },
 	{ path: "signup", component: SignupComponent, pathMatch: "full" },
-	{ path: "profile/:username", component: ProfileComponent, pathMatch: "full" },
+	{ path: "profile/:id/:username", component: ProfileComponent, pathMatch: "full" },
 	{ path: "profile/edit", component: EditProfileComponent },
 	{ path: "profile/delete", component: DeleteAccountComponent },
 	{ path: "auth", component: RegisterComponent },
