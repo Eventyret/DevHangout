@@ -1,3 +1,4 @@
+import { EditProfileComponent } from "./profile/edit-profile/edit-profile.component";
 import { DeleteAccountComponent } from "./profile/delete-account/delete-account.component";
 import { EditExperienceComponent } from "./experience/edit-experience/edit-experience.component";
 import { AddExperienceComponent } from "./experience/add-experience/add-experience.component";
@@ -39,6 +40,8 @@ export class DashboardComponent implements OnInit {
 			this.comp = EditExperienceComponent;
 		} else if (target === "delAcc") {
 			this.comp = DeleteAccountComponent;
+		} else if(target === "editProfile") {
+			this.comp = EditProfileComponent;
 		}
 		const modalRef = this.modalService.open(this.comp, {
 			centered: true,
