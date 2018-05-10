@@ -12,6 +12,6 @@ export class FakeService {
 	constructor(private http: HttpClient) {}
 
 	getFakeUsers() {
-		return this.http.get("/assets/fakeusers.json").pipe(map(users => <User[]>users));
+		return this.http.get("/assets/fakeusers.json").pipe(map(users => <Users[]>users));
 	}
 }
