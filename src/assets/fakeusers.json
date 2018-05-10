@@ -88,5 +88,14 @@
     "email": "Laverne67@gmail.com",
     "website": "http://carolyne.net",
     "company": "Fay - Reilly"
+  },
+  {
+	  "id": 10,
+	  "username": "Eventyret",
+	  "name": "Simen Daehlin",
+	  "avatar": "http://simen.dehlin.info/media/img/profile.jpg",
+	  "email": "simen@dehlin.info",
+	  "website": "http://simen.dehlin.info",
+	  "company": "DigitalFairytales"
   }
 ]
