@@ -25,6 +25,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
 	{ path: "login", component: LoginComponent, pathMatch: "full" },
+	{ path: "profiles", component: ProfilesComponent, pathMatch: "full" },
 	{ path: "signup", component: SignupComponent, pathMatch: "full" },
 	{ path: "profile/:username", component: ProfileComponent, pathMatch: "full" },
 	{ path: "profile/edit", component: EditProfileComponent},
