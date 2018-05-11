@@ -15,7 +15,8 @@ export class SupporterComponent implements OnInit {
 	openModal() {
 		const modalRef = this.modalService.open(SupporterModalComponent, {
 			centered: true,
-			size: "lg"
+			size: "lg",
+			backdrop: "static"
 		});
 	}
 }

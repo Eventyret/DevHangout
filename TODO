@@ -140,10 +140,15 @@ Frontend
 			☐ Make it funny
 
 		Donate Page
-			☐ Create component
+			✔ Create component @done(11-05-18 21:39)
 			☐ Style Componet
 			☐ Wire up component
 			☐ Wipre up component to other services and backend
+
+				Header
+				☐ Change title of header depending on error or success.
+				☐ Make button round
+				☐ New Messages
 
 		Loading Spinner
 			✔ Create component @done(09-05-18 13:27)
