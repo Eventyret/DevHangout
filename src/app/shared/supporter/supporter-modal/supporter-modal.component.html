@@ -5,9 +5,12 @@
 	</button>
 </div>
 <div class="modal-body">
-
-	</div>
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-dark mr-auto" (click)="activeModal.close('Close click')">Close</button>
-		<input type="submit" class="btn btn-outline-success" value="Add"/>
-	</div>
+	<form novalidate (ngSubmit)="buy($event)" [formGroup]="stripeTest">
+		<input type="text" formControlName="name" placeholder="Jane Doe">
+		<div id="card-element" class="field"></div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-outline-dark mr-auto" (click)="activeModal.close('Close click')">Close</button>
+			<button type="submit" class="btn btn-outline-success">Donate</button>
+		</div>
+		</form>
+</div>
