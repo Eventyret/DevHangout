@@ -26,6 +26,7 @@ import { PageNotFoundComponent } from "./shared/page-not-found/page-not-found.co
 import { LoginComponent } from "./shared/register/login/login.component";
 import { RegisterComponent } from "./shared/register/register.component";
 import { SignupComponent } from "./shared/register/signup/signup.component";
+import { SupporterComponent } from './shared/supporter/supporter.component';
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
@@ -65,7 +66,8 @@ const routes: Routes = [
 		EditExperienceComponent,
 		AddExperienceComponent,
 		EditProfileComponent,
-		AddProfileComponent
+		AddProfileComponent,
+		SupporterComponent
 	],
 	imports: [
 		BrowserModule,

@@ -25,7 +25,7 @@ Frontend
 			Add / Edit Experience
 				✔ Create Component @started(06-05-18 14:56) @done(06-05-18 14:56) @lasted(52 seconds)
 				☐ Style Component
-				☐ Created Markup @started(06-05-18 22:41)
+				✔ Created Markup @done(11-05-18 08:17)
 				☐ Wire Up Component
 				☐ Testing Component
 
@@ -44,6 +44,14 @@ Frontend
 		☐ Upvote Posts
 		☐ Downvote Posts
 
+		Donation / Supporter
+		✔ Create Component @done(11-05-18 08:17)
+		☐ Style Component
+		☐ Created Markup
+		☐ Wire Up Component
+		☐ Testing Component
+		☐ Upvote Posts
+		☐ Downvote Posts
 	Post Updates
 		✔ Create Component @started(06-05-18 15:02) @done(06-05-18 15:02) @lasted(55 seconds)
 		☐ Style Component
