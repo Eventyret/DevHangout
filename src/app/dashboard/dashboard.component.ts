@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit {
 			this.comp = EditExperienceComponent;
 		} else if (target === "delAcc") {
 			this.comp = DeleteAccountComponent;
-		} else if(target === "editProfile") {
+		} else if (target === "editProfile") {
 			this.comp = EditProfileComponent;
 		}
 		const modalRef = this.modalService.open(this.comp, {

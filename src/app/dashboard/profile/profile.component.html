@@ -1,3 +1,4 @@
+<ngx-spinner bdOpacity="0.9" bdColor="#2196F3" size="large" color="#fff" loadingText="Eating up cookies... and preparing your profile" type="pacman"></ngx-spinner>
 <div class="profile">
 	<div class="container">
 		<div class="row">
@@ -5,8 +6,8 @@
 				<div class="row">
 					<div class="col-6">
 						<!-- This needs to be dynamic -->
-						<a href="#" class="btn btn-light mb-3 float-left">Back to Profiles</a>
-						<div class="btn btn-outline-danger" (click)="supporterTest()">Donation Toggle (For Testing)</div>
+						<a class="btn btn-light mb-3 float-left">Back to Profiles</a>
+						<div class="btn btn-danger" (click)="supporterTest()">Donation Toggle (For Testing)</div>
 					</div>
 					<div class="col-6">
 
@@ -24,13 +25,13 @@
 							<div class="row">
 								<div class=" col-4 col-md-3 m-auto">
 									<!-- This needs to be dynamic -->
-									<img class="rounded-circle profile-image" src="http://simen.dehlin.info/media/img/profile.jpg" alt="Your Username">
+									<img class="rounded-circle profile-image" src="{{user?.avatar}}" alt="{{user?.username}}">
 								</div>
 							</div>
 							<div class="text-center profile-container">
-								<h1 class="text-bg">Simen Daehlin</h1>
-								<p class="lead text-bg">Front End Developer @ Intergage</p>
-								<p>Poole, UK</p>
+								<h1 class="text-bg">{{user?.name}}</h1>
+								<p class="lead text-bg">{{user?.title}} @ {{user?.company}}</p>
+								<p>{{user?.location.county}}, {{user?.location.countryCode}}</p>
 								<div class="social-profile">
 									<a href="#">
 										<i class="fab fa-facebook"></i>
@@ -56,11 +57,8 @@
 					<div class="col-md-9">
 						<div class="card card-body bg-light mb-3">
 							<!-- This needs to dynamic change -->
-							<h3 class="text-center text-primary">About USERNAME</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae corrupti, nesciunt fugiat accusantium quo, ratione
-								sapiente rerum ut animi dolore suscipit provident placeat delectus nulla velit consequatur cum, laudantium quasi.Ipsa
-								laudantium inventore repellat corrupti, modi ad aspernatur eaque, doloribus asperiores vel quos, quisquam vero sed!
-								Quasi quisquam mollitia hic magni iure libero quia enim voluptatibus? Fugiat voluptates nihil in!</p>
+							<h3 class="text-center text-primary">About {{user?.username}}</h3>
+							<p>{{user?.bio}}</p>
 						</div>
 					</div>
 					<div class="col-md-3">
