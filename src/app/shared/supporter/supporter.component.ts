@@ -1,4 +1,6 @@
+import { ModalComponent } from "./modal/modal.component";
 import { Component, OnInit } from '@angular/core';
+import {NgbModal, NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-supporter',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SupporterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
+  }
+
+  openModal() {
+	  const modalRef = this.modalService.open(ModalComponent, {
+		  centered: true,
+		  size: "lg"
+	  })
   }
 
 }

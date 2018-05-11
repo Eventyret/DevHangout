@@ -35,13 +35,11 @@ export class ProfileComponent implements OnInit {
 			data => {
 				this.user = data[id];
 				this.support = data[id].supporter;
-				this.spinner.hide();
 			},
 			error => {
 				console.log(error);
 			},
 			() => {
-				console.log("complete ran");
 				this.spinner.hide();
 			}
 		);

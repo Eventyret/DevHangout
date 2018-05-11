@@ -5,8 +5,8 @@ export interface Users {
 	avatar: string;
 	email: string;
 	location: {
-		county: string,
-		countryCode: string
+		county: string;
+		countryCode: string;
 	};
 	website: string;
 	company: string;

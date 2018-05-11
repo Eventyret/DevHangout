@@ -1,0 +1,26 @@
+.triangle-button {
+	position: absolute;
+	bottom: -7px;
+	right: 0;
+	&:before {
+		content: "";
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 0 80px 80px;
+		border-color: transparent transparent #2780E3 transparent;
+	}
+}
+
+.fas.fa-star {
+	position: absolute;
+	bottom: 16px;
+	right: 3px;
+	color: #ffc107;
+	font-size: 2rem;
+}
+
+.donate-container {
+	position: relative;
+}
