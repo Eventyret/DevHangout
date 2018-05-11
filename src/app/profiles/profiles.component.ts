@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { FakeService } from "../shared/api/fake.service";
-import { Users } from "../shared/api/users";
+import { FakeService } from "../shared/services/fake.service";
+import { Users } from "../shared/services/users";
+import { NgxSpinnerService } from "ngx-spinner";
 @Component({
 	selector: "app-profiles",
 	templateUrl: "./profiles.component.html",
@@ -9,11 +10,25 @@ import { Users } from "../shared/api/users";
 export class ProfilesComponent implements OnInit {
 	users: Users[];
 
-	constructor(public fakeService: FakeService) {}
+	constructor(public fakeService: FakeService, private spinner: NgxSpinnerService) {}
 
 	ngOnInit() {
-		this.fakeService.getFakeUsers().subscribe(data => {
-			this.users = data;
-		});
+		this.spinner.show();
+		this.getDevelopers();
+	}
+
+	getDevelopers() {
+		this.fakeService.getFakeUsers().subscribe(
+			data => {
+				this.users = data;
+			},
+			error => {
+				console.log(error);
+			},
+			() => {
+				console.log("complete ran")
+				this.spinner.hide();
+			}
+		);
 	}
 }

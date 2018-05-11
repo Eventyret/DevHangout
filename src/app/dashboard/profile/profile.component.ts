@@ -2,8 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { NgbTooltipConfig } from "@ng-bootstrap/ng-bootstrap";
 import { NgxSpinnerService } from "ngx-spinner";
 import { ActivatedRoute } from "@angular/router";
-import { Users } from "../../shared/api/users";
-import { FakeService } from "../../shared/api/fake.service";
+import { Users } from "../../shared/services/users";
+import { FakeService } from "../../shared/services/fake.service";
 
 @Component({
 	selector: "app-profile",
@@ -31,10 +31,19 @@ export class ProfileComponent implements OnInit {
 		this.support = !this.support;
 	}
 	getFakeData(id) {
-		this.fakeService.getFakeUsers().subscribe(data => {
-			this.user = data[id];
-			this.support = data[id].supporter;
-			this.spinner.hide();
-		});
+		this.fakeService.getFakeUsers().subscribe(
+			data => {
+				this.user = data[id];
+				this.support = data[id].supporter;
+				this.spinner.hide();
+			},
+			error => {
+				console.log(error);
+			},
+			() => {
+				console.log("complete ran");
+				this.spinner.hide();
+			}
+		);
 	}
 }
