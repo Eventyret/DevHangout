@@ -1,24 +1,21 @@
-import { ModalComponent } from "./modal/modal.component";
-import { Component, OnInit } from '@angular/core';
-import {NgbModal, NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
+import { SupporterModalComponent } from "./supporter-modal/supporter-modal.component";
+import { Component, OnInit } from "@angular/core";
+import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
-  selector: 'app-supporter',
-  templateUrl: './supporter.component.html',
-  styleUrls: ['./supporter.component.scss']
+	selector: "app-supporter",
+	templateUrl: "./supporter.component.html",
+	styleUrls: ["./supporter.component.scss"]
 })
 export class SupporterComponent implements OnInit {
+	constructor(private modalService: NgbModal) {}
 
-  constructor(private modalService: NgbModal) { }
+	ngOnInit() {}
 
-  ngOnInit() {
-  }
-
-  openModal() {
-	  const modalRef = this.modalService.open(ModalComponent, {
-		  centered: true,
-		  size: "lg"
-	  })
-  }
-
+	openModal() {
+		const modalRef = this.modalService.open(SupporterModalComponent, {
+			centered: true,
+			size: "lg"
+		});
+	}
 }

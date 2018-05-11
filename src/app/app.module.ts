@@ -26,8 +26,8 @@ import { PageNotFoundComponent } from "./shared/page-not-found/page-not-found.co
 import { LoginComponent } from "./shared/register/login/login.component";
 import { RegisterComponent } from "./shared/register/register.component";
 import { SignupComponent } from "./shared/register/signup/signup.component";
-import { SupporterComponent } from './shared/supporter/supporter.component';
-import { ModalComponent } from './shared/supporter/modal/modal.component';
+import { SupporterComponent } from "./shared/supporter/supporter.component";
+import { SupporterModalComponent } from "./shared/supporter/supporter-modal/supporter-modal.component";
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
@@ -39,7 +39,7 @@ const routes: Routes = [
 	{ path: "profile/delete", component: DeleteAccountComponent },
 	{ path: "auth", component: RegisterComponent },
 	{ path: "dashboard", component: DashboardComponent },
-	{ path: "donate", component: ModalComponent },
+	{ path: "donate", component: SupporterModalComponent },
 	{ path: "education/add", component: AddEducationComponent },
 	{ path: "education/edit", component: EditEducationComponent },
 	{ path: "experience/add", component: AddExperienceComponent },
@@ -70,7 +70,7 @@ const routes: Routes = [
 		EditProfileComponent,
 		AddProfileComponent,
 		SupporterComponent,
-		ModalComponent
+		SupporterModalComponent
 	],
 	imports: [
 		BrowserModule,
