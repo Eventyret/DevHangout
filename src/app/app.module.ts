@@ -19,7 +19,7 @@ import { FeedComponent } from "./feed/feed/feed.component";
 import { PostsComponent } from "./feed/posts/posts.component";
 import { LandingComponent } from "./landing/landing.component";
 import { ProfilesComponent } from "./profiles/profiles.component";
-import { FakeService } from "./shared/api/fake.service";
+import { FakeService } from "./shared/services/fake.service";
 import { FooterComponent } from "./shared/footer/footer.component";
 import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { PageNotFoundComponent } from "./shared/page-not-found/page-not-found.component";
