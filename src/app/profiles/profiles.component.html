@@ -8,7 +8,7 @@
 
 		  <!-- Profile Item -->
 		  <div *ngFor="let user of users">
-          <div class="card card-body bg-light mb-3">
+          <div class="card card-body mb-3">
             <div class="row">
               <div class="col-sm-6 col-md-3">
                 <img class="img-fluid rounded-circle" src="{{user.avatar}}" alt="" />
@@ -17,7 +17,7 @@
                 <h3>{{user.name}}</h3>
                 <p>{{user.title}} @ {{user.company}}</p>
                 <p>Poole, UK</p>
-                <a [routerLink]="['/profile', user.id, user.username]" class="btn btn-info">View Profile</a>
+                <a [routerLink]="['/profile', user.id, user.username]" class="btn btn-raised btn-info">View Profile</a>
               </div>
               <div class="col-sm-12 col-md-4">
                 <h4>Skill Set</h4>

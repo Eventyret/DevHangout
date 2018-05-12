@@ -1,0 +1,18 @@
+.btn:hover,
+.custom-file-control:hover::before {
+	background-color: transparent;
+}
+
+.fas {
+	color: #424242;
+}
+.fa-thumbs-down {
+	&:hover {
+		color: #f44336;
+	}
+}
+.fa-thumbs-up {
+	&:hover {
+		color: #2196f3;
+	}
+}

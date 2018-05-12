@@ -7,6 +7,7 @@ import {NgbModal, NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ["./edit-profile.component.scss"]
 })
 export class EditProfileComponent implements OnInit {
+	name;
 
   constructor(public activeModal: NgbActiveModal) { }
 

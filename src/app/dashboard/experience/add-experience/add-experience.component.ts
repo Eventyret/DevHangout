@@ -7,6 +7,7 @@ import {NgbModal, NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ["./add-experience.component.scss"]
 })
 export class AddExperienceComponent implements OnInit {
+	name;
 
 	constructor(public activeModal: NgbActiveModal) { }
 

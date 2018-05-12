@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^6.0.0",
     "@angular/router": "^6.0.0",
     "@ng-bootstrap/ng-bootstrap": "^2.0.0",
+    "bootstrap-material-design": "^4.1.1",
     "bootswatch": "^4.1.1",
     "core-js": "^2.5.4",
     "ngx-spinner": "^2.0.1",

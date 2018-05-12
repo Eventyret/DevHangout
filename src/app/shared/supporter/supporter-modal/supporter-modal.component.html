@@ -12,13 +12,13 @@
 					All donations goes towards a better and more stable server.<br>
 					Your Token is: {{successMsg}}
 				  </ngb-alert>
-				  <button type="button" class="btn btn-dark btn-lg mr-auto" (click)="activeModal.dismiss('Cross click')">Close</button>
+				  <button type="button" class="btn btn-raised btn-dark btn-lg mr-auto" (click)="activeModal.dismiss('Cross click')">Close</button>
 	</div>
 	<div *ngIf="payError">
 			<ngb-alert [dismissible]="false" type="danger">
 					<strong>Seems there was an issue {{name}}? <i class="fas fa-frown"></i></strong><br>{{errorMsg}}<br>
 				</ngb-alert>
-				<button type="button" class="btn btn-dark btn-lg mr-auto" (click)="activeModal.dismiss('Cross click')">Close</button>
+				<button type="button" class="btn btn-raised btn-dark btn-lg mr-auto" (click)="activeModal.dismiss('Cross click')">Close</button>
 
 	</div>
 	<div  [hidden]="payComplete || payError">
@@ -28,7 +28,7 @@
 			</div>
 			<div id="card-element" class="field"></div>
 			<div class="modal-footer">
-				<button type="submit" class="btn btn-success btn-lg">Donate</button>
+				<button type="submit" class="btn btn-raised btn-success btn-lg">Donate</button>
 			</div>
 			</form>
 	</div>
