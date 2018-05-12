@@ -1,5 +1,3 @@
-<div class="donate-container">
-	<div class="triangle-button" (click)="openModal()">
-		<i class="fas fa-star"></i>
+	<div class="triangle-button" (click)="openModal()"  (mouseover)="spin = true" (mouseout)="spin = false">
+		<i class="fas fa-star" [class.fa-spin]="spin"></i>
 	</div>
-</div>

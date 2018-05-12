@@ -9,13 +9,14 @@ import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 })
 export class SupporterComponent implements OnInit {
 	constructor(private modalService: NgbModal) {}
-
+spin;
 	ngOnInit() {}
 
 	openModal() {
 		const modalRef = this.modalService.open(SupporterModalComponent, {
 			centered: true,
-			size: "lg"
+			size: "lg",
+			backdrop: "static"
 		});
 	}
 }

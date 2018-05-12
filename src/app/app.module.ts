@@ -1,10 +1,13 @@
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule, Routes } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { NgxSpinnerModule } from "ngx-spinner";
+import { NgxStripeModule } from "ngx-stripe";
+import { environment } from "../environments/environment";
 import { AppComponent } from "./app.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AddEducationComponent } from "./dashboard/education/add-education/add-education.component";
@@ -19,15 +22,15 @@ import { FeedComponent } from "./feed/feed/feed.component";
 import { PostsComponent } from "./feed/posts/posts.component";
 import { LandingComponent } from "./landing/landing.component";
 import { ProfilesComponent } from "./profiles/profiles.component";
-import { FakeService } from "./shared/services/fake.service";
 import { FooterComponent } from "./shared/footer/footer.component";
 import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { PageNotFoundComponent } from "./shared/page-not-found/page-not-found.component";
 import { LoginComponent } from "./shared/register/login/login.component";
 import { RegisterComponent } from "./shared/register/register.component";
 import { SignupComponent } from "./shared/register/signup/signup.component";
-import { SupporterComponent } from "./shared/supporter/supporter.component";
+import { FakeService } from "./shared/services/fake.service";
 import { SupporterModalComponent } from "./shared/supporter/supporter-modal/supporter-modal.component";
+import { SupporterComponent } from "./shared/supporter/supporter.component";
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
@@ -79,7 +82,10 @@ const routes: Routes = [
 		NgbModule.forRoot(),
 		CommonModule,
 		NgxSpinnerModule,
-		HttpClientModule
+		HttpClientModule,
+		FormsModule,
+		ReactiveFormsModule,
+		NgxStripeModule.forRoot(environment.publish_api_key)
 	],
 	providers: [FakeService],
 	bootstrap: [AppComponent]
