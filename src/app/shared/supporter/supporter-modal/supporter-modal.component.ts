@@ -43,14 +43,14 @@ export class SupporterModalComponent implements OnInit {
 				this.card = this.elements.create("card", {
 					style: {
 						base: {
-							iconColor: "#666EE8",
+							iconColor: "#ff0000",
 							color: "#31325F",
 							lineHeight: "40px",
 							fontWeight: 300,
-							fontFamily: "Helvetica Neue, Helvetica, sans-serif",
+							fontFamily: "Ubuntu",
 							fontSize: "18px",
 							"::placeholder": {
-								color: "#CFD7E0"
+								color: "#212121"
 							}
 						}
 					}

@@ -23,7 +23,9 @@
 	</div>
 	<div  [hidden]="payComplete || payError">
 		<form novalidate (ngSubmit)="buy($event)" [formGroup]="stripeTest">
-			<input type="text" formControlName="name" placeholder="Jane Doe">
+			<div class="form-group">
+				<input  class="form-control"type="text" formControlName="name" placeholder="Jane Doe">
+			</div>
 			<div id="card-element" class="field"></div>
 			<div class="modal-footer">
 				<button type="submit" class="btn btn-success btn-lg">Donate</button>

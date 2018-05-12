@@ -1,6 +1,6 @@
 .triangle-button {
 	position: absolute;
-	bottom: -7px;
+	top: 20px;
 	right: 0;
 	&:before {
 		content: "";
@@ -8,8 +8,8 @@
 		width: 0;
 		height: 0;
 		border-style: solid;
-		border-width: 0 0 80px 80px;
-		border-color: transparent transparent #2780E3 transparent;
+		border-width: 0 100px 90px 0;
+		border-color: transparent #2780E3 transparent transparent;
 	}
 	&:hover {
 	}
@@ -17,7 +17,7 @@
 
 .fas.fa-star {
 	position: absolute;
-	bottom: 16px;
+	top: 16px;
 	right: 3px;
 	color: #ffc107;
 	font-size: 2rem;
