@@ -94,9 +94,9 @@ const routes: Routes = [
 		SimpleNotificationsModule.forRoot({
 			position: ["top", "right"],
 			timeOut: 5000,
-			pauseOnHover: true,
 			showProgressBar: true,
-			animate: "fromRight"
+			animate: "fromRight",
+			clickToClose: true,
 		})
 	],
 	providers: [FakeService],

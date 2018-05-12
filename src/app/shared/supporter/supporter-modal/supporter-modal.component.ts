@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { StripeService, Elements, Element as StripeElement, ElementsOptions } from "ngx-stripe";
 import { NgxSpinnerService } from "ngx-spinner";
 import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
+import { NotificationsService } from "angular2-notifications";
 
 @Component({
 	selector: "app-supporter-modal",
@@ -18,7 +19,6 @@ export class SupporterModalComponent implements OnInit {
 	successMsg;
 	errorMsg: string;
 	name: string;
-	// optional parameters
 	elementsOptions: ElementsOptions = {
 		locale: "auto"
 	};
@@ -29,7 +29,8 @@ export class SupporterModalComponent implements OnInit {
 		public activeModal: NgbActiveModal,
 		private fb: FormBuilder,
 		private stripeService: StripeService,
-		private spinner: NgxSpinnerService
+		private spinner: NgxSpinnerService,
+		private notify: NotificationsService
 	) {}
 
 	ngOnInit() {
@@ -76,6 +77,7 @@ export class SupporterModalComponent implements OnInit {
 				console.log(results.error.message);
 				this.payError = true;
 				this.errorMsg = results.error.message;
+				this.notify.error(this.errorMsg);
 				this.spinner.hide();
 			}
 		});
