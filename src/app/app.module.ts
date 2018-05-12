@@ -3,8 +3,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule, Routes } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { SimpleNotificationsModule } from "angular2-notifications";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NgxStripeModule } from "ngx-stripe";
 import { environment } from "../environments/environment";
@@ -18,6 +20,7 @@ import { AddProfileComponent } from "./dashboard/profile/add-profile/add-profile
 import { DeleteAccountComponent } from "./dashboard/profile/delete-account/delete-account.component";
 import { EditProfileComponent } from "./dashboard/profile/edit-profile/edit-profile.component";
 import { ProfileComponent } from "./dashboard/profile/profile.component";
+import { CommentsComponent } from "./feed/comments/comments.component";
 import { FeedComponent } from "./feed/feed/feed.component";
 import { PostsComponent } from "./feed/posts/posts.component";
 import { LandingComponent } from "./landing/landing.component";
@@ -31,8 +34,6 @@ import { SignupComponent } from "./shared/register/signup/signup.component";
 import { FakeService } from "./shared/services/fake.service";
 import { SupporterModalComponent } from "./shared/supporter/supporter-modal/supporter-modal.component";
 import { SupporterComponent } from "./shared/supporter/supporter.component";
-import { CommentsComponent } from "./feed/comments/comments.component";
-import { SimpleNotificationsModule } from "angular2-notifications";
 
 
 const routes: Routes = [
@@ -82,6 +83,7 @@ const routes: Routes = [
 	],
 	imports: [
 		BrowserModule,
+		BrowserAnimationsModule,
 		NgbModule.forRoot(),
 		RouterModule.forRoot(routes),
 		NgbModule.forRoot(),
@@ -94,9 +96,10 @@ const routes: Routes = [
 		SimpleNotificationsModule.forRoot({
 			position: ["top", "right"],
 			timeOut: 5000,
-			pauseOnHover: true,
 			showProgressBar: true,
-			animate: "fromRight"
+			animate: "fromRight",
+			clickToClose: true,
+			pauseOnHover: true,
 		})
 	],
 	providers: [FakeService],

@@ -1,27 +1,12 @@
 <ngx-spinner bdColor="rgba(39,128,227,0)" size="large" loadingText="Playing balls with stripe" type="pacman" color="#ffc107"></ngx-spinner>
 <div class="modal-header">
-	<h4 class="modal-title">Thank you for considering to support us!</h4>
+	<h4 class="modal-title">Thank you for considering to support us USERNAME!</h4>
 	<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
 		<span aria-hidden="true">&times;</span>
 	</button>
 </div>
 <div class="modal-body">
-	<div *ngIf="payComplete">
-			<ngb-alert [dismissible]="false" type="success">
-					<strong>Thank you! {{name}}  <i class="fas fa-heart"></i></strong><br>
-					All donations goes towards a better and more stable server.<br>
-					Your Token is: {{successMsg}}
-				  </ngb-alert>
-				  <button type="button" class="btn btn-raised btn-dark btn-lg mr-auto" (click)="activeModal.dismiss('Cross click')">Close</button>
-	</div>
-	<div *ngIf="payError">
-			<ngb-alert [dismissible]="false" type="danger">
-					<strong>Seems there was an issue {{name}}? <i class="fas fa-frown"></i></strong><br>{{errorMsg}}<br>
-				</ngb-alert>
-				<button type="button" class="btn btn-raised btn-dark btn-lg mr-auto" (click)="activeModal.dismiss('Cross click')">Close</button>
-
-	</div>
-	<div  [hidden]="payComplete || payError">
+	<div>
 		<form novalidate (ngSubmit)="buy($event)" [formGroup]="stripeTest">
 			<div class="form-group">
 				<input  class="form-control"type="text" formControlName="name" placeholder="Jane Doe">
