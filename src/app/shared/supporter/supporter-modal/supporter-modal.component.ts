@@ -1,9 +1,9 @@
-import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { StripeService, Elements, Element as StripeElement, ElementsOptions } from "ngx-stripe";
-import { NgxSpinnerService } from "ngx-spinner";
-import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { NotificationsService } from "angular2-notifications";
+import { NgxSpinnerService } from "ngx-spinner";
+import { Element as StripeElement, Elements, ElementsOptions, StripeService } from "ngx-stripe";
 
 @Component({
 	selector: "app-supporter-modal",
@@ -14,9 +14,6 @@ export class SupporterModalComponent implements OnInit {
 	elements: Elements;
 	card: StripeElement;
 	payInProgress = false;
-	payError = false;
-	payComplete = false;
-	successMsg;
 	errorMsg: string;
 	name: string;
 	elementsOptions: ElementsOptions = {
@@ -47,8 +44,8 @@ export class SupporterModalComponent implements OnInit {
 							iconColor: "#ff0000",
 							color: "#31325F",
 							lineHeight: "40px",
-							fontWeight: 300,
-							fontFamily: "Ubuntu",
+							fontWeight: 400,
+							fontFamily: "Roboto",
 							fontSize: "18px",
 							"::placeholder": {
 								color: "#212121"
@@ -68,16 +65,15 @@ export class SupporterModalComponent implements OnInit {
 		this.stripeService.createToken(this.card, { name }).subscribe(results => {
 			if (results.token) {
 				console.log(results);
-				this.payComplete = true;
-				this.successMsg = results.token.id;
+				this.notify.success("Thank you " + this.name + "!", results.token.id);
+				this.activeModal.dismiss();
 				this.spinner.hide();
 				// Use the token to create a charge or a customer
 				// https://stripe.com/docs/charges
 			} else if (results.error) {
 				console.log(results.error.message);
-				this.payError = true;
-				this.errorMsg = results.error.message;
-				this.notify.error(this.errorMsg);
+				const errorMsg = results.error.message;
+				this.notify.error("Seems there was an issue ?" + this.name, errorMsg);
 				this.spinner.hide();
 			}
 		});
