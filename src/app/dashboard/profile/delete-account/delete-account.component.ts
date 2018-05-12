@@ -7,6 +7,7 @@ import {NgbModal, NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ["./delete-account.component.scss"]
 })
 export class DeleteAccountComponent implements OnInit {
+	name;
 
 	constructor(public activeModal: NgbActiveModal) { }
 

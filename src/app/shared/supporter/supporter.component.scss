@@ -1,7 +1,8 @@
 .triangle-button-top {
 	position: absolute;
-	top: 20px;
+	top: 36px;
 	right: 0;
+	z-index: 1;
 	&:before {
 		content: "";
 		display: inline-block;
@@ -9,21 +10,22 @@
 		height: 0;
 		border-style: solid;
 		border-width: 0 100px 90px 0;
-		border-color: transparent #2780e3 transparent transparent;
+		border-color: transparent #03a9f4 transparent transparent;
 	}
 }
 .triangle-button-bottom {
 	position: absolute;
 	bottom: 16px;
 	right: 0;
+	z-index: 1;
 	&:before {
 		content: "";
 		display: inline-block;
 		width: 0;
 		height: 0;
 		border-style: solid;
-		border-width: 0  0 100px 120px;
-		border-color: transparent transparent #2780e3 transparent;
+		border-width: 0 0 100px 120px;
+		border-color: transparent transparent #03a9f4 transparent;
 	}
 }
 
