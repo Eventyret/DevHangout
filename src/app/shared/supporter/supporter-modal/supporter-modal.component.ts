@@ -13,14 +13,13 @@ import { Element as StripeElement, Elements, ElementsOptions, StripeService } fr
 export class SupporterModalComponent implements OnInit {
 	elements: Elements;
 	card: StripeElement;
-	payInProgress = false;
-	errorMsg: string;
-	name: string;
+	stripeTest: FormGroup;
 	elementsOptions: ElementsOptions = {
 		locale: "auto"
 	};
-
-	stripeTest: FormGroup;
+	payInProgress = false;
+	errorMsg: string;
+	name: string;
 
 	constructor(
 		public activeModal: NgbActiveModal,
