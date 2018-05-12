@@ -1,17 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono:400,700");
-
 html {
 	min-height: 100%;
 	position: relative;
 }
-
 a {
 	text-decoration: none;
 	&:hover {
 		text-decoration: none;
 	}
-}
-:root {
-	--font-family-sans-serif: "Ubuntu, sans-serif";
-	--font-family-monospace: "Ubuntu Mono,SFMono-Regular";
 }
