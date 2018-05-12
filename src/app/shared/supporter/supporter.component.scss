@@ -1,4 +1,4 @@
-.triangle-button {
+.triangle-button-top {
 	position: absolute;
 	top: 20px;
 	right: 0;
@@ -9,20 +9,78 @@
 		height: 0;
 		border-style: solid;
 		border-width: 0 100px 90px 0;
-		border-color: transparent #2780E3 transparent transparent;
+		border-color: transparent #2780e3 transparent transparent;
 	}
-	&:hover {
+}
+.triangle-button-bottom {
+	position: absolute;
+	bottom: 16px;
+	right: 0;
+	&:before {
+		content: "";
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0  0 100px 120px;
+		border-color: transparent transparent #2780e3 transparent;
 	}
 }
 
-.fas.fa-star {
+.fas.fa-heart {
 	position: absolute;
-	top: 16px;
-	right: 3px;
-	color: #ffc107;
+	top: 27px;
+	right: 6px;
+	color: #f44336;
 	font-size: 2rem;
 }
 
 .donate-container {
 	position: relative;
+}
+
+/* Pulsing Animation Effect */
+.ani-pulse {
+	&:hover {
+		-webkit-animation: pulse 2s linear infinite;
+		animation: pulse 2s linear infinite;
+	}
+}
+
+/* The Animation of pulse */
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+
+	50% {
+		-webkit-transform: scale(0.8);
+		transform: scale(0.8);
+	}
+
+	100% {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+}
+
+@keyframes pulse {
+	0% {
+		-webkit-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+
+	50% {
+		-webkit-transform: scale(0.8);
+		-ms-transform: scale(0.8);
+		transform: scale(0.8);
+	}
+
+	100% {
+		-webkit-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		transform: scale(1.1);
+	}
 }
