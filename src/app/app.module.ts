@@ -31,7 +31,9 @@ import { SignupComponent } from "./shared/register/signup/signup.component";
 import { FakeService } from "./shared/services/fake.service";
 import { SupporterModalComponent } from "./shared/supporter/supporter-modal/supporter-modal.component";
 import { SupporterComponent } from "./shared/supporter/supporter.component";
-import { CommentsComponent } from './feed/comments/comments.component';
+import { CommentsComponent } from "./feed/comments/comments.component";
+import { SimpleNotificationsModule } from "angular2-notifications";
+
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
@@ -88,7 +90,14 @@ const routes: Routes = [
 		HttpClientModule,
 		FormsModule,
 		ReactiveFormsModule,
-		NgxStripeModule.forRoot(environment.publish_api_key)
+		NgxStripeModule.forRoot(environment.publish_api_key),
+		SimpleNotificationsModule.forRoot({
+			position: ["top", "right"],
+			timeOut: 5000,
+			pauseOnHover: true,
+			showProgressBar: true,
+			animate: "fromRight"
+		})
 	],
 	providers: [FakeService],
 	bootstrap: [AppComponent]
