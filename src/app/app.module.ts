@@ -31,12 +31,14 @@ import { SignupComponent } from "./shared/register/signup/signup.component";
 import { FakeService } from "./shared/services/fake.service";
 import { SupporterModalComponent } from "./shared/supporter/supporter-modal/supporter-modal.component";
 import { SupporterComponent } from "./shared/supporter/supporter.component";
+import { CommentsComponent } from './feed/comments/comments.component';
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
 	{ path: "login", component: LoginComponent, pathMatch: "full" },
 	{ path: "profiles", component: ProfilesComponent, pathMatch: "full" },
 	{ path: "signup", component: SignupComponent, pathMatch: "full" },
+	{ path: "feed", component: FeedComponent, pathMatch: "full" },
 	{ path: "profile/:id/:username", component: ProfileComponent, pathMatch: "full" },
 	{ path: "profile/edit", component: EditProfileComponent },
 	{ path: "profile/delete", component: DeleteAccountComponent },
@@ -73,7 +75,8 @@ const routes: Routes = [
 		EditProfileComponent,
 		AddProfileComponent,
 		SupporterComponent,
-		SupporterModalComponent
+		SupporterModalComponent,
+		CommentsComponent
 	],
 	imports: [
 		BrowserModule,
