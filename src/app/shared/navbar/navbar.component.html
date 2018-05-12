@@ -1,26 +1,26 @@
-<nav class="navbar navbar-expand-sm navbar-dark  bg-info mb-4">
+<nav class="navbar navbar-expand-sm bg-info mb-4">
 	<div class="container">
 		<a href="#" class="navbar-brand">Developers Hangout</a>
 		<button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="mobileNav">
-				<i class="fas fa-bars"></i>
+			<i class="fas fa-bars"></i>
 		</button>
 		<div class="collapse navbar-collapse" id="mobileNav" [ngbCollapse]="isCollapsed">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a routerLink="profiles" class="nav-link">Devs</a>
-				</li>
 			</ul>
 
 			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a routerLink="profiles" class="nav-link">Developer List</a>
+				</li>
+				<li class="nav-item">
+					<a routerLink="feed" class="nav-link">Post Feed</a>
+				</li>
+				<!-- This need a ngIF logged in or out-->
+				<li class="nav-item">
+					<a routerLink="signup" class="nav-link">Sign Up</a>
 					<li class="nav-item">
-						<a routerLink="feed" class="nav-link">Post Feed</a>
+						<a routerLink="login" class="nav-link">Login</a>
 					</li>
-					<!-- This need a ngIF logged in or out-->
-					<li class="nav-item">
-						<a routerLink="signup" class="nav-link">Sign Up</a>
-						<li class="nav-item">
-							<a routerLink="login" class="nav-link">Login</a>
-						</li>
 					<li class="nav-item">
 						<a href="#" class="nav-link">
 
@@ -28,14 +28,18 @@
 					</li>
 					<!-- This needs to be dynamic and needs a ngIF -->
 					<div ngbDropdown placement="bottom" #adrop="ngbDropdown">
-						 <img class="rounded-circle" src="https://www.gravatar.com/avatar/anything?s=200&d=mm" alt="No Avatar / Replace with Name" id="avatar-menu" ngbDropdownToggle (mouseover)="adrop.open()">
-						<div ngbDropdownMenu aria-labelledby="avatar-menu"  (mouseleave)="adrop.close()">
+						<img class="rounded-circle" src="https://www.gravatar.com/avatar/anything?s=200&d=mm" alt="No Avatar / Replace with Name"
+						 id="avatar-menu" ngbDropdownToggle (mouseover)="adrop.open()">
+						<div ngbDropdownMenu aria-labelledby="avatar-menu" (mouseleave)="adrop.close()">
 							<h5 class="dropdown-header">Welcome Username</h5>
 							<div class="dropdown-divider"></div>
 							<!-- Needs to change dynamic -->
-								<a  routerLink="dashboard"class="dropdown-item"><i class="fas fa-tachometer-alt"></i> Your Dashboard</a>
-							<a routerLink="profile/0/eventyret" class="dropdown-item"><i class="fas fa-user"></i> My Profile</a>
-							<a href="#" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Log out</a>
+							<a routerLink="dashboard" class="dropdown-item">
+								<i class="fas fa-tachometer-alt"></i> Your Dashboard</a>
+							<a routerLink="profile/0/eventyret" class="dropdown-item">
+								<i class="fas fa-user"></i> My Profile</a>
+							<a href="#" class="dropdown-item">
+								<i class="fas fa-sign-out-alt"></i> Log out</a>
 						</div>
 					</div>
 			</ul>
