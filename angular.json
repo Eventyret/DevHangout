@@ -28,7 +28,7 @@
 			  { "glob": "fakeusers.json", "input": "./", "output": "./assets/" }
             ],
             "styles": [
-			"./node_modules/bootswatch/dist/cosmo/bootstrap.css",
+			"./node_modules/bootswatch/dist/litera/bootstrap.css",
               "src/styles.scss"
             ],
             "scripts": []
