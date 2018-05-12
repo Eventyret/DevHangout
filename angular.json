@@ -28,7 +28,7 @@
 			  { "glob": "fakeusers.json", "input": "./", "output": "./assets/" }
             ],
             "styles": [
-			"./node_modules/bootswatch/dist/litera/bootstrap.css",
+				"node_modules/bootstrap-material-design/scss/bootstrap-material-design.scss",
               "src/styles.scss"
             ],
             "scripts": []
