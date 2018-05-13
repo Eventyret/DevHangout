@@ -1,11 +1,5 @@
 <simple-notifications></simple-notifications>
-<!-- Top -->
-<div class="triangle-button-top" (click)="openModal()"  (mouseover)="spin = true" (mouseout)="spin = false" placement="left"  container="body" ngbTooltip="Want to show us some love?">
-		<i class="fas fa-heart" [class.ani-pulse]="spin"></i>
-	</div>
-
-<!-- Bottom -->
-<div class="triangle-button-bottom" (click)="openModal()"  (mouseover)="spin = true" (mouseout)="spin = false" placement="left"  container="body" ngbTooltip="Want to show us some love?">
-		<i class="fas fa-heart" [class.ani-pulse]="spin"></i>
-	</div>
-
+<button type="button" class="btn btn-danger bmd-btn-fab active fab-sticky" (click)="openModal()" (mouseover)="spin = true"
+ (mouseout)="spin = false" placement="left" container="body" ngbTooltip="Want to show us some love?">
+	<i class="fas fa-heart" [class.ani-pulse]="spin"></i>
+</button>
