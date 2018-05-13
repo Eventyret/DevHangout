@@ -1,3 +1,13 @@
+html {
+	height: 100%;
+}
 .register {
-	height: 84.4vh;
+	height: 86.9vh;
+	/* background: url("http://www.xsjjys.com/data/out/30/WHDQ-511769349.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%; */
+	background: #159957; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #159957, #155799); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #159957, #155799); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
