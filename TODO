@@ -14,7 +14,9 @@ Frontend
 				☐ Wire Up Component
 				☐ Testing Component
 				☐ Re-design
-
+				☐ Read more fade
+				☐ Little bit of fade / 3d effect on ribbon
+				☐ Empethis on hover effect and Titles
 			Add / Edit Profile
 				✔ Create Component @started(06-05-18 14:51) @done(06-05-18 14:51) @lasted(23 seconds)
 				☐ Style Component
@@ -133,6 +135,7 @@ Frontend
 		☐ Create Service
 		☐ Wire Up Service
 		☐ Testing Service
+		☐ Fix Skills fixed height
 
 		Github (For Profile)
 		☐ Create Service
