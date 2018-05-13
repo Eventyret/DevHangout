@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm bg-primary mb-4">
+<nav class="navbar navbar-expand-sm bg-primary">
 	<div class="container">
 		<a href="#" class="navbar-brand">Developers Hangout</a>
 		<button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="mobileNav">
@@ -35,11 +35,29 @@
 							<div class="dropdown-divider"></div>
 							<!-- Needs to change dynamic -->
 							<a routerLink="dashboard" class="dropdown-item">
-								<i class="fas fa-tachometer-alt"></i> Your Dashboard</a>
+								<div class="col-2">
+									<i class="fas fa-tachometer-alt"></i>
+								</div>
+								<div class="col-6">
+									Dashboard
+								</div>
+							</a>
 							<a routerLink="profile/0/eventyret" class="dropdown-item">
-								<i class="fas fa-user"></i> My Profile</a>
+								<div class="col-2">
+									<i class="fas fa-user"></i>
+								</div>
+								<div class="col-6">
+									Profile
+								</div>
+							</a>
 							<a href="#" class="dropdown-item">
-								<i class="fas fa-sign-out-alt"></i> Log out</a>
+								<div class="col-2">
+									<i class="fas fa-sign-out-alt"></i>
+								</div>
+								<div class="col-6">
+									Log out
+								</div>
+							</a>
 						</div>
 					</div>
 			</ul>
