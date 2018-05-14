@@ -8,8 +8,11 @@
 <div class="modal-body">
 	<div>
 		<form novalidate (ngSubmit)="buy($event)" [formGroup]="stripeTest">
-			<div class="form-group">
-				<input  class="form-control"type="text" formControlName="name" placeholder="Jane Doe">
+			<div class="bmd-form-group">
+				<input  class="form-control" type="text" formControlName="name" placeholder="Jane Doe">
+			</div>
+			<div class="bmd-form-group">
+				<input  class="form-control" type="number" formControlName="amount" placeholder="Amount">
 			</div>
 			<div id="card-element" class="field"></div>
 			<div class="modal-footer">

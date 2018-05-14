@@ -20,6 +20,7 @@ export class SupporterModalComponent implements OnInit {
 	payInProgress = false;
 	errorMsg: string;
 	name: string;
+	amount: number;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -31,7 +32,8 @@ export class SupporterModalComponent implements OnInit {
 
 	ngOnInit() {
 		this.stripeTest = this.fb.group({
-			name: ["", [Validators.required]]
+			name: ["", [Validators.required]],
+			amount: ["", [Validators.required]]
 		});
 		this.stripeService.elements(this.elementsOptions).subscribe(elements => {
 			this.elements = elements;
@@ -61,9 +63,11 @@ export class SupporterModalComponent implements OnInit {
 		this.spinner.show();
 		this.payInProgress = true;
 		this.name = this.stripeTest.get("name").value;
-		this.stripeService.createToken(this.card, { name }).subscribe(results => {
+		this.amount = this.stripeTest.get("amount").value;
+		this.stripeService.createToken(this.card, { name, }).subscribe(results => {
 			if (results.token) {
 				console.log(results);
+				console.log(this.amount);
 				this.notify.success("Thank you " + this.name + "!", results.token.id);
 				this.activeModal.dismiss();
 				this.spinner.hide();
