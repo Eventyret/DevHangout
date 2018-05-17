@@ -6,14 +6,29 @@
 				<p class="lead text-center">Sign in to your Developers Hangout Account</p>
 				<!-- This needs to be wired up -->
 				<div class="card card-body">
-					<form>
+					<form [formGroup]="loginForm">
 						<div class="bmd-form-group">
-							<input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="Your Email" required />
+							<input
+							formControlName="email"
+							type="email"
+							name="email"
+							id="email"
+							class="form-control form-control-lg"
+							placeholder="Your Email">
+						</div>
+						<div class="bmd-form-group" *ngIf="emailField.touched && emailField.invalid">
+							<div *ngIf="emailField.invalid">Email is requried</div>
 						</div>
 						<div class="bmd-form-group">
-							<input type="password" name="password" id="password" class="form-control form-control-lg" placeholder="Password">
+							<input
+							formControlName="password"
+							type="password"
+							name="password"
+							id="password"
+							class="form-control form-control-lg"
+							placeholder="Password">
 						</div>
-						<input type="submit" class="btn btn-raised btn-info btn-block mt-4">
+						<input type="submit" class="btn btn-raised btn-info btn-block mt-4" [disabled]="!loginForm.valid">
 					</form>
 				</div>
 			</div>
