@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FakeService } from "../shared/services/fake.service";
-import { Users } from "../shared/services/users";
+import { Users } from "../shared/models/users";
 import { NgxSpinnerService } from "ngx-spinner";
 @Component({
 	selector: "app-profiles",
