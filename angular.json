@@ -28,7 +28,7 @@
 			  { "glob": "fakeusers.json", "input": "./", "output": "./assets/" }
             ],
             "styles": [
-				"node_modules/bootstrap-material-design/scss/bootstrap-material-design.scss",
+			"src/assets/bootstrap.css",
               "src/styles.scss"
             ],
             "scripts": []
