@@ -18,4 +18,4 @@ export class SignupComponent implements OnInit {
 			password: new FormControl(null, Validators.compose([Validators.required, Validators.minLength(6)]))
 		});
 	}
-}dasdas
+}
