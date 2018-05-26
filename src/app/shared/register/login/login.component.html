@@ -7,7 +7,7 @@
 				<!-- This needs to be wired up -->
 				<div class="card card-body">
 					<form [formGroup]="loginForm">
-						<div class="bmd-form-group">
+						<div class="form-group">
 							<input
 							formControlName="email"
 							type="email"
@@ -16,10 +16,10 @@
 							class="form-control form-control-lg"
 							placeholder="Your Email">
 						</div>
-						<div class="bmd-form-group" *ngIf="emailField.touched && emailField.invalid">
+						<div class="form-group" *ngIf="emailField.touched && emailField.invalid">
 							<div *ngIf="emailField.invalid">Email is requried</div>
 						</div>
-						<div class="bmd-form-group">
+						<div class="form-group">
 							<input
 							formControlName="password"
 							type="password"
@@ -28,7 +28,7 @@
 							class="form-control form-control-lg"
 							placeholder="Password">
 						</div>
-						<input type="submit" class="btn btn-raised btn-info btn-block mt-4" [disabled]="!loginForm.valid">
+						<input type="submit" class="btn btn-info btn-block mt-4" [disabled]="!loginForm.valid">
 					</form>
 				</div>
 			</div>

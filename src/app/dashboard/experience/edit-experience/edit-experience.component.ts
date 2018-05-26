@@ -1,16 +1,14 @@
 import { Component, OnInit } from "@angular/core";
-import {NgbModal, NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
+import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
-  selector: "app-edit-experience",
-  templateUrl: "./edit-experience.component.html",
-  styleUrls: ["./edit-experience.component.scss"]
+	selector: "app-edit-experience",
+	templateUrl: "./edit-experience.component.html",
+	styleUrls: ["./edit-experience.component.scss"]
 })
 export class EditExperienceComponent implements OnInit {
 	name;
-	constructor(public activeModal: NgbActiveModal) { }
+	constructor(public activeModal: NgbActiveModal) {}
 
-  ngOnInit() {
-  }
-
+	ngOnInit() {}
 }

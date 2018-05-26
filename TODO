@@ -124,7 +124,7 @@ Frontend
 			✔ Style Component @done(06-05-18 18:15)
 			☐ Testing Component
 			☐ Needs ngIF state for logged in and out
-			☐ Transparent  bg for (Profile, Login, Logout, Dashpage (before scroll))
+			☐ Transparent bg for (Profile, Login, Logout, Dashpage (before scroll))
 
 		API ( Backend )
 			☐ Create Service
