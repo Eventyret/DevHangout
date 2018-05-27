@@ -1,14 +1,52 @@
-.fas.fa-heart {
+.fa-heart,.fa-info,.fa-question {
 	color: #fff;
-	font-size: ¨3rem;
+	font-size: 1.8rem;
 }
 .fab-sticky {
 	position: fixed;
 	bottom: 45vh;
 	right: 15px;
 	z-index: 1;
+	&:hover .fab-buttons:not(:last-child) {
+		opacity: 1;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+		margin: 15px auto 0;
+	}
 }
-
+.fab-buttons {
+	border-radius: 50%;
+	background-color: #FF5722;
+	display: block;
+	width: 56px;
+	height: 56px;
+	margin: 20px auto 0;
+	position: relative;
+	-webkit-transition: all 0.1s ease-out;
+	transition: all 0.1s ease-out;
+	border: none;
+	outline: none;
+	&:active,
+	&:focus,
+	&:hover {
+	}
+	&:not(:last-child) {
+		width: 56px;
+		height: 56px;
+		margin: 20px auto 0;
+		opacity: 0;
+		-webkit-transform: translateY(50px);
+		-ms-transform: translateY(50px);
+		transform: translateY(50px);
+	}
+	&.blue {
+		background-color: #2196F3;
+	}
+	&.red {
+		background-color: #f44336;
+	}
+}
 /* Pulsing Animation Effect */
 .ani-pulse {
 	&:hover {

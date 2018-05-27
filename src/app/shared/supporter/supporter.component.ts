@@ -1,6 +1,6 @@
 import { SupporterModalComponent } from "./supporter-modal/supporter-modal.component";
 import { Component, OnInit } from "@angular/core";
-import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
+import { NgbModal, NgbActiveModal, NgbTooltip } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
 	selector: "app-supporter",
