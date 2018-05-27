@@ -16,8 +16,7 @@ export class FabComponent implements OnInit {
 	openInfo(event) {
 		const modalRef = this.modalService.open(InfoModalComponent, {
 			centered: true,
-			size: "lg",
-			backdrop: "static"
+			size: "lg"
 		});
 	}
 	openSupporter(event) {
