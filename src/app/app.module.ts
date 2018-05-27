@@ -32,8 +32,9 @@ import { LoginComponent } from "./shared/register/login/login.component";
 import { RegisterComponent } from "./shared/register/register.component";
 import { SignupComponent } from "./shared/register/signup/signup.component";
 import { FakeService } from "./shared/services/fake.service";
-import { SupporterModalComponent } from "./shared/supporter/supporter-modal/supporter-modal.component";
-import { SupporterComponent } from "./shared/supporter/supporter.component";
+import { SupporterModalComponent } from "./shared/fab/supporter-modal/supporter-modal.component";
+import { FabComponent } from "./shared/fab/fab.component";
+import { InfoModalComponent } from "./shared/fab/info-modal/info-modal.component";
 
 
 const routes: Routes = [
@@ -48,6 +49,7 @@ const routes: Routes = [
 	{ path: "auth", component: RegisterComponent },
 	{ path: "dashboard", component: DashboardComponent },
 	{ path: "donate", component: SupporterModalComponent },
+	{ path: "donate-info", component: InfoModalComponent },
 	{ path: "education/add", component: AddEducationComponent },
 	{ path: "education/edit", component: EditEducationComponent },
 	{ path: "experience/add", component: AddExperienceComponent },
@@ -77,9 +79,10 @@ const routes: Routes = [
 		AddExperienceComponent,
 		EditProfileComponent,
 		AddProfileComponent,
-		SupporterComponent,
+		FabComponent,
 		SupporterModalComponent,
-		CommentsComponent
+		CommentsComponent,
+		InfoModalComponent
 	],
 	imports: [
 		BrowserModule,

@@ -1,0 +1,14 @@
+<simple-notifications></simple-notifications>
+
+<div class="fab-sticky">
+	<button class="fab-buttons blue" (click)="openInfo()" ngbTooltip="Find out more" placement="left" container="body" id="info">
+		<i class="fas fa-info"></i>
+	</button>
+	<button type="button" class="fab-buttons red" (click)="openSupporter()" (mouseover)="spin = true" (mouseout)="spin = false"
+	 placement="left" container="body" ngbTooltip="Want to show us some love?" id="supporter">
+		<i class="fas fa-heart" [class.ani-pulse]="spin"></i>
+	</button>
+	<button type="button" class="fab-buttons">
+		<i class="fas fa-question"></i>
+	</button>
+</div>
