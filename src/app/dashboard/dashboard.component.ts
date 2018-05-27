@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
 	}
 	open(event) {
 		const target = event.target.id;
-		if (event.target.id === "addEdu") {
+		if (target === "addEdu") {
 			this.comp = AddEducationComponent;
 		} else if (target === "addExp") {
 			this.comp = AddExperienceComponent;
