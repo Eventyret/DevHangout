@@ -15,7 +15,7 @@ export class GithubService {
 
 	constructor(private http: HttpClient) {}
 
-	gitRepo(username) {
+	public gitRepo(username) {
 		return this.http
 			.get(this.githubUrl + username + "/" + "repos")
 			.pipe(map((data: any) => data))

@@ -35,6 +35,7 @@ import { FakeService } from "./shared/services/fake.service";
 import { SupporterModalComponent } from "./shared/fab/supporter-modal/supporter-modal.component";
 import { FabComponent } from "./shared/fab/fab.component";
 import { InfoModalComponent } from "./shared/fab/info-modal/info-modal.component";
+import { GithubService } from "./shared/services/github.service";
 
 
 const routes: Routes = [
@@ -105,7 +106,7 @@ const routes: Routes = [
 			pauseOnHover: true,
 		})
 	],
-	providers: [FakeService],
+	providers: [FakeService, GithubService],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}
