@@ -74,9 +74,13 @@ WSGI_APPLICATION = 'BackendApi.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "devhangout_",
+        "USER": "dev",
+        "PASSWORD": "bQuv_606",
+        "HOST": "api.dehlin.info",
+        "PORT": "3306",
     }
 }
 
