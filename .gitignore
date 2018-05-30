@@ -44,3 +44,9 @@ __pycache__/
 .venv/
 env/
 venv/
+.env/
+.venv/
+# for use for dev enviroment
+dev.py
+*.pyc
+__pycache__/
