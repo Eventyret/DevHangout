@@ -43,3 +43,5 @@ Thumbs.db
 venv/
 .env/
 .venv/
+# for use for dev enviroment
+dev.py

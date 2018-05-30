@@ -15,12 +15,11 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'thco^#lstq4pfc-du@4mvdlu_0ir_x*-uzge&t10-a+@m#ja-0'
+SECRET_KEY = 'y(L(9\\/"I6&Eg\'w>E[:\\:E@EW\\3b^|>QXHeM}Cg!yxKq,'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -74,9 +73,13 @@ WSGI_APPLICATION = 'BackendAPI.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "devhangout_",
+        "USER": "dev",
+        "PASSWORD": "bQuv_606",
+        "HOST": "api.dehlin.info",
+        "PORT": "3306",
     }
 }
 
