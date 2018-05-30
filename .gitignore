@@ -40,4 +40,6 @@ testem.log
 Thumbs.db
 
 #No need for Virtual Env
+.venv/
+env/
 venv/
