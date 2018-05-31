@@ -51,3 +51,4 @@ dev.py
 *.pyc
 __pycache__/
 .vscode/
+.vscode/settings.json
