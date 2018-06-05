@@ -55,76 +55,75 @@
 * Same user can comment on it too
 * Users can like and dislike posts
 
-Database
-```sql
-Posts - Table:
-ID - (Primary Key)  not null - AutoField
-content - not null  - TextField
-date  - not null - DateTimeField
-UserID not null  - Foreign Key 
+# Database
 
-Comments - Table:
-ID (Primary Key)  not null - AutoField
-Comment not null - TextField
-Date not null - DateTimeField 
-PostID - (Foreign key) not null
-UserID - (Foreign Key) not null
+### Posts - Table:
+* ID - `(Primary Key) not null - AutoField`
+* Content - `not null - TextField`
+* Date - `not null - DateTimeField`
+* UserID - `not null  - Foreign Key`
 
-LikesAndDislikes  - Table:
-UserID - Forgein Key not null
-PostID - Forgein Key not null
-CommentID not null - AutoField
-isLike - Binary - not null
+### Comments - Table:
+* ID - `(Primary Key) not null - AutoField`
+* Comment - `not null - TextField`
+* Date - `not null - DateTimeField`
+* PostID - `(Foreign key) not null`
+* UserID - `(Foreign Key) not null`
 
-User Table:
-UserID (Primary Key)  not null - AutoField
-First Name - CharField
-Last Name - CharField
-Avatar - this will point to a image file - ImageField
-Email *(Required)*  - CharField
-Location  - CharField - Charfield
-Website *(Optional)*    - CharField
-Company  *(Optional)*  - CharField
-Title *(Optional)*   - CharField
-BackgroundImage *(For Donators Only)*    - CharField
-Bio *(Optional)* - TextField
-TwitterURL - CharField
-FacebookURL - CharField
-LinkedInURL - CharField
-YouTubeURL - CharField
-InstagramURL - CharField
-GitHubURL - CharField
+### LikesAndDislikes  - Table:
+* UserID - `Forgein Key not null`
+* PostID - `Forgein Key not null`
+* CommentID - `not null - AutoField`
+* isLike - `Binary - not null`
 
-Education Table:
-ID (Primary Key)  not null - AutoField
-UserID not null  - Foreign Key 
-School - CharField
-Qualification - CharField
-FieldOdfStudy - CharField
-DateFrom - DateField
-DateTo - DateField (present == null)
-Description   - TextField
+### User Table:
+* UserID - `(Primary Key)  not null - AutoField`
+* First Name - `CharField`
+* Last Name - `CharField`
+* Avatar - this will point to a image file - `ImageField`
+* Email *(Required)*  - `CharField`
+* Location  - CharField - `CharField`
+* Website *(Optional)*    - `CharField`
+* Company  *(Optional)*  - `CharField`
+* Title *(Optional)*   - `CharField`
+* BackgroundImage *(For Donators Only)*    - `CharField`
+* Bio *(Optional)* - `TextField`
+* TwitterURL - `CharField`
+* FacebookURL - `CharField`
+* LinkedInURL - `CharField`
+* YouTubeURL - `CharField`
+* InstagramURL - `CharField`
+* GitHubURL - `CharField`
 
-Job - Table:
-ID - primary key
-UserID not null  - Foreign Key 
-JobTitle - CharField
-Company - CharField
-Location - CharField
-DateFrom - DateField
-DateTo - DateField (present == null)
-Description - TextField
+### Education Table:
+* ID - `(Primary Key)  not null - AutoField`
+* UserID - `not null  - Foreign Key `
+* School - `CharField`
+* Qualification - `CharField`
+* FieldOdfStudy - `CharField`
+* DateFrom - `DateField`
+* DateTo - `DateField` *present IS NULL*
+* Description   - `TextField`
 
-Donation Table:
-UserID not null  - Foreign Key 
-Date - DateField
-Amount - IntegerField
+### Job - Table:
+* ID - `(Primary Key)`
+* UserID - `not null  - Foreign Key`
+* JobTitle - `CharField`
+* Company - `CharField`
+* Location - `CharField`
+* DateFrom - `DateField`
+* DateTo - `DateField` *present IS NULL*
+* Description - `TextField`
 
-Skills - Table:
-ID (Primary Key)(Unique) - IntegerField
-NameOfSkill - CharField 
+#### Donation Table:
+* UserID - `not null  - Foreign Key `
+* Date - `DateField`
+* Amount - `IntegerField`
 
-UserToSkills - Table
-UserID not null  - Foreign Key 
-SkillID - IntergerField
-```
+### Skills - Table:
+* ID - `(Primary Key)(Unique) - IntegerField`
+* NameOfSkill - `CharField` 
+
+### UserToSkills - Table
+* UserID - `not null  - Foreign Key `
+* SkillID - `IntergerField`
