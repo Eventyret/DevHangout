@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+class Skills(models.Model):
+	ID = models.AutoField(primary_key=True)
+	Name = models.CharField(max_length=50)
+	DisplayName = models.CharField(max_length=50)
