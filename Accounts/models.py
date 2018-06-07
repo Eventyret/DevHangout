@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-class Profiles(models.Model):
+class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     firstName = models.CharField(max_length=50)
     lastName = models.CharField(max_length=50)
@@ -25,7 +25,7 @@ class Profiles(models.Model):
     donator = models.BooleanField(default=False)
 
     class Meta:
-        verbose_name_plural = "User Information"
+        verbose_name_plural = "Profile"
 
     def __str__(self):
         return self.user
