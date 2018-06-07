@@ -7,7 +7,6 @@ from .serializers import SkillsSerializer
 
 
 class SkillsView(viewsets.ReadOnlyModelViewSet):
-	""" Settings it to read only as its not needed to be updated or deleted from the frontend """
-	queryset = Skills.objects.all()
-	serializer_class = SkillsSerializer
-
+    """ Settings it to read only as its not needed to be updated or deleted from the frontend """
+    queryset = Skills.objects.all()
+    serializer_class = SkillsSerializer
