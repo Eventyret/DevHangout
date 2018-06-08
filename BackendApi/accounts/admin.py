@@ -8,7 +8,7 @@ class AccountAdmin(admin.ModelAdmin):
     Custom View of Accounts
     """
 
-    list_display = ("user","email", "location", "title", "github", "donator", )
+    list_display = ("user", "email", "location", "title", "github", "donator", )
 
     list_filter = ("donator", )
 
