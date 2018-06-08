@@ -1,10 +1,10 @@
 from django.urls import path, include
-from .api import views
 from rest_framework import routers
+from .api import views
 
 router = routers.DefaultRouter()
 router.register("api/skills", views.SkillsView)
 
 urlpatterns = [
-	path("", include(router.urls))
+    path("", include(router.urls))
 ]

@@ -9,13 +9,13 @@ class AccountAdmin(admin.ModelAdmin):
     Custom View of Accounts
     """
 
-    list_display = ("email", "location", "title", "github", "donator",)
+    list_display = ("user","email", "location", "title", "github", "donator",)
 
     list_filter = ("donator", )
 
     search_fields = ("email", "firstName", "lastName", "github", )
 
-    ordering = ['user__username']
+    ordering = ["-user__username"]
 
 
 admin.site.register(Profile, AccountAdmin)
