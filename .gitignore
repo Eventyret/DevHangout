@@ -52,3 +52,5 @@ dev.py
 __pycache__/
 .vscode/
 .vscode/settings.json
+
+BackendApi/env.py
