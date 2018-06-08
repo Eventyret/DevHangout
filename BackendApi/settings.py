@@ -11,13 +11,13 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from datetime import timedelta
 import rest_framework
 # Setup enviroment for dev or prod
-if os.path.exists:
-	import env
+import env
 
-#Simplfy the writing of enviroment
-env = os.environ.get
+# Simplfy the writing of enviroment
+ENV = os.environ.get
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = ENV("SECRET_KEY")
 
 # SECURITY WARNING: don"t run with debug turned on in production!
 
@@ -84,11 +84,11 @@ WSGI_APPLICATION = "BackendApi.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": env("DBNAME"),
-        "USER":  env("DBUSER"),
-        "PASSWORD": env("DBPASS"),
-        "HOST": env("DBHOST"),
-        "PORT": env("DBPORT"),
+        "NAME": ENV("DBNAME"),
+        "USER":  ENV("DBUSER"),
+        "PASSWORD": ENV("DBPASS"),
+        "HOST": ENV("DBHOST"),
+        "PORT": ENV("DBPORT"),
     }
 }
 
@@ -134,4 +134,25 @@ STATIC_URL = "/static/"
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated", ),
     "DEFAULT_AUTHENTICATION_CLASSES": ("rest_framework_simplejwt.authentication.JWTAuthentication", )
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": True,
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": ENV("SECRET_KEY"),
+    "VERIFYING_KEY": None,
+
+    "AUTH_HEADER_TYPES": ("Bearer",),
+    "USER_ID_FIELD": "id",
+    "USER_ID_CLAIM": "user_id",
+
+    "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
+    "TOKEN_TYPE_CLAIM": "token_type",
+
+    "SLIDING_TOKEN_REFRESH_EXP_CLAIM": "refresh_exp",
+    "SLIDING_TOKEN_LIFETIME": timedelta(minutes=5),
+    "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=1),
 }
