@@ -12,7 +12,12 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import rest_framework
+# Setup enviroment for dev or prod
+if os.path.exists:
+	import env
 
+#Simplfy the writing of enviroment
+env = os.environ.get
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -21,10 +26,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "@1+62wprk*f&$a38)9bgx+vmy5dq$bfqt6^qj$z*b4u=v&wc)8"
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don"t run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = ["10.21.253.5", "localhost", "127.0.0.1"]
 
@@ -80,11 +84,11 @@ WSGI_APPLICATION = "BackendApi.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "devhangout_",
-        "USER": "dev",
-        "PASSWORD": "bQuv_606",
-        "HOST": "api.dehlin.info",
-        "PORT": "3306",
+        "NAME": env("DBNAME"),
+        "USER":  env("DBUSER"),
+        "PASSWORD": env("DBPASS"),
+        "HOST": env("DBHOST"),
+        "PORT": env("DBPORT"),
     }
 }
 
@@ -111,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "en-gb"
 
 TIME_ZONE = "UTC"
 
@@ -128,6 +132,6 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 REST_FRAMEWORK = {
-	"DEFAULT_PERMISSION_CLASSES" : ("rest_framework.permissions.IsAuthenticated", ),
-    "DEFAULT_AUTHENTICATION_CLASSES" : ("rest_framework_simplejwt.authentication.JWTAuthentication", )
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated", ),
+    "DEFAULT_AUTHENTICATION_CLASSES": ("rest_framework_simplejwt.authentication.JWTAuthentication", )
 }
