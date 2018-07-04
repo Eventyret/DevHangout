@@ -30,7 +30,7 @@ SECRET_KEY = ENV("SECRET_KEY")
 
 # SECURITY WARNING: don"t run with debug turned on in production!
 
-ALLOWED_HOSTS = ["10.21.253.5", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["10.21.253.5", "localhost", "127.0.0.1", "localhost:4200"]
 
 
 # Application definition
@@ -46,11 +46,13 @@ INSTALLED_APPS = [
     "Skills",
 	"Posts",
     "accounts",
+	"corsheaders"
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+	"corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -59,6 +61,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "BackendApi.urls"
+CORS_ORIGIN_ALLOW_ALL = True
 
 TEMPLATES = [
     {
@@ -148,7 +151,7 @@ SIMPLE_JWT = {
 
     "AUTH_HEADER_TYPES": ("Bearer",),
     "USER_ID_FIELD": "id",
-    "USER_ID_CLAIM": "user_id",
+    "USER_ID_CLAIM": "id",
 
     "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
     "TOKEN_TYPE_CLAIM": "token_type",
