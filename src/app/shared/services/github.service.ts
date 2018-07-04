@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import "rxjs/add/operator/catch";
-import { Observable } from "rxjs";
+import { throwError } from "rxjs";
 
 @Injectable({
 	providedIn: "root"
@@ -20,7 +20,7 @@ export class GithubService {
 			.get(this.githubUrl + username + "/" + "repos")
 			.pipe(map((data: any) => data))
 			.catch((error: any) => {
-				return Observable.throw(error);
+				return throwError(error);
 			});
 	}
 }

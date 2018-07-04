@@ -1,25 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { InfoModalComponent } from './info-modal.component';
+import { InfoModalComponent } from "./info-modal.component";
 
-describe('InfoModalComponent', () => {
+describe("InfoModalComponent", () => {
   let component: InfoModalComponent;
   let fixture: ComponentFixture<InfoModalComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ InfoModalComponent ]
-    })
-    .compileComponents();
+	TestBed.configureTestingModule({
+		declarations: [ InfoModalComponent ]
+	})
+	.compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InfoModalComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+	fixture = TestBed.createComponent(InfoModalComponent);
+	component = fixture.componentInstance;
+	fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it("should create", () => {
+	expect(component).toBeTruthy();
   });
 });

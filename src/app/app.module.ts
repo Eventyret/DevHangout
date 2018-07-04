@@ -36,6 +36,7 @@ import { SupporterModalComponent } from "./shared/fab/supporter-modal/supporter-
 import { FabComponent } from "./shared/fab/fab.component";
 import { InfoModalComponent } from "./shared/fab/info-modal/info-modal.component";
 import { GithubService } from "./shared/services/github.service";
+import { JwtModule } from "@auth0/angular-jwt";
 
 
 const routes: Routes = [
@@ -104,6 +105,19 @@ const routes: Routes = [
 			animate: "fromRight",
 			clickToClose: true,
 			pauseOnHover: true,
+		}),
+		JwtModule.forRoot({
+			config: {
+				tokenGetter: () => {
+					return localStorage.getItem("token");
+				  },
+				  whitelistedDomains: [
+					  "localhost:8000"
+					],
+				  blacklistedRoutes: [
+					  "localhost:8000/api/token"
+				  ]
+			}
 		})
 	],
 	providers: [FakeService, GithubService],
