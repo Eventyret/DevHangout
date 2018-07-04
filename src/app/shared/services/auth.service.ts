@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { map } from "rxjs/operators";
 import "rxjs/add/operator/catch";
+import { Token } from "../models/token";
 
 @Injectable({
 	providedIn: "root"
@@ -18,7 +19,7 @@ export class AuthService {
 		}
 	}
 	login(credentials) {
-		return this.http.post("http://localhost:8000/api/token/", credentials).pipe(
+		return this.http.post<Token>("http://localhost:8000/api/token/", credentials).pipe(
 			map(response => {
 				const result = response;
 
