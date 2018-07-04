@@ -38,6 +38,7 @@ import { InfoModalComponent } from "./shared/fab/info-modal/info-modal.component
 import { GithubService } from "./shared/services/github.service";
 import { JwtModule } from "@auth0/angular-jwt";
 import { AuthService } from "./shared/services/auth.service";
+import { AuthGuard } from "./shared/services/auth-guard.service";
 
 
 const routes: Routes = [
@@ -50,7 +51,7 @@ const routes: Routes = [
 	{ path: "profile/edit", component: EditProfileComponent },
 	{ path: "profile/delete", component: DeleteAccountComponent },
 	{ path: "auth", component: RegisterComponent },
-	{ path: "dashboard", component: DashboardComponent },
+	{ path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
 	{ path: "donate", component: SupporterModalComponent },
 	{ path: "donate-info", component: InfoModalComponent },
 	{ path: "education/add", component: AddEducationComponent },
@@ -121,7 +122,7 @@ const routes: Routes = [
 			}
 		})
 	],
-	providers: [FakeService, GithubService, AuthService],
+	providers: [FakeService, GithubService, AuthService, AuthGuard],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

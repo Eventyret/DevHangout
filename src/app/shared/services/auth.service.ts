@@ -41,6 +41,6 @@ export class AuthService {
 	}
 
 	isLoggedIn() {
-		return this.helper.isTokenExpired("token");
+		return this.helper.decodeToken(localStorage.getItem("token"));
 	}
 }
