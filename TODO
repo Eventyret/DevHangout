@@ -87,7 +87,7 @@ Frontend
 		✔ Style Component @done(07-05-18 11:49)
 		✔ Created Markup @started(07-05-18 11:14) @done(07-05-18 11:25) @lasted(11 minutes)
 		☐ Revisit for redesign
-		☐ Wire Up Component
+		✔ Wire Up Component @done(04-07-18 23:40)
 		☐ Testing Component
 		☐ Recreate background and style
 		☐ Create Half & Half
@@ -127,7 +127,7 @@ Frontend
 			☐ Transparent bg for (Profile, Login, Logout, Dashpage (before scroll))
 
 		API ( Backend )
-			☐ Create Service
+			✔ Create Service @done(04-07-18 23:41)
 			☐ Wire Up Service
 			☐ Testing Service
 
