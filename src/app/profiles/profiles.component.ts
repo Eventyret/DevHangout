@@ -26,7 +26,6 @@ export class ProfilesComponent implements OnInit {
 				console.log(error);
 			},
 			() => {
-				console.log("complete ran")
 				this.spinner.hide();
 			}
 		);

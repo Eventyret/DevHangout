@@ -8,8 +8,8 @@ from .serializers import ProfileSerializer, UserSerializer
 
 
 class ProfileView(viewsets.ModelViewSet):
-	queryset = Profile.objects.all()
-	serializer_class = ProfileSerializer
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
