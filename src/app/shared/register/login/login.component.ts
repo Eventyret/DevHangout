@@ -23,10 +23,8 @@ export class LoginComponent implements OnInit {
 	ngOnInit() {}
 
 	signIn(credentials) {
-		console.log(credentials);
 		this.authService.login(credentials)
 		.subscribe(results => {
-			console.log(results);
 			if (results) {
 				this.router.navigate(["/dashboard"]);
 			} else {

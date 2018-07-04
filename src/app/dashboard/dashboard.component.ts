@@ -24,9 +24,8 @@ export class DashboardComponent implements OnInit {
 	ngOnInit() {
 		this.spinner.show();
 		setTimeout(() => {
-			/** spinner ends after 5 seconds */
 			this.spinner.hide();
-		}, 2000);
+		}, 1500);
 	}
 	open(event) {
 		const target = event.target.id;
