@@ -37,6 +37,7 @@ import { FabComponent } from "./shared/fab/fab.component";
 import { InfoModalComponent } from "./shared/fab/info-modal/info-modal.component";
 import { GithubService } from "./shared/services/github.service";
 import { JwtModule } from "@auth0/angular-jwt";
+import { AuthService } from "./shared/services/auth.service";
 
 
 const routes: Routes = [
@@ -120,7 +121,7 @@ const routes: Routes = [
 			}
 		})
 	],
-	providers: [FakeService, GithubService],
+	providers: [FakeService, GithubService, AuthService],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

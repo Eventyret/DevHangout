@@ -6,7 +6,7 @@
 				<p class="lead text-center">Sign in to your Developers Hangout Account</p>
 				<!-- This needs to be wired up -->
 				<div class="card card-body">
-					<form [formGroup]="loginForm">
+					<form [formGroup]="loginForm" (ngSubmit)="signIn(loginForm.value)">
 						<div class="form-group">
 							<input
 							formControlName="username"
@@ -16,7 +16,7 @@
 							class="form-control form-control-lg"
 							placeholder="Username">
 						</div>
-						<div class="form-group" *ngIf="usernameField.touched && usernameField.invalid">
+						<div class="form-group" *ngIf="usernameField?.touched && usernameField.invalid">
 							<div *ngIf="usernameField.invalid">Email is requried</div>
 						</div>
 						<div class="form-group">
