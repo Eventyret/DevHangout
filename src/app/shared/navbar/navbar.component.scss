@@ -21,5 +21,16 @@ nav {
 	cursor: pointer;
 }
 .fas {
-	font-size: 1.25rem;
+	font-size: 1.75rem;
+}
+.avatar /deep/ .avatar-container {
+	width: 49px !important;
+    height: 34px !important;
+    margin-top: -10px !important;
+}
+.avatar /deep/ .avatar-content {
+	font-size: 1.75rem !important;
+}
+.fa-sign-out-alt {
+	font-size: 1rem;
 }

@@ -10,6 +10,7 @@ import { SignupComponent } from "../register/signup/signup.component";
 })
 export class NavbarComponent implements OnInit {
 	public isCollapsed = true;
+	public username = "Eventret";
 	constructor(public auth: AuthService, private modalService: NgbModal) {
 	}
 

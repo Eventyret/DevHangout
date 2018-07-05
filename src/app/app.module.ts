@@ -39,6 +39,7 @@ import { GithubService } from "./shared/services/github.service";
 import { JwtModule } from "@auth0/angular-jwt";
 import { AuthService } from "./shared/services/auth.service";
 import { AuthGuard } from "./shared/services/auth-guard.service";
+import { AvatarModule } from "ngx-avatar";
 
 
 const routes: Routes = [
@@ -120,7 +121,8 @@ const routes: Routes = [
 					  "localhost:8000/api/token"
 				  ]
 			}
-		})
+		}),
+		AvatarModule
 	],
 	providers: [FakeService, GithubService, AuthService, AuthGuard],
 	bootstrap: [AppComponent]
