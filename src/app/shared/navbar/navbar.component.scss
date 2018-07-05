@@ -4,11 +4,6 @@
 		outline: none;
 	}
 }
-img {
-	width: 25px;
-	margin-right: 5px;
-	margin-top: 7px;
-}
 
 .navbar,
 .nav-link,
@@ -24,4 +19,7 @@ nav {
 }
 .nav-link {
 	cursor: pointer;
+}
+.fas {
+	font-size: 1.25rem;
 }

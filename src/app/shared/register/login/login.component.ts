@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
 		this.authService.login(credentials)
 		.subscribe(results => {
 			if (results) {
+				this.activeModal.dismiss();
 				this.router.navigate(["/dashboard"]);
 			} else {
 				this.invalidLogin = true;

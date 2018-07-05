@@ -10,39 +10,33 @@
 
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a routerLink="profiles" class="nav-link" *ngIf="this.auth.isLoggedIn()">Developer List</a>
+					<a routerLink="profiles" class="nav-link" *ngIf="this.auth.isLoggedIn()"><i class="fas fa-users"></i></a>
 				</li>
 				<li class="nav-item">
-					<a routerLink="feed" class="nav-link" *ngIf="this.auth.isLoggedIn()">Post Feed</a>
+					<a routerLink="feed" class="nav-link" *ngIf="this.auth.isLoggedIn()"><i class="fas fa-user-edit"></i></a>
 				</li>
 				<!-- This need a ngIF logged in or out-->
 				<li class="nav-item">
-					<a class="nav-link" *ngIf="!this.auth.isLoggedIn()" (click)="openSignUp()"><i class="fas fa-user-plus"></i> Sign Up</a>
+					<a class="nav-link" *ngIf="!this.auth.isLoggedIn()" (click)="openSignUp()">
+						<i class="fas fa-user-plus"></i> Sign Up</a>
 					<li class="nav-item">
-						<a class="nav-link" *ngIf="!this.auth.isLoggedIn()" (click)="openLogin()">Login <i class="fas fa-key"></i></a>
+						<a class="nav-link circle" *ngIf="!this.auth.isLoggedIn()" (click)="openLogin()">Login
+							<i class="fas fa-key"></i>
+						</a>
 					</li>
 					<!-- This needs to be dynamic and needs a ngIF -->
-					<div ngbDropdown placement="bottom" #adrop="ngbDropdown" *ngIf="this.auth.isLoggedIn()">
-						<img class="rounded-circle" src="https://www.gravatar.com/avatar/anything?s=200&d=mm" alt="No Avatar / Replace with Name"
-						 id="avatar-menu" ngbDropdownToggle (mouseover)="adrop.open()">
-						<div ngbDropdownMenu aria-labelledby="avatar-menu" (mouseleave)="adrop.close()">
-							<h5 class="dropdown-header">Welcome Username</h5>
-							<div class="dropdown-divider"></div>
-							<!-- Needs to change dynamic -->
-							<a routerLink="dashboard" class="dropdown-item">
-								<div class="col-12">
-									<i class="fas fa-tachometer-alt"></i> Dashboard
-								</div>
-							</a>
-							<a routerLink="profile/0/eventyret" class="dropdown-item">
-								<div class="col-12">
-									<i class="fas fa-user"></i> Profile
-								</div>
-							</a>
-						</div>
-					</div>
-					<li class="nav-item" *ngIf="this.auth.isLoggedIn()">
-						<a href="#" class="nav-link" (click)="this.auth.logout()">
+					<li class="nav-item" *ngIf="this.auth.isLoggedIn()"  ngbTooltip="Your Dashboard" placement="bottom">
+						<a class="nav-link" (click)="this.auth.logout()" routerLink="dashboard">
+							<i class="fas fa-user-cog"></i>
+						</a>
+					</li>
+					<li class="nav-item" *ngIf="this.auth.isLoggedIn()"  ngbTooltip="Public Profile" placement="bottom">
+						<a class="nav-link" (click)="this.auth.logout()" routerLink="profile/0/eventyret">
+							<i class="fas fa-user-astronaut"></i>
+						</a>
+					</li>
+					<li class="nav-item" *ngIf="this.auth.isLoggedIn()"  ngbTooltip="Sign Out" placement="bottom">
+						<a class="nav-link" (click)="this.auth.logout()">
 							<i class="fas fa-sign-out-alt"></i>
 						</a>
 					</li>

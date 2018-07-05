@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../services/auth.service";
-import { NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import { NgbModal, NgbTooltip} from "@ng-bootstrap/ng-bootstrap";
 import { LoginComponent } from "../register/login/login.component";
 import { SignupComponent } from "../register/signup/signup.component";
 @Component({

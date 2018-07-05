@@ -4,6 +4,7 @@ import { JwtHelperService } from "@auth0/angular-jwt";
 import { map } from "rxjs/operators";
 import "rxjs/add/operator/catch";
 import { Token } from "../models/token";
+import { NgbActiveModal } from "../../../../node_modules/@ng-bootstrap/ng-bootstrap";
 
 @Injectable({
 	providedIn: "root"
@@ -25,9 +26,7 @@ export class AuthService {
 
 				if (result && result.access) {
 					localStorage.setItem("token", result.access);
-
 					this.currentUser = this.helper.decodeToken(localStorage.getItem("token"));
-
 					return true;
 				} else {
 					return false;
