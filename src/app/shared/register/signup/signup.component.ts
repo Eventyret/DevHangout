@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators, FormControl } from "@angular/forms";
+import { AuthService } from "../../services/auth.service";
+import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
 	selector: "app-signup",
@@ -9,7 +11,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from "@angular/forms"
 export class SignupComponent implements OnInit {
 	public signUpForm: FormGroup;
 	public emailRegex = "[^ @]*@[^ @]*";
-	constructor(private fb: FormBuilder) {}
+	constructor(private fb: FormBuilder,  private authService: AuthService, public activeModal: NgbActiveModal) {}
 
 	ngOnInit() {
 		this.signUpForm = this.fb.group({

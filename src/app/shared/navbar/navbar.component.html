@@ -17,11 +17,9 @@
 				</li>
 				<!-- This need a ngIF logged in or out-->
 				<li class="nav-item">
-					<a routerLink="signup" class="nav-link" *ngIf="!this.auth.isLoggedIn()">Sign Up </a>
+					<a class="nav-link" *ngIf="!this.auth.isLoggedIn()" (click)="openSignUp()"><i class="fas fa-user-plus"></i> Sign Up</a>
 					<li class="nav-item">
-						<a class="nav-link" *ngIf="!this.auth.isLoggedIn()" (click)="openLogin()">Login
-							<i class="fas fa-sign-in-alt"></i>
-						</a>
+						<a class="nav-link" *ngIf="!this.auth.isLoggedIn()" (click)="openLogin()">Login <i class="fas fa-key"></i></a>
 					</li>
 					<!-- This needs to be dynamic and needs a ngIF -->
 					<div ngbDropdown placement="bottom" #adrop="ngbDropdown" *ngIf="this.auth.isLoggedIn()">
