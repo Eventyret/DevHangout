@@ -7,3 +7,5 @@ services:
     volumes:
       - ./BackendApi:/code
     command: python manage.py runserver 0.0.0.0:8000
+
+    image: backendapi:latest
