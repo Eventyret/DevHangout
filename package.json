@@ -26,6 +26,7 @@
 		"bootstrap-material-design": "^4.1.1",
 		"bootswatch": "^4.1.1",
 		"core-js": "^2.5.4",
+		"ngx-avatar": "^2.9.0",
 		"ngx-spinner": "^2.0.1",
 		"ngx-stripe": "^6.0.0-rc.0",
 		"rxjs": "^6.0.0",
