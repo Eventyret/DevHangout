@@ -34,7 +34,7 @@ Frontend
 
 			Add / Edit Education
 				✔ Create Component @started(06-05-18 14:57) @done(06-05-18 14:57) @lasted(13 seconds)
-				☐ Style Component @started(06-05-18 22:34)
+				☐ Style Component
 				☐ Wire Up Component
 				☐ Testing Component
 
@@ -170,3 +170,11 @@ Frontend
 Mobile Responsive
 ✔ Navbar @done(06-05-18 18:15)
 ☐ Containers
+
+Docker Backend Container
+☐ Create Dockerfile
+☐ Create docker-compose file
+☐ Document Docker
+☐ Testing
+☐ Production Image
+☐ Development Image
