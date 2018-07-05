@@ -10,24 +10,21 @@
 
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a routerLink="profiles" class="nav-link">Developer List</a>
+					<a routerLink="profiles" class="nav-link" *ngIf="this.auth.isLoggedIn()">Developer List</a>
 				</li>
 				<li class="nav-item">
-					<a routerLink="feed" class="nav-link"  *ngIf="this.auth.isLoggedIn()">Post Feed</a>
+					<a routerLink="feed" class="nav-link" *ngIf="this.auth.isLoggedIn()">Post Feed</a>
 				</li>
 				<!-- This need a ngIF logged in or out-->
 				<li class="nav-item">
 					<a routerLink="signup" class="nav-link" *ngIf="!this.auth.isLoggedIn()">Sign Up </a>
 					<li class="nav-item">
-						<a routerLink="login" class="nav-link" *ngIf="!this.auth.isLoggedIn()">Login <i class="fas fa-sign-in-alt"></i></a>
-					</li>
-					<li class="nav-item">
-						<a href="#" class="nav-link">
-
+						<a class="nav-link" *ngIf="!this.auth.isLoggedIn()" (click)="openLogin()">Login
+							<i class="fas fa-sign-in-alt"></i>
 						</a>
 					</li>
 					<!-- This needs to be dynamic and needs a ngIF -->
-					<div ngbDropdown placement="bottom" #adrop="ngbDropdown"  *ngIf="this.auth.isLoggedIn()">
+					<div ngbDropdown placement="bottom" #adrop="ngbDropdown" *ngIf="this.auth.isLoggedIn()">
 						<img class="rounded-circle" src="https://www.gravatar.com/avatar/anything?s=200&d=mm" alt="No Avatar / Replace with Name"
 						 id="avatar-menu" ngbDropdownToggle (mouseover)="adrop.open()">
 						<div ngbDropdownMenu aria-labelledby="avatar-menu" (mouseleave)="adrop.close()">
@@ -44,13 +41,13 @@
 									<i class="fas fa-user"></i> Profile
 								</div>
 							</a>
-							<a href="#" class="dropdown-item">
-								<div class="col-12" (click)="this.auth.logout()">
-									<i class="fas fa-sign-out-alt"></i> Log out
-								</div>
-							</a>
 						</div>
 					</div>
+					<li class="nav-item" *ngIf="this.auth.isLoggedIn()">
+						<a href="#" class="nav-link" (click)="this.auth.logout()">
+							<i class="fas fa-sign-out-alt"></i>
+						</a>
+					</li>
 			</ul>
 		</div>
 	</div>
