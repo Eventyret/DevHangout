@@ -31,6 +31,17 @@ nav {
 .avatar /deep/ .avatar-content {
 	font-size: 1.75rem !important;
 }
-.fa-sign-out-alt {
+.fa-sign-out-alt, .fa-user-plus, .fa-sign-in-alt {
 	font-size: 1rem;
+}
+.btn-outline-white {
+    color: #fff;
+    background-color: transparent;
+    background-image: none;
+	border-color: #fff;
+	&:hover {
+		color: #fff;
+    background-color: #FF5722;
+    border-color: #FF5722;
+	}
 }

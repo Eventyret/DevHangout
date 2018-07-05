@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm bg-primary">
+<nav class="navbar navbar-expand-sm bg-primary sticky-top">
 	<div class="container">
 		<a href="#" class="navbar-brand">Developers Hangout</a>
 		<button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="mobileNav">
@@ -9,39 +9,42 @@
 			</ul>
 
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
+				<li class="nav-item mr-5">
 					<a routerLink="profiles" class="nav-link" *ngIf="this.auth.isLoggedIn()" ngbTooltip="Developers Profiles" placement="bottom">
 						<i class="fas fa-users"></i>
 					</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item mr-5">
 					<a routerLink="feed" class="nav-link" *ngIf="this.auth.isLoggedIn()" ngbTooltip="Developer Feed" placement="bottom">
 						<i class="fas fa-user-edit"></i>
 					</a>
 				</li>
-				<!-- This need a ngIF logged in or out-->
-				<li class="nav-item">
-					<a class="nav-link" *ngIf="!this.auth.isLoggedIn()" (click)="openSignUp()" ngbTooltip="Sign Up" placement="bottom">
-						<i class="fas fa-user-plus"></i></a>
-					<li class="nav-item">
-						<a class="nav-link circle" *ngIf="!this.auth.isLoggedIn()" (click)="openLogin()" ngbTooltip="Login" placement="bottom"><i class="fas fa-key"></i>
-						</a>
-					</li>
-					<!-- This needs to be dynamic and needs a ngIF -->
-					<li class="nav-item" *ngIf="this.auth.isLoggedIn()" ngbTooltip="Your Dashboard" placement="bottom">
-						<a class="nav-link" routerLink="dashboard">
-							<i class="fas fa-user-cog"></i>
-						</a>
-					</li>
-					<li class="nav-item" *ngIf="this.auth.isLoggedIn()" ngbTooltip="Public Profile" placement="bottom">
-						<a class="nav-link" routerLink="profile/0/eventyret">
-							<ngx-avatar [name]="username" class="avatar"></ngx-avatar>
-						</a>
-					</li>
+				<li class="nav-item mr-5" *ngIf="this.auth.isLoggedIn()" ngbTooltip="Your Dashboard" placement="bottom">
+					<a class="nav-link" routerLink="dashboard">
+						<i class="fas fa-user-cog"></i>
+					</a>
+				</li>
+				<li class="nav-item mr-5" *ngIf="this.auth.isLoggedIn()" ngbTooltip="Public Profile" placement="bottom">
+					<a class="nav-link" routerLink="profile/0/eventyret">
+						<ngx-avatar [name]="username" class="avatar"></ngx-avatar>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</div>
-	<a class="nav-link text-right" (click)="this.auth.logout()" *ngIf="this.auth.isLoggedIn()">
-		<button class="btn btn-danger">Logout <i class="fas fa-sign-out-alt"></i></button>
-	</a>
+		<a class="nav-link text-right" *ngIf="!this.auth.isLoggedIn()" (click)="openSignUp()">
+			<button class="btn btn-outline-white">Sign Up
+					<i class="fas fa-user-plus"></i>
+			</button>
+		</a>
+		<a class="nav-link text-right" *ngIf="!this.auth.isLoggedIn()" (click)="openLogin()"5>
+			<button class="btn btn-outline-white">Login
+				<i class="fas fa-sign-in-alt"></i>
+			</button>
+		</a>
+		<a class="nav-link text-right" (click)="this.auth.logout()" *ngIf="this.auth.isLoggedIn()">
+			<button class="btn btn-danger">Logout
+				<i class="fas fa-sign-out-alt"></i>
+			</button>
+		</a>
 </nav>
