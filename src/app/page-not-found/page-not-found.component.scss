@@ -48,3 +48,24 @@ p {
 
 	font-size: 2vmin;
 }
+
+.btn-outline-white {
+	position: absolute;
+	width: 120px;
+    right: 22.2%;
+    bottom: 35%;
+	z-index: 500;
+	animation: travoltaMagic 4s infinite 0.35s linear;
+
+}
+
+@keyframes travoltaMagic{
+    0%{
+		background: #FF5722;
+		color: #fff;
+	}
+    50%{
+		color: #fff;
+		background: transparent;
+        }
+}
