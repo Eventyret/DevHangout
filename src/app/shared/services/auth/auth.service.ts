@@ -19,6 +19,7 @@ export class AuthService {
 		if (token) {
 			this.currentUser = this.helper.decodeToken(token);
 		}
+		console.log
 	}
 	login(credentials) {
 		return this.http.post<Token>("http://localhost:8000/api/token/", credentials).pipe(
@@ -36,8 +37,8 @@ export class AuthService {
 		);
 	}
 	logout() {
-		localStorage.removeItem("token");
 		this.router.navigate(["/"]);
+		localStorage.removeItem("token");
 		this.currentUser = null;
 	}
 

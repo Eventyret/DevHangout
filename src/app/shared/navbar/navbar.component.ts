@@ -3,6 +3,7 @@ import { AuthService } from "../services/auth/auth.service";
 import { NgbModal, NgbTooltip} from "@ng-bootstrap/ng-bootstrap";
 import { LoginComponent } from "../components/login/login.component";
 import { SignupComponent } from "../components/signup/signup.component";
+import { Router } from "@angular/router";
 @Component({
 	selector: "app-navbar",
 	templateUrl: "./navbar.component.html",
@@ -11,7 +12,7 @@ import { SignupComponent } from "../components/signup/signup.component";
 export class NavbarComponent implements OnInit {
 	public isCollapsed = true;
 	public username = "Eventret";
-	constructor(public auth: AuthService, private modalService: NgbModal) {
+	constructor(public auth: AuthService, private modalService: NgbModal, public router: Router) {
 	}
 
 	ngOnInit() {}
