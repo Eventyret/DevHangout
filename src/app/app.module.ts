@@ -9,7 +9,6 @@ import { RouterModule, Routes } from "@angular/router";
 import { JwtModule } from "@auth0/angular-jwt";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { SimpleNotificationsModule } from "angular2-notifications";
-import { AvatarModule } from "ngx-avatar";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NgxStripeModule } from "ngx-stripe";
 
@@ -39,6 +38,7 @@ import { AuthGuard } from "./shared/services/auth/auth-guard.service";
 import { AuthService } from "./shared/services/auth/auth.service";
 import { FakeService } from "./shared/services/api/fake.service";
 import { GithubService } from "./shared/services/api/github.service";
+import { AvatarModule } from "ng2-avatar";
 
 
 const routes: Routes = [
@@ -49,7 +49,6 @@ const routes: Routes = [
 	{ path: "feed", component: FeedComponent, pathMatch: "full", canActivate: [AuthGuard]  },
 	{ path: "profile/:id/:username", component: ProfileComponent, pathMatch: "full" },
 	{ path: "profile/edit", component: EditProfileComponent, canActivate: [AuthGuard] },
-	{ path: "profile/delete", component: DeleteAccountComponent, canActivate: [AuthGuard]  },
 	{ path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
 	{ path: "donate", component: SupporterModalComponent },
 	{ path: "donate-info", component: InfoModalComponent },
@@ -118,7 +117,7 @@ const routes: Routes = [
 				  ]
 			}
 		}),
-		AvatarModule
+		AvatarModule.forRoot()
 	],
 	providers: [FakeService, GithubService, AuthService, AuthGuard],
 	bootstrap: [AppComponent]
