@@ -20,17 +20,11 @@ nav {
 .nav-link {
 	cursor: pointer;
 }
-.fas {
-	font-size: 1.75rem;
+li > a > .fas {
+	margin-top: 3px;
+	font-size: 1.85rem;
 }
-.avatar /deep/ .avatar-container {
-	width: 49px !important;
-    height: 34px !important;
-    margin-top: -10px !important;
-}
-.avatar /deep/ .avatar-content {
-	font-size: 1.75rem !important;
-}
+
 .fa-sign-out-alt, .fa-user-plus, .fa-sign-in-alt {
 	font-size: 1rem;
 }

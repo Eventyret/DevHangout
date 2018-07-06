@@ -5,6 +5,7 @@ import { map } from "rxjs/operators";
 import "rxjs/add/operator/catch";
 import { Token } from "../../models/token";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
+import { Router } from "@angular/router";
 
 @Injectable({
 	providedIn: "root"
@@ -13,7 +14,7 @@ export class AuthService {
 	currentUser: any;
 	helper = new JwtHelperService();
 
-	constructor(private http: HttpClient, public jwtHelper: JwtHelperService) {
+	constructor(private http: HttpClient, public jwtHelper: JwtHelperService, public router: Router) {
 		const token = localStorage.getItem("access");
 		if (token) {
 			this.currentUser = this.helper.decodeToken(token);
@@ -36,6 +37,7 @@ export class AuthService {
 	}
 	logout() {
 		localStorage.removeItem("token");
+		this.router.navigate(["/"]);
 		this.currentUser = null;
 	}
 
