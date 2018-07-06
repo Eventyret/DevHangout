@@ -19,7 +19,6 @@ export class AuthService {
 		if (token) {
 			this.currentUser = this.helper.decodeToken(token);
 		}
-		console.log
 	}
 	login(credentials) {
 		return this.http.post<Token>("http://localhost:8000/api/token/", credentials).pipe(
@@ -28,6 +27,7 @@ export class AuthService {
 
 				if (result && result.access) {
 					localStorage.setItem("token", result.access);
+					localStorage.setItem("refresh", result.refresh);
 					this.currentUser = this.helper.decodeToken(localStorage.getItem("token"));
 					return true;
 				} else {
@@ -44,5 +44,13 @@ export class AuthService {
 
 	isLoggedIn() {
 		return this.helper.decodeToken(localStorage.getItem("token"));
+	}
+
+	refreshToken() {
+		const Rtoken = localStorage.getItem("refresh");
+		 return this.http.post<Token>("http://localhost:8000/api/token/refresh/", {"refresh": Rtoken}).pipe(map(response => {
+			 console.log(response.access);
+			localStorage.setItem("token", response.access);
+		}));
 	}
 }
