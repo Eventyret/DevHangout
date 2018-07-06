@@ -6,6 +6,8 @@ ROUTER = routers.DefaultRouter()
 ROUTER.register("api/profile", views.ProfileView)
 ROUTER.register("api/profile/(?P<id>[0-9])/$", views.ProfileView)
 ROUTER.register("api/users", views.UserViewSet)
+ROUTER.register("api/users/(?P<id>[0-9])/$", views.ProfileView)
+ROUTER.register("api/register", views.UserViewSet)
 
 urlpatterns = [
     path("", include(ROUTER.urls))
