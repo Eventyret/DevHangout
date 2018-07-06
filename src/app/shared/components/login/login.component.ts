@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { AuthService } from "../../services/auth.service";
-import { Router } from "../../../../../node_modules/@angular/router";
+import { AuthService } from "../../services/auth/auth.service";
+import { Router } from "@angular/router";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({

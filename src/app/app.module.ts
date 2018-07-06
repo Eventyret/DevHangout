@@ -1,3 +1,4 @@
+import { FooterComponent } from "./shared/components/footer/footer.component";
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
@@ -5,10 +6,13 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule, Routes } from "@angular/router";
+import { JwtModule } from "@auth0/angular-jwt";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { SimpleNotificationsModule } from "angular2-notifications";
+import { AvatarModule } from "ngx-avatar";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NgxStripeModule } from "ngx-stripe";
+
 import { environment } from "../environments/environment";
 import { AppComponent } from "./app.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
@@ -17,7 +21,6 @@ import { EditEducationComponent } from "./dashboard/education/edit-education/edi
 import { AddExperienceComponent } from "./dashboard/experience/add-experience/add-experience.component";
 import { EditExperienceComponent } from "./dashboard/experience/edit-experience/edit-experience.component";
 import { AddProfileComponent } from "./dashboard/profile/add-profile/add-profile.component";
-import { DeleteAccountComponent } from "./dashboard/profile/delete-account/delete-account.component";
 import { EditProfileComponent } from "./dashboard/profile/edit-profile/edit-profile.component";
 import { ProfileComponent } from "./dashboard/profile/profile.component";
 import { CommentsComponent } from "./feed/comments/comments.component";
@@ -25,40 +28,35 @@ import { FeedComponent } from "./feed/feed/feed.component";
 import { PostsComponent } from "./feed/posts/posts.component";
 import { LandingComponent } from "./landing/landing.component";
 import { ProfilesComponent } from "./profiles/profiles.component";
-import { FooterComponent } from "./shared/footer/footer.component";
+import { FabComponent } from "./shared/components/fab/fab.component";
+import { InfoModalComponent } from "./shared/components/fab/info-modal/info-modal.component";
+import { SupporterModalComponent } from "./shared/components/fab/supporter-modal/supporter-modal.component";
 import { NavbarComponent } from "./shared/navbar/navbar.component";
-import { PageNotFoundComponent } from "./shared/page-not-found/page-not-found.component";
-import { LoginComponent } from "./shared/register/login/login.component";
-import { RegisterComponent } from "./shared/register/register.component";
-import { SignupComponent } from "./shared/register/signup/signup.component";
-import { FakeService } from "./shared/services/fake.service";
-import { SupporterModalComponent } from "./shared/fab/supporter-modal/supporter-modal.component";
-import { FabComponent } from "./shared/fab/fab.component";
-import { InfoModalComponent } from "./shared/fab/info-modal/info-modal.component";
-import { GithubService } from "./shared/services/github.service";
-import { JwtModule } from "@auth0/angular-jwt";
-import { AuthService } from "./shared/services/auth.service";
-import { AuthGuard } from "./shared/services/auth-guard.service";
-import { AvatarModule } from "ngx-avatar";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { LoginComponent } from "./shared/components/login/login.component";
+import { SignupComponent } from "./shared/components/signup/signup.component";
+import { AuthGuard } from "./shared/services/auth/auth-guard.service";
+import { AuthService } from "./shared/services/auth/auth.service";
+import { FakeService } from "./shared/services/api/fake.service";
+import { GithubService } from "./shared/services/api/github.service";
 
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
 	{ path: "login", component: LoginComponent, pathMatch: "full" },
-	{ path: "profiles", component: ProfilesComponent, pathMatch: "full" },
+	{ path: "profiles", component: ProfilesComponent, pathMatch: "full", canActivate: [AuthGuard]  },
 	{ path: "signup", component: SignupComponent, pathMatch: "full" },
-	{ path: "feed", component: FeedComponent, pathMatch: "full" },
+	{ path: "feed", component: FeedComponent, pathMatch: "full", canActivate: [AuthGuard]  },
 	{ path: "profile/:id/:username", component: ProfileComponent, pathMatch: "full" },
-	{ path: "profile/edit", component: EditProfileComponent },
-	{ path: "profile/delete", component: DeleteAccountComponent },
-	{ path: "auth", component: RegisterComponent },
+	{ path: "profile/edit", component: EditProfileComponent, canActivate: [AuthGuard] },
+	{ path: "profile/delete", component: DeleteAccountComponent, canActivate: [AuthGuard]  },
 	{ path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
 	{ path: "donate", component: SupporterModalComponent },
 	{ path: "donate-info", component: InfoModalComponent },
-	{ path: "education/add", component: AddEducationComponent },
-	{ path: "education/edit", component: EditEducationComponent },
-	{ path: "experience/add", component: AddExperienceComponent },
-	{ path: "experience/edit", component: EditExperienceComponent },
+	{ path: "education/add", component: AddEducationComponent, canActivate: [AuthGuard]  },
+	{ path: "education/edit", component: EditEducationComponent , canActivate: [AuthGuard] },
+	{ path: "experience/add", component: AddExperienceComponent, canActivate: [AuthGuard] },
+	{ path: "experience/edit", component: EditExperienceComponent, canActivate: [AuthGuard]  },
 	{ path: "**", component: PageNotFoundComponent } // Page not found
 ];
 
@@ -67,12 +65,10 @@ const routes: Routes = [
 		AppComponent,
 		FooterComponent,
 		NavbarComponent,
-		DeleteAccountComponent,
 		DashboardComponent,
 		ProfileComponent,
 		FeedComponent,
 		PostsComponent,
-		RegisterComponent,
 		LoginComponent,
 		LandingComponent,
 		ProfilesComponent,

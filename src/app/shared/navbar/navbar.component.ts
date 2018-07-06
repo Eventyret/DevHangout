@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthService } from "../services/auth.service";
+import { AuthService } from "../services/auth/auth.service";
 import { NgbModal, NgbTooltip} from "@ng-bootstrap/ng-bootstrap";
-import { LoginComponent } from "../register/login/login.component";
-import { SignupComponent } from "../register/signup/signup.component";
+import { LoginComponent } from "../components/login/login.component";
+import { SignupComponent } from "../components/signup/signup.component";
 @Component({
 	selector: "app-navbar",
 	templateUrl: "./navbar.component.html",

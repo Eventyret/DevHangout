@@ -3,7 +3,7 @@ import { NgbTooltipConfig } from "@ng-bootstrap/ng-bootstrap";
 import { NgxSpinnerService } from "ngx-spinner";
 import { ActivatedRoute } from "@angular/router";
 import { Users } from "../../shared/models/users";
-import { FakeService } from "../../shared/services/fake.service";
+import { FakeService } from "../../shared/services/api/fake.service";
 
 @Component({
 	selector: "app-profile",
