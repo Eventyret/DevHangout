@@ -25,18 +25,7 @@ export class SignupComponent implements OnInit {
 			cpassword: cpassword
 		});
 	}
-	get usernameField() {
-		return this.signupForm.get("username");
-	}
-	get emailField() {
-		return this.signupForm.get("email");
-	}
-	get passwordField() {
-		return this.signupForm.get("password");
-	}
-	get cpasswordField() {
-		return this.signupForm.get("cpassword");
-	}
+
 	register(user) {
 		this.authService.register(user).subscribe(results => {
 			if (results) {
