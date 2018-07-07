@@ -26,6 +26,7 @@
     "bootswatch": "^4.1.1",
     "core-js": "^2.5.7",
     "ng2-avatar": "^2.3.1",
+    "ng5-validation": "^1.0.0",
     "ngx-spinner": "^6.0.0",
     "ngx-stripe": "^6.0.0-rc.0",
     "rxjs": "^6.2.1",
