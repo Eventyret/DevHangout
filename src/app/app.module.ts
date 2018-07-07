@@ -100,7 +100,7 @@ const routes: Routes = [
 			position: ["top", "right"],
 			timeOut: 5000,
 			showProgressBar: true,
-			animate: "fromRight",
+			animate: "scale",
 			clickToClose: true,
 			pauseOnHover: true,
 		}),

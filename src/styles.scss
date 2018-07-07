@@ -29,3 +29,14 @@ a {
     border-color: #FF5722;
 	}
 }
+.simple-notification-wrapper.right {
+    right: 20px;
+}
+.simple-notification-wrapper.top {
+    top: 90px !important;
+}
+.simple-notification-wrapper {
+    position: fixed;
+    width: 300px;
+    z-index: 9999950 !important;
+}
