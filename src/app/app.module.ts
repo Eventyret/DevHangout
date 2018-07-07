@@ -40,6 +40,9 @@ import { AuthService } from "./shared/services/auth/auth.service";
 import { FakeService } from "./shared/services/api/fake.service";
 import { GithubService } from "./shared/services/api/github.service";
 import { AvatarModule } from "ng2-avatar";
+import { TestimonialsComponent } from './landing/components/testimonials/testimonials.component';
+import { SectionsComponent } from './landing/components/sections/sections.component';
+import { DividersComponent } from './landing/components/dividers/dividers.component';
 
 
 const routes: Routes = [
@@ -83,7 +86,10 @@ const routes: Routes = [
 		FabComponent,
 		SupporterModalComponent,
 		CommentsComponent,
-		InfoModalComponent
+		InfoModalComponent,
+		TestimonialsComponent,
+		SectionsComponent,
+		DividersComponent
 	],
 	imports: [
 		BrowserModule,
