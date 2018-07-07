@@ -11,6 +11,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { SimpleNotificationsModule } from "angular2-notifications";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NgxStripeModule } from "ngx-stripe";
+import { TruncateModule } from "@yellowspot/ng-truncate";
 
 import { environment } from "../environments/environment";
 import { AppComponent } from "./app.component";
@@ -95,6 +96,7 @@ const routes: Routes = [
 		HttpClientModule,
 		FormsModule,
 		ReactiveFormsModule,
+		TruncateModule,
 		NgxStripeModule.forRoot(environment.publish_api_key),
 		SimpleNotificationsModule.forRoot({
 			position: ["top", "right"],
