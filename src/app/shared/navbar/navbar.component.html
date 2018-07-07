@@ -1,12 +1,29 @@
 <nav class="navbar navbar-expand-sm bg-primary sticky-top" *ngIf="this.router.url != '/not-found' ">
 	<div class="container">
-		<a href="#" class="navbar-brand">Developers Hangout</a>
-		<button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="mobileNav">
-			<i class="fas fa-bars"></i>
-		</button>
-		<div class="collapse navbar-collapse" id="mobileNav" [ngbCollapse]="isCollapsed">
-			<ul class="navbar-nav mr-auto">
-			</ul>
+		<a routerLink="/" class="navbar-brand">Developers Hangout</a>
+		<div class="d-sm-none">
+			<button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="mobileNav">
+				<i class="fas fa-bars"></i>
+			</button>
+
+			<div class="collapse navbar-collapse" id="mobileNav" [ngbCollapse]="isCollapsed">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a routerLink="/profiles" class="nav-link">Profiles</a>
+					</li>
+					<li class="nav-item">
+						<a routerLink="/feed" class="nav-link">Feed</a>
+					</li>
+					<li class="nav-item">
+						<a routerLink="/dashboard" class="nav-link">Dashboard</a>
+					</li>
+					<li class="nav-item">
+						<a routerLink="profile/0/eventyret" class="nav-link">Your Profile</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="d-none d-sm-block">
 
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item mr-5">
@@ -31,10 +48,12 @@
 				</li>
 			</ul>
 		</div>
+
 	</div>
+	<div class="d-none d-sm-block">
 		<a class="nav-link text-right" *ngIf="!this.auth.isLoggedIn()" (click)="openSignUp()">
 			<button class="btn btn-outline-white">Sign Up
-					<i class="fas fa-user-plus"></i>
+				<i class="fas fa-user-plus"></i>
 			</button>
 		</a>
 		<a class="nav-link text-right" *ngIf="!this.auth.isLoggedIn()" (click)="openLogin()">
@@ -47,4 +66,5 @@
 				<i class="fas fa-sign-out-alt"></i>
 			</button>
 		</a>
+	</div>
 </nav>
