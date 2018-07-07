@@ -26,24 +26,11 @@ img {
 		justify-content: center;
 	}
 }
-.divider {
-	background: #fff;
-	.col-md-12 {
-		background: #112938;
-		color: #e0ebcf;
-		justify-content: center;
-		align-items: center;
-		display: flex;
-	}
-}
+
 
 #more-info {
 	position: absolute;
 	bottom: 150px;
 	left: 50%;
 	transform: translate(-50%);
-}
-
-.info {
-	height: 98vh;
 }
