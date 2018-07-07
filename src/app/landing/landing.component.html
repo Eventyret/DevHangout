@@ -1,4 +1,4 @@
-<ngx-spinner bdOpacity="0.9" bdColor="#2196F3" size="large" color="#FFEB3B" loadingText="Eating up cookies..." type="pacman"></ngx-spinner>
+<ngx-spinner bdOpacity="0.9" bdColor="#112938" size="large" color="#FFEB3B" loadingText="Eating up cookies..." type="pacman"></ngx-spinner>
 <div class="bg-landing">
 	<div class="dark-overlay bg-inner text-light">
 		<div class="container">
@@ -92,18 +92,4 @@
 	</div>
 </div>
 
-<div class="container testimonals my-5">
-	<div class="row">
-		<div class="col-md-4" *ngFor="let info of testimonials | slice: 0:6">
-			<div class="testimonal-container">
-				<div class="testimonal-card">
-					<img src="{{info.avatar}}" alt="" class="profile">
-					<blockquote>{{info.testimonal | truncate :130}}</blockquote>
-					<h3>{{info.name}}
-						<span>{{info.title}}</span>
-					</h3>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+<app-testimonials></app-testimonials>
