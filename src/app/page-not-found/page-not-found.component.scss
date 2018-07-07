@@ -10,14 +10,14 @@ body {
 	position: absolute;
 	width: 100%;
 	min-height: 100%;
-	background: url(http://i.imgur.com/qhMbkGi.jpg) #212121 no-repeat center center fixed;
+	background: url(http://i.imgur.com/qhMbkGi.jpg) #112938 no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: contain;
 }
 .content {
-	color: #fff;
+	color:  #fff;
 	background-color: transparent;
 	z-index: 2;
 	position: absolute;
@@ -62,10 +62,10 @@ p {
 @keyframes travoltaMagic{
     0%{
 		background: #FF5722;
-		color: #fff;
+		color:  #fff;
 	}
     50%{
-		color: #fff;
+		color:  #fff;
 		background: transparent;
         }
 }

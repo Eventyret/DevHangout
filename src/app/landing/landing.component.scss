@@ -4,26 +4,44 @@ img {
 
 .bg-landing {
 	position: relative;
-	background: url("../../assets/landing-bg.jpeg");
+	background: url("../../assets/landingBG.png");
 	background-size: cover;
 	background-position: center;
-	height: 100vh;
-
+	height: 98vh;
 
 	.bg-inner {
 		padding-top: 80px;
-
-		&.dark-overlay {
-			background-color: rgba(0, 0, 0, 0.7);
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		}
 	}
 }
 
 .cards-container {
 	height: 50vh;
+	background: #e0ebcf;
+	align-items: center;
+
+	.card {
+		border: 0px solid transparent;
+		background: transparent;
+		color: #2b4d68;
+		justify-content: center;
+	}
+}
+.testimonials {
+	background: #fff;
+	height: 60vh;
+	.col-md-12 {
+		background: #112938;
+		color: #e0ebcf;
+		height: 20vh;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+	}
+}
+
+#more-info {
+	position: absolute;
+	bottom: 150px;
+	left: 50%;
+	transform: translate(-50%);
 }

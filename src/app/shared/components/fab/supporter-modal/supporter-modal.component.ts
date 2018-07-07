@@ -49,7 +49,7 @@ export class SupporterModalComponent implements OnInit {
 							fontFamily: "Roboto",
 							fontSize: "18px",
 							"::placeholder": {
-								color: "#212121"
+								color: "#112938"
 							}
 						}
 					}
