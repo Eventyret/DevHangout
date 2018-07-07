@@ -61,7 +61,6 @@ export class AuthService {
 					this.notify.success("Welcome" + user.username + ". You can now log in");
 					return true;
 				} else {
-					console.log("else ran")
 					this.spinner.hide();
 					this.notify.error("There was an error please try again");
 					return false;
@@ -83,7 +82,6 @@ export class AuthService {
 		const Rtoken = localStorage.getItem("refresh");
 		return this.http.post<Token>("http://localhost:8000/api/token/refresh/", { refresh: Rtoken }).pipe(
 			map(response => {
-				console.log(response.access);
 				localStorage.setItem("token", response.access);
 			})
 		);
