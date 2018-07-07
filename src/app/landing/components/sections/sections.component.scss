@@ -1,3 +1,13 @@
 .info {
 	height: 80vh;
 }
+.divider {
+	background: #fff;
+	.col-md-12 {
+		background: #112938;
+		color: #e0ebcf;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+	}
+}
