@@ -1,5 +1,5 @@
-.testimoials {
-	height: 100vh;
+.testimonals {
+	height: 80vh;
 }
 .testimonal-container {
 	position: relative;
@@ -84,3 +84,16 @@
 		}
 	}
 }
+.divider {
+	background: #112938;
+	color: #fff;
+	.col-md-12 {
+		background: #fff;
+		color: #112938;
+		justify-content: center;
+		align-items: center;
+		display: flex;
+	}
+}
+
+
