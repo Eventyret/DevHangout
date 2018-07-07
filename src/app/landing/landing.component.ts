@@ -6,7 +6,8 @@ import { Component, OnInit } from "@angular/core";
 	styleUrls: ["./landing.component.scss"]
 })
 export class LandingComponent implements OnInit {
-
+	Dividers: Divider;
+	Sections: Section;
 	constructor() {}
 
 	ngOnInit() {}

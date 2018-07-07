@@ -43,6 +43,7 @@ import { AvatarModule } from "ng2-avatar";
 import { TestimonialsComponent } from "./landing/components/testimonials/testimonials.component";
 import { SectionsComponent } from "./landing/components/sections/sections.component";
 import { DividersComponent } from "./landing/components/dividers/dividers.component";
+import { LandingPageService } from "./landing/service/landing-page.service";
 
 
 const routes: Routes = [
@@ -127,7 +128,7 @@ const routes: Routes = [
 		}),
 		AvatarModule.forRoot()
 	],
-	providers: [FakeService, GithubService, AuthService, AuthGuard],
+	providers: [FakeService, GithubService, AuthService, AuthGuard, LandingPageService],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}
