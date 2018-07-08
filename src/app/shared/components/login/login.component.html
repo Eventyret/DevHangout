@@ -27,6 +27,11 @@
 			class="form-control form-control-lg"
 			placeholder="Password">
 		</div>
-		<input type="submit" class="btn btn-success btn-block mt-4" [disabled]="!loginForm.valid">
+		<div *ngIf="loginForm.valid; else elseBlock">
+				<input type="submit" class="btn btn-success btn-block mt-4" value="Login">
+			</div>
+			<ng-template #elseBlock>
+					<input type="submit" class="btn btn-danger btn-block mt-4" [disabled]="!loginForm.valid" value="Login">
+			</ng-template>
 	</form>
 </div>
