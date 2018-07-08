@@ -29,6 +29,9 @@ export class AuthService {
 			this.currentUser = this.helper.decodeToken(token);
 		}
 	}
+	getUser(id) {
+		return this.http.get("http://localhost:8000/api/users/" + id).pipe(map((data: any) => data));
+	}
 	login(credentials) {
 		return this.http.post<Token>("http://localhost:8000/api/token/", credentials).pipe(
 			map(response => {
@@ -38,6 +41,7 @@ export class AuthService {
 					localStorage.setItem("token", result.access);
 					localStorage.setItem("refresh", result.refresh);
 					this.currentUser = this.helper.decodeToken(localStorage.getItem("token"));
+					this.setUserID(this.currentUser);
 					return true;
 				} else {
 					return false;
@@ -45,12 +49,15 @@ export class AuthService {
 			})
 		);
 	}
+	setUserID(userToken) {
+		localStorage.setItem("user_id", userToken.user_id);
+	}
 	register(user) {
 		this.spinner.show();
 		const data = {
-			"username": user.username,
-			"email": user.email,
-			"password": user.password
+			username: user.username,
+			email: user.email,
+			password: user.password
 		};
 		return this.http.post<UserRegistration>("http://localhost:8000/api/register/", data).pipe(
 			map(response => {
