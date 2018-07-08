@@ -51,7 +51,7 @@
 		"quotemark": [true, "double"],
 		"radix": true,
 		"semicolon": [true, "always"],
-		"triple-equals": [true, "allow-null-check"],
+		"triple-equals": [false, "allow-undefined-check"],
 		"typedef-whitespace": [
 			true,
 			{
