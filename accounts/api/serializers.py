@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
+from Skills.api.serializers import SkillsSerializer
 from ..models import Profile
 
 
@@ -11,9 +12,11 @@ class ProfileSerializer(serializers.ModelSerializer):
                   "backgroundImage", "bio", "twitter", "facebook", "linkedin", "instagram", "youtube", "github", "donator")
 
 class UserSerializer(serializers.ModelSerializer):
+	profile = ProfileSerializer()
+	#skills = SkillsSerializer(many =True)
 	class Meta:
 		model = User
-		fields = ("id", "username", "email", "password")
+		fields = ("id", "username", "email", "password", "profile")
 		write_only_fields = ('password',)
 		read_only_fields = ('id',)
 		extra_kwargs = {
@@ -21,6 +24,7 @@ class UserSerializer(serializers.ModelSerializer):
 					"write_only": True,
 					"required": True
 				}}
+
 
 
 	def create(self, validated_data):
