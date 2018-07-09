@@ -38,9 +38,6 @@ export class SignupComponent implements OnInit {
 			}
 		});
 	}
-	debugSubmit(value) {
-		console.log(value);
-	}
 
 	ngOnInit() {}
 }

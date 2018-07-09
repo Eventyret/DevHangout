@@ -17,7 +17,6 @@ export class SectionsComponent implements OnInit {
   getSections() {
 	this.landingService.getDataForLandingPage().subscribe(data => {
 		this.Sections = data[0].sections;
-		console.log(data);
 	});
 }
 
