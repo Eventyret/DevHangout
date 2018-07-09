@@ -1,7 +1,7 @@
 [{
 	"android":  {
 		"id": 1,
-		"name": "Angular",
+		"name": "Android",
 		"icon": "devicon-android-plain colored"
 	},
 	"angular": {
@@ -11,7 +11,7 @@
 	},
 	"backbonejs": {
 		"id": 3,
-		"name": "Angular",
+		"name": "Backbone JS",
 		"icon": "devicon-backbonejs-plain colored"
 	},
 	"bootstrap": {
