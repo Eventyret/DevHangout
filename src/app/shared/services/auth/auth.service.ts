@@ -9,6 +9,8 @@ import { Router } from "@angular/router";
 import { UserRegistration } from "../../models/userRegistration";
 import { NotificationsService } from "angular2-notifications";
 import { NgxSpinnerService } from "ngx-spinner";
+import { throwError } from "rxjs";
+import "rxjs/add/operator/catch";
 
 @Injectable({
 	providedIn: "root"
@@ -33,21 +35,27 @@ export class AuthService {
 		return this.http.get("http://localhost:8000/api/users/" + id).pipe(map((data: any) => data));
 	}
 	login(credentials) {
-		return this.http.post<Token>("http://localhost:8000/api/token/", credentials).pipe(
-			map(response => {
-				const result = response;
-
-				if (result && result.access) {
-					localStorage.setItem("token", result.access);
-					localStorage.setItem("refresh", result.refresh);
-					this.currentUser = this.helper.decodeToken(localStorage.getItem("token"));
-					this.setUserID(this.currentUser);
-					return true;
-				} else {
-					return false;
-				}
-			})
-		);
+		return this.http
+			.post<Token>("http://localhost:8000/api/token/", credentials)
+			.pipe(
+				map(response => {
+					const result = response;
+					if (result && result.access) {
+						localStorage.setItem("token", result.access);
+						localStorage.setItem("refresh", result.refresh);
+						this.currentUser = this.helper.decodeToken(localStorage.getItem("token"));
+						this.setUserID(this.currentUser);
+						return true;
+					} else {
+						return false;
+					}
+				})
+			)
+			.catch((error: any) => {
+				console.log(error)
+				console.log("Hello World")
+				return throwError(error);
+			});
 	}
 	setUserID(userToken) {
 		localStorage.setItem("user_id", userToken.user_id);
