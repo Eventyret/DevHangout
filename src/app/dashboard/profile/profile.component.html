@@ -4,14 +4,13 @@
 <div class="profile">
 	<div class="card card-body profile-background text-white mb-3" [ngStyle]="{'background': '#fff url(' + user?.profile.backgroundImage + ') no-repeat center center', 'background-size': cover, 'background-attachment': 'fixed', 'height': '75vh'}"
 	 *ngIf="support">
-
 		<div class="row">
 			<div class="m-auto">
 				<img class="rounded-circle profile-image" src="{{user?.profile.avatar}}" alt="{{user?.profile.username}}">
 			</div>
 		</div>
 		<div class="text-center profile-container">
-			<h1 class="text-bg">{{user?.profile.firstName}} {{user?.profile.lastName}}</h1>
+			<h1 class="text-bg">{{user?.profile.firstName}} "{{user?.username}}" {{user?.profile.lastName}}</h1>
 			<p class="lead text-bg">{{user?.profile.title}}
 				<span *ngIf="user?.profile.company">@</span> {{user?.profile.company}}</p>
 			<p class="text-bg">{{user?.profile.location}}</p>
@@ -49,7 +48,7 @@
 			</div>
 		</div>
 		<div class="col-md-3">
-			<div class="card card-body bg-light mb-3">
+			<div class="card card-body mb-3">
 				<h3 class="text-center text-primary">Skills</h3>
 				<div class="icons">
 					<div *ngFor="let skills of user?.profile.skills">
