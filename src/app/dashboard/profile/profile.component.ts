@@ -44,7 +44,7 @@ export class ProfileComponent implements OnInit {
 				this.user = _find(data, function(o) {
 					return o.id == userID;
 				});
-				this.support = this.user.supporter;
+				this.support = this.user.profile.donator;
 			},
 			error => {
 				console.log(error);

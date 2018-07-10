@@ -5,7 +5,7 @@
 
 .profile-background {
 	background-color: #112938;
-	background: url("../../../assets/laptop-3190194_1920.jpg") no-repeat center center; // This needs to dynamic change
+	/*background: url("../../../assets/laptop-3190194_1920.jpg") no-repeat center center; // This needs to dynamic change */
 	background-size: cover;
 }
 
@@ -18,7 +18,7 @@
 	flex-direction: row;
 	justify-content: space-around;
 	i {
-		font-size: 30px;
+		font-size: 1.8vw;
 	}
 }
 .text-bg {

@@ -19,7 +19,8 @@
 				<div class="row">
 					<div class="col-md-12">
 						<!-- User needs to be able to upload image / This also needs a fallback -->
-						<div class="card card-body profile-background text-white mb-3">
+						<div class="card card-body profile-background text-white mb-3" [ngStyle]="{'background': '#fff url(' + user?.profile.backgroundImage + ') no-repeat center center', 'background-size': cover}" *ngIf="support">
+
 							<div *ngIf="support">
 								<div class="ribbon ribbon-top-right">
 									<span>Supporter
@@ -30,13 +31,13 @@
 							<div class="row">
 								<div class=" col-4 col-md-3 m-auto">
 									<!-- This needs to be dynamic -->
-									<img class="rounded-circle profile-image" src="{{user?.avatar}}" alt="{{user?.username}}">
+									<img class="rounded-circle profile-image" src="{{user?.profile.avatar}}" alt="{{user?.profile.username}}">
 								</div>
 							</div>
 							<div class="text-center profile-container">
-								<h1 class="text-bg">{{user?.name}}</h1>
-								<p class="lead text-bg">{{user?.title}} @ {{user?.company}}</p>
-								<p>{{user?.location.county}}, {{user?.location.countryCode}}</p>
+								<h1 class="text-bg">{{user?.profile.firstName}} {{user?.profile.lastName}}</h1>
+								<p class="lead text-bg">{{user?.profile.title}} <span *ngIf="user?.profile.company">@</span> {{user?.profile.company}}</p>
+								<p>{{user?.profile.location}}</p>
 								<div class="social-profile">
 									<a href="#">
 										<i class="fab fa-facebook"></i>
@@ -62,8 +63,8 @@
 					<div class="col-md-9">
 						<div class="card card-body mb-3">
 							<!-- This needs to dynamic change -->
-							<h3 class="text-center text-primary">About {{user?.username}}</h3>
-							<p>{{user?.bio}}</p>
+							<h3 class="text-center text-primary">About {{user?.profile.username}}</h3>
+							<p>{{user?.profile.bio}}</p>
 						</div>
 					</div>
 					<div class="col-md-3">
@@ -71,11 +72,9 @@
 							<!-- This needs to be dynamic -->
 							<h3 class="text-center text-primary">Skills</h3>
 							<div class="icons">
-								<i class="devicon-html5-plain-wordmark colored" ngbTooltip="HTML"></i>
-								<i class="devicon-css3-plain-wordmark colored" ngbTooltip="CSS"></i>
-								<i class="devicon-javascript-plain colored" ngbTooltip="Javascript"></i>
-								<i class="devicon-python-plain-wordmark colored" ngbTooltip="Python"></i>
-								<i class="devicon-angularjs-plain colored" ngbTooltip="Angular"></i>
+								<div *ngFor="let skills of user?.profile.skills">
+								<i class="{{skills.icon}}" ngbTooltip="{{skills.name}}"></i>
+							</div>
 							</div>
 						</div>
 					</div>

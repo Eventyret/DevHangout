@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit {
 		this.userID = localStorage.getItem("user_id");
 		this.auth.getUser(this.userID).subscribe(data => {
 			this.username = data.username;
+			console.log(this.username);
 		});
 	}
 
