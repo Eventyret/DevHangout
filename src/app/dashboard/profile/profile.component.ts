@@ -29,6 +29,7 @@ export class ProfileComponent implements OnInit {
 	}
 	user: any;
 	support: boolean;
+	background: string;
 
 	ngOnInit() {
 		this.spinner.show();
@@ -45,6 +46,7 @@ export class ProfileComponent implements OnInit {
 					return o.id == userID;
 				});
 				this.support = this.user.profile.donator;
+				this.background = this.user.profile.backgroundImage;
 			},
 			error => {
 				console.log(error);
