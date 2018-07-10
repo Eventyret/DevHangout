@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
 	public isCollapsed = true;
 	public username: string;
 	public userID: string;
+	public avatar: string;
 	constructor(public auth: AuthService, private modalService: NgbModal, public router: Router) {}
 
 	ngOnInit() {
@@ -23,7 +24,7 @@ export class NavbarComponent implements OnInit {
 		this.userID = localStorage.getItem("user_id");
 		this.auth.getUser(this.userID).subscribe(data => {
 			this.username = data.username;
-			console.log(this.username);
+			// this.avatar = data.profile.avatar;
 		});
 	}
 
