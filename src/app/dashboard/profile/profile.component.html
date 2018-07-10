@@ -2,7 +2,7 @@
  type="pacman"></ngx-spinner>
 
 <div class="profile">
-	<div class="card card-body profile-background text-white mb-3" [ngStyle]="{'background': '#fff url(' + user?.profile.backgroundImage + ') no-repeat center center', 'background-size': cover, 'background-attachment': 'fixed', 'height': '75vh'}"
+	<div class="card card-body profile-background text-white mb-3" [ngStyle]="{'background': '#fff url(' + user?.profile.backgroundImage + ') no-repeat center center', 'background-size': cover, 'background-attachment': 'fixed', 'height': '80vh'}"
 	 *ngIf="support">
 		<div class="row">
 			<div class="m-auto">
@@ -13,12 +13,11 @@
 			<h1 class="text-bg">{{user?.profile.firstName}} "{{user?.username}}" {{user?.profile.lastName}}</h1>
 			<p class="lead text-bg">{{user?.profile.title}}
 				<span *ngIf="user?.profile.company">@</span> {{user?.profile.company}}</p>
-			<p class="text-bg">{{user?.profile.location}}</p>
-			<div *ngIf="support" class="supporter text-center mx-auto content">
-				<span>Supporter
-					<i class="fas fa-star"></i>
-				</span>
-			</div>
+				<div *ngIf="support" class="supporter text-center mx-auto content">
+					<span>Supporter
+						<i class="fas fa-star"></i>
+					</span>
+				</div>
 			<div class="social-profile">
 				<a href="#">
 					<i class="fab fa-facebook"></i>
