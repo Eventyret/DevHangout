@@ -36,9 +36,10 @@
 </div> -->
 
 <div class="container">
+		<input type="text" [(ngModel)]="term">
 	<div class="row">
-		<div class="col" *ngFor="let user of users">
-			<div class="profile">
+		<div class="col" *ngFor="let user of users |filter:term">
+			<div class="profile" [routerLink]="['/profile', user.id, user.username]">
 				<div class="image">
 					<img src="{{user?.profile.avatar}}" alt="{{user?.username}}" />
 					<div *ngIf="user?.profile.donator">
@@ -48,19 +49,18 @@
 							</span>
 						</div>
 					</div>
-					<p [routerLink]="['/profile', user.id, user.username]">
+					<p>
 						Visit Profile
 					</p>
 				</div>
 				<div class="profile-text">
-					<h3>{{user?.username}}"
-						<span> Nutrisha</span>
-					</h3>
+					<h4>{{user?.username}}</h4>
+					<h5>{{user?.profile.firstName}} {{user?.profile.lastName}}</h5>
 					<h5>{{user?.profile.title}}</h5>
 					<div class="icons">
 						<ul class="list-inline">
 							<li class="list-inline-item" *ngFor="let skills of user.profile.skills">
-								<i class="{{skills.icon}} size-2"></i>
+								<i class="{{skills.icon}} size-2" placement="top" ngbTooltip="{{skills.name}}"></i>
 						</ul>
 					</div>
 				</div>

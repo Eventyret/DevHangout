@@ -43,6 +43,7 @@ import { AvatarModule } from "ng2-avatar";
 import { TestimonialsComponent } from "./landing/components/testimonials/testimonials.component";
 import { SectionsComponent } from "./landing/components/sections/sections.component";
 import { LandingPageService } from "./landing/service/landing-page.service";
+import { Ng2SearchPipeModule } from "ng2-search-filter";
 
 
 const routes: Routes = [
@@ -124,7 +125,8 @@ const routes: Routes = [
 				  ]
 			}
 		}),
-		AvatarModule.forRoot()
+		AvatarModule.forRoot(),
+		Ng2SearchPipeModule,
 	],
 	providers: [FakeService, GithubService, AuthService, AuthGuard, LandingPageService],
 	bootstrap: [AppComponent]
