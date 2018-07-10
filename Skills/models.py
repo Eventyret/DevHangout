@@ -5,6 +5,7 @@ class Skills(models.Model):
 	"""Skills are used for languages a developer knows and can add to their profile"""
 	name = models.CharField(max_length=50)
 	displayName = models.CharField(max_length=50)
+	icon = models.CharField(max_length=100)
 	profileID = models.ForeignKey("accounts.Profile", on_delete=models.CASCADE)
 
 	class Meta:
@@ -16,6 +17,7 @@ class SkillList(models.Model):
 	"""List of skills that a developer can pick from"""
 	name = models.CharField(max_length=50)
 	displayName = models.CharField(max_length=50)
+	icon = models.CharField(max_length=100)
 
 	class Meta:
 		verbose_name_plural = "Skill List"
