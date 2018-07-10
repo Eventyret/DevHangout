@@ -1,11 +1,11 @@
-<ngx-spinner bdOpacity="0.9" bdColor="#112938" size="large" color="#FFEB3B" loadingText="Listing the developers..." type="pacman"></ngx-spinner>
+<ngx-spinner bdOpacity="0.9" bdColor="#112938" size="large" color="#FFEB3B" loadingText="Finding other developers" type="pacman"></ngx-spinner>
 
 <div class="container">
 		<h1 class="display-4 text-center">Developer Profiles</h1>
 		<p class="lead text-center">Browse and connect with developers</p>
 		<input type="text" [(ngModel)]="term" id="searchBox" placeholder="Search">
 	<div class="row">
-		<div class="col" *ngFor="let user of users | filter:term">
+		<div class="col" *ngFor="let user of displayUsers | filter:term">
 			<div class="profile" [routerLink]="['/profile', user.id, user.username]">
 				<div class="image">
 					<img src="{{user?.profile.avatar}}" alt="{{user?.username}}" />
@@ -34,4 +34,11 @@
 			</div>
 		</div>
 	</div>
+	<div
+  infiniteScroll
+  [infiniteScrollDistance]="4"
+  [infiniteScrollThrottle]="1000"
+  (scrolled)="loadMore()">
+</div>
+
 </div>

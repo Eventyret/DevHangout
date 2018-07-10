@@ -44,6 +44,7 @@ import { TestimonialsComponent } from "./landing/components/testimonials/testimo
 import { SectionsComponent } from "./landing/components/sections/sections.component";
 import { LandingPageService } from "./landing/service/landing-page.service";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
 
 const routes: Routes = [
@@ -127,6 +128,7 @@ const routes: Routes = [
 		}),
 		AvatarModule.forRoot(),
 		Ng2SearchPipeModule,
+		InfiniteScrollModule,
 	],
 	providers: [FakeService, GithubService, AuthService, AuthGuard, LandingPageService],
 	bootstrap: [AppComponent]
