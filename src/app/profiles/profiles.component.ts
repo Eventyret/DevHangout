@@ -11,6 +11,7 @@ import { unionBy as _unionBy } from "lodash";
 export class ProfilesComponent implements OnInit {
 	users: any[];
 	skills: any[];
+	term: string;
 
 	constructor(public fakeService: FakeService, private spinner: NgxSpinnerService) {}
 

@@ -11,6 +11,7 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 })
 export class LoginComponent implements OnInit {
 	invalidLogin: boolean;
+	error;
 	loginForm = new FormGroup({
 		username: new FormControl("", Validators.required),
 		password: new FormControl("", Validators.required)
@@ -24,14 +25,14 @@ export class LoginComponent implements OnInit {
 	ngOnInit() {}
 
 	signIn(credentials) {
-		this.authService.login(credentials)
-		.subscribe(results => {
-			if (results) {
-				this.activeModal.dismiss();
-				this.router.navigate(["/dashboard"]);
-			} else {
-				this.invalidLogin = true;
-			}
-		});
+		this.authService.login(credentials).subscribe(
+			results => {
+				if (results) {
+					this.activeModal.dismiss();
+					this.router.navigate(["/dashboard"]);
+				} else {
+					this.invalidLogin = true;
+				}
+			});
 	}
 }

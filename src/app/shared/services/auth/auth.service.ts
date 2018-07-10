@@ -59,7 +59,7 @@ export class AuthService {
 			)
 			.catch((error: any) => {
 				console.log(error);
-				return throwError(error);
+				return throwError(this.notify.error(error.error.non_field_errors) || "Server Error");
 			});
 	}
 	setUserID(userToken) {
@@ -70,7 +70,25 @@ export class AuthService {
 		const data = {
 			username: user.username,
 			email: user.email,
-			password: user.password
+			password: user.password,
+			profile: {
+				firstName: null,
+				lastName: null,
+				avatar: null,
+				location: null,
+				website: null,
+				company: null,
+				title: null,
+				backgroundImage: null,
+				bio: null,
+				twitter: null,
+				facebook: null,
+				linkedin: null,
+				instagram: null,
+				youtube: null,
+				github: null,
+				donator: false
+			}
 		};
 		return this.http.post<UserRegistration>("http://localhost:8000/api/register/", data).pipe(
 			map(response => {
@@ -82,15 +100,20 @@ export class AuthService {
 					return true;
 				} else {
 					this.spinner.hide();
-					this.notify.error("There was an error please try again");
 					return false;
 				}
 			})
-		);
+		).catch((error: any) => {
+			console.log(error);
+			this.spinner.hide();
+			return throwError(this.notify.error(error.error.profile) || "Server Error");
+		});
 	}
 	logout() {
 		this.router.navigate(["/"]);
+		this.notify.info("Your now logged out");
 		localStorage.removeItem("token");
+		localStorage.removeItem("user_id");
 		this.currentUser = null;
 	}
 
@@ -104,6 +127,9 @@ export class AuthService {
 			map(response => {
 				localStorage.setItem("token", response.access);
 			})
-		);
+		).catch((error: any) => {
+			console.log(error);
+			return throwError(this.notify.error(error.error.non_field_errors) || "Server Error");
+		});
 	}
 }
