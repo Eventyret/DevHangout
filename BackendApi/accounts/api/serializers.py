@@ -3,12 +3,11 @@ from rest_framework import serializers
 from Skills.api.serializers import SkillsSerializer
 from ..models import Profile
 
-
 class ProfileSerializer(serializers.ModelSerializer):
     """A Serializer to use CRUD on a user profile"""
     class Meta:
         model = Profile
-        fields = ("user", "firstName", "lastName", "avatar", "location", "website", "company",
+        fields = ("firstName", "lastName", "avatar", "location", "website", "company", "title",
                   "backgroundImage", "bio", "twitter", "facebook", "linkedin", "instagram", "youtube", "github", "donator")
 
 class UserSerializer(serializers.ModelSerializer):
