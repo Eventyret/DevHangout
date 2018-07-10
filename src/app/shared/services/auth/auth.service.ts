@@ -32,7 +32,13 @@ export class AuthService {
 		}
 	}
 	getUser(id) {
-		return this.http.get("http://localhost:8000/api/users/" + id).pipe(map((data: any) => data));
+		return this.http
+			.get("http://localhost:8000/api/users/" + id)
+			.pipe(map((data: any) => data))
+			.catch((error: any) => {
+				console.log(error);
+				return throwError(error);
+			});
 	}
 	login(credentials) {
 		return this.http
@@ -52,8 +58,7 @@ export class AuthService {
 				})
 			)
 			.catch((error: any) => {
-				console.log(error)
-				console.log("Hello World")
+				console.log(error);
 				return throwError(error);
 			});
 	}
