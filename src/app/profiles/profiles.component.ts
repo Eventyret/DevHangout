@@ -1,14 +1,16 @@
 import { Component, OnInit } from "@angular/core";
 import { FakeService } from "../shared/services/api/fake.service";
-import { Users } from "../shared/models/users";
+import { User, Skills, Profile } from "../shared/models/users";
 import { NgxSpinnerService } from "ngx-spinner";
+import { unionBy as _unionBy } from "lodash";
 @Component({
 	selector: "app-profiles",
 	templateUrl: "./profiles.component.html",
 	styleUrls: ["./profiles.component.scss"]
 })
 export class ProfilesComponent implements OnInit {
-	users: Users[];
+	users: any[];
+	skills: any[];
 
 	constructor(public fakeService: FakeService, private spinner: NgxSpinnerService) {}
 

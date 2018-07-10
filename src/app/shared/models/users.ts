@@ -21,6 +21,7 @@ export interface Profile {
 	youtube: string;
 	github: string;
 	donator: boolean;
+	skills: Skills;
 }
 export interface Skills {
 	id: number;

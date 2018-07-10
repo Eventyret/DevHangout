@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { NgbTooltipConfig } from "@ng-bootstrap/ng-bootstrap";
 import { NgxSpinnerService } from "ngx-spinner";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Users } from "../../shared/models/users";
+import { User } from "../../shared/models/users";
 import { FakeService } from "../../shared/services/api/fake.service";
 import { find as _find } from "lodash";
 
