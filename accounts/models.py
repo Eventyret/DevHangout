@@ -39,7 +39,7 @@ class Profile(models.Model):
 
 	def __str__(self):
 		return self.user.username
-		
+
 class Education(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	school = models.CharField(max_length=50)
@@ -47,7 +47,7 @@ class Education(models.Model):
 	fieldOfStudy = models.CharField(max_length=50)
 	dateFrom = models.DateField(auto_now=False, auto_now_add=False)
 	dateTo = models.DateField(auto_now=False, auto_now_add=False, null=True)
-	description = models.TextField()
+	description = models.TextField(blank=True)
 
 	class Meta:
 		verbose_name_plural = "Education"
@@ -61,11 +61,12 @@ class Experience(models.Model):
 	company = models.CharField(max_length=50)
 	location = models.CharField(max_length=50)
 	dateFrom = models.DateField(auto_now=False, auto_now_add=False)
-	dateTo = models.DateField(auto_now=False, auto_now_add=False, null=True)
-	description = models.TextField()
+	dateTo = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
+	current = models.BooleanField(default=False)
+	description = models.TextField(blank=True)
 
 	class Meta:
 		verbose_name_plural = "Experience"
 
 	def __str__(self):
-		return self.jobTitle
+		return self.company
