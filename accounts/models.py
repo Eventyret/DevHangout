@@ -25,6 +25,7 @@ class Profile(models.Model):
 	github = models.CharField(max_length=50, blank=True, null=True)
 	donator = models.BooleanField(default=False)
 
+
 	@receiver(post_save, sender=User)
 	def create_user_profile(sender, instance, created, **kwargs):
 		if created:
