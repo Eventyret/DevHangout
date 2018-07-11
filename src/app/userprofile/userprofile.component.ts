@@ -1,9 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { NgbTooltipConfig } from "@ng-bootstrap/ng-bootstrap";
-import { NgxSpinnerService } from "ngx-spinner";
 import { ActivatedRoute, Router } from "@angular/router";
-import { FakeService } from "../shared/services/api/fake.service";
+import { NgbTooltipConfig } from "@ng-bootstrap/ng-bootstrap";
 import { find as _find } from "lodash";
+import { NgxSpinnerService } from "ngx-spinner";
+import { FakeService } from "../shared/services/api/fake.service";
 
 @Component({
 	selector: "app-profile",

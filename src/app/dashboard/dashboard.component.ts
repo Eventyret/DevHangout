@@ -1,5 +1,4 @@
-import { User } from "./../shared/models/users";
-import { EditProfileComponent } from "./profile/edit-profile/edit-profile.component";
+import { EditProfileComponent } from "../userprofile/edit-profile/edit-profile.component";
 import { EditExperienceComponent } from "./experience/edit-experience/edit-experience.component";
 import { AddExperienceComponent } from "./experience/add-experience/add-experience.component";
 import { EditEducationComponent } from "./education/edit-education/edit-education.component";
