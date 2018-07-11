@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from django.contrib.auth.models import User
 from .permissions import IsOwnerOrReadOnly
 from ..models import Profile, Education, Experience
@@ -10,7 +10,7 @@ from .serializers import ProfileSerializer, UserSerializer, EducationSerializer,
 
 
 class ProfileView(viewsets.ModelViewSet):
-	permission_classes = (IsAuthenticatedOrReadOnly, )
+	permission_classes = (IsOwnerOrReadOnly, )
 	queryset = Profile.objects.all()
 	serializer_class = ProfileSerializer
 
