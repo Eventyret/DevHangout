@@ -21,7 +21,7 @@ class ExperienceSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Experience
-		fields = ("jobTitle", "company", "location", "dateFrom", "dateTo", "description")
+		fields = ("jobTitle", "company", "location", "dateFrom", "dateTo", "description", "current")
 
 class UserSerializer(serializers.ModelSerializer):
 	profile = ProfileSerializer()
