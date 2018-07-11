@@ -1,3 +1,4 @@
+import { User } from "./../shared/models/users";
 import { EditProfileComponent } from "./profile/edit-profile/edit-profile.component";
 import { EditExperienceComponent } from "./experience/edit-experience/edit-experience.component";
 import { AddExperienceComponent } from "./experience/add-experience/add-experience.component";
@@ -8,6 +9,7 @@ import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { NgxSpinnerService } from "ngx-spinner";
 
 import { Subscription } from "rxjs";
+import { AuthService } from "../shared/services/auth/auth.service";
 
 @Component({
 	selector: "app-dashboard",
@@ -15,16 +17,17 @@ import { Subscription } from "rxjs";
 	styleUrls: ["./dashboard.component.scss"]
 })
 export class DashboardComponent implements OnInit {
-	username = "Simen";
-	comp;
+	user: any;
+	username: string;
+	id = localStorage.getItem("user_id");
+	LocalUser = localStorage.getItem("user");
+	comp: any;
 
-	constructor(private modalService: NgbModal, private spinner: NgxSpinnerService) {}
+	constructor(private modalService: NgbModal, private spinner: NgxSpinnerService, private auth: AuthService) {}
 
 	ngOnInit() {
 		this.spinner.show();
-		setTimeout(() => {
-			this.spinner.hide();
-		}, 1500);
+		this.getUserData(this.id);
 	}
 	open(event) {
 		const target = event.target.id;
@@ -45,5 +48,14 @@ export class DashboardComponent implements OnInit {
 			backdropClass: "light-blue-backdrop"
 		});
 		modalRef.componentInstance.name = this.username;
+	}
+
+	getUserData(id) {
+		this.auth.getUser(id).subscribe(data => {
+			console.log(data);
+			localStorage.setItem("user", JSON.stringify(data));
+			this.user = this.LocalUser;
+			this.spinner.hide();
+		});
 	}
 }

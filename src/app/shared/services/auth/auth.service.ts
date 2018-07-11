@@ -1,3 +1,4 @@
+import { User } from "./../../models/users";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { JwtHelperService } from "@auth0/angular-jwt";
@@ -6,7 +7,6 @@ import "rxjs/add/operator/catch";
 import { Token } from "../../models/token";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { Router } from "@angular/router";
-import { UserRegistration } from "../../models/userRegistration";
 import { NotificationsService } from "angular2-notifications";
 import { NgxSpinnerService } from "ngx-spinner";
 import { throwError } from "rxjs";
@@ -90,7 +90,7 @@ export class AuthService {
 				donator: false
 			}
 		};
-		return this.http.post<UserRegistration>("http://localhost:8000/api/register/", data).pipe(
+		return this.http.post<User>("http://localhost:8000/api/register/", data).pipe(
 			map(response => {
 				const result = response;
 				if (result) {
