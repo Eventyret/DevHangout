@@ -17,6 +17,7 @@ import { AuthService } from "../shared/services/auth/auth.service";
 })
 export class DashboardComponent implements OnInit {
 	user: any;
+	support = true;
 	id = localStorage.getItem("user_id");
 	LocalUser = localStorage.getItem("user");
 	comp: any;
@@ -52,7 +53,9 @@ export class DashboardComponent implements OnInit {
 		this.auth.getUser(id).subscribe(data => {
 			console.log(data);
 			localStorage.setItem("user", JSON.stringify(data));
-			this.user = JSON.parse(this.LocalUser);
+			this.user = data;
+			// this.support = data.profile.support;
+
 			this.spinner.hide();
 		});
 	}
