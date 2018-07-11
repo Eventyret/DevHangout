@@ -15,18 +15,18 @@ class EducationSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Education
-		fields = ("id","school", "qualification", "fieldOfStudy", "dateFrom", "dateTo", "description")
+		fields = ("user","school", "qualification", "fieldOfStudy", "dateFrom", "dateTo", "description")
 
 class ExperienceSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Experience
-		fields = ("id", "jobTitle", "company", "location", "dateFrom", "dateTo", "description", "current")
+		fields = ("user", "jobTitle", "company", "location", "dateFrom", "dateTo", "description", "current")
 
 class UserSerializer(serializers.ModelSerializer):
 	profile = ProfileSerializer()
-	education = EducationSerializer()
-	experience = ExperienceSerializer()
+	education = EducationSerializer(source="edu_user", many=True)
+	experience = ExperienceSerializer(source="exp_user", many=True)
 	#skills = SkillsSerializer(many =True)
 	class Meta:
 		model = User
@@ -40,6 +40,20 @@ class UserSerializer(serializers.ModelSerializer):
 				}}
 
 
+
+class UserRegistrationSerializer(serializers.ModelSerializer):
+
+	class Meta:
+		model = User
+		fields = ("id", "username", "email", "password")
+		write_only_fields = ("password",)
+		read_only_fields = ("id", )
+		extra_kwargs = {
+			"password": {
+				"write_only": True,
+				"required": True
+			}
+		}
 
 	def create(self, validated_data):
 		user = User.objects.create(

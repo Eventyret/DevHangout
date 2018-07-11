@@ -41,13 +41,13 @@ class Profile(models.Model):
 		return self.user.username
 
 class Education(models.Model):
-	user = models.OneToOneField(User, on_delete=models.CASCADE)
+	user = models.ForeignKey(User, related_name="edu_user", on_delete=models.CASCADE)
 	school = models.CharField(max_length=50)
 	qualification = models.CharField(max_length=50)
 	fieldOfStudy = models.CharField(max_length=50)
 	dateFrom = models.DateField(auto_now=False, auto_now_add=False)
 	dateTo = models.DateField(auto_now=False, auto_now_add=False, null=True)
-	description = models.TextField(blank=True)
+	description = models.TextField(blank=True, null=True)
 
 	class Meta:
 		verbose_name_plural = "Education"
@@ -56,14 +56,14 @@ class Education(models.Model):
 		return self.school
 
 class Experience(models.Model):
-	user = models.OneToOneField(User, on_delete=models.CASCADE)
+	user = models.ForeignKey(User, related_name="exp_user", on_delete=models.CASCADE)
 	jobTitle = models.CharField(max_length=50)
 	company = models.CharField(max_length=50)
 	location = models.CharField(max_length=50)
 	dateFrom = models.DateField(auto_now=False, auto_now_add=False)
 	dateTo = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
 	current = models.BooleanField(default=False)
-	description = models.TextField(blank=True)
+	description = models.TextField(blank=True, null=True)
 
 	class Meta:
 		verbose_name_plural = "Experience"
