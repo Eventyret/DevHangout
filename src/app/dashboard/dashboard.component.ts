@@ -1,5 +1,4 @@
-import { User } from "./../shared/models/users";
-import { EditProfileComponent } from "./profile/edit-profile/edit-profile.component";
+import { EditProfileComponent } from "../userprofile/edit-profile/edit-profile.component";
 import { EditExperienceComponent } from "./experience/edit-experience/edit-experience.component";
 import { AddExperienceComponent } from "./experience/add-experience/add-experience.component";
 import { EditEducationComponent } from "./education/edit-education/edit-education.component";
@@ -18,6 +17,7 @@ import { AuthService } from "../shared/services/auth/auth.service";
 })
 export class DashboardComponent implements OnInit {
 	user: any;
+	support = true;
 	id = localStorage.getItem("user_id");
 	LocalUser = localStorage.getItem("user");
 	comp: any;
@@ -53,7 +53,9 @@ export class DashboardComponent implements OnInit {
 		this.auth.getUser(id).subscribe(data => {
 			console.log(data);
 			localStorage.setItem("user", JSON.stringify(data));
-			this.user = JSON.parse(this.LocalUser);
+			this.user = data;
+			// this.support = data.profile.support;
+
 			this.spinner.hide();
 		});
 	}

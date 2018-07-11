@@ -1,82 +1,84 @@
+<ngx-spinner bdOpacity="0.9" bdColor="#112938" size="large" color="#FFEB3B" loadingText="Eating up cookies..." type="pacman"></ngx-spinner>
 <div class="dashboard mt-3">
-	<div class="container">
-			<ngx-spinner bdOpacity="0.9" bdColor="#112938" size="large" color="#FFEB3B" loadingText="Eating up cookies..." type="pacman"></ngx-spinner>
 
+	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-12">
-				<h1 class="display-4">Dashboard</h1>
+			<div class="col-md-3">
 				<p class="lead text-muted">Welcome {{user?.username}}</p>
-				<!-- Experience -->
+				<img class="rounded-circle profile-image" src="{{user?.profile.avatar}}" alt="{{user?.profile.username}}">
+				<div *ngIf="support" class="supporter text-center mx-auto content">
+						<span>Supporter
+							<i class="fas fa-star"></i>
+						</span>
+					</div>
+				<button class="btn btn-primary btn-block" (click)="open($event)" id="editProfile">
+					<i class="fas fa-info-circle"></i> Edit my Profile</button>
+				<button class="btn btn-success btn-block" (click)="open($event)" id="addEdu">
+					<i class="fas fa-graduation-cap"></i> Add Education</button>
+				<button class="btn btn-success btn-block" (click)="open($event)" id="addExp">
+					<i class="fas fa-briefcase"></i> Add Experience</button>
+			</div>
+			<div class="col-md-9">
 				<div id="experience">
 					<h4 class="mb-2">Education</h4>
 					<div class="table-responsive">
-					<table class="table table-hover">
-						<thead class="thead-dark">
-							<tr>
-								<th scope="col">Company</th>
-								<th scope="col">Title</th>
-								<th scope="col">Years</th>
-								<th scope="col"></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td scope="row">Code Insitiute</td>
-								<td>01.03.2017 - 01.08.2018</td>
-								<td>Distinction</td>
-								<td>
-									<button class="btn btn-info mr-3">
-										Edit
-									</button>
-									<button class="btn btn-danger">
-										Delete
-									</button>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+						<table class="table table-hover">
+							<thead class="thead-dark">
+								<tr>
+									<th scope="col">Company</th>
+									<th scope="col">Title</th>
+									<th scope="col">Years</th>
+									<th scope="col"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td scope="row">Code Insitiute</td>
+									<td>01.03.2017 - 01.08.2018</td>
+									<td>Distinction</td>
+									<td>
+										<button class="btn btn-info mr-3">
+											Edit
+										</button>
+										<button class="btn btn-danger">
+											Delete
+										</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
-				</div>
-				<!-- Education -->
 
 				<div id="education">
 					<h4 class="mb-2">Education</h4>
 					<div class="table-responsive">
-					<table class="table table-hover">
-						<thead class="thead-dark">
-							<tr>
-								<th scope="col">School</th>
-								<th scope="col">Degree</th>
-								<th scope="col">Years</th>
-								<th scope="col">Actions</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td scope="row">Code Insitiute</td>
-								<td>01.03.2017 - 01.08.2018</td>
-								<td>Distinction</td>
-								<td>
-									<a class="btn btn-info mr-3 text-white">
-										Edit
-									</a>
-									<a class="btn btn-danger text-white">
-										Delete
-									</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-
-				<div class="bottom-actions mt-5 d-flex justify-content-around">
-					<button class="btn btn-primary ml-3" (click)="open($event)" id="editProfile">
-						<i class="fas fa-info-circle"></i> Edit my Profile</button>
-					<button class="btn btn-success ml-3" (click)="open($event)"id="addEdu">
-						<i class="fas fa-graduation-cap"></i> Add Education</button>
-					<button class="btn btn-success ml-3" (click)="open($event)" id="addExp">
-						<i class="fas fa-briefcase"></i> Add Experience</button>
+						<table class="table table-hover">
+							<thead class="thead-dark">
+								<tr>
+									<th scope="col">School</th>
+									<th scope="col">Degree</th>
+									<th scope="col">Years</th>
+									<th scope="col">Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td scope="row">Code Insitiute</td>
+									<td>01.03.2017 - 01.08.2018</td>
+									<td>Distinction</td>
+									<td>
+										<a class="btn btn-info mr-3 text-white">
+											Edit
+										</a>
+										<a class="btn btn-danger text-white">
+											Delete
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>

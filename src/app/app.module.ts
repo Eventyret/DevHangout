@@ -20,9 +20,8 @@ import { AddEducationComponent } from "./dashboard/education/add-education/add-e
 import { EditEducationComponent } from "./dashboard/education/edit-education/edit-education.component";
 import { AddExperienceComponent } from "./dashboard/experience/add-experience/add-experience.component";
 import { EditExperienceComponent } from "./dashboard/experience/edit-experience/edit-experience.component";
-import { AddProfileComponent } from "./dashboard/profile/add-profile/add-profile.component";
-import { EditProfileComponent } from "./dashboard/profile/edit-profile/edit-profile.component";
-import { ProfileComponent } from "./dashboard/profile/profile.component";
+import { EditProfileComponent } from "./userprofile/edit-profile/edit-profile.component";
+import { ProfileComponent } from "./userprofile/userprofile.component";
 import { CommentsComponent } from "./feed/comments/comments.component";
 import { FeedComponent } from "./feed/feed/feed.component";
 import { PostsComponent } from "./feed/posts/posts.component";
@@ -84,7 +83,6 @@ const routes: Routes = [
 		EditExperienceComponent,
 		AddExperienceComponent,
 		EditProfileComponent,
-		AddProfileComponent,
 		FabComponent,
 		SupporterModalComponent,
 		CommentsComponent,
