@@ -1,0 +1,73 @@
+.profile-image {
+	width: 250px;
+	height: 250px;
+}
+
+.profile-background {
+	background-color: #112938;
+	background-size: cover;
+}
+
+.profile-container {
+	display: flex;
+	flex-direction: column;
+}
+.icons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+
+	i {
+		font-size: 1.8vw;
+	}
+}
+.text-bg {
+	position: relative;
+	display: inline-block;
+	background-color: #112938;
+	border-radius: 10px;
+	width: auto;
+	text-align: center;
+	margin: 10px auto;
+	padding: 10px 25px;
+}
+
+.social-profile {
+	position: relative;
+	text-align: center;
+	margin: 0 center;
+	margin-top: 20px;
+	& a {
+		display: inline-block;
+		width: 36px;
+		height: 36px;
+		border-radius: 24px;
+		background-color: #112938;
+		margin: 0 1px;
+		color: #fff;
+		text-align: center;
+		line-height: 36px;
+		& i {
+			height: 24px;
+			width: 24px;
+		}
+		&:hover {
+			background-color: #772953;
+		}
+	}
+}
+
+
+.supporter {
+	background: linear-gradient(to right, #ff4e50, #f9d423);
+    width: 250px;
+    border-radius: 10px;
+	padding: 10px;
+	font-family: "Roboto";
+	font-size: 1.5vw;
+	font-weight: 700;
+	.fa-star {
+		color: #FF5722;
+		font-size: 1.5vw;
+	}
+}

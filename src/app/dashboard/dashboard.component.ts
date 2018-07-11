@@ -18,7 +18,6 @@ import { AuthService } from "../shared/services/auth/auth.service";
 })
 export class DashboardComponent implements OnInit {
 	user: any;
-	username: string;
 	id = localStorage.getItem("user_id");
 	LocalUser = localStorage.getItem("user");
 	comp: any;
@@ -47,14 +46,14 @@ export class DashboardComponent implements OnInit {
 			size: "lg",
 			backdropClass: "light-blue-backdrop"
 		});
-		modalRef.componentInstance.name = this.username;
+		modalRef.componentInstance.name = this.user.username;
 	}
 
 	getUserData(id) {
 		this.auth.getUser(id).subscribe(data => {
 			console.log(data);
 			localStorage.setItem("user", JSON.stringify(data));
-			this.user = this.LocalUser;
+			this.user = JSON.parse(this.LocalUser);
 			this.spinner.hide();
 		});
 	}

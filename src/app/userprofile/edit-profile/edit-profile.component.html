@@ -1,0 +1,111 @@
+<div class="modal-header">
+	<h4 class="modal-title">Edit your profile {{name}}</h4>
+	<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+<div class="modal-body">
+	<div class="edit-profile">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 m-auto">
+					<p class="lead text-center">Let's get some information to make your profile stand out</p>
+					<small class="d-block pb-3">* = required field</small>
+					<form action="add-experience.html">
+						<div class="form-group">
+							<select class="form-control form-control-lg" name="status">
+								<option value="0" selected>* Select Professional Status</option>
+								<option value="Developer">Developer</option>
+								<option value="Junior Developer">Junior Developer</option>
+								<option value="Senior Developer">Senior Developer</option>
+								<option value="Manager">Manager</option>
+								<option value="Student or Learning">Student or Learning</option>
+								<option value="Instructor">Instructor or Teacher</option>
+								<option value="Intern">Intern</option>
+								<option value="Other">Other</option>
+							</select>
+							<small class="form-text text-muted">Give us an idea of where you are at in your career</small>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control form-control-lg" placeholder="Company" name="company" />
+							<small class="form-text text-muted">Could be your own company or one you work for</small>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control form-control-lg" placeholder="Website" name="website" />
+							<small class="form-text text-muted">Could be your own or a company website</small>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control form-control-lg" placeholder="Location" name="location" />
+							<small class="form-text text-muted">Country</small>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control form-control-lg" placeholder="Skills" name="skills" />
+							<small class="form-text text-muted">Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)</small>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control form-control-lg" placeholder="Github Username" name="githubusername" />
+							<small class="form-text text-muted">If you want your latest repos and a Github link, include your username</small>
+						</div>
+						<div class="form-group">
+							<textarea class="form-control form-control-lg" placeholder="A short bio of yourself" name="bio"></textarea>
+							<small class="form-text text-muted">Tell us a little about yourself</small>
+						</div>
+
+						<div class="mb-3">
+							<span class="text-muted">Optional</span>
+						</div>
+
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="fab fa-twitter"></i>
+								</span>
+							</div>
+							<input type="text" class="form-control form-control-lg" placeholder="Twitter Profile URL" name="twitter" />
+						</div>
+
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="fab fa-facebook"></i>
+								</span>
+							</div>
+							<input type="text" class="form-control form-control-lg" placeholder="Facebook Page URL" name="facebook" />
+						</div>
+
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="fab fa-linkedin"></i>
+								</span>
+							</div>
+							<input type="text" class="form-control form-control-lg" placeholder="Linkedin Profile URL" name="linkedin" />
+						</div>
+
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="fab fa-youtube"></i>
+								</span>
+							</div>
+							<input type="text" class="form-control form-control-lg" placeholder="YouTube Channel URL" name="youtube" />
+						</div>
+
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<i class="fab fa-instagram"></i>
+								</span>
+							</div>
+							<input type="text" class="form-control form-control-lg" placeholder="Instagram Page URL" name="instagram" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-outline-dark mr-auto" (click)="activeModal.close('Close click')">Close</button>
+	<input type="submit" class="btn btn-primary" value="Save Profile" />
+</div>

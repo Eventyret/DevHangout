@@ -36,7 +36,6 @@ export class AuthService {
 			.get("http://localhost:8000/api/users/" + id)
 			.pipe(map((data: any) => data))
 			.catch((error: any) => {
-				console.log(error);
 				return throwError(error);
 			});
 	}
