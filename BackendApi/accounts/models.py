@@ -35,7 +35,7 @@ class Profile(models.Model):
 		instance.profile.save()
 
 	class Meta:
-		verbose_name_plural = "Profile"
+		verbose_name_plural = "Profile Information"
 
 	def __str__(self):
 		return self.user.username
