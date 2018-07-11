@@ -1,21 +1,36 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
 from Skills.api.serializers import SkillsSerializer
-from ..models import Profile
+from ..models import Profile, Education, Experience
+
 
 class ProfileSerializer(serializers.ModelSerializer):
-    """A Serializer to use CRUD on a user profile"""
-    class Meta:
-        model = Profile
-        fields = ("firstName", "lastName", "avatar", "location", "website", "company", "title",
+
+	class Meta:
+		model = Profile
+		fields = ("firstName", "lastName", "avatar", "location", "website", "company", "title",
                   "backgroundImage", "bio", "twitter", "facebook", "linkedin", "instagram", "youtube", "github", "donator")
+
+class EducationSerializer(serializers.ModelSerializer):
+
+	class Meta:
+		model = Education
+		fields = ("school", "qualification", "fieldOfStudy", "dateFrom", "dateTo", "description")
+
+class ExperienceSerializer(serializers.ModelSerializer):
+
+	class Meta:
+		model = Experience
+		fields = ("jobTitle", "company", "location", "dateFrom", "dateTo", "description")
 
 class UserSerializer(serializers.ModelSerializer):
 	profile = ProfileSerializer()
+	education = EducationSerializer()
+	experience = ExperienceSerializer()
 	#skills = SkillsSerializer(many =True)
 	class Meta:
 		model = User
-		fields = ("id", "username", "email", "password", "profile")
+		fields = ("id", "username", "email", "password", "profile", "education", "experience")
 		write_only_fields = ('password',)
 		read_only_fields = ('id',)
 		extra_kwargs = {

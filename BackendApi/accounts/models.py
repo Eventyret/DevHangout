@@ -39,6 +39,7 @@ class Profile(models.Model):
 
 	def __str__(self):
 		return self.user.username
+		
 class Education(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	school = models.CharField(max_length=50)
