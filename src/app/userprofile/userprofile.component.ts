@@ -29,6 +29,7 @@ export class ProfileComponent implements OnInit {
 	user: any;
 	support: boolean;
 	background: string;
+	normalBackground = "../../assets/landingBG.png";
 
 	ngOnInit() {
 		this.spinner.show();
