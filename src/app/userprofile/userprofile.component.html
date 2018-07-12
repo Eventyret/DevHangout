@@ -25,7 +25,7 @@
 				<a href="https://www.github.com/{{user?.profile.github}}" *ngIf="user?.profile.github">
 					<i class="fab fa-github"></i>
 				</a>
-				<a href="https://www.linkedin.com/{{user?.profile.linkedin}}" *ngIf="user?.profile.linkedin">
+				<a href="https://www.linkedin.com/in/{{user?.profile.linkedin}}" *ngIf="user?.profile.linkedin">
 					<i class="fab fa-linkedin"></i>
 				</a>
 				<a href="https://www.youtube.com/{{user?.profile.youtube}}" *ngIf="user?.profile.youtube">
@@ -130,11 +130,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
+		</div>
 				<div class="col-md-12">
 					<div class="card card-body bg-light mb-3">
 						<h3 class="text-center text-primary">
-							<i class="fab fa-github"></i> Username's 5 last repos</h3>
+							<i class="fab fa-github"></i> {{user?.username}}'s 5 last repos</h3>
 						<div class="card card-body mb-2">
 							<div class="row">
 								<div class="col-md-6">
@@ -152,11 +152,9 @@
 						</div>
 					</div>
 				</div>
-			</div>
 			<div class="col-md-12">
 				<a class="btn mb-3 float-left">Back to Profiles</a>
 				<div class="btn btn-danger" (click)="supporterTest()">Donation Toggle (For Testing)</div>
 			</div>
-		</div>
 	</div>
 </div>
