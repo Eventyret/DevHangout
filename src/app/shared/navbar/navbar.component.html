@@ -43,8 +43,9 @@
 				</li>
 				<li class="nav-item mr-5" *ngIf="this.auth.isLoggedIn()" ngbTooltip="Public Profile" placement="bottom">
 					<a class="nav-link" routerLink="profile/{{userID}}/{{username}}">
-						<avatar [name]="username" displayType="rounded" size="35"></avatar>
-						<!-- <img src="{{avatar}}" alt=""> -->
+						<!-- <avatar [name]="username" displayType="rounded" size="35"></avatar> -->
+						<img src="{{avatar}}" alt="{{username}}" *ngIf="avatar" class="img-circle avatar">
+						<img src="../../../assets/default.png" alt="{{username}}" *ngIf="!avatar" class="img-circle avatar">
 					</a>
 				</li>
 			</ul>
