@@ -10,6 +10,8 @@ import "rxjs/add/operator/catch";
 	providedIn: "root"
 })
 export class FakeService {
+	fakeUsers: [];
+	realUsers: [];
 	constructor(private http: HttpClient) {}
 
 	getFakeUsers() {
@@ -19,5 +21,12 @@ export class FakeService {
 			.catch((error: any) => {
 				return throwError(error);
 			});
+	}
+	getRealUsers() {
+		return this.http.get("http://localhost:8000/api/users/")
+		.pipe(map((data: any) => data))
+		.catch((error: any) => {
+			return throwError(error);
+		});
 	}
 }

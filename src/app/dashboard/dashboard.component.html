@@ -3,24 +3,41 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-3 text-center">
 				<p class="lead text-muted">Welcome {{user?.username}}</p>
-				<img class="rounded-circle profile-image" src="{{user?.profile.avatar}}" alt="{{user?.profile.username}}">
-				<div *ngIf="support" class="supporter text-center mx-auto content">
-						<span>Supporter
-							<i class="fas fa-star"></i>
-						</span>
-					</div>
-				<button class="btn btn-primary btn-block" (click)="open($event)" id="editProfile">
-					<i class="fas fa-info-circle"></i> Edit my Profile</button>
-				<button class="btn btn-success btn-block" (click)="open($event)" id="addEdu">
-					<i class="fas fa-graduation-cap"></i> Add Education</button>
-				<button class="btn btn-success btn-block" (click)="open($event)" id="addExp">
-					<i class="fas fa-briefcase"></i> Add Experience</button>
+				<img class="rounded-circle profile-image my-2" src="{{user?.profile.avatar}}" alt="{{user?.profile.username}}">
+				<div *ngIf="support" class="supporter text-center mx-auto content my-2">
+					<span>Supporter
+						<i class="fas fa-star"></i>
+					</span>
+				</div>
+				<ul class="list-group">
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+						<span>Name:</span>
+						{{user?.profile.firstName}} {{user?.profile.lastName}}
+					</li>
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+							<span>Title:</span>
+							{{user?.profile.company}}
+						</li>
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+						<span>Location:</span>
+						{{user?.profile.location}}
+					</li>
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+						<span>Company:</span>
+						{{user?.profile.company}}
+					</li>
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+						<span>Website:</span>
+						<a href="{{user?.profile.website}}">Website</a>
+					</li>
+					</ul>
+
 			</div>
-			<div class="col-md-9">
-				<div id="experience">
-					<h4 class="mb-2">Education</h4>
+			<div class="col-md-9 mt-5">
+				<div id="experience my-auto">
+					<h4 class="mb-2">Experience</h4>
 					<div class="table-responsive">
 						<table class="table table-hover">
 							<thead class="thead-dark">
@@ -28,12 +45,12 @@
 									<th scope="col">Company</th>
 									<th scope="col">Title</th>
 									<th scope="col">Years</th>
-									<th scope="col"></th>
+									<th scope="col">Action</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td scope="row">Code Insitiute</td>
+								<tr *ngFor="let item of user?.experience">
+									<td scope="row">{{item.company}}</td>
 									<td>01.03.2017 - 01.08.2018</td>
 									<td>Distinction</td>
 									<td>
@@ -63,7 +80,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
+								<tr *ngFor="let school of user?.education">
 									<td scope="row">Code Insitiute</td>
 									<td>01.03.2017 - 01.08.2018</td>
 									<td>Distinction</td>
@@ -80,6 +97,14 @@
 						</table>
 					</div>
 				</div>
+				<div class="d-flex justify-content-around mt-3">
+						<button type="button" class="btn btn-secondary" (click)="open($event)" id="editProfile">
+						<i class="fas fa-info-circle"></i> Edit Profile</button>
+						<button type="button" class="btn btn-secondary" (click)="open($event)" id="addEdu">
+							<i class="fas fa-graduation-cap"></i> Add Education</button>
+						<button type="button" class="btn btn-secondary" (click)="open($event)" id="addExp">
+							<i class="fas fa-briefcase"></i> Add Experience</button>
+					</div>
 			</div>
 		</div>
 	</div>

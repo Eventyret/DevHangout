@@ -1,56 +1,5 @@
 [
 	{
-		"id": 1,
-		"username": "Eventyret",
-		"email": "simen.dehlin@gmail.com",
-		"profile": {
-			"user": 1,
-			"firstName": "Simen",
-			"lastName": "Dehlin",
-			"avatar": "http://simen.dehlin.info/media/img/profile.jpg",
-			"location": "United Kingdom",
-			"website": "http://simen.dehlin.info",
-			"company": "Intergage",
-			"title": "Full Stack Developer",
-			"backgroundImage": "https://i.imgur.com/5xB993v.png",
-			"bio":
-				"Nostrum sit dolorum commodi labore ut aspernatur quas ea. Eveniet suscipit eum. Et aut veritatis. Laboriosam beatae ipsam adipisci provident quidem. Quasi est iste facere debitis id dolorem iure.",
-			"donator": true,
-			"skills": [
-				{
-					"id": 11,
-					"name": "JavaScript",
-					"icon": "devicon-javascript-plain colored"
-				},
-				{
-					"id": 20,
-					"name": "CSS",
-					"icon": "devicon-css3-plain colored"
-				},
-				{
-					"id": 21,
-					"name": "HTML",
-					"icon": "devicon-html5-plain colored"
-				},
-				{
-					"id": 5,
-					"name": "Python",
-					"icon": "devicon-python-plain colored"
-				},
-				{
-					"id": 30,
-					"name": "Angular",
-					"icon": "devicon-angular-plain colored"
-				},
-				{
-					"id": 37,
-					"name": "VSCode",
-					"icon": "devicon-visualstudio-plain colored"
-				}
-			]
-		}
-	},
-	{
 		"id": 9000,
 		"username": "Bernadette_Mante12",
 		"email": "Lupe66@hotmail.com",

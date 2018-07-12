@@ -4,6 +4,7 @@ import { NgbTooltipConfig } from "@ng-bootstrap/ng-bootstrap";
 import { find as _find } from "lodash";
 import { NgxSpinnerService } from "ngx-spinner";
 import { FakeService } from "../shared/services/api/fake.service";
+import { AuthService } from "../shared/services/auth/auth.service";
 
 @Component({
 	selector: "app-profile",
@@ -16,6 +17,7 @@ export class ProfileComponent implements OnInit {
 		config: NgbTooltipConfig,
 		private spinner: NgxSpinnerService,
 		private route: ActivatedRoute,
+		private auth: AuthService,
 		private fakeService: FakeService,
 		private router: Router
 	) {
@@ -39,21 +41,31 @@ export class ProfileComponent implements OnInit {
 		this.support = !this.support;
 	}
 	getFakeData(id) {
-		this.fakeService.getFakeUsers().subscribe(
-			data => {
-				const userID = id;
-				this.user = _find(data, function(o) {
-					return o.id == userID;
-				});
-				this.support = this.user.profile.donator;
-				this.background = this.user.profile.backgroundImage;
-			},
-			error => {
-				console.log(error);
-			},
-			() => {
+		if (id >= 9000) {
+			this.fakeService.getFakeUsers().subscribe(
+				data => {
+					const userID = id;
+					this.user = _find(data, function(o) {
+						return o.id == userID;
+					});
+					this.support = this.user.profile.donator;
+					this.background = this.user.profile.backgroundImage;
+				},
+				error => {
+					console.log(error);
+				},
+				() => {
+					this.spinner.hide();
+				}
+			);
+		} else {
+			this.auth.getUser(id).subscribe(data => {
+				console.log(data);
+				localStorage.setItem("user", JSON.stringify(data));
+				this.user = data;
+				this.support = data.profile.donator;
 				this.spinner.hide();
-			}
-		);
+			});
+		}
 	}
 }

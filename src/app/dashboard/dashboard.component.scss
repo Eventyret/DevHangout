@@ -1,5 +1,6 @@
 .dashboard {
-	height: 85.2vh;
+    height: 83.4vh;
+    padding: 10px 80px;
 }
 
 .profile-image {
@@ -16,8 +17,14 @@
 	font-family: "Roboto";
 	font-size: 1.5vw;
 	font-weight: 700;
+	color: #fff;
 	.fa-star {
 		color: #FF5722;
 		font-size: 1.5vw;
 	}
+}
+
+.thead-dark th, .btn-secondary {
+	background-color: #112938;
+	border-color: #112938;
 }
