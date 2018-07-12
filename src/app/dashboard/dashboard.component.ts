@@ -6,8 +6,6 @@ import { AddEducationComponent } from "./education/add-education/add-education.c
 import { Component, OnInit } from "@angular/core";
 import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { NgxSpinnerService } from "ngx-spinner";
-
-import { Subscription } from "rxjs";
 import { AuthService } from "../shared/services/auth/auth.service";
 
 @Component({
@@ -54,8 +52,7 @@ export class DashboardComponent implements OnInit {
 			console.log(data);
 			localStorage.setItem("user", JSON.stringify(data));
 			this.user = data;
-			// this.support = data.profile.support;
-
+			this.support = data.profile.donator;
 			this.spinner.hide();
 		});
 	}

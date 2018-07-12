@@ -1,6 +1,6 @@
 .dashboard {
-	height: 85.2vh;
-	padding: 80px;
+    height: 83.4vh;
+    padding: 10px 80px;
 }
 
 .profile-image {
@@ -22,4 +22,9 @@
 		color: #FF5722;
 		font-size: 1.5vw;
 	}
+}
+
+.thead-dark th, .btn-secondary {
+	background-color: #112938;
+	border-color: #112938;
 }
