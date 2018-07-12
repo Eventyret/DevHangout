@@ -19,20 +19,23 @@
 				</span>
 			</div>
 			<div class="social-profile">
-				<a href="#">
+				<a href="https://www.facebook.com/{{user?.profile.facebook}}" *ngIf="user?.profile.facebook">
 					<i class="fab fa-facebook"></i>
 				</a>
-				<a href="#">
+				<a href="https://www.github.com/{{user?.profile.github}}" *ngIf="user?.profile.github">
 					<i class="fab fa-github"></i>
 				</a>
-				<a href="#">
+				<a href="https://www.linkedin.com/{{user?.profile.linkedin}}" *ngIf="user?.profile.linkedin">
 					<i class="fab fa-linkedin"></i>
 				</a>
-				<a href="#">
+				<a href="https://www.youtube.com/{{user?.profile.youtube}}" *ngIf="user?.profile.youtube">
 					<i class="fab fa-youtube"></i>
 				</a>
-				<a href="#">
+				<a href="https://www.twitter.com/{{user?.profile.twitter}}" *ngIf="user?.profile.twitter">
 					<i class="fab fa-twitter"></i>
+				</a>
+				<a href="https://www.instagram.com/{{user?.profile.instagram}}" *ngIf="user?.profile.instagram">
+					<i class="fab fa-instagram"></i>
 				</a>
 			</div>
 		</div>
