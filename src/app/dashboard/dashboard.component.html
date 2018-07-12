@@ -3,24 +3,27 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-3 text-center">
 				<p class="lead text-muted">Welcome {{user?.username}}</p>
-				<img class="rounded-circle profile-image" src="{{user?.profile.avatar}}" alt="{{user?.profile.username}}">
-				<div *ngIf="support" class="supporter text-center mx-auto content">
+				<img class="rounded-circle profile-image my-2" src="{{user?.profile.avatar}}" alt="{{user?.profile.username}}">
+				<div *ngIf="support" class="supporter text-center mx-auto content my-2">
 						<span>Supporter
 							<i class="fas fa-star"></i>
 						</span>
 					</div>
-				<button class="btn btn-primary btn-block" (click)="open($event)" id="editProfile">
-					<i class="fas fa-info-circle"></i> Edit my Profile</button>
-				<button class="btn btn-success btn-block" (click)="open($event)" id="addEdu">
-					<i class="fas fa-graduation-cap"></i> Add Education</button>
-				<button class="btn btn-success btn-block" (click)="open($event)" id="addExp">
-					<i class="fas fa-briefcase"></i> Add Experience</button>
+					<div class="buttons my-3">
+
+						<button class="btn btn-primary btn-block" (click)="open($event)" id="editProfile">
+							<i class="fas fa-info-circle"></i> Edit my Profile</button>
+						<button class="btn btn-success btn-block" (click)="open($event)" id="addEdu">
+							<i class="fas fa-graduation-cap"></i> Add Education</button>
+						<button class="btn btn-success btn-block" (click)="open($event)" id="addExp">
+							<i class="fas fa-briefcase"></i> Add Experience</button>
+					</div>
 			</div>
 			<div class="col-md-9">
-				<div id="experience">
-					<h4 class="mb-2">Education</h4>
+				<div id="experience my-auto">
+					<h4 class="mb-2">Experience</h4>
 					<div class="table-responsive">
 						<table class="table table-hover">
 							<thead class="thead-dark">
@@ -32,8 +35,8 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td scope="row">Code Insitiute</td>
+								<tr *ngFor="let item of user?.experience">
+									<td scope="row">{{item.company}}</td>
 									<td>01.03.2017 - 01.08.2018</td>
 									<td>Distinction</td>
 									<td>
@@ -63,7 +66,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
+								<tr *ngFor="let school of user?.education">
 									<td scope="row">Code Insitiute</td>
 									<td>01.03.2017 - 01.08.2018</td>
 									<td>Distinction</td>
