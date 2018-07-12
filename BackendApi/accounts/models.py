@@ -10,7 +10,7 @@ class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
 	firstName = models.CharField(max_length=50, blank=True, null=True)
 	lastName = models.CharField(max_length=50, blank=True, null=True)
-	avatar = models.ImageField(upload_to="media/avatars", max_length=None, blank=True, null=True)
+	avatar = models.ImageField(upload_to="avatars", max_length=None, blank=True, null=True)
 	location = models.CharField(max_length=50, blank=True, null=True)
 	website = models.CharField(max_length=50, blank=True, null=True)
 	company = models.CharField(max_length=50, blank=True, null=True)

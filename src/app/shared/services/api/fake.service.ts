@@ -10,8 +10,6 @@ import "rxjs/add/operator/catch";
 	providedIn: "root"
 })
 export class FakeService {
-	fakeUsers: [];
-	realUsers: [];
 	constructor(private http: HttpClient) {}
 
 	getFakeUsers() {
