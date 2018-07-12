@@ -10,6 +10,7 @@ import { unionBy as _unionBy, slice as _slice } from "lodash";
 })
 export class ProfilesComponent implements OnInit {
 	users: any[];
+	fakeUsers: any[];
 	skills: any[];
 	term: string;
 	startNum = 0;
@@ -32,17 +33,31 @@ export class ProfilesComponent implements OnInit {
 
 	getDevelopers() {
 		this.spinner.show();
-			this.fakeService.getFakeUsers().subscribe(
-				data => {
-					this.users = data;
-					this.sliceUsers();
-				},
-				error => {
-					console.log(error);
-				},
-				() => {
-					this.spinner.hide();
-				}
-			);
-		}
+		this.fakeService.getFakeUsers().subscribe(
+			data => {
+				this.fakeUsers = data;
+			},
+			error => {
+				console.log(error);
+			}, () => {
+				this.getRealDevelopers();
+			}
+		);
+	}
+
+	getRealDevelopers() {
+		this.fakeService.getRealUsers().subscribe(
+			data => {
+				const realUsers = data;
+				this.users = _unionBy(realUsers, this.fakeUsers);
+				this.sliceUsers();
+			},
+			error => {
+				console.log(error);
+			},
+			() => {
+				this.spinner.hide();
+			}
+		);
+	}
 }
