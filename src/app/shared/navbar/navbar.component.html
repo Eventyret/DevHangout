@@ -28,7 +28,7 @@
 						</li>
 						<li class="nav-item" *ngIf="this.auth.isLoggedIn()" ngbTooltip="Your Dashboard" placement="bottom">
 							<a class="nav-link" routerLink="dashboard">
-								<img src="{{avatar}}" alt="{{username}}" *ngIf="avatar" class="img-circle avatar"> Your Dashboard
+								<img src="{{avatar}}" alt="{{username}}" *ngIf="avatar" class="img-circle avatar">
 								<img src="../../../assets/default.png" alt="{{username}}" *ngIf="!avatar" class="img-circle avatar">
 							</a>
 						</li>
