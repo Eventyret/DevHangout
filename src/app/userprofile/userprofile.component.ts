@@ -61,7 +61,6 @@ export class ProfileComponent implements OnInit {
 		} else {
 			this.auth.getUser(id).subscribe(data => {
 				console.log(data);
-				localStorage.setItem("user", JSON.stringify(data));
 				this.user = data;
 				this.support = data.profile.donator;
 				this.spinner.hide();

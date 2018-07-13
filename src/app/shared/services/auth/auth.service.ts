@@ -33,7 +33,7 @@ export class AuthService {
 	}
 	getUser(id) {
 		return this.http
-			.get("http://localhost:8000/api/users/" + id)
+			.get("http://localhost:8000/api/users/" + id + "/")
 			.pipe(map((data: any) => data))
 			.catch((error: any) => {
 				return throwError(error);
@@ -111,6 +111,7 @@ export class AuthService {
 	logout() {
 		this.router.navigate(["/"]);
 		this.notify.info("Your now logged out");
+		localStorage.removeItem("refresh");
 		localStorage.removeItem("token");
 		localStorage.removeItem("user_id");
 		this.currentUser = null;
