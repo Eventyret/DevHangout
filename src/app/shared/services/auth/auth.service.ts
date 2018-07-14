@@ -129,7 +129,11 @@ export class AuthService {
 			})
 		).catch((error: any) => {
 			console.log(error);
-			return throwError(this.notify.error(error.error.non_field_errors) || "Server Error");
+			if (error.status === 401) {
+				return throwError(this.notify.error(error.error.detail) ||  ("Server Error"));
+			} else {
+				return throwError(this.notify.error(error.error.non_field_errors) ||  ("Server Error"));
+			}
 		});
 	}
 }
