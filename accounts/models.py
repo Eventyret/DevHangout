@@ -24,6 +24,7 @@ class Profile(models.Model):
 	youtube = models.CharField(max_length=100, blank=True, null=True)
 	github = models.CharField(max_length=50, blank=True, null=True)
 	donator = models.BooleanField(default=False)
+	testimonal = models.TextField(blank=True, null=True)
 
 
 	@receiver(post_save, sender=User)
