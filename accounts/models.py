@@ -3,10 +3,18 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-	# Create your models here.
 
 
 class Profile(models.Model):
+	yrs_experience = (
+        ('NS', 'Not Specified'),
+        ('<=5', '<=5'),
+        ('6-10', '6-10'),
+        ('11-15', '11-15'),
+        ('16-20', '16-20'),
+        ('20+', '20+'),
+    )
+
 	user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
 	firstName = models.CharField(max_length=50, blank=True, null=True)
 	lastName = models.CharField(max_length=50, blank=True, null=True)
@@ -24,6 +32,9 @@ class Profile(models.Model):
 	youtube = models.CharField(max_length=100, blank=True, null=True)
 	github = models.CharField(max_length=50, blank=True, null=True)
 	donator = models.BooleanField(default=False)
+	skills = models.CharField(choices=yrs_experience, max_length=255, null=True)
+		# Create your models here.
+
 
 
 	@receiver(post_save, sender=User)
