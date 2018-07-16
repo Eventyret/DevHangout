@@ -1,18 +1,16 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
-from Skills.api.serializers import SkillsSerializer, SkillsListSerializer
+from Skills.api.serializers import SkillsSerializer
 from ..models import Profile, Education, Experience
 
 
 class ProfileSerializer(serializers.ModelSerializer):
-	skillsList = SkillsListSerializer(source="profile_skills")
 	class Meta:
 		model = Profile
 		fields = ("firstName", "lastName", "avatar", "location", "website", "company", "title",
-                  "backgroundImage", "bio", "twitter", "facebook", "linkedin", "instagram", "youtube", "github", "donator", "skillsList", "skills")
+                  "backgroundImage", "bio", "twitter", "facebook", "linkedin", "instagram", "youtube", "github", "donator")
 
 class EducationSerializer(serializers.ModelSerializer):
-
 	class Meta:
 		model = Education
 		fields = ("user","school", "qualification", "fieldOfStudy", "dateFrom", "dateTo", "description")
@@ -25,11 +23,12 @@ class ExperienceSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
 	profile = ProfileSerializer()
+	skills = SkillsSerializer(many=True)
 	education = EducationSerializer(source="edu_user", many=True)
 	experience = ExperienceSerializer(source="exp_user", many=True)
 	class Meta:
 		model = User
-		fields = ("id", "username", "email", "password", "profile", "education", "experience")
+		fields = ("id", "username", "email", "password", "profile", "education", "experience", "skills")
 		write_only_fields = ('password',)
 		read_only_fields = ('id',)
 		extra_kwargs = {
