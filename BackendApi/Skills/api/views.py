@@ -1,16 +1,12 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from ..models import Skills, SkillsList
-from .serializers import SkillsSerializer, SkillsListSerializer
+from ..models import Skill
+from .serializers import SkillsSerializer
 
 # Creating a view for the api endpoint
 
 
-class SkillsView(viewsets.ReadOnlyModelViewSet):
+class SkillsView(viewsets.ModelViewSet):
     """ Settings it to read only as its not needed to be updated or deleted from the frontend """
-    queryset = Skills.objects.all()
+    queryset = Skill.objects.all()
     serializer_class = SkillsSerializer
-
-class SkillsListView(viewsets.ReadOnlyModelViewSet):
-	queryset = SkillsList.objects.all()
-	serializer_class = SkillsListSerializer

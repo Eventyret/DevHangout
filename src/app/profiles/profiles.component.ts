@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FakeService } from "../shared/services/api/fake.service";
 import { User, Skills, Profile } from "../shared/models/users";
 import { NgxSpinnerService } from "ngx-spinner";
-import { unionBy as _unionBy, slice as _slice } from "lodash";
+import { unionBy as _unionBy, slice as _slice, shuffle as _shuffle } from "lodash";
 @Component({
 	selector: "app-profiles",
 	templateUrl: "./profiles.component.html",
@@ -49,7 +49,7 @@ export class ProfilesComponent implements OnInit {
 		this.fakeService.getRealUsers().subscribe(
 			data => {
 				const realUsers = data;
-				this.users = _unionBy(realUsers, this.fakeUsers);
+				this.users = _shuffle(_unionBy(realUsers, this.fakeUsers));
 				this.sliceUsers();
 			},
 			error => {
