@@ -44,6 +44,7 @@ import { SectionsComponent } from "./landing/components/sections/sections.compon
 import { LandingPageService } from "./landing/service/landing-page.service";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { FakeGithubComponent } from './fake-github/fake-github.component';
 
 
 const routes: Routes = [
@@ -89,6 +90,7 @@ const routes: Routes = [
 		InfoModalComponent,
 		TestimonialsComponent,
 		SectionsComponent,
+		FakeGithubComponent,
 	],
 	imports: [
 		BrowserModule,
