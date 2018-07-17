@@ -1,3 +1,4 @@
+import { GithubService } from "./../shared/services/api/github.service";
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { NgbTooltipConfig } from "@ng-bootstrap/ng-bootstrap";
@@ -19,7 +20,8 @@ export class ProfileComponent implements OnInit {
 		private route: ActivatedRoute,
 		private auth: AuthService,
 		private fakeService: FakeService,
-		private router: Router
+		private router: Router,
+		private gitService: GithubService
 	) {
 		config.placement = "top";
 		config.triggers = "hover";
@@ -32,6 +34,7 @@ export class ProfileComponent implements OnInit {
 	support: boolean;
 	background: string;
 	normalBackground = "../../assets/landingBG.png";
+	githubData: any [];
 
 	ngOnInit() {
 		this.spinner.show();
@@ -63,8 +66,15 @@ export class ProfileComponent implements OnInit {
 				console.log(data);
 				this.user = data;
 				this.support = data.profile.donator;
+				this.getRepos(this.user.profile.github);
 				this.spinner.hide();
 			});
 		}
+	}
+	getRepos(user) {
+		this.gitService.gitRepo(user).subscribe(userProfile => {
+			this.githubData = userProfile;
+			console.log(this.githubData);
+		});
 	}
 }

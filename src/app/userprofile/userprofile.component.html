@@ -98,18 +98,20 @@
 					<div class="card card-body bg-light mb-3">
 						<h3 class="text-center text-primary">
 							<i class="fab fa-github"></i> {{user?.username}}'s 5 last repos</h3>
-						<div class="card card-body mb-2">
+						<div class="card card-body mb-2" *ngFor="let repos of githubData | slice:0:5">
 							<div class="row">
 								<div class="col-md-6">
-									<a href="#" target="_blank">
-										<h4>Repository One</h4>
+									<a href="{{repos?.html_url}}" target="_blank">
+										<h4>{{repos?.name}}</h4>
 									</a>
-									<p>Repository Description</p>
+									<p>{{repos?.description}}</p>
+									<small>Last Updated: {{repos?.updated_at | date: "MMM d y hh:mm:ss"}}</small>
 								</div>
 								<div class="col-md-6">
-									<span class="badge badge-info mr-1">Stars: 5</span>
-									<span class="badge badge-secondary mr-1">Watechers: 10</span>
-									<span class="badge badge-success">Forks: 252</span>
+									<span class="badge badge-primary mr-1"><i class="fas fa-star"></i> Stars: {{repos?.stargazers_count}} </span>
+									<span class="badge badge-primary mr-1"><i class="fas fa-eye"></i> Watchers: {{repos?.watchers_count}}</span>
+									<span class="badge badge-primary mr-1"><i class="fas fa-code-branch"></i> Forks: {{repos?.forks_count}}</span>
+									<a href="{{repos?.html_url}}/issues" target="_blank"><span class="badge badge-danger"><i class="fas fa-exclamation-circle"></i> Issues: {{repos?.open_issues_count}}</span></a>
 								</div>
 							</div>
 						</div>
