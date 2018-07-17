@@ -5,12 +5,12 @@ module.exports = () => {
 		users: _.times(1001, function(n) {
 			let skillsData = [];
 			let titlesData = [];
-			let eduData = [];
-			let expData = [];
+			let githubUrl = "http://localhost:4200/github/"
 			let username = faker.internet.userName();
 			let randomSet = _.sample([1, 2, 3, 4]);
 			let diplomaData = _.sample(diploma);
 			let studyData = _.sample(study);
+			let location = faker.address.country();
 			let email = faker.internet.email();
 			titlesData.push(titles);
 
@@ -60,13 +60,50 @@ module.exports = () => {
 							company: faker.company.companyName(),
 							dateFrom: faker.date.between(1980, 2012),
 							dateTo: faker.date.between(2012, 2018),
-							current: faker.random.boolean()
+							current: faker.random.boolean(),
+							description: faker.lorem.sentence(),
+							location: location
 						};
 						expData.push(experience);
 					}
 				);
 				return expData;
 			}
+			function githubRepo() {
+				let githubData = [];
+				_.times(
+					faker.random.number({
+						min: 1,
+						max: 5
+					}),
+					function() {
+						const reponame = faker.lorem.word();
+						const randomNumberLow =  faker.random.number({
+							min: 1,
+							max: 100
+						});
+						const randomNumberHigh =  faker.random.number({
+							min: 1,
+							max: 900
+						});
+						gitData  =  {
+							name: reponame,
+							html_url: githubUrl + username + "/" + reponame,
+							description: faker.hacker.phrase(),
+							stargazers_count: randomNumberHigh,
+							watchers_count: randomNumberLow,
+							forks_count: randomNumberLow,
+							open_issues_count: randomNumberLow,
+							updated_at: faker.date.recent()
+							}
+							githubData.push(gitData);
+					}
+				);
+				return githubData;
+			}
+
+
+
 			return {
 				id: 9000 + n,
 				username: username,
@@ -76,7 +113,7 @@ module.exports = () => {
 					firstName: faker.name.firstName(),
 					lastName: faker.name.lastName(),
 					avatar: "https://robohash.org/" + email + "?gravatar=yes&set=set" + randomSet + "&size=300x300&bgset=bg" + randomSet,
-					location: faker.address.country(),
+					location: location,
 					website: faker.internet.url(),
 					company: faker.company.companyName(),
 					title: _.sample(titles),
@@ -93,7 +130,8 @@ module.exports = () => {
 				},
 				education: randomEdu(9000 + n),
 				experience: randomExp(9000 + n),
-				skills: skillsData
+				skills: skillsData,
+				repo: githubRepo()
 			};
 		})
 	};
