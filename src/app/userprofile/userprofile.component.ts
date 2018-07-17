@@ -53,6 +53,7 @@ export class ProfileComponent implements OnInit {
 					});
 					this.support = this.user.profile.donator;
 					this.background = this.user.profile.backgroundImage;
+					this.githubData = this.user.repo;
 				},
 				error => {
 					console.log(error);
@@ -74,7 +75,6 @@ export class ProfileComponent implements OnInit {
 	getRepos(user) {
 		this.gitService.gitRepo(user).subscribe(userProfile => {
 			this.githubData = userProfile;
-			console.log(this.githubData);
 		});
 	}
 }

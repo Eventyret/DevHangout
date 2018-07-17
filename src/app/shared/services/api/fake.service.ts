@@ -21,10 +21,11 @@ export class FakeService {
 			});
 	}
 	getRealUsers() {
-		return this.http.get("http://localhost:8000/api/users/")
-		.pipe(map((data: any) => data))
-		.catch((error: any) => {
-			return throwError(error);
-		});
+		return this.http
+			.get("http://localhost:8000/api/users/")
+			.pipe(map((data: any) => data))
+			.catch((error: any) => {
+				return throwError(error);
+			});
 	}
 }

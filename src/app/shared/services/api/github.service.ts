@@ -15,13 +15,20 @@ export class GithubService {
 
 	constructor(private http: HttpClient) {}
 
-	public gitRepo(username) {
+	gitRepo(username) {
 		return this.http
-			.get(this.githubUrl
-				+ "users/"
-				+ username + "/" + "repos"
-				+ "?client_id=" + this.clientID + "&client_secret=" + this.clientSecret
-				+ "&sort=desc")
+			.get(
+				this.githubUrl +
+					"users/" +
+					username +
+					"/" +
+					"repos" +
+					"?client_id=" +
+					this.clientID +
+					"&client_secret=" +
+					this.clientSecret +
+					"&sort=desc"
+			)
 			.pipe(map((data: any) => data))
 			.catch((error: any) => {
 				return throwError(error);
