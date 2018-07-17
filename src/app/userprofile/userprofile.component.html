@@ -61,71 +61,34 @@
 		</div>
 		<div class="row">
 			<div class="col-6">
-				<div class="card card-body bg-light mb-3">
+				<div class="mb-3">
 					<h3 class="text-center text-primary">
 						<i class="fas fa-graduation-cap"></i> Education</h3>
 					<div class="list-group">
-						<div class="list-group-item list-group-item-action flex-column align-items-start">
+						<div class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let edu of user?.education">
 							<div class="d-flex w-100 justify-content-between">
-								<h5 class="mb-1">Code Institute</h5>
-								<small>March 2017 - Septemeber 2018</small>
+								<h5 class="mb-1">{{edu.school}}</h5>
+								<small>{{edu.dateFrom | date: "yyyy"}} - {{edu.dateTo  | date: "yyyy"}}</small>
 							</div>
-							<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-							<a href="#">
-								<i class="fas fa-globe"></i> Visit Website</a>
-						</div>
-						<div class="list-group-item list-group-item-action flex-column align-items-start">
-							<div class="d-flex w-100 justify-content-between">
-								<h5 class="mb-1">List group item heading</h5>
-								<small class="text-muted">3 days ago</small>
-							</div>
-							<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-							<a href="#">
-								<i class="fas fa-globe"></i> Visit Website</a>
-						</div>
-						<div class="list-group-item list-group-item-action flex-column align-items-start">
-							<div class="d-flex w-100 justify-content-between">
-								<h5 class="mb-1">List group item heading</h5>
-								<small class="text-muted">3 days ago</small>
-							</div>
-							<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-							<a href="#">
-								<i class="fas fa-globe"></i> Visit Website</a>
+							<p class="mb-1">{{edu.description}}</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-6">
-				<div class="card card-body bg-light mb-3">
+				<div class="mb-3">
 					<h3 class="text-center text-primary">
 						<i class="fas fa-briefcase"></i> Experience</h3>
 					<div class="list-group">
-						<div class="list-group-item list-group-item-action flex-column align-items-start">
+						<div class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let exp of user?.experience">
 							<div class="d-flex w-100 justify-content-between">
-								<h5 class="mb-1">List group item heading</h5>
-								<small>3 days ago</small>
+								<h5 class="mb-1">{{exp?.company}}</h5>
+								<small *ngIf="exp?.current || exp?.dateTo == null">{{exp?.dateFrom | date: "MMM yyyy"}} - Present</small>
+								<small *ngIf="!exp?.current && exp?.dateTo != null">{{exp?.dateFrom  | date: "MMM yyyy"}} {{exp?.dateTo  | date: "MMM yyyy"}}</small>
 							</div>
-							<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-							<a href="#">
-								<i class="fas fa-globe"></i> Visit Website</a>
-						</div>
-						<div class="list-group-item list-group-item-action flex-column align-items-start">
-							<div class="d-flex w-100 justify-content-between">
-								<h5 class="mb-1">List group item heading</h5>
-								<small class="text-muted">3 days ago</small>
-							</div>
-							<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-							<a href="#">
-								<i class="fas fa-globe"></i> Visit Website</a>
-						</div>
-						<div class="list-group-item list-group-item-action flex-column align-items-start">
-							<div class="d-flex w-100 justify-content-between">
-								<h5 class="mb-1">List group item heading</h5>
-								<small class="text-muted">3 days ago</small>
-							</div>
-							<p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-							<a href="#">
-								<i class="fas fa-globe"></i> Visit Website</a>
+							<p class="mb-1 my-2">{{exp?.description}}</p>
+								<small class="float-left"><i class="fas fa-map-marker-alt"></i> {{exp?.location}}</small>
+								<small class="float-right"><i class="fas fa-id-card"></i> {{exp?.jobTitle}}</small>
 						</div>
 					</div>
 				</div>
