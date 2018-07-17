@@ -55,4 +55,4 @@ __pycache__/
 
 BackendApi/env.py
 env.py
-JsonGenerator/node_modules
+FakerGenerator/node_modules

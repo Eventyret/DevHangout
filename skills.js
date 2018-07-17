@@ -301,7 +301,7 @@ let skills = {
 		icon: "devicon-wordpress-plain colored"
 	}
 };
-let titles = ["Developer", "Junior Developer", "Mid Developer", "Senior Developer", "Full Stack Developer", "Student", "Instructor", "Intern"];
+let titles = ["Developer", "Junior Developer", "Mid Developer", "Senior Developer", "Full Stack Developer", "Student", "Instructor", "Intern", "Web Designer", "Front End Developer", "UI Designer", "UX Designer", "Web Developer", "Dev Ops"];
 let diploma = ["A-level", "Higher National Diploma", "Bachelor Degree", "Master Degree", "Doctoral Degree"];
 let study = [
 	"Computer Science",
@@ -309,6 +309,7 @@ let study = [
 	"Software Development",
 	"Software Engineering",
 	"Mathematics",
-	"Business Information Systems"
+	"Business Information Systems",
+	"Other"
 ];
 let aboutMe = [];
