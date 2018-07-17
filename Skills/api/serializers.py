@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from ..models import Skills
+from ..models import Skill
 
 
 class SkillsSerializer(serializers.ModelSerializer):
     """ A Serializer that will have read only access but using the modal one """
     class Meta:
-        model = Skills
+        model = Skill
         fields = ("id", "name", "icon")
