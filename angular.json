@@ -27,7 +27,8 @@
 							"src/assets",
 							{ "glob": "fakeusers.json", "input": "./", "output": "./assets/" },
 							{ "glob": "landingpage.json", "input": "./", "output": "./assets/" },
-							{ "glob": "skills.json", "input": "./", "output": "./assets/" }
+							{ "glob": "skills.json", "input": "./", "output": "./assets/" },
+							{ "glob": "githubData.json", "input": "./", "output": "./assets/" }
 						],
 						"styles": ["src/assets/bootstrap.css", "src/styles.scss"],
 						"scripts": []

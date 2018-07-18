@@ -58,7 +58,7 @@ const routes: Routes = [
 	{ path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
 	{ path: "donate", component: SupporterModalComponent },
 	{ path: "donate-info", component: InfoModalComponent },
-	{ path: "github/:username/:repo", component: FakeGithubComponent },
+	{ path: "github", component: FakeGithubComponent },
 	{ path: "education/add", component: AddEducationComponent, canActivate: [AuthGuard]  },
 	{ path: "education/edit", component: EditEducationComponent , canActivate: [AuthGuard] },
 	{ path: "experience/add", component: AddExperienceComponent, canActivate: [AuthGuard] },
