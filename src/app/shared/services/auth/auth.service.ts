@@ -9,7 +9,7 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { Router } from "@angular/router";
 import { NotificationsService } from "angular2-notifications";
 import { NgxSpinnerService } from "ngx-spinner";
-import { throwError } from "rxjs";
+import { throwError, BehaviorSubject } from "rxjs";
 import "rxjs/add/operator/catch";
 
 @Injectable({
@@ -18,6 +18,8 @@ import "rxjs/add/operator/catch";
 export class AuthService {
 	currentUser: any;
 	helper = new JwtHelperService();
+	private refreshTokenSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+	refreshToken$ = this.refreshTokenSubject.asObservable();
 
 	constructor(
 		private http: HttpClient,
@@ -50,6 +52,7 @@ export class AuthService {
 						localStorage.setItem("refresh", result.refresh);
 						this.currentUser = this.helper.decodeToken(localStorage.getItem("token"));
 						this.setUserID(this.currentUser);
+						this.refreshTokenSubject.next(true);
 						return true;
 					} else {
 						return false;
@@ -69,44 +72,29 @@ export class AuthService {
 		const data = {
 			username: user.username,
 			email: user.email,
-			password: user.password,
-			profile: {
-				firstName: null,
-				lastName: null,
-				avatar: null,
-				location: null,
-				website: null,
-				company: null,
-				title: null,
-				backgroundImage: null,
-				bio: null,
-				twitter: null,
-				facebook: null,
-				linkedin: null,
-				instagram: null,
-				youtube: null,
-				github: null,
-				donator: false
-			}
+			password: user.password
 		};
-		return this.http.post<User>("http://localhost:8000/api/register/", data).pipe(
-			map(response => {
-				const result = response;
-				if (result) {
-					localStorage.setItem("firstvisit", "true");
-					this.spinner.hide();
-					this.notify.success("Welcome" + user.username + ". You can now log in");
-					return true;
-				} else {
-					this.spinner.hide();
-					return false;
-				}
-			})
-		).catch((error: any) => {
-			console.log(error);
-			this.spinner.hide();
-			return throwError(this.notify.error(error.error.profile) || "Server Error");
-		});
+		return this.http
+			.post<User>("http://localhost:8000/api/register/", data)
+			.pipe(
+				map(response => {
+					const result = response;
+					if (result) {
+						localStorage.setItem("firstvisit", "true");
+						this.spinner.hide();
+						this.notify.success("Welcome " + user.username + ". You can now log in");
+						return true;
+					} else {
+						this.spinner.hide();
+						return false;
+					}
+				})
+			)
+			.catch((error: any) => {
+				console.log(error);
+				this.spinner.hide();
+				return throwError(this.notify.error(error.error.profile) || "Server Error");
+			});
 	}
 	logout() {
 		this.router.navigate(["/"]);
@@ -123,17 +111,21 @@ export class AuthService {
 
 	refreshToken() {
 		const Rtoken = localStorage.getItem("refresh");
-		return this.http.post<Token>("http://localhost:8000/api/token/refresh/", { refresh: Rtoken }).pipe(
-			map(response => {
-				localStorage.setItem("token", response.access);
-			})
-		).catch((error: any) => {
-			console.log(error);
-			if (error.status === 401) {
-				return throwError(this.notify.error(error.error.detail) ||  ("Server Error"));
-			} else {
-				return throwError(this.notify.error(error.error.non_field_errors) ||  ("Server Error"));
-			}
-		});
+		return this.http
+			.post<Token>("http://localhost:8000/api/token/refresh/", { refresh: Rtoken })
+			.pipe(
+				map(response => {
+					localStorage.setItem("token", response.access);
+					this.refreshTokenSubject.next(true);
+				})
+			)
+			.catch((error: any) => {
+				console.log(error);
+				if (error.status === 401) {
+					return throwError(this.notify.error(error.error.detail) || "Server Error");
+				} else {
+					return throwError(this.notify.error(error.error.non_field_errors) || "Server Error");
+				}
+			});
 	}
 }
