@@ -24,6 +24,7 @@
 							<i class="{{data?.icon}}"></i> {{data.name}}</ng-template>
 						<ng-template ngbTabContent>
 							<p>{{data?.description}}</p>
+							<div *ngIf="data?.name == 'code'">
 							<table class="table table-hover">
 								<tbody>
 									<tr>
@@ -48,6 +49,7 @@
 							<div>
 								{{projects.readmeContent}}
 							</div>
+						</div>
 						</ng-template>
 					</ngb-tab>
 				</div>

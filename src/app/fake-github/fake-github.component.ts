@@ -22,7 +22,8 @@ export class FakeGithubComponent implements OnInit {
 		  this.githubData = data;
 		  const tmpCode = data[0].project;
 		  this.projects = _sample(tmpCode);
-		  console.log(this.projects);
+		  
+		  console.log(this.githubData);
 	  });
   }
 
