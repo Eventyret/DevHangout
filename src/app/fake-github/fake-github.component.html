@@ -1,0 +1,59 @@
+<div class="container my-5">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+				<h4>
+					<i class="fas fa-book"></i> Username / repoName</h4>
+				<div class="btn-group" role="group" aria-label="First group">
+					<button type="button" class="btn btn-secondary">
+						<i class="fas fa-eye"></i> Watch: </button>
+					<button type="button" class="btn btn-secondary">
+						<i class="fas fa-star"></i> Star:</button>
+					<button type="button" class="btn btn-secondary">
+						<i class="fas fa-code-branch"></i> Fork:</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<ngb-tabset #t="ngbTabset">
+				<div *ngFor="let data of githubData">
+					<ngb-tab id="tab-{{data.name}}">
+						<ng-template ngbTabTitle>
+							<i class="{{data?.icon}}"></i> {{data.name}}</ng-template>
+						<ng-template ngbTabContent>
+							<p>{{data?.description}}</p>
+							<div *ngIf="data?.name == 'code'">
+							<table class="table table-hover">
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>Mark</td>
+										<td>Otto</td>
+										<td>@mdo</td>
+									</tr>
+									<tr>
+										<th scope="row">2</th>
+										<td>Jacob</td>
+										<td>Thornton</td>
+										<td>@fat</td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td colspan="2">Larry the Bird</td>
+										<td>@twitter</td>
+									</tr>
+								</tbody>
+							</table>
+							<div>
+								{{projects.readmeContent}}
+							</div>
+						</div>
+						</ng-template>
+					</ngb-tab>
+				</div>
+			</ngb-tabset>
+		</div>
+	</div>
+</div>

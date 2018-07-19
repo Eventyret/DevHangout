@@ -34,4 +34,12 @@ export class GithubService {
 				return throwError(error);
 			});
 	}
+	fakeGitHubRepo() {
+		return this.http
+			.get("/assets/githubData.json")
+			.pipe(map((data: any) => data))
+			.catch((error: any) => {
+				return throwError(error);
+			});
+	}
 }

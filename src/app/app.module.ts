@@ -44,6 +44,7 @@ import { SectionsComponent } from "./landing/components/sections/sections.compon
 import { LandingPageService } from "./landing/service/landing-page.service";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { FakeGithubComponent } from "./fake-github/fake-github.component";
 
 
 const routes: Routes = [
@@ -57,6 +58,7 @@ const routes: Routes = [
 	{ path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
 	{ path: "donate", component: SupporterModalComponent },
 	{ path: "donate-info", component: InfoModalComponent },
+	{ path: "github", component: FakeGithubComponent },
 	{ path: "education/add", component: AddEducationComponent, canActivate: [AuthGuard]  },
 	{ path: "education/edit", component: EditEducationComponent , canActivate: [AuthGuard] },
 	{ path: "experience/add", component: AddExperienceComponent, canActivate: [AuthGuard] },
@@ -89,6 +91,7 @@ const routes: Routes = [
 		InfoModalComponent,
 		TestimonialsComponent,
 		SectionsComponent,
+		FakeGithubComponent,
 	],
 	imports: [
 		BrowserModule,

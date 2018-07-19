@@ -14,10 +14,17 @@ export class NavbarComponent implements OnInit {
 	public username: string;
 	public userID: string;
 	public avatar: string;
+	public loggedIn: boolean;
 	constructor(public auth: AuthService, private modalService: NgbModal, public router: Router) {}
 
 	ngOnInit() {
 		this.getUsername();
+		this.auth.refreshToken$.subscribe(val => {
+			if (val)  {
+				// val is true, refreshToken has been notified
+				this.loggedIn = true;
+			}
+		});
 	}
 
 	getUsername() {
@@ -26,6 +33,7 @@ export class NavbarComponent implements OnInit {
 			localStorage.setItem("username", data.username);
 			this.username = data.username;
 			this.avatar = data.profile.avatar;
+			this.loggedIn = true;
 		});
 	}
 
@@ -41,4 +49,6 @@ export class NavbarComponent implements OnInit {
 			size: "lg"
 		});
 	}
+
+
 }
