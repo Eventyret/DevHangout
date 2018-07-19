@@ -34,7 +34,7 @@ export class ProfileComponent implements OnInit {
 	support: boolean;
 	background: string;
 	normalBackground = "../../assets/landingBG.png";
-	githubData: any [];
+	githubData: any[];
 
 	ngOnInit() {
 		this.spinner.show();
@@ -57,6 +57,10 @@ export class ProfileComponent implements OnInit {
 				},
 				error => {
 					console.log(error);
+					if (error.status === 401) {
+						this.auth.refreshToken();
+						this.spinner.hide();
+					}
 				},
 				() => {
 					this.spinner.hide();
