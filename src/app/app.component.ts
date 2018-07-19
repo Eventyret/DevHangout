@@ -9,10 +9,5 @@ import { AuthService } from "./shared/services/auth/auth.service";
 })
 export class AppComponent implements OnInit {
 	constructor(private authService: AuthService) {}
-	ngOnInit() {
-		// Refreshing token every 8 minutes
-		interval(480000).subscribe(x => {
-			this.authService.refreshToken();
-		});
-	}
+	ngOnInit() {}
 }
