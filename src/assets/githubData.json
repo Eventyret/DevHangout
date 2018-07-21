@@ -10,26 +10,170 @@
 		"project": [
 			{
 				"name": "angular",
-				"e2e": "e2e",
-				"src": "src",
-				"editorconfig": ".editorconfig",
-				"gitignore": ".gitignore",
-				"readmeMD": "README.MD",
-				"angularjson": "angular.json",
-				"package": "package.json",
-				"packagelock": "package-lock.json",
-				"tsconfig": "tsconfig.json",
-				"tslint": "tslint.json",
+				"folders": [
+					{
+						"name": "e2e",
+						"icon": "fas fa-folder",
+						"comment": "Init commit",
+						"date": "6 months ago"
+					},
+					{
+						"name": "src",
+						"icon": "fas fa-folder",
+						"comment": "Init commit",
+						"date": "6 months ago"
+					}
+				],
+				"files": [
+					{
+						"name": ".editorconfig",
+						"icon": "fas fa-file",
+						"comment": "Init commit",
+						"date": "6 months ago"
+					},
+					{
+						"name": ".gitignore",
+						"icon": "fas fa-file",
+						"comment": "Init commit",
+						"date": "6 months ago"
+					},
+					{
+						"name": "README.MD",
+						"icon": "fas fa-file",
+						"comment": "Init commit",
+						"date": "6 months ago"
+					},
+					{
+						"name": "angular.json",
+						"icon": "fas fa-file",
+						"comment": "Init commit",
+						"date": "6 months ago"
+					},
+					{
+						"name": "package.json",
+						"icon": "fas fa-file",
+						"comment": "Init commit",
+						"date": "6 months ago"
+					},
+					{
+						"name": "package-lock.json",
+						"icon": "fas fa-file",
+						"comment": "Init commit",
+						"date": "6 months ago"
+					},
+					{
+						"name": "tsconfig.json",
+						"icon": "fas fa-file",
+						"comment": "Init commit",
+						"date": "6 months ago"
+					},
+					{
+						"name": "tslint.json",
+						"icon": "fas fa-file",
+						"comment": "Init commit",
+						"date": "6 months ago"
+					}
+				],
 				"readmeContent":
 					"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum? Sequi, repellendus? Eos voluptas error dolor a. Voluptas nemo, esse delectus aspernatur necessitatibus nostrum natus ullam inventore. Iusto cupiditate aspernatur, voluptates sit saepe ipsa illum asperiores tempore qui nemo earum odio, quibusdam nihil temporibus ut eaque similique. Tempore accusamus praesentium perferendis nesciunt inventore natus mollitia iure pariatur quam qui fuga obcaecati quibusdam, voluptatum quod nisi nihil deserunt voluptatibus eum veniam libero impedit ratione. Consequatur voluptatem explicabo fugiat. Totam corrupti, modi sunt quia hic molestiae quaerat iure veritatis, ipsa accusamus aliquam! Unde, iste. Illo, sunt ut? Temporibus qui iure eos quibusdam nisi minus saepe asperiores tenetur ut provident. Doloremque inventore eaque exercitationem. Ipsum quod est necessitatibus fuga iusto veniam sequi voluptatem commodi ipsa saepe quidem reprehenderit voluptates quae cupiditate, ullam, ab culpa dolor earum numquam totam iste voluptate."
 			},
 			{
 				"name": "html",
-				"assets": "e2e",
-				"index": "index.html",
-				"style": "style.css",
-				"readmeMD": "README.MD",
-				"main": "main.js",
+				"folders":[
+					{
+
+						"name": "assets",
+						"icon": "fas fa-folder",
+						"comment": "Init commit",
+						"date": "2 months ago"
+					}
+				],
+				"files": [
+					{
+						"name": "index.html",
+						"icon": "fas fa-file",
+						"comment": "Updated links and started contact.html",
+						"date": "2 months ago"
+					},
+					{
+						"name": "style.css",
+						"icon": "fas fa-file",
+						"comment": "fixed style issue with footer",
+						"date": "2 months ago"
+					},
+					{
+						"name": "contact.html",
+						"icon": "fas fa-file",
+						"comment": "Added contact form",
+						"date": "2 months ago"
+
+					},
+					{
+						"name": "README.MD",
+						"icon": "fas fa-file",
+						"comment": "Init commit",
+						"date": "2 months ago"
+
+					},
+					{
+						"name": "favicon.ico",
+						"icon": "fas fa-file",
+						"comment": "Init commit",
+						"date": "2 months ago"
+
+					},
+					{
+						"name": "main.js",
+						"icon": "fas fa-file",
+						"comment": "Init commit",
+						"date": "2 months ago"
+
+					}
+				],
+				"readmeContent":
+					"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum? Sequi, repellendus? Eos voluptas error dolor a. Voluptas nemo, esse delectus aspernatur necessitatibus nostrum natus ullam inventore. Iusto cupiditate aspernatur, voluptates sit saepe ipsa illum asperiores tempore qui nemo earum odio, quibusdam nihil temporibus ut eaque similique. Tempore accusamus praesentium perferendis nesciunt inventore natus mollitia iure pariatur quam qui fuga obcaecati quibusdam, voluptatum quod nisi nihil deserunt voluptatibus eum veniam libero impedit ratione. Consequatur voluptatem explicabo fugiat. Totam corrupti, modi sunt quia hic molestiae quaerat iure veritatis, ipsa accusamus aliquam! Unde, iste. Illo, sunt ut? Temporibus qui iure eos quibusdam nisi minus saepe asperiores tenetur ut provident. Doloremque inventore eaque exercitationem. Ipsum quod est necessitatibus fuga iusto veniam sequi voluptatem commodi ipsa saepe quidem reprehenderit voluptates quae cupiditate, ullam, ab culpa dolor earum numquam totam iste voluptate."
+			},
+			{
+				"name": "python",
+				"folders":[
+					{
+
+						"name": "static",
+						"icon": "fas fa-folder",
+						"comment": "Init commit",
+						"date": "2 months ago"
+					},
+					{
+
+						"name": "templates",
+						"icon": "fas fa-folder",
+						"comment": "Init commit",
+						"date": "2 months ago"
+					}
+				],
+				"files": [
+					{
+						"name": "README.md",
+						"icon": "fas fa-file",
+						"comment": "Init commit",
+						"date": "2 months ago"
+
+					},
+					{
+						"name": "app.py",
+						"icon": "fas fa-file",
+						"comment": "Init commit",
+						"date": "2 months ago"
+
+					},
+					{
+						"name": "main.js",
+						"icon": "fas fa-file",
+						"comment": "Init commit",
+						"date": "2 months ago"
+
+					}
+				],
 				"readmeContent":
 					"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum? Sequi, repellendus? Eos voluptas error dolor a. Voluptas nemo, esse delectus aspernatur necessitatibus nostrum natus ullam inventore. Iusto cupiditate aspernatur, voluptates sit saepe ipsa illum asperiores tempore qui nemo earum odio, quibusdam nihil temporibus ut eaque similique. Tempore accusamus praesentium perferendis nesciunt inventore natus mollitia iure pariatur quam qui fuga obcaecati quibusdam, voluptatum quod nisi nihil deserunt voluptatibus eum veniam libero impedit ratione. Consequatur voluptatem explicabo fugiat. Totam corrupti, modi sunt quia hic molestiae quaerat iure veritatis, ipsa accusamus aliquam! Unde, iste. Illo, sunt ut? Temporibus qui iure eos quibusdam nisi minus saepe asperiores tenetur ut provident. Doloremque inventore eaque exercitationem. Ipsum quod est necessitatibus fuga iusto veniam sequi voluptatem commodi ipsa saepe quidem reprehenderit voluptates quae cupiditate, ullam, ab culpa dolor earum numquam totam iste voluptate."
 			}
