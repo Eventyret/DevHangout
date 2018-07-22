@@ -20,10 +20,8 @@ export class FakeGithubComponent implements OnInit {
   populateSite() {
 	  this.fakeGithub.fakeGitHubRepo().subscribe(data => {
 		  this.githubData = data;
-		  const tmpCode = data[0].project;
-		  this.projects = _sample(tmpCode);
-		  
-		  console.log(this.githubData);
+		  this.projects = _sample(data[0].project);
+		  console.log(this.projects);
 	  });
   }
 
