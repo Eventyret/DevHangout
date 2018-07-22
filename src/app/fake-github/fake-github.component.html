@@ -8,7 +8,7 @@
 					<button type="button" class="btn btn-secondary">
 						<i class="fas fa-eye"></i> Watch: </button>
 					<button type="button" class="btn btn-secondary">
-						<i class="fas fa-star"></i> Star:</button>
+						<i class="fas fa-star"></i> Star: {{githubData?.</button>
 					<button type="button" class="btn btn-secondary">
 						<i class="fas fa-code-branch"></i> Fork:</button>
 				</div>
@@ -21,7 +21,7 @@
 				<div *ngFor="let data of githubData">
 					<ngb-tab id="tab-{{data.name}}">
 						<ng-template ngbTabTitle>
-							<i class="{{data?.icon}}"></i> {{data.name}}</ng-template>
+							<i class="{{data?.icon}}"></i> <span class="text-capitalize"> {{data.name}}</span></ng-template>
 						<ng-template ngbTabContent>
 							<p>{{data?.description}}</p>
 							<div *ngIf="data?.name == 'code'">

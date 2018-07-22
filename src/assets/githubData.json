@@ -186,7 +186,7 @@
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum?"
 	},
 	{
-		"name": "pullrequests",
+		"name": "pull requests",
 		"icon": "fas fa-code-branch",
 		"description":
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum?"
@@ -206,12 +206,6 @@
 	{
 		"name": "insights",
 		"icon": "fas fa-chart-bar",
-		"description":
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum?"
-	},
-	{
-		"name": "settings",
-		"icon": "fas fa-cog",
 		"description":
 			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum?"
 	}
