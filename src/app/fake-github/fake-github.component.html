@@ -25,15 +25,15 @@
 						<ng-template ngbTabContent>
 							<p>{{data?.description}}</p>
 							<div *ngIf="data?.name == 'code'">
-								<table class="table table-hover">
+								<table class="table table-hover mb-5">
 									<tbody>
 										<tr *ngFor="let folders of projects?.folders">
-											<th><i class="{{folders.icon}}"></i> {{folders.name}}</th>
+											<td><i class="{{folders.icon}}"></i> {{folders.name}}</td>
 											<td>{{folders.comment}}</td>
 											<td>{{folders.date}}</td>
 										</tr>
 										<tr *ngFor="let files of projects?.files">
-											<th><i class="{{files.icon}}"></i> {{files.name}}</th>
+											<td><i class="{{files.icon}}"></i> {{files.name}}</td>
 											<td>{{files.comment}}</td>
 											<td>{{files.date}}</td>
 										</tr>
