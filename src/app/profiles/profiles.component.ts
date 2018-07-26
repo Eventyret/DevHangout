@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { FakeService } from "../shared/services/api/fake.service";
-import { User, Skills, Profile } from "../shared/models/users";
 import { NgxSpinnerService } from "ngx-spinner";
 import { unionBy as _unionBy, slice as _slice, shuffle as _shuffle } from "lodash";
 @Component({
