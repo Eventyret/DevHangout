@@ -3,14 +3,14 @@
 		<div class="col-sm-12">
 			<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
 				<h4>
-					<i class="fas fa-book"></i> Username / repoName</h4>
+					<i class="fas fa-book"></i> {{username}} / {{repoName}}</h4>
 				<div class="btn-group" role="group" aria-label="First group">
-					<button type="button" class="btn btn-secondary">
-						<i class="fas fa-eye"></i> Watch: </button>
-					<button type="button" class="btn btn-secondary">
-						<i class="fas fa-star"></i> Star: {{githubData?.</button>
-					<button type="button" class="btn btn-secondary">
-						<i class="fas fa-code-branch"></i> Fork:</button>
+					<button type="button" class="btn btn-secondary" *ngIf="watchCount">
+						<i class="fas fa-eye"></i> Watch: {{watchCount}} </button>
+					<button type="button" class="btn btn-secondary" *ngIf="starCount">
+						<i class="fas fa-star"></i> Star: {{starCount}}</button>
+					<button type="button" class="btn btn-secondary" *ngIf="forkCount">
+						<i class="fas fa-code-branch"></i> Fork: {{forkCount}}</button>
 				</div>
 			</div>
 		</div>
@@ -18,7 +18,7 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<ngb-tabset #t="ngbTabset">
-				<div *ngFor="let data of githubData">
+				<div *ngFor="let data of projects">
 					<ngb-tab id="tab-{{data.name}}">
 						<ng-template ngbTabTitle>
 							<i class="{{data?.icon}}"></i> <span class="text-capitalize"> {{data.name}}</span></ng-template>

@@ -36,7 +36,7 @@ export class GithubService {
 	}
 	fakeGitHubRepo() {
 		return this.http
-			.get("/assets/githubData.json")
+			.get("/assets/fakeusers.json")
 			.pipe(map((data: any) => data))
 			.catch((error: any) => {
 				return throwError(error);
