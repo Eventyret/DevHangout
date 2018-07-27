@@ -46,6 +46,27 @@ export interface Skill {
 	icon: string;
 }
 
+export interface Folder {
+	name: string;
+	icon: string;
+	comment: string;
+	date: string;
+}
+
+export interface File {
+	name: string;
+	icon: string;
+	comment: string;
+	date: string;
+}
+
+export interface Project {
+	name: string;
+	folders: Folder[];
+	files: File[];
+	readmeContent: string;
+}
+
 export interface Repo {
 	name: string;
 	html_url: string;
@@ -55,6 +76,7 @@ export interface Repo {
 	forks_count: number;
 	open_issues_count: number;
 	updated_at: string;
+	project: Project;
 }
 
 export interface User {
@@ -65,5 +87,5 @@ export interface User {
 	education: Education[];
 	experience: Experience[];
 	skills: Skill[];
-	repo: Repo[];
+	repo?: Repo[];
 }
