@@ -65,5 +65,5 @@ export interface User {
 	education: Education[];
 	experience: Experience[];
 	skills: Skill[];
-	repo: Repo[];
+	repo?: Repo[];
 }
