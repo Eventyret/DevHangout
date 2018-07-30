@@ -49,7 +49,7 @@ import { FakeGithubComponent } from "./fake-github/fake-github.component";
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
 	{ path: "login", component: LoginComponent, pathMatch: "full" },
-	{ path: "profiles", component: ProfilesComponent, pathMatch: "full", canActivate: [AuthGuard]  },
+	{ path: "profiles", component: ProfilesComponent, pathMatch: "full" },
 	{ path: "signup", component: SignupComponent, pathMatch: "full" },
 	{ path: "feed", component: FeedComponent, pathMatch: "full", canActivate: [AuthGuard]  },
 	{ path: "profile/:id/:username", component: ProfileComponent, pathMatch: "full" },

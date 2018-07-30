@@ -22,7 +22,7 @@
     "@angular/router": "^6.1.0",
     "@auth0/angular-jwt": "^2.0.0",
     "@ng-bootstrap/ng-bootstrap": "^2.2.0",
-    "@types/lodash": "^4.14.113",
+    "@types/lodash": "^4.14.114",
     "@yellowspot/ng-truncate": "^1.4.0",
     "angular2-notifications": "^1.0.2",
     "bootswatch": "^4.1.3",
