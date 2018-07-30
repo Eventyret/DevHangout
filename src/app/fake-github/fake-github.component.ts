@@ -1,6 +1,7 @@
 import { GithubService } from "./../shared/services/api/github.service";
 import { Component, OnInit } from "@angular/core";
 import { sample as _sample } from "lodash";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-fake-github",
@@ -11,17 +12,31 @@ export class FakeGithubComponent implements OnInit {
 
 	githubData: any[];
 	projects: any;
-  constructor(private fakeGithub: GithubService) { }
+	projectsInfo = [];
+	username: string;
+	repoName: string;
+	starCount: string;
+	watchCount: string;
+	forkCount: string;
+  constructor(private fakeGithub: GithubService, private router: ActivatedRoute) { }
 
   ngOnInit() {
 	  this.populateSite();
+	  this.router.params.subscribe(route => {
+		  console.log(route);
+		  this.username = route.username;
+		  this.repoName = route.repo;
+	  });
   }
 
   populateSite() {
 	  this.fakeGithub.fakeGitHubRepo().subscribe(data => {
 		  this.githubData = data;
-		  this.projects = _sample(data[0].project);
-		  console.log(this.projects);
+		  this.projectsInfo.push( _sample(data[0].repo));
+		  this.starCount = this.projectsInfo[0].stargazers_count;
+		  this.forkCount = this.projectsInfo[0].forks_count;
+		  this.watchCount = this.projectsInfo[0].watchers_count;
+		  this.projects = this.projectsInfo[0].project;
 	  });
   }
 

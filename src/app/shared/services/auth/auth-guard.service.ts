@@ -2,13 +2,15 @@ import { Injectable } from "@angular/core";
 import { CanActivate, Router, RouterStateSnapshot, ActivatedRouteSnapshot } from "@angular/router";
 import { AuthService } from "./auth.service";
 import { JwtHelperService } from "@auth0/angular-jwt";
+import { LoginComponent } from "../../components/login/login.component";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 @Injectable({
 	providedIn: "root"
 })
 export class AuthGuard implements CanActivate {
 	token = localStorage.getItem("token");
 
-	constructor(private router: Router, private authService: AuthService, public jwtHelper: JwtHelperService) {}
+	constructor(private router: Router, private authService: AuthService, public jwtHelper: JwtHelperService, private modalService: NgbModal) {}
 
 	canActivate() {
 		if (this.token) {
@@ -22,8 +24,16 @@ export class AuthGuard implements CanActivate {
 				return true;
 			}
 		} else {
+			this.openLogin();
 			this.router.navigate(["/not-found"]);
 			return false;
 		}
+	}
+
+	openLogin() {
+		const modalRef = this.modalService.open(LoginComponent, {
+			centered: true,
+			size: "lg"
+		});
 	}
 }
