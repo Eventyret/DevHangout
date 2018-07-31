@@ -23,12 +23,14 @@ export class NavbarComponent implements OnInit {
 			if (val)  {
 				// val is true, refreshToken has been notified
 				this.loggedIn = true;
+				this.getUsername();
 			}
 		});
 	}
 
 	getUsername() {
 		this.userID = localStorage.getItem("user_id");
+		this.username = localStorage.getItem("username");
 		this.auth.getUser(this.userID).subscribe(data => {
 			localStorage.setItem("username", data.username);
 			this.username = data.username;

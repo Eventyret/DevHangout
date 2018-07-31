@@ -17,6 +17,7 @@ import "rxjs/add/operator/catch";
 })
 export class AuthService {
 	currentUser: any;
+	username: string;
 	helper = new JwtHelperService();
 	private refreshTokenSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 	refreshToken$ = this.refreshTokenSubject.asObservable();
@@ -42,6 +43,7 @@ export class AuthService {
 			});
 	}
 	login(credentials) {
+		localStorage.setItem("username", credentials.username);
 		return this.http
 			.post<Token>("http://localhost:8000/api/token/", credentials)
 			.pipe(
@@ -69,6 +71,7 @@ export class AuthService {
 	}
 	register(user) {
 		this.spinner.show();
+		this.username = user.username;
 		const data = {
 			username: user.username,
 			email: user.email,
@@ -122,6 +125,8 @@ export class AuthService {
 			.catch((error: any) => {
 				console.log(error);
 				if (error.status === 401) {
+					this.logout();
+					this.notify.info("You have been signed out");
 					return throwError(this.notify.error(error.error.detail) || "Server Error");
 				} else {
 					return throwError(this.notify.error(error.error.non_field_errors) || "Server Error");
