@@ -44,11 +44,13 @@ import { LandingPageService } from "./landing/service/landing-page.service";
 import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { FakeGithubComponent } from "./fake-github/fake-github.component";
+import { SessionExpiredComponent } from './shared/components/session-expired/session-expired.component';
 
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
 	{ path: "login", component: LoginComponent, pathMatch: "full" },
+	{ path: "expired", component: SessionExpiredComponent, pathMatch: "full" },
 	{ path: "profiles", component: ProfilesComponent, pathMatch: "full" },
 	{ path: "signup", component: SignupComponent, pathMatch: "full" },
 	{ path: "feed", component: FeedComponent, pathMatch: "full", canActivate: [AuthGuard]  },
@@ -92,6 +94,7 @@ const routes: Routes = [
 		TestimonialsComponent,
 		SectionsComponent,
 		FakeGithubComponent,
+		SessionExpiredComponent,
 	],
 	imports: [
 		BrowserModule,

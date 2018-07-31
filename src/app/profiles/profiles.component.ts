@@ -4,6 +4,8 @@ import { NgxSpinnerService } from "ngx-spinner";
 import { unionBy as _unionBy, slice as _slice, shuffle as _shuffle } from "lodash";
 import { AuthService } from "../shared/services/auth/auth.service";
 import { Router, Routes } from "@angular/router";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { SessionExpiredComponent } from "../shared/components/session-expired/session-expired.component";
 @Component({
 	selector: "app-profiles",
 	templateUrl: "./profiles.component.html",
@@ -18,7 +20,13 @@ export class ProfilesComponent implements OnInit {
 	displayUsers = [];
 	url: string;
 
-	constructor(public fakeService: FakeService, private spinner: NgxSpinnerService, private auth: AuthService, private router: Router) {
+	constructor(
+		public fakeService: FakeService,
+		private spinner: NgxSpinnerService,
+		private auth: AuthService,
+		private router: Router,
+		private modalService: NgbModal
+	) {
 		this.url = this.router.url;
 	}
 
@@ -58,10 +66,14 @@ export class ProfilesComponent implements OnInit {
 				this.sliceUsers();
 			},
 			error => {
-				this.auth.refreshToken().subscribe(data => {
-					this.router.navigate([this.url]);
+				this.auth.refreshToken().subscribe(() => {
+					const modalRef = this.modalService.open(SessionExpiredComponent, {
+						centered: true,
+						size: "lg",
+						backdrop: "static",
+						backdropClass: "backdrop-color"
+					});
 				});
-				console.log(error);
 			},
 			() => {
 				this.spinner.hide();
