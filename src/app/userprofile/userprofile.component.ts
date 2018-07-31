@@ -68,7 +68,6 @@ export class ProfileComponent implements OnInit {
 			);
 		} else {
 			this.auth.getUser(id).subscribe(data => {
-				console.log(data);
 				this.user = data;
 				this.support = data.profile.donator;
 				this.getRepos(this.user.profile.github);

@@ -39,6 +39,8 @@ export class AuthService {
 			.get("http://localhost:8000/api/users/" + id + "/")
 			.pipe(map((data: any) => data))
 			.catch((error: any) => {
+				this.refreshToken();
+				this.spinner.hide();
 				return throwError(error);
 			});
 	}
@@ -123,10 +125,9 @@ export class AuthService {
 				})
 			)
 			.catch((error: any) => {
-				console.log(error);
+				this.refreshToken();
+				this.spinner.hide();
 				if (error.status === 401) {
-					this.logout();
-					this.notify.info("You have been signed out");
 					return throwError(this.notify.error(error.error.detail) || "Server Error");
 				} else {
 					return throwError(this.notify.error(error.error.non_field_errors) || "Server Error");

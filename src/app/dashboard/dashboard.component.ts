@@ -7,6 +7,7 @@ import { Component, OnInit } from "@angular/core";
 import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { NgxSpinnerService } from "ngx-spinner";
 import { AuthService } from "../shared/services/auth/auth.service";
+import { User } from "../shared/models/users";
 
 @Component({
 	selector: "app-dashboard",
@@ -14,7 +15,7 @@ import { AuthService } from "../shared/services/auth/auth.service";
 	styleUrls: ["./dashboard.component.scss"]
 })
 export class DashboardComponent implements OnInit {
-	user: any;
+	user: User;
 	support = true;
 	id = localStorage.getItem("user_id");
 	LocalUser = localStorage.getItem("user");
@@ -49,7 +50,6 @@ export class DashboardComponent implements OnInit {
 
 	getUserData(id) {
 		this.auth.getUser(id).subscribe(data => {
-			console.log(data);
 			localStorage.setItem("user", JSON.stringify(data));
 			this.user = data;
 			this.support = data.profile.donator;

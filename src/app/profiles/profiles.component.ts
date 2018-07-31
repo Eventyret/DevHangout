@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FakeService } from "../shared/services/api/fake.service";
 import { NgxSpinnerService } from "ngx-spinner";
 import { unionBy as _unionBy, slice as _slice, shuffle as _shuffle } from "lodash";
+import { AuthService } from "../shared/services/auth/auth.service";
+import { Router, Routes } from "@angular/router";
 @Component({
 	selector: "app-profiles",
 	templateUrl: "./profiles.component.html",
@@ -14,8 +16,11 @@ export class ProfilesComponent implements OnInit {
 	term: string;
 	startNum = 0;
 	displayUsers = [];
+	url: string;
 
-	constructor(public fakeService: FakeService, private spinner: NgxSpinnerService) {}
+	constructor(public fakeService: FakeService, private spinner: NgxSpinnerService, private auth: AuthService, private router: Router) {
+		this.url = this.router.url;
+	}
 
 	ngOnInit() {
 		this.spinner.show();
@@ -38,7 +43,8 @@ export class ProfilesComponent implements OnInit {
 			},
 			error => {
 				console.log(error);
-			}, () => {
+			},
+			() => {
 				this.getRealDevelopers();
 			}
 		);
@@ -52,6 +58,9 @@ export class ProfilesComponent implements OnInit {
 				this.sliceUsers();
 			},
 			error => {
+				this.auth.refreshToken().subscribe(data => {
+					this.router.navigate([this.url]);
+				});
 				console.log(error);
 			},
 			() => {
