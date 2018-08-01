@@ -1,6 +1,6 @@
 import { GithubService } from "./../shared/services/api/github.service";
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 import { NgbTooltipConfig } from "@ng-bootstrap/ng-bootstrap";
 import { find as _find } from "lodash";
 import { NgxSpinnerService } from "ngx-spinner";
@@ -20,7 +20,6 @@ export class ProfileComponent implements OnInit {
 		private route: ActivatedRoute,
 		private auth: AuthService,
 		private fakeService: FakeService,
-		private router: Router,
 		private gitService: GithubService
 	) {
 		config.placement = "top";
