@@ -95,7 +95,8 @@ module.exports = () => {
 							forks_count: randomNumberLow,
 							open_issues_count: randomNumberLow,
 							updated_at: faker.date.recent(),
-							project: _.sample(project)
+							project: _.sample(project),
+							tabs: tabs
 							}
 							githubData.push(gitData);
 					}
@@ -483,36 +484,24 @@ let tabs = [
 		"name": "issues",
 		"icon": "fas fa-exclamation-circle",
 		"description":
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum?"
-	},
-	{
-		"name": "issues",
-		"icon": "fas fa-exclamation-circle",
-		"description":
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum?"
+			"This is a demo and has no issues reported."
 	},
 	{
 		"name": "pull requests",
 		"icon": "fas fa-code-branch",
 		"description":
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum?"
+			"There are no pull requests here."
 	},
 	{
 		"name": "projects",
 		"icon": "fas fa-project-diagram",
 		"description":
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum?"
+			"No other projects found"
 	},
 	{
 		"name": "wiki",
 		"icon": "fas fa-book-open",
 		"description":
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum?"
-	},
-	{
-		"name": "insights",
-		"icon": "fas fa-chart-bar",
-		"description":
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum?"
+			"This user has not created a Wiki yet"
 	}
 ]
