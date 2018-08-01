@@ -3,9 +3,9 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-3 text-center">
+			<div class="col-sm-12 col-md-4 text-center">
 				<p class="lead text-muted">Welcome {{user?.username}}</p>
-				<img class="rounded-circle profile-image my-2" src="{{user?.profile.avatar}}" alt="{{user?.username}}">
+				<img class="rounded-circle profile-image my-2 img-fluid" src="{{user?.profile.avatar}}" alt="{{user?.username}}">
 				<div *ngIf="support" class="supporter text-center mx-auto content my-2">
 					<span>Supporter
 						<i class="fas fa-star"></i>
@@ -35,7 +35,7 @@
 					</ul>
 
 			</div>
-			<div class="col-md-9 mt-5">
+			<div class="col-sm-12 col-md-8 mt-5">
 				<div id="experience my-auto">
 					<h4 class="mb-2">Experience</h4>
 					<div class="table-responsive">
@@ -108,3 +108,4 @@
 			</div>
 		</div>
 	</div>
+</div>

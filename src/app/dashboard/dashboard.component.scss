@@ -1,6 +1,8 @@
 .dashboard {
-    height: 83.4vh;
-    padding: 10px 80px;
+	padding: 10px 80px;
+	@media screen and (min-width: 768px) {
+		min-height: 83.1vh;
+	}
 }
 
 .profile-image {
@@ -11,16 +13,16 @@
 
 .supporter {
 	background: linear-gradient(to right, #ff4e50, #f9d423);
-    width: 250px;
+	width: 200px;
     border-radius: 10px;
 	padding: 10px;
-	font-family: "Roboto";
-	font-size: 1.5vw;
+	font-family: "Ubuntu";
+	font-size: 1vw;
 	font-weight: 700;
 	color: #fff;
 	.fa-star {
 		color: #FF5722;
-		font-size: 1.5vw;
+		font-size: 1vw;
 	}
 }
 
