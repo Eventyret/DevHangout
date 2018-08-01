@@ -16,9 +16,9 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-12">
+		<div class="col-sm-12 set-height">
 			<ngb-tabset #t="ngbTabset">
-				<div *ngFor="let data of projects">
+				<div *ngFor="let data of tabs">
 					<ngb-tab id="tab-{{data.name}}">
 						<ng-template ngbTabTitle>
 							<i class="{{data?.icon}}"></i> <span class="text-capitalize"> {{data.name}}</span></ng-template>

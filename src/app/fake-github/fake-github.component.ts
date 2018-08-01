@@ -2,6 +2,7 @@ import { GithubService } from "./../shared/services/api/github.service";
 import { Component, OnInit } from "@angular/core";
 import { sample as _sample } from "lodash";
 import { ActivatedRoute } from "@angular/router";
+import { Tab } from "../shared/models/users";
 
 @Component({
   selector: "app-fake-github",
@@ -18,12 +19,12 @@ export class FakeGithubComponent implements OnInit {
 	starCount: string;
 	watchCount: string;
 	forkCount: string;
+	tabs:  Tab[];
   constructor(private fakeGithub: GithubService, private router: ActivatedRoute) { }
 
   ngOnInit() {
 	  this.populateSite();
 	  this.router.params.subscribe(route => {
-		  console.log(route);
 		  this.username = route.username;
 		  this.repoName = route.repo;
 	  });
@@ -37,6 +38,7 @@ export class FakeGithubComponent implements OnInit {
 		  this.forkCount = this.projectsInfo[0].forks_count;
 		  this.watchCount = this.projectsInfo[0].watchers_count;
 		  this.projects = this.projectsInfo[0].project;
+		  this.tabs = this.projectsInfo[0].tabs;
 	  });
   }
 

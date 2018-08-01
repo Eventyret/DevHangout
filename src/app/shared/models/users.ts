@@ -67,6 +67,12 @@ export interface Project {
 	readmeContent: string;
 }
 
+export interface Tab {
+	name: string;
+	icon: string;
+	description: string;
+}
+
 export interface Repo {
 	name: string;
 	html_url: string;
@@ -77,6 +83,7 @@ export interface Repo {
 	open_issues_count: number;
 	updated_at: string;
 	project: Project;
+	tabs: Tab[];
 }
 
 export interface User {
@@ -87,5 +94,5 @@ export interface User {
 	education: Education[];
 	experience: Experience[];
 	skills: Skill[];
-	repo?: Repo[];
+	repo: Repo[];
 }
