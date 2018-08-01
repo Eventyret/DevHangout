@@ -94,7 +94,8 @@ module.exports = () => {
 							watchers_count: randomNumberLow,
 							forks_count: randomNumberLow,
 							open_issues_count: randomNumberLow,
-							updated_at: faker.date.recent()
+							updated_at: faker.date.recent(),
+							project: _.sample(project)
 							}
 							githubData.push(gitData);
 					}
@@ -132,7 +133,7 @@ module.exports = () => {
 				experience: randomExp(9000 + n),
 				skills: skillsData,
 				repo: githubRepo()
-			};
+			};\
 		})
 	};
 };
@@ -350,4 +351,168 @@ let study = [
 	"Business Information Systems",
 	"Other"
 ];
-let aboutMe = [];
+let project = [
+	{
+		"name": "angular",
+		"folders": [
+			{
+				"name": "e2e",
+				"icon": "fas fa-folder",
+				"comment": "Init commit",
+				"date": "6 months ago"
+			},
+			{
+				"name": "src",
+				"icon": "fas fa-folder",
+				"comment": "Init commit",
+				"date": "6 months ago"
+			}
+		],
+		"files": [
+			{
+				"name": ".editorconfig",
+				"icon": "far fa-file-alt",
+				"comment": "Init commit",
+				"date": "6 months ago"
+			},
+			{
+				"name": ".gitignore",
+				"icon": "far fa-file-alt",
+				"comment": "Init commit",
+				"date": "6 months ago"
+			},
+			{
+				"name": "README.MD",
+				"icon": "far fa-file-alt",
+				"comment": "Init commit",
+				"date": "6 months ago"
+			},
+			{
+				"name": "angular.json",
+				"icon": "far fa-file-alt",
+				"comment": "Init commit",
+				"date": "6 months ago"
+			},
+			{
+				"name": "package.json",
+				"icon": "far fa-file-alt",
+				"comment": "Init commit",
+				"date": "6 months ago"
+			},
+			{
+				"name": "package-lock.json",
+				"icon": "far fa-file-alt",
+				"comment": "Init commit",
+				"date": "6 months ago"
+			},
+			{
+				"name": "tsconfig.json",
+				"icon": "far fa-file-alt",
+				"comment": "Init commit",
+				"date": "6 months ago"
+			},
+			{
+				"name": "tslint.json",
+				"icon": "far fa-file-alt",
+				"comment": "Init commit",
+				"date": "6 months ago"
+			}
+		],
+		"readmeContent":
+		"<h1><a id=\"Project_Title_0\"><\/a>Project Title<\/h1>\r\n<p>One Paragraph of project description goes here<\/p>\r\n<h2><a id=\"Getting_Started_4\"><\/a>Getting Started<\/h2>\r\n<p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.<\/p>\r\n<h3><a id=\"Prerequisites_8\"><\/a>Prerequisites<\/h3>\r\n<p>What things you need to install the software and how to install them<\/p>\r\n<pre><code>Give examples\r\n<\/code><\/pre>\r\n<h3><a id=\"Installing_16\"><\/a>Installing<\/h3>\r\n<p>A step by step series of examples that tell you how to get a development env running<\/p>\r\n<p>Say what the step will be<\/p>\r\n<pre><code>Give the example\r\n<\/code><\/pre>\r\n<p>And repeat<\/p>\r\n<pre><code>until finished\r\n<\/code><\/pre>\r\n<p>End with an example of getting some data out of the system or using it for a little demo<\/p>\r\n<h2><a id=\"Running_the_tests_34\"><\/a>Running the tests<\/h2>\r\n<p>Explain how to run the automated tests for this system<\/p>\r\n<h3><a id=\"Break_down_into_end_to_end_tests_38\"><\/a>Break down into end to end tests<\/h3>\r\n<p>Explain what these tests test and why<\/p>\r\n<pre><code>Give an example\r\n<\/code><\/pre>\r\n<h3><a id=\"And_coding_style_tests_46\"><\/a>And coding style tests<\/h3>\r\n<p>Explain what these tests test and why<\/p>\r\n<pre><code>Give an example\r\n<\/code><\/pre>\r\n<h2><a id=\"Deployment_54\"><\/a>Deployment<\/h2>\r\n<p>Add additional notes about how to deploy this on a live system<\/p>\r\n<h2><a id=\"Built_With_58\"><\/a>Built With<\/h2>\r\n<ul>\r\n<li><a href=\"http:\/\/www.dropwizard.io\/1.0.2\/docs\/\">Dropwizard<\/a> - The web framework used<\/li>\r\n<li><a href=\"https:\/\/maven.apache.org\/\">Maven<\/a> - Dependency Management<\/li>\r\n<li><a href=\"https:\/\/rometools.github.io\/rome\/\">ROME<\/a> - Used to generate RSS Feeds<\/li>\r\n<\/ul>\r\n<h2><a id=\"Contributing_64\"><\/a>Contributing<\/h2>\r\n<p>Please read <a href=\"https:\/\/gist.github.com\/PurpleBooth\/b24679402957c63ec426\">CONTRIBUTING.md<\/a> for details on our code of conduct, and the process for submitting pull requests to us.<\/p>\r\n<h2><a id=\"Versioning_68\"><\/a>Versioning<\/h2>\r\n<p>We use <a href=\"http:\/\/semver.org\/\">SemVer<\/a> for versioning. For the versions available, see the <a href=\"https:\/\/github.com\/your\/project\/tags\">tags on this repository<\/a>.<\/p>\r\n<h2><a id=\"Authors_72\"><\/a>Authors<\/h2>\r\n<ul>\r\n<li><strong>Billie Thompson<\/strong> - <em>Initial work<\/em> - <a href=\"https:\/\/github.com\/PurpleBooth\">PurpleBooth<\/a><\/li>\r\n<\/ul>\r\n<p>See also the list of <a href=\"https:\/\/github.com\/your\/project\/contributors\">contributors<\/a> who participated in this project.<\/p>\r\n<h2><a id=\"License_78\"><\/a>License<\/h2>\r\n<p>This project is licensed under the MIT License - see the <a href=\"LICENSE.md\">LICENSE.md<\/a> file for details<\/p>\r\n<h2><a id=\"Acknowledgments_82\"><\/a>Acknowledgments<\/h2>\r\n<ul>\r\n<li>Hat tip to anyone whose code was used<\/li>\r\n<li>Inspiration<\/li>\r\n<li>etc<\/li>\r\n<\/ul>"
+	},
+	{
+		"name": "html",
+		"folders":[
+			{
+
+				"name": "assets",
+				"icon": "fas fa-folder",
+				"comment": "Init commit",
+				"date": "2 months ago"
+			}
+		],
+		"files": [
+			{
+				"name": "index.html",
+				"icon": "far fa-file-alt",
+				"comment": "Updated links and started contact.html",
+				"date": "2 months ago"
+			},
+			{
+				"name": "style.css",
+				"icon": "far fa-file-alt",
+				"comment": "fixed style issue with footer",
+				"date": "2 months ago"
+			},
+			{
+				"name": "contact.html",
+				"icon": "far fa-file-alt",
+				"comment": "Added contact form",
+				"date": "2 months ago"
+
+			},
+			{
+				"name": "README.MD",
+				"icon": "far fa-file-alt",
+				"comment": "Init commit",
+				"date": "2 months ago"
+
+			},
+			{
+				"name": "favicon.ico",
+				"icon": "far fa-file-alt",
+				"comment": "Init commit",
+				"date": "2 months ago"
+
+			},
+			{
+				"name": "main.js",
+				"icon": "far fa-file-alt",
+				"comment": "Init commit",
+				"date": "2 months ago"
+
+			}
+		],
+		"readmeContent":
+			"<h1><a id=\"Project_Title_0\"><\/a>Project Title<\/h1>\r\n<p>One Paragraph of project description goes here<\/p>\r\n<h2><a id=\"Getting_Started_4\"><\/a>Getting Started<\/h2>\r\n<p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.<\/p>\r\n<h3><a id=\"Prerequisites_8\"><\/a>Prerequisites<\/h3>\r\n<p>What things you need to install the software and how to install them<\/p>\r\n<pre><code>Give examples\r\n<\/code><\/pre>\r\n<h3><a id=\"Installing_16\"><\/a>Installing<\/h3>\r\n<p>A step by step series of examples that tell you how to get a development env running<\/p>\r\n<p>Say what the step will be<\/p>\r\n<pre><code>Give the example\r\n<\/code><\/pre>\r\n<p>And repeat<\/p>\r\n<pre><code>until finished\r\n<\/code><\/pre>\r\n<p>End with an example of getting some data out of the system or using it for a little demo<\/p>\r\n<h2><a id=\"Running_the_tests_34\"><\/a>Running the tests<\/h2>\r\n<p>Explain how to run the automated tests for this system<\/p>\r\n<h3><a id=\"Break_down_into_end_to_end_tests_38\"><\/a>Break down into end to end tests<\/h3>\r\n<p>Explain what these tests test and why<\/p>\r\n<pre><code>Give an example\r\n<\/code><\/pre>\r\n<h3><a id=\"And_coding_style_tests_46\"><\/a>And coding style tests<\/h3>\r\n<p>Explain what these tests test and why<\/p>\r\n<pre><code>Give an example\r\n<\/code><\/pre>\r\n<h2><a id=\"Deployment_54\"><\/a>Deployment<\/h2>\r\n<p>Add additional notes about how to deploy this on a live system<\/p>\r\n<h2><a id=\"Built_With_58\"><\/a>Built With<\/h2>\r\n<ul>\r\n<li><a href=\"http:\/\/www.dropwizard.io\/1.0.2\/docs\/\">Dropwizard<\/a> - The web framework used<\/li>\r\n<li><a href=\"https:\/\/maven.apache.org\/\">Maven<\/a> - Dependency Management<\/li>\r\n<li><a href=\"https:\/\/rometools.github.io\/rome\/\">ROME<\/a> - Used to generate RSS Feeds<\/li>\r\n<\/ul>\r\n<h2><a id=\"Contributing_64\"><\/a>Contributing<\/h2>\r\n<p>Please read <a href=\"https:\/\/gist.github.com\/PurpleBooth\/b24679402957c63ec426\">CONTRIBUTING.md<\/a> for details on our code of conduct, and the process for submitting pull requests to us.<\/p>\r\n<h2><a id=\"Versioning_68\"><\/a>Versioning<\/h2>\r\n<p>We use <a href=\"http:\/\/semver.org\/\">SemVer<\/a> for versioning. For the versions available, see the <a href=\"https:\/\/github.com\/your\/project\/tags\">tags on this repository<\/a>.<\/p>\r\n<h2><a id=\"Authors_72\"><\/a>Authors<\/h2>\r\n<ul>\r\n<li><strong>Billie Thompson<\/strong> - <em>Initial work<\/em> - <a href=\"https:\/\/github.com\/PurpleBooth\">PurpleBooth<\/a><\/li>\r\n<\/ul>\r\n<p>See also the list of <a href=\"https:\/\/github.com\/your\/project\/contributors\">contributors<\/a> who participated in this project.<\/p>\r\n<h2><a id=\"License_78\"><\/a>License<\/h2>\r\n<p>This project is licensed under the MIT License - see the <a href=\"LICENSE.md\">LICENSE.md<\/a> file for details<\/p>\r\n<h2><a id=\"Acknowledgments_82\"><\/a>Acknowledgments<\/h2>\r\n<ul>\r\n<li>Hat tip to anyone whose code was used<\/li>\r\n<li>Inspiration<\/li>\r\n<li>etc<\/li>\r\n<\/ul>"
+	},
+	]
+let tabs = [
+	{
+		"name": "issues",
+		"icon": "fas fa-exclamation-circle",
+		"description":
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum?"
+	},
+	{
+		"name": "issues",
+		"icon": "fas fa-exclamation-circle",
+		"description":
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum?"
+	},
+	{
+		"name": "pull requests",
+		"icon": "fas fa-code-branch",
+		"description":
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum?"
+	},
+	{
+		"name": "projects",
+		"icon": "fas fa-project-diagram",
+		"description":
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum?"
+	},
+	{
+		"name": "wiki",
+		"icon": "fas fa-book-open",
+		"description":
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum?"
+	},
+	{
+		"name": "insights",
+		"icon": "fas fa-chart-bar",
+		"description":
+			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est deserunt laborum, voluptates, repellendus odit assumenda porro explicabo quis iusto voluptatum nobis dolorum?"
+	}
+]
