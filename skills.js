@@ -133,7 +133,7 @@ module.exports = () => {
 				experience: randomExp(9000 + n),
 				skills: skillsData,
 				repo: githubRepo()
-			};\
+			};
 		})
 	};
 };
