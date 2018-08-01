@@ -70,7 +70,7 @@ export interface Project {
 export interface Tab {
 	name: string;
 	icon: string;
-	description: string;
+	description?: string;
 }
 
 export interface Repo {
