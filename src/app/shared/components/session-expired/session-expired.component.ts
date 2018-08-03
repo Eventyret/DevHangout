@@ -11,7 +11,7 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 })
 export class SessionExpiredComponent implements OnInit {
 	invalidLogin: boolean;
-	error;
+	routerUrl: string;
 	loginForm = new FormGroup({
 		username: new FormControl("", Validators.required),
 		password: new FormControl("", Validators.required)
@@ -20,7 +20,7 @@ export class SessionExpiredComponent implements OnInit {
 	get usernameField() {
 		return this.loginForm.get("username");
 	}
-	constructor(private router: Router, private authService: AuthService, public activeModal: NgbActiveModal) {}
+	constructor(private router: Router, private authService: AuthService, public activeModal: NgbActiveModal) {	}
 
 	ngOnInit() {}
 
@@ -28,8 +28,8 @@ export class SessionExpiredComponent implements OnInit {
 		this.authService.login(credentials).subscribe(
 			results => {
 				if (results) {
+					this.router.navigate(["/"]);
 					this.activeModal.dismiss();
-					this.router.navigate(["/dashboard"]);
 				} else {
 					this.invalidLogin = true;
 				}
