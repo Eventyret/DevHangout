@@ -19,10 +19,26 @@ class EducationView(viewsets.ModelViewSet):
 	queryset = Education.objects.all()
 	serializer_class = EducationSerializer
 
+	def get_queryset(self):
+		user_id = self.kwargs["id"]
+		edu_id = self.kwargs.get("pk")
+		if edu_id:
+			return User.objects.get(id = user_id).edu_user.filter(id = edu_id)
+		else:
+			return User.objects.get(id = user_id).edu_user
+
 class ExperienceView(viewsets.ModelViewSet):
 	permission_classes = (IsOwner, )
 	queryset = Experience.objects.all()
 	serializer_class = ExperienceSerializer
+
+	def get_queryset(self):
+		user_id = self.kwargs["id"]
+		exp_id = self.kwargs.get("pk")
+		if exp_id:
+			return User.objects.get(id = user_id).exp_user.filter(id = exp_id)
+		else:
+			return User.objects.get(id = user_id).exp_user
 
 class UserViewSet(viewsets.ModelViewSet):
 	permission_classes = (IsAuthenticatedOrReadOnly, )

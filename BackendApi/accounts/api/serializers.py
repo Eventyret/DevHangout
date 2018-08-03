@@ -13,13 +13,13 @@ class ProfileSerializer(serializers.ModelSerializer):
 class EducationSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Education
-		fields = ("user","school", "qualification", "fieldOfStudy", "dateFrom", "dateTo", "description")
+		fields = ("id", "user","school", "qualification", "fieldOfStudy", "dateFrom", "dateTo", "description")
 
 class ExperienceSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Experience
-		fields = ("user", "jobTitle", "company", "location", "dateFrom", "dateTo", "description", "current")
+		fields = ("id", "user", "jobTitle", "company", "location", "dateFrom", "dateTo", "description", "current")
 
 class UserSerializer(serializers.ModelSerializer):
 	profile = ProfileSerializer()
