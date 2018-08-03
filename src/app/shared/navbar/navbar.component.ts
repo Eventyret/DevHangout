@@ -3,7 +3,6 @@ import { AuthService } from "../services/auth/auth.service";
 import { NgbModal, NgbTooltip } from "@ng-bootstrap/ng-bootstrap";
 import { LoginComponent } from "../components/login/login.component";
 import { SignupComponent } from "../components/signup/signup.component";
-import { Router } from "@angular/router";
 @Component({
 	selector: "app-navbar",
 	templateUrl: "./navbar.component.html",
@@ -15,7 +14,7 @@ export class NavbarComponent implements OnInit {
 	public userID: string;
 	public avatar: string;
 	public loggedIn: boolean;
-	constructor(public auth: AuthService, private modalService: NgbModal, public router: Router) {}
+	constructor(public auth: AuthService, private modalService: NgbModal) {}
 
 	ngOnInit() {
 		this.getUsername();
@@ -39,13 +38,13 @@ export class NavbarComponent implements OnInit {
 		});
 	}
 
-	openLogin(event) {
+	openLogin() {
 		const modalRef = this.modalService.open(LoginComponent, {
 			centered: true,
 			size: "lg"
 		});
 	}
-	openSignUp(event) {
+	openSignUp() {
 		const modalRef = this.modalService.open(SignupComponent, {
 			centered: true,
 			size: "lg"

@@ -1,25 +1,31 @@
 [
 	{
-	  "sections": [
-		{
-		  "icon": "fab fa-github",
-		  "size": "fa-8x",
-		  "content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti sequi consequuntur amet eveniet. Blanditiis incidunt quo dolorem eos sequi consequatur quos, omnis veniam pariatur laborum quas ab, ullam, maiores tempora!Error, deleniti quas molestiae nulla doloremque quo fugiat quis atque, nesciunt eius soluta ducimus ipsa recusandae eum pariatur dolores? Quis quibusdam velit sit sequi provident necessitatibus inventore est beatae blanditiis!",
-		  "divider": "Find other peoples projects",
-		  "background": true
-		},
-		{
-			"icon": "fas fa-code",
-			"size": "fa-8x",
-			"content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti sequi consequuntur amet eveniet. Blanditiis incidunt quo dolorem eos sequi consequatur quos, omnis veniam pariatur laborum quas ab, ullam, maiores tempora!Error, deleniti quas molestiae nulla doloremque quo fugiat quis atque, nesciunt eius soluta ducimus ipsa recusandae eum pariatur dolores? Quis quibusdam velit sit sequi provident necessitatibus inventore est beatae blanditiis!",
-			"divider": "Find other peoples projects"
-		},
-		{
-			"icon": "fas fa-users",
-			"size": "fa-8x",
-			"content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti sequi consequuntur amet eveniet. Blanditiis incidunt quo dolorem eos sequi consequatur quos, omnis veniam pariatur laborum quas ab, ullam, maiores tempora!Error, deleniti quas molestiae nulla doloremque quo fugiat quis atque, nesciunt eius soluta ducimus ipsa recusandae eum pariatur dolores? Quis quibusdam velit sit sequi provident necessitatibus inventore est beatae blanditiis!",
-			"divider": "Amazing Community"
-		}
-	  ]
+		"sections": [
+			{
+				"id": "first",
+				"icon": "fab fa-github",
+				"size": "fa-8x",
+				"content":
+					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti sequi consequuntur amet eveniet. Blanditiis incidunt quo dolorem eos sequi consequatur quos, omnis veniam pariatur laborum quas ab, ullam, maiores tempora!Error, deleniti quas molestiae nulla doloremque quo fugiat quis atque, nesciunt eius soluta ducimus ipsa recusandae eum pariatur dolores? Quis quibusdam velit sit sequi provident necessitatibus inventore est beatae blanditiis!",
+				"divider": "Find other peoples projects",
+				"background": true
+			},
+			{
+				"id": "second",
+				"icon": "fas fa-code",
+				"size": "fa-8x",
+				"content":
+					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti sequi consequuntur amet eveniet. Blanditiis incidunt quo dolorem eos sequi consequatur quos, omnis veniam pariatur laborum quas ab, ullam, maiores tempora!Error, deleniti quas molestiae nulla doloremque quo fugiat quis atque, nesciunt eius soluta ducimus ipsa recusandae eum pariatur dolores? Quis quibusdam velit sit sequi provident necessitatibus inventore est beatae blanditiis!",
+				"divider": "Find other peoples projects"
+			},
+			{
+				"id": "third",
+				"icon": "fas fa-users",
+				"size": "fa-8x",
+				"content":
+					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti sequi consequuntur amet eveniet. Blanditiis incidunt quo dolorem eos sequi consequatur quos, omnis veniam pariatur laborum quas ab, ullam, maiores tempora!Error, deleniti quas molestiae nulla doloremque quo fugiat quis atque, nesciunt eius soluta ducimus ipsa recusandae eum pariatur dolores? Quis quibusdam velit sit sequi provident necessitatibus inventore est beatae blanditiis!",
+				"divider": "Amazing Community"
+			}
+		]
 	}
-  ]
+]

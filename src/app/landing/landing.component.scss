@@ -27,16 +27,18 @@ img {
 	}
 }
 
-#more-info {
-	position: absolute;
-	bottom: 150px;
-	left: 50%;
-	transform: translate(-50%);
-}
-
 .fa-heart {
-	color: #f44336;
+	color: #f44336 !important;
 }
 .fa-github, .fa-users, .fa-code {
 	color: #333;
+}
+
+.icons {
+	.fas {
+		color: #fff;
+	}
+}
+.buttons {
+	margin-top: 200px;
 }

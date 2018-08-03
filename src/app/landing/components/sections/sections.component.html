@@ -1,13 +1,13 @@
 <div class="row divider" *ngFor="let section of Sections">
-	<div class="col-md-12" [class.gradient]="section?.background">
+	<div class="col-md-12" [class.gradient]="section?.background" #{{section?.id}}>
 		<h2 class="py-5">{{section.divider}}</h2>
 	</div>
 	<div class="container">
 		<div class="info d-flex justify-content-around">
-			<div class="col-md-4 text-center flex-row my-auto">
+			<div class="col-sm-12 col-md-4 text-center flex-row my-auto">
 				<i class="{{section.icon}} {{section.size}}"></i>
 			</div>
-			<div class="col-md-8 my-auto">
+			<div class="col-sm-12 col-md-8 my-auto">
 				<p class="lead">{{section.content}}</p>
 			</div>
 		</div>
