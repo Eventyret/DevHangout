@@ -1,11 +1,10 @@
 <div class="modal-header">
-	<h4 class="modal-title">Whoops!</h4>
+	<h4 class="modal-title">Whoops! Seems your session has expired {{username}} </h4>
 	<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
 		<span aria-hidden="true">&times;</span>
 	</button>
 </div>
 <div class="modal-body">
-	Seems your session has expired! just sign in again to continue!
 	<form [formGroup]="loginForm" (ngSubmit)="signIn(loginForm.value)">
 		<div class="form-group">
 			<input
@@ -29,10 +28,10 @@
 			placeholder="Password">
 		</div>
 		<div *ngIf="loginForm.valid; else elseBlock">
-				<input type="submit" class="btn btn-success btn-block mt-4" value="Login">
+				<input type="submit" class="btn btn-success btn-block mt-4" value="Sign in Again">
 			</div>
 			<ng-template #elseBlock>
-					<input type="submit" class="btn btn-danger btn-block mt-4" [disabled]="!loginForm.valid" value="Login">
+					<input type="submit" class="btn btn-danger btn-block mt-4" [disabled]="!loginForm.valid" value="Sign in Again">
 			</ng-template>
 	</form>
 </div>
