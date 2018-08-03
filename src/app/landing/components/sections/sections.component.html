@@ -1,5 +1,5 @@
 <div class="row divider" *ngFor="let section of Sections">
-	<div class="col-md-12">
+	<div class="col-md-12" [class.gradient]="section?.background">
 		<h2 class="py-5">{{section.divider}}</h2>
 	</div>
 	<div class="container">
