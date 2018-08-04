@@ -53,6 +53,7 @@ class Education(models.Model):
 	fieldOfStudy = models.CharField(max_length=50)
 	dateFrom = models.DateField(auto_now=False, auto_now_add=False)
 	dateTo = models.DateField(auto_now=False, auto_now_add=False, null=True)
+	current = models.BooleanField(default=False)
 	description = models.TextField(blank=True, null=True)
 
 	class Meta:
