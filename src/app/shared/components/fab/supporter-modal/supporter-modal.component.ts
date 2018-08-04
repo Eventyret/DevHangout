@@ -4,6 +4,7 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { NotificationsService } from "angular2-notifications";
 import { NgxSpinnerService } from "ngx-spinner";
 import { Element as StripeElement, Elements, ElementsOptions, StripeService } from "ngx-stripe";
+import { AuthService } from "../../../services/auth/auth.service";
 
 @Component({
 	selector: "app-supporter-modal",
@@ -21,16 +22,19 @@ export class SupporterModalComponent implements OnInit {
 	errorMsg: string;
 	name: string;
 	amount: number;
+	username: string;
 
 	constructor(
 		public activeModal: NgbActiveModal,
 		private fb: FormBuilder,
 		private stripeService: StripeService,
 		private spinner: NgxSpinnerService,
-		private notify: NotificationsService
+		private notify: NotificationsService,
+		private auth: AuthService
 	) {}
 
 	ngOnInit() {
+		this.username = localStorage.getItem("username");
 		this.stripeTest = this.fb.group({
 			name: ["", [Validators.required]],
 			amount: ["", [Validators.required]]
@@ -42,11 +46,11 @@ export class SupporterModalComponent implements OnInit {
 				this.card = this.elements.create("card", {
 					style: {
 						base: {
-							iconColor: "#ff0000",
+							iconColor: "#f44336",
 							color: "#31325F",
 							lineHeight: "40px",
 							fontWeight: 400,
-							fontFamily: "Roboto",
+							fontFamily: "Ubuntu",
 							fontSize: "18px",
 							"::placeholder": {
 								color: "#112938"

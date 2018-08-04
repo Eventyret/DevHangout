@@ -1,6 +1,6 @@
 <ngx-spinner bdColor="rgba(39,128,227,0)" size="large" loadingText="Playing balls with stripe" type="pacman" color="#FFEB3B"></ngx-spinner>
 <div class="modal-header">
-	<h4 class="modal-title">Thank you for considering to support us USERNAME!</h4>
+	<h4 class="modal-title">Thank you for considering to support us {{username}}!</h4>
 	<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
 		<span aria-hidden="true">&times;</span>
 	</button>
@@ -9,7 +9,7 @@
 	<div>
 		<form novalidate (ngSubmit)="buy($event)" [formGroup]="stripeTest">
 			<div class="form-group">
-				<input class="form-control" type="text" formControlName="name" placeholder="Jane Doe">
+				<input class="form-control" type="text" formControlName="name" placeholder="Cardholders Name">
 			</div>
 			<div class="form-group">
 				<input class="form-control" type="number" formControlName="amount" placeholder="Amount">
