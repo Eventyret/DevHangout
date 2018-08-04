@@ -49,32 +49,7 @@
 * Django -> Stripe -> Handle Token -> Django -> Register User -> Angular -> Display Message
 * Angular -> Stripe -> Angular -> Charge Token -> Stripe -> Angular -> Django -> Display Message to user on user update
 
-### Comments & Posts
-* User can create a post
-* Other users can comment on that post
-* Same user can comment on it too
-* Users can like and dislike posts
-
 # Database
-
-### Posts - Table:
-* ID - `(Primary Key) not null - AutoField`
-* Content - `not null - TextField`
-* Date - `not null - DateTimeField`
-* UserID - `not null  - Foreign Key`
-
-### Comments - Table:
-* ID - `(Primary Key) not null - AutoField`
-* Comment - `not null - TextField`
-* Date - `not null - DateTimeField`
-* PostID - `(Foreign key) not null`
-* UserID - `(Foreign Key) not null`
-
-### LikesAndDislikes  - Table:
-* UserID - `Forgein Key not null`
-* PostID - `Forgein Key not null`
-* CommentID - `not null - AutoField`
-* isLike - `Binary - not null`
 
 ### User Table:
 * UserID - `(Primary Key)  not null - AutoField`
@@ -123,7 +98,3 @@
 ### Skills - Table:
 * ID - `(Primary Key)(Unique) - IntegerField`
 * NameOfSkill - `CharField` 
-
-### UserToSkills - Table
-* UserID - `not null  - Foreign Key `
-* SkillID - `IntergerField`
