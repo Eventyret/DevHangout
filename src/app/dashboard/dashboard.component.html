@@ -44,17 +44,22 @@
 								<tr>
 									<th scope="col">Company</th>
 									<th scope="col">Title</th>
+									<th scope="col">Location</th>
 									<th scope="col">Years</th>
 									<th scope="col">Action</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr *ngFor="let item of user?.experience">
-									<td scope="row">{{item.company}}</td>
-									<td>01.03.2017 - 01.08.2018</td>
-									<td>Distinction</td>
+								<tr *ngFor="let exp of user?.experience">
+									<td scope="row">{{exp?.company}}</td>
+									<td scope="row">{{exp?.jobTitle}}</td>
+									<td scope="row">{{exp?.location}}</td>
+									<td scope="row">{{exp?.dateFrom | date: ["MMM yyyy"] }}
+										<span *ngIf="!exp?.current && exp?.dateTo"> - {{exp?.dateTo | date: ["MMM yyyy"]}}</span>
+										<span *ngIf="exp?.current  || !exp?.dateTo"> - Present</span>
+									</td>
 									<td>
-										<button class="btn btn-info mr-3">
+										<button class="btn btn-info mr-3" (click)="open($event)" id="editExp">
 											Edit
 										</button>
 										<button class="btn btn-danger">
@@ -75,17 +80,22 @@
 								<tr>
 									<th scope="col">School</th>
 									<th scope="col">Degree</th>
+									<th scope="col">Field of Study</th>
 									<th scope="col">Years</th>
 									<th scope="col">Actions</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr *ngFor="let school of user?.education">
-									<td scope="row">Code Insitiute</td>
-									<td>01.03.2017 - 01.08.2018</td>
-									<td>Distinction</td>
-									<td>
-										<a class="btn btn-info mr-3 text-white">
+								<tr *ngFor="let edu of user?.education">
+									<td scope="row">{{edu?.school}}</td>
+									<td scope="row">{{edu?.qualification}}</td>
+									<td scope="row">{{edu?.fieldOfStudy}}</td>
+									<td scope="row">{{edu?.dateFrom | date: ["MMM yyyy"] }}
+											<span *ngIf="!edu?.current && edu?.dateTo"> - {{edu?.dateTo | date: ["MMM yyyy"]}}</span>
+											<span *ngIf="edu?.current  || !edu?.dateTo"> - Present</span>
+										</td>
+									<td schope="row">
+										<a class="btn btn-info mr-3 text-white" (click)="open($event)" id="editEdu">
 											Edit
 										</a>
 										<a class="btn btn-danger text-white">
