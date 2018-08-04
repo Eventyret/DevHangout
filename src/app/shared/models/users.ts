@@ -26,6 +26,7 @@ export interface Education {
 	fieldOfStudy: string;
 	dateFrom: string;
 	dateTo: string;
+	current: boolean;
 	description: string;
 }
 
