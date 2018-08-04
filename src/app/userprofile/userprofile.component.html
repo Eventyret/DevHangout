@@ -68,7 +68,7 @@
 						<div class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let edu of user?.education">
 							<div class="d-flex w-100 justify-content-between">
 								<h5 class="mb-1">{{edu.school}}</h5>
-								<small>{{edu.dateFrom | date: "yyyy"}} - {{edu.dateTo  | date: "yyyy"}}</small>
+								<small>{{edu.dateFrom | date: ["MMM yyyy"]}} - {{edu.dateTo | date: ["MMM yyyy"]}}</small>
 							</div>
 							<p class="mb-1">{{edu.description}}</p>
 						</div>
@@ -83,8 +83,8 @@
 						<div class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let exp of user?.experience">
 							<div class="d-flex w-100 justify-content-between">
 								<h5 class="mb-1">{{exp?.company}}</h5>
-								<small *ngIf="exp?.current || exp?.dateTo == null">{{exp?.dateFrom | date: "MMM yyyy"}} - Present</small>
-								<small *ngIf="!exp?.current && exp?.dateTo != null">{{exp?.dateFrom  | date: "MMM yyyy"}} {{exp?.dateTo  | date: "MMM yyyy"}}</small>
+								<small *ngIf="exp?.current || !exp?.dateTo">{{exp?.dateFrom | date: "MMM yyyy"}} - Present</small>
+								<small *ngIf="!exp?.current && exp?.dateTo">{{exp?.dateFrom  | date: "MMM yyyy"}} - {{exp?.dateTo  | date: "MMM yyyy"}}</small>
 							</div>
 							<p class="mb-1 my-2">{{exp?.description}}</p>
 								<small class="float-left"><i class="fas fa-map-marker-alt"></i> {{exp?.location}}</small>
