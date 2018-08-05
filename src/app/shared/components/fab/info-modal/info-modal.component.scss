@@ -1,9 +1,14 @@
-.badge-purple {
-	background-color: #9C27B0;
-	color:  #fff;
-	font-size: 18px;
-	text-transform: uppercase;
+.supporter {
+	background: linear-gradient(to right, #ff4e50, #f9d423);
+    width: 175px;
+    border-radius: 10px;
+	padding: 10px;
+	font-family: "Roboto";
+	font-size: 1.2vw;
+	font-weight: 700;
+	color: #fff;
 	.fa-star {
-		color: #FFEA00;
+		color: #FF5722;
+		font-size: 1.2vw;
 	}
 }
