@@ -3,12 +3,17 @@
 		<h2 class="py-5">{{section.divider}}</h2>
 	</div>
 	<div class="container">
-		<div class="info d-flex justify-content-around">
+		<div class="row info d-flex justify-content-around">
 			<div class="col-sm-12 col-md-4 text-center flex-row my-auto">
 				<i class="{{section.icon}} {{section.size}}"></i>
 			</div>
 			<div class="col-sm-12 col-md-8 my-auto">
-				<p class="lead">{{section.content}}</p>
+				<div [innerHTML]="section?.content" class="lead"></div>
+				<a *ngIf="!this.auth.isLoggedIn()" (click)="openSignUp()">
+						<button class="btn btn-success btn-lg">Join Today!
+							<i class="fas fa-user-plus"></i>
+						</button>
+					</a>
 			</div>
 		</div>
 	</div>

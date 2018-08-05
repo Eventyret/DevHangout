@@ -1,17 +1,19 @@
-<div class="row divider">
-	<div class="col-md-12">
-		<h2 class="py-5">What do people say?</h2>
-	</div>
-	<div class="container testimonals my-5">
-		<div class="row">
-			<div class="col-md-4" *ngFor="let info of testimonials| slice: 0:6">
-				<div class="testimonal-container">
-					<div class="testimonal-card">
-						<img src="{{info.profile.avatar}}" alt="" class="profile">
-						<blockquote>{{info.profile.testimonal | truncate :130}}</blockquote>
-						<h3>{{info.profile.firstName}} {{ info.profile.lastName}}
-							<span>{{info.profile.title}}</span>
-						</h3>
+<div class="container-fluid">
+	<div class="row divider">
+		<div class="col-md-12">
+			<h2 class="py-5">What do people say?</h2>
+		</div>
+		<div class="container testimonals my-5">
+			<div class="row">
+				<div class="col-md-4" *ngFor="let info of testimonials| slice: 0:6">
+					<div class="testimonal-container">
+						<div class="testimonal-card">
+							<img src="{{info.profile.avatar}}" alt="" class="profile">
+							<blockquote>{{info.profile.testimonal | truncate :130}}</blockquote>
+							<h3>{{info.profile.firstName}} {{ info.profile.lastName}}
+								<span>{{info.profile.title}}</span>
+							</h3>
+						</div>
 					</div>
 				</div>
 			</div>

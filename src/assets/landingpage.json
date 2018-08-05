@@ -6,7 +6,7 @@
 				"icon": "fab fa-github",
 				"size": "fa-8x",
 				"content":
-					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti sequi consequuntur amet eveniet. Blanditiis incidunt quo dolorem eos sequi consequatur quos, omnis veniam pariatur laborum quas ab, ullam, maiores tempora!Error, deleniti quas molestiae nulla doloremque quo fugiat quis atque, nesciunt eius soluta ducimus ipsa recusandae eum pariatur dolores? Quis quibusdam velit sit sequi provident necessitatibus inventore est beatae blanditiis!",
+					"<p>Ever been on Youtube, Wikipedia or Github ? You browse something interesting start read about it then you read some more. Then you find a link and reads more and more. WHOA! Where did the time go ?<br \/>That's what we where aiming for when we creatd Devvelopers Hangout. A Place to explore other peoples Projects see what they have made, and maybe make a connection and help out?<\/p>\r\n<p>Maybe your looking for other developers to help you out with a project or similar?<\/p>",
 				"divider": "Find other peoples projects",
 				"background": true
 			},
@@ -15,15 +15,15 @@
 				"icon": "fas fa-code",
 				"size": "fa-8x",
 				"content":
-					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti sequi consequuntur amet eveniet. Blanditiis incidunt quo dolorem eos sequi consequatur quos, omnis veniam pariatur laborum quas ab, ullam, maiores tempora!Error, deleniti quas molestiae nulla doloremque quo fugiat quis atque, nesciunt eius soluta ducimus ipsa recusandae eum pariatur dolores? Quis quibusdam velit sit sequi provident necessitatibus inventore est beatae blanditiis!",
-				"divider": "Find other peoples projects"
+					"<p>As a developer, showing off your skills can help you in many ways.<\/p>\r\n<ul>\r\n<li>Improve your basic skills<\/li>\r\n<li>Land a job<\/li>\r\n<li>Get feedback for a project<\/li>\r\n<li>Further, develop a project<\/li>\r\n<li>Get new friends just by showing off what you know<\/li>\r\n<\/ul>\r\n<p>The possibilities are endless really of why you want to show what skills you know<br \/>In developers hangout let your skills shine on the profile, so people know EXACTLY what you are good at.<\/p>\r\n<p>&nbsp;<\/p>",
+				"divider": "Show off your skills"
 			},
 			{
 				"id": "third",
 				"icon": "fas fa-users",
 				"size": "fa-8x",
 				"content":
-					"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti sequi consequuntur amet eveniet. Blanditiis incidunt quo dolorem eos sequi consequatur quos, omnis veniam pariatur laborum quas ab, ullam, maiores tempora!Error, deleniti quas molestiae nulla doloremque quo fugiat quis atque, nesciunt eius soluta ducimus ipsa recusandae eum pariatur dolores? Quis quibusdam velit sit sequi provident necessitatibus inventore est beatae blanditiis!",
+					"<p>Are you a lonesome developer? Sitting at work or maybe in your own room typing away the code?<br \/>Do you wish that you could meet fellow developers instead of hundreds of Facebook groups and LinkedIn Groups?<br \/>Well Developers Hangout have ya covered, its a community made by a developer for other developers!<br \/>Register today to get to know other developres and connect!<\/p>",
 				"divider": "Amazing Community"
 			}
 		]

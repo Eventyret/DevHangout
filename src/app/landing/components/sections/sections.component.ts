@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { LandingPageService } from "../../service/landing-page.service";
+import { SignupComponent } from "../../../shared/components/signup/signup.component";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { AuthService } from "../../../shared/services/auth/auth.service";
 
 @Component({
   selector: "app-sections",
@@ -8,7 +11,7 @@ import { LandingPageService } from "../../service/landing-page.service";
 })
 export class SectionsComponent implements OnInit {
 	Sections: Section;
-	constructor(private landingService: LandingPageService) {}
+	constructor(private landingService: LandingPageService, private modalService: NgbModal, public auth: AuthService) {}
 
   ngOnInit() {
 	  this.getSections();
@@ -17,6 +20,13 @@ export class SectionsComponent implements OnInit {
   getSections() {
 	this.landingService.getDataForLandingPage().subscribe(data => {
 		this.Sections = data[0].sections;
+	});
+}
+
+openSignUp() {
+	const modalRef = this.modalService.open(SignupComponent, {
+		centered: true,
+		size: "lg"
 	});
 }
 

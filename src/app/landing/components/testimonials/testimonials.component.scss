@@ -1,6 +1,3 @@
-.testimonals {
-	height: 80vh;
-}
 .testimonal-container {
 	position: relative;
 	float: left;
@@ -13,6 +10,7 @@
 	text-align: left;
 	line-height: 1.4em;
 	background-color: #112938;
+	min-height: 360px;
 	padding-top: 120px;
 	* {
 		box-sizing: border-box;
@@ -27,6 +25,7 @@
 		width: 100%;
 		background-color: #2b4d68;
 		padding: 25px;
+		min-height: 200px;
 		position: relative;
 		&:before {
 			position: absolute;

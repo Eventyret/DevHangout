@@ -42,3 +42,24 @@ img {
 .buttons {
 	margin-top: 200px;
 }
+
+@media screen and (max-width: 1200px) {
+	.fa-10x, .fa-8x {
+		font-size: 5em;
+	}
+	.display-3 {
+		font-size: 4rem;
+	}
+	.buttons {
+		margin-top: 100px;
+	}
+}
+
+@media screen and (max-width: 768px)  {
+		.fa-10x, .fa-8x {
+			font-size: 2.5em;
+		}
+		.display-3 {
+			font-size: 2.7rem;
+		}
+}
