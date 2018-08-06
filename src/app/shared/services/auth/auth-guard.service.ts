@@ -25,7 +25,7 @@ export class AuthGuard implements CanActivate {
 			}
 		} else {
 			this.openLogin();
-			this.router.navigate(["/not-found"]);
+			this.router.navigate(["/session-expired"]);
 			return false;
 		}
 	}

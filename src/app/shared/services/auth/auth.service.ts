@@ -111,7 +111,7 @@ export class AuthService {
 	}
 	sessionExpired() {
 		this.router.navigate(["/"]);
-		this.notify.info("Your session was expired, please log back in");
+		this.notify.info("Your session expired, please log back in");
 		localStorage.removeItem("refresh");
 		localStorage.removeItem("token");
 		localStorage.removeItem("user_id");

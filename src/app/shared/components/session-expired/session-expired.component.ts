@@ -5,9 +5,9 @@ import { Router } from "@angular/router";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
-  selector: "app-session-expired",
-  templateUrl: "./session-expired.component.html",
-  styleUrls: ["./session-expired.component.scss"]
+	selector: "app-session-expired",
+	templateUrl: "./session-expired.component.html",
+	styleUrls: ["./session-expired.component.scss"]
 })
 export class SessionExpiredComponent implements OnInit {
 	invalidLogin: boolean;
@@ -20,22 +20,24 @@ export class SessionExpiredComponent implements OnInit {
 	get usernameField() {
 		return this.loginForm.get("username");
 	}
-	constructor(private router: Router, private authService: AuthService, public activeModal: NgbActiveModal) {	}
+	constructor(private router: Router, private authService: AuthService, public activeModal: NgbActiveModal) {}
 
 	ngOnInit() {
 		this.username = localStorage.getItem("username");
 	}
 
 	signIn(credentials) {
-		this.authService.login(credentials).subscribe(
-			results => {
-				if (results) {
-					this.router.navigate(["/"]);
-					this.activeModal.dismiss();
-				} else {
-					this.invalidLogin = true;
-				}
-			});
+		this.authService.login(credentials).subscribe(results => {
+			if (results) {
+				this.router.navigate(["/"]);
+				this.activeModal.dismiss();
+			} else {
+				this.invalidLogin = true;
+			}
+		});
 	}
-
+	dismiss() {
+		this.authService.sessionExpired();
+		this.activeModal.dismiss();
+	}
 }
