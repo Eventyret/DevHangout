@@ -1,25 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SessionExpiredComponent } from './session-expired.component';
+import { SessionExpiredComponent } from "./session-expired.component";
 
-describe('SessionExpiredComponent', () => {
+describe("SessionExpiredComponent", () => {
   let component: SessionExpiredComponent;
   let fixture: ComponentFixture<SessionExpiredComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ SessionExpiredComponent ]
-    })
-    .compileComponents();
+	TestBed.configureTestingModule({
+		declarations: [ SessionExpiredComponent ]
+	})
+	.compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SessionExpiredComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+	fixture = TestBed.createComponent(SessionExpiredComponent);
+	component = fixture.componentInstance;
+	fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it("should create", () => {
+	expect(component).toBeTruthy();
   });
 });

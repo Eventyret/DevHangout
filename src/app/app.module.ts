@@ -35,13 +35,14 @@ import { FooterComponent } from "./shared/components/footer/footer.component";
 import { LoginComponent } from "./shared/components/login/login.component";
 import { SessionExpiredComponent } from "./shared/components/session-expired/session-expired.component";
 import { SignupComponent } from "./shared/components/signup/signup.component";
-import { NavbarComponent } from "./shared/navbar/navbar.component";
+import { NavbarComponent } from "./shared/components/navbar/navbar.component";
 import { FakeService } from "./shared/services/api/fake.service";
 import { GithubService } from "./shared/services/api/github.service";
 import { AuthGuard } from "./shared/services/auth/auth-guard.service";
 import { AuthService } from "./shared/services/auth/auth.service";
 import { EditProfileComponent } from "./userprofile/edit-profile/edit-profile.component";
 import { ProfileComponent } from "./userprofile/userprofile.component";
+import { SessionExpiredPageComponent } from "./session-expired-page/session-expired-page.component";
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
@@ -85,7 +86,8 @@ const routes: Routes = [
 		TestimonialsComponent,
 		SectionsComponent,
 		FakeGithubComponent,
-		SessionExpiredComponent
+		SessionExpiredComponent,
+		SessionExpiredPageComponent
 	],
 	imports: [
 		BrowserModule,
