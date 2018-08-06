@@ -1,4 +1,3 @@
-import { FooterComponent } from "./shared/components/footer/footer.component";
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
@@ -8,10 +7,12 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule, Routes } from "@angular/router";
 import { JwtModule } from "@auth0/angular-jwt";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { TruncateModule } from "@yellowspot/ng-truncate";
 import { SimpleNotificationsModule } from "angular2-notifications";
+import { Ng2SearchPipeModule } from "ng2-search-filter";
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NgxStripeModule } from "ngx-stripe";
-import { TruncateModule } from "@yellowspot/ng-truncate";
 
 import { environment } from "../environments/environment";
 import { AppComponent } from "./app.component";
@@ -20,51 +21,44 @@ import { AddEducationComponent } from "./dashboard/education/add-education/add-e
 import { EditEducationComponent } from "./dashboard/education/edit-education/edit-education.component";
 import { AddExperienceComponent } from "./dashboard/experience/add-experience/add-experience.component";
 import { EditExperienceComponent } from "./dashboard/experience/edit-experience/edit-experience.component";
-import { EditProfileComponent } from "./userprofile/edit-profile/edit-profile.component";
-import { ProfileComponent } from "./userprofile/userprofile.component";
-import { CommentsComponent } from "./feed/comments/comments.component";
-import { FeedComponent } from "./feed/feed/feed.component";
-import { PostsComponent } from "./feed/posts/posts.component";
+import { FakeGithubComponent } from "./fake-github/fake-github.component";
+import { SectionsComponent } from "./landing/components/sections/sections.component";
+import { TestimonialsComponent } from "./landing/components/testimonials/testimonials.component";
 import { LandingComponent } from "./landing/landing.component";
+import { LandingPageService } from "./landing/service/landing-page.service";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { ProfilesComponent } from "./profiles/profiles.component";
 import { FabComponent } from "./shared/components/fab/fab.component";
 import { InfoModalComponent } from "./shared/components/fab/info-modal/info-modal.component";
 import { SupporterModalComponent } from "./shared/components/fab/supporter-modal/supporter-modal.component";
-import { NavbarComponent } from "./shared/navbar/navbar.component";
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { FooterComponent } from "./shared/components/footer/footer.component";
 import { LoginComponent } from "./shared/components/login/login.component";
+import { SessionExpiredComponent } from "./shared/components/session-expired/session-expired.component";
 import { SignupComponent } from "./shared/components/signup/signup.component";
-import { AuthGuard } from "./shared/services/auth/auth-guard.service";
-import { AuthService } from "./shared/services/auth/auth.service";
+import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { FakeService } from "./shared/services/api/fake.service";
 import { GithubService } from "./shared/services/api/github.service";
-import { TestimonialsComponent } from "./landing/components/testimonials/testimonials.component";
-import { SectionsComponent } from "./landing/components/sections/sections.component";
-import { LandingPageService } from "./landing/service/landing-page.service";
-import { Ng2SearchPipeModule } from "ng2-search-filter";
-import { InfiniteScrollModule } from "ngx-infinite-scroll";
-import { FakeGithubComponent } from "./fake-github/fake-github.component";
-import { SessionExpiredComponent } from './shared/components/session-expired/session-expired.component';
-
+import { AuthGuard } from "./shared/services/auth/auth-guard.service";
+import { AuthService } from "./shared/services/auth/auth.service";
+import { EditProfileComponent } from "./userprofile/edit-profile/edit-profile.component";
+import { ProfileComponent } from "./userprofile/userprofile.component";
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
 	{ path: "login", component: LoginComponent, pathMatch: "full" },
 	{ path: "expired", component: SessionExpiredComponent, pathMatch: "full" },
-	{ path: "profiles", component: ProfilesComponent, pathMatch: "full" },
+	{ path: "profiles", component: ProfilesComponent, pathMatch: "full"},
 	{ path: "signup", component: SignupComponent, pathMatch: "full" },
-	{ path: "feed", component: FeedComponent, pathMatch: "full", canActivate: [AuthGuard]  },
-	{ path: "profile/:id/:username", component: ProfileComponent, pathMatch: "full" },
+	{ path: "profile/:id/:username", component: ProfileComponent, pathMatch: "full", canActivate: [AuthGuard] },
 	{ path: "profile/edit", component: EditProfileComponent, canActivate: [AuthGuard] },
 	{ path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
 	{ path: "donate", component: SupporterModalComponent },
 	{ path: "donate-info", component: InfoModalComponent },
-	{ path: "github", component: FakeGithubComponent },
 	{ path: "github/:username/:repo", component: FakeGithubComponent },
-	{ path: "education/add", component: AddEducationComponent, canActivate: [AuthGuard]  },
-	{ path: "education/edit", component: EditEducationComponent , canActivate: [AuthGuard] },
+	{ path: "education/add", component: AddEducationComponent, canActivate: [AuthGuard] },
+	{ path: "education/edit/:id", component: EditEducationComponent, canActivate: [AuthGuard] },
 	{ path: "experience/add", component: AddExperienceComponent, canActivate: [AuthGuard] },
-	{ path: "experience/edit", component: EditExperienceComponent, canActivate: [AuthGuard]  },
+	{ path: "experience/edit/:id", component: EditExperienceComponent, canActivate: [AuthGuard] },
 	{ path: "**", component: PageNotFoundComponent } // Page not found
 ];
 
@@ -75,8 +69,6 @@ const routes: Routes = [
 		NavbarComponent,
 		DashboardComponent,
 		ProfileComponent,
-		FeedComponent,
-		PostsComponent,
 		LoginComponent,
 		LandingComponent,
 		ProfilesComponent,
@@ -89,12 +81,11 @@ const routes: Routes = [
 		EditProfileComponent,
 		FabComponent,
 		SupporterModalComponent,
-		CommentsComponent,
 		InfoModalComponent,
 		TestimonialsComponent,
 		SectionsComponent,
 		FakeGithubComponent,
-		SessionExpiredComponent,
+		SessionExpiredComponent
 	],
 	imports: [
 		BrowserModule,
@@ -115,23 +106,19 @@ const routes: Routes = [
 			showProgressBar: true,
 			animate: "scale",
 			clickToClose: true,
-			pauseOnHover: true,
+			pauseOnHover: true
 		}),
 		JwtModule.forRoot({
 			config: {
 				tokenGetter: () => {
 					return localStorage.getItem("token");
-				  },
-				  whitelistedDomains: [
-					  "localhost:8000"
-					],
-				  blacklistedRoutes: [
-					  "localhost:8000/api/token"
-				  ]
+				},
+				whitelistedDomains: ["localhost:8000"],
+				blacklistedRoutes: ["localhost:8000/api/token"]
 			}
 		}),
 		Ng2SearchPipeModule,
-		InfiniteScrollModule,
+		InfiniteScrollModule
 	],
 	providers: [FakeService, GithubService, AuthService, AuthGuard, LandingPageService],
 	bootstrap: [AppComponent]
