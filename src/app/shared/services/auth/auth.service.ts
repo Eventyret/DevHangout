@@ -109,6 +109,14 @@ export class AuthService {
 		localStorage.removeItem("user_id");
 		this.currentUser = null;
 	}
+	sessionExpired() {
+		this.router.navigate(["/"]);
+		this.notify.info("Your session was expired, please log back in");
+		localStorage.removeItem("refresh");
+		localStorage.removeItem("token");
+		localStorage.removeItem("user_id");
+		this.currentUser = null;
+	}
 
 	isLoggedIn() {
 		return this.helper.decodeToken(localStorage.getItem("token"));
@@ -128,7 +136,7 @@ export class AuthService {
 				this.refreshToken();
 				this.spinner.hide();
 				if (error.status === 401) {
-					return throwError(this.notify.error(error.error.detail) || "Server Error");
+					this.sessionExpired();
 				} else {
 					return throwError(this.notify.error(error.error.non_field_errors) || "Server Error");
 				}
