@@ -6,7 +6,7 @@ import "rxjs/add/operator/catch";
 @Injectable({
   providedIn: "root"
 })
-export class LandingPageService {
+export class HomePageService {
 
   constructor(private http: HttpClient) { }
 

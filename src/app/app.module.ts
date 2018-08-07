@@ -22,10 +22,10 @@ import { EditEducationComponent } from "./dashboard/education/edit-education/edi
 import { AddExperienceComponent } from "./dashboard/experience/add-experience/add-experience.component";
 import { EditExperienceComponent } from "./dashboard/experience/edit-experience/edit-experience.component";
 import { FakeGithubPage } from "./github-page/github-page";
-import { SectionsComponent } from "./landing/components/sections/sections.component";
-import { TestimonialsComponent } from "./landing/components/testimonials/testimonials.component";
-import { LandingComponent } from "./landing/landing.component";
-import { LandingPageService } from "./landing/service/landing-page.service";
+import { SectionsComponent } from "./home/components/sections/sections.component";
+import { TestimonialsComponent } from "./home/components/testimonials/testimonials.component";
+import { HomePage } from "./home/home.page";
+import { HomePageService } from "./home/service/home-page.service";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { DevelopersListComponent } from "./developers-list/developers-list.component";
 import { FabComponent } from "./shared/components/fab/fab.component";
@@ -46,7 +46,7 @@ import { SessionExpiredPage } from "./expired-page/expired-page";
 
 
 const routes: Routes = [
-	{ path: "", component: LandingComponent, pathMatch: "full" },
+	{ path: "", component: HomePage, pathMatch: "full" },
 	{ path: "login", component: LoginComponent, pathMatch: "full" },
 	{ path: "expired", component: SessionExpiredComponent, pathMatch: "full" },
 	{ path: "profiles", component: DevelopersListComponent, pathMatch: "full"},
@@ -73,7 +73,7 @@ const routes: Routes = [
 		DashboardComponent,
 		ProfileComponent,
 		LoginComponent,
-		LandingComponent,
+		HomePage,
 		DevelopersListComponent,
 		PageNotFoundComponent,
 		SignupComponent,
@@ -124,7 +124,7 @@ const routes: Routes = [
 		Ng2SearchPipeModule,
 		InfiniteScrollModule
 	],
-	providers: [FakeService, GithubService, AuthService, AuthGuard, LandingPageService],
+	providers: [FakeService, GithubService, AuthService, AuthGuard, HomePageService],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

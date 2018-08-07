@@ -4,11 +4,11 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { SignupComponent } from "../shared/components/signup/signup.component";
 
 @Component({
-	selector: "app-landing",
-	templateUrl: "./landing.component.html",
-	styleUrls: ["./landing.component.scss"]
+	selector: "app-home",
+	templateUrl: "./home.page.html",
+	styleUrls: ["./home.page.scss"]
 })
-export class LandingComponent implements OnInit {
+export class HomePage implements OnInit {
 	public loggedIn: boolean;
 	constructor(public auth: AuthService, private modalService: NgbModal) {}
 

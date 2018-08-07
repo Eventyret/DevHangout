@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { LandingPageService } from "../../service/landing-page.service";
+import { HomePageService } from "../../service/home-page.service";
 import { SignupComponent } from "../../../shared/components/signup/signup.component";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { AuthService } from "../../../shared/services/auth/auth.service";
@@ -11,7 +11,7 @@ import { AuthService } from "../../../shared/services/auth/auth.service";
 })
 export class SectionsComponent implements OnInit {
 	Sections: Section;
-	constructor(private landingService: LandingPageService, private modalService: NgbModal, public auth: AuthService) {}
+	constructor(private landingService: HomePageService, private modalService: NgbModal, public auth: AuthService) {}
 
   ngOnInit() {
 	  this.getSections();

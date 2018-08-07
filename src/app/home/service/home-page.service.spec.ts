@@ -1,15 +1,15 @@
 import { TestBed, inject } from "@angular/core/testing";
 
-import { LandingPageService } from "./landing-page.service";
+import { HomePageService } from "./home-page.service";
 
 describe("LandingPageService", () => {
   beforeEach(() => {
 	TestBed.configureTestingModule({
-		providers: [LandingPageService]
+		providers: [HomePageService]
 	});
   });
 
-  it("should be created", inject([LandingPageService], (service: LandingPageService) => {
+  it("should be created", inject([HomePageService], (service: HomePageService) => {
 	expect(service).toBeTruthy();
   }));
 });
