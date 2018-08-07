@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { FakeGithubComponent } from "./fake-github.component";
+import { FakeGithubPage } from "./github-page";
 
-describe("FakeGithubComponent", () => {
-  let component: FakeGithubComponent;
-  let fixture: ComponentFixture<FakeGithubComponent>;
+describe("FakeGithubPage", () => {
+  let component: FakeGithubPage;
+  let fixture: ComponentFixture<FakeGithubPage>;
 
   beforeEach(async(() => {
 	TestBed.configureTestingModule({
-		declarations: [ FakeGithubComponent ]
+		declarations: [ FakeGithubPage ]
 	})
 	.compileComponents();
   }));
 
   beforeEach(() => {
-	fixture = TestBed.createComponent(FakeGithubComponent);
+	fixture = TestBed.createComponent(FakeGithubPage);
 	component = fixture.componentInstance;
 	fixture.detectChanges();
   });
