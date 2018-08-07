@@ -1,4 +1,4 @@
-import { EditProfileComponent } from "../userprofile/edit-profile/edit-profile.component";
+import { EditProfileComponent } from "./edit-profile/edit-profile.component";
 import { EditExperienceComponent } from "./experience/edit-experience/edit-experience.component";
 import { AddExperienceComponent } from "./experience/add-experience/add-experience.component";
 import { EditEducationComponent } from "./education/edit-education/edit-education.component";

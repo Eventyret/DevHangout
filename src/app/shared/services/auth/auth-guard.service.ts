@@ -24,16 +24,8 @@ export class AuthGuard implements CanActivate {
 				return true;
 			}
 		} else {
-			this.openLogin();
 			this.router.navigate(["/session-expired"]);
 			return false;
 		}
-	}
-
-	openLogin() {
-		const modalRef = this.modalService.open(LoginComponent, {
-			centered: true,
-			size: "lg"
-		});
 	}
 }

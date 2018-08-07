@@ -3,15 +3,16 @@ import { FakeService } from "../shared/services/api/fake.service";
 import { NgxSpinnerService } from "ngx-spinner";
 import { unionBy as _unionBy, slice as _slice, shuffle as _shuffle } from "lodash";
 import { AuthService } from "../shared/services/auth/auth.service";
-import { Router, Routes } from "@angular/router";
+import { Router } from "@angular/router";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { SessionExpiredComponent } from "../shared/components/session-expired/session-expired.component";
+
 @Component({
 	selector: "app-profiles",
-	templateUrl: "./profiles.component.html",
-	styleUrls: ["./profiles.component.scss"]
+	templateUrl: "./developers-list.component.html",
+	styleUrls: ["./developers-list.component.scss"]
 })
-export class ProfilesComponent implements OnInit {
+export class DevelopersListComponent implements OnInit {
 	users: any[];
 	fakeUsers: any[];
 	skills: any[];

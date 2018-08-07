@@ -27,7 +27,7 @@ import { TestimonialsComponent } from "./landing/components/testimonials/testimo
 import { LandingComponent } from "./landing/landing.component";
 import { LandingPageService } from "./landing/service/landing-page.service";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { ProfilesComponent } from "./profiles/profiles.component";
+import { DevelopersListComponent } from "./developers-list/developers-list.component";
 import { FabComponent } from "./shared/components/fab/fab.component";
 import { InfoModalComponent } from "./shared/components/fab/info-modal/info-modal.component";
 import { SupporterModalComponent } from "./shared/components/fab/supporter-modal/supporter-modal.component";
@@ -40,15 +40,16 @@ import { FakeService } from "./shared/services/api/fake.service";
 import { GithubService } from "./shared/services/api/github.service";
 import { AuthGuard } from "./shared/services/auth/auth-guard.service";
 import { AuthService } from "./shared/services/auth/auth.service";
-import { EditProfileComponent } from "./userprofile/edit-profile/edit-profile.component";
+import { EditProfileComponent } from "./dashboard/edit-profile/edit-profile.component";
 import { ProfileComponent } from "./userprofile/userprofile.component";
-import { SessionExpiredPageComponent } from "./session-expired-page/session-expired-page.component";
+import { SessionExpiredPage } from "./expired-page/expired-page";
+
 
 const routes: Routes = [
 	{ path: "", component: LandingComponent, pathMatch: "full" },
 	{ path: "login", component: LoginComponent, pathMatch: "full" },
 	{ path: "expired", component: SessionExpiredComponent, pathMatch: "full" },
-	{ path: "profiles", component: ProfilesComponent, pathMatch: "full"},
+	{ path: "profiles", component: DevelopersListComponent, pathMatch: "full"},
 	{ path: "signup", component: SignupComponent, pathMatch: "full" },
 	{ path: "profile/:id/:username", component: ProfileComponent, pathMatch: "full", canActivate: [AuthGuard] },
 	{ path: "profile/edit", component: EditProfileComponent, canActivate: [AuthGuard] },
@@ -60,7 +61,7 @@ const routes: Routes = [
 	{ path: "education/edit/:id", component: EditEducationComponent, canActivate: [AuthGuard] },
 	{ path: "experience/add", component: AddExperienceComponent, canActivate: [AuthGuard] },
 	{ path: "experience/edit/:id", component: EditExperienceComponent, canActivate: [AuthGuard] },
-	{ path: "session-expired", component: SessionExpiredPageComponent },
+	{ path: "session-expired", component: SessionExpiredPage },
 	{ path: "**", component: PageNotFoundComponent } // Page not found
 ];
 
@@ -73,7 +74,7 @@ const routes: Routes = [
 		ProfileComponent,
 		LoginComponent,
 		LandingComponent,
-		ProfilesComponent,
+		DevelopersListComponent,
 		PageNotFoundComponent,
 		SignupComponent,
 		AddEducationComponent,
@@ -88,7 +89,7 @@ const routes: Routes = [
 		SectionsComponent,
 		FakeGithubComponent,
 		SessionExpiredComponent,
-		SessionExpiredPageComponent
+		SessionExpiredPage
 	],
 	imports: [
 		BrowserModule,

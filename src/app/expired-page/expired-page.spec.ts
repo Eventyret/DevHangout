@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SessionExpiredPageComponent } from "./session-expired-page.component";
+import { SessionExpiredPage } from "./expired-page";
 
 describe("SessionExpiredPageComponent", () => {
-  let component: SessionExpiredPageComponent;
-  let fixture: ComponentFixture<SessionExpiredPageComponent>;
+  let component: SessionExpiredPage;
+  let fixture: ComponentFixture<SessionExpiredPage>;
 
   beforeEach(async(() => {
 	TestBed.configureTestingModule({
-		declarations: [ SessionExpiredPageComponent ]
+		declarations: [ SessionExpiredPage ]
 	})
 	.compileComponents();
   }));
 
   beforeEach(() => {
-	fixture = TestBed.createComponent(SessionExpiredPageComponent);
+	fixture = TestBed.createComponent(SessionExpiredPage);
 	component = fixture.componentInstance;
 	fixture.detectChanges();
   });
