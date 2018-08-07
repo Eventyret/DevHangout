@@ -21,7 +21,7 @@ import { AddEducationComponent } from "./dashboard/education/add-education/add-e
 import { EditEducationComponent } from "./dashboard/education/edit-education/edit-education.component";
 import { AddExperienceComponent } from "./dashboard/experience/add-experience/add-experience.component";
 import { EditExperienceComponent } from "./dashboard/experience/edit-experience/edit-experience.component";
-import { FakeGithubComponent } from "./fake-github/fake-github.component";
+import { FakeGithubPage } from "./github-page/github-page";
 import { SectionsComponent } from "./landing/components/sections/sections.component";
 import { TestimonialsComponent } from "./landing/components/testimonials/testimonials.component";
 import { LandingComponent } from "./landing/landing.component";
@@ -56,7 +56,7 @@ const routes: Routes = [
 	{ path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
 	{ path: "donate", component: SupporterModalComponent },
 	{ path: "donate-info", component: InfoModalComponent },
-	{ path: "github/:username/:repo", component: FakeGithubComponent },
+	{ path: "github/:username/:repo", component: FakeGithubPage },
 	{ path: "education/add", component: AddEducationComponent, canActivate: [AuthGuard] },
 	{ path: "education/edit/:id", component: EditEducationComponent, canActivate: [AuthGuard] },
 	{ path: "experience/add", component: AddExperienceComponent, canActivate: [AuthGuard] },
@@ -87,7 +87,7 @@ const routes: Routes = [
 		InfoModalComponent,
 		TestimonialsComponent,
 		SectionsComponent,
-		FakeGithubComponent,
+		FakeGithubPage,
 		SessionExpiredComponent,
 		SessionExpiredPage
 	],

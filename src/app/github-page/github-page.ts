@@ -1,4 +1,4 @@
-import { GithubService } from "./../shared/services/api/github.service";
+import { GithubService } from "../shared/services/api/github.service";
 import { Component, OnInit } from "@angular/core";
 import { sample as _sample } from "lodash";
 import { ActivatedRoute } from "@angular/router";
@@ -7,10 +7,10 @@ import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
 	selector: "app-fake-github",
-	templateUrl: "./fake-github.component.html",
-	styleUrls: ["./fake-github.component.scss"]
+	templateUrl: "./github-page.html",
+	styleUrls: ["./github-page.scss"]
 })
-export class FakeGithubComponent implements OnInit {
+export class FakeGithubPage implements OnInit {
 	githubData: any[];
 	projects: any;
 	projectsInfo = [];
@@ -20,7 +20,7 @@ export class FakeGithubComponent implements OnInit {
 	watchCount: string;
 	forkCount: string;
 	tabs: Tab[];
-	constructor(private fakeGithub: GithubService, private router: ActivatedRoute, private spinner: NgxSpinnerService) {}
+	constructor(private github: GithubService, private router: ActivatedRoute, private spinner: NgxSpinnerService) {}
 
 	ngOnInit() {
 		this.spinner.show();
@@ -32,7 +32,7 @@ export class FakeGithubComponent implements OnInit {
 	}
 
 	populateSite() {
-		this.fakeGithub.fakeGitHubRepo().subscribe(
+		this.github.fakeGitHubRepo().subscribe(
 			data => {
 				this.githubData = data;
 				this.projectsInfo.push(_sample(data[0].repo));
