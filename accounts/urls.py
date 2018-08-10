@@ -6,7 +6,9 @@ from Skills.api.views import SkillsView
 ROUTER = routers.DefaultRouter()
 ROUTER.register("api/register", views.UserRegistrationViewSet) # Registration URL
 ROUTER.register("api/users", views.UserViewSet) # List of all users
-ROUTER.register("api/users/(?P<id>[0-9]+)/$", views.ProfileView) # List of Specific User
+ROUTER.register("api/users/(?P<id>[0-9]+)/$", views.UserViewSet) # List of Specific User
+ROUTER.register("api/users/(?P<id>[0-9]+)/profile", views.ProfileView) # List of Specific User
+ROUTER.register("api/users/(?P<id>[0-9]+)/profile/details/", views.ProfileView) # List of Specific User
 ROUTER.register("api/users/(?P<id>[0-9]+)/education", views.EducationView)
 ROUTER.register("api/users/(?P<id>[0-9]+)/education/(?P<edu_id>[0-9]+)", views.EducationView)
 ROUTER.register("api/users/(?P<id>[0-9]+)/experience", views.ExperienceView)
