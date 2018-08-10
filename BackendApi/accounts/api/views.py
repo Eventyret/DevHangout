@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, mixins
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from django.contrib.auth.models import User
 from .permissions import IsOwner
@@ -13,6 +13,11 @@ class ProfileView(viewsets.ModelViewSet):
 	permission_classes = (IsOwner, )
 	queryset = Profile.objects.all()
 	serializer_class = ProfileSerializer
+
+	def get_queryset(self):
+		user_id = self.kwargs["id"]
+		return User.objects.get(id = user_id).profile
+
 
 class EducationView(viewsets.ModelViewSet):
 	permission_classes = (IsOwner, )

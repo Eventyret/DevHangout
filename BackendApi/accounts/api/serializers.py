@@ -7,7 +7,7 @@ from ..models import Profile, Education, Experience
 class ProfileSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Profile
-		fields = ("firstName", "lastName", "avatar", "location", "website", "company", "title",
+		fields = ("id", "firstName", "lastName", "avatar", "location", "website", "company", "title",
                   "backgroundImage", "bio", "twitter", "facebook", "linkedin", "instagram", "youtube", "github", "donator")
 
 class EducationSerializer(serializers.ModelSerializer):
