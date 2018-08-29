@@ -18,13 +18,15 @@ export class NavbarComponent implements OnInit {
 
 	ngOnInit() {
 		this.getUsername();
-		this.auth.refreshToken$.subscribe(val => {
-			if (val)  {
-				// val is true, refreshToken has been notified
-				this.loggedIn = true;
-				this.getUsername();
-			}
-		});
+		if (this.username) {
+			this.auth.refreshToken$.subscribe(val => {
+				if (val) {
+					// val is true, refreshToken has been notified
+					this.loggedIn = true;
+					this.getUsername();
+				}
+			});
+		}
 	}
 
 	getUsername() {
@@ -39,17 +41,15 @@ export class NavbarComponent implements OnInit {
 	}
 
 	openLogin() {
-		const modalRef = this.modalService.open(LoginComponent, {
+		this.modalService.open(LoginComponent, {
 			centered: true,
 			size: "lg"
 		});
 	}
 	openSignUp() {
-		const modalRef = this.modalService.open(SignupComponent, {
+		this.modalService.open(SignupComponent, {
 			centered: true,
 			size: "lg"
 		});
 	}
-
-
 }
