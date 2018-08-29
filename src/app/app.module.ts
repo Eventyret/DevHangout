@@ -44,12 +44,11 @@ import { EditProfileComponent } from "./dashboard/edit-profile/edit-profile.comp
 import { ProfileComponent } from "./userprofile/userprofile.component";
 import { SessionExpiredPage } from "./expired-page/expired-page";
 
-
 const routes: Routes = [
 	{ path: "", component: HomePage, pathMatch: "full" },
 	{ path: "login", component: LoginComponent, pathMatch: "full" },
 	{ path: "expired", component: SessionExpiredComponent, pathMatch: "full" },
-	{ path: "profiles", component: DevelopersListComponent, pathMatch: "full"},
+	{ path: "profiles", component: DevelopersListComponent, pathMatch: "full" },
 	{ path: "signup", component: SignupComponent, pathMatch: "full" },
 	{ path: "profile/:id/:username", component: ProfileComponent, pathMatch: "full", canActivate: [AuthGuard] },
 	{ path: "profile/edit", component: EditProfileComponent, canActivate: [AuthGuard] },
@@ -107,13 +106,12 @@ const routes: Routes = [
 			position: ["top", "right"],
 			timeOut: 5000,
 			showProgressBar: true,
-			animate: "scale",
 			clickToClose: true,
 			pauseOnHover: true
 		}),
 		JwtModule.forRoot({
 			config: {
-				tokenGetter: () => {
+				 tokenGetter() {
 					return localStorage.getItem("token");
 				},
 				whitelistedDomains: ["localhost:8000", "backend.devhangout.co", "devhangout.herokuapp.com"],
