@@ -111,9 +111,7 @@ const routes: Routes = [
 		}),
 		JwtModule.forRoot({
 			config: {
-				 tokenGetter() {
-					return localStorage.getItem("token");
-				},
+				tokenGetter: getToken,
 				whitelistedDomains: ["localhost:8000", "backend.devhangout.co", "devhangout.herokuapp.com"],
 				blacklistedRoutes: ["localhost:8000/api/token", "backend.devhangout.co/api/token", "devhangout.herokuapp.com/api/token"]
 			}
@@ -125,3 +123,7 @@ const routes: Routes = [
 	bootstrap: [AppComponent]
 })
 export class AppModule {}
+
+export function getToken() {
+	return localStorage.getItem("token");
+}
