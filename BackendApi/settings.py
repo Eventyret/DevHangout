@@ -30,7 +30,7 @@ SECRET_KEY = ENV("SECRET_KEY")
 
 # SECURITY WARNING: don"t run with debug turned on in production!
 
-ALLOWED_HOSTS = ["10.21.253.5", "localhost", "127.0.0.1", "localhost:4200"]
+ALLOWED_HOSTS = ["10.21.253.5", "localhost", "127.0.0.1", "localhost:4200", "devhangout.herokuapp.com", "backend.devhangout.co"]
 
 
 # Application definition
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "Skills",
     "accounts",
-	"corsheaders"
+		"corsheaders"
 ]
 
 MIDDLEWARE = [
