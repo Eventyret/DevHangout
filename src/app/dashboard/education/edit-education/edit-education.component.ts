@@ -7,7 +7,7 @@ import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 	styleUrls: ["./edit-education.component.scss"]
 })
 export class EditEducationComponent implements OnInit {
-	name;
+	current;
 
 	constructor(public activeModal: NgbActiveModal) {}
 

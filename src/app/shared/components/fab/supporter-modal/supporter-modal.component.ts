@@ -63,7 +63,7 @@ export class SupporterModalComponent implements OnInit {
 		});
 	}
 
-	buy() {
+	buy(event) {
 		this.spinner.show();
 		this.payInProgress = true;
 		this.name = this.stripeTest.get("name").value;

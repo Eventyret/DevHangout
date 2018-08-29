@@ -13,14 +13,14 @@ export class FabComponent implements OnInit {
 	spin;
 	ngOnInit() {}
 
-	openInfo(event) {
-		const modalRef = this.modalService.open(InfoModalComponent, {
+	openInfo() {
+		this.modalService.open(InfoModalComponent, {
 			centered: true,
 			size: "lg"
 		});
 	}
-	openSupporter(event) {
-		const modalRef = this.modalService.open(SupporterModalComponent, {
+	openSupporter() {
+		this.modalService.open(SupporterModalComponent, {
 			centered: true,
 			size: "lg",
 			backdrop: "static"
