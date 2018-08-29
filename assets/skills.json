@@ -1,0 +1,202 @@
+[
+	{
+		"id": 1,
+		"name": "Android",
+		"icon": "devicon-android-plain colored"
+	},
+	{
+		"id": 2,
+		"name": "Angular",
+		"icon": "devicon-angularjs-plain colored"
+	},
+	{
+		"id": 3,
+		"name": "Backbone JS",
+		"icon": "devicon-backbonejs-plain colored"
+	},
+	{
+		"id": 4,
+		"name": "Bootstrap",
+		"icon": "devicon-bootstrap-plain colored"
+	},
+	{
+		"id": 5,
+		"name": "C",
+		"icon": "devicon-c-plain colored"
+	},
+	{
+		"id": 6,
+		"name": "Code Igniter",
+		"icon": "devicon-codeigniter-plain colored"
+	},
+	{
+		"id": 7,
+		"name": "Coffeescript",
+		"icon": "devicon-coffeescript-original  colored"
+	},
+	{
+		"id": 8,
+		"name": "C++",
+		"icon": "devicon-cplusplus-plain colored"
+	},
+	{
+		"id": 9,
+		"name": "C#",
+		"icon": "devicon-csharp-plain colored"
+	},
+	{
+		"id": 10,
+		"name": "CSS",
+		"icon": "devicon-css3-plain colored"
+	},
+	{
+		"id": 11,
+		"name": "D3js",
+		"icon": "devicon-d3js-plain colored"
+	},
+	{
+		"id": 12,
+		"name": "Django",
+		"icon": "devicon-django-plain colored"
+	},
+	{
+		"id": 13,
+		"name": "Docker",
+		"icon": "devicon-docker-plain colored"
+	},
+	{
+		"id": 14,
+		"name": ".net",
+		"icon": "devicon-dot-net-plain colored"
+	},
+	{
+		"id": 15,
+		"name": "Drupal",
+		"icon": "devicon-drupal-plain colored"
+	},
+	{
+		"id": 16,
+		"name": "Foundation",
+		"icon": "devicon-foundation-plain colored"
+	},
+	{
+		"id": 17,
+		"name": "Gatling",
+		"icon": "devicon-gatling-plain colored"
+	},
+	{
+		"id": 18,
+		"name": "Git",
+		"icon": "devicon-github-plain colored"
+	},
+	{
+		"id": 19,
+		"name": "Grunt",
+		"icon": "devicon-grunt-plain colored"
+	},
+	{
+		"id": 20,
+		"name": "CSS",
+		"icon": "devicon-gulp-plain colored"
+	},
+	{
+		"id": 21,
+		"name": "Heroku",
+		"icon": "devicon-heroku-plain colored"
+	},
+	{
+		"id": 22,
+		"name": "HTML",
+		"icon": "devicon-html5-plain colored"
+	},
+	{
+		"id": 23,
+		"name": "Java",
+		"icon": "devicon-java-plain colored"
+	},
+	{
+		"id": 24,
+		"name": "JavaScript",
+		"icon": "devicon-javascript-plain colored"
+	},
+	{
+		"id": 25,
+		"name": "jQuery",
+		"icon": "devicon-jquery-plain colored"
+	},
+	{
+		"id": 26,
+		"name": "Laravel",
+		"icon": "devicon-laravel-plain colored"
+	},
+	{
+		"id": 27,
+		"name": "noSQL",
+		"icon": "devicon-mongodb-plain colored"
+	},
+	{
+		"id": 28,
+		"name": "MySQL",
+		"icon": "devicon-mysql-plain colored"
+	},
+	{
+		"id": 29,
+		"name": "NodeJS",
+		"icon": "devicon-nodejs-plain colored"
+	},
+	{
+		"id": 30,
+		"name": "PHP",
+		"icon": "devicon-php-plain colored"
+	},
+	{
+		"id": 31,
+		"name": "PostgreSQL",
+		"icon": "devicon-postgresql-plain colored"
+	},
+	{
+		"id": 32,
+		"name": "Python",
+		"icon": "devicon-python-plain colored"
+	},
+	{
+		"id": 33,
+		"name": "Ruby on Rails",
+		"icon": "devicon-rails-plain colored"
+	},
+	{
+		"id": 34,
+		"name": "SASS",
+		"icon": "devicon-sass-original  colored"
+	},
+	{
+		"id": 35,
+		"name": "Swift",
+		"icon": "devicon-swift-plain colored"
+	},
+	{
+		"id": 36,
+		"name": "Symfony",
+		"icon": "devicon-symfony-original colored"
+	},
+	{
+		"id": 37,
+		"name": "TypeScript",
+		"icon": "devicon-typescript-plain colored"
+	},
+	{
+		"id": 38,
+		"name": "VSCode",
+		"icon": "devicon-visualstudio-plain colored"
+	},
+	{
+		"id": 39,
+		"name": "VueJS",
+		"icon": "devicon-vuejs-plain colored"
+	},
+	{
+		"id": 40,
+		"name": "Wordpress",
+		"icon": "devicon-wordpress-plain colored"
+	}
+]
