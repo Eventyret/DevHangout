@@ -24,7 +24,7 @@ export class SectionsComponent implements OnInit {
 }
 
 openSignUp() {
-	const modalRef = this.modalService.open(SignupComponent, {
+	this.modalService.open(SignupComponent, {
 		centered: true,
 		size: "lg"
 	});

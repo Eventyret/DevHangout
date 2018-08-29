@@ -12,7 +12,7 @@ export class SessionExpiredPage implements OnInit {
 	constructor(public auth: AuthService, private modalService: NgbModal) {}
 
 	ngOnInit() {
-		const modalRef = this.modalService.open(SessionExpiredComponent, {
+		this.modalService.open(SessionExpiredComponent, {
 			centered: true,
 			size: "lg"
 		});

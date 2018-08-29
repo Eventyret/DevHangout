@@ -68,7 +68,7 @@ export class DevelopersListComponent implements OnInit {
 			},
 			error => {
 				this.auth.refreshToken().subscribe(() => {
-					const modalRef = this.modalService.open(SessionExpiredComponent, {
+					this.modalService.open(SessionExpiredComponent, {
 						centered: true,
 						size: "lg",
 						backdrop: "static",
