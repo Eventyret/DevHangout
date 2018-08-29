@@ -4,6 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import "rxjs/add/operator/catch";
 import { throwError } from "rxjs";
+import { environment } from "../../../../environments/environment";
 
 @Injectable({
 	providedIn: "root"
@@ -12,6 +13,7 @@ export class GithubService {
 	clientID: string = environment.github_client_id;
 	clientSecret: string = environment.github_client_secret;
 	githubUrl = "https://api.github.com/";
+	fakeUsers: string = environment.fake_users;
 
 	constructor(private http: HttpClient) {}
 
@@ -36,7 +38,7 @@ export class GithubService {
 	}
 	fakeGitHubRepo() {
 		return this.http
-			.get("/assets/fakeusers.json")
+			.get("/assets/" + this.fakeUsers)
 			.pipe(map((data: any) => data))
 			.catch((error: any) => {
 				return throwError(error);

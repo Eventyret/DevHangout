@@ -5,7 +5,7 @@ module.exports = () => {
 		users: _.times(1001, function(n) {
 			let skillsData = [];
 			let titlesData = [];
-			let githubUrl = "http://localhost:4200/github/"
+			let githubUrl = "https://devhangout.co/github/"
 			let username = faker.internet.userName();
 			let randomSet = _.sample([1, 2, 3, 4]);
 			let diplomaData = _.sample(diploma);

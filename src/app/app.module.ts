@@ -116,8 +116,8 @@ const routes: Routes = [
 				tokenGetter: () => {
 					return localStorage.getItem("token");
 				},
-				whitelistedDomains: ["localhost:8000"],
-				blacklistedRoutes: ["localhost:8000/api/token"]
+				whitelistedDomains: ["localhost:8000", "backend.devhangout.co", "devhangout.herokuapp.com"],
+				blacklistedRoutes: ["localhost:8000/api/token", "backend.devhangout.co/api/token", "devhangout.herokuapp.com/api/token"]
 			}
 		}),
 		Ng2SearchPipeModule,

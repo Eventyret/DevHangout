@@ -11,6 +11,7 @@ import { NotificationsService } from "angular2-notifications";
 import { NgxSpinnerService } from "ngx-spinner";
 import { throwError, BehaviorSubject } from "rxjs";
 import "rxjs/add/operator/catch";
+import { environment } from "../../../../environments/environment";
 
 @Injectable({
 	providedIn: "root"
@@ -21,6 +22,7 @@ export class AuthService {
 	helper = new JwtHelperService();
 	private refreshTokenSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 	refreshToken$ = this.refreshTokenSubject.asObservable();
+	API_URL: string = environment.api_url;
 
 	constructor(
 		private http: HttpClient,
@@ -36,7 +38,7 @@ export class AuthService {
 	}
 	getUser(id) {
 		return this.http
-			.get("http://localhost:8000/api/users/" + id + "/")
+			.get(this.API_URL + "/api/users/" + id + "/")
 			.pipe(map((data: any) => data))
 			.catch((error: any) => {
 				this.refreshToken();
@@ -47,7 +49,7 @@ export class AuthService {
 	login(credentials) {
 		localStorage.setItem("username", credentials.username);
 		return this.http
-			.post<Token>("http://localhost:8000/api/token/", credentials)
+			.post<Token>(this.API_URL + "/api/token/", credentials)
 			.pipe(
 				map(response => {
 					const result = response;
@@ -80,7 +82,7 @@ export class AuthService {
 			password: user.password
 		};
 		return this.http
-			.post<User>("http://localhost:8000/api/register/", data)
+			.post<User>(this.API_URL + "/api/register/", data)
 			.pipe(
 				map(response => {
 					const result = response;
@@ -125,7 +127,7 @@ export class AuthService {
 	refreshToken() {
 		const Rtoken = localStorage.getItem("refresh");
 		return this.http
-			.post<Token>("http://localhost:8000/api/token/refresh/", { refresh: Rtoken })
+			.post<Token>(this.API_URL + "/api/token/refresh/", { refresh: Rtoken })
 			.pipe(
 				map(response => {
 					localStorage.setItem("token", response.access);
