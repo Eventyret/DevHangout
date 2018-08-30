@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
 		this.auth.checkConnection().subscribe(
 			data => {},
 			error => {
-				console.log(error);
+				this.loading = false;
 			},
 			() => {
 				this.loading = false;
