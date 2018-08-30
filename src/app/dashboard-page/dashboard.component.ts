@@ -1,8 +1,8 @@
-import { EditProfileComponent } from "./edit-profile/edit-profile.component";
-import { EditExperienceComponent } from "./experience/edit-experience/edit-experience.component";
-import { AddExperienceComponent } from "./experience/add-experience/add-experience.component";
-import { EditEducationComponent } from "./education/edit-education/edit-education.component";
-import { AddEducationComponent } from "./education/add-education/add-education.component";
+import { EditProfileComponent } from "./components/edit-profile/edit-profile.component";
+import { EditExperienceComponent } from "./components/experience/edit-experience/edit-experience.component";
+import { AddExperienceComponent } from "./components/experience/add-experience/add-experience.component";
+import { EditEducationComponent } from "./components/education/edit-education/edit-education.component";
+import { AddEducationComponent } from "./components/education/add-education/add-education.component";
 import { Component, OnInit } from "@angular/core";
 import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { NgxSpinnerService } from "ngx-spinner";

@@ -31,4 +31,21 @@ export class DataService {
 				return throwError(error);
 			});
 	}
+	getEducationList() {
+		return this.http
+			.get(this.API_URL + "/api/users/" + this.userID + "/experience/")
+			.pipe(map((data: any) => data))
+			.catch((error: any) => {
+				return throwError(error);
+			});
+	}
+
+	getDetailedEducation(eduID) {
+		return this.http
+			.get(this.API_URL + "/api/users/" + this.userID + "/experience/" + eduID)
+			.pipe(map((data: any) => data))
+			.catch((error: any) => {
+				return throwError(error);
+			});
+	}
 }

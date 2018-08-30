@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
-import { GithubService } from "../../shared/services/api/github.service";
+import { GithubService } from "../../../shared/services/api/github.service";
 
 @Component({
 	selector: "app-edit-profile",

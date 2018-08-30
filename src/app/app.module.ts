@@ -16,11 +16,11 @@ import { NgxStripeModule } from "ngx-stripe";
 
 import { environment } from "../environments/environment";
 import { AppComponent } from "./app.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
-import { AddEducationComponent } from "./dashboard/education/add-education/add-education.component";
-import { EditEducationComponent } from "./dashboard/education/edit-education/edit-education.component";
-import { AddExperienceComponent } from "./dashboard/experience/add-experience/add-experience.component";
-import { EditExperienceComponent } from "./dashboard/experience/edit-experience/edit-experience.component";
+import { DashboardComponent } from "./dashboard-page/dashboard.component";
+import { AddEducationComponent } from "./dashboard-page/components/education/add-education/add-education.component";
+import { EditEducationComponent } from "./dashboard-page/components/education/edit-education/edit-education.component";
+import { AddExperienceComponent } from "./dashboard-page/components/experience/add-experience/add-experience.component";
+import { EditExperienceComponent } from "./dashboard-page/components/experience/edit-experience/edit-experience.component";
 import { FakeGithubPage } from "./github-page/github-page";
 import { SectionsComponent } from "./home/components/sections/sections.component";
 import { TestimonialsComponent } from "./home/components/testimonials/testimonials.component";
@@ -40,7 +40,7 @@ import { FakeService } from "./shared/services/api/fake.service";
 import { GithubService } from "./shared/services/api/github.service";
 import { AuthGuard } from "./shared/services/auth/auth-guard.service";
 import { AuthService } from "./shared/services/auth/auth.service";
-import { EditProfileComponent } from "./dashboard/edit-profile/edit-profile.component";
+import { EditProfileComponent } from "./dashboard-page/components/edit-profile/edit-profile.component";
 import { ProfileComponent } from "./userprofile/userprofile.component";
 import { SessionExpiredPage } from "./expired-page/expired-page";
 
