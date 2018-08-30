@@ -20,6 +20,7 @@ export interface Profile {
 }
 
 export interface Education {
+	id: number;
 	user: number;
 	school: string;
 	qualification: string;
@@ -31,6 +32,7 @@ export interface Education {
 }
 
 export interface Experience {
+	id: number;
 	user: number;
 	jobTitle: string;
 	company: string;

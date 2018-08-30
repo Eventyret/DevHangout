@@ -8,7 +8,9 @@ import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 })
 export class EditExperienceComponent implements OnInit {
 	name;
+	id;
 	constructor(public activeModal: NgbActiveModal) {}
+
 
 	ngOnInit() {}
 }

@@ -59,7 +59,7 @@
 										<span *ngIf="exp?.current  || !exp?.dateTo"> - Present</span>
 									</td>
 									<td>
-										<button class="btn btn-info mr-3" (click)="open($event)" id="editExp">
+										<button class="btn btn-info mr-3" (click)="open($event, exp?.id)" id="editExp">
 											Edit
 										</button>
 										<button class="btn btn-danger">
@@ -95,7 +95,7 @@
 											<span *ngIf="edu?.current  || !edu?.dateTo"> - Present</span>
 										</td>
 									<td schope="row">
-										<a class="btn btn-info mr-3 text-white" (click)="open($event)" id="editEdu">
+										<a class="btn btn-info mr-3 text-white" (click)="open($event, edu?.id)" id="editEdu">
 											Edit
 										</a>
 										<a class="btn btn-danger text-white">

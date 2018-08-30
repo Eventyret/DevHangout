@@ -16,7 +16,7 @@ import { User } from "../shared/models/users";
 })
 export class DashboardComponent implements OnInit {
 	user: User;
-	support = true;
+	support = false;
 	id = localStorage.getItem("user_id");
 	LocalUser = localStorage.getItem("user");
 	comp: any;
@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
 		this.spinner.show();
 		this.getUserData(this.id);
 	}
-	open(event) {
+	open(event, id) {
 		const target = event.target.id;
 		if (target === "addEdu") {
 			this.comp = AddEducationComponent;
@@ -46,6 +46,11 @@ export class DashboardComponent implements OnInit {
 			backdropClass: "light-blue-backdrop"
 		});
 		modalRef.componentInstance.name = this.user.username;
+		modalRef.componentInstance.id = id;
+	}
+
+	getEducation(){
+
 	}
 
 	getUserData(id) {

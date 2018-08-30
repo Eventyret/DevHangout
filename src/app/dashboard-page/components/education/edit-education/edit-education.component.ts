@@ -8,6 +8,7 @@ import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 })
 export class EditEducationComponent implements OnInit {
 	current;
+	id;
 
 	constructor(public activeModal: NgbActiveModal) {}
 
