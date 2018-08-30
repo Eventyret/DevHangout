@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
+import { NgbModal, NgbActiveModal, NgbCheckBox } from "@ng-bootstrap/ng-bootstrap";
 import { DataService } from "../../../services/data.service";
 import { Education } from "../../../../shared/models/users";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
@@ -19,8 +19,8 @@ export class EditEducationComponent implements OnInit {
 		degree: new FormControl("", Validators.required),
 		fieldofstudy: new FormControl("", Validators.required),
 		from: new FormControl("", Validators.required),
-		to: new FormControl("", Validators.required),
-		current: new FormControl("", Validators.required),
+		to: new FormControl(),
+		current: new FormControl(Validators.required),
 	});
 
 	constructor(public activeModal: NgbActiveModal, private dataService: DataService) {}
@@ -30,7 +30,7 @@ export class EditEducationComponent implements OnInit {
 			(data: Education) => {
 				this.education = data;
 				this.editForm.patchValue({
-					school: this.education.school,
+					school: data.school,
 					degree: data.qualification,
 					fieldofstudy: data.fieldOfStudy,
 					from: data.dateFrom,
@@ -43,11 +43,17 @@ export class EditEducationComponent implements OnInit {
 				console.log(error);
 			},
 			() => {
+				this.onChanges();
 
 			}
 		);
 	}
-	update(formValue) {
-		console.log(formValue);
+	onChanges() {
+		this.editForm.get("current").valueChanges.subscribe(val => {
+			this.current = !this.current;
+		})
+	}
+	update(form) {
+		console.log(form);
 	}
 }
