@@ -14,35 +14,18 @@ export class DataService {
 
 	constructor(private http: HttpClient) {}
 
-	getExperienceList() {
+	getList(component) {
 		return this.http
-			.get(this.API_URL + "/api/users/" + this.userID + "/experience/")
+			.get(this.API_URL + "/api/users/" + this.userID + "/" + component + "/")
 			.pipe(map((data: any) => data))
 			.catch((error: any) => {
 				return throwError(error);
 			});
 	}
 
-	getDetailedExperience(expID) {
+	getDetailed(component, id) {
 		return this.http
-			.get(this.API_URL + "/api/users/" + this.userID + "/experience/" + expID)
-			.pipe(map((data: any) => data))
-			.catch((error: any) => {
-				return throwError(error);
-			});
-	}
-	getEducationList() {
-		return this.http
-			.get(this.API_URL + "/api/users/" + this.userID + "/experience/")
-			.pipe(map((data: any) => data))
-			.catch((error: any) => {
-				return throwError(error);
-			});
-	}
-
-	getDetailedEducation(eduID) {
-		return this.http
-			.get(this.API_URL + "/api/users/" + this.userID + "/experience/" + eduID)
+			.get(this.API_URL + "/api/users/" + this.userID + "/" + component + "/" + id)
 			.pipe(map((data: any) => data))
 			.catch((error: any) => {
 				return throwError(error);
