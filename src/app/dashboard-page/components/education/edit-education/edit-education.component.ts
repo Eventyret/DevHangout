@@ -15,10 +15,11 @@ export class EditEducationComponent implements OnInit {
 	current: boolean;
 
 	editForm = new FormGroup({
-		school: new FormControl("", Validators.required),
+		school: new FormControl("" Validators.required),
 		degree: new FormControl("", Validators.required),
 		fieldofstudy: new FormControl("", Validators.required),
-		fromto: new FormControl("", Validators.required),
+		from: new FormControl("", Validators.required),
+		to: new FormControl("", Validators.required),
 		current: new FormControl("", Validators.required),
 	});
 
@@ -29,7 +30,6 @@ export class EditEducationComponent implements OnInit {
 			(data: Education) => {
 				this.education = data;
 				this.current = data.current;
-				console.log(this.education);
 			},
 			error => {
 				console.log(error);
