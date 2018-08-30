@@ -1,51 +1,76 @@
 <div class="modal-header">
-		<h4 class="modal-title">Editing ID Number: {{id}}</h4>
-		<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-			<span aria-hidden="true">&times;</span>
-		</button>
-	</div>
-	<div class="modal-body">
-		<div class="add-education">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 m-auto">
-						<small class="d-block pb-3 text-right">* = required field</small>
-						<form>
-							<div class="form-group">
-								<input type="text" class="form-control form-control-lg" placeholder="* Name of School Or Bootcamp" name="school" required />
+	<h4 class="modal-title">Editing ID Number: {{id}}</h4>
+	<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>
+<div class="modal-body">
+	<div class="add-education">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 m-auto">
+					<small class="d-block pb-3 text-right">* = required field</small>
+					<form [formGroup]="editForm" (ngSubmit)="update(editForm.value)">
+						<div class="form-group">
+							<input
+							formControlName="school"
+							type="text"
+							name="school"
+							class="form-control form-control-lg"
+							placeholder="* Name of School Or Bootcamp">
+						</div>
+						<div class="form-group">
+							<input
+							formControlName="degree"
+							name="degree"
+							type="text"
+							class="form-control form-control-lg"
+							placeholder="* Degree Or Certificate">
+						</div>
+						<div class="form-group">
+							<input
+							formControlName="fieldofstudy"
+							type="text"
+							name="fieldofstudy"
+							class="form-control form-control-lg"
+							placeholder="Field Of Study">
+						</div>
+						<div class="form-group row">
+							<div class="col-sm-6">
+								<h6>From</h6>
+								<input
+								formControlName="from"
+								type="date"
+								name="from"
+								class="form-control form-control-lg">
 							</div>
-							<div class="form-group">
-								<input type="text" class="form-control form-control-lg" placeholder="* Degree Or Certificate" name="degree" required />
+							<div class="col-sm-6">
+								<h6>To</h6>
+								<input
+								formControlName="to"
+								type="date"
+								name="to"
+								class="form-control form-control-lg"
+								*ngIf="!current">
 							</div>
-							<div class="form-group">
-								<input type="text" class="form-control form-control-lg" placeholder="Field Of Study" name="fieldofstudy" />
-							</div>
-							<div class="form-group row">
-									<div class="col-sm-6">
-										<h6>From</h6>
-										<input type="date" class="form-control form-control-lg" name="from" />
-									</div>
-									<div class="col-sm-6">
-											<h6>To</h6>
-											<input type="date" class="form-control form-control-lg" name="to" *ngIf="!current"/>
-									</div>
-									</div>
-							<div class="form-check mb-4">
-								<input class="form-check-input" type="checkbox" name="current" value="" id="current"  />
-								<label class="form-check-label" for="current">
-									Still studying
-								</label>
-							</div>
-							<div class="form-group">
-								<textarea class="form-control form-control-lg" placeholder="Description" name="description"></textarea>
-								<small class="form-text text-muted">Tell us a bit more about what you are styding</small>
-							</div>
-						</form>
-					</div>
+						</div>
+						<div class="form-check mb-4">
+							<input
+							formControlName="current"
+							type="checkbox"
+							name="current"
+							class="form-check-input"
+							 value="">
+							<label class="form-check-label" for="current">
+								Still studying
+							</label>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
-		<div class="modal-footer">
-			<button type="button" class="btn btn-outline-dark mr-auto" (click)="activeModal.close('Close click')">Close</button>
-			<input type="submit" class="btn btn-success" value="Add"/>
-		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-outline-dark mr-auto" (click)="activeModal.close('Close click')">Close</button>
+		<input type="submit" class="btn btn-success" value="Add" />
+	</div>

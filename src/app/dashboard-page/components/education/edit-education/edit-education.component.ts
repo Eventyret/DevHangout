@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
+import { DataService } from "../../../services/data.service";
+import { Education } from "../../../../shared/models/users";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 
 @Component({
 	selector: "app-edit-education",
@@ -7,10 +10,34 @@ import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 	styleUrls: ["./edit-education.component.scss"]
 })
 export class EditEducationComponent implements OnInit {
-	current;
-	id;
+	id: number;
+	education: Education;
+	current: boolean;
 
-	constructor(public activeModal: NgbActiveModal) {}
+	editForm = new FormGroup({
+		school: new FormControl("", Validators.required),
+		degree: new FormControl("", Validators.required),
+		fieldofstudy: new FormControl("", Validators.required),
+		fromto: new FormControl("", Validators.required),
+		current: new FormControl("", Validators.required),
+	});
 
-	ngOnInit() {}
+	constructor(public activeModal: NgbActiveModal, private dataService: DataService) {}
+
+	ngOnInit() {
+		this.dataService.getDetailed("education", this.id).subscribe(
+			(data: Education) => {
+				this.education = data;
+				this.current = data.current;
+				console.log(this.education);
+			},
+			error => {
+				console.log(error);
+			},
+			() => {}
+		);
+	}
+	update(formValue) {
+		console.log(formValue);
+	}
 }
