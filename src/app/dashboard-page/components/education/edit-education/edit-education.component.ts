@@ -15,7 +15,7 @@ export class EditEducationComponent implements OnInit {
 	current: boolean;
 
 	editForm = new FormGroup({
-		school: new FormControl("" Validators.required),
+		school: new FormControl("", Validators.required),
 		degree: new FormControl("", Validators.required),
 		fieldofstudy: new FormControl("", Validators.required),
 		from: new FormControl("", Validators.required),
@@ -29,12 +29,22 @@ export class EditEducationComponent implements OnInit {
 		this.dataService.getDetailed("education", this.id).subscribe(
 			(data: Education) => {
 				this.education = data;
-				this.current = data.current;
+				this.editForm.patchValue({
+					school: this.education.school,
+					degree: data.qualification,
+					fieldofstudy: data.fieldOfStudy,
+					from: data.dateFrom,
+					to: data.dateTo,
+					current: data.current
+				})
+				console.log(data);
 			},
 			error => {
 				console.log(error);
 			},
-			() => {}
+			() => {
+
+			}
 		);
 	}
 	update(formValue) {

@@ -65,12 +65,14 @@
 								Still studying
 							</label>
 						</div>
+						<div *ngIf="editForm.valid; else elseBlock">
+							<input type="submit" class="btn btn-success btn-block mt-4" value="Update">
+						</div>
+						<ng-template #elseBlock>
+								<input type="submit" class="btn btn-danger btn-block mt-4" [disabled]="!editForm.valid" value="Nothing Changed">
+						</ng-template>
 					</form>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-dark mr-auto" (click)="activeModal.close('Close click')">Close</button>
-		<input type="submit" class="btn btn-success" value="Add" />
 	</div>
