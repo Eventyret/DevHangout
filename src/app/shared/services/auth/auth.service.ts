@@ -36,6 +36,29 @@ export class AuthService {
 			this.currentUser = this.helper.decodeToken(token);
 		}
 	}
+
+	/**
+	 *
+	 * This is to check the connection to heroku, as it can be sleeping.
+	 * it will only return a list of all users not used anywhere, but if we get the list we know the server is live and we can proceed.
+	 * @memberof AuthService
+	 */
+	checkConnection() {
+		return this.http
+			.get(this.API_URL + "/api/users/")
+			.pipe(map((data: any) => data))
+			.catch((error: any) => {
+				return throwError(error);
+			});
+	}
+
+	/**
+	 *
+	 * This will get the object used for the single user.
+	 * @param {*} id This is the user ID for that specific user.
+	 * @returns the specific user object
+	 * @memberof AuthService
+	 */
 	getUser(id) {
 		return this.http
 			.get(this.API_URL + "/api/users/" + id + "/")
@@ -46,6 +69,14 @@ export class AuthService {
 				return throwError(error);
 			});
 	}
+
+	/**
+	 *
+	 * This is the login function that will fetch and store the token.
+	 * @param {*} credentials is the username and password for that user.
+	 * @returns a JWT token
+	 * @memberof AuthService
+	 */
 	login(credentials) {
 		localStorage.setItem("username", credentials.username);
 		return this.http
@@ -70,6 +101,7 @@ export class AuthService {
 				return throwError(this.notify.error(error.error.non_field_errors) || "Server Error");
 			});
 	}
+
 	setUserID(userToken) {
 		localStorage.setItem("user_id", userToken.user_id);
 	}

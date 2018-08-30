@@ -9,8 +9,10 @@ import { AuthService } from "./shared/services/auth/auth.service";
 })
 export class AppComponent implements OnInit {
 	public loggedIn: boolean;
+	public loading: boolean;
 	constructor(private auth: AuthService) {}
 	ngOnInit() {
+		this.loading = true;
 		if (localStorage.getItem("user_id")) {
 			this.auth.refreshToken$.subscribe(val => {
 				if (val) {
@@ -19,5 +21,17 @@ export class AppComponent implements OnInit {
 				}
 			});
 		}
+		this.appOnline();
+	}
+	appOnline() {
+		this.auth.checkConnection().subscribe(
+			data => {},
+			error => {
+				console.log(error);
+			},
+			() => {
+				this.loading = false;
+			}
+		);
 	}
 }
