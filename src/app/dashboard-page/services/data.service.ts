@@ -25,7 +25,7 @@ export class DataService {
 
 	getDetailed(component, id) {
 		return this.http
-			.get(this.API_URL + "/api/users/" + this.userID + "/" + component + "/" + id)
+			.get(this.API_URL + "/api/users/" + this.userID + "/" + component + "/" + id + "/")
 			.pipe(map((data: any) => data))
 			.catch((error: any) => {
 				return throwError(error);
