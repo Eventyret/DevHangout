@@ -94,7 +94,7 @@ const routes: Routes = [
 		BrowserModule,
 		BrowserAnimationsModule,
 		RouterModule.forRoot(routes),
-		NgbModule.forRoot(),
+		NgbModule,
 		CommonModule,
 		NgxSpinnerModule,
 		HttpClientModule,
