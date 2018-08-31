@@ -5,61 +5,67 @@ from ..models import Profile, Education, Experience
 
 
 class ProfileSerializer(serializers.ModelSerializer):
-	class Meta:
-		model = Profile
-		fields = ("id", "firstName", "lastName", "avatar", "location", "website", "company", "title",
+    class Meta:
+        model = Profile
+        fields = ("id", "firstName", "lastName", "avatar", "location", "website", "company", "title",
                   "backgroundImage", "bio", "twitter", "facebook", "linkedin", "instagram", "youtube", "github", "donator")
 
+
 class EducationSerializer(serializers.ModelSerializer):
-	class Meta:
-		model = Education
-		fields = ("id", "user","school", "qualification", "fieldOfStudy", "dateFrom", "dateTo", "current")
+    class Meta:
+        model = Education
+        fields = ("id", "user", "school", "qualification",
+                  "fieldOfStudy", "dateFrom", "dateTo", "current")
+
 
 class ExperienceSerializer(serializers.ModelSerializer):
 
-	class Meta:
-		model = Experience
-		fields = ("id", "user", "jobTitle", "company", "location", "dateFrom", "dateTo", "current")
+    class Meta:
+        model = Experience
+        fields = ("id", "user", "jobTitle", "company",
+                  "location", "dateFrom", "dateTo", "current")
+
 
 class UserSerializer(serializers.ModelSerializer):
-	profile = ProfileSerializer()
-	skills = SkillsSerializer(many=True)
-	education = EducationSerializer(source="edu_user", many=True)
-	experience = ExperienceSerializer(source="exp_user", many=True)
-	class Meta:
-		model = User
-		fields = ("id", "username", "email", "password", "profile", "education", "experience", "skills")
-		write_only_fields = ('password',)
-		read_only_fields = ('id',)
-		extra_kwargs = {
-				"password": {
-					"write_only": True,
-					"required": True
-				}}
+    profile = ProfileSerializer()
+    skills = SkillsSerializer(many=True)
+    education = EducationSerializer(source="edu_user", many=True)
+    experience = ExperienceSerializer(source="exp_user", many=True)
 
+    class Meta:
+        model = User
+        fields = ("id", "username", "email", "password",
+                  "profile", "education", "experience", "skills")
+        write_only_fields = ('password',)
+        read_only_fields = ('id',)
+        extra_kwargs = {
+            "password": {
+                "write_only": True,
+                "required": True
+            }}
 
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
 
-	class Meta:
-		model = User
-		fields = ("id", "username", "email", "password")
-		write_only_fields = ("password",)
-		read_only_fields = ("id", )
-		extra_kwargs = {
-			"password": {
-				"write_only": True,
-				"required": True
-			}
-		}
+    class Meta:
+        model = User
+        fields = ("id", "username", "email", "password")
+        write_only_fields = ("password",)
+        read_only_fields = ("id", )
+        extra_kwargs = {
+            "password": {
+                "write_only": True,
+                "required": True
+            }
+        }
 
-	def create(self, validated_data):
-		user = User.objects.create(
-			username=validated_data['username'],
-			email=validated_data['email']
-		)
+    def create(self, validated_data):
+        user = User.objects.create(
+            username=validated_data['username'],
+            email=validated_data['email']
+        )
 
-		user.set_password(validated_data['password'])
-		user.save()
+        user.set_password(validated_data['password'])
+        user.save()
 
-		return user
+        return user
