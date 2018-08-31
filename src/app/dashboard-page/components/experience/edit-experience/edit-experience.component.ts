@@ -3,6 +3,7 @@ import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { DataService } from "../../../services/data.service";
 import { Experience } from "../../../../shared/models/users";
+import { NotificationsService } from "angular2-notifications";
 
 @Component({
 	selector: "app-edit-experience",
@@ -12,6 +13,7 @@ import { Experience } from "../../../../shared/models/users";
 export class EditExperienceComponent implements OnInit {
 	name: string;
 	experience: Experience;
+	updatedForm: Experience;
 	id: number;
 	current: boolean;
 
@@ -23,7 +25,7 @@ export class EditExperienceComponent implements OnInit {
 		to: new FormControl(""),
 		current: new FormControl(Validators.required)
 	});
-	constructor(public activeModal: NgbActiveModal, private dataService: DataService) {}
+	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private notify: NotificationsService) {}
 
 	ngOnInit() {
 		this.dataService.getDetailed("experience", this.id).subscribe(
@@ -48,12 +50,20 @@ export class EditExperienceComponent implements OnInit {
 	}
 
 	onChanges() {
-		this.editForm.get("current").valueChanges.subscribe(val => {
-			this.current = !this.current;
+		this.editForm.valueChanges.subscribe(val => {
+			this.updatedForm = val;
+			console.log(this.updatedForm);
 		});
 	}
-
-	update(form) {
-		console.log(form);
+	update() {
+		this.dataService.updateDetails("education", this.id, this.updatedForm).subscribe(results => {
+			console.log(results);
+		}, error => {
+			console.log(error)
+			this.notify.error("Seems there was an issue ?", error);
+		},() => {
+			this.notify.success("Education Updated")
+			this.activeModal.close()
+		})
 	}
 }

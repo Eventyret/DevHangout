@@ -3,6 +3,7 @@ import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Education } from "../../../../shared/models/users";
 import { DataService } from "../../../services/data.service";
+import { NotificationsService } from "angular2-notifications";
 
 @Component({
 	selector: "app-add-education",
@@ -24,17 +25,39 @@ export class AddEducationComponent implements OnInit {
 		current: new FormControl(Validators.required)
 	});
 
-	constructor(public activeModal: NgbActiveModal, private dataService: DataService) {}
+	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private notify: NotificationsService) {}
 
 	ngOnInit() {
 		this.onChanges();
 	}
 	onChanges() {
-		this.addForm.get("current").valueChanges.subscribe(val => {
-			this.current = !this.current;
+		this.addForm.valueChanges.subscribe(val => {
+			this.current = !val.current;
 		});
 	}
+
 	add(form) {
-		console.log(form);
+		let data = {
+			user: this.id,
+			jobTitle: form.jobTitle,
+			company: form.company,
+			location: form.location,
+			dateFrom: form.dateFrom,
+			dateTo: form.dateTo,
+			current: form.current
+		};
+		this.dataService.newDetails("education", this.id, data).subscribe(
+			results => {
+				console.log(results);
+			},
+			error => {
+				console.log(error);
+				this.notify.error("Seems there was an issue ?", error);
+			},
+			() => {
+				this.notify.success("Experience Added");
+				this.activeModal.close();
+			}
+		);
 	}
 }
