@@ -14,6 +14,7 @@ export class EditEducationComponent implements OnInit {
 	id: number;
 	education: Education;
 	current: boolean;
+	updatedForm: Education;
 
 	editForm = new FormGroup({
 		school: new FormControl("", Validators.required),
@@ -50,12 +51,13 @@ export class EditEducationComponent implements OnInit {
 		);
 	}
 	onChanges() {
-		this.editForm.get("current").valueChanges.subscribe(val => {
-			this.current = !this.current;
+		this.editForm.valueChanges.subscribe(val => {
+			this.updatedForm = val;
+			console.log(this.updatedForm);
 		});
 	}
-	update(form) {
-		this.dataService.updateDetails("education", this.id, form).subscribe(results => {
+	update() {
+		this.dataService.updateDetails("education", this.id, this.updatedForm).subscribe(results => {
 			console.log(results);
 		}, error => {
 			console.log(error)
