@@ -54,7 +54,6 @@ class Education(models.Model):
 	dateFrom = models.DateField(auto_now=False, auto_now_add=False)
 	dateTo = models.DateField(auto_now=False, auto_now_add=False, null=True)
 	current = models.BooleanField(default=False)
-	description = models.TextField(blank=True, null=True)
 
 	class Meta:
 		verbose_name_plural = "Education"
@@ -70,7 +69,6 @@ class Experience(models.Model):
 	dateFrom = models.DateField(auto_now=False, auto_now_add=False)
 	dateTo = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
 	current = models.BooleanField(default=False)
-	description = models.TextField(blank=True, null=True)
 
 	class Meta:
 		verbose_name_plural = "Experience"
