@@ -56,14 +56,15 @@ export class EditExperienceComponent implements OnInit {
 		});
 	}
 	update() {
-		this.dataService.updateDetails("education", this.id, this.updatedForm).subscribe(results => {
+		this.dataService.updateDetails("experience", this.id, this.updatedForm).subscribe(results => {
 			console.log(results);
 		}, error => {
 			console.log(error)
 			this.notify.error("Seems there was an issue ?", error);
 		},() => {
-			this.notify.success("Education Updated")
+			this.notify.success("Experience Updated")
 			this.activeModal.close()
+			this.ngOnInit();
 		})
 	}
 }

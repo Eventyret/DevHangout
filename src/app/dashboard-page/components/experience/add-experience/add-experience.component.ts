@@ -47,7 +47,7 @@ export class AddExperienceComponent implements OnInit {
 			dateTo: form.dateTo,
 			current: form.current
 		};
-		this.dataService.newDetails("education", this.id, data).subscribe(
+		this.dataService.newDetails("experience", this.id, data).subscribe(
 			results => {
 				console.log(results);
 			},

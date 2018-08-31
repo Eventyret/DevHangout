@@ -64,7 +64,7 @@ export class EditEducationComponent implements OnInit {
 			this.notify.error("Seems there was an issue ?", error);
 		},() => {
 			this.notify.success("Education Updated")
-			this.activeModal.close()
+			this.activeModal.close();
 		})
 	}
 }
