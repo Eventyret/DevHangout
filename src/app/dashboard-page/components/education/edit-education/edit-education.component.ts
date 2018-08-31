@@ -3,6 +3,7 @@ import { NgbModal, NgbActiveModal, NgbCheckBox } from "@ng-bootstrap/ng-bootstra
 import { DataService } from "../../../services/data.service";
 import { Education } from "../../../../shared/models/users";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { NotificationsService } from "angular2-notifications";
 
 @Component({
 	selector: "app-edit-education",
@@ -23,7 +24,7 @@ export class EditEducationComponent implements OnInit {
 		current: new FormControl(Validators.required),
 	});
 
-	constructor(public activeModal: NgbActiveModal, private dataService: DataService) {}
+	constructor(public activeModal: NgbActiveModal, private dataService: DataService,private notify: NotificationsService) {}
 
 	ngOnInit() {
 		this.dataService.getDetailed("education", this.id).subscribe(
@@ -54,6 +55,14 @@ export class EditEducationComponent implements OnInit {
 		});
 	}
 	update(form) {
-		console.log(form);
+		this.dataService.updateDetails("education", this.id, form).subscribe(results => {
+			console.log(results);
+		}, error => {
+			console.log(error)
+			this.notify.error("Seems there was an issue ?", error);
+		},() => {
+			this.notify.success("Education Updated")
+			this.activeModal.close()
+		})
 	}
 }

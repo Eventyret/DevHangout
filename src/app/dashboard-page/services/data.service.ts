@@ -31,4 +31,7 @@ export class DataService {
 				return throwError(error);
 			});
 	}
+	updateDetails(component, id, form) {
+		return this.http.put(this.API_URL + "/api/users/" + this.userID + "/" + component + "/" + id + "/", form)
+	}
 }
