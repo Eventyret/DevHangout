@@ -36,7 +36,7 @@ export class EditEducationComponent implements OnInit {
 					from: data.dateFrom,
 					to: data.dateTo,
 					current: data.current
-				})
+				});
 				console.log(data);
 			},
 			error => {
@@ -51,7 +51,7 @@ export class EditEducationComponent implements OnInit {
 	onChanges() {
 		this.editForm.get("current").valueChanges.subscribe(val => {
 			this.current = !this.current;
-		})
+		});
 	}
 	update(form) {
 		console.log(form);
