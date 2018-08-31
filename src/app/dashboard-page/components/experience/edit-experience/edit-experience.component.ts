@@ -11,9 +11,9 @@ import { Experience } from "../../../../shared/models/users";
 })
 export class EditExperienceComponent implements OnInit {
 	name: string;
-	experience: Experience
+	experience: Experience;
 	id: number;
-	current: boolean
+	current: boolean;
 
 	editForm = new FormGroup({
 		company: new FormControl("", Validators.required),
@@ -21,10 +21,9 @@ export class EditExperienceComponent implements OnInit {
 		location: new FormControl(""),
 		from: new FormControl("", Validators.required),
 		to: new FormControl(""),
-		current: new FormControl(Validators.required),
+		current: new FormControl(Validators.required)
 	});
 	constructor(public activeModal: NgbActiveModal, private dataService: DataService) {}
-
 
 	ngOnInit() {
 		this.dataService.getDetailed("experience", this.id).subscribe(
@@ -37,23 +36,24 @@ export class EditExperienceComponent implements OnInit {
 					from: data.dateFrom,
 					to: data.dateTo,
 					current: data.current
-				})
-			}, error => {
-				console.log(error)
+				});
+			},
+			error => {
+				console.log(error);
 			},
 			() => {
 				this.onChanges();
 			}
-		)
+		);
 	}
 
 	onChanges() {
 		this.editForm.get("current").valueChanges.subscribe(val => {
 			this.current = !this.current;
-		})
+		});
 	}
 
-	update(form){
+	update(form) {
 		console.log(form);
 	}
 }
