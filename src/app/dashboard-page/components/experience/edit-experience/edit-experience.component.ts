@@ -11,11 +11,12 @@ import { NotificationsService } from "angular2-notifications";
 	styleUrls: ["./edit-experience.component.scss"]
 })
 export class EditExperienceComponent implements OnInit {
+	id: number;
 	name: string;
 	experience: Experience;
 	updatedForm: Experience;
-	id: number;
 	current: boolean;
+	user: number;
 
 	editForm = new FormGroup({
 		company: new FormControl("", Validators.required),
@@ -24,6 +25,7 @@ export class EditExperienceComponent implements OnInit {
 		from: new FormControl("", Validators.required),
 		to: new FormControl(""),
 		current: new FormControl(Validators.required)
+
 	});
 	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private notify: NotificationsService) {}
 
@@ -33,7 +35,7 @@ export class EditExperienceComponent implements OnInit {
 				this.experience = data;
 				this.editForm.patchValue({
 					company: data.company,
-					jobtitle: data.jobTitle,
+					jobTitle: data.jobTitle,
 					location: data.location,
 					from: data.dateFrom,
 					to: data.dateTo,

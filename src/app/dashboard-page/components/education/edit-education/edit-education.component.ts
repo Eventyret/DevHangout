@@ -15,14 +15,17 @@ export class EditEducationComponent implements OnInit {
 	education: Education;
 	current: boolean;
 	updatedForm: Education;
+	user: number;
 
 	editForm = new FormGroup({
-		school: new FormControl("", Validators.required),
-		degree: new FormControl("", Validators.required),
-		fieldofstudy: new FormControl("", Validators.required),
-		from: new FormControl("", Validators.required),
-		to: new FormControl(),
 		current: new FormControl(Validators.required),
+		id: new FormControl("",Validators.required),
+		dateFrom: new FormControl("", Validators.required),
+		dateTo: new FormControl(),
+		fieldOfStudy: new FormControl("", Validators.required),
+		qualification: new FormControl("", Validators.required),
+		school: new FormControl("", Validators.required),
+		user: new FormControl("", Validators.required),
 	});
 
 	constructor(public activeModal: NgbActiveModal, private dataService: DataService,private notify: NotificationsService) {}
@@ -31,13 +34,16 @@ export class EditEducationComponent implements OnInit {
 		this.dataService.getDetailed("education", this.id).subscribe(
 			(data: Education) => {
 				this.education = data;
+				this.user = data.user;
 				this.editForm.patchValue({
+					current: data.current,
+					dateFrom: data.dateFrom,
+					dateTo: data.dateTo,
+					fieldOfStudy: data.fieldOfStudy,
+					id: data.id,
+					qualification: data.qualification,
 					school: data.school,
-					degree: data.qualification,
-					fieldofstudy: data.fieldOfStudy,
-					from: data.dateFrom,
-					to: data.dateTo,
-					current: data.current
+					user: data.user,
 				});
 				console.log(data);
 			},
