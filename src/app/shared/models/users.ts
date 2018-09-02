@@ -1,5 +1,5 @@
 export interface Profile {
-	user: number;
+	id: number;
 	firstName: string;
 	lastName: string;
 	avatar: string;
@@ -16,7 +16,6 @@ export interface Profile {
 	youtube: string;
 	github: string;
 	donator: boolean;
-	testimonal: string;
 }
 
 export interface Education {
