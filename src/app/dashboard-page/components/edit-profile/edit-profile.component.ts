@@ -72,6 +72,9 @@ export class EditProfileComponent implements OnInit {
 				this.onChanges();
 			}
 		);
+		if (this.profile.github) {
+			this.getRepo(this.profile.github);
+		}
 	}
 
 	getRepo(username) {
