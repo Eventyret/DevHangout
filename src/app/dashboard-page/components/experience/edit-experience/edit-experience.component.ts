@@ -19,12 +19,14 @@ export class EditExperienceComponent implements OnInit {
 	user: number;
 
 	editForm = new FormGroup({
+		id: new FormControl(Validators.required),
+		user: new FormControl("", Validators.required),
+		jobTitle: new FormControl("", Validators.required),
 		company: new FormControl("", Validators.required),
-		jobtitle: new FormControl("", Validators.required),
 		location: new FormControl(""),
-		from: new FormControl("", Validators.required),
-		to: new FormControl(""),
-		current: new FormControl(Validators.required)
+		dateFrom: new FormControl("", Validators.required),
+		dateTo: new FormControl(""),
+		current: new FormControl(Validators.required),
 
 	});
 	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private notify: NotificationsService) {}
@@ -34,12 +36,13 @@ export class EditExperienceComponent implements OnInit {
 			(data: Experience) => {
 				this.experience = data;
 				this.editForm.patchValue({
-					company: data.company,
+					id: data.id,
+					user: data.user,
 					jobTitle: data.jobTitle,
+					company: data.company,
 					location: data.location,
-					from: data.dateFrom,
-					to: data.dateTo,
-					current: data.current
+					dateFrom: data.dateFrom,
+					dateTo: data.dateTo
 				});
 			},
 			error => {

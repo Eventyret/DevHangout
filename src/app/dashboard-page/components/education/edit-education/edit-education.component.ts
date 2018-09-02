@@ -13,8 +13,8 @@ import { NotificationsService } from "angular2-notifications";
 export class EditEducationComponent implements OnInit {
 	id: number;
 	education: Education;
-	current: boolean;
 	updatedForm: Education;
+	current: boolean;
 	user: number;
 
 	editForm = new FormGroup({
