@@ -3,8 +3,8 @@ import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { GithubService } from "../../../shared/services/api/github.service";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { DataService } from "../../services/data.service";
-import { Profile } from "selenium-webdriver/firefox";
 import { NotificationsService } from "angular2-notifications";
+import { Profile } from "../../../shared/models/users";
 
 @Component({
 	selector: "app-edit-profile",
@@ -12,15 +12,21 @@ import { NotificationsService } from "angular2-notifications";
 	styleUrls: ["./edit-profile.component.scss"]
 })
 export class EditProfileComponent implements OnInit {
+	id: number;
 	name: string;
 	githubData: any[];
 	profile: Profile;
 	updatedForm: Profile;
-	id: string;
 
-	constructor(public activeModal: NgbActiveModal, public githubService: GithubService, private dataService: DataService, private notify: NotificationsService) {}
+	constructor(
+		public activeModal: NgbActiveModal,
+		public githubService: GithubService,
+		private dataService: DataService,
+		private notify: NotificationsService
+	) {}
+
 	profileForm = new FormGroup({
-		id: new FormControl(localStorage.getItem("user_id"), Validators.required),
+		id: new FormControl("", Validators.required),
 		firstName: new FormControl("", Validators.required),
 		lastName: new FormControl(""),
 		avatar: new FormControl(""),
@@ -38,10 +44,24 @@ export class EditProfileComponent implements OnInit {
 	});
 
 	ngOnInit() {
-		this.dataService.getDetailed("education", this.id).subscribe(
+		this.dataService.getDetailed("profile", this.id).subscribe(
 			(data: Profile) => {
 				this.profile = data;
 				this.profileForm.patchValue({
+					id: this.id,
+					firstName: data.firstName,
+					lastName: data.lastName,
+					avatar: data.avatar,
+					location: data.location,
+					website: data.website,
+					company: data.company,
+					title: data.title,
+					bio: data.bio,
+					twitter: data.twitter,
+					facebook: data.facebook,
+					linkedin: data.linkedin,
+					youtube: data.youtube,
+					github: data.github
 				});
 				console.log(data);
 			},
@@ -50,11 +70,9 @@ export class EditProfileComponent implements OnInit {
 			},
 			() => {
 				this.onChanges();
-
 			}
 		);
 	}
-
 
 	getRepo(username) {
 		this.githubService.gitRepo(username).subscribe(info => {
@@ -69,7 +87,7 @@ export class EditProfileComponent implements OnInit {
 		});
 	}
 	update() {
-		this.dataService.updateDetails("education", this.id, this.updatedForm).subscribe(results => {
+		/* this.dataService.updateDetails("education", this.id, this.updatedForm).subscribe(results => {
 			console.log(results);
 		}, error => {
 			console.log(error)
@@ -78,5 +96,6 @@ export class EditProfileComponent implements OnInit {
 			this.notify.success("Education Updated")
 			this.activeModal.close();
 		})
+	} */
 	}
-	}
+}
