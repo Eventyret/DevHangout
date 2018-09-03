@@ -59,7 +59,7 @@ export class AuthService {
 	 * @returns the specific user object
 	 * @memberof AuthService
 	 */
-	getUser(id) {
+	getUser(id: any) {
 		return this.http
 			.get(this.API_URL + "/api/users/" + id + "/")
 			.pipe(map((data: any) => data))
@@ -77,7 +77,7 @@ export class AuthService {
 	 * @returns a JWT token
 	 * @memberof AuthService
 	 */
-	login(credentials) {
+	login(credentials: any) {
 		localStorage.setItem("username", credentials.username);
 		return this.http
 			.post<Token>(this.API_URL + "/api/token/", credentials)
@@ -102,10 +102,24 @@ export class AuthService {
 			});
 	}
 
-	setUserID(userToken) {
+	/**
+	 *
+	 * This sets the UserID into localStorage.
+	 * @param {*} userToken
+	 * @memberof AuthService
+	 */
+	setUserID(userToken: any) {
 		localStorage.setItem("user_id", userToken.user_id);
 	}
-	register(user) {
+
+	/**
+	 *
+	 * This is the registration function that will register a user to the backend.
+	 * @param {*} The User form that contains the username, password and email for that user.
+	 * @returns true or false, and then sets a localStorage variable since this will be their first visit.
+	 * @memberof AuthService
+	 */
+	register(user: any) {
 		this.spinner.show();
 		this.username = user.username;
 		const data = {
@@ -119,7 +133,7 @@ export class AuthService {
 				map(response => {
 					const result = response;
 					if (result) {
-						localStorage.setItem("firstvisit", "true");
+						sessionStorage.setItem("firstvisit", "true");
 						this.spinner.hide();
 						this.notify.success("Welcome " + user.username + ". You can now log in");
 						return true;
@@ -135,19 +149,39 @@ export class AuthService {
 				return throwError(this.notify.error(error.error.profile) || "Server Error");
 			});
 	}
+
+	/**
+	 *
+	 * This will log out the user navigate them to the front page and clear localStorage.
+	 * It will also set the currentUser to null as we currently don't have any user at this moment.
+	 * @memberof AuthService
+	 */
 	logout() {
 		this.router.navigate(["/"]);
 		this.notify.info("Your now logged out");
-		localStorage.clear()
-		this.currentUser = null;
-	}
-	sessionExpired() {
-		this.router.navigate(["/"]);
-		this.notify.info("Your session expired, please log back in");
-		localStorage.clear()
+		localStorage.clear();
 		this.currentUser = null;
 	}
 
+	/**
+	 *
+	 * This will navigate the user to the front page, clear the localStorage
+	 * this will also set the currentUser to null as we do not have a valid user logge din.
+	 * @memberof AuthService
+	 */
+	sessionExpired() {
+		this.router.navigate(["/"]);
+		this.notify.info("Your session expired, please log back in");
+		localStorage.clear();
+		this.currentUser = null;
+	}
+
+	/**
+	 *
+	 * Helperfunction to check if user is logged int
+	 * @returns a decoded token
+	 * @memberof AuthService
+	 */
 	isLoggedIn() {
 		return this.helper.decodeToken(localStorage.getItem("token"));
 	}
