@@ -16,7 +16,11 @@ class ProfileView(viewsets.ModelViewSet):
 
     def get_queryset(self):
         user_id = self.kwargs["id"]
-        return User.objects.get(id=user_id).profile
+        profile_id = self.kwargs.get("pk")
+        if profile_id:
+            return User.objects.get(id=profile_id).profile.filter(id=profile_id)
+        else:
+            return User.objects.get(id=user_id).profile
 
 
 class EducationView(viewsets.ModelViewSet):
