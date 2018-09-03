@@ -26,8 +26,7 @@ export class EditExperienceComponent implements OnInit {
 		location: new FormControl(""),
 		dateFrom: new FormControl("", Validators.required),
 		dateTo: new FormControl(""),
-		current: new FormControl(Validators.required),
-
+		current: new FormControl(Validators.required)
 	});
 	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private notify: NotificationsService) {}
 
@@ -61,15 +60,19 @@ export class EditExperienceComponent implements OnInit {
 		});
 	}
 	update() {
-		this.dataService.updateDetails("experience", this.id, this.updatedForm).subscribe(results => {
-			console.log(results);
-		}, error => {
-			console.log(error)
-			this.notify.error("Seems there was an issue ?", error);
-		},() => {
-			this.notify.success("Experience Updated")
-			this.activeModal.close()
-			this.ngOnInit();
-		})
+		this.dataService.updateDetails("experience", this.id, this.updatedForm).subscribe(
+			results => {
+				console.log(results);
+			},
+			error => {
+				console.log(error);
+				this.notify.error("Seems there was an issue ?", error);
+			},
+			() => {
+				this.notify.success("Experience Updated");
+				this.activeModal.close();
+				this.ngOnInit();
+			}
+		);
 	}
 }

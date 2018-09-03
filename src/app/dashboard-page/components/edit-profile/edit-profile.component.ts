@@ -26,10 +26,9 @@ export class EditProfileComponent implements OnInit {
 	) {}
 
 	profileForm = new FormGroup({
-		id: new FormControl("", Validators.required),
+		id: new FormControl(this.id, Validators.required),
 		firstName: new FormControl("", Validators.required),
 		lastName: new FormControl(""),
-		avatar: new FormControl(""),
 		location: new FormControl(""),
 		website: new FormControl(""),
 		company: new FormControl(""),
@@ -48,10 +47,9 @@ export class EditProfileComponent implements OnInit {
 			(data: Profile) => {
 				this.profile = data;
 				this.profileForm.patchValue({
-					id: this.id,
+					id: data.id,
 					firstName: data.firstName,
 					lastName: data.lastName,
-					avatar: data.avatar,
 					location: data.location,
 					website: data.website,
 					company: data.company,
@@ -63,18 +61,17 @@ export class EditProfileComponent implements OnInit {
 					youtube: data.youtube,
 					github: data.github
 				});
-				console.log(data);
 			},
 			error => {
 				console.log(error);
 			},
 			() => {
 				this.onChanges();
+				if (this.profile.github) {
+					this.getRepo(this.profile.github);
+				}
 			}
 		);
-		if (this.profile.github) {
-			this.getRepo(this.profile.github);
-		}
 	}
 
 	getRepo(username) {
@@ -90,15 +87,18 @@ export class EditProfileComponent implements OnInit {
 		});
 	}
 	update() {
-		/* this.dataService.updateDetails("education", this.id, this.updatedForm).subscribe(results => {
-			console.log(results);
-		}, error => {
-			console.log(error)
-			this.notify.error("Seems there was an issue ?", error);
-		},() => {
-			this.notify.success("Education Updated")
-			this.activeModal.close();
-		})
-	} */
+		this.dataService.updateDetails("profile", this.id, this.updatedForm).subscribe(
+			results => {
+				console.log(results);
+			},
+			error => {
+				console.log(error);
+				this.notify.error("Seems there was an issue ?", error);
+			},
+			() => {
+				this.notify.success("Your Profile was Updated");
+				this.activeModal.close();
+			}
+		);
 	}
 }
