@@ -24,10 +24,10 @@ import { EditExperienceComponent } from "./dashboard-page/components/experience/
 import { FakeGithubPage } from "./github-page/github-page";
 import { SectionsComponent } from "./home/components/sections/sections.component";
 import { TestimonialsComponent } from "./home/components/testimonials/testimonials.component";
-import { HomePage } from "./home/home.page";
+import { HomePage } from "./home/home-page";
 import { HomePageService } from "./home/service/home-page.service";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { DevelopersListComponent } from "./developers-list/developers-list.component";
+import { DevelopersListComponent } from "./developerslist-page/developerslist-page";
 import { FabComponent } from "./shared/components/fab/fab.component";
 import { InfoModalComponent } from "./shared/components/fab/info-modal/info-modal.component";
 import { SupporterModalComponent } from "./shared/components/fab/supporter-modal/supporter-modal.component";
