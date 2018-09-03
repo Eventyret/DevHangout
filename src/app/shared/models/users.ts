@@ -27,18 +27,16 @@ export interface Education {
 	dateFrom: string;
 	dateTo: string;
 	current: boolean;
-	description: string;
 }
 
 export interface Experience {
-	id: number;
+	id?: number;
 	user: number;
 	jobTitle: string;
 	company: string;
 	dateFrom: string;
 	dateTo: string;
 	current: boolean;
-	description: string;
 	location: string;
 }
 
