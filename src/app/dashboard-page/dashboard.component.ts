@@ -7,7 +7,7 @@ import { Component, OnInit } from "@angular/core";
 import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { NgxSpinnerService } from "ngx-spinner";
 import { AuthService } from "../shared/services/auth/auth.service";
-import { User } from "../shared/models/users";
+import { User, Profile } from "../shared/models/users";
 import { DataService } from "./services/data.service";
 import { NotificationsService } from "angular2-notifications";
 
@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit {
 	id: number = parseInt(localStorage.getItem("user_id"), 10);
 	LocalUser = localStorage.getItem("user");
 	comp: any;
+	profile: Profile;
 
 	constructor(
 		private modalService: NgbModal,
@@ -59,10 +60,11 @@ export class DashboardComponent implements OnInit {
 	}
 
 	getUserData(id) {
-		this.auth.getUser(id).subscribe(data => {
+		this.auth.getUser(id).subscribe((data: User) => {
 			localStorage.setItem("user", JSON.stringify(data));
 			this.user = data;
-			this.support = data.profile.donator;
+			this.profile = data.profile[0]
+			this.support = data.profile[0].donator;
 			this.spinner.hide();
 		});
 	}
