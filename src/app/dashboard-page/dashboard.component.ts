@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
 		this.spinner.show();
 		this.getUserData(this.id);
 	}
-	open(event, id) {
+	open(event: any, id?: number) {
 		const target = event.target.id;
 		if (target === "addEdu") {
 			this.comp = AddEducationComponent;
@@ -63,7 +63,7 @@ export class DashboardComponent implements OnInit {
 		this.auth.getUser(id).subscribe((data: User) => {
 			localStorage.setItem("user", JSON.stringify(data));
 			this.user = data;
-			this.profile = data.profile[0]
+			this.profile = data.profile[0];
 			this.support = data.profile[0].donator;
 			this.spinner.hide();
 		});
