@@ -138,17 +138,13 @@ export class AuthService {
 	logout() {
 		this.router.navigate(["/"]);
 		this.notify.info("Your now logged out");
-		localStorage.removeItem("refresh");
-		localStorage.removeItem("token");
-		localStorage.removeItem("user_id");
+		localStorage.clear()
 		this.currentUser = null;
 	}
 	sessionExpired() {
 		this.router.navigate(["/"]);
 		this.notify.info("Your session expired, please log back in");
-		localStorage.removeItem("refresh");
-		localStorage.removeItem("token");
-		localStorage.removeItem("user_id");
+		localStorage.clear()
 		this.currentUser = null;
 	}
 

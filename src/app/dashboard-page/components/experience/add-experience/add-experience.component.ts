@@ -15,14 +15,16 @@ export class AddExperienceComponent implements OnInit {
 	experience: Experience;
 	id: number;
 	current = false;
+	updatedForm: Experience;
 
 	addForm = new FormGroup({
+		current: new FormControl(false, Validators.required),
+		dateFrom: new FormControl("", Validators.required),
+		dateTo: new FormControl(""),
 		company: new FormControl("", Validators.required),
-		jobtitle: new FormControl("", Validators.required),
+		jobTitle: new FormControl("", Validators.required),
 		location: new FormControl(""),
-		from: new FormControl("", Validators.required),
-		to: new FormControl(""),
-		current: new FormControl(Validators.required)
+		user: new FormControl(parseInt(localStorage.getItem("user_id"), 10), Validators.required)
 	});
 
 	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private notify: NotificationsService) {}
@@ -30,27 +32,19 @@ export class AddExperienceComponent implements OnInit {
 	ngOnInit() {
 		this.onChanges();
 	}
-
 	onChanges() {
 		this.addForm.valueChanges.subscribe(val => {
+			this.updatedForm = val;
+			console.log(this.updatedForm);
+		});
+		this.addForm.get("current").valueChanges.subscribe(val => {
 			this.current = !this.current;
 		});
 	}
 
-	add(form) {
-		let data = {
-			user: this.id,
-			jobTitle: form.jobTitle,
-			company: form.company,
-			location: form.location,
-			dateFrom: form.dateFrom,
-			dateTo: form.dateTo,
-			current: form.current
-		};
-		this.dataService.newDetails("experience", this.id, data).subscribe(
-			results => {
-				console.log(results);
-			},
+	add() {
+		this.dataService.newDetails("experience", this.updatedForm).subscribe(
+			results => {},
 			error => {
 				console.log(error);
 				this.notify.error("Seems there was an issue ?", error);
