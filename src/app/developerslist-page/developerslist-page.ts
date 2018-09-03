@@ -9,8 +9,8 @@ import { SessionExpiredComponent } from "../shared/components/session-expired/se
 
 @Component({
 	selector: "app-profiles",
-	templateUrl: "./developers-list.component.html",
-	styleUrls: ["./developers-list.component.scss"]
+	templateUrl: "./developerslist-page.html",
+	styleUrls: ["./developerslist-page.scss"]
 })
 export class DevelopersListComponent implements OnInit {
 	users: any[];

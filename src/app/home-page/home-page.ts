@@ -5,8 +5,8 @@ import { SignupComponent } from "../shared/components/signup/signup.component";
 
 @Component({
 	selector: "app-home",
-	templateUrl: "./home.page.html",
-	styleUrls: ["./home.page.scss"]
+	templateUrl: "./home-page.html",
+	styleUrls: ["./home-page.scss"]
 })
 export class HomePage implements OnInit {
 	public loggedIn: boolean;
