@@ -8,8 +8,8 @@
 		<div class="col" *ngFor="let user of displayUsers | filter:term">
 			<div class="profile" [routerLink]="['/profile', user.id, user.username]">
 				<div class="image">
-					<img src="{{user?.profile.avatar}}" alt="{{user?.username}}" />
-					<div *ngIf="user?.profile.donator">
+					<img src="{{user?.profile[0].avatar}}" alt="{{user?.username}}" />
+					<div *ngIf="user?.profile[0].donator">
 						<div class="ribbon ribbon-top-right">
 							<span>Supporter
 								<i class="fas fa-star"></i>

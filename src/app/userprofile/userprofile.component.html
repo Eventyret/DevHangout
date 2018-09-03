@@ -2,39 +2,39 @@
  type="pacman"></ngx-spinner>
 
 <div class="profile">
-	<div class="card card-body profile-background text-white mb-3" [ngStyle]="{'background-image': support ? 'url('+ user?.profile.backgroundImage + ')' : 'url(' + normalBackground +') no-repeat center center', 'background-size': 'cover', 'background-attachment': 'fixed', 'height': '80vh'}">
+	<div class="card card-body profile-background text-white mb-3" [ngStyle]="{'background-image': support ? 'url('+ profile?.backgroundImage + ')' : 'url(' + normalBackground +') no-repeat center center', 'background-size': 'cover', 'background-attachment': 'fixed', 'height': '80vh'}">
 
 		<div class="row">
 			<div class="m-auto">
-				<img class="rounded-circle profile-image" src="{{user?.profile.avatar}}" alt="{{user?.profile.username}}">
+				<img class="rounded-circle profile-image" src="{{profile?.avatar}}" alt="{{user?.username}}">
 			</div>
 		</div>
 		<div class="text-center profile-container">
-			<h1 class="text-bg">{{user?.profile.firstName}} "{{user?.username}}" {{user?.profile.lastName}}</h1>
-			<p class="lead text-bg">{{user?.profile.title}}
-				<span *ngIf="user?.profile.company">@</span> {{user?.profile.company}}</p>
+			<h1 class="text-bg">{{profile?.firstName}} "{{user?.username}}" {{profile?.lastName}}</h1>
+			<p class="lead text-bg">{{profile?.title}}
+				<span *ngIf="profile?.company">@</span> {{profile?.company}}</p>
 			<div *ngIf="support" class="supporter text-center mx-auto content">
 				<span>Supporter
 					<i class="fas fa-star"></i>
 				</span>
 			</div>
 			<div class="social-profile">
-				<a href="https://www.facebook.com/{{user?.profile.facebook}}" *ngIf="user?.profile.facebook">
+				<a href="https://www.facebook.com/{{profile?.facebook}}" *ngIf="profile?.facebook">
 					<i class="fab fa-facebook"></i>
 				</a>
-				<a href="https://www.github.com/{{user?.profile.github}}" *ngIf="user?.profile.github">
+				<a href="https://www.github.com/{{profile?.github}}" *ngIf="profile?.github">
 					<i class="fab fa-github"></i>
 				</a>
-				<a href="https://www.linkedin.com/in/{{user?.profile.linkedin}}" *ngIf="user?.profile.linkedin">
+				<a href="https://www.linkedin.com/in/{{profile?.linkedin}}" *ngIf="profile?.linkedin">
 					<i class="fab fa-linkedin"></i>
 				</a>
-				<a href="https://www.youtube.com/{{user?.profile.youtube}}" *ngIf="user?.profile.youtube">
+				<a href="https://www.youtube.com/{{profile?.youtube}}" *ngIf="profile?.youtube">
 					<i class="fab fa-youtube"></i>
 				</a>
-				<a href="https://www.twitter.com/{{user?.profile.twitter}}" *ngIf="user?.profile.twitter">
+				<a href="https://www.twitter.com/{{profile?.twitter}}" *ngIf="profile?.twitter">
 					<i class="fab fa-twitter"></i>
 				</a>
-				<a href="https://www.instagram.com/{{user?.profile.instagram}}" *ngIf="user?.profile.instagram">
+				<a href="https://www.instagram.com/{{profile?.instagram}}" *ngIf="profile?.instagram">
 					<i class="fab fa-instagram"></i>
 				</a>
 			</div>
@@ -43,13 +43,13 @@
 </div>
 <div class="container">
 	<div class="row">
-		<div class="col-md-9">
+		<div class="col-sm-12 col-md-9">
 			<div class="card card-body mb-3">
-				<h3 class="text-center text-primary">About {{user?.profile.username}}</h3>
-				<p>{{user?.profile.bio}}</p>
+				<h3 class="text-center text-primary">About {{user?.username}}</h3>
+				<p>{{profile?.bio}}</p>
 			</div>
 		</div>
-		<div class="col-md-3">
+		<div class="col-sm-12 col-md-3">
 			<div class="card card-body mb-3">
 				<h3 class="text-center text-primary">Skills</h3>
 				<div class="icons">
@@ -59,67 +59,73 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-6">
-				<div class="mb-3">
-					<h3 class="text-center text-primary">
-						<i class="fas fa-graduation-cap"></i> Education</h3>
-					<div class="list-group">
-						<div class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let edu of user?.education">
-							<div class="d-flex w-100 justify-content-between">
-								<h5 class="mb-1">{{edu.school}}</h5>
-								<small>{{edu.dateFrom | date: ["MMM yyyy"]}} - {{edu.dateTo | date: ["MMM yyyy"]}}</small>
-							</div>
-							<p class="mb-1">{{edu.description}}</p>
-						</div>
+	</div>
+	<div class="row my-3">
+		<div class="col-sm-12 col-md-6">
+			<h3 class="text-center text-primary">
+				<i class="fas fa-graduation-cap"></i> Education</h3>
+			<div class="list-group">
+				<div class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let edu of user?.education">
+					<div class="d-flex w-100 justify-content-between">
+						<h5 class="mb-1">{{edu?.school}}</h5>
+						<small *ngIf="edu?.current || !edu?.dateTo">{{edu?.dateFrom | date: "MMM yyyy"}} - Present</small>
+						<small *ngIf="!edu?.current && edu?.dateTo">{{edu?.dateFrom | date: "MMM yyyy"}} - {{edu?.dateTo | date: "MMM
+							yyyy"}}</small>
 					</div>
+					<small class="float-left"><i class="fas fa-map-marker-alt"></i> {{edu?.fieldOfStudy}}</small>
+					<small class="float-right"><i class="fas fa-id-card"></i> {{edu?.qualification}}</small>
 				</div>
 			</div>
-			<div class="col-6">
-				<div class="mb-3">
-					<h3 class="text-center text-primary">
-						<i class="fas fa-briefcase"></i> Experience</h3>
-					<div class="list-group">
-						<div class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let exp of user?.experience">
-							<div class="d-flex w-100 justify-content-between">
-								<h5 class="mb-1">{{exp?.company}}</h5>
-								<small *ngIf="exp?.current || !exp?.dateTo">{{exp?.dateFrom | date: "MMM yyyy"}} - Present</small>
-								<small *ngIf="!exp?.current && exp?.dateTo">{{exp?.dateFrom  | date: "MMM yyyy"}} - {{exp?.dateTo  | date: "MMM yyyy"}}</small>
-							</div>
-							<p class="mb-1 my-2">{{exp?.description}}</p>
-								<small class="float-left"><i class="fas fa-map-marker-alt"></i> {{exp?.location}}</small>
-								<small class="float-right"><i class="fas fa-id-card"></i> {{exp?.jobTitle}}</small>
+		</div>
+		<div class="col-sm-12 col-md-6">
+			<h3 class="text-center text-primary">
+				<i class="fas fa-briefcase"></i> Experience</h3>
+			<div class="list-group">
+				<div class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let exp of user?.experience">
+					<div class="d-flex w-100 justify-content-between">
+						<h5 class="mb-1">{{exp?.company}}</h5>
+						<small *ngIf="exp?.current || !exp?.dateTo">{{exp?.dateFrom | date: "MMM yyyy"}} - Present</small>
+						<small *ngIf="!exp?.current && exp?.dateTo">{{exp?.dateFrom | date: "MMM yyyy"}} - {{exp?.dateTo | date: "MMM
+							yyyy"}}</small>
+					</div>
+					<small class="float-left"><i class="fas fa-map-marker-alt"></i> {{exp?.location}}</small>
+					<small class="float-right"><i class="fas fa-id-card"></i> {{exp?.jobTitle}}</small>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card card-body bg-light mb-3">
+				<h3 class="text-center text-primary">
+					<i class="fab fa-github"></i> {{user?.username}}'s 5 last repos</h3>
+				<div class="card card-body mb-2" *ngFor="let repos of githubData | slice:0:5">
+					<div class="row">
+						<div class="col-md-6">
+							<a href="{{repos?.html_url}}" class="repo-name" target="_blank">
+								<h4>{{repos?.name}}</h4>
+							</a>
+							<p>{{repos?.description}}</p>
+							<small>Last Updated: {{repos?.updated_at | date: "MMM d y hh:mm:ss"}}</small>
+						</div>
+						<div class="col-md-6">
+							<span class="badge badge-primary mr-1"><i class="fas fa-star"></i> Stars: {{repos?.stargazers_count}} </span>
+							<span class="badge badge-primary mr-1"><i class="fas fa-eye"></i> Watchers: {{repos?.watchers_count}}</span>
+							<span class="badge badge-primary mr-1"><i class="fas fa-code-branch"></i> Forks: {{repos?.forks_count}}</span>
+							<a href="{{repos?.html_url}}/issues" target="_blank"><span class="badge badge-danger"><i class="fas fa-exclamation-circle"></i>
+									Issues: {{repos?.open_issues_count}}</span></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-				<div class="col-md-12">
-					<div class="card card-body bg-light mb-3">
-						<h3 class="text-center text-primary">
-							<i class="fab fa-github"></i> {{user?.username}}'s 5 last repos</h3>
-						<div class="card card-body mb-2" *ngFor="let repos of githubData | slice:0:5">
-							<div class="row">
-								<div class="col-md-6">
-									<a href="{{repos?.html_url}}" class="repo-name" target="_blank">
-										<h4>{{repos?.name}}</h4>
-									</a>
-									<p>{{repos?.description}}</p>
-									<small>Last Updated: {{repos?.updated_at | date: "MMM d y hh:mm:ss"}}</small>
-								</div>
-								<div class="col-md-6">
-									<span class="badge badge-primary mr-1"><i class="fas fa-star"></i> Stars: {{repos?.stargazers_count}} </span>
-									<span class="badge badge-primary mr-1"><i class="fas fa-eye"></i> Watchers: {{repos?.watchers_count}}</span>
-									<span class="badge badge-primary mr-1"><i class="fas fa-code-branch"></i> Forks: {{repos?.forks_count}}</span>
-									<a href="{{repos?.html_url}}/issues" target="_blank"><span class="badge badge-danger"><i class="fas fa-exclamation-circle"></i> Issues: {{repos?.open_issues_count}}</span></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			<div class="col-md-12">
-				<a class="btn mb-3 float-left">Back to Profiles</a>
-				<div class="btn btn-danger" (click)="supporterTest()">Donation Toggle (For Testing)</div>
-			</div>
+	</div>
+	<div class="row">
+
+		<div class="col-md-12">
+			<a class="btn mb-3 float-left">Back to Profiles</a>
+			<div class="btn btn-danger" (click)="supporterTest()">Donation Toggle (For Testing)</div>
+		</div>
 	</div>
 </div>
