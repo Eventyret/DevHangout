@@ -61,6 +61,7 @@ const routes: Routes = [
 	{ path: "education/edit/:id", component: EditEducationComponent, canActivate: [AuthGuard] },
 	{ path: "experience/add", component: AddExperienceComponent, canActivate: [AuthGuard] },
 	{ path: "experience/edit/:id", component: EditExperienceComponent, canActivate: [AuthGuard] },
+	{ path: "skills/edit/:id", component: SkillsComponent, canActivate: [AuthGuard] },
 	{ path: "session-expired", component: SessionExpiredPage },
 	{ path: "**", component: PageNotFoundComponent } // Page not found
 ];

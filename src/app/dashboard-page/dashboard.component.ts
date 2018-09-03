@@ -10,6 +10,7 @@ import { AuthService } from "../shared/services/auth/auth.service";
 import { User, Profile } from "../shared/models/users";
 import { DataService } from "./services/data.service";
 import { NotificationsService } from "angular2-notifications";
+import { SkillsComponent } from "./components/skills/skills.component";
 
 @Component({
 	selector: "app-dashboard",
@@ -48,6 +49,8 @@ export class DashboardComponent implements OnInit {
 			this.comp = EditExperienceComponent;
 		} else if (target === "editProfile") {
 			this.comp = EditProfileComponent;
+		} else if (target === "editSkills") {
+			this.comp = SkillsComponent;
 		}
 		const modalRef = this.modalService.open(this.comp, {
 			centered: true,

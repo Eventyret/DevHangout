@@ -41,6 +41,7 @@ export class FakeGithubPage implements OnInit {
 				this.watchCount = this.projectsInfo[0].watchers_count;
 				this.projects = this.projectsInfo[0].project;
 				this.tabs = this.projectsInfo[0].tabs;
+				console.log(this.projectsInfo);
 			},
 			error => {
 				console.log(error);
