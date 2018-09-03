@@ -27,7 +27,7 @@ class ExperienceSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    profile = ProfileSerializer()
+    profile = ProfileSerializer(source="profile_user", many=True)
     skills = SkillsSerializer(many=True)
     education = EducationSerializer(source="edu_user", many=True)
     experience = ExperienceSerializer(source="exp_user", many=True)
