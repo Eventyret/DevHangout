@@ -46,6 +46,46 @@ export interface Skill {
 	icon: string;
 }
 
+export interface Repo {
+	name: string;
+	html_url: string;
+	description: string;
+	stargazers_count: number;
+	watchers_count: number;
+	forks_count: number;
+	open_issues_count: number;
+	updated_at: string;
+	project: Project;
+	tabs: Tab[];
+}
+
+export interface Folder {
+	name: string;
+	icon: string;
+	comment: string;
+	date: string;
+}
+
+export interface File {
+	name: string;
+	icon: string;
+	comment: string;
+	date: string;
+}
+
+export interface Project {
+	name: string;
+	folders: Folder[];
+	files: File[];
+	readmeContent: string;
+}
+
+export interface Tab {
+	name: string;
+	icon: string;
+	description: string;
+}
+
 export interface User {
 	id: number;
 	username: string;
@@ -54,4 +94,5 @@ export interface User {
 	education?: Education[];
 	experience?: Experience[];
 	skills?: Skill[];
+	repo?: Repo[];
 }
