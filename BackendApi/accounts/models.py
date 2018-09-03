@@ -8,7 +8,7 @@ from Skills.models import Skill
 class Profile(models.Model):
 
     user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="profile")
+        User, related_name="profile", on_delete=models.CASCADE)
     firstName = models.CharField(max_length=50, blank=True, null=True)
     lastName = models.CharField(max_length=50, blank=True, null=True)
     avatar = models.ImageField(
