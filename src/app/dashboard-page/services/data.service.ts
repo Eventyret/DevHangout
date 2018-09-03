@@ -34,7 +34,10 @@ export class DataService {
 	updateDetails(component, id, form) {
 		return this.http.patch(this.API_URL + "/api/users/" + this.userID + "/" + component + "/" + id + "/", form);
 	}
-	newDetails(component, id, form) {
-		return this.http.post(this.API_URL + "/api/users/" + this.userID + "/" + component + "/", form)
+	newDetails(component, form) {
+		return this.http.post(this.API_URL + "/api/users/" + this.userID + "/" + component + "/", form);
+	}
+	deleteDetails(component, id) {
+		return this.http.delete(this.API_URL + "/api/users/" + this.userID + "/" + component.toLowerCase() + "/" + id + "/");
 	}
 }

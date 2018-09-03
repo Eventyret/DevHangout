@@ -1,4 +1,6 @@
-<ngx-spinner bdOpacity="0.9" bdColor="#112938" size="large" color="#FFEB3B" type="pacman"><p>Eating up cookies...</p></ngx-spinner>
+<ngx-spinner bdOpacity="0.9" bdColor="#112938" size="large" color="#FFEB3B" type="pacman">
+	<p>Eating up cookies...</p>
+</ngx-spinner>
 <div class="dashboard mt-3">
 
 	<div class="container-fluid">
@@ -17,9 +19,9 @@
 						{{user?.profile.firstName}} {{user?.profile.lastName}}
 					</li>
 					<li class="list-group-item d-flex justify-content-between align-items-center">
-							<span>Title:</span>
-							{{user?.profile.company}}
-						</li>
+						<span>Title:</span>
+						{{user?.profile.company}}
+					</li>
 					<li class="list-group-item d-flex justify-content-between align-items-center">
 						<span>Location:</span>
 						{{user?.profile.location}}
@@ -32,7 +34,7 @@
 						<span>Website:</span>
 						<a href="{{user?.profile.website}}">Website</a>
 					</li>
-					</ul>
+				</ul>
 
 			</div>
 			<div class="col-sm-12 col-md-8 mt-5">
@@ -62,7 +64,7 @@
 										<button class="btn btn-info mr-3" (click)="open($event, exp?.id)" id="editExp">
 											Edit
 										</button>
-										<button class="btn btn-danger">
+										<button class="btn btn-danger" (click)="deleteDetail($event, exp?.id)" id="deleteExp">
 											Delete
 										</button>
 									</td>
@@ -91,14 +93,14 @@
 									<td scope="row">{{edu?.qualification}}</td>
 									<td scope="row">{{edu?.fieldOfStudy}}</td>
 									<td scope="row">{{edu?.dateFrom | date: ["MMM yyyy"] }}
-											<span *ngIf="!edu?.current && edu?.dateTo"> - {{edu?.dateTo | date: ["MMM yyyy"]}}</span>
-											<span *ngIf="edu?.current  || !edu?.dateTo"> - Present</span>
-										</td>
+										<span *ngIf="!edu?.current && edu?.dateTo"> - {{edu?.dateTo | date: ["MMM yyyy"]}}</span>
+										<span *ngIf="edu?.current  || !edu?.dateTo"> - Present</span>
+									</td>
 									<td schope="row">
 										<a class="btn btn-info mr-3 text-white" (click)="open($event, edu?.id)" id="editEdu">
 											Edit
 										</a>
-										<a class="btn btn-danger text-white">
+										<a class="btn btn-danger text-white" (click)="deleteDetail($event, edu?.id, edu?.school)" id="deleteEdu">
 											Delete
 										</a>
 									</td>
@@ -108,13 +110,13 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-around mt-3">
-						<button type="button" class="btn btn-secondary" (click)="open($event)" id="editProfile">
+					<button type="button" class="btn btn-secondary" (click)="open($event)" id="editProfile">
 						<i class="fas fa-info-circle"></i> Edit Profile</button>
-						<button type="button" class="btn btn-secondary" (click)="open($event)" id="addEdu">
-							<i class="fas fa-graduation-cap"></i> Add Education</button>
-						<button type="button" class="btn btn-secondary" (click)="open($event)" id="addExp">
-							<i class="fas fa-briefcase"></i> Add Experience</button>
-					</div>
+					<button type="button" class="btn btn-secondary" (click)="open($event)" id="addEdu">
+						<i class="fas fa-graduation-cap"></i> Add Education</button>
+					<button type="button" class="btn btn-secondary" (click)="open($event)" id="addExp">
+						<i class="fas fa-briefcase"></i> Add Experience</button>
+				</div>
 			</div>
 		</div>
 	</div>

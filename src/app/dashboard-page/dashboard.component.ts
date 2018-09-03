@@ -8,6 +8,8 @@ import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { NgxSpinnerService } from "ngx-spinner";
 import { AuthService } from "../shared/services/auth/auth.service";
 import { User } from "../shared/models/users";
+import { DataService } from "./services/data.service";
+import { NotificationsService } from "angular2-notifications";
 
 @Component({
 	selector: "app-dashboard",
@@ -17,11 +19,17 @@ import { User } from "../shared/models/users";
 export class DashboardComponent implements OnInit {
 	user: User;
 	support = false;
-	id = localStorage.getItem("user_id");
+	id: number = parseInt(localStorage.getItem("user_id"), 10);
 	LocalUser = localStorage.getItem("user");
 	comp: any;
 
-	constructor(private modalService: NgbModal, private spinner: NgxSpinnerService, private auth: AuthService) {}
+	constructor(
+		private modalService: NgbModal,
+		private spinner: NgxSpinnerService,
+		private auth: AuthService,
+		private dataService: DataService,
+		private notify: NotificationsService
+	) {}
 
 	ngOnInit() {
 		this.spinner.show();
@@ -57,5 +65,23 @@ export class DashboardComponent implements OnInit {
 			this.support = data.profile.donator;
 			this.spinner.hide();
 		});
+	}
+	deleteDetail(event, id, name) {
+		const target = event.target.id;
+		if (target === "deleteEdu") {
+			this.comp = "Education";
+		} else if (target === "deleteExp") {
+			this.comp = "Experience";
+		}
+		this.dataService.deleteDetails(this.comp, id).subscribe(
+			result => {},
+			error => {
+				console.log(error);
+				this.notify.error(error);
+			},
+			() => {
+				this.notify.success(name + " was successfully deleted");
+			}
+		);
 	}
 }
