@@ -43,6 +43,7 @@ import { AuthService } from "./shared/services/auth/auth.service";
 import { EditProfileComponent } from "./dashboard-page/components/edit-profile/edit-profile.component";
 import { ProfileComponent } from "./userprofile/userprofile.component";
 import { SessionExpiredPage } from "./expired-page/expired-page";
+import { SkillsComponent } from './dashboard-page/components/skills/skills.component';
 
 const routes: Routes = [
 	{ path: "", component: HomePage, pathMatch: "full" },
@@ -88,7 +89,8 @@ const routes: Routes = [
 		SectionsComponent,
 		FakeGithubPage,
 		SessionExpiredComponent,
-		SessionExpiredPage
+		SessionExpiredPage,
+		SkillsComponent
 	],
 	imports: [
 		BrowserModule,
