@@ -11,7 +11,7 @@
 				<div class="col-md-8 m-auto">
 					<p class="text-center">Add any developer/programming positions that you have had in the past</p>
 					<small class="d-block pb-3">* = required field</small>
-					<form [formGroup]="addForm" (ngSubmit)="add(addForm.value)">
+					<form [formGroup]="addForm" (ngSubmit)="add()">
 						<div class="form-group">
 							<input formControlName="company" type="text" name="company" class="form-control form-control-lg" placeholder="* Company">
 						</div>

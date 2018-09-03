@@ -10,7 +10,7 @@
 			<div class="row">
 				<div class="col-md-8 m-auto">
 					<small class="d-block pb-3">* = required field</small>
-					<form [formGroup]="editForm" (ngSubmit)="update(editForm.value)">
+					<form [formGroup]="editForm" (ngSubmit)="update()">
 						<div class="form-group">
 							<input formControlName="company" type="text" name="company" class="form-control form-control-lg" placeholder="* Company">
 						</div>
