@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework import routers
-from .api import views
 from Skills.api.views import SkillsView
+from .api import views
 
 ROUTER = routers.DefaultRouter()
 ROUTER.register("api/register", views.UserRegistrationViewSet)  # Registration URL
