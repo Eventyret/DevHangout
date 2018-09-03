@@ -22,8 +22,8 @@
 				</div>
 				<div class="profile-text">
 					<h4>{{user?.username}}</h4>
-					<h5>{{user?.profile.firstName}} {{user?.profile.lastName}}</h5>
-					<h5>{{user?.profile.title}}</h5>
+					<h5>{{user?.profile[0].firstName}} {{user?.profile[0].lastName}}</h5>
+					<h5>{{user?.profile[0].title}}</h5>
 					<div class="icons">
 						<ul class="list-inline">
 							<li class="list-inline-item" *ngFor="let skills of user?.skills">
@@ -37,7 +37,7 @@
 	<div
   infiniteScroll
   [infiniteScrollDistance]="4"
-  [infiniteScrollThrottle]="1000"
+  [infiniteScrollThrottle]="500"
   (scrolled)="loadMore()">
 </div>
 
