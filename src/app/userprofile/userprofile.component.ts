@@ -6,6 +6,7 @@ import { find as _find } from "lodash";
 import { NgxSpinnerService } from "ngx-spinner";
 import { FakeService } from "../shared/services/api/fake.service";
 import { AuthService } from "../shared/services/auth/auth.service";
+import { User } from "../shared/models/users";
 
 @Component({
 	selector: "app-profile",
@@ -29,7 +30,7 @@ export class ProfileComponent implements OnInit {
 			this.getFakeData(id);
 		});
 	}
-	user: any;
+	user: User;
 	support: boolean;
 	background: string;
 	normalBackground = "../../assets/landingBG.png";
@@ -50,8 +51,8 @@ export class ProfileComponent implements OnInit {
 					this.user = _find(data, function(o) {
 						return o.id == userID;
 					});
-					this.support = this.user.profile.donator;
-					this.background = this.user.profile.backgroundImage;
+					this.support = this.user.profile[0].donator;
+					this.background = this.user.profile[0].backgroundImage;
 					this.githubData = this.user.repo;
 				},
 				error => {
@@ -68,8 +69,8 @@ export class ProfileComponent implements OnInit {
 		} else {
 			this.auth.getUser(id).subscribe(data => {
 				this.user = data;
-				this.support = data.profile.donator;
-				this.getRepos(this.user.profile.github);
+				this.support = data.profile[0].donator;
+				this.getRepos(this.user.profile[0].github);
 				this.spinner.hide();
 			});
 		}

@@ -33,7 +33,7 @@ export class NavbarComponent implements OnInit {
 		this.auth.getUser(this.userID).subscribe(data => {
 			localStorage.setItem("username", data.username);
 			this.username = data.username;
-			this.avatar = data.profile.avatar;
+			this.avatar = data.profile[0].avatar;
 			this.loggedIn = true;
 		});
 	}
