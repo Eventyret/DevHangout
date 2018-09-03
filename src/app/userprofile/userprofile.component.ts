@@ -52,7 +52,6 @@ export class ProfileComponent implements OnInit {
 					this.user = _find(data, function(o) {
 						return o.id == userID;
 					});
-					console.log(this.user)
 					this.profile = this.user.profile[0];
 					this.support = this.profile.donator;
 					this.githubData = this.user.repo;
