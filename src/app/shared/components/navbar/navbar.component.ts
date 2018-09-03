@@ -13,11 +13,10 @@ export class NavbarComponent implements OnInit {
 	public username: string;
 	public userID: string;
 	public avatar: string;
-	public loggedIn: boolean;
+	public loggedIn = false;
 	constructor(public auth: AuthService, private modalService: NgbModal) {}
 
 	ngOnInit() {
-		this.getUsername();
 		this.auth.refreshToken$.subscribe(val => {
 			if (val) {
 				// val is true, refreshToken has been notified
