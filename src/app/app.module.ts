@@ -22,10 +22,10 @@ import { EditEducationComponent } from "./dashboard-page/components/education/ed
 import { AddExperienceComponent } from "./dashboard-page/components/experience/add-experience/add-experience.component";
 import { EditExperienceComponent } from "./dashboard-page/components/experience/edit-experience/edit-experience.component";
 import { FakeGithubPage } from "./github-page/github-page";
-import { SectionsComponent } from "./home/components/sections/sections.component";
-import { TestimonialsComponent } from "./home/components/testimonials/testimonials.component";
-import { HomePage } from "./home/home-page";
-import { HomePageService } from "./home/service/home-page.service";
+import { SectionsComponent } from "./home-page/components/sections/sections.component";
+import { TestimonialsComponent } from "./home-page/components/testimonials/testimonials.component";
+import { HomePage } from "./home-page/home-page";
+import { HomePageService } from "./home-page/service/home-page.service";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 import { DevelopersListComponent } from "./developerslist-page/developerslist-page";
 import { FabComponent } from "./shared/components/fab/fab.component";
