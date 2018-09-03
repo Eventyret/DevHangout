@@ -18,7 +18,7 @@ class ProfileView(viewsets.ModelViewSet):
         user_id = self.kwargs["id"]
         profile_id = self.kwargs.get("pk")
         if profile_id:
-            return User.objects.get(id=profile_id).profile.filter(id=profile_id)
+            return User.objects.get(id=user_id).profile_user.filter(id=profile_id)
         else:
             return User.objects.get(id=user_id).profile
 

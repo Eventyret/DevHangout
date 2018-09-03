@@ -8,7 +8,7 @@ from Skills.models import Skill
 class Profile(models.Model):
 
     user = models.ForeignKey(
-        User, related_name="profile", on_delete=models.CASCADE)
+        User, related_name="profile_user", on_delete=models.CASCADE)
     firstName = models.CharField(max_length=50, blank=True, null=True)
     lastName = models.CharField(max_length=50, blank=True, null=True)
     avatar = models.ImageField(
@@ -38,7 +38,7 @@ class Profile(models.Model):
 
     @receiver(post_save, sender=User)
     def save_user_profile(sender, instance, **kwargs):
-        instance.profile.save()
+        instance.profile_id.save()
 
     class Meta:
         verbose_name_plural = "Profile Information"
