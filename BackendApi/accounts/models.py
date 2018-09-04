@@ -29,8 +29,6 @@ class Profile(models.Model):
     donator = models.BooleanField(default=False)
     testimonal = models.TextField(blank=True, null=True)
 
-    # Create your models here.
-
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
         if created:
@@ -38,7 +36,7 @@ class Profile(models.Model):
 
     @receiver(post_save, sender=User)
     def save_user_profile(sender, instance, **kwargs):
-        instance.profile_id.save()
+        instance.profile_user.save()
 
     class Meta:
         verbose_name_plural = "Profile Information"
