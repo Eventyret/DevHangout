@@ -20,9 +20,9 @@ export class SupporterModalComponent implements OnInit {
 	};
 	payInProgress = false;
 	errorMsg: string;
-	name: string;
-	amount: number;
 	username: string;
+	amount: number;
+	name: string;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -34,7 +34,6 @@ export class SupporterModalComponent implements OnInit {
 	) {}
 
 	ngOnInit() {
-		this.username = localStorage.getItem("username");
 		this.stripeTest = this.fb.group({
 			name: ["", [Validators.required]],
 			amount: ["", [Validators.required]]

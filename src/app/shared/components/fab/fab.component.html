@@ -1,12 +1,12 @@
 <simple-notifications></simple-notifications>
 
 <div class="fab-sticky">
-	<button class="fab-buttons blue" (click)="openInfo()" ngbTooltip="Find out more" placement="left" container="body" id="info">
-		<i class="fas fa-info"></i>
+	<button class="fab-buttons blue" (click)="open($event)" ngbTooltip="Find out more" placement="left" container="body" id="info">
+		<i class="fas fa-info" id="infoButton"></i>
 	</button>
-	<button type="button" class="fab-buttons red" (click)="openSupporter()" (mouseover)="spin = true" (mouseout)="spin = false"
+	<button type="button" class="fab-buttons red" (click)="open($event)" (mouseover)="spin = true" (mouseout)="spin = false"
 	 placement="left" container="body" ngbTooltip="Want to show us some love?" id="supporter">
-		<i class="fas fa-heart" [class.ani-pulse]="spin"></i>
+		<i class="fas fa-heart" [class.ani-pulse]="spin" id="supporterButton"></i>
 	</button>
 	<button type="button" class="fab-buttons">
 		<i class="fas fa-question"></i>
