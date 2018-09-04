@@ -1,5 +1,5 @@
 <ngx-spinner bdOpacity="0.9" bdColor="#112938" size="large" color="#FFEB3B" type="pacman">
-		<p style="margin-top: 0;margin-bottom: 1rem;color: #ffeb3b;font-size: 2rem;">Eating Cookies</p>
+	<p style="margin-top: 0;margin-bottom: 1rem;color: #ffeb3b;font-size: 2rem;">Eating Cookies</p>
 </ngx-spinner>
 <div class="dashboard mt-3">
 
@@ -8,11 +8,13 @@
 			<div class="col-sm-12 col-md-4 text-center">
 				<p class="lead text-muted">Welcome {{user?.username}}</p>
 				<img class="rounded-circle profile-image my-2 img-fluid" src="{{profile?.avatar}}" alt="{{user?.username}}">
-				<div *ngIf="support" class="supporter text-center mx-auto content my-2">
+				<div *ngIf="support" class="supporter text-center mx-auto my-2">
 					<span>Supporter
 						<i class="fas fa-star"></i>
 					</span>
 				</div>
+				<button type="button" class="btn btn-secondary mx-auto my-2" (click)="open($event, profile?.id)" id="editProfile">
+					<i class="fas fa-info-circle"></i> Edit Profile</button>
 				<ul class="list-group">
 					<li class="list-group-item d-flex justify-content-between align-items-center">
 						<span>Name:</span>
@@ -35,89 +37,118 @@
 						<a href="{{profile?.website}}">Website</a>
 					</li>
 				</ul>
+				<div class="social-profile">
+					<a href="https://www.facebook.com/{{profile?.facebook}}" *ngIf="profile?.facebook">
+						<i class="fab fa-facebook"></i>
+					</a>
+					<a href="https://www.github.com/{{profile?.github}}" *ngIf="profile?.github">
+						<i class="fab fa-github"></i>
+					</a>
+					<a href="https://www.linkedin.com/in/{{profile?.linkedin}}" *ngIf="profile?.linkedin">
+						<i class="fab fa-linkedin"></i>
+					</a>
+					<a href="https://www.youtube.com/{{profile?.youtube}}" *ngIf="profile?.youtube">
+						<i class="fab fa-youtube"></i>
+					</a>
+					<a href="https://www.twitter.com/{{profile?.twitter}}" *ngIf="profile?.twitter">
+						<i class="fab fa-twitter"></i>
+					</a>
+					<a href="https://www.instagram.com/{{profile?.instagram}}" *ngIf="profile?.instagram">
+						<i class="fab fa-instagram"></i>
+					</a>
+				</div>
 
 			</div>
 			<div class="col-sm-12 col-md-8 mt-5">
-				<div id="experience my-auto">
-					<h4 class="mb-2">Experience</h4>
-					<div class="table-responsive">
-						<table class="table table-hover">
-							<thead class="thead-dark">
-								<tr>
-									<th scope="col">Company</th>
-									<th scope="col">Title</th>
-									<th scope="col">Location</th>
-									<th scope="col">Years</th>
-									<th scope="col">Action</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr *ngFor="let exp of user?.experience">
-									<td scope="row">{{exp?.company}}</td>
-									<td scope="row">{{exp?.jobTitle}}</td>
-									<td scope="row">{{exp?.location}}</td>
-									<td scope="row">{{exp?.dateFrom | date: ["MMM yyyy"] }}
-										<span *ngIf="!exp?.current && exp?.dateTo"> - {{exp?.dateTo | date: ["MMM yyyy"]}}</span>
-										<span *ngIf="exp?.current  || !exp?.dateTo"> - Present</span>
-									</td>
-									<td>
-										<button class="btn btn-info mr-3" (click)="open($event, exp?.id)" id="editExp">
-											Edit
-										</button>
-										<button class="btn btn-danger" (click)="deleteDetail($event, exp?.id, exp?.company)" id="deleteExp">
-											Delete
-										</button>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+				<div class="row">
+					<div class="col-sm-12 col-md-4 ">
+						<button type="button" class="btn btn-secondary" (click)="open($event)" id="addEdu">
+							<i class="fas fa-graduation-cap"></i> Add Education</button>
+					</div>
+					<div class="col-sm-12 col-md-4">
+						<button type="button" class="btn btn-secondary" (click)="open($event)" id="addExp">
+							<i class="fas fa-briefcase"></i> Add Experience</button>
+					</div>
+					<div class="col-sm-12 col-md-4">
+						<button type="button" class="btn btn-secondary" (click)="open($event)" id="editSkills">
+							<i class="fas fa-briefcase"></i> Add / Edit Skills</button>
 					</div>
 				</div>
-
-				<div id="education">
-					<h4 class="mb-2">Education</h4>
-					<div class="table-responsive">
-						<table class="table table-hover">
-							<thead class="thead-dark">
-								<tr>
-									<th scope="col">School</th>
-									<th scope="col">Degree</th>
-									<th scope="col">Field of Study</th>
-									<th scope="col">Years</th>
-									<th scope="col">Actions</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr *ngFor="let edu of user?.education">
-									<td scope="row">{{edu?.school}}</td>
-									<td scope="row">{{edu?.qualification}}</td>
-									<td scope="row">{{edu?.fieldOfStudy}}</td>
-									<td scope="row">{{edu?.dateFrom | date: ["MMM yyyy"] }}
-										<span *ngIf="!edu?.current && edu?.dateTo"> - {{edu?.dateTo | date: ["MMM yyyy"]}}</span>
-										<span *ngIf="edu?.current  || !edu?.dateTo"> - Present</span>
-									</td>
-									<td schope="row">
-										<a class="btn btn-info mr-3 text-white" (click)="open($event, edu?.id)" id="editEdu">
-											Edit
-										</a>
-										<a class="btn btn-danger text-white" (click)="deleteDetail($event, edu?.id, edu?.school)" id="deleteEdu">
-											Delete
-										</a>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+				<div class="row">
+					<div class="col-sm-12">
+						<div id="experience my-5">
+							<h4 class="mb-2">Experience</h4>
+							<div class="table-responsive">
+								<table class="table table-hover">
+									<thead class="thead-dark">
+										<tr>
+											<th scope="col">Company</th>
+											<th scope="col">Title</th>
+											<th scope="col">Location</th>
+											<th scope="col">Years</th>
+											<th scope="col">Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr *ngFor="let exp of user?.experience">
+											<td scope="row">{{exp?.company}}</td>
+											<td scope="row">{{exp?.jobTitle}}</td>
+											<td scope="row">{{exp?.location}}</td>
+											<td scope="row">{{exp?.dateFrom | date: ["MMM yyyy"] }}
+												<span *ngIf="!exp?.current && exp?.dateTo"> - {{exp?.dateTo | date: ["MMM yyyy"]}}</span>
+												<span *ngIf="exp?.current  || !exp?.dateTo"> - Present</span>
+											</td>
+											<td>
+												<button class="btn btn-info btn-md mr-3" (click)="open($event, exp?.id)" id="editExp">
+													Edit
+												</button>
+												<button class="btn btn-danger btn-md" (click)="deleteDetail($event, exp?.id, exp?.company)" id="deleteExp">
+													Delete
+												</button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="d-flex justify-content-around mt-3">
-					<button type="button" class="btn btn-secondary" (click)="open($event, profile?.id)" id="editProfile">
-						<i class="fas fa-info-circle"></i> Edit Profile</button>
-					<button type="button" class="btn btn-secondary" (click)="open($event)" id="addEdu">
-						<i class="fas fa-graduation-cap"></i> Add Education</button>
-					<button type="button" class="btn btn-secondary" (click)="open($event)" id="addExp">
-						<i class="fas fa-briefcase"></i> Add Experience</button>
-					<button type="button" class="btn btn-secondary" (click)="open($event)" id="editSkills">
-						<i class="fas fa-briefcase"></i> Add / Edit Skills</button>
+					<div class="col-sm-12">
+						<div id="education">
+							<h4 class="mb-2">Education</h4>
+							<div class="table-responsive">
+								<table class="table table-hover">
+									<thead class="thead-dark">
+										<tr>
+											<th scope="col">School</th>
+											<th scope="col">Degree</th>
+											<th scope="col">Field of Study</th>
+											<th scope="col">Years</th>
+											<th scope="col">Actions</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr *ngFor="let edu of user?.education">
+											<td scope="row">{{edu?.school}}</td>
+											<td scope="row">{{edu?.qualification}}</td>
+											<td scope="row">{{edu?.fieldOfStudy}}</td>
+											<td scope="row">{{edu?.dateFrom | date: ["MMM yyyy"] }}
+												<span *ngIf="!edu?.current && edu?.dateTo"> - {{edu?.dateTo | date: ["MMM yyyy"]}}</span>
+												<span *ngIf="edu?.current  || !edu?.dateTo"> - Present</span>
+											</td>
+											<td schope="row">
+												<a class="btn btn-info btn-md mr-3 text-white" (click)="open($event, edu?.id)" id="editEdu">
+													Edit
+												</a>
+												<a class="btn btn-danger btn-md text-white" (click)="deleteDetail($event, edu?.id, edu?.school)" id="deleteEdu">
+													Delete
+												</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
