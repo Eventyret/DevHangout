@@ -44,19 +44,7 @@ export class SupporterModalComponent implements OnInit {
 			// Only mount the element the first time
 			if (!this.card) {
 				this.card = this.elements.create("card", {
-					style: {
-						base: {
-							iconColor: "#f44336",
-							color: "#31325F",
-							lineHeight: "40px",
-							fontWeight: 400,
-							fontFamily: "Ubuntu",
-							fontSize: "18px",
-							"::placeholder": {
-								color: "#112938"
-							}
-						}
-					}
+				"iconStyle": "solid",
 				});
 				this.card.mount("#card-element");
 			}
