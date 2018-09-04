@@ -14,6 +14,7 @@ ROUTER.register("api/users/(?P<id>[0-9]+)/education/(?P<edu_id>[0-9]+)", views.E
 ROUTER.register("api/users/(?P<id>[0-9]+)/experience", views.ExperienceView)
 ROUTER.register("api/users/(?P<id>[0-9]+)/experience/(?P<exp_id>[0-9]+)", views.ExperienceView)
 ROUTER.register("api/users/(?P<id>[0-9]+)/skills", SkillsView)
+ROUTER.register("api/users/(?P<id>[0-9]+)/skills/(?P<skill_id>[0-9]+)", SkillsView)
 
 urlpatterns = [
     path("", include(ROUTER.urls))
