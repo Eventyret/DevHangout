@@ -44,7 +44,7 @@ export class SupporterModalComponent implements OnInit {
 			// Only mount the element the first time
 			if (!this.card) {
 				this.card = this.elements.create("card", {
-				"iconStyle": "solid",
+					iconStyle: "solid"
 				});
 				this.card.mount("#card-element");
 			}
@@ -56,13 +56,13 @@ export class SupporterModalComponent implements OnInit {
 		this.payInProgress = true;
 		this.name = this.stripeTest.get("name").value;
 		this.amount = this.stripeTest.get("amount").value;
-		this.stripeService.createToken(this.card, { name, }).subscribe(results => {
+		this.stripeService.createToken(this.card, { name }).subscribe(results => {
 			if (results.token) {
 				console.log(results);
 				console.log(this.amount);
 				this.notify.success("Thank you " + this.name + "!", results.token.id);
 				this.activeModal.dismiss();
-				this.spinner.hide();
+				//this.spinner.hide();
 				// Use the token to create a charge or a customer
 				// https://stripe.com/docs/charges
 			} else if (results.error) {

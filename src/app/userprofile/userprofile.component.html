@@ -1,5 +1,7 @@
 <ngx-spinner bdOpacity="0.9" bdColor="#112938" size="large" color="#FFEB3B" loadingText="Eating up cookies... and preparing your profile"
- type="pacman"></ngx-spinner>
+ type="pacman">
+ <p style="margin-top: 0;margin-bottom: 1rem;color: #ffeb3b;font-size: 2rem;">Found Inky in your profile... </p>
+</ngx-spinner>
 
 <div class="profile">
 	<div class="card card-body profile-background text-white mb-3" [ngStyle]="{'background-image': support ? 'url('+ profile?.backgroundImage + ')' : 'url(' + normalBackground +') no-repeat center center', 'background-size': 'cover', 'background-attachment': 'fixed', 'height': '80vh'}">
