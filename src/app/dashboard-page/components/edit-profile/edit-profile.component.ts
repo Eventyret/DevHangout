@@ -58,6 +58,7 @@ export class EditProfileComponent implements OnInit {
 					twitter: data.twitter,
 					facebook: data.facebook,
 					linkedin: data.linkedin,
+					instagram: data.instagram,
 					youtube: data.youtube,
 					github: data.github
 				});
