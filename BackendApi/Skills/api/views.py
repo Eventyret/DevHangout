@@ -8,7 +8,7 @@ from .serializers import SkillsSerializer
 
 
 class SkillsView(viewsets.ModelViewSet):
-    """ Settings it to read only as its not needed to be updated or deleted from the frontend """
+    """ A list of skills each user might have """
     queryset = Skill.objects.all()
     serializer_class = SkillsSerializer
 
@@ -19,3 +19,9 @@ class SkillsView(viewsets.ModelViewSet):
             return User.objects.get(id=user_id).skills.filter(id=skill_id)
         else:
             return User.objects.get(id=user_id).skills
+
+
+class AllSkillsView(viewsets.ReadOnlyModelViewSet):
+    """ A list of all skills available from the database, this is set to read only for now """
+    queryset = Skill.objects.all()
+    serializer_class = SkillsSerializer
