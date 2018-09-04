@@ -23,6 +23,7 @@ export class SupporterModalComponent implements OnInit {
 	username: string;
 	amount: number;
 	name: string;
+	cardName:string;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -35,7 +36,7 @@ export class SupporterModalComponent implements OnInit {
 
 	ngOnInit() {
 		this.stripeTest = this.fb.group({
-			name: ["", [Validators.required]],
+			cardName: ["", [Validators.required]],
 			amount: ["", [Validators.required]]
 		});
 		this.stripeService.elements(this.elementsOptions).subscribe(elements => {
@@ -53,13 +54,13 @@ export class SupporterModalComponent implements OnInit {
 	buy(event) {
 		this.spinner.show();
 		this.payInProgress = true;
-		this.name = this.stripeTest.get("name").value;
+		this.cardName = this.stripeTest.get("name").value;
 		this.amount = this.stripeTest.get("amount").value;
 		this.stripeService.createToken(this.card, { name }).subscribe(results => {
 			if (results.token) {
 				console.log(results);
 				console.log(this.amount);
-				this.notify.success("Thank you " + this.name + "!", results.token.id);
+				this.notify.success("Thank you " + this.cardName + "!", results.token.id);
 				this.activeModal.dismiss();
 				//this.spinner.hide();
 				// Use the token to create a charge or a customer

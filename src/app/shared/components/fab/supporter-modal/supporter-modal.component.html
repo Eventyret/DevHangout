@@ -9,7 +9,7 @@
 	<div>
 		<form novalidate (ngSubmit)="buy($event)" [formGroup]="stripeTest">
 			<div class="form-group">
-				<input class="form-control" type="text" formControlName="name" placeholder="Cardholders Name">
+				<input class="form-control" type="text" formControlName="cardName" placeholder="Cardholders Name">
 			</div>
 			<div class="form-group">
 				<input class="form-control" type="number" formControlName="amount" placeholder="Amount">

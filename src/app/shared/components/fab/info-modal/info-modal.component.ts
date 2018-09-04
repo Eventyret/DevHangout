@@ -7,7 +7,7 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ["./info-modal.component.scss"]
 })
 export class InfoModalComponent implements OnInit {
-  username:string;
+  name:string;
   constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit() {
