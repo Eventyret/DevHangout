@@ -60,6 +60,9 @@ export class DashboardComponent implements OnInit {
 		});
 		modalRef.componentInstance.name = this.user.username;
 		modalRef.componentInstance.id = id;
+		modalRef.result.then(result => {
+			this.getUserData(this.id);
+		});
 	}
 
 	getUserData(id) {
@@ -86,6 +89,7 @@ export class DashboardComponent implements OnInit {
 			},
 			() => {
 				this.notify.success(name + " was successfully deleted");
+				this.getUserData(this.id);
 			}
 		);
 	}

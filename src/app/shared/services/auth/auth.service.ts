@@ -5,13 +5,13 @@ import { JwtHelperService } from "@auth0/angular-jwt";
 import { map } from "rxjs/operators";
 import "rxjs/add/operator/catch";
 import { Token } from "../../models/token";
-import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { Router } from "@angular/router";
 import { NotificationsService } from "angular2-notifications";
 import { NgxSpinnerService } from "ngx-spinner";
 import { throwError, BehaviorSubject } from "rxjs";
 import "rxjs/add/operator/catch";
 import { environment } from "../../../../environments/environment";
+import { SessionExpiredComponent } from "../../components/session-expired/session-expired.component";
 
 @Injectable({
 	providedIn: "root"
@@ -29,7 +29,7 @@ export class AuthService {
 		public jwtHelper: JwtHelperService,
 		public router: Router,
 		private spinner: NgxSpinnerService,
-		private notify: NotificationsService
+		private notify: NotificationsService,
 	) {
 		const token = localStorage.getItem("access");
 		if (token) {
@@ -175,6 +175,12 @@ export class AuthService {
 		localStorage.clear();
 		this.currentUser = null;
 	}
+	notLoggedIn() {
+		this.router.navigate(["/"]);
+		this.notify.info("You need to be logged in");
+		localStorage.clear();
+		this.currentUser = null;
+	}
 
 	/**
 	 *
@@ -186,6 +192,12 @@ export class AuthService {
 		return this.helper.decodeToken(localStorage.getItem("token"));
 	}
 
+	/**
+	 *
+	 *
+	 * @returns
+	 * @memberof AuthService
+	 */
 	refreshToken() {
 		const Rtoken = localStorage.getItem("refresh");
 		return this.http
@@ -201,7 +213,10 @@ export class AuthService {
 				this.spinner.hide();
 				if (error.status === 401) {
 					this.sessionExpired();
-				} else {
+				} else if(error.status === 400) {
+					this.notLoggedIn()
+				}
+				else {
 					return throwError(this.notify.error(error.error.non_field_errors) || "Server Error");
 				}
 			});
