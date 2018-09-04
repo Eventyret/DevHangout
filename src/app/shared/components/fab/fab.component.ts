@@ -9,21 +9,28 @@ import { NgbModal, NgbActiveModal, NgbTooltip } from "@ng-bootstrap/ng-bootstrap
 	styleUrls: ["./fab.component.scss"]
 })
 export class FabComponent implements OnInit {
+	comp: any;
+	username: string = "Anonymous";
+	spin: any;
 	constructor(private modalService: NgbModal) {}
-	spin;
-	ngOnInit() {}
-
-	openInfo() {
-		this.modalService.open(InfoModalComponent, {
-			centered: true,
-			size: "lg"
-		});
+	ngOnInit() {
+		this.username = localStorage.getItem("username");
 	}
-	openSupporter() {
-		this.modalService.open(SupporterModalComponent, {
+
+	open(event: any) {
+		console.log(this.username);
+		const target = event.target.id;
+		if (target === "infoButton") {
+			this.comp = InfoModalComponent;
+		} else if (target === "supporterButton") {
+			this.comp = SupporterModalComponent;
+		}
+		const modalRef = this.modalService.open(this.comp, {
 			centered: true,
 			size: "lg",
+			backdropClass: "light-blue-backdrop",
 			backdrop: "static"
 		});
+		modalRef.componentInstance.name = this.username;
 	}
 }
