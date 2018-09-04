@@ -61,22 +61,22 @@
 			</div>
 			<div class="col-sm-12 col-md-8 mt-5">
 				<div class="row">
-					<div class="col-sm-12 col-md-4 ">
+					<div class="col-sm-4">
 						<button type="button" class="btn btn-secondary" (click)="open($event)" id="addEdu">
 							<i class="fas fa-graduation-cap"></i> Add Education</button>
 					</div>
-					<div class="col-sm-12 col-md-4">
+					<div class="col-sm-4">
 						<button type="button" class="btn btn-secondary" (click)="open($event)" id="addExp">
 							<i class="fas fa-briefcase"></i> Add Experience</button>
 					</div>
-					<div class="col-sm-12 col-md-4">
+					<div class="col-sm-4">
 						<button type="button" class="btn btn-secondary" (click)="open($event)" id="editSkills">
 							<i class="fas fa-briefcase"></i> Add / Edit Skills</button>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row my-3 d-none d-md-block">
 					<div class="col-sm-12">
-						<div id="experience my-5">
+						<div id="experience">
 							<h4 class="mb-2">Experience</h4>
 							<div class="table-responsive">
 								<table class="table table-hover">
@@ -147,6 +147,59 @@
 									</tbody>
 								</table>
 							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row my-3 d-block d-md-none">
+					<h3 class="text-center">Experience</h3>
+					<div class="card my-3 text-center" *ngFor="let exp of user?.experience">
+						<div class="card-header">
+							{{exp?.company}}
+						</div>
+						<div class="card-body">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item" *ngIf="exp?.current || !exp?.dateTo">{{exp?.dateFrom | date: "MMM yyyy"}} - Present</li>
+								<li class="list-group-item" *ngIf="!exp?.current && exp?.dateTo">{{exp?.dateFrom | date: "MMM yyyy"}} -
+									{{exp?.dateTo | date: "MMM
+									yyyy"}}</li>
+								<li class="list-group-item"><i class="fas fa-map-marker-alt"></i> {{exp?.jobTitle}}</li>
+								<li class="list-group-item"><i class="fas fa-id-card"></i> {{exp?.location}}</li>
+							</ul>
+						</div>
+						<div class="card-footer text-muted">
+							<a class="btn btn-info btn-md mr-3 text-white" (click)="open($event, exp?.id)" id="editExp">
+								Edit
+							</a>
+							<a class="btn btn-danger btn-md text-white" (click)="deleteDetail($event, exp?.id, exp?.company)" id="deleteExp">
+								Delete
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="row d-block d-md-none">
+						<h3 class="text-center">Education</h3>
+					<div class="card text-center" *ngFor="let edu of user?.education">
+						<div class="card-header">
+							{{edu?.school}}
+						</div>
+						<div class="card-body">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item" *ngIf="edu?.current || !edu?.dateTo">{{edu?.dateFrom | date: "MMM yyyy"}} - Present</li>
+								<li class="list-group-item" *ngIf="!edu?.current && edu?.dateTo">{{edu?.dateFrom | date: "MMM yyyy"}} -
+									{{edu?.dateTo | date: "MMM
+									yyyy"}}</li>
+								<li class="list-group-item"><i class="fas fa-map-marker-alt"></i> {{edu?.fieldOfStudy}}</li>
+								<li class="list-group-item"><i class="fas fa-id-card"></i> {{edu?.qualification}}</li>
+							</ul>
+						</div>
+						<div class="card-footer text-muted">
+							<a class="btn btn-info btn-md mr-3 text-white" (click)="open($event, edu?.id)" id="editEdu">
+								Edit
+							</a>
+							<a class="btn btn-danger btn-md text-white" (click)="deleteDetail($event, edu?.id, edu?.school)" id="deleteEdu">
+								Delete
+							</a>
 						</div>
 					</div>
 				</div>
