@@ -19,7 +19,6 @@ export class FabComponent implements OnInit {
 		} else {
 			this.username = "";
 		}
-		console.log(this.username);
 	}
 
 	open(event: any) {

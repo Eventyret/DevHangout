@@ -17,6 +17,8 @@ export class NavbarComponent implements OnInit {
 	constructor(public auth: AuthService, private modalService: NgbModal) {}
 
 	ngOnInit() {
+		this.userID = localStorage.getItem("user_id");
+		this.username = localStorage.getItem("username");
 		this.auth.refreshToken$.subscribe(val => {
 			if (val) {
 				// val is true, refreshToken has been notified

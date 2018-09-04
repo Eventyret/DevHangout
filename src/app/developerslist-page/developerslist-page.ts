@@ -48,13 +48,17 @@ export class DevelopersListComponent implements OnInit {
 		this.spinner.show();
 		this.fakeService.getFakeUsers().subscribe(
 			data => {
-				this.fakeUsers = data;
+				this.auth.refreshToken().subscribe(val => {
+					this.fakeUsers = data;
+				});
 			},
 			error => {
 				console.log(error);
 			},
 			() => {
-				this.getRealDevelopers();
+				this.auth.refreshToken().subscribe(val => {
+					this.getRealDevelopers();
+				});
 			}
 		);
 	}
