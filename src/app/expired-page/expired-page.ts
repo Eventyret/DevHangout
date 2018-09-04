@@ -12,9 +12,15 @@ export class SessionExpiredPage implements OnInit {
 	constructor(public auth: AuthService, private modalService: NgbModal) {}
 
 	ngOnInit() {
+		setTimeout(() => {
+			this.openModal();
+		}, 300);
+	}
+	openModal() {
 		this.modalService.open(SessionExpiredComponent, {
 			centered: true,
-			size: "lg"
+			size: "lg",
+			backdrop: "static"
 		});
 	}
 }
