@@ -60,8 +60,10 @@ export class DashboardComponent implements OnInit {
 		});
 		modalRef.componentInstance.name = this.user.username;
 		modalRef.componentInstance.id = id;
-		modalRef.result.then(result => {
-			this.getUserData(this.id);
+		modalRef.result.then(onfulfilled => {
+				this.getUserData(this.id);
+		}, onrejected => {
+			this.notify.info("Nothing was saved")
 		});
 	}
 
