@@ -10,15 +10,19 @@ import { NgbModal, NgbActiveModal, NgbTooltip } from "@ng-bootstrap/ng-bootstrap
 })
 export class FabComponent implements OnInit {
 	comp: any;
-	username: string = "Anonymous";
+	username: string;
 	spin: any;
 	constructor(private modalService: NgbModal) {}
 	ngOnInit() {
-		this.username = localStorage.getItem("username");
+		if (localStorage.getItem("username")) {
+			this.username = localStorage.getItem("username");
+		} else {
+			this.username = "";
+		}
+		console.log(this.username);
 	}
 
 	open(event: any) {
-		console.log(this.username);
 		const target = event.target.id;
 		if (target === "infoButton") {
 			this.comp = InfoModalComponent;
