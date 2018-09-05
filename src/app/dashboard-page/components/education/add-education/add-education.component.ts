@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Education } from "../../../../shared/models/users";
 import { DataService } from "../../../services/data.service";
 import { NotificationsService } from "angular2-notifications";
+import { AuthService } from "../../../../shared/services/auth/auth.service";
 
 @Component({
 	selector: "app-add-education",
@@ -18,6 +19,7 @@ export class AddEducationComponent implements OnInit {
 	name: string;
 	id: number;
 
+
 	addForm = new FormGroup({
 		current: new FormControl(false, Validators.required),
 		dateFrom: new FormControl("", Validators.required),
@@ -28,10 +30,17 @@ export class AddEducationComponent implements OnInit {
 		user: new FormControl((this.user = parseInt(localStorage.getItem("user_id"), 10)), Validators.required)
 	});
 
-	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private notify: NotificationsService) {}
+	constructor(
+		public activeModal: NgbActiveModal,
+		private dataService: DataService,
+		private notify: NotificationsService,
+		private auth: AuthService
+	) {}
 
 	ngOnInit() {
-		this.onChanges();
+		this.auth.refreshToken().subscribe(nothing => {
+			this.onChanges();
+		});
 	}
 	onChanges() {
 		this.addForm.valueChanges.subscribe(val => {

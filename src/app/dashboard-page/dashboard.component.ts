@@ -75,6 +75,11 @@ export class DashboardComponent implements OnInit {
 		);
 	}
 
+	openLink(){
+		window.open("//" + this.profile.website, "_blank");
+
+	}
+
 	getUserData(id) {
 		this.auth.getUser(id).subscribe((data: User) => {
 			localStorage.setItem("user", JSON.stringify(data));

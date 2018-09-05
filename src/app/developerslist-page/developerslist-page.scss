@@ -40,8 +40,10 @@
 	}
 	.image {
 		position: relative;
-		border-bottom: 4px solid #112938;
+		border-bottom: 4px solid transparent;
 		z-index: 1;
+		max-height: 250px;
+		overflow: hidden;
 		&:before {
 			width: 0;
 			height: 0;

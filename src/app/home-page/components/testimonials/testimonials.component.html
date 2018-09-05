@@ -5,7 +5,7 @@
 		</div>
 		<div class="container testimonals my-5">
 			<div class="row">
-				<div class="col-md-4" *ngFor="let info of testimonials| slice: 0:6">
+				<article class="col-md-4" *ngFor="let info of testimonials| slice: 0:6">
 					<div class="testimonal-container">
 						<div class="testimonal-card">
 							<img src="{{info.profile[0].avatar}}" alt="" class="profile">
@@ -15,7 +15,7 @@
 							</h3>
 						</div>
 					</div>
-				</div>
+				</article>
 			</div>
 		</div>
 	</div>

@@ -1,4 +1,4 @@
-<div class="row divider" *ngFor="let section of Sections">
+<section class="row divider" *ngFor="let section of Sections">
 	<div class="col-md-12" [class.gradient]="section?.background" #{{section?.id}}>
 		<h2 class="py-5">{{section.divider}}</h2>
 	</div>
@@ -8,7 +8,7 @@
 				<i class="{{section.icon}} {{section.size}}"></i>
 			</div>
 			<div class="col-sm-12 col-md-8 my-auto">
-				<div [innerHTML]="section?.content" class="lead"></div>
+				<article [innerHTML]="section?.content" class="lead"></article>
 				<a *ngIf="!this.auth.isLoggedIn()" (click)="openSignUp()">
 						<button class="btn btn-success btn-lg">Join Today!
 							<i class="fas fa-user-plus"></i>
@@ -17,4 +17,4 @@
 			</div>
 		</div>
 	</div>
-	</div>
+	</section>

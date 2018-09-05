@@ -1,29 +1,35 @@
-<div class="modal-header">
-	<h4 class="modal-title">Create your Dev Account today!</h4>
-	<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
-		<i class="fas fa-times"></i>
-	</button>
-</div>
-<div class="modal-body">
-	<form [formGroup]="signupForm" (ngSubmit)="register(signupForm.value)">
-		<div class="form-group">
-			<input type="text"formControlName="username" name="username" id="username" class="form-control form-control-lg" placeholder="Your Username" required />
-		</div>
-		<div class="form-group">
-			<input type="email" formControlName="email" name="email" id="email" class="form-control form-control-lg" placeholder="Your Email" required />
-		</div>
-		<div class="form-group">
-			<input type="password" formControlName="password" class="form-control form-control-lg" placeholder="Your Password" />
-		</div>
-		<div class="form-group">
-			<input type="password" formControlName="cpassword" name="cpassword" id="cpassword" class="form-control form-control-lg"
-			 placeholder="Confirm Pasword" />
+<section>
+
+	<div class="modal-header">
+		<h4 class="modal-title">Create your Dev Account today!</h4>
+		<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+			<i class="fas fa-times"></i>
+		</button>
+	</div>
+	<div class="modal-body">
+		<form [formGroup]="signupForm" (ngSubmit)="register(signupForm.value)">
+			<div class="form-group">
+				<input type="text" formControlName="username" name="username" id="username" class="form-control form-control-lg"
+				 placeholder="Your Username" required />
+			</div>
+			<div class="form-group">
+				<input type="email" formControlName="email" name="email" id="email" class="form-control form-control-lg"
+				 placeholder="Your Email" required />
+			</div>
+			<div class="form-group">
+				<input type="password" formControlName="password" class="form-control form-control-lg" placeholder="Your Password" />
+			</div>
+			<div class="form-group">
+				<input type="password" formControlName="cpassword" name="cpassword" id="cpassword" class="form-control form-control-lg"
+				 placeholder="Confirm Pasword" />
 			</div>
 			<div *ngIf="signupForm.valid && !signupForm.controls.cpassword.errors?.equalTo; else elseBlock">
 				<input type="submit" class="btn btn-success btn-block mt-4" value="Hipp Hipp Array">
 			</div>
 			<ng-template #elseBlock>
-					<input type="submit" class="btn btn-danger btn-block mt-4" [disabled]="!signupForm.valid" value="Not Ready">
+				<input type="submit" class="btn btn-danger btn-block mt-4" [disabled]="!signupForm.valid" value="Not Ready">
 			</ng-template>
-	</form>
-</div>
+		</form>
+	</div>
+
+</section>

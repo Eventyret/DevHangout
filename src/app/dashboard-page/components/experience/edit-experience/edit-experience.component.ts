@@ -19,14 +19,14 @@ export class EditExperienceComponent implements OnInit {
 	user: number;
 
 	editForm = new FormGroup({
+		current: new FormControl(this.current, Validators.required),
 		id: new FormControl(Validators.required),
-		user: new FormControl("", Validators.required),
-		jobTitle: new FormControl("", Validators.required),
-		company: new FormControl("", Validators.required),
-		location: new FormControl(""),
 		dateFrom: new FormControl("", Validators.required),
 		dateTo: new FormControl(""),
-		current: new FormControl(Validators.required)
+		jobTitle: new FormControl("", Validators.required),
+		location: new FormControl(""),
+		company: new FormControl("", Validators.required),
+		user: new FormControl("", Validators.required)
 	});
 	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private notify: NotificationsService) {}
 
@@ -34,6 +34,7 @@ export class EditExperienceComponent implements OnInit {
 		this.dataService.getDetailed("experience", this.id).subscribe(
 			(data: Experience) => {
 				this.experience = data;
+				this.current = data.current;
 				this.editForm.patchValue({
 					id: data.id,
 					user: data.user,
@@ -56,7 +57,9 @@ export class EditExperienceComponent implements OnInit {
 	onChanges() {
 		this.editForm.valueChanges.subscribe(val => {
 			this.updatedForm = val;
-			console.log(this.updatedForm);
+		});
+		this.editForm.get("current").valueChanges.subscribe(val => {
+			this.current = !this.current;
 		});
 	}
 	update() {

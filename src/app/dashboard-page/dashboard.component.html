@@ -17,46 +17,50 @@
 					<i class="fas fa-info-circle"></i> Edit Profile</button>
 				<ul class="list-group">
 					<li class="list-group-item d-flex justify-content-between align-items-center">
-						<span>Name:</span>
+						<span><i class="fas fa-user"></i> Name:</span>
 						{{profile?.firstName}} {{profile?.lastName}}
 					</li>
 					<li class="list-group-item d-flex justify-content-between align-items-center">
-						<span>Title:</span>
-						{{profile?.company}}
+						<span><i class="far fa-id-card"></i> Title:</span>
+						{{profile?.title}}
 					</li>
 					<li class="list-group-item d-flex justify-content-between align-items-center">
-						<span>Location:</span>
+						<span><i class="fas fa-map-marker-alt"></i> Location:</span>
 						{{profile?.location}}
 					</li>
 					<li class="list-group-item d-flex justify-content-between align-items-center">
-						<span>Company:</span>
+						<span><i class="fas fa-building"></i> Company:</span>
 						{{profile?.company}}
 					</li>
 					<li class="list-group-item d-flex justify-content-between align-items-center">
-						<span>Website:</span>
-						<a href="{{profile?.website}}">Website</a>
+						<span><i class="fas fa-globe"></i> Website:</span>
+						<a class="link" (click)="openLink()" placement="top" ngbTooltip="{{profile?.website}}">{{profile?.website}}</a>
+					</li>
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+						<span>Social Links:</span>
+						<div class="social-profile">
+							<a href="https://www.facebook.com/{{profile?.facebook}}" target="_blank" *ngIf="profile?.facebook" placement="top" ngbTooltip="Facebook">
+								<i class="fab fa-facebook"></i>
+							</a>
+							<a href="https://www.github.com/{{profile?.github}}" target="_blank" *ngIf="profile?.github" placement="top" ngbTooltip="GitHub">
+								<i class="fab fa-github"></i>
+							</a>
+							<a href="https://www.linkedin.com/in/{{profile?.linkedin}}" target="_blank" *ngIf="profile?.linkedin" placement="top" ngbTooltip="LinkedIn">
+								<i class="fab fa-linkedin"></i>
+							</a>
+							<a href="https://www.youtube.com/channel/{{profile?.youtube}}" target="_blank" *ngIf="profile?.youtube" placement="top" ngbTooltip="Youtube">
+								<i class="fab fa-youtube"></i>
+							</a>
+							<a href="https://www.twitter.com/{{profile?.twitter}}" target="_blank" *ngIf="profile?.twitter" placement="top" ngbTooltip="Twitter">
+								<i class="fab fa-twitter"></i>
+							</a>
+							<a href="https://www.instagram.com/{{profile?.instagram}}" target="_blank" *ngIf="profile?.instagram" placement="top" ngbTooltip="Instagram">
+								<i class="fab fa-instagram"></i>
+							</a>
+						</div>
 					</li>
 				</ul>
-				<div class="social-profile">
-					<a href="https://www.facebook.com/{{profile?.facebook}}" *ngIf="profile?.facebook">
-						<i class="fab fa-facebook"></i>
-					</a>
-					<a href="https://www.github.com/{{profile?.github}}" *ngIf="profile?.github">
-						<i class="fab fa-github"></i>
-					</a>
-					<a href="https://www.linkedin.com/in/{{profile?.linkedin}}" *ngIf="profile?.linkedin">
-						<i class="fab fa-linkedin"></i>
-					</a>
-					<a href="https://www.youtube.com/{{profile?.youtube}}" *ngIf="profile?.youtube">
-						<i class="fab fa-youtube"></i>
-					</a>
-					<a href="https://www.twitter.com/{{profile?.twitter}}" *ngIf="profile?.twitter">
-						<i class="fab fa-twitter"></i>
-					</a>
-					<a href="https://www.instagram.com/{{profile?.instagram}}" *ngIf="profile?.instagram">
-						<i class="fab fa-instagram"></i>
-					</a>
-				</div>
+
 
 			</div>
 			<div class="col-sm-12 col-md-8 mt-5">
@@ -178,7 +182,7 @@
 					</div>
 				</div>
 				<div class="row d-block d-md-none">
-						<h3 class="text-center">Education</h3>
+					<h3 class="text-center">Education</h3>
 					<div class="card text-center" *ngFor="let edu of user?.education">
 						<div class="card-header">
 							{{edu?.school}}
