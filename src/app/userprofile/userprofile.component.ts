@@ -7,6 +7,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 import { FakeService } from "../shared/services/api/fake.service";
 import { AuthService } from "../shared/services/auth/auth.service";
 import { User, Profile } from "../shared/models/users";
+import { environment } from "../../environments/environment"
 
 @Component({
 	selector: "app-profile",
@@ -36,6 +37,7 @@ export class ProfileComponent implements OnInit {
 	normalBackground = "../../assets/landingBG.png";
 	githubData: any[];
 	profile: Profile;
+	production: boolean = environment.production;
 
 	ngOnInit() {
 		this.spinner.show();
