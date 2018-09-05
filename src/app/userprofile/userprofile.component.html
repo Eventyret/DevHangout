@@ -30,7 +30,7 @@
 					<a href="https://www.linkedin.com/in/{{profile?.linkedin}}" *ngIf="profile?.linkedin">
 						<i class="fab fa-linkedin"></i>
 					</a>
-					<a href="https://www.youtube.com/{{profile?.youtube}}" *ngIf="profile?.youtube">
+					<a href="https://www.youtube.com/channel/{{profile?.youtube}}" *ngIf="profile?.youtube">
 						<i class="fab fa-youtube"></i>
 					</a>
 					<a href="https://www.twitter.com/{{profile?.twitter}}" *ngIf="profile?.twitter">
@@ -46,12 +46,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 col-md-9">
-				<div class="card card-body mb-3">
+				<article class="card card-body mb-3">
 					<h3 class="text-center text-primary">About {{user?.username}}</h3>
 					<p>{{profile?.bio}}</p>
-				</div>
+				</article>
 			</div>
-			<div class="col-sm-12 col-md-3" *ngIf="user?.skills">
+			<aside class="col-sm-12 col-md-3" *ngIf="user?.skills">
 				<div class="card card-body mb-3">
 					<h3 class="text-center text-primary">Skills</h3>
 					<div class="icons">
@@ -60,13 +60,13 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</aside>
 		</div>
-		<div class="row my-3">
-			<div class="col-sm-12 col-md-6">
+		<div class="row ">
+			<div class="col-sm-12 col-md-6 my-3">
 				<h3 class="text-center text-primary">
 					<i class="fas fa-graduation-cap"></i> Education</h3>
-				<div class="list-group">
+				<article class="list-group">
 					<div class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let edu of user?.education">
 						<div class="d-flex w-100 justify-content-between">
 							<h5 class="mb-1">{{edu?.school}}</h5>
@@ -77,12 +77,12 @@
 						<small class="float-left"><i class="fas fa-map-marker-alt"></i> {{edu?.fieldOfStudy}}</small>
 						<small class="float-right"><i class="fas fa-id-card"></i> {{edu?.qualification}}</small>
 					</div>
-				</div>
+				</article>
 			</div>
-			<div class="col-sm-12 col-md-6">
+			<div class="col-sm-12 col-md-6 my-3">
 				<h3 class="text-center text-primary">
 					<i class="fas fa-briefcase"></i> Experience</h3>
-				<div class="list-group">
+				<article class="list-group">
 					<div class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let exp of user?.experience">
 						<div class="d-flex w-100 justify-content-between">
 							<h5 class="mb-1">{{exp?.company}}</h5>
@@ -93,13 +93,13 @@
 						<small class="float-left"><i class="fas fa-map-marker-alt"></i> {{exp?.location}}</small>
 						<small class="float-right"><i class="fas fa-id-card"></i> {{exp?.jobTitle}}</small>
 					</div>
-				</div>
+				</article>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
-				<div class="card card-body bg-light mb-3">
+				<article class="card card-body bg-light mb-3">
 					<h3 class="text-center text-primary">
 						<i class="fab fa-github"></i> {{user?.username}}'s 5 last repos</h3>
 					<div class="card card-body mb-2" *ngFor="let repos of githubData | slice:0:5">
@@ -120,11 +120,10 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</article>
 			</div>
 		</div>
 		<div class="row">
-
 			<div class="col-md-12">
 				<a class="btn mb-3 float-left">Back to Profiles</a>
 				<div class="btn btn-danger" (click)="supporterTest()" *ngIf="!production">Donation Toggle (For Testing)</div>
