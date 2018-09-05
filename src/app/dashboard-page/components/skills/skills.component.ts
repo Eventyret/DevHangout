@@ -11,7 +11,7 @@ import { NotificationsService } from "angular2-notifications";
 export class SkillsComponent implements OnInit {
 	name: string;
 
-  constructor(public activeModal: NgbActiveModal, private dataService: DataService, private notify: NotificationsService) { }
+  constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit() {
   }

@@ -4,6 +4,7 @@ import { DataService } from "../../../services/data.service";
 import { Experience } from "../../../../shared/models/users";
 import { Validators, FormGroup, FormControl } from "@angular/forms";
 import { NotificationsService } from "angular2-notifications";
+import { AuthService } from "../../../../shared/services/auth/auth.service";
 
 @Component({
 	selector: "app-add-experience",
@@ -27,10 +28,17 @@ export class AddExperienceComponent implements OnInit {
 		user: new FormControl(parseInt(localStorage.getItem("user_id"), 10), Validators.required)
 	});
 
-	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private notify: NotificationsService) {}
+	constructor(
+		public activeModal: NgbActiveModal,
+		private dataService: DataService,
+		private notify: NotificationsService,
+		private auth: AuthService
+	) {}
 
 	ngOnInit() {
-		this.onChanges();
+		this.auth.refreshToken().subscribe(nothing => {
+			this.onChanges();
+		});
 	}
 	onChanges() {
 		this.addForm.valueChanges.subscribe(val => {

@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { DataService } from "../../../services/data.service";
 import { Experience } from "../../../../shared/models/users";
 import { NotificationsService } from "angular2-notifications";
+import { AuthService } from "../../../../shared/services/auth/auth.service";
 
 @Component({
 	selector: "app-edit-experience",
@@ -28,30 +29,37 @@ export class EditExperienceComponent implements OnInit {
 		company: new FormControl("", Validators.required),
 		user: new FormControl("", Validators.required)
 	});
-	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private notify: NotificationsService) {}
+	constructor(
+		public activeModal: NgbActiveModal,
+		private dataService: DataService,
+		private notify: NotificationsService,
+		private auth: AuthService
+	) {}
 
 	ngOnInit() {
-		this.dataService.getDetailed("experience", this.id).subscribe(
-			(data: Experience) => {
-				this.experience = data;
-				this.current = data.current;
-				this.editForm.patchValue({
-					id: data.id,
-					user: data.user,
-					jobTitle: data.jobTitle,
-					company: data.company,
-					location: data.location,
-					dateFrom: data.dateFrom,
-					dateTo: data.dateTo
-				});
-			},
-			error => {
-				console.log(error);
-			},
-			() => {
-				this.onChanges();
-			}
-		);
+		this.auth.refreshToken().subscribe(nothing => {
+			this.dataService.getDetailed("experience", this.id).subscribe(
+				(data: Experience) => {
+					this.experience = data;
+					this.current = data.current;
+					this.editForm.patchValue({
+						id: data.id,
+						user: data.user,
+						jobTitle: data.jobTitle,
+						company: data.company,
+						location: data.location,
+						dateFrom: data.dateFrom,
+						dateTo: data.dateTo
+					});
+				},
+				error => {
+					console.log(error);
+				},
+				() => {
+					this.onChanges();
+				}
+			);
+		});
 	}
 
 	onChanges() {

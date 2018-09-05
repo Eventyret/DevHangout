@@ -4,6 +4,7 @@ import { DataService } from "../../../services/data.service";
 import { Education } from "../../../../shared/models/users";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { NotificationsService } from "angular2-notifications";
+import { AuthService } from "../../../../shared/services/auth/auth.service";
 
 @Component({
 	selector: "app-edit-education",
@@ -28,33 +29,40 @@ export class EditEducationComponent implements OnInit {
 		user: new FormControl("", Validators.required)
 	});
 
-	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private notify: NotificationsService) {}
+	constructor(
+		public activeModal: NgbActiveModal,
+		private dataService: DataService,
+		private notify: NotificationsService,
+		private auth: AuthService
+	) {}
 
 	ngOnInit() {
-		this.dataService.getDetailed("education", this.id).subscribe(
-			(data: Education) => {
-				this.education = data;
-				this.user = data.user;
-				this.current = data.current
-				this.editForm.patchValue({
-					current: data.current,
-					dateFrom: data.dateFrom,
-					dateTo: data.dateTo,
-					fieldOfStudy: data.fieldOfStudy,
-					id: data.id,
-					qualification: data.qualification,
-					school: data.school,
-					user: data.user
-				});
-				console.log(data);
-			},
-			error => {
-				console.log(error);
-			},
-			() => {
-				this.onChanges();
-			}
-		);
+		this.auth.refreshToken().subscribe(nothing => {
+			this.dataService.getDetailed("education", this.id).subscribe(
+				(data: Education) => {
+					this.education = data;
+					this.user = data.user;
+					this.current = data.current;
+					this.editForm.patchValue({
+						current: data.current,
+						dateFrom: data.dateFrom,
+						dateTo: data.dateTo,
+						fieldOfStudy: data.fieldOfStudy,
+						id: data.id,
+						qualification: data.qualification,
+						school: data.school,
+						user: data.user
+					});
+					console.log(data);
+				},
+				error => {
+					console.log(error);
+				},
+				() => {
+					this.onChanges();
+				}
+			);
+		});
 	}
 	onChanges() {
 		this.editForm.valueChanges.subscribe(val => {
