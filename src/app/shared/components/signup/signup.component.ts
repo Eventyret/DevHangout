@@ -34,7 +34,6 @@ export class SignupComponent implements OnInit {
 					centered: true,
 					size: "lg"
 				});
-			} else {
 			}
 		});
 	}
