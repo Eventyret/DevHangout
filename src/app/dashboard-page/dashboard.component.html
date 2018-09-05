@@ -34,27 +34,27 @@
 					</li>
 					<li class="list-group-item d-flex justify-content-between align-items-center">
 						<span><i class="fas fa-globe"></i> Website:</span>
-						<a (click)="openLink()" placement="top" ngbTooltip="{{profile?.website}}">{{profile?.website}}</a>
+						<a class="link" (click)="openLink()" placement="top" ngbTooltip="{{profile?.website}}">{{profile?.website}}</a>
 					</li>
 					<li class="list-group-item d-flex justify-content-between align-items-center">
 						<span>Social Links:</span>
 						<div class="social-profile">
-							<a href="https://www.facebook.com/{{profile?.facebook}}" *ngIf="profile?.facebook" placement="top" ngbTooltip="Facebook">
+							<a href="https://www.facebook.com/{{profile?.facebook}}" target="_blank" *ngIf="profile?.facebook" placement="top" ngbTooltip="Facebook">
 								<i class="fab fa-facebook"></i>
 							</a>
-							<a href="https://www.github.com/{{profile?.github}}" *ngIf="profile?.github" placement="top" ngbTooltip="GitHub">
+							<a href="https://www.github.com/{{profile?.github}}" target="_blank" *ngIf="profile?.github" placement="top" ngbTooltip="GitHub">
 								<i class="fab fa-github"></i>
 							</a>
-							<a href="https://www.linkedin.com/in/{{profile?.linkedin}}" *ngIf="profile?.linkedin" placement="top" ngbTooltip="LinkedIn">
+							<a href="https://www.linkedin.com/in/{{profile?.linkedin}}" target="_blank" *ngIf="profile?.linkedin" placement="top" ngbTooltip="LinkedIn">
 								<i class="fab fa-linkedin"></i>
 							</a>
-							<a href="https://www.youtube.com/{{profile?.youtube}}" *ngIf="profile?.youtube" placement="top" ngbTooltip="Youtube">
+							<a href="https://www.youtube.com/channel/{{profile?.youtube}}" target="_blank" *ngIf="profile?.youtube" placement="top" ngbTooltip="Youtube">
 								<i class="fab fa-youtube"></i>
 							</a>
-							<a href="https://www.twitter.com/{{profile?.twitter}}" *ngIf="profile?.twitter" placement="top" ngbTooltip="Twitter">
+							<a href="https://www.twitter.com/{{profile?.twitter}}" target="_blank" *ngIf="profile?.twitter" placement="top" ngbTooltip="Twitter">
 								<i class="fab fa-twitter"></i>
 							</a>
-							<a href="https://www.instagram.com/{{profile?.instagram}}" *ngIf="profile?.instagram" placement="top" ngbTooltip="Instagram">
+							<a href="https://www.instagram.com/{{profile?.instagram}}" target="_blank" *ngIf="profile?.instagram" placement="top" ngbTooltip="Instagram">
 								<i class="fab fa-instagram"></i>
 							</a>
 						</div>
