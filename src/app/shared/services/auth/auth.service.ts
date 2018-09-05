@@ -146,7 +146,7 @@ export class AuthService {
 			.catch((error: any) => {
 				console.log(error);
 				this.spinner.hide();
-				return throwError(this.notify.error(error.error.profile) || "Server Error");
+				return throwError(this.notify.error("The username already exists") || "Server Error");
 			});
 	}
 
