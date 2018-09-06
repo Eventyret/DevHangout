@@ -18,6 +18,7 @@ export class EditProfileComponent implements OnInit {
 	githubData: any[];
 	profile: Profile;
 	updatedForm: Profile;
+	firstVisit: boolean = JSON.parse(sessionStorage.getItem("firstVisit"));
 	constructor(
 		public activeModal: NgbActiveModal,
 		public githubService: GithubService,
@@ -73,7 +74,7 @@ export class EditProfileComponent implements OnInit {
 			},
 			() => {
 				this.onChanges();
-				if (this.profile.github) {
+				if (!this.firstVisit && this.profile.github) {
 					this.getRepo(this.profile.github);
 				}
 			}
@@ -81,6 +82,7 @@ export class EditProfileComponent implements OnInit {
 	}
 
 	getRepo(username) {
+		if(localStorage)
 		this.githubService.gitRepo(username).subscribe(info => {
 			this.githubData = info;
 			console.log(this.githubData);
