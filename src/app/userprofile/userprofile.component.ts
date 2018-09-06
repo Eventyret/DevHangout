@@ -7,7 +7,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 import { FakeService } from "../shared/services/api/fake.service";
 import { AuthService } from "../shared/services/auth/auth.service";
 import { User, Profile } from "../shared/models/users";
-import { environment } from "../../environments/environment"
+import { environment } from "../../environments/environment";
 
 @Component({
 	selector: "app-profile",
@@ -41,6 +41,7 @@ export class ProfileComponent implements OnInit {
 
 	ngOnInit() {
 		this.spinner.show();
+
 	}
 
 	supporterTest() {
@@ -72,10 +73,11 @@ export class ProfileComponent implements OnInit {
 		} else {
 			this.auth.getUser(id).subscribe(data => {
 				this.user = data;
-				console.log(this.user);
 				this.profile = data.profile[0];
 				this.support = data.profile[0].donator;
-				this.getRepos(this.user.profile[0].github);
+				if (this.profile.github) {
+					this.getRepos(this.user.profile[0].github);
+				}
 				this.spinner.hide();
 			});
 		}
