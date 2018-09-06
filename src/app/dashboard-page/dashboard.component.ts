@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
 	LocalUser = localStorage.getItem("user");
 	comp: any;
 	profile: Profile;
-	firstVisit: boolean = JSON.parse(sessionStorage.getItem("firstVisit"));
+	firstVisit: boolean;
 
 	constructor(
 		private modalService: NgbModal,
@@ -36,6 +36,7 @@ export class DashboardComponent implements OnInit {
 
 	ngOnInit() {
 		this.spinner.show();
+		this.firstVisit = JSON.parse(sessionStorage.getItem("firstVisit"));
 		this.getUserData(this.id);
 	}
 	open(event: any, id?: number) {
@@ -69,35 +70,33 @@ export class DashboardComponent implements OnInit {
 				});
 			},
 			onrejected => {
-				this.auth.refreshToken().subscribe(val => {
-					this.notify.info("Nothing was saved");
-				});
+				this.auth.refreshToken().subscribe(val => {});
+				this.notify.info("Nothing was saved 👍")
 			}
-			);
-		}
+		);
+	}
 
-		openLink(){
-			window.open("//" + this.profile.website, "_blank");
+	openLink() {
+		window.open("//" + this.profile.website, "_blank");
+	}
 
-		}
-
-		getUserData(id) {
-			this.auth.getUser(id).subscribe((data: User) => {
-				localStorage.setItem("user", JSON.stringify(data));
-				this.user = data;
-				this.profile = data.profile[0];
-				this.support = data.profile[0].donator;
-				this.spinner.hide();
-				if(this.firstVisit) {
-					const modalRef = this.modalService.open(EditProfileComponent, {
-						centered: true,
-						size: "lg",
-						backdropClass: "light-blue-backdrop",
-						backdrop: "static"
-					});
-					modalRef.componentInstance.name = this.user.username;
-					modalRef.componentInstance.id = id;
-				}
+	getUserData(id) {
+		this.auth.getUser(id).subscribe((data: User) => {
+			localStorage.setItem("user", JSON.stringify(data));
+			this.user = data;
+			this.profile = data.profile[0];
+			this.support = data.profile[0].donator;
+			this.spinner.hide();
+			if (this.firstVisit) {
+				const modalRef = this.modalService.open(EditProfileComponent, {
+					centered: true,
+					size: "lg",
+					backdropClass: "light-blue-backdrop",
+					backdrop: "static"
+				});
+				modalRef.componentInstance.name = this.user.username;
+				modalRef.componentInstance.id = id;
+			}
 		});
 	}
 	deleteDetail(event, id, name) {
