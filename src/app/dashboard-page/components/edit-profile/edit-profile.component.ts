@@ -29,7 +29,7 @@ export class EditProfileComponent implements OnInit {
 
 	profileForm = new FormGroup({
 		id: new FormControl(this.id, Validators.required),
-		firstName: new FormControl("", Validators.required),
+		firstName: new FormControl(""),
 		lastName: new FormControl(""),
 		location: new FormControl(""),
 		website: new FormControl(""),
@@ -47,10 +47,9 @@ export class EditProfileComponent implements OnInit {
 	});
 
 	ngOnInit() {
-
-		this.auth.refreshToken().subscribe(nothing => {
-			this.dataService.getDetailed("profile", this.id).subscribe(
-				(data: Profile) => {
+		this.auth.refreshToken().subscribe(
+			nothing => {
+				this.dataService.getDetailed("profile", this.id).subscribe((data: Profile) => {
 					this.profile = data;
 					this.profileForm.patchValue({
 						id: data.id,
@@ -70,27 +69,23 @@ export class EditProfileComponent implements OnInit {
 						youtube: data.youtube,
 						github: data.github
 					});
-		})
-
+				});
 			},
 			error => {
 				console.log(error);
 			},
 			() => {
 				this.onChanges();
-				if (!this.firstVisit && this.profile.github) {
-					this.getRepo(this.profile.github);
-				}
 			}
 		);
 	}
 
 	getRepo(username) {
-		if(localStorage)
-		this.githubService.gitRepo(username).subscribe(info => {
-			this.githubData = info;
-			console.log(this.githubData);
-		});
+		if (localStorage)
+			this.githubService.gitRepo(username).subscribe(info => {
+				this.githubData = info;
+				console.log(this.githubData);
+			});
 	}
 
 	onChanges() {
@@ -119,6 +114,11 @@ export class EditProfileComponent implements OnInit {
 			() => {
 				this.notify.success("Your Profile was Updated");
 				this.activeModal.close();
+				this.firstVisit = false;
+				sessionStorage.setItem("firstVisit", "false");
+				if (!this.firstVisit && this.profile.github !== "") {
+					this.getRepo(this.profile.github);
+				}
 			}
 		);
 	}

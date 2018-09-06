@@ -16,7 +16,6 @@
 				<div class="row">
 					<div class="col-md-8 m-auto">
 						<p class="text-center">Let's get some information to make your profile stand out</p>
-						<small class="d-block pb-3">* = required field</small>
 						<form
 						 [formGroup]="profileForm"
 						 (ngSubmit)="update()"
@@ -29,7 +28,7 @@
 									 name="firstName"
 									 type="text"
 									 class="form-control form-control-lg"
-									 placeholder="* First Name"
+									 placeholder="First Name"
 									>
 								</div>
 								<div class="col-sm-6">
