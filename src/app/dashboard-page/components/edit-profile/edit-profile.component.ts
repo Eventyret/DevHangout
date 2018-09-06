@@ -44,6 +44,7 @@ export class EditProfileComponent implements OnInit {
 	});
 
 	ngOnInit() {
+
 		this.auth.refreshToken().subscribe(nothing => {
 			this.dataService.getDetailed("profile", this.id).subscribe(
 				(data: Profile) => {
@@ -85,12 +86,21 @@ export class EditProfileComponent implements OnInit {
 			console.log(this.githubData);
 		});
 	}
+
 	onChanges() {
 		this.profileForm.valueChanges.subscribe(val => {
 			this.updatedForm = val;
 			console.log(this.updatedForm);
 		});
 	}
+
+	/**
+	 *
+	 * Sends a request to the backend with the user object.
+	 * Once subscribe is complete it will notify the user and close the modal
+	 * @param(component, id, form)
+	 * @memberof EditProfileComponent
+	 */
 	update() {
 		this.dataService.updateDetails("profile", this.id, this.updatedForm).subscribe(
 			results => {

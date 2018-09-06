@@ -55,7 +55,7 @@ export class AuthService {
 	/**
 	 *
 	 * This will get the object used for the single user.
-	 * @param {*} id This is the user ID for that specific user.
+	 * @param{id} id This is the user ID for that specific user.
 	 * @returns the specific user object
 	 * @memberof AuthService
 	 */
@@ -73,8 +73,9 @@ export class AuthService {
 	/**
 	 *
 	 * This is the login function that will fetch and store the token.
-	 * @param {*} credentials is the username and password for that user.
+	 * @param(credentials) - The username and password of the user
 	 * @returns a JWT token
+	 * If we have an error we will show the error to the user.
 	 * @memberof AuthService
 	 */
 	login(credentials: any) {
@@ -105,7 +106,7 @@ export class AuthService {
 	/**
 	 *
 	 * This sets the UserID into localStorage.
-	 * @param {*} userToken
+	 * @param(userToken) - The token that the user has
 	 * @memberof AuthService
 	 */
 	setUserID(userToken: any) {
@@ -115,11 +116,11 @@ export class AuthService {
 	/**
 	 *
 	 * This is the registration function that will register a user to the backend.
-	 * @param {*} The User form that contains the username, password and email for that user.
+	 * @param(user) The User form that contains the username, password and email for that user.
 	 * @returns true or false, and then sets a localStorage variable since this will be their first visit.
 	 * @memberof AuthService
 	 */
-	register(user: any) {
+	register(user: User) {
 		this.spinner.show();
 		this.username = user.username;
 		const data = {
@@ -166,7 +167,8 @@ export class AuthService {
 	/**
 	 *
 	 * This will navigate the user to the front page, clear the localStorage
-	 * this will also set the currentUser to null as we do not have a valid user logge din.
+	 * This will also set the currentUser to null as we do not have a valid user logge din.
+	 * Also sends a notification to the user that their session has expired.
 	 * @memberof AuthService
 	 */
 	sessionExpired() {
@@ -175,6 +177,13 @@ export class AuthService {
 		localStorage.clear();
 		this.currentUser = null;
 	}
+
+	/**
+	 * This will navigate the user to the front page, clear the localStorage
+	 * This will also set the currentUser to null as we do not have a valid user logge din.
+	 * Also sends a notification to the user that they need to be logged in.
+	 * @memberof AuthService
+	 */
 	notLoggedIn() {
 		this.router.navigate(["/"]);
 		this.notify.info("You need to be logged in");
@@ -184,7 +193,8 @@ export class AuthService {
 
 	/**
 	 *
-	 * Helperfunction to check if user is logged int
+	 * Helperfunction to check if user is logged in.
+	 * This will then check the localStorage for the token and decode it
 	 * @returns a decoded token
 	 * @memberof AuthService
 	 */
@@ -194,8 +204,12 @@ export class AuthService {
 
 	/**
 	 *
-	 *
-	 * @returns
+	 *  This will make a post request to the backend with the refresh token.
+	 * If this is validated it will store the new token in localStorage.
+	 * If it has an error we will hide the loading spinner, try to refresh the token again.
+	 * Also perfoming a check if the the status is 401 we know the session is expired as that would be unauhtorized.
+	 * While if its 400 we know they are not authenticated at all and will run notLoggedIn()
+	 * @returns a token response
 	 * @memberof AuthService
 	 */
 	refreshToken() {
