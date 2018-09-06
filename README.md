@@ -77,4 +77,7 @@ If they also felt that could help others they could put up skills they had for o
 ### Front End
 There is a bug where the field if your currently working or if you currently styding that does not update on load. This is due that the form loads before the API is done and it doesn't update the value correctly before render. Currently investigation and trying to ammend this.
 There is also a bit wierd of how the classes show as its blue and changes text, though red and green depending on change does not really fit in either. *This is not a bug but more of a UI / UX Issue i noticed*
+*This is now fixed*
+
+If the a user profile is empty (brand new) the footer will have some whitespace, have been unable so far to fix this due the time it has taken to build this project.
 ## Credits
