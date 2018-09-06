@@ -90,6 +90,7 @@ export interface User {
 	id: number;
 	username: string;
 	email: string;
+	password?: string;
 	profile?: Profile[];
 	education?: Education[];
 	experience?: Experience[];
