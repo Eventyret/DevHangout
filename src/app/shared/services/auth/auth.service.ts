@@ -134,7 +134,7 @@ export class AuthService {
 				map(response => {
 					const result = response;
 					if (result) {
-						sessionStorage.setItem("firstvisit", "true");
+						sessionStorage.setItem("firstVisit", "true");
 						this.spinner.hide();
 						this.notify.success("Welcome " + user.username + ". You can now log in");
 						return true;
