@@ -1,7 +1,12 @@
 <section>
 	<div class="modal-header">
 		<h4 class="modal-title">Edit your profile {{name}}</h4>
-		<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+		<button
+		 type="button"
+		 class="close"
+		 aria-label="Close"
+		 (click)="activeModal.dismiss()"
+		>
 			<i class="fas fa-times"></i>
 		</button>
 	</div>
@@ -12,76 +17,165 @@
 					<div class="col-md-8 m-auto">
 						<p class="text-center">Let's get some information to make your profile stand out</p>
 						<small class="d-block pb-3">* = required field</small>
-						<form [formGroup]="profileForm" (ngSubmit)="update()" *ngIf="profile">
+						<form
+						 [formGroup]="profileForm"
+						 (ngSubmit)="update()"
+						 *ngIf="profile"
+						>
 							<div class="form-group row">
 								<div class="col-sm-6">
-									<input formControlName="firstName" name="firstName" type="text" class="form-control form-control-lg"
-									 placeholder="* First Name">
+									<input
+									 formControlName="firstName"
+									 name="firstName"
+									 type="text"
+									 class="form-control form-control-lg"
+									 placeholder="* First Name"
+									>
 								</div>
 								<div class="col-sm-6">
-									<input formControlName="lastName" name="lastName" type="text" class="form-control form-control-lg" placeholder="Last Name">
+									<input
+									 formControlName="lastName"
+									 name="lastName"
+									 type="text"
+									 class="form-control form-control-lg"
+									 placeholder="Last Name"
+									>
 								</div>
 							</div>
 							<div class="form-group">
-								<input formControlName="company" name="company" type="text" class="form-control form-control-lg" placeholder="Company">
+								<input
+								 formControlName="company"
+								 name="company"
+								 type="text"
+								 class="form-control form-control-lg"
+								 placeholder="Company"
+								>
 							</div>
 							<div class="form-group">
-								<input formControlName="title" name="title" type="text" class="form-control form-control-lg" placeholder="Title">
+								<input
+								 formControlName="title"
+								 name="title"
+								 type="text"
+								 class="form-control form-control-lg"
+								 placeholder="Title"
+								>
 							</div>
 							<div class="form-group">
-								<input formControlName="location" name="location" type="text" class="form-control form-control-lg" placeholder="Location">
+								<input
+								 formControlName="location"
+								 name="location"
+								 type="text"
+								 class="form-control form-control-lg"
+								 placeholder="Location"
+								>
 							</div>
 							<div class="form-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text">http(s)://</span>
-									<input formControlName="website" name="website" type="text" class="form-control form-control-lg" placeholder="Website">
+									<input
+									 formControlName="website"
+									 name="website"
+									 type="text"
+									 class="form-control form-control-lg"
+									 placeholder="Website"
+									>
 								</div>
 							</div>
 							<div class="form-group">
-								<textarea formControlName="bio" name="bio" type="textarea" class="form-control form-control-lg" placeholder="Tell people about yourself"></textarea>
+								<textarea
+								 formControlName="bio"
+								 name="bio"
+								 type="textarea"
+								 class="form-control form-control-lg"
+								 placeholder="Tell people about yourself"
+								></textarea>
 							</div>
 							<div class="form-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text">@</span>
-									<input formControlName="twitter" name="twitter" type="text" class="form-control form-control-lg" placeholder="Twitter Handle">
+									<input
+									 formControlName="twitter"
+									 name="twitter"
+									 type="text"
+									 class="form-control form-control-lg"
+									 placeholder="Twitter Handle"
+									>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text">facebook.com/</span>
-									<input formControlName="facebook" name="facebook" type="text" class="form-control form-control-lg" placeholder="Facebook Handle">
+									<input
+									 formControlName="facebook"
+									 name="facebook"
+									 type="text"
+									 class="form-control form-control-lg"
+									 placeholder="Facebook Handle"
+									>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text">linkedin.com/in/</span>
-									<input formControlName="linkedin" name="linkedin" type="text" class="form-control form-control-lg" placeholder="LinkedIn Handle">
+									<input
+									 formControlName="linkedin"
+									 name="linkedin"
+									 type="text"
+									 class="form-control form-control-lg"
+									 placeholder="LinkedIn Handle"
+									>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text">instagram.com/</span>
-									<input formControlName="instagram" name="instagram" type="text" class="form-control form-control-lg"
-									 placeholder="Instagram Handle">
+									<input
+									 formControlName="instagram"
+									 name="instagram"
+									 type="text"
+									 class="form-control form-control-lg"
+									 placeholder="Instagram Handle"
+									>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text">youtube.com/channel/</span>
-									<input formControlName="youtube" name="youtube" type="text" class="form-control form-control-lg" placeholder="Youtube Channel ID">
+									<input
+									 formControlName="youtube"
+									 name="youtube"
+									 type="text"
+									 class="form-control form-control-lg"
+									 placeholder="Youtube Channel ID"
+									>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text">github.com/</span>
-									<input formControlName="github" name="github" type="text" class="form-control form-control-lg" placeholder="Github Handle">
+									<input
+									 formControlName="github"
+									 name="github"
+									 type="text"
+									 class="form-control form-control-lg"
+									 placeholder="Github Handle"
+									>
 								</div>
 							</div>
 							<div *ngIf="profileForm.valid; else elseBlock">
-								<input type="submit" class="btn btn-success btn-block mt-4" value="Update">
+								<input
+								 type="submit"
+								 class="btn btn-success btn-block mt-4"
+								 value="Update"
+								>
 							</div>
 							<ng-template #elseBlock>
-								<input type="submit" class="btn btn-danger btn-block mt-4" [disabled]="!profileForm.valid" value="Nothing Changed">
+								<input
+								 type="submit"
+								 class="btn btn-danger btn-block mt-4"
+								 [disabled]="!profileForm.valid"
+								 value="Nothing Changed"
+								>
 							</ng-template>
 						</form>
 					</div>
