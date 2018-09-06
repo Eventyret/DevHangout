@@ -44,6 +44,7 @@ import { EditProfileComponent } from "./dashboard-page/components/edit-profile/e
 import { ProfileComponent } from "./userprofile/userprofile.component";
 import { SessionExpiredPage } from "./expired-page/expired-page";
 import { SkillsComponent } from './dashboard-page/components/skills/skills.component';
+import { ThankYouModalComponent } from './shared/components/fab/thank-you-modal/thank-you-modal.component';
 
 const routes: Routes = [
 	{ path: "", component: HomePage, pathMatch: "full" },
@@ -55,7 +56,8 @@ const routes: Routes = [
 	{ path: "profile/edit", component: EditProfileComponent, canActivate: [AuthGuard] },
 	{ path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
 	{ path: "donate", component: SupporterModalComponent },
-	{ path: "donate-info", component: InfoModalComponent },
+	{ path: "donate/info", component: InfoModalComponent },
+	{ path: "donate/thank-you", component: ThankYouModalComponent },
 	{ path: "github/:username/:repo", component: FakeGithubPage },
 	{ path: "education/add", component: AddEducationComponent, canActivate: [AuthGuard] },
 	{ path: "education/edit/:id", component: EditEducationComponent, canActivate: [AuthGuard] },
@@ -91,7 +93,8 @@ const routes: Routes = [
 		FakeGithubPage,
 		SessionExpiredComponent,
 		SessionExpiredPage,
-		SkillsComponent
+		SkillsComponent,
+		ThankYouModalComponent
 	],
 	imports: [
 		BrowserModule,
