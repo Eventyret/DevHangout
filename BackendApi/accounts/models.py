@@ -11,14 +11,12 @@ class Profile(models.Model):
         User, related_name="profile_user", on_delete=models.CASCADE)
     firstName = models.CharField(max_length=50, blank=True, null=True)
     lastName = models.CharField(max_length=50, blank=True, null=True)
-    avatar = models.ImageField(
-        upload_to="avatars", max_length=None, blank=True, null=True)
+    avatar = models.CharField(max_length=255, default="https://i.imgur.com/AAfxTCq.png")
     location = models.CharField(max_length=50, blank=True, null=True)
     website = models.CharField(max_length=50, blank=True, null=True)
     company = models.CharField(max_length=50, blank=True, null=True)
     title = models.CharField(max_length=50, blank=True, null=True)
-    backgroundImage = models.ImageField(
-        upload_to="media/backgrounds", max_length=None, blank=True, null=True)
+    backgroundImage = models.CharField(max_length=255, default="https://i.imgur.com/rlaUnMY.jpg")
     bio = models.TextField(blank=True, null=True)
     twitter = models.CharField(max_length=100, blank=True, null=True)
     facebook = models.CharField(max_length=100, blank=True, null=True)
