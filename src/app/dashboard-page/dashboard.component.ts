@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
 	LocalUser = localStorage.getItem("user");
 	comp: any;
 	profile: Profile;
+	firstVisit: boolean = JSON.parse(sessionStorage.getItem("firstVisit"));
 
 	constructor(
 		private modalService: NgbModal,
@@ -72,21 +73,31 @@ export class DashboardComponent implements OnInit {
 					this.notify.info("Nothing was saved");
 				});
 			}
-		);
-	}
+			);
+		}
 
-	openLink(){
-		window.open("//" + this.profile.website, "_blank");
+		openLink(){
+			window.open("//" + this.profile.website, "_blank");
 
-	}
+		}
 
-	getUserData(id) {
-		this.auth.getUser(id).subscribe((data: User) => {
-			localStorage.setItem("user", JSON.stringify(data));
-			this.user = data;
-			this.profile = data.profile[0];
-			this.support = data.profile[0].donator;
-			this.spinner.hide();
+		getUserData(id) {
+			this.auth.getUser(id).subscribe((data: User) => {
+				localStorage.setItem("user", JSON.stringify(data));
+				this.user = data;
+				this.profile = data.profile[0];
+				this.support = data.profile[0].donator;
+				this.spinner.hide();
+				if(this.firstVisit) {
+					const modalRef = this.modalService.open(EditProfileComponent, {
+						centered: true,
+						size: "lg",
+						backdropClass: "light-blue-backdrop",
+						backdrop: "static"
+					});
+					modalRef.componentInstance.name = this.user.username;
+					modalRef.componentInstance.id = id;
+				}
 		});
 	}
 	deleteDetail(event, id, name) {
