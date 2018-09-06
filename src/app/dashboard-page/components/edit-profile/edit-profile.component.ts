@@ -41,7 +41,9 @@ export class EditProfileComponent implements OnInit {
 		linkedin: new FormControl(""),
 		instagram: new FormControl(""),
 		youtube: new FormControl(""),
-		github: new FormControl("")
+		github: new FormControl(""),
+		avatar: new FormControl(""),
+		backgroundImage: new FormControl("")
 	});
 
 	ngOnInit() {
@@ -57,6 +59,8 @@ export class EditProfileComponent implements OnInit {
 						location: data.location,
 						website: data.website,
 						company: data.company,
+						avatar: data.avatar,
+						backgroundImage: data.backgroundImage,
 						title: data.title,
 						bio: data.bio,
 						twitter: data.twitter,
