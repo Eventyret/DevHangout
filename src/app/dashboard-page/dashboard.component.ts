@@ -82,7 +82,6 @@ export class DashboardComponent implements OnInit {
 
 	getUserData(id) {
 		this.auth.getUser(id).subscribe((data: User) => {
-			localStorage.setItem("user", JSON.stringify(data));
 			this.user = data;
 			this.profile = data.profile[0];
 			this.support = data.profile[0].donator;
