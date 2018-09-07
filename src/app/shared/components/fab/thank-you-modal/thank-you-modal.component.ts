@@ -21,7 +21,6 @@ export class ThankYouModalComponent implements OnInit {
 
 	ngOnInit() {
 		this.updateSupporterStatus();
-		console.log(this.info);
 	}
 
 	updateSupporterStatus() {
@@ -29,6 +28,7 @@ export class ThankYouModalComponent implements OnInit {
 			donator: true
 		};
 		const donationInfo = {
+			id: this.id,
 			user: this.id,
 			amount: this.amount,
 			date: this.info.created,
@@ -37,9 +37,7 @@ export class ThankYouModalComponent implements OnInit {
 		};
 		console.log(donationInfo);
 		this.dataService.updateDetails("profile", this.id, donationStatus).subscribe(
-			results => {
-				console.log(results);
-			},
+			results => {},
 			error => {
 				console.log(error);
 			},
@@ -49,6 +47,16 @@ export class ThankYouModalComponent implements OnInit {
 				});
 			}
 		);
-		this.dataService.newDetails("donations", this.id);
+		this.dataService.newDetails("donations", donationInfo).subscribe(
+			results => {},
+			error => {
+				console.log(error);
+			},
+			() => {
+				this.auth.getUser(this.id).subscribe(results => {
+					this.user = results;
+				});
+			}
+		);
 	}
 }
