@@ -59,6 +59,15 @@ export interface Repo {
 	tabs: Tab[];
 }
 
+export interface Donations {
+	id: number;
+	user: number;
+	amount: string;
+	date: number;
+	token: string;
+	ip: string;
+}
+
 export interface Folder {
 	name: string;
 	icon: string;
@@ -96,4 +105,5 @@ export interface User {
 	experience?: Experience[];
 	skills?: Skill[];
 	repo?: Repo[];
+	donation: Donations[];
 }
