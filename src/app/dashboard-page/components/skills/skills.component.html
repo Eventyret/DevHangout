@@ -6,15 +6,21 @@
 		</button>
 	</div>
 	<div class="modal-body">
-		<div class="add-experience">
+		<div class="skills">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-8 m-auto">
-						<p>This feature is not implemented yet, but we are working hard to add it. Please do check back at a later date
-							to add your skills</p>
+					<div class="col-sm-12">
+						<div *ngFor="let skills of userSkills">
+							<div class="icons">
+								<i class="{{skills.icon}}" ngbTooltip="{{skills.name}}"></i>
+							</div>
+						</div>
+					</div>
+					<div *ngFor="let skills of allSkills">
+							<i class="{{skills.icon}}" (click)="test(skills)" ngbTooltip="{{skills.name}}"></i>
 					</div>
 				</div>
 			</div>
 		</div>
-		</div>
+	</div>
 </section>
