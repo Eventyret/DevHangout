@@ -14,6 +14,6 @@ class DonationView(viewsets.ModelViewSet):
         user_id = self.kwargs["id"]
         donation_id = self.kwargs.get("pk")
         if donation_id:
-            return User.objects.get(id=user_id).donation.filter(id=donation_id)
+            return User.objects.get(id=user_id).donation_user.filter(id=donation_id)
         else:
-            return User.objects.get(id=user_id).donation
+            return User.objects.get(id=user_id).donation_user
