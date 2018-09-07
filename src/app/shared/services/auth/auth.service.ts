@@ -29,7 +29,7 @@ export class AuthService {
 		public jwtHelper: JwtHelperService,
 		public router: Router,
 		private spinner: NgxSpinnerService,
-		private notify: NotificationsService,
+		private notify: NotificationsService
 	) {
 		const token = localStorage.getItem("access");
 		if (token) {
@@ -227,10 +227,9 @@ export class AuthService {
 				this.spinner.hide();
 				if (error.status === 401) {
 					this.sessionExpired();
-				} else if(error.status === 400) {
-					this.notLoggedIn()
-				}
-				else {
+				} else if (error.status === 400) {
+					this.notLoggedIn();
+				} else {
 					return throwError(this.notify.error(error.error.non_field_errors) || "Server Error");
 				}
 			});

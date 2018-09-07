@@ -4,7 +4,6 @@ import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { NotificationsService } from "angular2-notifications";
 import { NgxSpinnerService } from "ngx-spinner";
 import { Element as StripeElement, Elements, ElementsOptions, StripeService } from "ngx-stripe";
-import { AuthService } from "../../../services/auth/auth.service";
 import { ThankYouModalComponent } from "../thank-you-modal/thank-you-modal.component";
 
 @Component({
@@ -32,7 +31,6 @@ export class SupporterModalComponent implements OnInit {
 		private stripeService: StripeService,
 		private spinner: NgxSpinnerService,
 		private notify: NotificationsService,
-		private auth: AuthService,
 		private modalService: NgbModal
 	) {}
 
@@ -60,12 +58,11 @@ export class SupporterModalComponent implements OnInit {
 		this.amount = this.stripeTest.get("amount").value;
 		this.stripeService.createToken(this.card, { name }).subscribe(results => {
 			if (results.token) {
-				console.log(results);
-				console.log(this.amount);
-				this.notify.success("Thank you " + this.cardName + "!", results.token.id);
+				this.notify.success("Thank you " + this.cardName + "!");
 				this.activeModal.dismiss();
+
+				this.openThankYou(results);
 				this.spinner.hide();
-				this.openThankYou(results.token.id);
 				// Use the token to create a charge or a customer
 				// https://stripe.com/docs/charges
 			} else if (results.error) {
@@ -76,7 +73,7 @@ export class SupporterModalComponent implements OnInit {
 			}
 		});
 	}
-	openThankYou(token) {
+	openThankYou(results) {
 		const modalRef = this.modalService.open(ThankYouModalComponent, {
 			centered: true,
 			size: "lg",
@@ -85,7 +82,9 @@ export class SupporterModalComponent implements OnInit {
 		});
 		modalRef.componentInstance.name = this.name;
 		modalRef.componentInstance.amount = this.amount;
-		modalRef.componentInstance.token = token;
-		modalRef.componentInstance.id =localStorage.getItem("user_id");
+		modalRef.componentInstance.token = results.token.id;
+		modalRef.componentInstance.info = results.token;
+		modalRef.componentInstance.card = results.token.card;
+		modalRef.componentInstance.id = localStorage.getItem("user_id");
 	}
 }

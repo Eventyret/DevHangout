@@ -15,17 +15,28 @@ export class ThankYouModalComponent implements OnInit {
 	token: string;
 	id: number;
 	user: User;
+	info: any;
+	card: any;
 	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private auth: AuthService) {}
 
 	ngOnInit() {
 		this.updateSupporterStatus();
+		console.log(this.info);
 	}
 
 	updateSupporterStatus() {
-		const data = {
+		const donationStatus = {
 			donator: true
 		};
-		this.dataService.updateDetails("profile", this.id, data).subscribe(
+		const donationInfo = {
+			user: this.id,
+			amount: this.amount,
+			date: this.info.created,
+			token: this.token,
+			ip: this.info.client_ip
+		};
+		console.log(donationInfo);
+		this.dataService.updateDetails("profile", this.id, donationStatus).subscribe(
 			results => {
 				console.log(results);
 			},
@@ -33,10 +44,11 @@ export class ThankYouModalComponent implements OnInit {
 				console.log(error);
 			},
 			() => {
-				this.auth.getUser(this.id).subscribe(data => {
-					this.user = data;
+				this.auth.getUser(this.id).subscribe(result => {
+					this.user = result;
 				});
 			}
 		);
+		this.dataService.newDetails("donations", this.id);
 	}
 }
