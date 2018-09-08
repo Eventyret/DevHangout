@@ -37,7 +37,7 @@ export class DevelopersListComponent implements OnInit {
 		this.getDevelopers();
 	}
 	sliceUsers() {
-		this.displayUsers.push(..._shuffle(_slice(this.users, this.startNum, this.startNum + 8)));
+		this.displayUsers.push(... _shuffle(_slice(this.users, this.startNum, this.startNum + 8)));
 		this.startNum += 8;
 	}
 

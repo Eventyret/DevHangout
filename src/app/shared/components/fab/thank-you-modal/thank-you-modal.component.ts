@@ -35,7 +35,6 @@ export class ThankYouModalComponent implements OnInit {
 			token: this.token,
 			ip: this.info.client_ip
 		};
-		console.log(donationInfo);
 		this.dataService.updateDetails("profile", this.id, donationStatus).subscribe(
 			results => {},
 			error => {

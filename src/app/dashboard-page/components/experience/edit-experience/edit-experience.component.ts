@@ -73,7 +73,6 @@ export class EditExperienceComponent implements OnInit {
 	update() {
 		this.dataService.updateDetails("experience", this.id, this.updatedForm).subscribe(
 			results => {
-				console.log(results);
 			},
 			error => {
 				console.log(error);

@@ -84,14 +84,12 @@ export class EditProfileComponent implements OnInit {
 		if (localStorage)
 			this.githubService.gitRepo(username).subscribe(info => {
 				this.githubData = info;
-				console.log(this.githubData);
 			});
 	}
 
 	onChanges() {
 		this.profileForm.valueChanges.subscribe(val => {
 			this.updatedForm = val;
-			console.log(this.updatedForm);
 		});
 	}
 
@@ -104,9 +102,7 @@ export class EditProfileComponent implements OnInit {
 	 */
 	update() {
 		this.dataService.updateDetails("profile", this.id, this.updatedForm).subscribe(
-			results => {
-				console.log(results);
-			},
+			results => {},
 			error => {
 				console.log(error);
 				this.notify.error("Seems there was an issue ?", error);

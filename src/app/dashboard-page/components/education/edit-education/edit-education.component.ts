@@ -53,7 +53,6 @@ export class EditEducationComponent implements OnInit {
 						school: data.school,
 						user: data.user
 					});
-					console.log(data);
 				},
 				error => {
 					console.log(error);
@@ -67,7 +66,6 @@ export class EditEducationComponent implements OnInit {
 	onChanges() {
 		this.editForm.valueChanges.subscribe(val => {
 			this.updatedForm = val;
-			console.log(this.updatedForm);
 		});
 		this.editForm.get("current").valueChanges.subscribe(val => {
 			this.current = !this.current;
@@ -75,9 +73,7 @@ export class EditEducationComponent implements OnInit {
 	}
 	update() {
 		this.dataService.updateDetails("education", this.id, this.updatedForm).subscribe(
-			results => {
-				console.log(results);
-			},
+			results => {},
 			error => {
 				console.log(error);
 				this.notify.error("Seems there was an issue ?", error);

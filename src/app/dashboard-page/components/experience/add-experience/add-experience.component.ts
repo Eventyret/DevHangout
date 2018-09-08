@@ -43,7 +43,6 @@ export class AddExperienceComponent implements OnInit {
 	onChanges() {
 		this.addForm.valueChanges.subscribe(val => {
 			this.updatedForm = val;
-			console.log(this.updatedForm);
 		});
 		this.addForm.get("current").valueChanges.subscribe(val => {
 			this.current = !this.current;
