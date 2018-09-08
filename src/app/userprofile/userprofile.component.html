@@ -1,5 +1,5 @@
 <ngx-spinner bdOpacity="0.9" bdColor="#112938" size="large" color="#FFEB3B" loadingText="Eating up cookies... and preparing your profile"
- type="pacman">
+             type="pacman">
 	<p style="margin-top: 0;margin-bottom: 1rem;color: #ffeb3b;font-size: 2rem;">Found Inky in your profile... </p>
 </ngx-spinner>
 <section>
@@ -12,7 +12,8 @@
 				</div>
 			</div>
 			<div class="text-center profile-container">
-				<h1 class="text-bg"><span *ngIf="profile?.firstName">{{profile?.firstName}}</span> <span>"{{user?.username}}"</span> <span *ngIf="profile?.lastName">{{profile?.lastName}}</span></h1>
+				<h1 class="text-bg"><span *ngIf="profile?.firstName">{{profile?.firstName}}</span> <span>"{{user?.username}}"</span>
+					<span *ngIf="profile?.lastName">{{profile?.lastName}}</span></h1>
 				<p class="lead text-bg">{{profile?.title}}
 					<span *ngIf="profile?.company">@</span> {{profile?.company}}</p>
 				<div *ngIf="support" class="supporter text-center mx-auto content">
@@ -115,9 +116,10 @@
 								<span class="badge badge-primary mr-1"><i class="fas fa-star"></i> Stars: {{repos?.stargazers_count}} </span>
 								<span class="badge badge-primary mr-1"><i class="fas fa-eye"></i> Watchers: {{repos?.watchers_count}}</span>
 								<span class="badge badge-primary mr-1"><i class="fas fa-code-branch"></i> Forks: {{repos?.forks_count}}</span>
-								<a href="{{repos?.html_url}}/issues" target="_blank"><span class="badge badge-danger"><i class="fas fa-exclamation-circle"></i>
+								<a href="{{repos?.html_url}}/issues" target="_blank" class="mr-3"><span class="badge badge-danger"><i class="fas fa-exclamation-circle"></i>
 										Issues: {{repos?.open_issues_count}}</span></a>
-										<a href="{{repos?.homepage}}" class="btn btn-secondary btn-md" *ngIf="repos?.homepage">Visit Live Demo</a>
+								<a href="{{repos?.homepage}}/" target="_blank" *ngIf="repos?.homepage"><span class="badge badge-success"><i class="fas fa-globe"></i>
+										Visit Demo Page</span></a>
 							</div>
 						</div>
 					</div>
