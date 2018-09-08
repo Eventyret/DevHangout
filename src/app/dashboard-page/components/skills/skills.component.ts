@@ -4,7 +4,7 @@ import { DataService } from "../../services/data.service";
 import { NotificationsService } from "angular2-notifications";
 import { SkillsService } from "../../services/skills.service";
 import { Skill } from "../../../shared/models/users";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { merge as _merge, filter as _filter } from "lodash";
 
 @Component({
 	selector: "app-skills",
@@ -16,8 +16,7 @@ export class SkillsComponent implements OnInit {
 	id: number;
 	allSkills: Skill;
 	userSkills: Skill;
-	updatedForm: Skill;
-	owned: boolean;
+	combinedSkilles: any;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -39,7 +38,6 @@ export class SkillsComponent implements OnInit {
 			},
 			() => {
 				this.getUserSkills();
-				console.log(this.allSkills);
 			}
 		);
 	}
@@ -47,20 +45,17 @@ export class SkillsComponent implements OnInit {
 		this.skillsService.getUserSkills().subscribe(
 			skills => {
 				this.userSkills = skills;
+				this.mergeSkills(skills);
 			},
 			error => {
 				console.log(error);
 			},
-			() => {}
+			() => {
+			}
 		);
 	}
-	test(skill){
-		const form = {
-			id: skill.id,
-			name: skill.name,
-			icon: skill.icon,
-			owned: this.owned = !this.owned
-		}
-		console.log(form);
+
+	mergeSkills(data) {
+		console.log(data);
 	}
 }
