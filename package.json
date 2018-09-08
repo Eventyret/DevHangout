@@ -23,6 +23,7 @@
     "@angular/router": "^6.1.4",
     "@auth0/angular-jwt": "^2.0.0",
     "@ng-bootstrap/ng-bootstrap": "^3.1.0",
+    "@nicky-lenaers/ngx-scroll-to": "^1.0.0",
     "@types/lodash": "^4.14.116",
     "@yellowspot/ng-truncate": "^1.4.0",
     "angular2-notifications": "^1.0.4",

@@ -13,6 +13,7 @@ import { Ng2SearchPipeModule } from "ng2-search-filter";
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NgxStripeModule } from "ngx-stripe";
+import { ScrollToModule } from "@nicky-lenaers/ngx-scroll-to";
 
 import { environment } from "../environments/environment";
 import { AppComponent } from "./app.component";
@@ -43,8 +44,8 @@ import { AuthService } from "./shared/services/auth/auth.service";
 import { EditProfileComponent } from "./dashboard-page/components/edit-profile/edit-profile.component";
 import { ProfileComponent } from "./userprofile/userprofile.component";
 import { SessionExpiredPage } from "./expired-page/expired-page";
-import { SkillsComponent } from './dashboard-page/components/skills/skills.component';
-import { ThankYouModalComponent } from './shared/components/fab/thank-you-modal/thank-you-modal.component';
+import { SkillsComponent } from "./dashboard-page/components/skills/skills.component";
+import { ThankYouModalComponent } from "./shared/components/fab/thank-you-modal/thank-you-modal.component";
 
 const routes: Routes = [
 	{ path: "", component: HomePage, pathMatch: "full" },
@@ -123,7 +124,8 @@ const routes: Routes = [
 			}
 		}),
 		Ng2SearchPipeModule,
-		InfiniteScrollModule
+		InfiniteScrollModule,
+		ScrollToModule.forRoot()
 	],
 	providers: [FakeService, GithubService, AuthService, AuthGuard, HomePageService],
 	bootstrap: [AppComponent]

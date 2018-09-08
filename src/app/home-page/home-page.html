@@ -17,7 +17,7 @@
 			</div>
 			<div class="row buttons">
 				<div class="col-sm-12" [ngClass]="!this.auth.isLoggedIn() ? 'text-right col-md-6' : 'text-center'">
-					<a class="btn btn-outline-white btn-lg">Find out more</a>
+					<a class="btn btn-outline-white btn-lg" [ngx-scroll-to]="'#step1'">Find out more</a>
 				</div>
 				<div class="col-sm-12 col-md-6 text-left">
 					<a class="btn btn-success btn-lg" *ngIf="!this.auth.isLoggedIn()" (click)="openSignUp()">Sign Up now</a>
@@ -26,7 +26,7 @@
 		</div>
 	</div>
 </section>
-<section class="container-fluid">
+<section class="container-fluid"  id="step1">
 	<div class="row cards-container text-center">
 		<div class="col-sm-12 col-md-4">
 			<div class="card">
