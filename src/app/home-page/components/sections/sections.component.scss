@@ -42,4 +42,7 @@
 
 .fa-8x {
 	font-size: 12rem;
+	@media screen and (max-width: 576px) {
+		font-size: 5rem;
+	}
 }
