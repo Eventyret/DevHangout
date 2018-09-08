@@ -12,10 +12,11 @@ export class SkillsService {
 	constructor(private http: HttpClient) {}
 	API_URL: string = environment.api_url;
 	userID: string = localStorage.getItem("user_id");
+	allSkills:any = environment.skills;
 
 	getAllSkills() {
 		return this.http
-			.get(this.API_URL + "/api/skills")
+			.get("/assets/" + this.allSkills)
 			.pipe(map((data: any) => data))
 			.catch((error: any) => {
 				return throwError(error);
