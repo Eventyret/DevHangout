@@ -19,6 +19,7 @@ export class TestimonialsComponent implements OnInit {
 getTestimonials() {
 	this.fakeService.getFakeUsers().subscribe(data => {
 		this.testimonials = _sampleSize(data, 20);
+		console.log(this.testimonials);
 	});
 }
 }

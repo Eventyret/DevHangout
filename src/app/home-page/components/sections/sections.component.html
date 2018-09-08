@@ -1,8 +1,8 @@
 <section class="row divider" *ngFor="let section of Sections; let i = index">
-	<div class="col-md-12" [class.gradient]="section?.background" #{{section?.id}}>
+	<div class="col-md-12" [class.gradient]="section?.background" id="{{section?.id}}">
 		<h2 class="py-5">{{section.divider}}</h2>
 	</div>
-	<div class="container" id="step{{i}}">
+	<div class="container">
 		<div class="row info d-flex justify-content-around">
 			<div class="col-sm-12 col-md-4 text-center flex-row my-auto">
 				<i class="{{section.icon}} {{section.size}}"></i>
@@ -14,7 +14,7 @@
 							<i class="fas fa-user-plus"></i>
 						</button>
 					</a>
+				</div>
 			</div>
-		</div>
 	</div>
 	</section>
