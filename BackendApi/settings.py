@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "Skills",
     "accounts",
-    "corsheaders"
+    "corsheaders",
+    "Donations"
 ]
 
 MIDDLEWARE = [
