@@ -1,202 +1,202 @@
 [
 	{
-		"id": 1,
 		"name": "Android",
-		"icon": "devicon-android-plain colored"
+		"icon": "devicon-android-plain colored",
+		"owned": false
 	},
 	{
-		"id": 2,
 		"name": "Angular",
-		"icon": "devicon-angularjs-plain colored"
+		"icon": "devicon-angularjs-plain colored",
+		"owned": false
 	},
 	{
-		"id": 3,
 		"name": "Backbone JS",
-		"icon": "devicon-backbonejs-plain colored"
+		"icon": "devicon-backbonejs-plain colored",
+		"owned": false
 	},
 	{
-		"id": 4,
 		"name": "Bootstrap",
-		"icon": "devicon-bootstrap-plain colored"
+		"icon": "devicon-bootstrap-plain colored",
+		"owned": false
 	},
 	{
-		"id": 5,
 		"name": "C",
-		"icon": "devicon-c-plain colored"
+		"icon": "devicon-c-plain colored",
+		"owned": false
 	},
 	{
-		"id": 6,
 		"name": "Code Igniter",
-		"icon": "devicon-codeigniter-plain colored"
+		"icon": "devicon-codeigniter-plain colored",
+		"owned": false
 	},
 	{
-		"id": 7,
 		"name": "Coffeescript",
-		"icon": "devicon-coffeescript-original  colored"
+		"icon": "devicon-coffeescript-original  colored",
+		"owned": false
 	},
 	{
-		"id": 8,
 		"name": "C++",
-		"icon": "devicon-cplusplus-plain colored"
+		"icon": "devicon-cplusplus-plain colored",
+		"owned": false
 	},
 	{
 		"id": 9,
 		"name": "C#",
-		"icon": "devicon-csharp-plain colored"
+		"icon": "devicon-csharp-plain colored",
+		"owned": false
 	},
 	{
-		"id": 10,
 		"name": "CSS",
-		"icon": "devicon-css3-plain colored"
+		"icon": "devicon-css3-plain colored",
+		"owned": false
 	},
 	{
-		"id": 11,
 		"name": "D3js",
-		"icon": "devicon-d3js-plain colored"
+		"icon": "devicon-d3js-plain colored",
+		"owned": false
 	},
 	{
-		"id": 12,
 		"name": "Django",
-		"icon": "devicon-django-plain colored"
+		"icon": "devicon-django-plain colored",
+		"owned": false
 	},
 	{
-		"id": 13,
 		"name": "Docker",
-		"icon": "devicon-docker-plain colored"
+		"icon": "devicon-docker-plain colored",
+		"owned": false
 	},
 	{
-		"id": 14,
 		"name": ".net",
-		"icon": "devicon-dot-net-plain colored"
+		"icon": "devicon-dot-net-plain colored",
+		"owned": false
 	},
 	{
-		"id": 15,
 		"name": "Drupal",
-		"icon": "devicon-drupal-plain colored"
+		"icon": "devicon-drupal-plain colored",
+		"owned": false
 	},
 	{
-		"id": 16,
 		"name": "Foundation",
-		"icon": "devicon-foundation-plain colored"
+		"icon": "devicon-foundation-plain colored",
+		"owned": false
 	},
 	{
-		"id": 17,
 		"name": "Gatling",
-		"icon": "devicon-gatling-plain colored"
+		"icon": "devicon-gatling-plain colored",
+		"owned": false
 	},
 	{
-		"id": 18,
 		"name": "Git",
-		"icon": "devicon-github-plain colored"
+		"icon": "devicon-github-plain colored",
+		"owned": false
 	},
 	{
-		"id": 19,
 		"name": "Grunt",
-		"icon": "devicon-grunt-plain colored"
+		"icon": "devicon-grunt-plain colored",
+		"owned": false
 	},
 	{
-		"id": 20,
 		"name": "CSS",
-		"icon": "devicon-gulp-plain colored"
+		"icon": "devicon-gulp-plain colored",
+		"owned": false
 	},
 	{
-		"id": 21,
 		"name": "Heroku",
-		"icon": "devicon-heroku-plain colored"
+		"icon": "devicon-heroku-plain colored",
+		"owned": false
 	},
 	{
-		"id": 22,
 		"name": "HTML",
-		"icon": "devicon-html5-plain colored"
+		"icon": "devicon-html5-plain colored",
+		"owned": false
 	},
 	{
-		"id": 23,
 		"name": "Java",
-		"icon": "devicon-java-plain colored"
+		"icon": "devicon-java-plain colored",
+		"owned": false
 	},
 	{
-		"id": 24,
 		"name": "JavaScript",
-		"icon": "devicon-javascript-plain colored"
+		"icon": "devicon-javascript-plain colored",
+		"owned": false
 	},
 	{
-		"id": 25,
 		"name": "jQuery",
-		"icon": "devicon-jquery-plain colored"
+		"icon": "devicon-jquery-plain colored",
+		"owned": false
 	},
 	{
-		"id": 26,
 		"name": "Laravel",
-		"icon": "devicon-laravel-plain colored"
+		"icon": "devicon-laravel-plain colored",
+		"owned": false
 	},
 	{
-		"id": 27,
 		"name": "noSQL",
-		"icon": "devicon-mongodb-plain colored"
+		"icon": "devicon-mongodb-plain colored",
+		"owned": false
 	},
 	{
-		"id": 28,
 		"name": "MySQL",
-		"icon": "devicon-mysql-plain colored"
+		"icon": "devicon-mysql-plain colored",
+		"owned": false
 	},
 	{
-		"id": 29,
 		"name": "NodeJS",
-		"icon": "devicon-nodejs-plain colored"
+		"icon": "devicon-nodejs-plain colored",
+		"owned": false
 	},
 	{
-		"id": 30,
 		"name": "PHP",
-		"icon": "devicon-php-plain colored"
+		"icon": "devicon-php-plain colored",
+		"owned": false
 	},
 	{
-		"id": 31,
 		"name": "PostgreSQL",
-		"icon": "devicon-postgresql-plain colored"
+		"icon": "devicon-postgresql-plain colored",
+		"owned": false
 	},
 	{
-		"id": 32,
 		"name": "Python",
-		"icon": "devicon-python-plain colored"
+		"icon": "devicon-python-plain colored",
+		"owned": false
 	},
 	{
-		"id": 33,
 		"name": "Ruby on Rails",
-		"icon": "devicon-rails-plain colored"
+		"icon": "devicon-rails-plain colored",
+		"owned": false
 	},
 	{
-		"id": 34,
 		"name": "SASS",
-		"icon": "devicon-sass-original  colored"
+		"icon": "devicon-sass-original  colored",
+		"owned": false
 	},
 	{
-		"id": 35,
 		"name": "Swift",
-		"icon": "devicon-swift-plain colored"
+		"icon": "devicon-swift-plain colored",
+		"owned": false
 	},
 	{
-		"id": 36,
 		"name": "Symfony",
 		"icon": "devicon-symfony-original colored"
 	},
 	{
-		"id": 37,
 		"name": "TypeScript",
-		"icon": "devicon-typescript-plain colored"
+		"icon": "devicon-typescript-plain colored",
+		"owned": false
 	},
 	{
-		"id": 38,
 		"name": "VSCode",
-		"icon": "devicon-visualstudio-plain colored"
+		"icon": "devicon-visualstudio-plain colored",
+		"owned": false
 	},
 	{
-		"id": 39,
 		"name": "VueJS",
-		"icon": "devicon-vuejs-plain colored"
+		"icon": "devicon-vuejs-plain colored",
+		"owned": false
 	},
 	{
-		"id": 40,
 		"name": "Wordpress",
-		"icon": "devicon-wordpress-plain colored"
+		"icon": "devicon-wordpress-plain colored",
+		"owned": false
 	}
 ]
