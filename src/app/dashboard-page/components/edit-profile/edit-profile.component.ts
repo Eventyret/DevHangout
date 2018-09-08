@@ -42,8 +42,8 @@ export class EditProfileComponent implements OnInit {
 		instagram: new FormControl(""),
 		youtube: new FormControl(""),
 		github: new FormControl(""),
-		avatar: new FormControl(""),
-		backgroundImage: new FormControl("")
+		avatar: new FormControl("", Validators.required),
+		backgroundImage: new FormControl("", Validators.required)
 	});
 
 	ngOnInit() {
@@ -105,7 +105,7 @@ export class EditProfileComponent implements OnInit {
 			results => {},
 			error => {
 				console.log(error);
-				this.notify.error("Seems there was an issue ?", error);
+				this.notify.error(error);
 			},
 			() => {
 				this.notify.success("Your Profile was Updated");
