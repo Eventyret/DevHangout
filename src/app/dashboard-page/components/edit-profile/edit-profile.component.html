@@ -42,6 +42,8 @@
 								</div>
 							</div>
 							<div class="form-group">
+									<div class="input-group-prepend">
+									<span class="input-group-text">Avatar</span>
 								<input
 								 formControlName="avatar"
 								 name="avatar"
@@ -50,7 +52,10 @@
 								 placeholder="Paste URL to your avatar here"
 								>
 							</div>
+							</div>
 							<div class="form-group" *ngIf="profile.donator">
+									<div class="input-group-prepend">
+											<span class="input-group-text">Background Image</span>
 								<input
 								 formControlName="backgroundImage"
 								 name="backgroundImage"
@@ -58,6 +63,7 @@
 								 class="form-control form-control-lg"
 								 placeholder="Paste URL to your Background Image here"
 								>
+							</div>
 							</div>
 							<div class="form-group">
 								<input
