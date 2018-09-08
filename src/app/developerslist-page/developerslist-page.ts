@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FakeService } from "../shared/services/api/fake.service";
 import { NgxSpinnerService } from "ngx-spinner";
-import { unionBy as _unionBy, slice as _slice, shuffle as _shuffle } from "lodash";
+import { unionBy as _unionBy, slice as _slice, shuffle as _shuffle, sortBy as _sortBy } from "lodash";
 import { AuthService } from "../shared/services/auth/auth.service";
 import { Router } from "@angular/router";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
@@ -20,6 +20,7 @@ export class DevelopersListComponent implements OnInit {
 	startNum = 0;
 	displayUsers = [];
 	url: string;
+	searchUsers;
 
 	constructor(
 		public fakeService: FakeService,
@@ -36,7 +37,7 @@ export class DevelopersListComponent implements OnInit {
 		this.getDevelopers();
 	}
 	sliceUsers() {
-		this.displayUsers.push(..._slice(this.users, this.startNum, this.startNum + 8));
+		this.displayUsers.push(..._shuffle(_slice(this.users, this.startNum, this.startNum + 8)));
 		this.startNum += 8;
 	}
 
@@ -67,7 +68,7 @@ export class DevelopersListComponent implements OnInit {
 		this.fakeService.getRealUsers().subscribe(
 			data => {
 				const realUsers = data;
-				this.users = _shuffle(_unionBy(realUsers, this.fakeUsers));
+				this.users = _unionBy(realUsers, this.fakeUsers);
 				this.sliceUsers();
 			},
 			error => {
