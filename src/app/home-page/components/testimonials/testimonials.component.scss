@@ -27,6 +27,8 @@
 		padding: 25px;
 		min-height: 200px;
 		position: relative;
+		cursor: pointer;
+
 		&:before {
 			position: absolute;
 			content: "";
@@ -47,7 +49,6 @@
 			max-width: 90px;
 			opacity: 1;
 			box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-			cursor: pointer;
 		}
 		h3 {
 			font-size: 1.3em;
@@ -95,5 +96,3 @@
 		display: flex;
 	}
 }
-
-

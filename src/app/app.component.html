@@ -43,7 +43,7 @@
 </div>
 <div *ngIf="!loading">
 	<header>
-		<app-navbar></app-navbar>
+		<app-navbar ng-sticky [offSet]="0" [addClass]="'is-sticky'"></app-navbar>
 	</header>
 	<main>
 		<router-outlet></router-outlet>
