@@ -24,6 +24,7 @@ img {
 		background: transparent;
 		color: #2b4d68;
 		justify-content: center;
+		cursor: pointer;
 	}
 }
 
@@ -62,4 +63,11 @@ img {
 		.display-3 {
 			font-size: 2.7rem;
 		}
+}
+.btn-orange {
+	background-color: #f44336;
+	&:hover {
+		background-color: #fff;
+		color: #f44336 !important;
+	}
 }
