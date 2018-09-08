@@ -11,7 +11,7 @@ import { throwError } from "rxjs";
 export class GithubService {
 	clientID: string = environment.github_client_id;
 	clientSecret: string = environment.github_client_secret;
-	githubUrl = "https://api.github.com/";
+	githubUrl: string = environment.githubapi_url
 	fakeUsers: string = environment.fake_users;
 
 	constructor(private http: HttpClient) {}

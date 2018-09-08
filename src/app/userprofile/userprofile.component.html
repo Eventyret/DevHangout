@@ -117,13 +117,14 @@
 								<span class="badge badge-primary mr-1"><i class="fas fa-code-branch"></i> Forks: {{repos?.forks_count}}</span>
 								<a href="{{repos?.html_url}}/issues" target="_blank"><span class="badge badge-danger"><i class="fas fa-exclamation-circle"></i>
 										Issues: {{repos?.open_issues_count}}</span></a>
+										<a href="{{repos?.homepage}}" class="btn btn-secondary btn-md" *ngIf="repos?.homepage">Visit Live Demo</a>
 							</div>
 						</div>
 					</div>
 				</article>
 			</div>
 		</div>
-		<div class="row" *ngIf="production">
+		<div class="row" *ngIf="!production">
 			<div class="col-md-12">
 				<div class="btn btn-danger" (click)="supporterTest()">Donation Toggle (For Testing)</div>
 			</div>
