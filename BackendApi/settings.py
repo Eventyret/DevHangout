@@ -12,21 +12,20 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 from datetime import timedelta
-import rest_framework
+import django_heroku
 # Setup enviroment for dev or prod
-import env
+import rest_framework
+
 
 # Simplfy the writing of enviroment
-ENV = os.environ.get
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ENV("SECRET_KEY")
+SECRET_KEY = "{{ SECRET_KEY }}"
 
 # SECURITY WARNING: don"t run with debug turned on in production!
 
@@ -42,17 +41,18 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
     "rest_framework",
     "Skills",
     "accounts",
-    "Donations",
     "corsheaders"
 ]
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -89,14 +89,13 @@ WSGI_APPLICATION = "BackendApi.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": ENV("DBNAME"),
-        "USER":  ENV("DBUSER"),
-        "PASSWORD": ENV("DBPASS"),
-        "HOST": ENV("DBHOST"),
-        "PORT": ENV("DBPORT"),
+        "NAME": os.getenv("DBNAME"),
+        "USER":   os.getenv("DBUSER"),
+        "PASSWORD": os.getenv("DBPASS"),
+        "HOST":  os.getenv("DBHOST"),
+        "PORT":  os.getenv("DBPORT"),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -139,18 +138,22 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.AllowAny", ),
     "DEFAULT_AUTHENTICATION_CLASSES": ("rest_framework_simplejwt.authentication.JWTAuthentication", ),
 }
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=12),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": False,
     "BLACKLIST_AFTER_ROTATION": True,
     "ALGORITHM": "HS256",
-    "SIGNING_KEY": ENV("SECRET_KEY"),
+    "SIGNING_KEY":  "{{ SECRET_KEY }}",
     "VERIFYING_KEY": None,
 
     "AUTH_HEADER_TYPES": ("Bearer",),
@@ -166,3 +169,11 @@ SIMPLE_JWT = {
 }
 
 DEBUG = True
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
