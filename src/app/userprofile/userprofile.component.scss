@@ -1,6 +1,10 @@
 .profile-image {
 	width: 250px;
 	height: 250px;
+	@media screen and (max-width: 768px) {
+		width: 128px;
+		height: 128px;
+	}
 }
 
 .profile-background {
@@ -32,42 +36,35 @@
 	padding: 10px 25px;
 }
 
-.social-profile {
-	position: relative;
-	text-align: center;
-	margin: 0 center;
-	margin-top: 20px;
-	& a {
-		display: inline-block;
-		width: 36px;
-		height: 36px;
-		border-radius: 24px;
-		background-color: #112938;
-		margin: 0 1px;
+#social-icons {
+	.fa-circle {
+		color: #112938;
+	}
+	.fab {
 		color: #fff;
-		text-align: center;
-		line-height: 36px;
-		& i {
-			height: 24px;
-			width: 24px;
-		}
+	}
+	.fa-stack {
 		&:hover {
-			background-color: #772953;
+			.fas {
+				color: #FF5722;
+			}
+			.fab {
+				color: #fff;
+			}
 		}
 	}
 }
 
-
 .supporter {
 	background: linear-gradient(to right, #ff4e50, #f9d423);
-    width: 250px;
-    border-radius: 10px;
+	width: 250px;
+	border-radius: 10px;
 	padding: 10px;
 	font-family: "Roboto";
 	font-size: 1.5rem;
 	font-weight: 700;
 	.fa-star {
-		color: #FF5722;
+		color: #ff5722;
 		font-size: 1.5rem;
 	}
 }
@@ -81,4 +78,10 @@
 
 .repo-name {
 	color: #112938;
+}
+
+@media screen and (max-width: 576px) {
+	h1 {
+		font-size: 1.5rem;
+	}
 }
