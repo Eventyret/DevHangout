@@ -3,12 +3,12 @@
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
 					<a routerLink="profiles" class="nav-link" ngbTooltip="Developers Profiles" placement="bottom">
-						<i class="fas fa-users"></i> Developers List
+						<i class="fas fa-users d-none d-md-block"></i> Developers List
 					</a>
 				</li>
 				<li class="nav-item" *ngIf="this.auth.isLoggedIn()" ngbTooltip="Your Profile" placement="bottom">
 					<a class="nav-link" routerLink="profile/{{userID}}/{{username}}">
-						<i class="fas fa-user-astronaut"></i> Your Public Profile
+						<i class="fas fa-user-astronaut d-none d-md-block"></i> Your Public Profile
 					</a>
 				</li>
 			</ul>
@@ -23,8 +23,8 @@
 			<ul class="navbar-nav ml-auto">
 						<li class="nav-item" *ngIf="this.auth.isLoggedIn()">
 							<a class="nav-link" routerLink="dashboard">
-								<span *ngIf="loggedIn"><img src="{{avatar}}" alt="{{username}}"  class="rounded-circle avatar" ngbTooltip="Your Dashboard" placement="bottom">Your Dashboard</span>
-								<span *ngIf="!loggedIn"><img src="../../../assets/default.png" alt="{{username}}"  class="rounded-circle avatar" ngbTooltip="Your Dashboard" placement="bottom"> Your Dashboard</span>
+								<span *ngIf="loggedIn"><img src="{{avatar}}" alt="{{username}}"  class="rounded-circle avatar d-none d-md-block" ngbTooltip="Your Dashboard" placement="bottom"> Your Dashboard</span>
+								<span *ngIf="!loggedIn"><img src="../../../assets/default.png" alt="{{username}}"  class="rounded-circle avatar d-none d-md-block" ngbTooltip="Your Dashboard" placement="bottom"> Your Dashboard</span>
 							</a>
 						</li>
 				<li class="nav-item">
