@@ -108,13 +108,13 @@
 												<span *ngIf="!exp?.current && exp?.dateTo"> - {{exp?.dateTo | date: ["MMM yyyy"]}}</span>
 												<span *ngIf="exp?.current  || !exp?.dateTo"> - Present</span>
 											</td>
-											<td>
-												<button class="btn btn-info btn-md mr-3" (click)="open($event, exp?.id)" id="editExp">
+											<td scope="row">
+												<a class="btn btn-info btn-md text-white" (click)="open($event, exp?.id)" id="editExp">
 													Edit
-												</button>
-												<button class="btn btn-danger btn-md" (click)="deleteDetail($event, exp?.id, exp?.company)" id="deleteExp">
+												</a>
+												<a class="btn btn-danger btn-md text-white ml-2" (click)="deleteDetail($event, exp?.id, exp?.company)" id="deleteExp">
 													Delete
-												</button>
+												</a>
 											</td>
 										</tr>
 									</tbody>
@@ -145,11 +145,11 @@
 												<span *ngIf="!edu?.current && edu?.dateTo"> - {{edu?.dateTo | date: ["MMM yyyy"]}}</span>
 												<span *ngIf="edu?.current  || !edu?.dateTo"> - Present</span>
 											</td>
-											<td schope="row">
-												<a class="btn btn-info btn-md mr-3 text-white" (click)="open($event, edu?.id)" id="editEdu">
+											<td scope="row">
+												<a class="btn btn-info btn-md text-white" (click)="open($event, edu?.id)" id="editEdu">
 													Edit
 												</a>
-												<a class="btn btn-danger btn-md text-white" (click)="deleteDetail($event, edu?.id, edu?.school)" id="deleteEdu">
+												<a class="btn btn-danger btn-md text-white ml-2" (click)="deleteDetail($event, edu?.id, edu?.school)" id="deleteEdu">
 													Delete
 												</a>
 											</td>
