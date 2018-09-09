@@ -17,7 +17,7 @@ export class FabComponent implements OnInit {
 		if (localStorage.getItem("username")) {
 			this.username = localStorage.getItem("username");
 		} else {
-			this.username = "";
+			this.username = "Anonymous";
 		}
 	}
 

@@ -56,6 +56,5 @@ export class SkillsComponent implements OnInit {
 	}
 
 	mergeSkills(data) {
-		console.log(data);
 	}
 }
