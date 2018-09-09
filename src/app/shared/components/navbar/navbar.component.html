@@ -3,12 +3,12 @@
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
 					<a routerLink="profiles" class="nav-link" ngbTooltip="Developers Profiles" placement="bottom">
-						<i class="fas fa-users d-none d-md-inline-block"></i> Developers List
+						<i class="fas fa-users d-none d-lg-inline-block"></i> Developers List
 					</a>
 				</li>
 				<li class="nav-item" *ngIf="this.auth.isLoggedIn()" ngbTooltip="Your Profile" placement="bottom">
 					<a class="nav-link" routerLink="profile/{{userID}}/{{username}}">
-						<i class="fas fa-user-astronaut d-none d-md-inline-block"></i> Your Public Profile
+						<i class="fas fa-user-astronaut d-none d-lg-inline-block"></i> Your Public Profile
 					</a>
 				</li>
 			</ul>
