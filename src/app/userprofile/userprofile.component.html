@@ -2,7 +2,8 @@
              type="pacman">
 	<p style="margin-top: 0;margin-bottom: 1rem;color: #ffeb3b;font-size: 2rem;">Found Inky in your profile... </p>
 </ngx-spinner>
-<section>
+
+<section class="push-down">
 	<div class="profile">
 		<div class="card card-body profile-background text-white mb-3" [ngStyle]="{'background-image': support ? 'url('+ profile?.backgroundImage + ')' : 'url(' + normalBackground +') no-repeat center center', 'background-size': 'cover', 'background-attachment': 'fixed', 'height': '80vh'}">
 
@@ -24,7 +25,7 @@
 				<div class="container mt-3" id="social-icons">
 					<div class="row">
 						<div class="col-sm-4 col-md-2">
-							<a href="https://www.facebook.com/{{profile?.facebook}}" *ngIf="profile?.facebook">
+							<a href="https://www.facebook.com/{{profile?.facebook}}" target="_blank" *ngIf="profile?.facebook">
 								<span class="fa-stack fa-1x" placement="bottom" ngbTooltip="Find me on Facebook">
 									<i class="fas fa-circle fa-stack-2x"></i>
 									<i class="fab fa-facebook fa-stack-1x"></i>
@@ -33,7 +34,7 @@
 
 						</div>
 						<div class="col-sm-4 col-md-2">
-							<a href="https://www.github.com/{{profile?.github}}" *ngIf="profile?.github">
+							<a href="https://www.github.com/{{profile?.github}}" target="_blank" *ngIf="profile?.github">
 								<span class="fa-stack fa-1x" placement="bottom" ngbTooltip="Find me on Github">
 									<i class="fas fa-circle fa-stack-2x"></i>
 									<i class="fab fa-github fa-stack-1x"></i>
@@ -41,7 +42,7 @@
 							</a>
 						</div>
 						<div class="col-sm-4 col-md-2">
-							<a href="https://www.linkedin.com/in/{{profile?.linkedin}}" *ngIf="profile?.linkedin">
+							<a href="https://www.linkedin.com/in/{{profile?.linkedin}}" target="_blank" *ngIf="profile?.linkedin">
 								<span class="fa-stack fa-1x" placement="bottom" ngbTooltip="Connect with me on LinkedIn">
 									<i class="fas fa-circle fa-stack-2x fa-inverse"></i>
 									<i class="fab fa-linkedin fa-stack-1x"></i>
@@ -49,7 +50,7 @@
 							</a>
 						</div>
 						<div class="col-sm-4 col-md-2">
-							<a href="https://www.youtube.com/channel/{{profile?.youtube}}" *ngIf="profile?.youtube">
+							<a href="https://www.youtube.com/channel/{{profile?.youtube}}" target="_blank" *ngIf="profile?.youtube">
 								<span class="fa-stack fa-1x" placement="bottom" ngbTooltip="Subscribe to me on YouTube">
 									<i class="fas fa-circle fa-stack-2x fa-inverse"></i>
 									<i class="fab fa-youtube fa-stack-1x"></i>
@@ -57,7 +58,7 @@
 							</a>
 						</div>
 						<div class="col-sm-4 col-md-2">
-							<a href="https://www.twitter.com/{{profile?.twitter}}" *ngIf="profile?.twitter">
+							<a href="https://www.twitter.com/{{profile?.twitter}}" target="_blank" *ngIf="profile?.twitter">
 								<span class="fa-stack fa-1x" placement="bottom" ngbTooltip="Follow me on Twitter">
 									<i class="fas fa-circle fa-stack-2x fa-inverse"></i>
 									<i class="fab fa-twitter fa-stack-1x"></i>

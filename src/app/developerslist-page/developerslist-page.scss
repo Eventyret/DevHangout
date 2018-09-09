@@ -19,7 +19,8 @@
 	background: #112938;
 	color: #333;
 	text-align: center;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	font-size: 16px;
 	cursor: pointer;
 
@@ -121,8 +122,10 @@
 		display: block;
 		width: 225px;
 		padding: 8px 0;
+		background: -webkit-gradient(linear, left top, right top, from(#ff4e50), to(#f9d423));
 		background: linear-gradient(to right, #ff4e50, #f9d423);
-		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+		-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+		        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 		color: #fff;
 		font: 600 16px/1 "Roboto", sans-serif;
 		text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -159,7 +162,8 @@
 	span {
 		left: -19px;
 		top: 41px;
-		transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		        transform: rotate(45deg);
 	}
 }
 .fa-star {
@@ -174,10 +178,13 @@
 	border: none;
 	border-radius: 3px;
 	padding: 10px;
-	box-shadow: 0 0 15px 1px #bfa8bc;
+	-webkit-box-shadow: 0 0 15px 1px #bfa8bc;
+	        box-shadow: 0 0 15px 1px #bfa8bc;
+	-webkit-transition: all 0.3s;
 	transition: all 0.3s;
 	&:focus {
 		outline: none;
-		box-shadow: 5px 5px 30px 5px #bfa8bc;
+		-webkit-box-shadow: 5px 5px 30px 5px #bfa8bc;
+		        box-shadow: 5px 5px 30px 5px #bfa8bc;
 	}
 }
