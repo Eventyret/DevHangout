@@ -2,8 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { AuthService } from "../../services/auth/auth.service";
 import { Router } from "@angular/router";
-import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
-
+import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { SignupComponent } from "../signup/signup.component";
 @Component({
 	selector: "app-session-expired",
 	templateUrl: "./session-expired.component.html",
@@ -12,6 +12,7 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 export class SessionExpiredComponent implements OnInit {
 	invalidLogin: boolean;
 	username: string;
+	newUser: boolean;
 	loginForm = new FormGroup({
 		username: new FormControl("", Validators.required),
 		password: new FormControl("", Validators.required)
@@ -20,10 +21,15 @@ export class SessionExpiredComponent implements OnInit {
 	get usernameField() {
 		return this.loginForm.get("username");
 	}
-	constructor(private router: Router, private authService: AuthService, public activeModal: NgbActiveModal) {}
+	constructor(private router: Router, private authService: AuthService, public activeModal: NgbActiveModal, private modalService: NgbModal) {}
 
 	ngOnInit() {
 		this.username = localStorage.getItem("username");
+		if (!localStorage.getItem("username")) {
+			this.newUser = true;
+		} else {
+			this.newUser = false;
+		}
 	}
 
 	signIn(credentials) {
@@ -39,5 +45,13 @@ export class SessionExpiredComponent implements OnInit {
 	dismiss() {
 		this.authService.sessionExpired();
 		this.activeModal.dismiss();
+	}
+	register() {
+		this.activeModal.dismiss();
+		this.modalService.open(SignupComponent, {
+			centered: true,
+			size: "lg",
+			backdrop: "static"
+		});
 	}
 }

@@ -1,6 +1,7 @@
 <section>
 <div class="modal-header">
-	<h4 class="modal-title">Whoops! Seems your session has expired {{username}} </h4>
+	<h4 class="modal-title" *ngIf="username">Whoops! Seems your session has expired {{username}} </h4>
+	<h4 class="modal-title" *ngIf="!username">You will need to be logged in to view profiles 🤪</h4>
 	<button type="button" class="close" aria-label="Close" (click)="dismiss()">
 		<i class="fas fa-times"></i>
 	</button>
@@ -35,5 +36,8 @@
 					<input type="submit" class="btn btn-danger btn-block mt-4" [disabled]="!loginForm.valid" value="Sign in Again">
 			</ng-template>
 	</form>
+</div>
+<div class="modal-footer">
+	<a (click)="register()" class="btn btn-secondary btn-sm text-white">I don't have an account</a>
 </div>
 </section>
