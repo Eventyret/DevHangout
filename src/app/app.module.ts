@@ -14,7 +14,6 @@ import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NgxStripeModule } from "ngx-stripe";
 import { ScrollToModule } from "@nicky-lenaers/ngx-scroll-to";
-import { NgStickyModule } from "ng-sticky";
 
 import { environment } from "../environments/environment";
 import { AppComponent } from "./app.component";
@@ -126,8 +125,7 @@ const routes: Routes = [
 		}),
 		Ng2SearchPipeModule,
 		InfiniteScrollModule,
-		ScrollToModule.forRoot(),
-		NgStickyModule
+		ScrollToModule.forRoot()
 	],
 	providers: [FakeService, GithubService, AuthService, AuthGuard, HomePageService],
 	bootstrap: [AppComponent]
