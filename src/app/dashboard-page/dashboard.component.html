@@ -106,7 +106,7 @@
 
 
 			</div>
-			<div class="col-sm-12 col-md-8 mt-5">
+			<div class="col-md-12 col-lg-8 mt-5">
 				<div class="row">
 					<div class="col-sm-4">
 						<button type="button"
@@ -243,7 +243,7 @@
 					</div>
 				</div>
 
-				<div class="row my-3 d-block d-md-none" *ngIf="user?.experience">
+				<div class="row my-3 d-none d-md-block" *ngIf="user?.experience">
 					<h3 class="text-center">Experience</h3>
 					<div class="card my-3 text-center"
 					     *ngFor="let exp of user?.experience">
@@ -276,7 +276,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row d-block d-md-none" *ngIf="user?.education">
+				<div class="row d-none d-md-block" *ngIf="user?.education">
 					<h3 class="text-center">Education</h3>
 					<div class="card text-center"
 					     *ngFor="let edu of user?.education">
@@ -309,7 +309,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row d-block d-md-none" *ngIf="user?.donation">
+				<div class="row d-none d-md-block" *ngIf="user?.donation">
 					<h3 class="text-center">Donations</h3>
 					<div class="card text-center"
 					     *ngFor="let donation of user?.donation">
