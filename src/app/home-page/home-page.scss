@@ -49,6 +49,13 @@ img {
 .buttons {
 	margin-top: 200px;
 }
+.btn-orange {
+	background-color: #f44336;
+	&:hover {
+		background-color: #fff;
+		color: #f44336 !important;
+	}
+}
 
 @media screen and (max-width: 1200px) {
 	.fa-10x,
@@ -62,7 +69,6 @@ img {
 		margin-top: 26px;
 		padding-bottom: 25px;
 	}
-
 }
 
 @media screen and (max-width: 768px) {
@@ -77,10 +83,9 @@ img {
 		height: 100%;
 	}
 }
-.btn-orange {
-	background-color: #f44336;
-	&:hover {
-		background-color: #fff;
-		color: #f44336 !important;
+@media screen and (max-width: 576px) {
+	.btn {
+		width: 100%;
+		margin-bottom: 15px;
 	}
 }
