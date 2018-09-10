@@ -18,16 +18,16 @@ img {
 	height: 50vh;
 	background: #e0ebcf;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 
 	.card {
 		border: 0px solid transparent;
 		background: transparent;
 		color: #2b4d68;
 		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
 		cursor: pointer;
 	}
 }
@@ -35,7 +35,9 @@ img {
 .fa-heart {
 	color: #f44336 !important;
 }
-.fa-github, .fa-users, .fa-code {
+.fa-github,
+.fa-users,
+.fa-code {
 	color: #333;
 }
 
@@ -49,24 +51,31 @@ img {
 }
 
 @media screen and (max-width: 1200px) {
-	.fa-10x, .fa-8x {
+	.fa-10x,
+	.fa-8x {
 		font-size: 5em;
 	}
 	.display-3 {
 		font-size: 4rem;
 	}
 	.buttons {
-		margin-top: 100px;
+		margin-top: 26px;
+		padding-bottom: 25px;
 	}
+
 }
 
-@media screen and (max-width: 768px)  {
-		.fa-10x, .fa-8x {
-			font-size: 2.5em;
-		}
-		.display-3 {
-			font-size: 2.7rem;
-		}
+@media screen and (max-width: 768px) {
+	.fa-10x,
+	.fa-8x {
+		font-size: 2.5em;
+	}
+	.display-3 {
+		font-size: 2.7rem;
+	}
+	.cards-container {
+		height: 100%;
+	}
 }
 .btn-orange {
 	background-color: #f44336;

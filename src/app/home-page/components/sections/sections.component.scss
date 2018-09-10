@@ -1,5 +1,8 @@
 .info {
 	height: 80vh;
+	@media screen and (max-width: 1200px) {
+		height: 100vh;
+	}
 }
 .divider {
 	background: #112938;
@@ -8,11 +11,11 @@
 		background: #e0ebcf;
 		color: #112938;
 		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
 		-webkit-box-align: center;
-		    -ms-flex-align: center;
-		        align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -23,7 +26,8 @@
 	background: rgb(224, 235, 207);
 	background: -webkit-gradient(
 		linear,
-		left top, left bottom,
+		left top,
+		left bottom,
 		color-stop(1%, rgba(224, 235, 207, 1)),
 		color-stop(8%, rgba(224, 235, 207, 1)),
 		color-stop(20%, rgba(17, 41, 56, 1)),
