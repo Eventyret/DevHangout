@@ -13,16 +13,15 @@ export class FabComponent implements OnInit {
 	username: string;
 	spin: any;
 	constructor(private modalService: NgbModal) {}
-	ngOnInit() {
+	ngOnInit() {}
+
+	open(event: any) {
+		const target = event.target.id;
 		if (localStorage.getItem("username")) {
 			this.username = localStorage.getItem("username");
 		} else {
 			this.username = "Anonymous";
 		}
-	}
-
-	open(event: any) {
-		const target = event.target.id;
 		if (target === "infoButton") {
 			this.comp = InfoModalComponent;
 		} else if (target === "supporterButton") {
