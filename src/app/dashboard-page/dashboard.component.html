@@ -50,7 +50,7 @@
 					<li class="list-group-item d-flex justify-content-between align-items-center"
 					    *ngIf="profile?.website">
 						<span><i class="fas fa-globe"></i> Website:</span>
-						<a class="link"
+						<a class="link text-truncate"
 						   (click)="openLink()"
 						   placement="top"
 						   ngbTooltip="{{profile?.website}}">{{profile?.website}}</a>
@@ -336,7 +336,7 @@
 									<li class=" list-group-item d-flex
 								     justify-content-between align-items-center">
 										<span><i class="fab fa-cc-stripe"></i>Token:</span>
-										{{donation?.token}}
+										<span class="text-truncate">{{donation?.token}}</span>
 									</li>
 									<li class=" list-group-item d-flex
 								     justify-content-between align-items-center">
