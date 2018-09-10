@@ -11,17 +11,12 @@ class SkillsView(viewsets.ModelViewSet):
     """ A list of skills each user might have """
     queryset = Skill.objects.all()
     serializer_class = SkillsSerializer
+    serializer = SkillsSerializer(queryset, many=True)
 
     def get_queryset(self):
         user_id = self.kwargs["id"]
-        skill_id = self.kwargs.get("pk")
-        if skill_id:
-            return User.objects.get(id=user_id).skills.filter(id=skill_id)
+        skillPK = self.kwargs.get("pk")
+        if skillPK:
+            return User.objects.get(id=user_id).skill_id.filter(id=skillPK)
         else:
-            return User.objects.get(id=user_id).skills
-
-
-class AllSkillsView(viewsets.ReadOnlyModelViewSet):
-    """ A list of all skills available from the database, this is set to read only for now """
-    queryset = Skill.objects.all()
-    serializer_class = SkillsSerializer
+            return User.objects.get(id=user_id).skill_id
