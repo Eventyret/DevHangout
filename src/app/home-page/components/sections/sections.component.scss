@@ -46,7 +46,14 @@
 
 .fa-8x {
 	font-size: 12rem;
-	@media screen and (max-width: 576px) {
+}
+
+@media screen and (max-width: 576px) {
+	.btn {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+	.fa-8x {
 		font-size: 5rem;
 	}
 }
