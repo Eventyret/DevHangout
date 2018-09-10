@@ -71,7 +71,7 @@ export class DashboardComponent implements OnInit {
 			},
 			onrejected => {
 				this.auth.refreshToken().subscribe(val => {});
-				this.notify.info("Nothing was saved 👍")
+				this.notify.info("Nothing was saved 👍");
 			}
 		);
 	}

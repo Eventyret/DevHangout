@@ -77,3 +77,8 @@
 		display: block;
 	}
 }
+@media screen and (max-width: 768px) {
+	.btn {
+		margin-left: 0 !important;
+	}
+}
