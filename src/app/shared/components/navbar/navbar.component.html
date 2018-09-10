@@ -2,7 +2,7 @@
 		<div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"  [ngbCollapse]="isCollapsed">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a routerLink="profiles" class="nav-link" ngbTooltip="Developers Profiles" placement="bottom" (click)="isCollapsed = !isCollapsed">
+					<a routerLink="profiles" *ngIf="this.auth.isLoggedIn()"  class="nav-link" ngbTooltip="Developers Profiles" placement="bottom" (click)="isCollapsed = !isCollapsed">
 						<i class="fas fa-users d-none d-lg-inline-block"></i> Developers List
 					</a>
 				</li>

@@ -10,7 +10,7 @@
 .nav-item,
 .fa-bars,
 .navbar-brand {
-	color:  #fff;
+	color: #fff;
 }
 
 nav {
@@ -32,4 +32,13 @@ li > a > .fas {
 .avatar {
 	height: 40px;
 	width: 38px;
+}
+
+@media screen and (max-width: 768px) {
+	.navbar-nav {
+		justify-content: space-around;
+	}
+	.nav-link {
+		text-align: center;
+	}
 }
