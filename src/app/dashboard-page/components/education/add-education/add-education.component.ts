@@ -23,7 +23,7 @@ export class AddEducationComponent implements OnInit {
 	addForm = new FormGroup({
 		current: new FormControl(false, Validators.required),
 		dateFrom: new FormControl("", Validators.required),
-		dateTo: new FormControl(),
+		dateTo: new FormControl(null),
 		fieldOfStudy: new FormControl("", Validators.required),
 		qualification: new FormControl("", Validators.required),
 		school: new FormControl("", Validators.required),
