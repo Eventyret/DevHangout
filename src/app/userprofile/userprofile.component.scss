@@ -10,6 +10,9 @@
 .profile-background {
 	background-color: #112938;
 	background-size: cover;
+	@media screen and (max-width: 768px) {
+		padding-top: 75px;
+	}
 }
 
 .profile-container {
