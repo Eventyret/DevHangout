@@ -2,12 +2,12 @@
 		<div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"  [ngbCollapse]="isCollapsed">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a routerLink="profiles" class="nav-link" ngbTooltip="Developers Profiles" placement="bottom">
+					<a routerLink="profiles" class="nav-link" ngbTooltip="Developers Profiles" placement="bottom" (click)="isCollapsed = !isCollapsed">
 						<i class="fas fa-users d-none d-lg-inline-block"></i> Developers List
 					</a>
 				</li>
 				<li class="nav-item" *ngIf="this.auth.isLoggedIn()" ngbTooltip="Your Profile" placement="bottom">
-					<a class="nav-link" routerLink="profile/{{userID}}/{{username}}">
+					<a class="nav-link" routerLink="profile/{{userID}}/{{username}}" (click)="isCollapsed = !isCollapsed">
 						<i class="fas fa-user-astronaut d-none d-lg-inline-block"></i> Your Public Profile
 					</a>
 				</li>
@@ -22,27 +22,27 @@
 		<div class="navbar-collapse collapse w-100 order-3 dual-collapse2" [ngbCollapse]="isCollapsed">
 			<ul class="navbar-nav ml-auto">
 						<li class="nav-item" *ngIf="this.auth.isLoggedIn()">
-							<a class="nav-link" routerLink="dashboard">
+							<a class="nav-link" routerLink="dashboard" isCollapsed = !isCollapsed (click)="isCollapsed = !isCollapsed">
 								<span *ngIf="loggedIn"><img src="{{avatar}}" alt="{{username}}"  class="rounded-circle avatar d-none d-md-inline-block" ngbTooltip="Your Dashboard" placement="bottom"> Your Dashboard</span>
 								<span *ngIf="!loggedIn"><img src="../../../assets/default.png" alt="{{username}}"  class="rounded-circle avatar d-none d-md-inline-block" ngbTooltip="Your Dashboard" placement="bottom"> Your Dashboard</span>
 							</a>
 						</li>
 				<li class="nav-item">
-					<a class="nav-link" *ngIf="!this.auth.isLoggedIn()" (click)="openSignUp()">
+					<a class="nav-link" *ngIf="!this.auth.isLoggedIn()" (click)="openSignUp(); isCollapsed = !isCollapsed">
 						<button class="btn btn-outline-white">Sign Up
 							<i class="fas fa-user-plus"></i>
 						</button>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" *ngIf="!this.auth.isLoggedIn()" (click)="openLogin()">
+					<a class="nav-link" *ngIf="!this.auth.isLoggedIn()" (click)="openLogin(); isCollapsed = !isCollapsed">
 						<button class="btn btn-outline-white">Login
 							<i class="fas fa-sign-in-alt"></i>
 						</button>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link text-right" (click)="this.auth.logout()" *ngIf="this.auth.isLoggedIn()">
+					<a class="nav-link text-right" (click)="this.auth.logout(); isCollapsed = !isCollapsed" *ngIf="this.auth.isLoggedIn()">
 						<button class="btn btn-danger">Logout
 							<i class="fas fa-sign-out-alt"></i>
 						</button>
