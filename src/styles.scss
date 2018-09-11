@@ -116,3 +116,8 @@ a {
 		}
 	}
 }
+
+/* Fixing where the boostrap modal will add pading in a glitch */
+body {
+	padding-right: 0 !important;
+}
