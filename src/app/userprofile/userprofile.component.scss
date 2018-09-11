@@ -21,24 +21,10 @@
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
 }
-.icons {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: row;
-	        flex-direction: row;
-	-ms-flex-pack: distribute;
-	    justify-content: space-around;
 
-	i {
-		font-size: 1.8rem;
-	}
-}
 .text-bg {
 	position: relative;
 	display: inline-block;
@@ -51,21 +37,27 @@
 }
 
 #social-icons {
-	.fa-circle {
-		color: #112938;
+	margin: 15px 0;
+	text-align: center;
+	font-size: 2rem;
+
+	.fa-facebook {
+		color: #3b5998;
 	}
-	.fab {
-		color: #fff;
+	.fa-github {
+		color: #333;
 	}
-	.fa-stack {
-		&:hover {
-			.fas {
-				color: #FF5722;
-			}
-			.fab {
-				color: #fff;
-			}
-		}
+	.fa-twitter {
+		color: #1da1f2;
+	}
+	.fa-linkedin {
+		color: #0077b5;
+	}
+	.fa-youtube {
+		color: #ff0000;
+	}
+	.fa-instragram {
+		color: #5851db;
 	}
 }
 

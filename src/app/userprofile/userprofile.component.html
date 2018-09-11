@@ -4,83 +4,64 @@
 </ngx-spinner>
 
 <section class="push-down">
-	<div class="profile">
-		<div class="card card-body profile-background text-white mb-3" [ngStyle]="{'background-image': support ? 'url('+ profile?.backgroundImage + ')' : 'url(' + normalBackground +') no-repeat center center', 'background-size': 'cover', 'background-attachment': 'fixed', 'height': '80vh'}">
+	<div class="container-fluid">
 
-			<div class="row">
-				<div class="m-auto">
-					<img class="rounded-circle profile-image" src="{{profile?.avatar}}" alt="{{user?.username}}">
-				</div>
-			</div>
-			<div class="text-center profile-container">
-				<h1 class="text-bg"><span *ngIf="profile?.firstName">{{profile?.firstName}} </span> <span>"{{user?.username}}"</span>
-					<span *ngIf="profile?.lastName"> {{profile?.lastName}}</span></h1>
-				<p class="lead text-bg">{{profile?.title}}
-					<span *ngIf="profile?.company">@</span> {{profile?.company}}</p>
-				<div *ngIf="support" class="supporter text-center mx-auto content">
-					<span>Supporter
-						<i class="fas fa-star"></i>
-					</span>
-				</div>
-				<div class="container mt-3" id="social-icons">
-					<div class="row">
-						<div class="col-sm-4 col-md-2">
-							<a href="https://www.facebook.com/{{profile?.facebook}}" target="_blank" *ngIf="profile?.facebook">
-								<span class="fa-stack fa-1x" placement="bottom" ngbTooltip="Find me on Facebook">
-									<i class="fas fa-circle fa-stack-2x"></i>
-									<i class="fab fa-facebook fa-stack-1x"></i>
-								</span>
-							</a>
-
-						</div>
-						<div class="col-sm-4 col-md-2">
-							<a href="https://www.github.com/{{profile?.github}}" target="_blank" *ngIf="profile?.github">
-								<span class="fa-stack fa-1x" placement="bottom" ngbTooltip="Find me on Github">
-									<i class="fas fa-circle fa-stack-2x"></i>
-									<i class="fab fa-github fa-stack-1x"></i>
-								</span>
-							</a>
-						</div>
-						<div class="col-sm-4 col-md-2">
-							<a href="https://www.linkedin.com/in/{{profile?.linkedin}}" target="_blank" *ngIf="profile?.linkedin">
-								<span class="fa-stack fa-1x" placement="bottom" ngbTooltip="Connect with me on LinkedIn">
-									<i class="fas fa-circle fa-stack-2x fa-inverse"></i>
-									<i class="fab fa-linkedin fa-stack-1x"></i>
-								</span>
-							</a>
-						</div>
-						<div class="col-sm-4 col-md-2">
-							<a href="https://www.youtube.com/channel/{{profile?.youtube}}" target="_blank" *ngIf="profile?.youtube">
-								<span class="fa-stack fa-1x" placement="bottom" ngbTooltip="Subscribe to me on YouTube">
-									<i class="fas fa-circle fa-stack-2x fa-inverse"></i>
-									<i class="fab fa-youtube fa-stack-1x"></i>
-								</span>
-							</a>
-						</div>
-						<div class="col-sm-4 col-md-2">
-							<a href="https://www.twitter.com/{{profile?.twitter}}" target="_blank" *ngIf="profile?.twitter">
-								<span class="fa-stack fa-1x" placement="bottom" ngbTooltip="Follow me on Twitter">
-									<i class="fas fa-circle fa-stack-2x fa-inverse"></i>
-									<i class="fab fa-twitter fa-stack-1x"></i>
-								</span>
-							</a>
-						</div>
-						<div class="col-sm-4 col-md-2">
-							<a href="https://www.instagram.com/{{profile?.instagram}}" *ngIf="profile?.instagram">
-								<span class="fa-stack fa-1x" placement="bottom" ngbTooltip="Follow me on Instagram">
-									<i class="fas fa-circle fa-stack-2x fa-inverse"></i>
-									<i class="fab fa-instagram fa-stack-1x"></i>
-								</span>
-							</a>
-						</div>
+		<div class="profile">
+			<div class="card card-body profile-background text-white mb-3" [ngStyle]="{'background-image': support ? 'url('+ profile?.backgroundImage + ')' : 'url(' + normalBackground +') no-repeat center center', 'background-size': 'cover', 'background-attachment': 'fixed', 'height': '80vh'}">
+				<div class="row">
+					<div class="m-auto">
+						<img class="rounded-circle profile-image" src="{{profile?.avatar}}" alt="{{user?.username}}">
 					</div>
 				</div>
-				<div class="social-profile">
+				<div class="text-center profile-container">
+					<h1 class="text-bg"><span *ngIf="profile?.firstName">{{profile?.firstName}} </span> <span>"{{user?.username}}"</span>
+						<span *ngIf="profile?.lastName"> {{profile?.lastName}}</span></h1>
+					<p class="lead text-bg">{{profile?.title}}
+						<span *ngIf="profile?.company">@</span> {{profile?.company}}</p>
+					<div *ngIf="support" class="supporter text-center mx-auto content">
+						<span>Supporter
+							<i class="fas fa-star"></i>
+						</span>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="container">
+		<div class="row" id="social-icons">
+			<div class="col-sm-6 col-md-4 col" *ngIf="profile?.facebook">
+				<a href="https://www.facebook.com/{{profile?.facebook}}" target="_blank" aria-label="Find me on Facebook">
+					<i class="fab fa-facebook" placement="bottom" ngbTooltip="Find me on Facebook"></i>
+				</a>
+
+			</div>
+			<div class="col-sm-6 col-md-4 col" *ngIf="profile?.github">
+				<a href="https://www.github.com/{{profile?.github}}" target="_blank" aria-label="Find me on Github">
+					<i class="fab fa-github" placement="bottom" ngbTooltip="Find me on Github"></i>
+				</a>
+			</div>
+			<div class="col-sm-6 col-md-4 col" *ngIf="profile?.linkedin">
+				<a href="https://www.linkedin.com/in/{{profile?.linkedin}}" target="_blank" aria-label="Connect with me on LinkedIn">
+					<i class="fab fa-linkedin" placement="bottom" ngbTooltip="Connect with me on LinkedIn"></i>
+				</a>
+			</div>
+			<div class="col-sm-6 col-md-4 col" *ngIf="profile?.youtube">
+				<a href="https://www.youtube.com/channel/{{profile?.youtube}}" target="_blank" aria-label="Subscribe to me on YouTube">
+					<i class="fab fa-youtube" placement="bottom" ngbTooltip="Subscribe to me on YouTube"> </i>
+				</a>
+			</div>
+			<div class="col-sm-6 col-md-4 col" *ngIf="profile?.twitter">
+				<a href="https://www.twitter.com/{{profile?.twitter}}" target="_blank" aria-label="Follow me on Twitter">
+					<i class="fab fa-twitter" placement="bottom" ngbTooltip="Follow me on Twitter"></i>
+				</a>
+			</div>
+			<div class="col-sm-6 col-md-4 col" *ngIf="profile?.instagram">
+				<a href="https://www.instagram.com/{{profile?.instagram}}" aria-label="Follow me on Instagram">
+					<i class=" fab fa-instagram" placement="Lbottom" ngbTooltip="Follow me on Instagram"></i>
+				</a>
+			</div>
+
+		</div>
 		<div class="row">
 			<div class="col-sm-12 col-md-9" *ngIf="profile?.bio" [ngClass]="{'col-md-12': user?.skills.length <= 0}">
 				<article class="card card-body mb-3">
