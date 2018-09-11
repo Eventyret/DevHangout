@@ -81,10 +81,9 @@ export class EditProfileComponent implements OnInit {
 	}
 
 	getRepo(username) {
-		if (localStorage)
-			this.githubService.gitRepo(username).subscribe(info => {
-				this.githubData = info;
-			});
+		this.githubService.gitRepo(username).subscribe(info => {
+			this.githubData = info;
+		});
 	}
 
 	onChanges() {
