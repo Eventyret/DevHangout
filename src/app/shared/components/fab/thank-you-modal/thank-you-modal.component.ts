@@ -3,6 +3,7 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { DataService } from "../../../../dashboard-page/services/data.service";
 import { AuthService } from "../../../services/auth/auth.service";
 import { User } from "../../../models/users";
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
 	selector: "app-thank-you-modal",
@@ -17,45 +18,48 @@ export class ThankYouModalComponent implements OnInit {
 	user: User;
 	info: any;
 	card: any;
-	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private auth: AuthService) {}
+	date: number;
+	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private auth: AuthService, private spinner: NgxSpinnerService) {}
 
 	ngOnInit() {
 		this.updateSupporterStatus();
 	}
 
 	updateSupporterStatus() {
-		const donationStatus = {
-			donator: true
-		};
-		const donationInfo = {
-			id: this.id,
-			user: this.id,
-			amount: this.amount,
-			date: this.info.created,
-			token: this.token,
-			ip: this.info.client_ip
-		};
-		this.dataService.updateDetails("profile", this.id, donationStatus).subscribe(
-			results => {},
-			error => {
-				console.log(error);
-			},
-			() => {
-				this.auth.getUser(this.id).subscribe(result => {
-					this.user = result;
-				});
-			}
-		);
-		this.dataService.newDetails("donations", donationInfo).subscribe(
-			results => {},
-			error => {
-				console.log(error);
-			},
-			() => {
-				this.auth.getUser(this.id).subscribe(results => {
-					this.user = results;
-				});
-			}
-		);
+		if (this.id) {
+			const donationStatus = {
+				donator: true
+			};
+			const donationInfo = {
+				id: this.id,
+				user: this.id,
+				amount: this.amount,
+				date: this.info.created,
+				token: this.token,
+				ip: this.info.client_ip
+			};
+			this.dataService.updateDetails("profile", this.id, donationStatus).subscribe(
+				results => {},
+				error => {
+					console.log(error);
+				},
+				() => {
+					this.auth.getUser(this.id).subscribe(result => {
+						this.user = result;
+					});
+				}
+			);
+			this.dataService.newDetails("donations", donationInfo).subscribe(
+				results => {},
+				error => {
+					console.log(error);
+				},
+				() => {
+					this.auth.getUser(this.id).subscribe(results => {
+						this.user = results;
+					});
+				}
+			);
+		}
 	}
 }

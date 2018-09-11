@@ -1,12 +1,11 @@
 <ngx-spinner bdColor="rgba(39,128,227,0)"
              size="large"
              color="#FFEB3B">
-	<p>Playing balls with stripe</p>
 </ngx-spinner>
 <section>
 
 	<div class="modal-header">
-		<h4 class="modal-title">Donation Information</h4>
+		<h4 class="modal-title">Thank you {{name}}!</h4>
 		<button type="button"
 		        class="close"
 		        aria-label="Close"
@@ -16,13 +15,49 @@
 	</div>
 	<div class="modal-body">
 		<div class="donate-info">
+			<p>First of all <b>Thank You!</b> we appreciate your support<br />
+				So as a token of appreciation we have supercharged your account with some new superpowers!
+			</p>
+			<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-3">
+							<span class="icons"
+								  ngbTooltip="You can now add your own background image. Just edit your profile."><i class="fas fa-image"></i> <i class="fas fa-check fa-2x"></i></span>
+						</div>
+						<div class="col-sm-3">
+							<span class="icons"
+								  ngbTooltip="Access to adding your own portfolio work.  (Work in progress)"><i class="fas fa-briefcase"></i> <i class="fas fa-check fa-2x"></i></span>
+						</div>
+						<div class="col-sm-3">
+							<span class="icons"
+								  ngbTooltip="A supporter only badge to show off to everyone!"><i class="fas fa-ribbon"></i> <i class="fas fa-check fa-2x"></i></span>
+						</div>
+						<div class="col-sm-3">
+							<span class="icons"
+								  ngbTooltip="Our eternal gratitude!"><i class="fas fa-heart"></i><i class="fas fa-check fa-2x"></i></span>
+						</div>
+					</div>
+				</div>
 
-			Thank you {{name}}!
-			{{token}}
-			{{amount}}
-			{{id}}
-			{{info.client_ip}}
-			{{info.created * 1000 | date: "medium"}}
+
+			<ul class="list-group my-3">
+				<li class=" list-group-item d-flex justify-content-between align-items-center">
+					<span><i class="far fa-money-bill-alt"></i> Amount:</span>
+					{{amount | currency: ["USD"]}}
+				</li>
+				<li class=" list-group-item d-flex justify-content-between align-items-center">
+					<span><i class="fas fa-clock"></i> Date:</span>
+					{{date * 1000 | date: "dd MMM yyyy - HH:mm"}}
+				</li>
+				<li class=" list-group-item d-flex justify-content-between align-items-center">
+					<span><i class="fab fa-cc-stripe"></i> Stripe Token:</span>
+					{{token}}
+				</li>
+				<li class=" list-group-item d-flex justify-content-between align-items-center">
+					<span><i class="fas fa-hdd"></i> IP Address:</span>
+					{{info.client_ip}}
+				</li>
+			</ul>
 		</div>
 	</div>
 

@@ -60,9 +60,7 @@ export class SupporterModalComponent implements OnInit {
 			if (results.token) {
 				this.notify.success("Thank you " + this.cardName + "!");
 				this.activeModal.dismiss();
-
 				this.openThankYou(results);
-				this.spinner.hide();
 				// Use the token to create a charge or a customer
 				// https://stripe.com/docs/charges
 			} else if (results.error) {
@@ -74,17 +72,20 @@ export class SupporterModalComponent implements OnInit {
 		});
 	}
 	openThankYou(results) {
+		this.spinner.hide();
 		const modalRef = this.modalService.open(ThankYouModalComponent, {
 			centered: true,
 			size: "lg",
 			backdropClass: "light-blue-backdrop",
 			backdrop: "static"
 		});
-		modalRef.componentInstance.name = this.name;
+		modalRef.componentInstance.name = this.cardName;
 		modalRef.componentInstance.amount = this.amount;
 		modalRef.componentInstance.token = results.token.id;
 		modalRef.componentInstance.info = results.token;
+		modalRef.componentInstance.date = results.token.created;
 		modalRef.componentInstance.card = results.token.card;
 		modalRef.componentInstance.id = localStorage.getItem("user_id");
+		console.log(results);
 	}
 }
