@@ -15,7 +15,6 @@ export class FabComponent implements OnInit {
 	spin: any;
 	constructor(private modalService: NgbModal) {}
 	ngOnInit() {
-		this.name = "Anonymous";
 	}
 
 	open(event: any) {
@@ -25,8 +24,9 @@ export class FabComponent implements OnInit {
 		} else if (target === "supporterButton") {
 			this.comp = SupporterModalComponent;
 		}
-		if (!localStorage.getItem("username")) {
+		if (!localStorage.getItem("username")  || !this.name) {
 			this.loggedIn = false;
+			this.name = "Anonymous";
 		} else {
 			this.loggedIn = true;
 			this.name = localStorage.getItem("username");

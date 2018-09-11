@@ -27,7 +27,7 @@ export class InfoModalComponent implements OnInit {
 		}
 		if (localStorage.getItem("username")) {
 			this.name = localStorage.getItem("username");
-		} else if (localStorage.getItem("username") === null) {
+		} else if (!localStorage.getItem("username")) {
 			this.name = "Anonymous";
 		}
 		const modalRef = this.modalService.open(this.comp, {
