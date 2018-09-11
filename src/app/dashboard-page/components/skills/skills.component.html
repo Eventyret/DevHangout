@@ -11,6 +11,9 @@
 				<div class="row">
 					<h2>We are currently working on this feature and will release it soon</h2>
 					<h2>Please check back at a later time</h2>
+					<div *ngFor="let skill of allSkills">
+						<i class="{{skill?.icon}}"></i>
+					</div>
 				</div>
 			</div>
 		</div>

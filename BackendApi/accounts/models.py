@@ -40,8 +40,7 @@ class Profile(models.Model):
 
 
 class Education(models.Model):
-    user = models.ForeignKey(
-        User, related_name="edu_user", on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name="edu_user", on_delete=models.CASCADE)
     school = models.CharField(max_length=50)
     qualification = models.CharField(max_length=50)
     fieldOfStudy = models.CharField(max_length=50)
