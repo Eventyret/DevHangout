@@ -1,5 +1,7 @@
-.fa-heart,.fa-info,.fa-question {
-	color:  #fff;
+.fa-heart,
+.fa-info,
+.fa-question {
+	color: #fff;
 	font-size: 2.2rem;
 	margin-top: 4px;
 }
@@ -18,7 +20,7 @@
 }
 .fab-buttons {
 	border-radius: 50%;
-	background-color: #FF5722;
+	background-color: #ff5722;
 	display: block;
 	width: 56px;
 	height: 56px;
@@ -93,4 +95,17 @@
 		-ms-transform: scale(1.1);
 		transform: scale(1.1);
 	}
+}
+
+@keyframes rotate-center {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.fa-question {
+	animation: rotate-center 5s ease-in-out infinite reverse both
 }
