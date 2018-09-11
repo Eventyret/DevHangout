@@ -7,7 +7,7 @@ import { Component, OnInit } from "@angular/core";
 import { NgbModal, NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { NgxSpinnerService } from "ngx-spinner";
 import { AuthService } from "../shared/services/auth/auth.service";
-import { User, Profile } from "../shared/models/users";
+import { User, Profile } from "../shared/models/users.model";
 import { DataService } from "./services/data.service";
 import { NotificationsService } from "angular2-notifications";
 import { SkillsComponent } from "./components/skills/skills.component";

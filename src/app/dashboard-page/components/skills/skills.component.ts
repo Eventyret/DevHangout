@@ -3,7 +3,7 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { DataService } from "../../services/data.service";
 import { NotificationsService } from "angular2-notifications";
 import { SkillsService } from "../../services/skills.service";
-import { Skill } from "../../../shared/models/users";
+import { Skill } from "../../../shared/models/users.model";
 import { merge as _merge, filter as _filter } from "lodash";
 
 @Component({

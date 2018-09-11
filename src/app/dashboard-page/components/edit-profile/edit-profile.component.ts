@@ -4,7 +4,7 @@ import { GithubService } from "../../../shared/services/api/github.service";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { DataService } from "../../services/data.service";
 import { NotificationsService } from "angular2-notifications";
-import { Profile } from "../../../shared/models/users";
+import { Profile } from "../../../shared/models/users.model";
 import { AuthService } from "../../../shared/services/auth/auth.service";
 
 @Component({

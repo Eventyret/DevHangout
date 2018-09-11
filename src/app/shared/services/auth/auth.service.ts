@@ -1,10 +1,10 @@
-import { User } from "./../../models/users";
+import { User } from "../../models/users.model";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { JwtHelperService } from "@auth0/angular-jwt";
 import { map } from "rxjs/operators";
 import "rxjs/add/operator/catch";
-import { Token } from "../../models/token";
+import { Token } from "../../models/token.model";
 import { Router } from "@angular/router";
 import { NotificationsService } from "angular2-notifications";
 import { NgxSpinnerService } from "ngx-spinner";

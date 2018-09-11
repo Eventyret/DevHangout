@@ -2,7 +2,7 @@ import { GithubService } from "../shared/services/api/github.service";
 import { Component, OnInit } from "@angular/core";
 import { sample as _sample } from "lodash";
 import { ActivatedRoute } from "@angular/router";
-import { Tab } from "../shared/models/users";
+import { Tab } from "../shared/models/users.model";
 import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({

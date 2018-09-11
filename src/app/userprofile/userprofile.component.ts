@@ -6,7 +6,7 @@ import { find as _find } from "lodash";
 import { NgxSpinnerService } from "ngx-spinner";
 import { FakeService } from "../shared/services/api/fake.service";
 import { AuthService } from "../shared/services/auth/auth.service";
-import { User, Profile } from "../shared/models/users";
+import { User, Profile } from "../shared/models/users.model";
 import { environment } from "../../environments/environment";
 
 @Component({

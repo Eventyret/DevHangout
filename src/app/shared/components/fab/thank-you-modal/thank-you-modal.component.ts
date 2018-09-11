@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { DataService } from "../../../../dashboard-page/services/data.service";
 import { AuthService } from "../../../services/auth/auth.service";
-import { User } from "../../../models/users";
+import { User } from "../../../models/users.model";
 import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({

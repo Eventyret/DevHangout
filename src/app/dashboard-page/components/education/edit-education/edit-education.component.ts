@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NgbModal, NgbActiveModal, NgbCheckBox } from "@ng-bootstrap/ng-bootstrap";
 import { DataService } from "../../../services/data.service";
-import { Education } from "../../../../shared/models/users";
+import { Education } from "../../../../shared/models/users.model";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { NotificationsService } from "angular2-notifications";
 import { AuthService } from "../../../../shared/services/auth/auth.service";
