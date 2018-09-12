@@ -18,7 +18,7 @@
 							<h2>Pick a Skill</h2>
 							<ul class="list-inline">
 								<li class="list-inline-item" *ngFor="let skill of uniqueSkills">
-									<i class="{{skill?.icon}}" *ngIf="!skill.id" (click)="updateSkill(skill)"></i>
+									<i class="{{skill?.icon}}" ngbTooltip="{{skill?.name}}" *ngIf="!skill.id" (click)="updateSkill(skill)"></i>
 								</li>
 							</ul>
 						</div>
@@ -26,7 +26,7 @@
 							<h2> Your Skills</h2>
 							<ul class="list-inline">
 								<li class="list-inline-item" *ngFor="let skill of uniqueSkills">
-									<i class="{{skill?.icon}}" *ngIf="skill.id" (click)="deleteSkill(skill?.id)"></i>
+									<i class="{{skill?.icon}}" ngbTooltip="{{skill?.name}}" *ngIf="skill.id" (click)="deleteSkill(skill?.id)"></i>
 								</li>
 							</ul>
 						</div>
