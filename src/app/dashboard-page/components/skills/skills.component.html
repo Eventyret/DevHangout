@@ -11,19 +11,18 @@
 				<div class="row">
 					<p>We are currently working on this feature and will release it soon
 						Please check back at a later time</p>
-					<div class="col-sm-6">
+					<div class="col-sm-6" *ngIf="allSkills">
 						<div *ngFor="let skill of allSkills">
-							<i class="{{skill?.icon}}" (click)="updateSkill(skill)" *ngIf="!skill?.user"></i>
+							<i class="{{skill?.icon}}" (click)="updateSkill(skill)"></i>
 						</div>
 					</div>
-				</div>
-				<div class="col-sm-6">
-					<div *ngFor="let skill of userSkills">
-						<i class="{{skill?.icon}}" (click)="deleteSkill(skill?.id)" *ngIf="skill?.user"></i>
+					<div class="col-sm-6" *ngIf="userSkills">
+						<div *ngFor="let skill of userSkills">
+							<i class="{{skill?.icon}}" (click)="deleteSkill(skill?.id)" *ngIf="skill?.user"></i>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 </section>
