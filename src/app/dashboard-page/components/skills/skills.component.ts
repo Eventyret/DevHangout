@@ -47,8 +47,7 @@ export class SkillsComponent implements OnInit {
 		this.skillsService.getUserSkills().subscribe(
 			skills => {
 				this.allSkills = allSkills;
-				this.uniqueSkills = _unionBy(_merge(allSkills, skills), "skillID")
-				console.log(this.uniqueSkills);
+				this.uniqueSkills = _unionBy(_merge(allSkills, skills), "skillID");
 			},
 			error => {
 				console.log(error);
