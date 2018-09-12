@@ -30,20 +30,4 @@ export class SkillsService {
 				return throwError(error);
 			});
 	}
-	deleteUserSkills(skill) {
-		return this.http
-			.delete(this.API_URL + "/api/users/" + this.userID + "/skills/", skill)
-			.pipe(map((data: any) => data))
-			.catch((error: any) => {
-				return throwError(error);
-			});
-	}
-	newUserSkill(skill) {
-		return this.http
-			.put(this.API_URL + "/api/users/" + this.userID + "/skills/", skill)
-			.pipe(map((data: any) => data))
-			.catch((error: any) => {
-				return throwError(error);
-			});
-	}
 }

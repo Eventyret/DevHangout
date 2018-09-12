@@ -41,7 +41,9 @@ export interface Experience {
 }
 
 export interface Skill {
-	id: number;
+	user: number;
+	id?: number;
+	skillID: number;
 	name: string;
 	icon: string;
 	owned: boolean;
