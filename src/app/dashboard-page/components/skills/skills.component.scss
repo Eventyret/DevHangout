@@ -1,4 +1,12 @@
-i {
-	font-size: 3rem;
-	display: block;
+
+.test {
+	display:flex;
+	flex-wrap: wrap;
+	.parent {
+		width: 50%;
+		i {
+			font-size: 3rem;
+			margin: 10px auto;
+		}
+	}
 }

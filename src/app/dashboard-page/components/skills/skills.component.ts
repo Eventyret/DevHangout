@@ -3,7 +3,7 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { NotificationsService } from "angular2-notifications";
 import { SkillsService } from "../../services/skills.service";
 import { Skill } from "../../../shared/models/users.model";
-import { merge as _merge, filter as _filter  } from "lodash";
+import { merge as _merge } from "lodash";
 import { AuthService } from "../../../shared/services/auth/auth.service";
 import { DataService } from "../../services/data.service";
 
@@ -17,9 +17,7 @@ export class SkillsComponent implements OnInit {
 	id: number;
 	allSkills: any;
 	userSkills: any;
-	uniqueList: any;
 	combinedSkilles: any;
-	ownedSkills: boolean;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -48,13 +46,10 @@ export class SkillsComponent implements OnInit {
 		this.skillsService.getUserSkills().subscribe(
 			skills => {
 				this.userSkills = skills;
-				const tempList = _merge(allSkills, skills);
-				this.allSkills = _filter(tempList, function(o) {
-					return !o.user;
-				});
-
+				this.allSkills = allSkills;
 				console.log(this.allSkills);
 				console.log(this.userSkills);
+				this.combinedSkilles = _merge(allSkills, skills)
 			},
 			error => {
 				console.log(error);

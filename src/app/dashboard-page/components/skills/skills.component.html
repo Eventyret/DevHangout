@@ -11,14 +11,12 @@
 				<div class="row">
 					<p>We are currently working on this feature and will release it soon
 						Please check back at a later time</p>
-					<div class="col-sm-6" *ngIf="allSkills">
-						<div *ngFor="let skill of allSkills">
-							<i class="{{skill?.icon}}" (click)="updateSkill(skill)"></i>
-						</div>
-					</div>
-					<div class="col-sm-6" *ngIf="userSkills">
-						<div *ngFor="let skill of userSkills">
-							<i class="{{skill?.icon}}" (click)="deleteSkill(skill?.id)" *ngIf="skill?.user"></i>
+					<div class="test">
+						<div class="parent" *ngFor="let skill of combinedSkilles">
+							<h2 *ngIf="!skill.owned">Pick a Skill</h2>
+							<i class="{{skill?.icon}}" *ngIf="!skill.owned" (click)="updateSkill(skill)"></i>
+							<h2 *ngIf="skill.owned"> Your Skills</h2>
+							<i class="{{skill?.icon}}" *ngIf="skill.owned" (click)="deleteSkill(skill?.id)"></i>
 						</div>
 					</div>
 				</div>
