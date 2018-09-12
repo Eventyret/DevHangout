@@ -1,0 +1,44 @@
+.navbar-toggler {
+	border-color: transparent;
+	&:focus {
+		outline: none;
+	}
+}
+
+.navbar,
+.nav-link,
+.nav-item,
+.fa-bars,
+.navbar-brand {
+	color: #fff;
+}
+
+nav {
+	background: #112938;
+}
+.nav-link {
+	cursor: pointer;
+}
+li > a > .fas {
+	margin-top: 3px;
+	font-size: 1.85rem;
+}
+
+.fa-sign-out-alt,
+.fa-user-plus,
+.fa-sign-in-alt {
+	font-size: 1rem;
+}
+.avatar {
+	height: 40px;
+	width: 38px;
+}
+
+@media screen and (max-width: 768px) {
+	.navbar-nav {
+		justify-content: space-around;
+	}
+	.nav-link {
+		text-align: center;
+	}
+}

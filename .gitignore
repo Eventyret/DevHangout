@@ -38,3 +38,21 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+*.pyc
+__pycache__/
+#No need for Virtual Env
+.venv/
+env/
+venv/
+.env/
+.venv/
+# for use for dev enviroment
+dev.py
+*.pyc
+__pycache__/
+.vscode/
+.vscode/settings.json
+
+BackendApi/env.py
+env.py
+.env

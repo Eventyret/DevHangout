@@ -1,0 +1,59 @@
+.info {
+	height: 80vh;
+	@media screen and (max-width: 1200px) {
+		height: 100vh;
+	}
+}
+.divider {
+	background: #112938;
+	color: #fff;
+	.col-md-12 {
+		background: #e0ebcf;
+		color: #112938;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+	}
+}
+
+.gradient {
+	background: rgb(224, 235, 207);
+	background: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(1%, rgba(224, 235, 207, 1)),
+		color-stop(8%, rgba(224, 235, 207, 1)),
+		color-stop(20%, rgba(17, 41, 56, 1)),
+		to(rgba(17, 41, 56, 1))
+	) !important;
+	background: linear-gradient(
+		to bottom,
+		rgba(224, 235, 207, 1) 1%,
+		rgba(224, 235, 207, 1) 8%,
+		rgba(17, 41, 56, 1) 20%,
+		rgba(17, 41, 56, 1) 100%
+	) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0ebcf', endColorstr='#112938',GradientType=0 ) !important;
+	color: #fff !important;
+}
+
+.fa-8x {
+	font-size: 12rem;
+}
+
+@media screen and (max-width: 576px) {
+	.btn {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+	.fa-8x {
+		font-size: 5rem;
+	}
+}

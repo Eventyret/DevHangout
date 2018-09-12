@@ -1,0 +1,28 @@
+<section>
+	<div class="modal-header">
+		<h4 class="modal-title">Editing your Skills</h4>
+		<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+			<i class="fas fa-times"></i>
+		</button>
+	</div>
+	<div class="modal-body">
+		<div class="skills">
+			<div class="container">
+				<div class="row">
+					<p>We are currently working on this feature and will release it soon
+						Please check back at a later time</p>
+					<div *ngFor="let skill of allSkills">
+						<div class="col-sm-6" *ngIf="!skill?.owned">
+							<i class="{{skill?.icon}}" (click)="updateSkill(skill)"></i>
+						</div>
+					</div>
+					<div *ngFor="let skill of userSkills">
+						<div class="col-sm-6" *ngIf="skill?.owned">
+							<i class="{{skill?.icon}}"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
