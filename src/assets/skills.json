@@ -1,238 +1,279 @@
 [
 	{
+		"user": null,
 		"skillID": 1,
 		"name": "Android",
 		"icon": "devicon-android-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 2,
 		"name": "Angular",
 		"icon": "devicon-angularjs-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 3,
 		"name": "Backbone JS",
 		"icon": "devicon-backbonejs-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 4,
 		"name": "Bootstrap",
 		"icon": "devicon-bootstrap-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 5,
 		"name": "C",
 		"icon": "devicon-c-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 6,
 		"name": "Code Igniter",
 		"icon": "devicon-codeigniter-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 7,
 		"name": "Coffeescript",
 		"icon": "devicon-coffeescript-original  colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 8,
 		"name": "C++",
 		"icon": "devicon-cplusplus-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 9,
 		"name": "C#",
 		"icon": "devicon-csharp-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 10,
 		"name": "CSS",
 		"icon": "devicon-css3-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 11,
 		"name": "D3js",
 		"icon": "devicon-d3js-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 12,
 		"name": "Django",
 		"icon": "devicon-django-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 13,
 		"name": "Docker",
 		"icon": "devicon-docker-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 14,
 		"name": ".net",
 		"icon": "devicon-dot-net-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 15,
 		"name": "Drupal",
 		"icon": "devicon-drupal-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 16,
 		"name": "Foundation",
 		"icon": "devicon-foundation-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 17,
 		"name": "Gatling",
 		"icon": "devicon-gatling-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 18,
 		"name": "Git",
 		"icon": "devicon-github-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 19,
 		"name": "Grunt",
 		"icon": "devicon-grunt-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 20,
 		"name": "CSS",
 		"icon": "devicon-gulp-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 21,
 		"name": "Heroku",
 		"icon": "devicon-heroku-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 21,
 		"name": "HTML",
 		"icon": "devicon-html5-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 22,
 		"name": "Java",
 		"icon": "devicon-java-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 23,
 		"name": "JavaScript",
 		"icon": "devicon-javascript-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 24,
 		"name": "jQuery",
 		"icon": "devicon-jquery-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 25,
 		"name": "Laravel",
 		"icon": "devicon-laravel-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 26,
 		"name": "noSQL",
 		"icon": "devicon-mongodb-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 27,
 		"name": "MySQL",
 		"icon": "devicon-mysql-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 28,
 		"name": "NodeJS",
 		"icon": "devicon-nodejs-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 29,
 		"name": "PHP",
 		"icon": "devicon-php-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 30,
 		"name": "PostgreSQL",
 		"icon": "devicon-postgresql-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 31,
 		"name": "Python",
 		"icon": "devicon-python-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 32,
 		"name": "Ruby on Rails",
 		"icon": "devicon-rails-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 33,
 		"name": "SASS",
 		"icon": "devicon-sass-original  colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 34,
 		"name": "Swift",
 		"icon": "devicon-swift-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 35,
 		"name": "Symfony",
-		"icon": "devicon-symfony-original colored"
+		"icon": "devicon-symfony-original colored",
+		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 36,
 		"name": "TypeScript",
 		"icon": "devicon-typescript-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 37,
 		"name": "VSCode",
 		"icon": "devicon-visualstudio-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 38,
 		"name": "VueJS",
 		"icon": "devicon-vuejs-plain colored",
 		"owned": false
 	},
 	{
+		"user": null,
 		"skillID": 39,
 		"name": "Wordpress",
 		"icon": "devicon-wordpress-plain colored",
