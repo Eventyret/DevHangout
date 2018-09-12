@@ -46,11 +46,9 @@ export class SkillsComponent implements OnInit {
 		this.id = JSON.parse(localStorage.getItem("user_id"));
 		this.skillsService.getUserSkills().subscribe(
 			skills => {
-				this.userSkills = skills;
 				this.allSkills = allSkills;
 				this.uniqueSkills = _unionBy(_merge(allSkills, skills), "skillID")
-				console.log(allSkills)
-				console.log(this.uniqueSkills)
+				console.log(this.uniqueSkills);
 			},
 			error => {
 				console.log(error);
@@ -60,7 +58,7 @@ export class SkillsComponent implements OnInit {
 	}
 
 	updateSkill(data: Skill) {
-		if (!data.user) {
+		if (data.user === 0) {
 			const newSkill: Skill = {
 				user: this.id,
 				skillID: data.skillID,

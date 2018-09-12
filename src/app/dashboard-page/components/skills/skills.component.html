@@ -9,16 +9,26 @@
 		<div class="skills">
 			<div class="container">
 				<div class="row">
-					<p>We are currently working on this feature and will release it soon
-						Please check back at a later time</p>
-					<div class="test">
-						<h2>Pick a Skill</h2>
-						<div class="parent" *ngFor="let skill of uniqueSkills">
-							<i class="{{skill?.icon}}" *ngIf="!skill.owned" (click)="updateSkill(skill)"></i>
+					<div class="col-sm-12">
+						<p>We are currently working on this feature and will release it soon
+							Please check back at a later time</p>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<h2>Pick a Skill</h2>
+							<ul class="list-inline">
+								<li class="list-inline-item" *ngFor="let skill of uniqueSkills">
+									<i class="{{skill?.icon}}" *ngIf="!skill.id" (click)="updateSkill(skill)"></i>
+								</li>
+							</ul>
 						</div>
-						<h2> Your Skills</h2>
-						<div class="parent" *ngFor="let skill of uniqueSkills">
-							<i class="{{skill?.icon}}" *ngIf="skill.owned" (click)="deleteSkill(skill?.id)"></i>
+						<div class="col-sm-12">
+							<h2> Your Skills</h2>
+							<ul class="list-inline">
+								<li class="list-inline-item" *ngFor="let skill of uniqueSkills">
+									<i class="{{skill?.icon}}" *ngIf="skill.id" (click)="deleteSkill(skill?.id)"></i>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>

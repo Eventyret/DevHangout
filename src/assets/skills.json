@@ -1,273 +1,273 @@
 [
 	{
-		"user": null,
-		"skillID": 1,
+		"user": 0,
+		"skillID": 0,
 		"name": "Android",
 		"icon": "devicon-android-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 2,
+		"user": 0,
+		"skillID": 1,
 		"name": "Angular",
 		"icon": "devicon-angularjs-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 3,
+		"user": 0,
+		"skillID": 2,
 		"name": "Backbone JS",
 		"icon": "devicon-backbonejs-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 4,
+		"user": 0,
+		"skillID": 3,
 		"name": "Bootstrap",
 		"icon": "devicon-bootstrap-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 5,
+		"user": 0,
+		"skillID": 4,
 		"name": "C",
 		"icon": "devicon-c-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 6,
+		"user": 0,
+		"skillID": 5,
 		"name": "Code Igniter",
 		"icon": "devicon-codeigniter-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 7,
+		"user": 0,
+		"skillID": 6,
 		"name": "Coffeescript",
 		"icon": "devicon-coffeescript-original  colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 8,
+		"user": 0,
+		"skillID": 7,
 		"name": "C++",
 		"icon": "devicon-cplusplus-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 9,
+		"user": 0,
+		"skillID": 8,
 		"name": "C#",
 		"icon": "devicon-csharp-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 10,
+		"user": 0,
+		"skillID": 9,
 		"name": "CSS",
 		"icon": "devicon-css3-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 11,
+		"user": 0,
+		"skillID": 10,
 		"name": "D3js",
 		"icon": "devicon-d3js-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 12,
+		"user": 0,
+		"skillID": 11,
 		"name": "Django",
 		"icon": "devicon-django-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 13,
+		"user": 0,
+		"skillID": 12,
 		"name": "Docker",
 		"icon": "devicon-docker-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 14,
+		"user": 0,
+		"skillID": 13,
 		"name": ".net",
 		"icon": "devicon-dot-net-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 15,
+		"user": 0,
+		"skillID": 14,
 		"name": "Drupal",
 		"icon": "devicon-drupal-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 16,
+		"user": 0,
+		"skillID": 15,
 		"name": "Foundation",
 		"icon": "devicon-foundation-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 17,
+		"user": 0,
+		"skillID": 16,
 		"name": "Gatling",
 		"icon": "devicon-gatling-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 18,
+		"user": 0,
+		"skillID": 17,
 		"name": "Git",
 		"icon": "devicon-github-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 19,
+		"user": 0,
+		"skillID": 18,
 		"name": "Grunt",
 		"icon": "devicon-grunt-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 20,
+		"user": 0,
+		"skillID": 19,
 		"name": "Heroku",
 		"icon": "devicon-heroku-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 21,
+		"user": 0,
+		"skillID": 20,
 		"name": "HTML",
 		"icon": "devicon-html5-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 22,
+		"user": 0,
+		"skillID": 21,
 		"name": "Java",
 		"icon": "devicon-java-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 23,
+		"user": 0,
+		"skillID": 22,
 		"name": "JavaScript",
 		"icon": "devicon-javascript-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 24,
+		"user": 0,
+		"skillID": 23,
 		"name": "jQuery",
 		"icon": "devicon-jquery-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 25,
+		"user": 0,
+		"skillID": 24,
 		"name": "Laravel",
 		"icon": "devicon-laravel-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 26,
+		"user": 0,
+		"skillID": 25,
 		"name": "noSQL",
 		"icon": "devicon-mongodb-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 27,
+		"user": 0,
+		"skillID": 26,
 		"name": "MySQL",
 		"icon": "devicon-mysql-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 28,
+		"user": 0,
+		"skillID": 27,
 		"name": "NodeJS",
 		"icon": "devicon-nodejs-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 29,
+		"user": 0,
+		"skillID": 28,
 		"name": "PHP",
 		"icon": "devicon-php-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 30,
+		"user": 0,
+		"skillID": 29,
 		"name": "PostgreSQL",
 		"icon": "devicon-postgresql-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 31,
+		"user": 0,
+		"skillID": 30,
 		"name": "Python",
 		"icon": "devicon-python-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 32,
+		"user": 0,
+		"skillID": 31,
 		"name": "Ruby on Rails",
 		"icon": "devicon-rails-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 33,
+		"user": 0,
+		"skillID": 32,
 		"name": "SASS",
 		"icon": "devicon-sass-original  colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 34,
+		"user": 0,
+		"skillID": 33,
 		"name": "Swift",
 		"icon": "devicon-swift-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 35,
+		"user": 0,
+		"skillID": 34,
 		"name": "Symfony",
 		"icon": "devicon-symfony-original colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 36,
+		"user": 0,
+		"skillID": 35,
 		"name": "TypeScript",
 		"icon": "devicon-typescript-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 37,
+		"user": 0,
+		"skillID": 36,
 		"name": "VSCode",
 		"icon": "devicon-visualstudio-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 38,
+		"user": 0,
+		"skillID": 37,
 		"name": "VueJS",
 		"icon": "devicon-vuejs-plain colored",
 		"owned": false
 	},
 	{
-		"user": null,
-		"skillID": 39,
+		"user": 0,
+		"skillID": 38,
 		"name": "Wordpress",
 		"icon": "devicon-wordpress-plain colored",
 		"owned": false
