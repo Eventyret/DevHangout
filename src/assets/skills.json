@@ -135,13 +135,6 @@
 	{
 		"user": null,
 		"skillID": 20,
-		"name": "CSS",
-		"icon": "devicon-gulp-plain colored",
-		"owned": false
-	},
-	{
-		"user": null,
-		"skillID": 21,
 		"name": "Heroku",
 		"icon": "devicon-heroku-plain colored",
 		"owned": false

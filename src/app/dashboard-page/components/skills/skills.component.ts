@@ -3,7 +3,7 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { NotificationsService } from "angular2-notifications";
 import { SkillsService } from "../../services/skills.service";
 import { Skill } from "../../../shared/models/users.model";
-import { merge as _merge } from "lodash";
+import { merge as _merge, unionBy as _unionBy } from "lodash";
 import { AuthService } from "../../../shared/services/auth/auth.service";
 import { DataService } from "../../services/data.service";
 
@@ -18,6 +18,7 @@ export class SkillsComponent implements OnInit {
 	allSkills: any;
 	userSkills: any;
 	combinedSkilles: any;
+	uniqueSkills: any;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -47,9 +48,9 @@ export class SkillsComponent implements OnInit {
 			skills => {
 				this.userSkills = skills;
 				this.allSkills = allSkills;
-				console.log(this.allSkills);
-				console.log(this.userSkills);
-				this.combinedSkilles = _merge(allSkills, skills)
+				this.uniqueSkills = _unionBy(_merge(allSkills, skills), "skillID")
+				console.log(allSkills)
+				console.log(this.uniqueSkills)
 			},
 			error => {
 				console.log(error);

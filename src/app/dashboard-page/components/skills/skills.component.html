@@ -12,10 +12,12 @@
 					<p>We are currently working on this feature and will release it soon
 						Please check back at a later time</p>
 					<div class="test">
-						<div class="parent" *ngFor="let skill of combinedSkilles">
-							<h2 *ngIf="!skill.owned">Pick a Skill</h2>
+						<h2>Pick a Skill</h2>
+						<div class="parent" *ngFor="let skill of uniqueSkills">
 							<i class="{{skill?.icon}}" *ngIf="!skill.owned" (click)="updateSkill(skill)"></i>
-							<h2 *ngIf="skill.owned"> Your Skills</h2>
+						</div>
+						<h2> Your Skills</h2>
+						<div class="parent" *ngFor="let skill of uniqueSkills">
 							<i class="{{skill?.icon}}" *ngIf="skill.owned" (click)="deleteSkill(skill?.id)"></i>
 						</div>
 					</div>
