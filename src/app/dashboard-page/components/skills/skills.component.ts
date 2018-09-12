@@ -17,6 +17,7 @@ export class SkillsComponent implements OnInit {
 	allSkills: Skill;
 	userSkills: Skill;
 	combinedSkilles: any;
+	ownedSkills: boolean;
 
 	constructor(
 		public activeModal: NgbActiveModal,
@@ -42,19 +43,33 @@ export class SkillsComponent implements OnInit {
 		);
 	}
 	getUserSkills() {
+		this.id = JSON.parse(localStorage.getItem("user_id"));
 		this.skillsService.getUserSkills().subscribe(
 			skills => {
 				this.userSkills = skills;
-				this.mergeSkills(skills);
 			},
 			error => {
 				console.log(error);
 			},
-			() => {
-			}
+			() => {}
 		);
 	}
 
-	mergeSkills(data) {
+	updateSkill(data: Skill) {
+		const userSkill = {
+			user: this.id,
+			name: data.name,
+			icon: data.icon,
+			owned: true
+		};
+		this.skillsService.newUserSkill(userSkill).subscribe(
+			result => {
+				this.userSkills = result;
+			},
+			error => {
+				console.log(error);
+			},
+			() => {}
+		);
 	}
 }

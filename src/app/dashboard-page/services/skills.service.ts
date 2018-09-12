@@ -12,7 +12,7 @@ export class SkillsService {
 	constructor(private http: HttpClient) {}
 	API_URL: string = environment.api_url;
 	userID: string = localStorage.getItem("user_id");
-	allSkills:any = environment.skills;
+	allSkills: any = environment.skills;
 
 	getAllSkills() {
 		return this.http
@@ -25,6 +25,22 @@ export class SkillsService {
 	getUserSkills() {
 		return this.http
 			.get(this.API_URL + "/api/users/" + this.userID + "/skills/")
+			.pipe(map((data: any) => data))
+			.catch((error: any) => {
+				return throwError(error);
+			});
+	}
+	deleteUserSkills(skill) {
+		return this.http
+			.delete(this.API_URL + "/api/users/" + this.userID + "/skills/", skill)
+			.pipe(map((data: any) => data))
+			.catch((error: any) => {
+				return throwError(error);
+			});
+	}
+	newUserSkill(skill) {
+		return this.http
+			.put(this.API_URL + "/api/users/" + this.userID + "/skills/", skill)
 			.pipe(map((data: any) => data))
 			.catch((error: any) => {
 				return throwError(error);

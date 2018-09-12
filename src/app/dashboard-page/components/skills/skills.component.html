@@ -9,10 +9,17 @@
 		<div class="skills">
 			<div class="container">
 				<div class="row">
-					<h2>We are currently working on this feature and will release it soon</h2>
-					<h2>Please check back at a later time</h2>
+					<p>We are currently working on this feature and will release it soon
+						Please check back at a later time</p>
 					<div *ngFor="let skill of allSkills">
-						<i class="{{skill?.icon}}"></i>
+						<div class="col-sm-6" *ngIf="!skill?.owned">
+							<i class="{{skill?.icon}}" (click)="updateSkill(skill)"></i>
+						</div>
+					</div>
+					<div *ngFor="let skill of userSkills">
+						<div class="col-sm-6" *ngIf="skill?.owned">
+							<i class="{{skill?.icon}}"></i>
+						</div>
 					</div>
 				</div>
 			</div>
