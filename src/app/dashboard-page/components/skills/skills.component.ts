@@ -3,8 +3,7 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { NotificationsService } from "angular2-notifications";
 import { SkillsService } from "../../services/skills.service";
 import { Skill } from "../../../shared/models/users.model";
-import { merge as _merge, unionBy as _unionBy } from "lodash";
-import { AuthService } from "../../../shared/services/auth/auth.service";
+import { find as _find } from "lodash";
 import { DataService } from "../../services/data.service";
 
 @Component({
@@ -17,14 +16,11 @@ export class SkillsComponent implements OnInit {
 	id: number;
 	allSkills: any;
 	userSkills: any;
-	combinedSkilles: any;
-	uniqueSkills: any;
 
 	constructor(
 		public activeModal: NgbActiveModal,
 		private skillsService: SkillsService,
 		private notify: NotificationsService,
-		private authService: AuthService,
 		private dataService: DataService
 	) {}
 
@@ -34,20 +30,21 @@ export class SkillsComponent implements OnInit {
 	getAllSkills() {
 		this.skillsService.getAllSkills().subscribe(
 			skills => {
-				this.getUserSkills(skills);
+				this.allSkills = skills;
 			},
 			error => {
 				console.log(error);
 			},
-			() => {}
+			() => {
+				this.getUserSkills();
+			}
 		);
 	}
-	getUserSkills(allSkills) {
+	getUserSkills() {
 		this.id = JSON.parse(localStorage.getItem("user_id"));
 		this.skillsService.getUserSkills().subscribe(
 			skills => {
-				this.allSkills = allSkills;
-				this.uniqueSkills = _unionBy(_merge(allSkills, skills), "skillID");
+				this.userSkills = skills;
 			},
 			error => {
 				console.log(error);
@@ -56,7 +53,7 @@ export class SkillsComponent implements OnInit {
 		);
 	}
 
-	updateSkill(data: Skill) {
+	addSkill(data: Skill) {
 		if (data.user === 0) {
 			const newSkill: Skill = {
 				user: this.id,
@@ -65,39 +62,10 @@ export class SkillsComponent implements OnInit {
 				icon: data.icon,
 				owned: true
 			};
-			this.dataService.newDetails("skills", newSkill).subscribe(
-				results => {},
-				error => {
-					console.log(error);
-					this.notify.alert(error);
-				},
-				() => {
-					this.getAllSkills();
-					this.notify.success("Your new skill has been added");
-				}
-			);
-		} else {
-			const newSkill: Skill = {
-				user: this.id,
-				skillID: data.skillID,
-				name: data.name,
-				icon: data.icon,
-				owned: data.owned
-			};
-			this.dataService.updateDetails("skills", this.id, newSkill).subscribe(
-				results => {},
-				error => {
-					console.log(error);
-					this.notify.error(error);
-				},
-				() => {
-					this.getAllSkills();
-					this.notify.success("Skill has been updated");
-				}
-			);
+			this.checkIfUserHasSkill(newSkill);
 		}
 	}
-	deleteSkill(id) {
+	deleteSkill(name, id) {
 		this.dataService.deleteDetails("skills", id).subscribe(
 			results => {},
 			error => {
@@ -106,8 +74,30 @@ export class SkillsComponent implements OnInit {
 			},
 			() => {
 				this.getAllSkills();
-				this.notify.success("Skill Removed");
+				this.notify.success("Your Skill " + name + " has been removed");
 			}
 		);
+	}
+
+	checkIfUserHasSkill(skill) {
+		const existingSkill = _find(this.userSkills, function(o) {
+			return o.skillID == skill.skillID;
+		});
+		if (!existingSkill) {
+			this.dataService.newDetails("skills", skill).subscribe(
+				results => {},
+				error => {
+					console.log(error);
+					this.notify.error(error.message);
+				},
+				() => {
+					this.getAllSkills();
+					this.notify.success(skill.name + "have been added to your skills 👍");
+				}
+			);
+		} else {
+			this.notify.error("You already have " + skill.name + " as a skill 😏 ");
+			return;
+		}
 	}
 }
