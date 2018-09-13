@@ -92,7 +92,7 @@ export class SkillsComponent implements OnInit {
 				},
 				() => {
 					this.getAllSkills();
-					this.notify.success(skill.name + "have been added to your skills 👍");
+					this.notify.success(skill.name + " have been added to your skills 👍");
 				}
 			);
 		} else {
