@@ -74,7 +74,7 @@ export class SkillsComponent implements OnInit {
 			},
 			() => {
 				this.getAllSkills();
-				this.notify.success("Your Skill " + name + " has been removed");
+				this.notify.info("You removed " + name + " from your skills 👋");
 			}
 		);
 	}
@@ -92,11 +92,11 @@ export class SkillsComponent implements OnInit {
 				},
 				() => {
 					this.getAllSkills();
-					this.notify.success(skill.name + " have been added to your skills 👍");
+					this.notify.success(skill.name + " has been added to your skills 👍");
 				}
 			);
 		} else {
-			this.notify.error("You already have " + skill.name + " as a skill 😏 ");
+			this.notify.error("You already have " + skill.name + " as a skill 🤨");
 			return;
 		}
 	}
