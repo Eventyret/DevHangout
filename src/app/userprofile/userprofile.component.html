@@ -69,13 +69,14 @@
 					<p>{{profile?.bio}}</p>
 				</article>
 			</div>
-			<aside class="col-sm-12 col-md-3" *ngIf="user?.skills.length > 0">
+			<aside class="col-sm-12" *ngIf="user?.skills.length > 0"  [ngClass]="{'col-md-3': profile?.bio}">
 				<div class="card card-body mb-3">
 					<h3 class="text-center text-primary">Skills</h3>
 					<div class="icons">
-						<div *ngFor="let skills of user?.skills">
-							<i class="{{skills.icon}}" ngbTooltip="{{skills.name}}"></i>
-						</div>
+						<ul class="list-inline">
+							<li class="list-inline-item" *ngFor="let skills of user?.skills">
+								<i class="{{skills.icon}} size-2" placement="top" ngbTooltip="{{skills.name}}"></i>
+						</ul>
 					</div>
 				</div>
 			</aside>
