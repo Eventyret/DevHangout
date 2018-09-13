@@ -14,8 +14,8 @@ import { DataService } from "../../services/data.service";
 export class SkillsComponent implements OnInit {
 	name: string;
 	id: number;
-	allSkills: any;
-	userSkills: any;
+	allSkills: Skill;
+	userSkills: Skill;
 
 	constructor(
 		public activeModal: NgbActiveModal,

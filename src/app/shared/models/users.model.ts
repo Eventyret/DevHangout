@@ -43,7 +43,7 @@ export interface Experience {
 export interface Skill {
 	user: number;
 	id?: number;
-	skillID: number;
+	skillID: any;
 	name: string;
 	icon: string;
 	owned: boolean;
