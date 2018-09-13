@@ -34,7 +34,11 @@ export class InfoModalComponent implements OnInit {
 		const modalRef = this.modalService.open(this.comp, {
 			centered: true,
 			size: "lg",
-			backdrop: "static"
+			backdrop: "static",
+			beforeDismiss: () => {
+				this.sharedService.setDonatorName(this.name);
+				return true;
+			}
 		});
 		modalRef.componentInstance.name = this.name;
 	}
