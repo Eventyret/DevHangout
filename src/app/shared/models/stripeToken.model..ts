@@ -18,7 +18,7 @@ export interface Card {
 	fingerprint: string;
 	funding: string;
 	last4: string;
-	metadata: Metadata;
+	metadata: any;
 	name?: any;
 	tokenization_method?: any;
 }
