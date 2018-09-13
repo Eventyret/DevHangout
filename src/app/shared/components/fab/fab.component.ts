@@ -2,6 +2,7 @@ import { SupporterModalComponent } from "./supporter-modal/supporter-modal.compo
 import { InfoModalComponent } from "./info-modal/info-modal.component";
 import { Component, OnInit } from "@angular/core";
 import { NgbModal, NgbActiveModal, NgbTooltip } from "@ng-bootstrap/ng-bootstrap";
+import { SharedService } from "../../services/shared.service";
 
 @Component({
 	selector: "app-fab",
@@ -13,9 +14,8 @@ export class FabComponent implements OnInit {
 	name: string;
 	loggedIn: boolean;
 	spin: any;
-	constructor(private modalService: NgbModal) {}
-	ngOnInit() {
-	}
+	constructor(private modalService: NgbModal, private sharedService: SharedService) {}
+	ngOnInit() {}
 
 	open(event: any) {
 		const target = event.target.id;
@@ -24,7 +24,7 @@ export class FabComponent implements OnInit {
 		} else if (target === "supporterButton") {
 			this.comp = SupporterModalComponent;
 		}
-		if (!localStorage.getItem("username")  || !this.name) {
+		if (!localStorage.getItem("username") || !this.name) {
 			this.loggedIn = false;
 			this.name = "Anonymous";
 		} else {
@@ -35,7 +35,11 @@ export class FabComponent implements OnInit {
 			centered: true,
 			size: "lg",
 			backdropClass: "light-blue-backdrop",
-			backdrop: "static"
+			backdrop: "static",
+			beforeDismiss: () => {
+				this.sharedService.setDonatorName(this.name);
+				return true;
+			}
 		});
 		modalRef.componentInstance.name = this.name;
 		modalRef.componentInstance.loggedIn = this.loggedIn;

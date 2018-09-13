@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { LoginComponent } from "../../login/login.component";
 import { SupporterModalComponent } from "../supporter-modal/supporter-modal.component";
+import { SharedService } from "../../../services/shared.service";
 
 @Component({
 	selector: "app-info-modal",
@@ -13,7 +14,7 @@ export class InfoModalComponent implements OnInit {
 	comp: any;
 	loggedIn: boolean;
 
-	constructor(public activeModal: NgbActiveModal, private modalService: NgbModal) {}
+	constructor(public activeModal: NgbActiveModal, private modalService: NgbModal, private sharedService: SharedService) {}
 
 	ngOnInit() {}
 
@@ -28,7 +29,7 @@ export class InfoModalComponent implements OnInit {
 		if (localStorage.getItem("username")) {
 			this.name = localStorage.getItem("username");
 		} else if (!localStorage.getItem("username")) {
-			this.name = "Anonymous";
+			this.name = this.sharedService.donatorName;
 		}
 		const modalRef = this.modalService.open(this.comp, {
 			centered: true,
