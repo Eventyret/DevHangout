@@ -72,9 +72,9 @@
 
 		<div class="row">
 			<div class="col-md-12" *ngIf="githubData?.length > 0">
+				<h3 class="text-center text-primary">
+				<i class="fab fa-github"></i> {{user?.username}}'s 5 last repos</h3>
 				<article class="card card-body bg-light mb-3">
-					<h3 class="text-center text-primary">
-						<i class="fab fa-github"></i> {{user?.username}}'s 5 last repos</h3>
 					<div class="card card-body mb-2" *ngFor="let repos of githubData | slice:0:5">
 						<app-github [repos]="repos"></app-github>
 					</div>
