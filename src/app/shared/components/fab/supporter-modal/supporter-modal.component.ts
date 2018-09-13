@@ -5,7 +5,7 @@ import { NotificationsService } from "angular2-notifications";
 import { NgxSpinnerService } from "ngx-spinner";
 import { Element as StripeElement, Elements, ElementsOptions, StripeService } from "ngx-stripe";
 import { ThankYouModalComponent } from "../thank-you-modal/thank-you-modal.component";
-import { SharedService } from "../../../services/shared.service";
+import { SharedService } from "../../../services/misc/shared.service";
 
 @Component({
 	selector: "app-supporter-modal",

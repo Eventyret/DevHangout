@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { LoginComponent } from "../../login/login.component";
 import { SupporterModalComponent } from "../supporter-modal/supporter-modal.component";
-import { SharedService } from "../../../services/shared.service";
+import { SharedService } from "../../../services/misc/shared.service";
 
 @Component({
 	selector: "app-info-modal",

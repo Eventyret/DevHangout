@@ -2,7 +2,7 @@ import { SupporterModalComponent } from "./supporter-modal/supporter-modal.compo
 import { InfoModalComponent } from "./info-modal/info-modal.component";
 import { Component, OnInit } from "@angular/core";
 import { NgbModal, NgbActiveModal, NgbTooltip } from "@ng-bootstrap/ng-bootstrap";
-import { SharedService } from "../../services/shared.service";
+import { SharedService } from "../../services/misc/shared.service";
 
 @Component({
 	selector: "app-fab",
