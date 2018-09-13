@@ -34,7 +34,6 @@ export class FabComponent implements OnInit {
 		const modalRef = this.modalService.open(this.comp, {
 			centered: true,
 			size: "lg",
-			backdropClass: "light-blue-backdrop",
 			backdrop: "static",
 			beforeDismiss: () => {
 				this.sharedService.setDonatorName(this.name);

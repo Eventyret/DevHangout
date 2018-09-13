@@ -57,7 +57,6 @@ export class DashboardComponent implements OnInit {
 		const modalRef = this.modalService.open(this.comp, {
 			centered: true,
 			size: "lg",
-			backdropClass: "light-blue-backdrop",
 			backdrop: "static"
 		});
 		modalRef.componentInstance.name = this.user.username;
@@ -90,7 +89,6 @@ export class DashboardComponent implements OnInit {
 				const modalRef = this.modalService.open(EditProfileComponent, {
 					centered: true,
 					size: "lg",
-					backdropClass: "light-blue-backdrop",
 					backdrop: "static"
 				});
 				modalRef.componentInstance.name = this.user.username;

@@ -5,6 +5,7 @@ import { NotificationsService } from "angular2-notifications";
 import { NgxSpinnerService } from "ngx-spinner";
 import { Element as StripeElement, Elements, ElementsOptions, StripeService } from "ngx-stripe";
 import { ThankYouModalComponent } from "../thank-you-modal/thank-you-modal.component";
+import { SharedService } from "../../../services/shared.service";
 
 @Component({
 	selector: "app-supporter-modal",
@@ -20,7 +21,6 @@ export class SupporterModalComponent implements OnInit {
 	};
 	payInProgress = false;
 	errorMsg: string;
-	username: string;
 	amount: number;
 	name: string;
 	cardName: string;
@@ -31,7 +31,8 @@ export class SupporterModalComponent implements OnInit {
 		private stripeService: StripeService,
 		private spinner: NgxSpinnerService,
 		private notify: NotificationsService,
-		private modalService: NgbModal
+		private modalService: NgbModal,
+		private sharedService: SharedService
 	) {}
 
 	ngOnInit() {
@@ -76,8 +77,11 @@ export class SupporterModalComponent implements OnInit {
 		const modalRef = this.modalService.open(ThankYouModalComponent, {
 			centered: true,
 			size: "lg",
-			backdropClass: "light-blue-backdrop",
-			backdrop: "static"
+			backdrop: "static",
+			beforeDismiss: () => {
+				this.sharedService.setDonatorName(this.name);
+				return true;
+			}
 		});
 		modalRef.componentInstance.name = this.cardName;
 		modalRef.componentInstance.amount = this.amount;

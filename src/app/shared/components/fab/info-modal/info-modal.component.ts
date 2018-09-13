@@ -34,7 +34,6 @@ export class InfoModalComponent implements OnInit {
 		const modalRef = this.modalService.open(this.comp, {
 			centered: true,
 			size: "lg",
-			backdropClass: "light-blue-backdrop",
 			backdrop: "static"
 		});
 		modalRef.componentInstance.name = this.name;
