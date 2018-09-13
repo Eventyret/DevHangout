@@ -53,20 +53,20 @@
 			<div class="col-sm-12 col-md-6 my-3" *ngIf="user?.education.length > 0">
 				<h3 class="text-center text-primary">
 					<i class="fas fa-graduation-cap"></i> Education</h3>
-				<article class="list-group">
-					<div class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let edu of user?.education">
+				<ul class="list-group">
+					<div class="my-3" *ngFor="let edu of user?.education">
 						<app-education [edu]="edu"></app-education>
 					</div>
-				</article>
+				</ul>
 			</div>
 			<div class="col-sm-12 col-md-6 my-3" *ngIf="user?.experience.length > 0">
 				<h3 class="text-center text-primary">
 					<i class="fas fa-briefcase"></i> Experience</h3>
-				<article class="list-group">
-					<div class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let exp of user?.experience">
+				<ul class="list-group">
+					<div class="my-3" *ngFor="let exp of user?.experience">
 						<app-experience [exp]="exp"></app-experience>
 					</div>
-				</article>
+				</ul>
 			</div>
 		</div>
 
