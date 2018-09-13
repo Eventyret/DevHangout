@@ -56,3 +56,5 @@ __pycache__/
 BackendApi/env.py
 env.py
 .env
+
+src/environments/environment.prod.ts
