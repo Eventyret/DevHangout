@@ -1,3 +1,8 @@
-<p>
-  education works!
-</p>
+<div class="d-flex w-100 justify-content-between">
+	<h5 class="mb-1">{{edu?.school}}</h5>
+	<small *ngIf="edu?.current || !edu?.dateTo">{{edu?.dateFrom | date: "MMM yyyy"}} - Present</small>
+	<small *ngIf="!edu?.current && edu?.dateTo">{{edu?.dateFrom | date: "MMM yyyy"}} - {{edu?.dateTo | date: "MMM
+		yyyy"}}</small>
+</div>
+<small class="float-left"><i class="fas fa-map-marker-alt"></i> {{edu?.fieldOfStudy}}</small>
+<small class="float-right"><i class="fas fa-id-card"></i> {{edu?.qualification}}</small>

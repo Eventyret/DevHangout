@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
+import { Repo } from "../../../shared/models/users.model";
 
 @Component({
   selector: "app-github",
@@ -6,6 +7,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./github.component.scss"]
 })
 export class GithubComponent implements OnInit {
+	@Input() repos: Repo;
 
   constructor() { }
 

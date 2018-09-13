@@ -59,6 +59,7 @@ export interface Repo {
 	open_issues_count: number;
 	updated_at: string;
 	project: Project;
+	homepage?: string;
 	tabs: Tab[];
 }
 

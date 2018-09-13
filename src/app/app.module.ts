@@ -49,6 +49,7 @@ import { ThankYouModalComponent } from "./shared/components/fab/thank-you-modal/
 import { EducationComponent } from "./userprofile/components/education/education.component";
 import { ExperienceComponent } from "./userprofile/components/experience/experience.component";
 import { GithubComponent } from "./userprofile/components/github/github.component";
+import { SocialIconsComponent } from "./userprofile/components/social-icons/social-icons.component";
 
 const routes: Routes = [
 	{ path: "", component: HomePage, pathMatch: "full" },
@@ -101,7 +102,8 @@ const routes: Routes = [
 		ThankYouModalComponent,
 		EducationComponent,
 		ExperienceComponent,
-		GithubComponent
+		GithubComponent,
+		SocialIconsComponent
 	],
 	imports: [
 		BrowserModule,
