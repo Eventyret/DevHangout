@@ -73,7 +73,7 @@ export class SkillsComponent implements OnInit {
 				},
 				() => {
 					this.getAllSkills();
-					this.notify.success("Skill has been updated");
+					this.notify.success("Your new skill has been added");
 				}
 			);
 		} else {
@@ -92,7 +92,7 @@ export class SkillsComponent implements OnInit {
 				},
 				() => {
 					this.getAllSkills();
-					this.notify.success("Your new skill has been added");
+					this.notify.success("Skill has been updated");
 				}
 			);
 		}
@@ -102,10 +102,11 @@ export class SkillsComponent implements OnInit {
 			results => {},
 			error => {
 				console.log(error);
+				this.notify.error(error);
 			},
 			() => {
 				this.getAllSkills();
-				this.notify.success("Skill removed");
+				this.notify.success("Skill Removed");
 			}
 		);
 	}
