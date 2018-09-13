@@ -99,7 +99,7 @@ export class AuthService {
 			)
 			.catch((error: any) => {
 				console.log(error);
-				return throwError(this.notify.error(error.error.non_field_errors) || "Server Error");
+				return throwError(this.notify.error(error.message) || "Server Error");
 			});
 	}
 
