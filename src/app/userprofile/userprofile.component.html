@@ -16,7 +16,7 @@
 				<div class="text-center profile-container">
 					<h1 class="text-bg"><span *ngIf="profile?.firstName">{{profile?.firstName}} </span> <span>"{{user?.username}}"</span>
 						<span *ngIf="profile?.lastName"> {{profile?.lastName}}</span></h1>
-					<p class="lead text-bg">{{profile?.title}}
+					<p class="lead text-bg" *ngIf="profile?.title">{{profile?.title}}
 						<span *ngIf="profile?.company">@</span> {{profile?.company}}</p>
 					<div *ngIf="support" class="supporter text-center mx-auto content">
 						<span>Supporter
