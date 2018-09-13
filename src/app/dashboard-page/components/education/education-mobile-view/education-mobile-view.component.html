@@ -1,0 +1,27 @@
+<h3 class="text-center my-3">Education</h3>
+<div *ngFor="let edu of user?.education">
+	<ul class="list-group my-3">
+		<li class=" list-group-item d-flex
+					 justify-content-between align-items-center" *ngIf="edu?.school">
+			<span><i class="fas fa-school"></i> School:</span>
+			{{edu?.school}}
+		</li>
+		<li class=" list-group-item d-flex
+					 justify-content-between align-items-center" *ngIf="edu?.qualification">
+			<span><i class="fas fa-file-alt"></i> Degree:</span>
+			{{edu?.qualification}}
+		</li>
+		<li class=" list-group-item d-flex
+					 justify-content-between align-items-center" *ngIf="edu?.fieldOfStudy">
+			<span><i class="fas fa-graduation-cap"></i> Field of Study:</span>
+			{{edu?.fieldOfStudy}}
+		</li>
+		<li class=" list-group-item d-flex
+					 justify-content-between align-items-center" *ngIf="edu?.dateFrom">
+			<span><i class="fas fa-calendar-alt"></i> Date:</span>
+			{{edu?.dateFrom | date: ["MMM yyyy"] }}
+			<span *ngIf="!edu?.current && edu?.dateTo"> {{edu?.dateTo | date: ["MMM yyyy"]}}</span>
+			<span *ngIf="edu?.current  || !edu?.dateTo"> Present</span>
+		</li>
+	</ul>
+</div>
