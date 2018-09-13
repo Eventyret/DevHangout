@@ -19,6 +19,7 @@ export class EditProfileComponent implements OnInit {
 	profile: Profile;
 	updatedForm: Profile;
 	firstVisit: boolean = JSON.parse(sessionStorage.getItem("firstVisit"));
+
 	constructor(
 		public activeModal: NgbActiveModal,
 		public githubService: GithubService,
@@ -98,6 +99,7 @@ export class EditProfileComponent implements OnInit {
 	 * Once subscribe is complete it will notify the user and close the modal
 	 * @param(component, id, form)
 	 * @memberof EditProfileComponent
+	 *
 	 */
 	update() {
 		this.dataService.updateDetails("profile", this.id, this.updatedForm).subscribe(
