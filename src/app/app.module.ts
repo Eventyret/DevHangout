@@ -46,6 +46,9 @@ import { ProfileComponent } from "./userprofile/userprofile.component";
 import { SessionExpiredPage } from "./expired-page/expired-page";
 import { SkillsComponent } from "./dashboard-page/components/skills/skills.component";
 import { ThankYouModalComponent } from "./shared/components/fab/thank-you-modal/thank-you-modal.component";
+import { EducationComponent } from "./userprofile/components/education/education.component";
+import { ExperienceComponent } from "./userprofile/components/experience/experience.component";
+import { GithubComponent } from "./userprofile/components/github/github.component";
 
 const routes: Routes = [
 	{ path: "", component: HomePage, pathMatch: "full" },
@@ -95,7 +98,10 @@ const routes: Routes = [
 		SessionExpiredComponent,
 		SessionExpiredPage,
 		SkillsComponent,
-		ThankYouModalComponent
+		ThankYouModalComponent,
+		EducationComponent,
+		ExperienceComponent,
+		GithubComponent
 	],
 	imports: [
 		BrowserModule,

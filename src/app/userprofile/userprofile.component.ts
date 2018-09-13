@@ -16,6 +16,14 @@ import { environment } from "../../environments/environment";
 	providers: [NgbTooltipConfig]
 })
 export class ProfileComponent implements OnInit {
+	user: User;
+	support: boolean;
+	background: string;
+	normalBackground = "../../assets/landingBG.png";
+	githubData: any[];
+	profile: Profile;
+	production: boolean = environment.production;
+
 	constructor(
 		config: NgbTooltipConfig,
 		private spinner: NgxSpinnerService,
@@ -31,17 +39,9 @@ export class ProfileComponent implements OnInit {
 			this.getFakeData(id);
 		});
 	}
-	user: User;
-	support: boolean;
-	background: string;
-	normalBackground = "../../assets/landingBG.png";
-	githubData: any[];
-	profile: Profile;
-	production: boolean = environment.production;
 
 	ngOnInit() {
 		this.spinner.show();
-
 	}
 
 	supporterTest() {

@@ -1,5 +1,3 @@
-export interface Metadata {}
-
 export interface Card {
 	id: string;
 	object: string;
