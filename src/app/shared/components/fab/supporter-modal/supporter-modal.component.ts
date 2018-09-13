@@ -90,6 +90,5 @@ export class SupporterModalComponent implements OnInit {
 		modalRef.componentInstance.date = results.token.created;
 		modalRef.componentInstance.card = results.token.card;
 		modalRef.componentInstance.id = localStorage.getItem("user_id");
-		console.log(results);
 	}
 }
