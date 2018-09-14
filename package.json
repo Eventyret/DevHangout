@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "ng build --prod && npx ngh --branch=deploy",
-    "docs": "compodoc -p tsconfig.json"
+    "compodoc": "compodoc -p src/tsconfig.app.json"
   },
   "private": true,
   "dependencies": {

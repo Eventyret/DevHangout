@@ -1,0 +1,15 @@
+{
+    "name": "Developers Hangout",
+    "output": "./dist/docs/",
+    "tsconfig": "./src/tsconfig.app.json",
+    "customFavicon": "./src/favicon.ico",
+    "disableLifeCycleHooks": true,
+    "disablePrivate": false,
+    "disableProtected": true,
+    "disableInternal": true,
+    "disableCoverage": false,
+	"hideGenerator": true,
+	"theme": "material",
+	"watch": true,
+	"serve": true
+}

@@ -50,7 +50,7 @@ export class DashboardComponent implements OnInit {
 	/**
 	 * Opens the different modals
 	 * @param event - The button click to find out what the id is.
-	 * @param [id] Optional but if we pass an ID we store it to pass to the modals.
+	 * @param {number} id Optional but if we pass an ID we store it to pass to the modals.
 	 */
 	open(event: any, id?: number) {
 		const target = event.target.id;
@@ -123,9 +123,9 @@ export class DashboardComponent implements OnInit {
 
 	/**
 	 * This will delete
-	 * @param event The event id of the button
-	 * @param id  the ID of the object
-	 * @param name the name
+	 * @param {any}event The event id of the button
+	 * @param {number}id  the ID of the object
+	 * @param {string} name the name component
 	 *
 	 */
 	public deleteDetail(event: any, id: number, name: string) {
