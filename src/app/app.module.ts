@@ -146,6 +146,9 @@ const routes: Routes = [
 })
 export class AppModule {}
 
+/**
+ *  Helper function to get the token from localStorage
+ */
 export function getToken() {
 	return localStorage.getItem("token");
 }
