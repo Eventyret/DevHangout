@@ -18,14 +18,21 @@ import { SkillsComponent } from "./components/skills/skills.component";
 	styleUrls: ["./dashboard.component.scss"]
 })
 export class DashboardComponent implements OnInit {
-	user: User;
-	support = false;
-	id: number = parseInt(localStorage.getItem("user_id"), 10);
-	LocalUser = localStorage.getItem("user");
-	comp: any;
-	profile: Profile;
-	firstVisit: boolean;
+	public user: User;
+	public support = false;
+	private id: number = parseInt(localStorage.getItem("user_id"), 10);
+	private comp: any;
+	public profile: Profile;
+	private firstVisit: boolean;
 
+	/**
+	 * Creates an instance of dashboard component.
+	 * @param modalService
+	 * @param spinner
+	 * @param auth
+	 * @param dataService
+	 * @param notify
+	 */
 	constructor(
 		private modalService: NgbModal,
 		private spinner: NgxSpinnerService,
@@ -39,6 +46,12 @@ export class DashboardComponent implements OnInit {
 		this.firstVisit = JSON.parse(sessionStorage.getItem("firstVisit"));
 		this.getUserData(this.id);
 	}
+
+	/**
+	 * Opens the different modals
+	 * @param event - The button click to find out what the id is.
+	 * @param [id] Optional but if we pass an ID we store it to pass to the modals.
+	 */
 	open(event: any, id?: number) {
 		const target = event.target.id;
 		if (target === "addEdu") {
@@ -75,11 +88,22 @@ export class DashboardComponent implements OnInit {
 		);
 	}
 
+	/**
+	 * This will open a href link in a new window.
+	 * As we need to go outside the Angular Application
+	 * we pass window.open and the website the user clicked on
+	 */
 	openLink() {
 		window.open("//" + this.profile.website, "_blank");
 	}
 
-	getUserData(id) {
+	/**
+	 * This gets the user data from the service.
+	 * If this is the first time the user visits we will automatically
+	 * open EditProfileComponent
+	 * @param id
+	 */
+	private getUserData(id: number) {
 		this.auth.getUser(id).subscribe((data: User) => {
 			this.user = data;
 			this.profile = data.profile[0];
@@ -96,7 +120,15 @@ export class DashboardComponent implements OnInit {
 			}
 		});
 	}
-	deleteDetail(event, id, name) {
+
+	/**
+	 * This will delete
+	 * @param event The event id of the button
+	 * @param id  the ID of the object
+	 * @param name the name
+	 *
+	 */
+	public deleteDetail(event: any, id: number, name: string) {
 		const target = event.target.id;
 		if (target === "deleteEdu") {
 			this.comp = "Education";
