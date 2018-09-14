@@ -50,9 +50,9 @@ import { EducationComponent } from "./userprofile/components/education/education
 import { ExperienceComponent } from "./userprofile/components/experience/experience.component";
 import { GithubComponent } from "./userprofile/components/github/github.component";
 import { SocialIconsComponent } from "./userprofile/components/social-icons/social-icons.component";
-import { DonationsMobileViewComponent } from './dashboard-page/components/donations-mobile-view/donations-mobile-view.component';
-import { EducationMobileViewComponent } from './dashboard-page/components/education/education-mobile-view/education-mobile-view.component';
-import { ExperienceMobileViewComponent } from './dashboard-page/components/experience/experience-mobile-view/experience-mobile-view.component';
+import { DonationsMobileViewComponent } from "./dashboard-page/components/donations-mobile-view/donations-mobile-view.component";
+import { EducationMobileViewComponent } from "./dashboard-page/components/education/education-mobile-view/education-mobile-view.component";
+import { ExperienceMobileViewComponent } from "./dashboard-page/components/experience/experience-mobile-view/experience-mobile-view.component";
 
 const routes: Routes = [
 	{ path: "", component: HomePage, pathMatch: "full" },

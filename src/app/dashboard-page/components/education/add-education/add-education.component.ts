@@ -57,7 +57,7 @@ export class AddEducationComponent implements OnInit {
 			results => {},
 			error => {
 				console.log(error);
-				this.notify.error("Seems there was an issue ?", error);
+				this.notify.error(error.message);
 			},
 			() => {
 				this.notify.success("Education Added");

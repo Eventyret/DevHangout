@@ -3,7 +3,7 @@ import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
 import { DataService } from "../../../../dashboard-page/services/data.service";
 import { AuthService } from "../../../services/auth/auth.service";
 import { User } from "../../../models/users.model";
-import { NgxSpinnerService } from "ngx-spinner";
+import { DashboardComponent } from "../../../../dashboard-page/dashboard.component";
 
 @Component({
 	selector: "app-thank-you-modal",
@@ -19,7 +19,12 @@ export class ThankYouModalComponent implements OnInit {
 	info: any;
 	card: any;
 	date: number;
-	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private auth: AuthService, private spinner: NgxSpinnerService) {}
+	constructor(
+		public activeModal: NgbActiveModal,
+		private dataService: DataService,
+		private auth: AuthService,
+		private dashboardComponent:
+		DashboardComponent) {}
 
 	ngOnInit() {
 		this.updateSupporterStatus();
@@ -55,6 +60,7 @@ export class ThankYouModalComponent implements OnInit {
 					console.log(error);
 				},
 				() => {
+					this.dashboardComponent.getUserData(this.id);
 					this.auth.getUser(this.id).subscribe(results => {
 						this.user = results;
 					});
