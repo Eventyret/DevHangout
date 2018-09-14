@@ -10,6 +10,5 @@
     "disableCoverage": false,
 	"hideGenerator": true,
 	"theme": "laravel",
-	"watch": true,
 	"serve": true
 }
