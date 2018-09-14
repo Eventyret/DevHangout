@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { HomePage } from "./home-page/home-page";
 import { LoginComponent } from "./shared/components/login/login.component";

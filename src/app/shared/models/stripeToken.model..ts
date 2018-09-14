@@ -1,3 +1,7 @@
+
+/**
+ *  Stripe Card Details
+ */
 export interface Card {
 	id: string;
 	object: string;
@@ -23,6 +27,10 @@ export interface Card {
 	tokenization_method?: any;
 }
 
+
+/**
+ * Stripe token
+ */
 export interface StripeToken {
 	id: string;
 	object: string;

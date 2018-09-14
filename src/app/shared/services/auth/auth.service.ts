@@ -8,21 +8,20 @@ import { Token } from "../../models/token.model";
 import { Router } from "@angular/router";
 import { NotificationsService } from "angular2-notifications";
 import { NgxSpinnerService } from "ngx-spinner";
-import { throwError, BehaviorSubject } from "rxjs";
-import "rxjs/add/operator/catch";
+import { throwError, BehaviorSubject, } from "rxjs";
 import { environment } from "../../../../environments/environment";
-import { SessionExpiredComponent } from "../../components/session-expired/session-expired.component";
 
 @Injectable({
 	providedIn: "root"
 })
 export class AuthService {
-	currentUser: any;
-	username: string;
-	helper = new JwtHelperService();
+
+	public currentUser: any;
+	public username: string;
+	public helper = new JwtHelperService();
 	private refreshTokenSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-	refreshToken$ = this.refreshTokenSubject.asObservable();
-	API_URL: string = environment.api_url;
+	public refreshToken$ = this.refreshTokenSubject.asObservable();
+	private API_URL: string = environment.api_url;
 
 	constructor(
 		private http: HttpClient,

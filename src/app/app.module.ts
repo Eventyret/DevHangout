@@ -52,7 +52,7 @@ import { SocialIconsComponent } from "./userprofile/components/social-icons/soci
 import { DonationsMobileViewComponent } from "./dashboard-page/components/donations-mobile-view/donations-mobile-view.component";
 import { EducationMobileViewComponent } from "./dashboard-page/components/education/education-mobile-view/education-mobile-view.component";
 import { ExperienceMobileViewComponent } from "./dashboard-page/components/experience/experience-mobile-view/experience-mobile-view.component";
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from ".//app-routing.module";
 
 
 
