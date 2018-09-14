@@ -17,11 +17,12 @@ export class AddExperienceComponent implements OnInit {
 	id: number;
 	current = false;
 	updatedForm: Experience;
+	today = new Date().toJSON().slice(0, 10);
 
 	addForm = new FormGroup({
 		current: new FormControl(false, Validators.required),
 		dateFrom: new FormControl("", Validators.required),
-		dateTo: new FormControl(""),
+		dateTo: new FormControl(this.today),
 		company: new FormControl("", Validators.required),
 		jobTitle: new FormControl("", Validators.required),
 		location: new FormControl(""),

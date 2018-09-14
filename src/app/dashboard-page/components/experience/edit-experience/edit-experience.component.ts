@@ -18,6 +18,7 @@ export class EditExperienceComponent implements OnInit {
 	updatedForm: Experience;
 	current: boolean;
 	user: number;
+	today = new Date().toJSON().slice(0, 10);
 
 	editForm = new FormGroup({
 		current: new FormControl(this.current, Validators.required),
@@ -68,12 +69,14 @@ export class EditExperienceComponent implements OnInit {
 		});
 		this.editForm.get("current").valueChanges.subscribe(val => {
 			this.current = !this.current;
+			this.editForm.patchValue({
+				dateTo: this.today
+			});
 		});
 	}
 	update() {
 		this.dataService.updateDetails("experience", this.id, this.updatedForm).subscribe(
-			results => {
-			},
+			results => {},
 			error => {
 				console.log(error);
 				this.notify.error(error.message);

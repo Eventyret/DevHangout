@@ -5,6 +5,7 @@ import { Education } from "../../../../shared/models/users.model";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { NotificationsService } from "angular2-notifications";
 import { AuthService } from "../../../../shared/services/auth/auth.service";
+import { formatDate } from "@angular/common";
 
 @Component({
 	selector: "app-edit-education",
@@ -17,6 +18,7 @@ export class EditEducationComponent implements OnInit {
 	updatedForm: Education;
 	current: boolean;
 	user: number;
+	today = new Date().toJSON().slice(0, 10);
 
 	editForm = new FormGroup({
 		current: new FormControl(this.current, Validators.required),
@@ -63,12 +65,16 @@ export class EditEducationComponent implements OnInit {
 			);
 		});
 	}
+
 	onChanges() {
 		this.editForm.valueChanges.subscribe(val => {
 			this.updatedForm = val;
 		});
 		this.editForm.get("current").valueChanges.subscribe(val => {
 			this.current = !this.current;
+			this.editForm.patchValue({
+				dateTo: this.today
+			});
 		});
 	}
 	update() {

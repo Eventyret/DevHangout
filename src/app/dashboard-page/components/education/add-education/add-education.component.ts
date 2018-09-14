@@ -18,12 +18,13 @@ export class AddEducationComponent implements OnInit {
 	user: number;
 	name: string;
 	id: number;
+	today = new Date().toJSON().slice(0, 10);
 
 
 	addForm = new FormGroup({
 		current: new FormControl(false, Validators.required),
 		dateFrom: new FormControl("", Validators.required),
-		dateTo: new FormControl(null),
+		dateTo: new FormControl(this.today),
 		fieldOfStudy: new FormControl("", Validators.required),
 		qualification: new FormControl("", Validators.required),
 		school: new FormControl("", Validators.required),
