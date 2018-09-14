@@ -260,7 +260,7 @@
     },
     {
         "icon": "devicon-protractor-plain colored",
-        "name": "Travis",
+        "name": "Protractor",
         "owned": false,
         "skillID": 38,
         "user": 0
