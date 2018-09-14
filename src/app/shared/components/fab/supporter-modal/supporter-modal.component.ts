@@ -67,7 +67,7 @@ export class SupporterModalComponent implements OnInit {
 			} else if (results.error) {
 				console.log(results.error.message);
 				const errorMsg = results.error.message;
-				this.notify.error("Seems there was an issue ?" + this.name, errorMsg);
+				this.notify.error("Hey " + this.name, errorMsg);
 				this.spinner.hide();
 			}
 		});

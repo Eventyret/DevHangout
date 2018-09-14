@@ -60,7 +60,6 @@ export class ThankYouModalComponent implements OnInit {
 					console.log(error);
 				},
 				() => {
-					this.dashboardComponent.getUserData(this.id);
 					this.auth.getUser(this.id).subscribe(results => {
 						this.user = results;
 					});

@@ -19,7 +19,6 @@ export class InfoModalComponent implements OnInit {
 	ngOnInit() {}
 
 	open(event) {
-		this.activeModal.dismiss();
 		const target = event.target.id;
 		if (target === "login") {
 			this.comp = LoginComponent;
