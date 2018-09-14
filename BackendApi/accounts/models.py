@@ -45,7 +45,7 @@ class Education(models.Model):
     qualification = models.CharField(max_length=50)
     fieldOfStudy = models.CharField(max_length=50)
     dateFrom = models.DateField(auto_now=False, auto_now_add=False)
-    dateTo = models.DateField(auto_now=False, auto_now_add=False, null=True)
+    dateTo = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
     current = models.BooleanField(default=False)
 
     class Meta:
