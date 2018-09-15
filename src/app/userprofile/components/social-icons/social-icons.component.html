@@ -1,0 +1,34 @@
+<div class="row" id="social-icons">
+<div class="col-sm-6 col-md-4 col" *ngIf="profile?.facebook">
+	<a href="https://www.facebook.com/{{profile?.facebook}}" target="_blank" aria-label="Find me on Facebook">
+		<i class="fab fa-facebook" placement="bottom" ngbTooltip="Find me on Facebook"></i>
+	</a>
+
+</div>
+<div class="col-sm-6 col-md-4 col" *ngIf="profile?.github">
+	<a href="https://www.github.com/{{profile?.github}}" target="_blank" aria-label="Find me on Github">
+		<i class="fab fa-github" placement="bottom" ngbTooltip="Find me on Github"></i>
+	</a>
+</div>
+<div class="col-sm-6 col-md-4 col" *ngIf="profile?.linkedin">
+	<a href="https://www.linkedin.com/in/{{profile?.linkedin}}" target="_blank" aria-label="Connect with me on LinkedIn">
+		<i class="fab fa-linkedin" placement="bottom" ngbTooltip="Connect with me on LinkedIn"></i>
+	</a>
+</div>
+<div class="col-sm-6 col-md-4 col" *ngIf="profile?.youtube">
+	<a href="https://www.youtube.com/channel/{{profile?.youtube}}" target="_blank" aria-label="Subscribe to me on YouTube">
+		<i class="fab fa-youtube" placement="bottom" ngbTooltip="Subscribe to me on YouTube"> </i>
+	</a>
+</div>
+<div class="col-sm-6 col-md-4 col" *ngIf="profile?.twitter">
+	<a href="https://www.twitter.com/{{profile?.twitter}}" target="_blank" aria-label="Follow me on Twitter">
+		<i class="fab fa-twitter" placement="bottom" ngbTooltip="Follow me on Twitter"></i>
+	</a>
+</div>
+<div class="col-sm-6 col-md-4 col" *ngIf="profile?.instagram">
+	<a href="https://www.instagram.com/{{profile?.instagram}}" aria-label="Follow me on Instagram">
+		<i class=" fab fa-instagram" placement="Lbottom" ngbTooltip="Follow me on Instagram"></i>
+	</a>
+</div>
+
+</div>

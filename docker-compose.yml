@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    build: ./BackendApi/
+    restart: on-failure
+    container_name: backendapi
+    ports:
+      - '8000:8000'
+    volumes:
+      - './BackendApi:/code'
+    command: 'python manage.py runserver 0.0.0.0:8000'
+    image: 'backendapi:latest'

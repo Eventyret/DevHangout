@@ -1,0 +1,91 @@
+img {
+	width: 100%;
+}
+
+.bg-landing {
+	position: relative;
+	background: url("../../assets/landingBG.png");
+	background-size: cover;
+	background-position: center;
+	height: 98vh;
+
+	.bg-inner {
+		padding-top: 80px;
+	}
+}
+
+.cards-container {
+	height: 50vh;
+	background: #e0ebcf;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+	.card {
+		border: 0px solid transparent;
+		background: transparent;
+		color: #2b4d68;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		cursor: pointer;
+	}
+}
+
+.fa-heart {
+	color: #f44336 !important;
+}
+.fa-github,
+.fa-users,
+.fa-code {
+	color: #333;
+}
+
+.icons {
+	.fas {
+		color: #fff;
+	}
+}
+.buttons {
+	margin-top: 200px;
+}
+.btn-orange {
+	background-color: #f44336;
+	&:hover {
+		background-color: #fff;
+		color: #210908!important;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.fa-10x,
+	.fa-8x {
+		font-size: 5em;
+	}
+	.display-3 {
+		font-size: 4rem;
+	}
+	.buttons {
+		margin-top: 26px;
+		padding-bottom: 25px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.fa-10x,
+	.fa-8x {
+		font-size: 2.5em;
+	}
+	.display-3 {
+		font-size: 2.7rem;
+	}
+	.cards-container {
+		height: 100%;
+	}
+}
+@media screen and (max-width: 576px) {
+	.btn {
+		width: 100%;
+		margin-bottom: 15px;
+	}
+}

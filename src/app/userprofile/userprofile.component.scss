@@ -1,0 +1,69 @@
+.profile-image {
+	width: 250px;
+	height: 250px;
+	@media screen and (max-width: 768px) {
+		width: 128px;
+		height: 128px;
+	}
+}
+.size-2 {
+	font-size: 2rem;
+}
+
+.profile-background {
+	background-color: #112938;
+	background-size: cover;
+	@media screen and (max-width: 768px) {
+		padding-top: 75px;
+	}
+}
+
+.profile-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+.text-bg {
+	position: relative;
+	display: inline-block;
+	background-color: #112938;
+	border-radius: 10px;
+	width: auto;
+	text-align: center;
+	margin: 10px auto;
+	padding: 10px 25px;
+}
+
+
+
+.supporter {
+	background: -webkit-gradient(linear, left top, right top, from(#ff4e50), to(#f9d423));
+	background: linear-gradient(to right, #ff4e50, #f9d423);
+	width: 250px;
+	border-radius: 10px;
+	padding: 10px;
+	font-family: "Roboto";
+	font-size: 1.5rem;
+	font-weight: 700;
+	.fa-star {
+		color: #ff5722;
+		font-size: 1.5rem;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	h1 {
+		font-size: 1.5rem;
+	}
+}
+.push-down {
+	margin-top: 4.5rem !important;
+	@media screen and(max-width: 768px) {
+		margin-top: 3.5rem !important;
+	}
+}

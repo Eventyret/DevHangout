@@ -1,0 +1,27 @@
+This is a list of thigns in the feature works
+
+AutoLogin:
+	Currently you have to manually log in after you register. This should automate the process.
+	☐ Create function
+	☐ Pass data User and PW to Login function
+	☐ Post Login data to Backend
+	☐  Process and redirect to dashboard
+
+News:
+	A blog / News list from the admin team posted from django
+	☐ Generate Component
+	☐ Generate Model
+	☐  Generate App
+	☐  Style Component
+	☐  Wire Up component
+	☐  Generate Markup
+
+Contact Service:
+	A service to have users contact other users
+	☐ Generate Component
+	☐ Generate Model
+	☐  Generate App
+	☐  Style Component
+	☐  Wire Up component
+	☐  Generate Markup
+

@@ -1,1 +1,117 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+	min-height: 100%;
+	position: relative;
+}
+a {
+	text-decoration: none;
+	&:hover {
+		text-decoration: none;
+	}
+}
+.text-primary {
+	color: #112938 !important;
+}
+.bg-primary {
+	background-color: #112938 !important;
+}
+.bg-info {
+	background-color: #3f51b5 !important;
+}
+
+.btn-outline-white {
+	color: #fff;
+	background-color: transparent;
+	background-image: none;
+	border-color: #fff;
+	&:hover {
+		color: #fff;
+		background-color: #ff5722;
+		border-color: #ff5722;
+	}
+}
+.simple-notification-wrapper.right {
+	right: 20px;
+}
+.simple-notification-wrapper.top {
+	top: 90px !important;
+}
+.simple-notification-wrapper {
+	position: fixed;
+	width: 300px;
+	z-index: 9999950 !important;
+}
+
+.container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+.row {
+	margin-left: 0;
+	margin-right: 0;
+}
+.backdrop-color {
+	background-color: #212529;
+	opacity: 1 !important;
+}
+
+.push-down {
+	margin-top: 5rem !important;
+}
+
+.loading-text {
+	> p {
+		margin-top: 1.5rem !important;
+		color: #ffeb3b;
+		font-size: 2rem;
+	}
+}
+@media screen and (max-width: 768px) {
+	.black-overlay {
+		position: absolute;
+		top: 12%;
+		left: 50%;
+		width: 100%;
+		height: 100%;
+		z-index: 99999 !important;
+	}
+	.loading-text {
+		position: absolute;
+		top: 15%;
+		left: 50%;
+		transform: translate(-40%, -41%);
+		-webkit-transform: translate(-40%, -41%);
+		z-index: 99999 !important;
+		> p {
+			margin-top: 1.5rem !important;
+			color: #ffeb3b;
+			font-size: 1.8rem;
+		}
+	}
+	.navbar-brand {
+		display: inline-block;
+		padding-top: 0.3125rem;
+		padding-bottom: 0.3125rem;
+		margin-right: 0;
+		font-size: 1.25rem;
+		line-height: inherit;
+		white-space: nowrap;
+	}
+}
+@media screen and (max-width: 360px) {
+	.black-overlay > div {
+		left: 30% !important;
+	}
+	.loading-text {
+		top: 57%;
+		> p {
+			margin-top: 1.5rem !important;
+			color: #ffeb3b;
+			font-size: 1.8rem;
+		}
+	}
+}
+
+/* Fixing where the boostrap modal will add pading in a glitch */
+body {
+	padding-right: 0 !important;
+}

@@ -1,0 +1,40 @@
+<ngx-spinner bdOpacity="0.9" bdColor="#112938" size="large" color="#FFEB3B" type="pacman">
+	<p>Looking for Blinky, Pinky, Inky and Clyde</p>
+</ngx-spinner>
+
+<section class="container push-down">
+	<h1 class="text-center">Developer Profiles</h1>
+	<p class="lead text-center">Browse and connect with developers</p>
+	<div class="row">
+		<article class="col" *ngFor="let user of displayUsers">
+			<div class="profile" [routerLink]="['/profile', user.id, user.username]">
+				<div class="image">
+					<img src="{{user?.profile[0].avatar}}" alt="{{user?.username}}" />
+					<div *ngIf="user?.profile[0].donator">
+						<div class="ribbon ribbon-top-right">
+							<span>Supporter
+								<i class="fas fa-star"></i>
+							</span>
+						</div>
+					</div>
+					<p class="visit-profile">
+						Visit Profile
+					</p>
+				</div>
+				<div class="profile-text">
+					<h4>{{user?.username}}</h4>
+					<h5>{{user?.profile[0].firstName}} {{user?.profile[0].lastName}}</h5>
+					<h5>{{user?.profile[0].title}}</h5>
+					<div class="icons">
+						<ul class="list-inline">
+							<li class="list-inline-item" *ngFor="let skills of user?.skills | slice: 0:10">
+								<i class="{{skills.icon}} size-2" placement="top" ngbTooltip="{{skills.name}}"></i>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<div infiniteScroll [infiniteScrollDistance]="4" [infiniteScrollThrottle]="500" (scrolled)="loadMore()">
+	</div>
+</section>

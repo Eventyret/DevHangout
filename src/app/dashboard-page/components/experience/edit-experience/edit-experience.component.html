@@ -1,0 +1,54 @@
+<section>
+<div class="modal-header">
+	<h4 class="modal-title">Editing {{experience?.jobTitle}} at {{experience?.company}}</h4>
+	<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Nothing was saved👍 ')">
+		<i class="fas fa-times"></i>
+	</button>
+</div>
+<div class="modal-body">
+	<div class="add-experience">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 m-auto">
+					<small class="d-block pb-3">* = required field</small>
+					<form [formGroup]="editForm" (ngSubmit)="update()">
+						<div class="form-group">
+							<input formControlName="company" type="text" name="company" class="form-control form-control-lg" placeholder="* Company">
+						</div>
+						<div class="form-group">
+							<input formControlName="jobTitle" name="jobTitle" type="text" class="form-control form-control-lg" placeholder="* Job Title">
+						</div>
+						<div class="form-group">
+							<input formControlName="location" type="text" name="location" class="form-control form-control-lg" placeholder="Location">
+						</div>
+						<div class="form-group row" *ngIf="experience">
+							<div class="col-sm-6" [ngClass]="{'col-sm-12': current}">
+								<h6>From</h6>
+								<input formControlName="dateFrom" type="date" name="dateFrom" class="form-control form-control-lg">
+							</div>
+							<div class="col-sm-6" *ngIf="!current">
+								<h6>To</h6>
+								<input formControlName="dateTo" type="date" name="dateTo" class="form-control form-control-lg">
+							</div>
+						</div>
+						<div class="btn-group btn-group-toggle mb-4 col-sm-12">
+							<label class="btn-info btn-block" ngbButtonLabel>
+								<input formControlName="current" type="checkbox" ngbButton>
+								<span *ngIf="!current">I currently work here</span>
+								<span *ngIf="current">I don't work here anymore</span>
+
+							</label>
+						</div>
+						<div *ngIf="editForm.valid; else elseBlock">
+							<input type="submit" class="btn btn-success btn-block mt-4" value="Update">
+						</div>
+						<ng-template #elseBlock>
+							<input type="submit" class="btn btn-danger btn-block mt-4" [disabled]="!editForm.valid" value="Nothing Changed">
+						</ng-template>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</section>

@@ -1,0 +1,23 @@
+#card-element {
+	padding: 10px;
+	margin-bottom: 2px;
+	font-size: 1rem;
+	font-family: "Ubuntu";
+}
+
+.ElementsApp {
+	.Icon-fill {
+		fill: #09151c !important;
+	}
+	input {
+		animation: 1ms void-animation-out;
+		-webkit-animation: 1ms void-animation-out;
+		font-family: "Ubuntu";
+		font-size: 400;
+		&:-webkit-autofill {
+			transition: background-color 100000000s;
+			-webkit-animation: 1ms void-animation-out;
+			animation: 1ms void-animation-out;
+		}
+	}
+}

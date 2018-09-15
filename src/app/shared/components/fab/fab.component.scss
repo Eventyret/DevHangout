@@ -1,0 +1,107 @@
+.fa-heart,
+.fa-info,
+.fa-question {
+	color: #fff;
+	font-size: 2.2rem;
+	margin-top: 4px;
+}
+.fab-sticky {
+	position: fixed;
+	bottom: 45vh;
+	right: 15px;
+	z-index: 1;
+	&:hover .fab-buttons:not(:last-child) {
+		opacity: 1;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+		margin: 15px auto 0;
+	}
+}
+.fab-buttons {
+	border-radius: 50%;
+	background-color: #ff5722;
+	display: block;
+	width: 56px;
+	height: 56px;
+	margin: 20px auto 0;
+	position: relative;
+	-webkit-transition: all 0.1s ease-out;
+	transition: all 0.1s ease-out;
+	border: none;
+	outline: none;
+	&:not(:last-child) {
+		width: 56px;
+		height: 56px;
+		margin: 20px auto 0;
+		opacity: 0;
+		-webkit-transform: translateY(50px);
+		-ms-transform: translateY(50px);
+		transform: translateY(50px);
+	}
+	&.blue {
+		background-color: #112938;
+		border: 1px solid #fff;
+	}
+	&.red {
+		background-color: #f44336;
+	}
+}
+/* Pulsing Animation Effect */
+.ani-pulse {
+	&:hover {
+		-webkit-animation: pulse 2s linear infinite;
+		animation: pulse 2s linear infinite;
+	}
+}
+
+/* The Animation of pulse */
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+
+	50% {
+		-webkit-transform: scale(0.8);
+		transform: scale(0.8);
+	}
+
+	100% {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+}
+
+@keyframes pulse {
+	0% {
+		-webkit-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+
+	50% {
+		-webkit-transform: scale(0.8);
+		-ms-transform: scale(0.8);
+		transform: scale(0.8);
+	}
+
+	100% {
+		-webkit-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+}
+
+@keyframes rotate-center {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.fa-question {
+	animation: rotate-center 5s ease-in-out infinite reverse both
+}
