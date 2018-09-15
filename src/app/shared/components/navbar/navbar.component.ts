@@ -14,6 +14,14 @@ export class NavbarComponent implements OnInit {
 	public userID: string;
 	public avatar: string;
 	public loggedIn = false;
+
+
+
+	/**
+	 * Creates an instance of navbar component.
+	 * @param auth Checking if the user is logged in
+	 * @param modalService Handling opening a new modal
+	 */
 	constructor(public auth: AuthService, private modalService: NgbModal) {}
 
 
