@@ -129,9 +129,11 @@
                                 <a href="#activeModal">activeModal</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#cpassword">cpassword</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#signupForm">signupForm</a>
                             </li>
                         </ul>
@@ -172,12 +174,16 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/components/signup/signup.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/shared/components/signup/signup.component.ts:23</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of signup component.
+This also generates the form ready with validation.
+The validation used is a custom validators to check if the passwords are the same.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -186,6 +192,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -200,6 +207,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>The Auth Service used to post userdata to the backend</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>activeModal</td>
@@ -212,6 +223,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>The instance of our modal</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>modalService</td>
@@ -224,6 +239,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>A new modal</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -258,20 +277,25 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>register(user: )</code>
+<code>register(user: <a href="../interfaces/User.html">User</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/shared/components/signup/signup.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/shared/components/signup/signup.component.ts:57</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>This will pass the form data from the user
+to the backend.
+If we get a response we will open the
+LoginComponent and let the user login.</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -279,12 +303,16 @@
                                         <thead>
                                             <tr>
                                                 <td>Name</td>
+                                                    <td>Type</td>
                                                 <td>Optional</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
                                                         <td>user</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+                                                        </td>
                                                     
                                                     <td>
                                                             No
@@ -343,10 +371,15 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/shared/components/signup/signup.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/shared/components/signup/signup.component.ts:34</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">The instance of our modal</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -357,6 +390,7 @@
                         <a name="cpassword"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Public</span>
                             cpassword
                             </b>
                             <a href="#cpassword"><span class="icon ion-ios-link"></span></a>
@@ -365,7 +399,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>cpassword:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>cpassword:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                     </td>
                 </tr>
@@ -377,10 +411,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/components/signup/signup.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/shared/components/signup/signup.component.ts:23</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Confirm Password</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -391,6 +431,7 @@
                         <a name="signupForm"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Public</span>
                             signupForm
                             </b>
                             <a href="#signupForm"><span class="icon ion-ios-link"></span></a>
@@ -399,7 +440,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>signupForm:     <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>signupForm:     <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
 </code>
                     </td>
                 </tr>
@@ -411,10 +452,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/shared/components/signup/signup.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/shared/components/signup/signup.component.ts:18</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Signup form of signup component</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -430,6 +477,7 @@ import { AuthService } from &quot;../../services/auth/auth.service&quot;;
 import { NgbActiveModal, NgbModal } from &quot;@ng-bootstrap/ng-bootstrap&quot;;
 import { CustomValidators } from &quot;ng5-validation&quot;;
 import { LoginComponent } from &quot;../login/login.component&quot;;
+import { User } from &quot;../../models/users.model&quot;;
 
 @Component({
 	selector: &quot;app-signup&quot;,
@@ -437,8 +485,25 @@ import { LoginComponent } from &quot;../login/login.component&quot;;
 	styleUrls: [&quot;./signup.component.scss&quot;]
 })
 export class SignupComponent implements OnInit {
-	signupForm: FormGroup;
-	cpassword: string;
+	/**
+	 * Signup form of signup component
+	 */
+	public signupForm: FormGroup;
+
+	/**
+	 * Confirm Password
+	 */
+	public cpassword: string;
+
+	/**
+	 * Creates an instance of signup component.
+	 * This also generates the form ready with validation.
+	 * The validation used is a custom validators to check if the passwords are the same.
+	 * @param authService The Auth Service used to post userdata to the backend
+	 * @param activeModal  The instance of our modal
+	 * @param modalService   A new modal
+	 *
+	 */
 	constructor(private authService: AuthService, public activeModal: NgbActiveModal, private modalService: NgbModal) {
 		const password &#x3D; new FormControl(&quot;&quot;, Validators.required);
 		const cpassword &#x3D; new FormControl(&quot;&quot;, [Validators.required, CustomValidators.equalTo(password)]);
@@ -452,19 +517,27 @@ export class SignupComponent implements OnInit {
 		});
 	}
 
-	register(user) {
+	ngOnInit() {}
+
+	/**
+	 * This will pass the form data from the user
+	 * to the backend.
+	 * If we get a response we will open the
+	 * LoginComponent and let the user login.
+	 * @param user
+	 * @fires LoginComponent on successfull registration
+	 */
+	register(user: User) {
 		this.authService.register(user).subscribe(results &#x3D;&gt; {
 			if (results) {
-				this.activeModal.dismiss();
 				this.modalService.open(LoginComponent, {
 					centered: true,
 					size: &quot;lg&quot;
 				});
+				this.activeModal.dismiss();
 			}
 		});
 	}
-
-	ngOnInit() {}
 }
 </code></pre>
     </div>
@@ -534,7 +607,7 @@ export class SignupComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><section>	<div class="modal-header">		<h4 class="modal-title">Create your Dev Account today!</h4>		<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">			<i class="fas fa-times"></i>		</button>	</div>	<div class="modal-body">		<form [formGroup]="signupForm" (ngSubmit)="register(signupForm.value)">			<div class="form-group">				<input type="text" formControlName="username" name="username" id="username" class="form-control form-control-lg"				 placeholder="Your Username" required />			</div>			<div class="form-group">				<input type="email" formControlName="email" name="email" id="email" class="form-control form-control-lg"				 placeholder="Your Email" required />			</div>			<div class="form-group">				<input type="password" formControlName="password" class="form-control form-control-lg" placeholder="Your Password" />			</div>			<div class="form-group">				<input type="password" formControlName="cpassword" name="cpassword" id="cpassword" class="form-control form-control-lg"				 placeholder="Confirm Password" />			</div>			<div *ngIf="signupForm.valid && !signupForm.controls.cpassword.errors?.equalTo; else elseBlock">				<input type="submit" class="btn btn-success btn-block mt-4" value="Hipp Hipp Array">			</div>			<ng-template #elseBlock>				<input type="submit" class="btn btn-danger btn-block mt-4" [disabled]="!signupForm.valid" value="Not Ready">			</ng-template>		</form>	</div></section></div>'
-    var COMPONENTS = [{'name': 'AddEducationComponent', 'selector': 'app-add-education'},{'name': 'AddExperienceComponent', 'selector': 'app-add-experience'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DevelopersListComponent', 'selector': 'app-profiles'},{'name': 'DonationsMobileViewComponent', 'selector': 'donations-mobile-view'},{'name': 'EditEducationComponent', 'selector': 'app-edit-education'},{'name': 'EditExperienceComponent', 'selector': 'app-edit-experience'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'EducationComponent', 'selector': 'app-education'},{'name': 'EducationMobileViewComponent', 'selector': 'education-mobile-view'},{'name': 'ExperienceComponent', 'selector': 'app-experience'},{'name': 'ExperienceMobileViewComponent', 'selector': 'experience-mobile-view'},{'name': 'FabComponent', 'selector': 'app-fab'},{'name': 'FakeGithubPage', 'selector': 'app-fake-github'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GithubComponent', 'selector': 'app-github'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoModalComponent', 'selector': 'app-info-modal'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SectionsComponent', 'selector': 'app-sections'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'SessionExpiredPage', 'selector': 'app-expired-page'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SkillsComponent', 'selector': 'app-skills'},{'name': 'SocialIconsComponent', 'selector': 'app-social-icons'},{'name': 'SupporterModalComponent', 'selector': 'app-supporter-modal'},{'name': 'TestimonialsComponent', 'selector': 'app-testimonials'},{'name': 'ThankYouModalComponent', 'selector': 'app-thank-you-modal'}];
+    var COMPONENTS = [{'name': 'AddEducationComponent', 'selector': 'app-add-education'},{'name': 'AddExperienceComponent', 'selector': 'app-add-experience'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DevelopersListComponent', 'selector': 'app-profiles'},{'name': 'DonationsMobileViewComponent', 'selector': 'donations-mobile-view'},{'name': 'EditEducationComponent', 'selector': 'app-edit-education'},{'name': 'EditExperienceComponent', 'selector': 'app-edit-experience'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'EducationComponent', 'selector': 'app-education'},{'name': 'EducationMobileViewComponent', 'selector': 'education-mobile-view'},{'name': 'ExperienceComponent', 'selector': 'app-experience'},{'name': 'ExperienceMobileViewComponent', 'selector': 'experience-mobile-view'},{'name': 'FabComponent', 'selector': 'app-fab'},{'name': 'FakeGithubPage', 'selector': 'app-fake-github'},{'name': 'GithubComponent', 'selector': 'app-github'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoModalComponent', 'selector': 'app-info-modal'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SectionsComponent', 'selector': 'app-sections'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'SessionExpiredPage', 'selector': 'app-expired-page'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SkillsComponent', 'selector': 'app-skills'},{'name': 'SocialIconsComponent', 'selector': 'app-social-icons'},{'name': 'SupporterModalComponent', 'selector': 'app-supporter-modal'},{'name': 'TestimonialsComponent', 'selector': 'app-testimonials'},{'name': 'ThankYouModalComponent', 'selector': 'app-thank-you-modal'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SignupComponent'};
 </script>

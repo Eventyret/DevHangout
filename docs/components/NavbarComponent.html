@@ -273,13 +273,16 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/shared/components/navbar/navbar.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/shared/components/navbar/navbar.component.ts:47</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Gets the users username
+we are also storing their avatar and set their login to true.</p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -311,13 +314,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/shared/components/navbar/navbar.component.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/shared/components/navbar/navbar.component.ts:62</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Opens login Modal</p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -349,13 +354,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/shared/components/navbar/navbar.component.ts:48</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/shared/components/navbar/navbar.component.ts:73</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Opens sign up Modal</p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -604,6 +611,17 @@ export class NavbarComponent implements OnInit {
 	public loggedIn &#x3D; false;
 	constructor(public auth: AuthService, private modalService: NgbModal) {}
 
+
+	/**
+	 * on init we getting the following data from the user
+	 * Their userID
+	 * Their username
+	 * We are also initializing and the service to see if
+	 * the user is still logged in.
+	 * This will then update the avatar of the user if they are logged in.
+	 * @fires refreshToken$
+	 * @fires getUsername()
+	 */
 	ngOnInit() {
 		this.userID &#x3D; localStorage.getItem(&quot;user_id&quot;);
 		this.username &#x3D; localStorage.getItem(&quot;username&quot;);
@@ -616,6 +634,11 @@ export class NavbarComponent implements OnInit {
 		});
 	}
 
+
+	/**
+	 * Gets the users username
+	 * we are also storing their avatar and set their login to true.
+	 */
 	getUsername() {
 		this.userID &#x3D; localStorage.getItem(&quot;user_id&quot;);
 		this.username &#x3D; localStorage.getItem(&quot;username&quot;);
@@ -627,12 +650,21 @@ export class NavbarComponent implements OnInit {
 		});
 	}
 
+
+	/**
+	 * Opens login Modal
+	 */
 	openLogin() {
 		this.modalService.open(LoginComponent, {
 			centered: true,
 			size: &quot;lg&quot;
 		});
 	}
+
+
+	/**
+	 * Opens sign up Modal
+	 */
 	openSignUp() {
 		this.modalService.open(SignupComponent, {
 			centered: true,
@@ -726,7 +758,7 @@ export class NavbarComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><nav class="navbar navbar-expand-md bg-primary fixed-top">		<div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"  [ngbCollapse]="isCollapsed">			<ul class="navbar-nav mr-auto">				<li class="nav-item active">					<a routerLink="profiles" *ngIf="this.auth.isLoggedIn()"  class="nav-link" ngbTooltip="Developers Profiles" placement="bottom" (click)="isCollapsed = !isCollapsed">						<i class="fas fa-users d-none d-lg-inline-block"></i> Developers List					</a>				</li>				<li class="nav-item" *ngIf="this.auth.isLoggedIn()" ngbTooltip="Your Profile" placement="bottom">					<a class="nav-link" routerLink="profile/{{userID}}/{{username}}" (click)="isCollapsed = !isCollapsed">						<i class="fas fa-user-astronaut d-none d-lg-inline-block"></i> Your Public Profile					</a>				</li>			</ul>		</div>		<div class="mx-auto order-0">			<a routerLink="/" class="navbar-brand">Developers Hangout</a>			<button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="mobileNav">				<i class="fas fa-bars"></i>			</button>		</div>		<div class="navbar-collapse collapse w-100 order-3 dual-collapse2" [ngbCollapse]="isCollapsed">			<ul class="navbar-nav ml-auto">						<li class="nav-item" *ngIf="this.auth.isLoggedIn()">							<a class="nav-link" routerLink="dashboard" isCollapsed = !isCollapsed (click)="isCollapsed = !isCollapsed">								<span *ngIf="loggedIn"><img src="{{avatar}}" alt="{{username}}"  class="rounded-circle avatar d-none d-md-inline-block" ngbTooltip="Your Dashboard" placement="bottom"> Your Dashboard</span>								<span *ngIf="!loggedIn"><img src="../../../assets/default.png" alt="{{username}}"  class="rounded-circle avatar d-none d-md-inline-block" ngbTooltip="Your Dashboard" placement="bottom"> Your Dashboard</span>							</a>						</li>				<li class="nav-item">					<a class="nav-link" *ngIf="!this.auth.isLoggedIn()" (click)="openSignUp(); isCollapsed = !isCollapsed">						<button class="btn btn-outline-white">Sign Up							<i class="fas fa-user-plus"></i>						</button>					</a>				</li>				<li class="nav-item">					<a class="nav-link" *ngIf="!this.auth.isLoggedIn()" (click)="openLogin(); isCollapsed = !isCollapsed">						<button class="btn btn-outline-white">Login							<i class="fas fa-sign-in-alt"></i>						</button>					</a>				</li>				<li class="nav-item">					<a class="nav-link text-right" (click)="this.auth.logout(); isCollapsed = !isCollapsed" *ngIf="this.auth.isLoggedIn()">						<button class="btn btn-danger">Logout							<i class="fas fa-sign-out-alt"></i>						</button>					</a>				</li>			</ul>		</div>	</nav></div>'
-    var COMPONENTS = [{'name': 'AddEducationComponent', 'selector': 'app-add-education'},{'name': 'AddExperienceComponent', 'selector': 'app-add-experience'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DevelopersListComponent', 'selector': 'app-profiles'},{'name': 'DonationsMobileViewComponent', 'selector': 'donations-mobile-view'},{'name': 'EditEducationComponent', 'selector': 'app-edit-education'},{'name': 'EditExperienceComponent', 'selector': 'app-edit-experience'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'EducationComponent', 'selector': 'app-education'},{'name': 'EducationMobileViewComponent', 'selector': 'education-mobile-view'},{'name': 'ExperienceComponent', 'selector': 'app-experience'},{'name': 'ExperienceMobileViewComponent', 'selector': 'experience-mobile-view'},{'name': 'FabComponent', 'selector': 'app-fab'},{'name': 'FakeGithubPage', 'selector': 'app-fake-github'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GithubComponent', 'selector': 'app-github'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoModalComponent', 'selector': 'app-info-modal'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SectionsComponent', 'selector': 'app-sections'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'SessionExpiredPage', 'selector': 'app-expired-page'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SkillsComponent', 'selector': 'app-skills'},{'name': 'SocialIconsComponent', 'selector': 'app-social-icons'},{'name': 'SupporterModalComponent', 'selector': 'app-supporter-modal'},{'name': 'TestimonialsComponent', 'selector': 'app-testimonials'},{'name': 'ThankYouModalComponent', 'selector': 'app-thank-you-modal'}];
+    var COMPONENTS = [{'name': 'AddEducationComponent', 'selector': 'app-add-education'},{'name': 'AddExperienceComponent', 'selector': 'app-add-experience'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DevelopersListComponent', 'selector': 'app-profiles'},{'name': 'DonationsMobileViewComponent', 'selector': 'donations-mobile-view'},{'name': 'EditEducationComponent', 'selector': 'app-edit-education'},{'name': 'EditExperienceComponent', 'selector': 'app-edit-experience'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'EducationComponent', 'selector': 'app-education'},{'name': 'EducationMobileViewComponent', 'selector': 'education-mobile-view'},{'name': 'ExperienceComponent', 'selector': 'app-experience'},{'name': 'ExperienceMobileViewComponent', 'selector': 'experience-mobile-view'},{'name': 'FabComponent', 'selector': 'app-fab'},{'name': 'FakeGithubPage', 'selector': 'app-fake-github'},{'name': 'GithubComponent', 'selector': 'app-github'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoModalComponent', 'selector': 'app-info-modal'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SectionsComponent', 'selector': 'app-sections'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'SessionExpiredPage', 'selector': 'app-expired-page'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SkillsComponent', 'selector': 'app-skills'},{'name': 'SocialIconsComponent', 'selector': 'app-social-icons'},{'name': 'SupporterModalComponent', 'selector': 'app-supporter-modal'},{'name': 'TestimonialsComponent', 'selector': 'app-testimonials'},{'name': 'ThankYouModalComponent', 'selector': 'app-thank-you-modal'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NavbarComponent'};
 </script>

@@ -86,6 +86,7 @@
                                 <a href="#jwtHelper">jwtHelper</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#token">token</a>
                             </li>
                         </ul>
@@ -121,12 +122,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, authService: <a href="../injectables/AuthService.html">AuthService</a>, jwtHelper: JwtHelperService, modalService: NgbModal)</code>
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, authService: <a href="../injectables/AuthService.html">AuthService</a>, jwtHelper: JwtHelperService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/services/auth/auth-guard.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/shared/services/auth/auth-guard.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -179,18 +180,6 @@
                                                     </td>
                                                     
                                                 </tr>
-                                                <tr>
-                                                        <td>modalService</td>
-                                                  
-                                                        <td>
-                                                                    <code>NgbModal</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -227,18 +216,27 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/services/auth/auth-guard.service.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/shared/services/auth/auth-guard.service.ts:28</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Determines whether a user can access a route.
+We are also checking if the user is logged in to update the navbar
+If the user is not logged in we will navigate to session-expired</p>
+</div>
 
+                            <div>
+                            </div>
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                             </div>
+                                <div class="io-description">
+                                    
+                                </div>
                     </td>
                 </tr>
             </tbody>
@@ -259,10 +257,23 @@ import { NgbModal } from &quot;@ng-bootstrap/ng-bootstrap&quot;;
 	providedIn: &quot;root&quot;
 })
 export class AuthGuard implements CanActivate {
-	token &#x3D; localStorage.getItem(&quot;token&quot;);
 
-	constructor(private router: Router, private authService: AuthService, public jwtHelper: JwtHelperService, private modalService: NgbModal) {}
+	public token &#x3D; localStorage.getItem(&quot;token&quot;);
 
+	constructor(
+		private router: Router,
+		private authService: AuthService,
+		public jwtHelper: JwtHelperService
+		) {}
+
+
+
+	/**
+	 * Determines whether a user can access a route.
+	 * We are also checking if the user is logged in to update the navbar
+	 * If the user is not logged in we will navigate to session-expired
+	 * @returns
+	 */
 	canActivate() {
 		if (this.token) {
 			if (this.jwtHelper.isTokenExpired()) {
