@@ -104,12 +104,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/home-page/service/home-page.service.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/home-page/service/home-page.service.ts:11</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of home page service.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -118,6 +120,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -132,6 +135,11 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Responsible for making the
+http requests from the app to the API</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -169,18 +177,25 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/home-page/service/home-page.service.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/home-page/service/home-page.service.ts:26</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Gets data for landing page</p>
+</div>
 
+                            <div>
+                            </div>
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                             </div>
+                                <div class="io-description">
+                                    
+                                </div>
                     </td>
                 </tr>
             </tbody>
@@ -197,17 +212,30 @@ import { HttpClient } from &quot;@angular/common/http&quot;;
 import { throwError } from &quot;rxjs&quot;;
 import { map } from &quot;rxjs/operators&quot;;
 import &quot;rxjs/add/operator/catch&quot;;
+import { Section } from &quot;../models/home-page.model&quot;;
+
 @Injectable({
   providedIn: &quot;root&quot;
 })
 export class HomePageService {
 
+
+  /**
+   * Creates an instance of home page service.
+   * @param http Responsible for making the
+   * http requests from the app to the API
+   */
   constructor(private http: HttpClient) { }
 
+
+  /**
+   * Gets data for landing page
+   * @returns
+   */
   getDataForLandingPage() {
 	return this.http
 		.get(&quot;/assets/landingpage.json&quot;)
-		.pipe(map((data: any) &#x3D;&gt; data))
+		.pipe(map((data: Section) &#x3D;&gt; data))
 		.catch((error: any) &#x3D;&gt; {
 			return throwError(error);
 		});

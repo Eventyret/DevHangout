@@ -187,12 +187,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/shared/components/login/login.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/shared/components/login/login.component.ts:19</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of login component.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -201,6 +203,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -215,6 +218,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Used to navigate the user to the dashboard on success</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>authService</td>
@@ -227,6 +234,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Authenticating the user</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>activeModal</td>
@@ -239,6 +250,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>The instance of this modal</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -280,7 +295,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/shared/components/login/login.component.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/shared/components/login/login.component.ts:40</a></div>
                             </td>
                         </tr>
 
@@ -371,10 +386,15 @@ we redirect them to the dashboard</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/shared/components/login/login.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/shared/components/login/login.component.ts:29</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">The instance of this modal</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -471,7 +491,7 @@ we redirect them to the dashboard</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/shared/components/login/login.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/shared/components/login/login.component.ts:56</a></div>
                                 </td>
                             </tr>
 
@@ -502,9 +522,14 @@ export class LoginComponent implements OnInit {
 		password: new FormControl(&quot;&quot;, Validators.required)
 	});
 
-	get usernameField() {
-		return this.loginForm.get(&quot;username&quot;);
-	}
+
+
+	/**
+	 * Creates an instance of login component.
+	 * @param router  Used to navigate the user to the dashboard on success
+	 * @param authService Authenticating the user
+	 * @param activeModal The instance of this modal
+	 */
 	constructor(private router: Router, private authService: AuthService, public activeModal: NgbActiveModal) {}
 
 	ngOnInit() {}
@@ -530,6 +555,10 @@ export class LoginComponent implements OnInit {
 				console.log(error);
 			}
 		);
+	}
+
+	get usernameField() {
+		return this.loginForm.get(&quot;username&quot;);
 	}
 }
 </code></pre>
@@ -605,7 +634,7 @@ export class LoginComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><section>	<div class="modal-header">		<h4 class="modal-title">Sign in to your Developers Hangout Account</h4>		<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">			<i class="fas fa-times"></i>		</button>	</div>	<div class="modal-body">		<form [formGroup]="loginForm" (ngSubmit)="signIn(loginForm.value)">			<div class="form-group">				<input				formControlName="username"				type="username"				name="username"				id="username"				class="form-control form-control-lg"				placeholder="Username">			</div>			<div class="form-group" *ngIf="usernameField?.touched && usernameField.invalid">				<div *ngIf="usernameField.invalid">Email is requried</div>			</div>			<div class="form-group">				<input				formControlName="password"				type="password"				name="password"				id="password"				class="form-control form-control-lg"			placeholder="Password">		</div>		<div *ngIf="loginForm.valid; else elseBlock">			<input type="submit" class="btn btn-success btn-block mt-4" value="Login">		</div>			<ng-template #elseBlock>				<input type="submit" class="btn btn-danger btn-block mt-4" [disabled]="!loginForm.valid" value="Login">			</ng-template>		</form>	</div></section></div>'
-    var COMPONENTS = [{'name': 'AddEducationComponent', 'selector': 'app-add-education'},{'name': 'AddExperienceComponent', 'selector': 'app-add-experience'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DevelopersListComponent', 'selector': 'app-profiles'},{'name': 'DonationsMobileViewComponent', 'selector': 'donations-mobile-view'},{'name': 'EditEducationComponent', 'selector': 'app-edit-education'},{'name': 'EditExperienceComponent', 'selector': 'app-edit-experience'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'EducationComponent', 'selector': 'app-education'},{'name': 'EducationMobileViewComponent', 'selector': 'education-mobile-view'},{'name': 'ExperienceComponent', 'selector': 'app-experience'},{'name': 'ExperienceMobileViewComponent', 'selector': 'experience-mobile-view'},{'name': 'FabComponent', 'selector': 'app-fab'},{'name': 'FakeGithubPage', 'selector': 'app-fake-github'},{'name': 'GithubComponent', 'selector': 'app-github'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoModalComponent', 'selector': 'app-info-modal'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SectionsComponent', 'selector': 'app-sections'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'SessionExpiredPage', 'selector': 'app-expired-page'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SkillsComponent', 'selector': 'app-skills'},{'name': 'SocialIconsComponent', 'selector': 'app-social-icons'},{'name': 'SupporterModalComponent', 'selector': 'app-supporter-modal'},{'name': 'TestimonialsComponent', 'selector': 'app-testimonials'},{'name': 'ThankYouModalComponent', 'selector': 'app-thank-you-modal'}];
+    var COMPONENTS = [{'name': 'AddEducationComponent', 'selector': 'app-add-education'},{'name': 'AddExperienceComponent', 'selector': 'app-add-experience'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DevelopersListComponent', 'selector': 'app-profiles'},{'name': 'DonationsMobileViewComponent', 'selector': 'donations-mobile-view'},{'name': 'EditEducationComponent', 'selector': 'app-edit-education'},{'name': 'EditExperienceComponent', 'selector': 'app-edit-experience'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'EducationComponent', 'selector': 'app-education'},{'name': 'EducationMobileViewComponent', 'selector': 'education-mobile-view'},{'name': 'ExperienceComponent', 'selector': 'app-experience'},{'name': 'ExperienceMobileViewComponent', 'selector': 'experience-mobile-view'},{'name': 'FabComponent', 'selector': 'app-fab'},{'name': 'FakeGithubPage', 'selector': 'app-fake-github'},{'name': 'GithubComponent', 'selector': 'app-github'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoModalComponent', 'selector': 'app-info-modal'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SectionsComponent', 'selector': 'app-sections'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'SessionExpiredPage', 'selector': 'app-expired-page'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SkillsComponent', 'selector': 'app-skills'},{'name': 'SocialIconsComponent', 'selector': 'app-social-icons'},{'name': 'SupporterModalComponent', 'selector': 'app-supporter-modal'},{'name': 'TestimonialsComponent', 'selector': 'app-testimonials'},{'name': 'ThankYouModalComponent', 'selector': 'app-thank-you-modal'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>

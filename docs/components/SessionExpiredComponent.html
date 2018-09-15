@@ -133,6 +133,7 @@
                                 <a href="#invalidUser">invalidUser</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#loginForm">loginForm</a>
                             </li>
                             <li>
@@ -203,6 +204,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of session expired component.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -211,6 +214,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -225,6 +229,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Navigating the user to the frontpage</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>authService</td>
@@ -237,6 +245,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Handling the authentication of this user</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>activeModal</td>
@@ -249,6 +261,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>The instance of this modal</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>modalService</td>
@@ -261,6 +277,10 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Handling opening a new modal</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -302,7 +322,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/shared/components/session-expired/session-expired.component.ts:58</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/shared/components/session-expired/session-expired.component.ts:66</a></div>
                             </td>
                         </tr>
 
@@ -344,7 +364,7 @@ and notify the user</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/shared/components/session-expired/session-expired.component.ts:71</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/shared/components/session-expired/session-expired.component.ts:79</a></div>
                             </td>
                         </tr>
 
@@ -386,7 +406,7 @@ We will open the SignupComponent and let the user register</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/shared/components/session-expired/session-expired.component.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/shared/components/session-expired/session-expired.component.ts:48</a></div>
                             </td>
                         </tr>
 
@@ -472,10 +492,15 @@ to the front page and dismiss the modal</p>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/shared/components/session-expired/session-expired.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/shared/components/session-expired/session-expired.component.ts:32</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">The instance of this modal</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -521,6 +546,7 @@ to the front page and dismiss the modal</p>
                         <a name="loginForm"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Public</span>
                             loginForm
                             </b>
                             <a href="#loginForm"><span class="icon ion-ios-link"></span></a>
@@ -529,7 +555,7 @@ to the front page and dismiss the modal</p>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>loginForm:     <code></code>
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>loginForm:     <code></code>
 </code>
                     </td>
                 </tr>
@@ -607,7 +633,7 @@ to the front page and dismiss the modal</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/shared/components/session-expired/session-expired.component.ts:84</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/app/shared/components/session-expired/session-expired.component.ts:92</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -640,11 +666,19 @@ import { User } from &quot;../../models/users.model&quot;;
 export class SessionExpiredComponent implements OnInit {
 	public invalidUser: boolean;
 	public username: string;
-	loginForm &#x3D; new FormGroup({
+	public loginForm &#x3D; new FormGroup({
 		username: new FormControl(&quot;&quot;, Validators.required),
 		password: new FormControl(&quot;&quot;, Validators.required)
 	});
 
+
+	/**
+	 * Creates an instance of session expired component.
+	 * @param router  Navigating the user to the frontpage
+	 * @param authService Handling the authentication of this user
+	 * @param activeModal  The instance of this modal
+	 * @param modalService Handling opening a new modal
+	 */
 	constructor(
 		private router: Router,
 		private authService: AuthService,
@@ -788,7 +822,7 @@ export class SessionExpiredComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><section><div class="modal-header">	<h4 class="modal-title" *ngIf="username">Whoops! Seems your session has expired {{username}} </h4>	<h4 class="modal-title" *ngIf="!username">You will need to be logged in to view profiles 🤪</h4>	<button type="button" class="close" aria-label="Close" (click)="dismiss()">		<i class="fas fa-times"></i>	</button></div><div class="modal-body">	<form [formGroup]="loginForm" (ngSubmit)="signIn(loginForm.value)">		<div class="form-group">			<input			formControlName="username"			type="username"			name="username"			id="username"			class="form-control form-control-lg"			placeholder="Username">		</div>		<div class="form-group" *ngIf="usernameField?.touched && usernameField.invalid">			<div *ngIf="usernameField.invalid">Email is required</div>		</div>		<div class="form-group">			<input			formControlName="password"			type="password"			name="password"			id="password"			class="form-control form-control-lg"			placeholder="Password">		</div>		<div *ngIf="loginForm.valid; else elseBlock">				<input type="submit" class="btn btn-success btn-block mt-4" value="Sign in Again">			</div>			<ng-template #elseBlock>					<input type="submit" class="btn btn-danger btn-block mt-4" [disabled]="!loginForm.valid" value="Sign in Again">			</ng-template>	</form></div><div class="modal-footer">	<a (click)="register()" class="btn btn-secondary btn-sm text-white">I don\'t have an account</a></div></section></div>'
-    var COMPONENTS = [{'name': 'AddEducationComponent', 'selector': 'app-add-education'},{'name': 'AddExperienceComponent', 'selector': 'app-add-experience'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DevelopersListComponent', 'selector': 'app-profiles'},{'name': 'DonationsMobileViewComponent', 'selector': 'donations-mobile-view'},{'name': 'EditEducationComponent', 'selector': 'app-edit-education'},{'name': 'EditExperienceComponent', 'selector': 'app-edit-experience'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'EducationComponent', 'selector': 'app-education'},{'name': 'EducationMobileViewComponent', 'selector': 'education-mobile-view'},{'name': 'ExperienceComponent', 'selector': 'app-experience'},{'name': 'ExperienceMobileViewComponent', 'selector': 'experience-mobile-view'},{'name': 'FabComponent', 'selector': 'app-fab'},{'name': 'FakeGithubPage', 'selector': 'app-fake-github'},{'name': 'GithubComponent', 'selector': 'app-github'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoModalComponent', 'selector': 'app-info-modal'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SectionsComponent', 'selector': 'app-sections'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'SessionExpiredPage', 'selector': 'app-expired-page'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SkillsComponent', 'selector': 'app-skills'},{'name': 'SocialIconsComponent', 'selector': 'app-social-icons'},{'name': 'SupporterModalComponent', 'selector': 'app-supporter-modal'},{'name': 'TestimonialsComponent', 'selector': 'app-testimonials'},{'name': 'ThankYouModalComponent', 'selector': 'app-thank-you-modal'}];
+    var COMPONENTS = [{'name': 'AddEducationComponent', 'selector': 'app-add-education'},{'name': 'AddExperienceComponent', 'selector': 'app-add-experience'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DevelopersListComponent', 'selector': 'app-profiles'},{'name': 'DonationsMobileViewComponent', 'selector': 'donations-mobile-view'},{'name': 'EditEducationComponent', 'selector': 'app-edit-education'},{'name': 'EditExperienceComponent', 'selector': 'app-edit-experience'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'EducationComponent', 'selector': 'app-education'},{'name': 'EducationMobileViewComponent', 'selector': 'education-mobile-view'},{'name': 'ExperienceComponent', 'selector': 'app-experience'},{'name': 'ExperienceMobileViewComponent', 'selector': 'experience-mobile-view'},{'name': 'FabComponent', 'selector': 'app-fab'},{'name': 'FakeGithubPage', 'selector': 'app-fake-github'},{'name': 'GithubComponent', 'selector': 'app-github'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoModalComponent', 'selector': 'app-info-modal'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SectionsComponent', 'selector': 'app-sections'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'SessionExpiredPage', 'selector': 'app-expired-page'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SkillsComponent', 'selector': 'app-skills'},{'name': 'SocialIconsComponent', 'selector': 'app-social-icons'},{'name': 'SupporterModalComponent', 'selector': 'app-supporter-modal'},{'name': 'TestimonialsComponent', 'selector': 'app-testimonials'},{'name': 'ThankYouModalComponent', 'selector': 'app-thank-you-modal'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SessionExpiredComponent'};
 </script>
