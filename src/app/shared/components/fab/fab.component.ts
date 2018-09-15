@@ -10,10 +10,11 @@ import { SharedService } from "../../services/misc/shared.service";
 	styleUrls: ["./fab.component.scss"]
 })
 export class FabComponent implements OnInit {
-	comp: any;
-	name: string;
-	loggedIn: boolean;
-	spin: any;
+	private comp: any;
+	public name: string;
+	private loggedIn: boolean;
+	/** Makes the icons spin on mouse over */
+	public spin: any;
 	constructor(private modalService: NgbModal, private sharedService: SharedService) {}
 	ngOnInit() {}
 

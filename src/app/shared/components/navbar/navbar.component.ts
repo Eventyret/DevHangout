@@ -16,6 +16,17 @@ export class NavbarComponent implements OnInit {
 	public loggedIn = false;
 	constructor(public auth: AuthService, private modalService: NgbModal) {}
 
+
+	/**
+	 * on init we getting the following data from the user
+	 * Their userID
+	 * Their username
+	 * We are also initializing and the service to see if
+	 * the user is still logged in.
+	 * This will then update the avatar of the user if they are logged in.
+	 * @fires refreshToken$
+	 * @fires getUsername()
+	 */
 	ngOnInit() {
 		this.userID = localStorage.getItem("user_id");
 		this.username = localStorage.getItem("username");
@@ -28,6 +39,11 @@ export class NavbarComponent implements OnInit {
 		});
 	}
 
+
+	/**
+	 * Gets the users username
+	 * we are also storing their avatar and set their login to true.
+	 */
 	getUsername() {
 		this.userID = localStorage.getItem("user_id");
 		this.username = localStorage.getItem("username");
@@ -39,12 +55,21 @@ export class NavbarComponent implements OnInit {
 		});
 	}
 
+
+	/**
+	 * Opens login Modal
+	 */
 	openLogin() {
 		this.modalService.open(LoginComponent, {
 			centered: true,
 			size: "lg"
 		});
 	}
+
+
+	/**
+	 * Opens sign up Modal
+	 */
 	openSignUp() {
 		this.modalService.open(SignupComponent, {
 			centered: true,
