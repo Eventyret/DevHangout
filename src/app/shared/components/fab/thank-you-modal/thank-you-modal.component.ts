@@ -11,25 +11,36 @@ import { DashboardComponent } from "../../../../dashboard-page/dashboard.compone
 	styleUrls: ["./thank-you-modal.component.scss"]
 })
 export class ThankYouModalComponent implements OnInit {
-	name: string;
-	amount: number;
-	token: string;
-	id: number;
-	user: User;
-	info: any;
-	card: any;
-	date: number;
-	constructor(
-		public activeModal: NgbActiveModal,
-		private dataService: DataService,
-		private auth: AuthService,
-		private dashboardComponent:
-		DashboardComponent) {}
+	public name: string;
+	public amount: number;
+	public token: string;
+	public id: number;
+	public user: User;
+	public info: any;
+	public date: number;
+
+
+	/**
+	 * Creates an instance of thank you modal component.
+	 * @param activeModal  The instance of this modal
+	 * @param dataService  The Service handling the users profile data.
+	 * @param auth Handling the users authentication and getting their updated data
+	 */
+	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private auth: AuthService) {}
 
 	ngOnInit() {
 		this.updateSupporterStatus();
 	}
 
+
+
+
+	/**
+	 * Updating the users donation status.
+	 *  @fires dataService.updateDetails We are updating the users donation status from true to false
+	 * @fires dataService.newDetails We are posting the data from stripe to the backend and attach it to
+	 * the users profile
+	 */
 	updateSupporterStatus() {
 		if (this.id) {
 			const donationStatus = {

@@ -10,14 +10,30 @@ import { SharedService } from "../../services/misc/shared.service";
 	styleUrls: ["./fab.component.scss"]
 })
 export class FabComponent implements OnInit {
+
 	private comp: any;
 	public name: string;
 	private loggedIn: boolean;
-	/** Makes the icons spin on mouse over */
 	public spin: any;
+
+
+	/**
+	 * Creates an instance of fab component.
+	 * @param modalService  Handling opening a new modal
+	 * @param sharedService Passing data with the username or anonymous to the other modals
+	 */
 	constructor(private modalService: NgbModal, private sharedService: SharedService) {}
+
 	ngOnInit() {}
 
+
+	/**
+	 * Opens and controls which modal to open.
+	 * This will check what button it is by it's ID then open
+	 * the correct component. It will also store the username
+	 * if it exists if not it will be refered to as anonymous
+	 * @param event
+	 */
 	open(event: any) {
 		const target = event.target.id;
 		if (target === "infoButton") {
