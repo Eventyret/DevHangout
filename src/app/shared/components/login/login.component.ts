@@ -18,9 +18,14 @@ export class LoginComponent implements OnInit {
 		password: new FormControl("", Validators.required)
 	});
 
-	get usernameField() {
-		return this.loginForm.get("username");
-	}
+
+
+	/**
+	 * Creates an instance of login component.
+	 * @param router  Used to navigate the user to the dashboard on success
+	 * @param authService Authenticating the user
+	 * @param activeModal The instance of this modal
+	 */
 	constructor(private router: Router, private authService: AuthService, public activeModal: NgbActiveModal) {}
 
 	ngOnInit() {}
@@ -46,5 +51,9 @@ export class LoginComponent implements OnInit {
 				console.log(error);
 			}
 		);
+	}
+
+	get usernameField() {
+		return this.loginForm.get("username");
 	}
 }

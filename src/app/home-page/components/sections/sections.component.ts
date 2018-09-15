@@ -3,6 +3,7 @@ import { HomePageService } from "../../service/home-page.service";
 import { SignupComponent } from "../../../shared/components/signup/signup.component";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { AuthService } from "../../../shared/services/auth/auth.service";
+import { Section } from "../../models/home-page.model";
 
 @Component({
   selector: "app-sections",

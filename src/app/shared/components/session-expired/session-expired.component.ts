@@ -13,11 +13,19 @@ import { User } from "../../models/users.model";
 export class SessionExpiredComponent implements OnInit {
 	public invalidUser: boolean;
 	public username: string;
-	loginForm = new FormGroup({
+	public loginForm = new FormGroup({
 		username: new FormControl("", Validators.required),
 		password: new FormControl("", Validators.required)
 	});
 
+
+	/**
+	 * Creates an instance of session expired component.
+	 * @param router  Navigating the user to the frontpage
+	 * @param authService Handling the authentication of this user
+	 * @param activeModal  The instance of this modal
+	 * @param modalService Handling opening a new modal
+	 */
 	constructor(
 		private router: Router,
 		private authService: AuthService,
