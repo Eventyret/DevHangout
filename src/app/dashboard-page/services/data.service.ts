@@ -9,9 +9,14 @@ import { environment } from "../../../environments/environment";
 	providedIn: "root"
 })
 export class DataService {
-	API_URL: string = environment.api_url;
-	userID: string = localStorage.getItem("user_id");
+	private API_URL: string = environment.api_url;
+	private userID: string = localStorage.getItem("user_id");
 
+
+	/**
+	 * Creates an instance of data service.
+	 * @param http Angular Service responsible for making HTTP requests.
+	 */
 	constructor(private http: HttpClient) {}
 
 	getList(component) {

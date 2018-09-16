@@ -7,6 +7,10 @@ import { User } from "../../../../shared/models/users.model";
 	styleUrls: ["./education-mobile-view.component.scss"]
 })
 export class EducationMobileViewComponent implements OnInit {
+
+	/**
+	 * The User Object sent from the parent
+	 */
 	@Input()
 	user: User;
 
