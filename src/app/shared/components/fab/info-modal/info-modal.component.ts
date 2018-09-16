@@ -48,6 +48,6 @@ export class InfoModalComponent implements OnInit {
 				return true;
 			}
 		});
-		modalRef.componentInstance.name = this.sharedService.donatorName;;
+		modalRef.componentInstance.name = this.sharedService.donatorName;
 	}
 }
