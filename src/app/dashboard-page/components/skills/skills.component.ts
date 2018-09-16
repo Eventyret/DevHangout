@@ -12,11 +12,20 @@ import { DataService } from "../../services/data.service";
 	styleUrls: ["./skills.component.scss"]
 })
 export class SkillsComponent implements OnInit {
-	name: string;
-	id: number;
-	allSkills: Skill;
-	userSkills: Skill;
 
+	private id: number;
+	public allSkills: Skill;
+	public userSkills: Skill;
+
+
+	/**
+	 * Creates an instance of skills component.
+	 * @param activeModal  The instance of our modal
+	 * @param skillsService Getting the array of all generic skills
+	 * and also getting all the current users skills
+	 * @param notify Giving a toast message for our users
+	 * @param dataService CRUD operations for our skills and the current user.
+	 */
 	constructor(
 		public activeModal: NgbActiveModal,
 		private skillsService: SkillsService,
@@ -24,9 +33,16 @@ export class SkillsComponent implements OnInit {
 		private dataService: DataService
 	) {}
 
+
 	ngOnInit() {
 		this.getAllSkills();
 	}
+
+
+	/**
+	 * Gets all generic skills from the pool of skills
+	 * @fires getUserSkills()
+	 */
 	getAllSkills() {
 		this.skillsService.getAllSkills().subscribe(
 			skills => {
@@ -40,6 +56,12 @@ export class SkillsComponent implements OnInit {
 			}
 		);
 	}
+
+
+	/**
+	 * Gets the current users skills.
+	 * Getting the userID from the localstorage
+	 */
 	getUserSkills() {
 		this.id = JSON.parse(localStorage.getItem("user_id"));
 		this.skillsService.getUserSkills().subscribe(
@@ -53,32 +75,16 @@ export class SkillsComponent implements OnInit {
 		);
 	}
 
-	addSkill(data: Skill) {
-		if (data.user === 0) {
-			const newSkill: Skill = {
-				user: this.id,
-				skillID: data.skillID,
-				name: data.name,
-				icon: data.icon,
-				owned: true
-			};
-			this.checkIfUserHasSkill(newSkill);
-		}
-	}
-	deleteSkill(name, id) {
-		this.dataService.deleteDetails("skills", id).subscribe(
-			results => {},
-			error => {
-				console.log(error);
-				this.notify.error(error);
-			},
-			() => {
-				this.getAllSkills();
-				this.notify.info("You removed " + name + " from your skills 👋");
-			}
-		);
-	}
 
+	/**
+	 * Checks if user has skill
+	 * We are checking if the user already having this skill
+	 * @param skill Current skill selected
+	 * @returns  Array This will either be the Skill Object or undefined
+	 * If it comes back undefined we know the user don't have this skill
+	 * and we can make a post request.
+	 * Else we know the user has the skill, we then just notify the user and don't do anything.
+	 */
 	checkIfUserHasSkill(skill) {
 		const existingSkill = _find(this.userSkills, function(o) {
 			return o.skillID == skill.skillID;
@@ -100,4 +106,45 @@ export class SkillsComponent implements OnInit {
 			return;
 		}
 	}
+
+
+	/**
+	 * Adds skill
+	 * @param data  The Skill Object of the current skill selected
+	 * @fires checkIfUserHasSkill()
+	 */
+	addSkill(data: Skill) {
+		if (data.user === 0) {
+			const newSkill: Skill = {
+				user: this.id,
+				skillID: data.skillID,
+				name: data.name,
+				icon: data.icon,
+				owned: true
+			};
+			this.checkIfUserHasSkill(newSkill);
+		}
+	}
+
+
+	/**
+	 * Deletes skill from the user
+	 * @param name The name of the skill
+	 * @param id  the ID of the skill
+	 */
+	deleteSkill(name, id) {
+		this.dataService.deleteDetails("skills", id).subscribe(
+			results => {},
+			error => {
+				console.log(error);
+				this.notify.error(error);
+			},
+			() => {
+				this.getAllSkills();
+				this.notify.info("You removed " + name + " from your skills 👋");
+			}
+		);
+	}
+
+
 }
