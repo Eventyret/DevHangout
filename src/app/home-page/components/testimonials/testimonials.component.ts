@@ -10,12 +10,22 @@ import { FakeService } from "../../../shared/services/api/fake.service";
 export class TestimonialsComponent implements OnInit {
 	testimonials: any[];
 
+
+  /**
+   * Creates an instance of testimonials component.
+   * @param fakeService This is the service getting the fake users.
+   */
   constructor(private fakeService: FakeService) { }
 
   ngOnInit() {
 	this.getTestimonials();
 }
 
+
+/**
+ * Gets testimonials from the fake users.
+ * Then we generate a new list of 20 on random and display 6 of them
+ */
 getTestimonials() {
 	this.fakeService.getFakeUsers().subscribe(data => {
 		this.testimonials = _sampleSize(data, 20);

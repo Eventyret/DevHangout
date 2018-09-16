@@ -27,11 +27,11 @@ export class DashboardComponent implements OnInit {
 
 	/**
 	 * Creates an instance of dashboard component.
-	 * @param modalService
-	 * @param spinner
-	 * @param auth
-	 * @param dataService
-	 * @param notify
+	 * @param modalService Responsible for opening the correct Modal
+	 * @param spinner The pacman spinner indicating to the user we are loading data.
+	 * @param auth gets the user data and also refreshes the JWT token
+	 * @param dataService Handles the CRUD operations for the profile and modals.
+	 * @param notify Will display toast notifications to the user.
 	 */
 	constructor(
 		private modalService: NgbModal,

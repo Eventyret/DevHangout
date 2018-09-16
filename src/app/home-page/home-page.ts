@@ -9,11 +9,22 @@ import { SignupComponent } from "../shared/components/signup/signup.component";
 	styleUrls: ["./home-page.scss"]
 })
 export class HomePage implements OnInit {
-	public loggedIn: boolean;
+
+
+	/**
+	 * Creates an instance of home page.
+	 * @param auth Checking if the user is logged in
+	 * @param modalService Opens the modal for the Signup Component
+	 */
 	constructor(public auth: AuthService, private modalService: NgbModal) {}
 
 	ngOnInit() {}
 
+
+
+	/**
+	 * Opens sign up modal
+	 */
 	openSignUp() {
 		 this.modalService.open(SignupComponent, {
 			centered: true,

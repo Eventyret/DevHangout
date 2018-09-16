@@ -11,6 +11,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 	styleUrls: ["./github-page.scss"]
 })
 export class FakeGithubPage implements OnInit {
+
 	githubData: any[];
 	projects: any;
 	projectsInfo = [];
@@ -20,8 +21,25 @@ export class FakeGithubPage implements OnInit {
 	watchCount: string;
 	forkCount: string;
 	tabs: Tab[];
+
+
+
+	/**
+	 * Creates an instance of fake github page.
+	 * @param github The Service that gets data from Github.
+	 * If its  a fake user it will get it from fakeusers-env.json Where env is the enviroment.
+	 * @param router  Used to get the username and the reponame from the profile visited
+	 * @param spinner
+	 */
 	constructor(private github: GithubService, private router: ActivatedRoute, private spinner: NgxSpinnerService) {}
 
+
+	/**
+	 * On init of the Component
+	 * We show the spinner populate the page and get
+	 * the username and repo name from the previous page
+	 * that was visited
+	 */
 	ngOnInit() {
 		this.spinner.show();
 		this.populateSite();
@@ -31,6 +49,13 @@ export class FakeGithubPage implements OnInit {
 		});
 	}
 
+
+	/**
+	 * Populates site
+	 * Once we have the data from the init function
+	 * We can start get the data from the user and populate the site.
+	 * Hides the spinner once data loading is completed
+	 */
 	populateSite() {
 		this.github.fakeGitHubRepo().subscribe(
 			data => {
