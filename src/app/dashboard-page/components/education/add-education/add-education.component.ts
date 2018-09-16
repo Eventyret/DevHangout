@@ -12,15 +12,20 @@ import { AuthService } from "../../../../shared/services/auth/auth.service";
 	styleUrls: ["./add-education.component.scss"]
 })
 export class AddEducationComponent implements OnInit {
-	education: Education;
-	updatedForm: Education;
-	current: boolean;
-	user: number;
-	name: string;
-	id: number;
-	today = new Date().toJSON().slice(0, 10);
+	public education: Education;
+	private updatedForm: Education;
+	public current: boolean;
+	private user: number;
+	public name: string;
+	private id: number;
+	private today = new Date().toJSON().slice(0, 10);
 
 
+
+	/**
+	 * The form the user fills out to add new education data.
+	 * We are also adding the user by parsing it from localStorage.
+	 */
 	addForm = new FormGroup({
 		current: new FormControl(false, Validators.required),
 		dateFrom: new FormControl("", Validators.required),
@@ -31,6 +36,15 @@ export class AddEducationComponent implements OnInit {
 		user: new FormControl((this.user = parseInt(localStorage.getItem("user_id"), 10)), Validators.required)
 	});
 
+
+	/**
+	 * Creates an instance of add education component.
+	 * @param activeModal The instance of this modal
+	 * @param dataService Responsible for the CRUD operations.
+	 * @param notify Responsible for notifying the user with a toast message
+	 * @param auth  Responsible for making sure the user is authenticated
+	 * and refreshing the refreshToken
+	 */
 	constructor(
 		public activeModal: NgbActiveModal,
 		private dataService: DataService,
@@ -38,11 +52,23 @@ export class AddEducationComponent implements OnInit {
 		private auth: AuthService
 	) {}
 
+
+	/**
+	 * on init
+	 * We are refreshing the JWT token and listing for changes.
+	 */
 	ngOnInit() {
 		this.auth.refreshToken().subscribe(nothing => {
 			this.onChanges();
 		});
 	}
+
+
+	/**
+	 * Listing for changes that the user is doing to the form.
+	 * This ensures we always have up to date data.
+	 * As every keystroke updates the object
+	 */
 	onChanges() {
 		this.addForm.valueChanges.subscribe(val => {
 			this.updatedForm = val;
@@ -52,7 +78,12 @@ export class AddEducationComponent implements OnInit {
 		});
 	}
 
-	add() {
+
+	/**
+	 * Posting the new data from the user
+	 * It takes the updated form that the user has provided
+	 */
+	addEducation() {
 		this.dataService.newDetails("education", this.updatedForm).subscribe(
 			results => {},
 			error => {

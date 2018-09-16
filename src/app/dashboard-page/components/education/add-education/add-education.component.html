@@ -12,7 +12,7 @@
 					<div class="col-md-8 m-auto">
 						<p class="text-center">Add any school, bootcamp, etc that you have attended</p>
 						<small class="d-block pb-3 text-right">* = required field</small>
-						<form [formGroup]="addForm" (ngSubmit)="add()">
+						<form [formGroup]="addForm" (ngSubmit)="addEducation()">
 							<div class="form-group">
 								<input formControlName="school" type="text" name="school" class="form-control form-control-lg" placeholder="* Name of School Or Bootcamp">
 							</div>
