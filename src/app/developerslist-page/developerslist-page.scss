@@ -19,7 +19,6 @@
 	cursor: pointer;
 	min-height: 490px;
 
-
 	&:focus {
 		outline: none;
 	}
@@ -175,4 +174,8 @@
 }
 .fa-star {
 	color: #ffea00;
+}
+
+.push-down {
+	margin-top: 8rem !important;
 }
