@@ -39,11 +39,10 @@ export class EditProfileComponent implements OnInit {
 		private auth: AuthService
 	) {}
 
-
 	/**
 	 * Profile form holding all the data the user can edit.
 	 */
-	profileForm = new FormGroup({
+	public profileForm = new FormGroup({
 		id: new FormControl(this.id, Validators.required),
 		firstName: new FormControl(""),
 		lastName: new FormControl(""),
@@ -61,6 +60,7 @@ export class EditProfileComponent implements OnInit {
 		avatar: new FormControl("", Validators.required),
 		backgroundImage: new FormControl("", Validators.required)
 	});
+
 
 
 	/**

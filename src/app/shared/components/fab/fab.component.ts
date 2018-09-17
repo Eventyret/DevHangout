@@ -12,7 +12,7 @@ import { SharedService } from "../../services/misc/shared.service";
 export class FabComponent implements OnInit {
 
 	private comp: any;
-	public name: string;
+	public name = "";
 	private loggedIn: boolean;
 	public spin: any;
 
@@ -43,10 +43,8 @@ export class FabComponent implements OnInit {
 		}
 		if (!localStorage.getItem("username") || !this.name) {
 			this.loggedIn = false;
-			this.name = "Anonymous";
 		} else {
 			this.loggedIn = true;
-			this.name = localStorage.getItem("username");
 		}
 		const modalRef = this.modalService.open(this.comp, {
 			centered: true,
@@ -57,7 +55,7 @@ export class FabComponent implements OnInit {
 				return true;
 			}
 		});
-		modalRef.componentInstance.name = this.name;
+		modalRef.componentInstance.name = this.sharedService.donatorName;
 		modalRef.componentInstance.loggedIn = this.loggedIn;
 	}
 }

@@ -8,7 +8,7 @@ import { FakeService } from "../../../shared/services/api/fake.service";
   styleUrls: ["./testimonials.component.scss"]
 })
 export class TestimonialsComponent implements OnInit {
-	testimonials: any[];
+	public testimonials: any[];
 
 
   /**

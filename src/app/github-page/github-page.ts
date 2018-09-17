@@ -12,15 +12,15 @@ import { NgxSpinnerService } from "ngx-spinner";
 })
 export class FakeGithubPage implements OnInit {
 
-	githubData: any[];
-	projects: any;
-	projectsInfo = [];
-	username: string;
-	repoName: string;
-	starCount: string;
-	watchCount: string;
-	forkCount: string;
-	tabs: Tab[];
+	public username: string;
+	public repoName: string;
+	private githubData: any[];
+	public projects: any;
+	private projectsInfo = [];
+	public starCount: string;
+	public watchCount: string;
+	public forkCount: string;
+	public tabs: Tab[];
 
 
 

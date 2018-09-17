@@ -19,23 +19,6 @@ export class AddEducationComponent implements OnInit {
 	public name: string;
 	private today = new Date().toJSON().slice(0, 10);
 
-
-
-	/**
-	 * The form the user fills out to add new education data.
-	 * We are also adding the user by parsing it from localStorage.
-	 */
-	addForm = new FormGroup({
-		current: new FormControl(false, Validators.required),
-		dateFrom: new FormControl("", Validators.required),
-		dateTo: new FormControl(this.today),
-		fieldOfStudy: new FormControl("", Validators.required),
-		qualification: new FormControl("", Validators.required),
-		school: new FormControl("", Validators.required),
-		user: new FormControl((this.user = parseInt(localStorage.getItem("user_id"), 10)), Validators.required)
-	});
-
-
 	/**
 	 * Creates an instance of add education component.
 	 * @param activeModal The instance of this modal
@@ -51,6 +34,19 @@ export class AddEducationComponent implements OnInit {
 		private auth: AuthService
 	) {}
 
+		/**
+	 * The form the user fills out to add new education data.
+	 * We are also adding the user by parsing it from localStorage.
+	 */
+	public addForm = new FormGroup({
+		current: new FormControl(false, Validators.required),
+		dateFrom: new FormControl("", Validators.required),
+		dateTo: new FormControl(this.today),
+		fieldOfStudy: new FormControl("", Validators.required),
+		qualification: new FormControl("", Validators.required),
+		school: new FormControl("", Validators.required),
+		user: new FormControl((this.user = parseInt(localStorage.getItem("user_id"), 10)), Validators.required)
+	});
 
 	/**
 	 * on init

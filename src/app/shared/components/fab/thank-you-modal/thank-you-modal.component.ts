@@ -4,6 +4,7 @@ import { DataService } from "../../../../dashboard-page/services/data.service";
 import { AuthService } from "../../../services/auth/auth.service";
 import { User } from "../../../models/users.model";
 import { DashboardComponent } from "../../../../dashboard-page/dashboard.component";
+import { SharedService } from "../../../services/misc/shared.service";
 
 @Component({
 	selector: "app-thank-you-modal",
@@ -19,21 +20,23 @@ export class ThankYouModalComponent implements OnInit {
 	public info: any;
 	public date: number;
 
-
 	/**
 	 * Creates an instance of thank you modal component.
 	 * @param activeModal  The instance of this modal
 	 * @param dataService  The Service handling the users profile data.
 	 * @param auth Handling the users authentication and getting their updated data
 	 */
-	constructor(public activeModal: NgbActiveModal, private dataService: DataService, private auth: AuthService) {}
+	constructor(
+		public activeModal: NgbActiveModal,
+		private dataService: DataService,
+		private auth: AuthService,
+		private sharedService: SharedService
+	) {}
 
 	ngOnInit() {
 		this.updateSupporterStatus();
+		this.name = this.sharedService.donatorName;
 	}
-
-
-
 
 	/**
 	 * Updating the users donation status.

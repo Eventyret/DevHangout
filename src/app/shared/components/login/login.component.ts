@@ -13,12 +13,6 @@ import { User } from "../../models/users.model";
 })
 export class LoginComponent implements OnInit {
 	public invalidLogin: boolean;
-	loginForm = new FormGroup({
-		username: new FormControl("", Validators.required),
-		password: new FormControl("", Validators.required)
-	});
-
-
 
 	/**
 	 * Creates an instance of login component.
@@ -28,8 +22,15 @@ export class LoginComponent implements OnInit {
 	 */
 	constructor(private router: Router, private authService: AuthService, public activeModal: NgbActiveModal) {}
 
-	ngOnInit() {}
+		/**
+	 * The Form the user submits when logging in.
+	 */
+	public loginForm = new FormGroup({
+		username: new FormControl("", Validators.required),
+		password: new FormControl("", Validators.required)
+	});
 
+	ngOnInit() {}
 
 	/**
 	 * Takes the form data and sends it off to the backend
@@ -53,6 +54,9 @@ export class LoginComponent implements OnInit {
 		);
 	}
 
+	/**
+	 * Gets username field
+	 */
 	get usernameField() {
 		return this.loginForm.get("username");
 	}

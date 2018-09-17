@@ -19,20 +19,6 @@ export class AddExperienceComponent implements OnInit {
 	private today = new Date().toJSON().slice(0, 10);
 
 	/**
-	 * The form the user fills out to add new education data.
-	 * We are also adding the user by parsing it from localStorage.
-	 */
-	addForm = new FormGroup({
-		current: new FormControl(false, Validators.required),
-		dateFrom: new FormControl("", Validators.required),
-		dateTo: new FormControl(this.today),
-		company: new FormControl("", Validators.required),
-		jobTitle: new FormControl("", Validators.required),
-		location: new FormControl(""),
-		user: new FormControl(parseInt(localStorage.getItem("user_id"), 10), Validators.required)
-	});
-
-	/**
 	 * Creates an instance of add education component.
 	 * @param activeModal The instance of this modal
 	 * @param dataService Responsible for the CRUD operations.
@@ -46,6 +32,20 @@ export class AddExperienceComponent implements OnInit {
 		private notify: NotificationsService,
 		private auth: AuthService
 	) {}
+
+	/**
+	 * The form the user fills out to add new education data.
+	 * We are also adding the user by parsing it from localStorage.
+	 */
+	public addForm = new FormGroup({
+		current: new FormControl(false, Validators.required),
+		dateFrom: new FormControl("", Validators.required),
+		dateTo: new FormControl(this.today),
+		company: new FormControl("", Validators.required),
+		jobTitle: new FormControl("", Validators.required),
+		location: new FormControl(""),
+		user: new FormControl(parseInt(localStorage.getItem("user_id"), 10), Validators.required)
+	});
 
 	/**
 	 * on init

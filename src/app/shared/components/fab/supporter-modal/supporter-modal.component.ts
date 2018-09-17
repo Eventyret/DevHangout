@@ -14,21 +14,20 @@ import { SharedService } from "../../../services/misc/shared.service";
 })
 export class SupporterModalComponent implements OnInit {
 
-	elements: Elements;
-	card: StripeElement;
-	stripeForm: FormGroup;
+	public elements: Elements;
+	private card: StripeElement;
+	public stripeForm: FormGroup;
 
 	/** Set the locale from stripe for the injected script.
 	 * This is et to auto as we have world wide users.
 	 */
-	elementsOptions: ElementsOptions = {
+	private elementsOptions: ElementsOptions = {
 		locale: "auto"
 	};
-	payInProgress = false;
-	errorMsg: string;
-	amount: number;
-	name: string;
-	cardName: string;
+	public payInProgress = false;
+	private  amount: number;
+	public name: string;
+	public cardName: string;
 
 
 	/**
@@ -101,8 +100,7 @@ ngOnInit() {
 				this.openThankYou(results);
 			} else if (results.error) {
 				console.log(results.error.message);
-				const errorMsg = results.error.message;
-				this.notify.error("Hey " + this.name, errorMsg);
+				this.notify.error("Hey " + this.name, results.error.message);
 				this.spinner.hide();
 			}
 		});

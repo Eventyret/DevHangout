@@ -13,6 +13,11 @@ import { User } from "../../models/users.model";
 export class SessionExpiredComponent implements OnInit {
 	public invalidUser: boolean;
 	public username: string;
+
+
+	/**
+	 * The login form
+	 */
 	public loginForm = new FormGroup({
 		username: new FormControl("", Validators.required),
 		password: new FormControl("", Validators.required)

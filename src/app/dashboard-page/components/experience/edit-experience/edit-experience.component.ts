@@ -19,20 +19,6 @@ export class EditExperienceComponent implements OnInit {
 	public user: number;
 	private today = new Date().toJSON().slice(0, 10);
 
-	/**
-	 * Form holding all the data the user can edit.
-	 */
-	editForm = new FormGroup({
-		current: new FormControl(this.current, Validators.required),
-		id: new FormControl(Validators.required),
-		dateFrom: new FormControl("", Validators.required),
-		dateTo: new FormControl(""),
-		jobTitle: new FormControl("", Validators.required),
-		location: new FormControl(""),
-		company: new FormControl("", Validators.required),
-		user: new FormControl("", Validators.required)
-	});
-
 		/**
 	 * Creates an instance of edit education component.
 	 * @param activeModal  Instace of this modal
@@ -46,6 +32,20 @@ export class EditExperienceComponent implements OnInit {
 		private notify: NotificationsService,
 		private auth: AuthService
 	) {}
+
+		/**
+	 * Form holding all the data the user can edit.
+	 */
+	public editForm = new FormGroup({
+		current: new FormControl(this.current, Validators.required),
+		id: new FormControl(Validators.required),
+		dateFrom: new FormControl("", Validators.required),
+		dateTo: new FormControl(""),
+		jobTitle: new FormControl("", Validators.required),
+		location: new FormControl(""),
+		company: new FormControl("", Validators.required),
+		user: new FormControl("", Validators.required)
+	});
 
 	/**
 	 * on init
