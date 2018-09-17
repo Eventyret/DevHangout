@@ -25,7 +25,7 @@ export class HomePage implements OnInit {
 	/**
 	 * Opens sign up modal
 	 */
-	openSignUp() {
+	public openSignUp() {
 		 this.modalService.open(SignupComponent, {
 			centered: true,
 			size: "lg"

@@ -43,7 +43,7 @@ export class SkillsComponent implements OnInit {
 	 * Gets all generic skills from the pool of skills
 	 * @fires getUserSkills()
 	 */
-	getAllSkills() {
+	private getAllSkills() {
 		this.skillsService.getAllSkills().subscribe(
 			skills => {
 				this.allSkills = skills;
@@ -62,7 +62,7 @@ export class SkillsComponent implements OnInit {
 	 * Gets the current users skills.
 	 * Getting the userID from the localstorage
 	 */
-	getUserSkills() {
+	private getUserSkills() {
 		this.id = JSON.parse(localStorage.getItem("user_id"));
 		this.skillsService.getUserSkills().subscribe(
 			skills => {
@@ -85,7 +85,7 @@ export class SkillsComponent implements OnInit {
 	 * and we can make a post request.
 	 * Else we know the user has the skill, we then just notify the user and don't do anything.
 	 */
-	checkIfUserHasSkill(skill) {
+	private checkIfUserHasSkill(skill) {
 		const existingSkill = _find(this.userSkills, function(o) {
 			return o.skillID == skill.skillID;
 		});
@@ -113,7 +113,7 @@ export class SkillsComponent implements OnInit {
 	 * @param data  The Skill Object of the current skill selected
 	 * @fires checkIfUserHasSkill()
 	 */
-	addSkill(data: Skill) {
+	public addSkill(data: Skill) {
 		if (data.user === 0) {
 			const newSkill: Skill = {
 				user: this.id,
@@ -132,7 +132,7 @@ export class SkillsComponent implements OnInit {
 	 * @param name The name of the skill
 	 * @param id  the ID of the skill
 	 */
-	deleteSkill(name, id) {
+	public  deleteSkill(name, id) {
 		this.dataService.deleteDetails("skills", id).subscribe(
 			results => {},
 			error => {

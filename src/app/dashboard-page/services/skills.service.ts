@@ -27,7 +27,7 @@ export class SkillsService {
 	 * @returns  an Array of all the generic skills
 	 * for the user to pick from
 	 */
-	getAllSkills() {
+	public getAllSkills() {
 		return this.http
 			.get("/assets/" + this.allSkills)
 			.pipe(map((data: any) => data))
@@ -43,7 +43,7 @@ export class SkillsService {
 	 * @returns Array of objects that holds all the users current skills
 	 * in the database.
 	 */
-	getUserSkills() {
+	public getUserSkills() {
 		return this.http
 			.get(this.API_URL + "/api/users/" + this.userID + "/skills/")
 			.pipe(map((data: any) => data))

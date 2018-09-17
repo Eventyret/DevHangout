@@ -54,7 +54,7 @@ export class DevelopersListComponent implements OnInit {
 	 * Gets the fake developers and refreshes the auth token
 	 * @fires getRealDevelopers() on data competion
 	 */
-	getDevelopers() {
+	private getDevelopers() {
 		this.spinner.show();
 		this.fakeService.getFakeUsers().subscribe(
 			data => {
@@ -82,7 +82,7 @@ export class DevelopersListComponent implements OnInit {
 	 * Once completed we hide the spinner
 	 * @fires sliaceUsers()
 	 */
-	getRealDevelopers() {
+	private getRealDevelopers() {
 		this.fakeService.getRealUsers().subscribe(
 			data => {
 				const realUsers = data;
@@ -112,7 +112,7 @@ export class DevelopersListComponent implements OnInit {
 	 * Slice them into an array of 8 and shuffle them
 	 * Each time we run the function we increment it with 8
 	 */
-	sliceUsers() {
+	private sliceUsers() {
 		this.displayUsers.push(... _shuffle(_slice(this.users, this.startNum, this.startNum + 8)));
 		this.startNum += 8;
 	}
@@ -123,7 +123,7 @@ export class DevelopersListComponent implements OnInit {
 	 * This is used when the user scrolls
 	 * We will then just rerun the sliceUsers
 	 */
-	loadMore() {
+	public loadMore() {
 		this.sliceUsers();
 	}
 }

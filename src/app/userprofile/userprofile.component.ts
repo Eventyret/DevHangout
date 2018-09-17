@@ -24,30 +24,52 @@ export class ProfileComponent implements OnInit {
 	public profile: Profile;
 	public production: boolean = environment.production;
 
+	/**
+	 * Creates an instance of profile component.
+	 * @param spinner  Showing the pacman logo on load and gets hidden
+	 * @param route  The Angular Routing, we are getting the ID of the user from this
+	 * @param auth  Getting the users profile data
+	 * @param fakeService  Getting the fake users data
+	 * @param gitService Getting the Github Data from the user
+	 */
 	constructor(
-		config: NgbTooltipConfig,
 		private spinner: NgxSpinnerService,
 		private route: ActivatedRoute,
 		private auth: AuthService,
 		private fakeService: FakeService,
 		private gitService: GithubService
 	) {
-		config.placement = "top";
-		config.triggers = "hover";
 		this.route.params.subscribe(params => {
 			const id = params.id;
 			this.getFakeData(id);
 		});
 	}
 
+
+	/**
+	 * on init we will be showing the spinner
+	 */
 	ngOnInit() {
 		this.spinner.show();
 	}
 
+
+	/**
+	 * Used for development to toggle the background
+	 * for a user if we are running on localhost.
+	 */
 	public supporterTest() {
 		this.support = !this.support;
 	}
-	private   getFakeData(id) {
+
+
+	/**
+	 * If the user is equal or above 9000
+	 * we know its a fake user and can get that data.
+	 * Else we will  get the real users data from AuthService.
+	 * @param id The userID to check
+	 */
+	private getFakeData(id: number) {
 		if (id >= 9000) {
 			this.fakeService.getFakeUsers().subscribe(
 				data => {
@@ -82,7 +104,14 @@ export class ProfileComponent implements OnInit {
 			});
 		}
 	}
-	private getRepos(user) {
+
+
+	/**
+	 * Gets the repo of a user.
+	 * This is not used for the fake users
+	 * @param user The username
+	 */
+	private getRepos(user: string) {
 		this.gitService.gitRepo(user).subscribe(userProfile => {
 			this.githubData = userProfile;
 		});

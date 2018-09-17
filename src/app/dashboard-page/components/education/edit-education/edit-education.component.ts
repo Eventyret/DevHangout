@@ -87,7 +87,7 @@ export class EditEducationComponent implements OnInit {
 	 * This ensures we always have up to date data.
 	 * As every keystroke updates the object
 	 */
-	onChanges() {
+	private onChanges() {
 		this.editForm.valueChanges.subscribe(val => {
 			this.updatedForm = val;
 		});
@@ -104,7 +104,7 @@ export class EditEducationComponent implements OnInit {
 	 * Once subscribe  is complete it will notify the user and close the modal
 	 * W
 	 */
-	update() {
+	public update() {
 		this.dataService.updateDetails("education", this.id, this.updatedForm).subscribe(
 			results => {},
 			error => {

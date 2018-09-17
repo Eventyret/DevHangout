@@ -49,7 +49,7 @@ export class NavbarComponent implements OnInit {
 	 * Gets the users username
 	 * we are also storing their avatar and set their login to true.
 	 */
-	getUsername() {
+	private getUsername() {
 		this.userID = localStorage.getItem("user_id");
 		this.username = localStorage.getItem("username");
 		this.auth.getUser(this.userID).subscribe(data => {
@@ -64,7 +64,7 @@ export class NavbarComponent implements OnInit {
 	/**
 	 * Opens login Modal
 	 */
-	openLogin() {
+	public openLogin() {
 		this.modalService.open(LoginComponent, {
 			centered: true,
 			size: "lg"
@@ -75,7 +75,7 @@ export class NavbarComponent implements OnInit {
 	/**
 	 * Opens sign up Modal
 	 */
-	openSignUp() {
+	public openSignUp() {
 		this.modalService.open(SignupComponent, {
 			centered: true,
 			size: "lg"

@@ -13,8 +13,19 @@ export class AppComponent implements OnInit {
 	private name: string;
 	public loading: boolean;
 
+
+	/**
+	 * Creates an instance of app component.
+	 * @param auth Responsible for refreshing the JWT token if a user exists.
+	 * @param sharedService Passing the name of Anonymous or the username
+	 * This is used in FAB buttons if the user clicks it.
+	 */
 	constructor(private auth: AuthService, private sharedService: SharedService) {}
 
+
+	/**
+	 * on init
+	 */
 	ngOnInit() {
 		this.loading = true;
 		if (localStorage.getItem("user_id")) {

@@ -34,7 +34,7 @@ export class FabComponent implements OnInit {
 	 * if it exists if not it will be refered to as anonymous
 	 * @param event
 	 */
-	open(event: any) {
+	public open(event: any) {
 		const target = event.target.id;
 		if (target === "infoButton") {
 			this.comp = InfoModalComponent;

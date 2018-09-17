@@ -10,7 +10,7 @@ import { SharedService } from "../../../services/misc/shared.service";
 	styleUrls: ["./info-modal.component.scss"]
 })
 export class InfoModalComponent implements OnInit {
-	public name: string;
+	public name = "";
 	private comp: any;
 	public loggedIn: boolean;
 
@@ -32,7 +32,7 @@ export class InfoModalComponent implements OnInit {
 	 * @param event - This is the ID of the button
 	 * so we know what modal to open
 	 */
-	open(event) {
+	public open(event) {
 		const target = event.target.id;
 		if (target === "login") {
 			this.comp = LoginComponent;

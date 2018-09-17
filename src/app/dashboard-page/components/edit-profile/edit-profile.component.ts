@@ -13,14 +13,12 @@ import { AuthService } from "../../../shared/services/auth/auth.service";
 	styleUrls: ["./edit-profile.component.scss"]
 })
 export class EditProfileComponent implements OnInit {
-
 	private id: number;
 	public name: string;
 	private githubData: any[];
 	public profile: Profile;
 	private updatedForm: Profile;
 	private firstVisit: boolean = JSON.parse(sessionStorage.getItem("firstVisit"));
-
 
 	/**
 	 * Creates an instance of edit profile component.
@@ -60,8 +58,6 @@ export class EditProfileComponent implements OnInit {
 		avatar: new FormControl("", Validators.required),
 		backgroundImage: new FormControl("", Validators.required)
 	});
-
-
 
 	/**
 	 * on init
@@ -104,25 +100,12 @@ export class EditProfileComponent implements OnInit {
 		);
 	}
 
-
-	/**
-	 * Gets the repo data from github.
-	 * This is only fired if the user has provided a username.
-	 * @param username The username submitted in the form.
-	 */
-	getRepo(username: string) {
-		this.githubService.gitRepo(username).subscribe(info => {
-			this.githubData = info;
-		});
-	}
-
-
 	/**
 	 * Listing for changes that the user is doing to the form.
 	 * This ensures we always have up to date data.
 	 * As every keystroke updates the object
 	 */
-	onChanges() {
+	private onChanges() {
 		this.profileForm.valueChanges.subscribe(val => {
 			this.updatedForm = val;
 		});
@@ -135,7 +118,7 @@ export class EditProfileComponent implements OnInit {
 	 * As this gets fired on first visit we will set it to false the first time
 	 * the user submits the form that way we know the user has given some data.
 	 */
-	update() {
+	public update() {
 		this.dataService.updateDetails("profile", this.id, this.updatedForm).subscribe(
 			results => {},
 			error => {
@@ -152,5 +135,15 @@ export class EditProfileComponent implements OnInit {
 				}
 			}
 		);
+	}
+	/**
+	 * Gets the repo data from github.
+	 * This is only fired if the user has provided a username.
+	 * @param username The username submitted in the form.
+	 */
+	private getRepo(username: string) {
+		this.githubService.gitRepo(username).subscribe(info => {
+			this.githubData = info;
+		});
 	}
 }

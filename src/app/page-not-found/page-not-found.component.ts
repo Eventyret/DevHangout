@@ -3,6 +3,7 @@ import { Component, OnInit } from "@angular/core";
 
 /**
  * @ignore
+ * This component has no logic
  */
 @Component({
 	selector: "app-page-not-found",

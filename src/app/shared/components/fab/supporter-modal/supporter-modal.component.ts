@@ -88,7 +88,7 @@ ngOnInit() {
 	 * @param event The form data
 	 * @fires openThankYou
 	 */
-	buy(event) {
+	public buy(event) {
 		this.spinner.show();
 		this.payInProgress = true;
 		this.cardName = this.stripeForm.get("cardName").value;
@@ -113,7 +113,7 @@ ngOnInit() {
 	 * If the donation was successfull we will open the thank you modal
 	 * @param results The data from stripe on success
 	 */
-	openThankYou(results) {
+	private openThankYou(results) {
 		this.spinner.hide();
 		const modalRef = this.modalService.open(ThankYouModalComponent, {
 			centered: true,

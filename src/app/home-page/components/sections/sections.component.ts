@@ -12,7 +12,7 @@ import { Section } from "../../models/home-page.model";
 })
 export class SectionsComponent implements OnInit {
 
-	Sections: Section;
+	public Sections: Section;
 
 
 	/**
@@ -31,7 +31,7 @@ export class SectionsComponent implements OnInit {
   /**
    * Gets the sections that are displayed on the front page.
    */
-  getSections() {
+  private getSections() {
 	this.landingService.getDataForLandingPage().subscribe(data => {
 		this.Sections = data[0].sections;
 	});
@@ -42,7 +42,7 @@ export class SectionsComponent implements OnInit {
  * Opens the signup modal once a user clicks on a singup button
  */
 
-openSignUp() {
+public openSignUp() {
 	this.modalService.open(SignupComponent, {
 		centered: true,
 		size: "lg"

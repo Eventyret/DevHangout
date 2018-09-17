@@ -16,7 +16,7 @@ export class SharedService {
    * this through the modals when we close them
    * @param name
    */
-  setDonatorName(name) {
+  public setDonatorName(name) {
 	  this.donatorName = name;
   }
 }

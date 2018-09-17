@@ -40,7 +40,7 @@ export class SessionExpiredComponent implements OnInit {
 	 * @param credentials
 	 * @fires Router Navigating the user to front page
 	 */
-	signIn(credentials: User) {
+	public signIn(credentials: User) {
 		this.authService.login(credentials).subscribe(results => {
 			if (results) {
 				this.router.navigate(["/"]);
@@ -57,7 +57,7 @@ export class SessionExpiredComponent implements OnInit {
 	 * and notify the user
 	 *
 	 */
-	dismiss() {
+	public dismiss() {
 		this.authService.sessionExpired();
 		this.activeModal.dismiss();
 	}
@@ -68,7 +68,7 @@ export class SessionExpiredComponent implements OnInit {
 	 * We will open the SignupComponent and let the user register
 	 *
 	 */
-	register() {
+	public register() {
 		this.activeModal.dismiss();
 		this.modalService.open(SignupComponent, {
 			centered: true,

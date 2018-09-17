@@ -9,6 +9,7 @@ import { Router } from "@angular/router";
 	styleUrls: ["./expired-page.scss"]
 })
 export class SessionExpiredPage implements OnInit {
+
 	/**
 	 * Creates an instance of session expired page.
 	 * @param modalService Opens the modal for Session Expired Component
@@ -20,7 +21,6 @@ export class SessionExpiredPage implements OnInit {
 	 * on init
 	 * Due that we would get normally an error
 	 * we set a timeout on 300 milliseconds before we auto open the modal
-
 	 */
 	ngOnInit() {
 		setTimeout(() => {
@@ -32,7 +32,7 @@ export class SessionExpiredPage implements OnInit {
 	 * Opens the Session Expired Modal
 	 * If a user closes the modal we will redirect them to the front page
 	 */
-	openModal() {
+	public openModal() {
 		this.modalService.open(SessionExpiredComponent, {
 			centered: true,
 			size: "lg",

@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
 	 * we redirect them to the dashboard
 	 * @param credentials  The users credentials from the form
 	 */
-	signIn(credentials: User) {
+	public signIn(credentials: User) {
 		this.authService.login(credentials).subscribe(
 			results => {
 				if (results) {

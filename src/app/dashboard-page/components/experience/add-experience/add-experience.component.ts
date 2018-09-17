@@ -62,7 +62,7 @@ export class AddExperienceComponent implements OnInit {
 	 * This ensures we always have up to date data.
 	 * As every keystroke updates the object
 	 */
-	onChanges() {
+	private onChanges() {
 		this.addForm.valueChanges.subscribe(val => {
 			this.updatedForm = val;
 		});
@@ -75,7 +75,7 @@ export class AddExperienceComponent implements OnInit {
 	 * Posting the new data from the user
 	 * It takes the updated form that the user has provided
 	 */
-	addExperience() {
+	public addExperience() {
 		this.dataService.newDetails("experience", this.updatedForm).subscribe(
 			results => {},
 			error => {

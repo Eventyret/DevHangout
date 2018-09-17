@@ -44,7 +44,7 @@ export class ThankYouModalComponent implements OnInit {
 	 * @fires dataService.newDetails We are posting the data from stripe to the backend and attach it to
 	 * the users profile
 	 */
-	updateSupporterStatus() {
+	private updateSupporterStatus() {
 		if (this.id) {
 			const donationStatus = {
 				donator: true

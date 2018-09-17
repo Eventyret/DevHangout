@@ -54,7 +54,7 @@ export class SignupComponent implements OnInit {
 	 * @param user
 	 * @fires LoginComponent on successfull registration
 	 */
-	register(user: User) {
+	public register(user: User) {
 		this.authService.register(user).subscribe(results => {
 			if (results) {
 				this.modalService.open(LoginComponent, {

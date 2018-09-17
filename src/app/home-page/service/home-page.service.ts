@@ -23,7 +23,7 @@ export class HomePageService {
    * Gets data for landing page
    * @returns
    */
-  getDataForLandingPage() {
+  public getDataForLandingPage() {
 	return this.http
 		.get("/assets/landingpage.json")
 		.pipe(map((data: Section) => data))

@@ -56,7 +56,7 @@ export class FakeGithubPage implements OnInit {
 	 * We can start get the data from the user and populate the site.
 	 * Hides the spinner once data loading is completed
 	 */
-	populateSite() {
+	private populateSite() {
 		this.github.fakeGitHubRepo().subscribe(
 			data => {
 				this.githubData = data;

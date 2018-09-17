@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
 	 * @param event - The button click to find out what the id is.
 	 * @param id Optional but if we pass an ID we store it to pass to the modals.
 	 */
-	open(event: any, id?: number) {
+	public open(event: any, id?: number) {
 		const target = event.target.id;
 		if (target === "addEdu") {
 			this.comp = AddEducationComponent;

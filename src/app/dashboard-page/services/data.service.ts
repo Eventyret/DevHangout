@@ -24,7 +24,7 @@ export class DataService {
 	 * @param component  This can be Profile, Skills, Education, Experience
 	 * @returns  An Array with the data requested
 	 */
-	getList(component) {
+	public getList(component) {
 		return this.http
 			.get(this.API_URL + "/api/users/" + this.userID + "/" + component.toLowerCase() + "/")
 			.pipe(map((data: any) => data))
@@ -40,7 +40,7 @@ export class DataService {
 	 * @param id This is the ID of the particular component
 	 * @returns  The particular Object of that component
 	 */
-	getDetailed(component, id) {
+	public getDetailed(component, id) {
 		return this.http
 			.get(this.API_URL + "/api/users/" + this.userID + "/" + component.toLowerCase() + "/" + id + "/")
 			.pipe(map((data: any) => data))
@@ -58,7 +58,7 @@ export class DataService {
 	 * and been updated by the component
 	 * @returns a new Object with updated data.
 	 */
-	updateDetails(component, id, form) {
+	public updateDetails(component, id, form) {
 		return this.http.patch(this.API_URL + "/api/users/" + this.userID + "/" + component.toLowerCase() + "/" + id + "/", form);
 	}
 
@@ -70,7 +70,7 @@ export class DataService {
 	 * and been updated by the component
 	 * @returns a new Object with the new data submitted
 	 */
-	newDetails(component, form) {
+	public newDetails(component, form) {
 		return this.http.post(this.API_URL + "/api/users/" + this.userID + "/" + component.toLowerCase() + "/", form);
 	}
 
@@ -81,7 +81,7 @@ export class DataService {
 	 * @param id  This is the ID of the particular component
 	 * @returns a response that the data has been deleted.
 	 */
-	deleteDetails(component, id) {
+	public deleteDetails(component, id) {
 		return this.http.delete(this.API_URL + "/api/users/" + this.userID + "/" + component.toLowerCase() + "/" + id + "/");
 	}
 }
