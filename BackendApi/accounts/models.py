@@ -6,17 +6,19 @@ from Skills.models import Skill
 
 
 class Profile(models.Model):
-
+    """This is the model holding the users profile information"""
     user = models.ForeignKey(
         User, related_name="profile_user", on_delete=models.CASCADE)
     firstName = models.CharField(max_length=50, blank=True, null=True)
     lastName = models.CharField(max_length=50, blank=True, null=True)
-    avatar = models.CharField(max_length=255, blank=True, default="https://i.imgur.com/AAfxTCq.png")
+    avatar = models.CharField(
+        max_length=255, blank=True, default="https://i.imgur.com/AAfxTCq.png")
     location = models.CharField(max_length=50, blank=True, null=True)
     website = models.CharField(max_length=50, blank=True, null=True)
     company = models.CharField(max_length=50, blank=True, null=True)
     title = models.CharField(max_length=50, blank=True, null=True)
-    backgroundImage = models.CharField(max_length=255, blank=True, default="https://i.imgur.com/rlaUnMY.jpg")
+    backgroundImage = models.CharField(
+        max_length=255, blank=True, default="https://i.imgur.com/rlaUnMY.jpg")
     bio = models.TextField(blank=True, null=True)
     twitter = models.CharField(max_length=100, blank=True, null=True)
     facebook = models.CharField(max_length=100, blank=True, null=True)
@@ -40,12 +42,15 @@ class Profile(models.Model):
 
 
 class Education(models.Model):
-    user = models.ForeignKey(User, related_name="edu_user", on_delete=models.CASCADE)
+    """This is the model holding the users Education information"""
+    user = models.ForeignKey(
+        User, related_name="edu_user", on_delete=models.CASCADE)
     school = models.CharField(max_length=50)
     qualification = models.CharField(max_length=50)
     fieldOfStudy = models.CharField(max_length=50)
     dateFrom = models.DateField(auto_now=False, auto_now_add=False)
-    dateTo = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    dateTo = models.DateField(
+        auto_now=False, auto_now_add=False, null=True, blank=True)
     current = models.BooleanField(default=False)
 
     class Meta:
@@ -56,6 +61,7 @@ class Education(models.Model):
 
 
 class Experience(models.Model):
+    """This is the model holding the users Experience information"""
     user = models.ForeignKey(
         User, related_name="exp_user", on_delete=models.CASCADE)
     jobTitle = models.CharField(max_length=50)

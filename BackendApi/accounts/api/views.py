@@ -10,6 +10,7 @@ from .serializers import ProfileSerializer, UserSerializer, EducationSerializer,
 
 
 class ProfileView(viewsets.ModelViewSet):
+    
     permission_classes = (IsOwner, )
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer

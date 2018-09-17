@@ -3,9 +3,8 @@ from .models import Profile, Education, Experience
 # Register your models here.
 
 class AccountAdmin(admin.ModelAdmin):
-    """
-    Custom View of Accounts
-    """
+    """Custom View of Accounts"""
+
     list_display = ("user", "get_user_email", "location", "title", "github", "donator")
 
     list_filter = ("donator", )
