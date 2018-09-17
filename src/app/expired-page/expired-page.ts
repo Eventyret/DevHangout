@@ -9,16 +9,12 @@ import { Router } from "@angular/router";
 	styleUrls: ["./expired-page.scss"]
 })
 export class SessionExpiredPage implements OnInit {
-
-
-
 	/**
 	 * Creates an instance of session expired page.
 	 * @param modalService Opens the modal for Session Expired Component
 	 * @param router Used to redirect the user if the close the modal
 	 */
 	constructor(private modalService: NgbModal, private router: Router) {}
-
 
 	/**
 	 * on init
@@ -31,13 +27,18 @@ export class SessionExpiredPage implements OnInit {
 			this.openModal();
 		}, 300);
 	}
+
+	/**
+	 * Opens the Session Expired Modal
+	 * If a user closes the modal we will redirect them to the front page
+	 */
 	openModal() {
 		this.modalService.open(SessionExpiredComponent, {
 			centered: true,
 			size: "lg",
 			backdrop: "static",
 			beforeDismiss: () => {
-				this.router.navigate["/"];
+				this.router.navigate(["/"]);
 				return true;
 			}
 		});
