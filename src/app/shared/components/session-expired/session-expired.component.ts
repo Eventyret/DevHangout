@@ -14,6 +14,14 @@ export class SessionExpiredComponent implements OnInit {
 	public invalidUser: boolean;
 	public username: string;
 
+	/**
+	 * Creates an instance of session expired component.
+	 * @param router  Navigating the user to the frontpage
+	 * @param authService Handling the authentication of this user
+	 * @param activeModal  The instance of this modal
+	 * @param modalService Handling opening a new modal
+	 */
+	constructor(private router: Router, private authService: AuthService, public activeModal: NgbActiveModal, private modalService: NgbModal) {}
 
 	/**
 	 * The login form
@@ -23,25 +31,7 @@ export class SessionExpiredComponent implements OnInit {
 		password: new FormControl("", Validators.required)
 	});
 
-
-	/**
-	 * Creates an instance of session expired component.
-	 * @param router  Navigating the user to the frontpage
-	 * @param authService Handling the authentication of this user
-	 * @param activeModal  The instance of this modal
-	 * @param modalService Handling opening a new modal
-	 */
-	constructor(
-		private router: Router,
-		private authService: AuthService,
-		public activeModal: NgbActiveModal,
-		private modalService: NgbModal
-		) {}
-
-
-	ngOnInit() {
-	}
-
+	ngOnInit() {}
 
 	/**
 	 * Signs the user in.
@@ -61,7 +51,6 @@ export class SessionExpiredComponent implements OnInit {
 		});
 	}
 
-
 	/**
 	 * If the user closes the modal
 	 * we will redirect the user to the front page
@@ -72,8 +61,6 @@ export class SessionExpiredComponent implements OnInit {
 		this.authService.sessionExpired();
 		this.activeModal.dismiss();
 	}
-
-
 
 	/**
 	 * If the user wants to register or there
@@ -89,7 +76,6 @@ export class SessionExpiredComponent implements OnInit {
 			backdrop: "static"
 		});
 	}
-
 
 	/**
 	 * Gets username field

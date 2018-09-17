@@ -25,7 +25,7 @@ export class GithubService {
 	 * @param {string} username that the user provided
 	 * @returns  The github profile for that user
 	 */
-	gitRepo(username: string) {
+	public gitRepo(username: string) {
 		return this.http
 			.get(
 				this.githubUrl +
@@ -54,7 +54,7 @@ export class GithubService {
 	 * This also includes their git data
 	 *
 	 */
-	fakeGitHubRepo() {
+	public fakeGitHubRepo() {
 		return this.http
 			.get("/assets/" + this.fakeUsers)
 			.pipe(map((data: any) => data))

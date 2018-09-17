@@ -16,13 +16,13 @@ import { environment } from "../../environments/environment";
 	providers: [NgbTooltipConfig]
 })
 export class ProfileComponent implements OnInit {
-	user: User;
-	support: boolean;
-	background: string;
-	normalBackground = "../../assets/landingBG.png";
-	githubData: any[];
-	profile: Profile;
-	production: boolean = environment.production;
+	public user: User;
+	public support: boolean;
+	public background: string;
+	public normalBackground = "../../assets/landingBG.png";
+	public githubData: any[];
+	public profile: Profile;
+	public production: boolean = environment.production;
 
 	constructor(
 		config: NgbTooltipConfig,
@@ -44,10 +44,10 @@ export class ProfileComponent implements OnInit {
 		this.spinner.show();
 	}
 
-	supporterTest() {
+	public supporterTest() {
 		this.support = !this.support;
 	}
-	getFakeData(id) {
+	private   getFakeData(id) {
 		if (id >= 9000) {
 			this.fakeService.getFakeUsers().subscribe(
 				data => {
@@ -82,7 +82,7 @@ export class ProfileComponent implements OnInit {
 			});
 		}
 	}
-	getRepos(user) {
+	private getRepos(user) {
 		this.gitService.gitRepo(user).subscribe(userProfile => {
 			this.githubData = userProfile;
 		});

@@ -7,6 +7,12 @@ import { isPlatformBrowser } from "@angular/common";
 })
 export class ScrollToTopService {
 
+
+	/**
+	 * Creates an instance of scroll to top service.
+	 * @param platformId  A token that indicates an opaque platform id.
+	 * @param router The Angular router service
+	 */
 	constructor(
 		@Inject(PLATFORM_ID)
 		private platformId: Object,
@@ -19,7 +25,7 @@ export class ScrollToTopService {
 	 * will stay at the same place on the next page.
 	 * We are here setting the page to the top if this is a new component
 	 */
-	setScrollTop() {
+	public setScrollTop() {
 		if (isPlatformBrowser(this.platformId)) {
 			this.router.events.subscribe((event: NavigationEnd) => {
 				window.scroll(0, 0);

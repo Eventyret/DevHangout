@@ -26,11 +26,8 @@ export class NavbarComponent implements OnInit {
 
 
 	/**
-	 * on init we getting the following data from the user
-	 * Their userID
-	 * Their username
-	 * We are also initializing and the service to see if
-	 * the user is still logged in.
+	 * on init we getting the following data from the user their userID and username
+	 * We are also initializing and checking the auth service to see if the user is still logged in.
 	 * This will then update the avatar of the user if they are logged in.
 	 * @fires refreshToken$
 	 * @fires getUsername()

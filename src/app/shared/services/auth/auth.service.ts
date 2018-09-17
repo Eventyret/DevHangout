@@ -8,14 +8,13 @@ import { Token } from "../../models/token.model";
 import { Router } from "@angular/router";
 import { NotificationsService } from "angular2-notifications";
 import { NgxSpinnerService } from "ngx-spinner";
-import { throwError, BehaviorSubject, } from "rxjs";
+import { throwError, BehaviorSubject } from "rxjs";
 import { environment } from "../../../../environments/environment";
 
 @Injectable({
 	providedIn: "root"
 })
 export class AuthService {
-
 	public currentUser: any;
 	public username: string;
 	public helper = new JwtHelperService();
@@ -42,7 +41,7 @@ export class AuthService {
 	 * it will only return a list of all users not used anywhere, but if we get the list we know the server is live and we can proceed.
 	 * @memberof AuthService
 	 */
-	checkConnection() {
+	public checkConnection() {
 		return this.http
 			.get(this.API_URL + "/api/users/")
 			.pipe(map((data: any) => data))
@@ -58,7 +57,7 @@ export class AuthService {
 	 * @returns the specific user object
 	 * @memberof AuthService
 	 */
-	getUser(id: any) {
+	public getUser(id: any) {
 		return this.http
 			.get(this.API_URL + "/api/users/" + id + "/")
 			.pipe(map((data: any) => data))
@@ -77,7 +76,7 @@ export class AuthService {
 	 * If we have an error we will show the error to the user.
 	 * @memberof AuthService
 	 */
-	login(credentials: any) {
+	public login(credentials: any) {
 		localStorage.setItem("username", credentials.username);
 		return this.http
 			.post<Token>(this.API_URL + "/api/token/", credentials)
@@ -108,7 +107,7 @@ export class AuthService {
 	 * @param(userToken) - The token that the user has
 	 * @memberof AuthService
 	 */
-	setUserID(userToken: any) {
+	private setUserID(userToken: any) {
 		localStorage.setItem("user_id", userToken.user_id);
 	}
 
@@ -119,7 +118,7 @@ export class AuthService {
 	 * @returns true or false, and then sets a localStorage variable since this will be their first visit.
 	 * @memberof AuthService
 	 */
-	register(user: User) {
+	public register(user: User) {
 		this.spinner.show();
 		this.username = user.username;
 		const data = {
@@ -156,7 +155,7 @@ export class AuthService {
 	 * It will also set the currentUser to null as we currently don't have any user at this moment.
 	 * @memberof AuthService
 	 */
-	logout() {
+	public logout() {
 		this.router.navigate(["/"]);
 		this.notify.info("Your now logged out");
 		localStorage.clear();
@@ -170,7 +169,7 @@ export class AuthService {
 	 * Also sends a notification to the user that their session has expired.
 	 * @memberof AuthService
 	 */
-	sessionExpired() {
+	public sessionExpired() {
 		this.router.navigate(["/"]);
 		this.notify.info("Your session expired, please log back in");
 		localStorage.clear();
@@ -183,7 +182,7 @@ export class AuthService {
 	 * Also sends a notification to the user that they need to be logged in.
 	 * @memberof AuthService
 	 */
-	notLoggedIn() {
+	public notLoggedIn() {
 		this.router.navigate(["/"]);
 		this.notify.info("You need to be logged in");
 		localStorage.clear();
@@ -197,13 +196,13 @@ export class AuthService {
 	 * @returns a decoded token
 	 * @memberof AuthService
 	 */
-	isLoggedIn() {
+	public isLoggedIn() {
 		return this.helper.decodeToken(localStorage.getItem("token"));
 	}
 
 	/**
 	 *
-	 *  This will make a post request to the backend with the refresh token.
+	 * This will make a post request to the backend with the refresh token.
 	 * If this is validated it will store the new token in localStorage.
 	 * If it has an error we will hide the loading spinner, try to refresh the token again.
 	 * Also perfoming a check if the the status is 401 we know the session is expired as that would be unauhtorized.
@@ -211,7 +210,7 @@ export class AuthService {
 	 * @returns a token response
 	 * @memberof AuthService
 	 */
-	refreshToken() {
+	public refreshToken() {
 		const Rtoken = localStorage.getItem("refresh");
 		return this.http
 			.post<Token>(this.API_URL + "/api/token/refresh/", { refresh: Rtoken })

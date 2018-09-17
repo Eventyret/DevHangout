@@ -8,16 +8,9 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 	providedIn: "root"
 })
 export class AuthGuard implements CanActivate {
-
 	public token = localStorage.getItem("token");
 
-	constructor(
-		private router: Router,
-		private authService: AuthService,
-		public jwtHelper: JwtHelperService
-		) {}
-
-
+	constructor(private router: Router, private authService: AuthService, public jwtHelper: JwtHelperService) {}
 
 	/**
 	 * Determines whether a user can access a route.
@@ -25,7 +18,7 @@ export class AuthGuard implements CanActivate {
 	 * If the user is not logged in we will navigate to session-expired
 	 * @returns
 	 */
-	canActivate() {
+	public canActivate() {
 		if (this.token) {
 			if (this.jwtHelper.isTokenExpired()) {
 				return new Promise<boolean>(resolve => {

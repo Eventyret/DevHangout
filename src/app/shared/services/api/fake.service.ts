@@ -14,11 +14,12 @@ import { environment } from "../../../../environments/environment";
 	providedIn: "root"
 })
 export class FakeService {
-	API_URL: string = environment.api_url;
-	fakeUsers: string = environment.fake_users;
+	private API_URL: string = environment.api_url;
+	private fakeUsers: string = environment.fake_users;
+
 	constructor(private http: HttpClient, private auth: AuthService, private spinner: NgxSpinnerService) {}
 
-	getFakeUsers() {
+	public getFakeUsers() {
 		return this.http
 			.get("/assets/" + this.fakeUsers)
 			.pipe(map((data: any) => data))
@@ -28,7 +29,7 @@ export class FakeService {
 				return throwError(error);
 			});
 	}
-	getRealUsers() {
+	public getRealUsers() {
 		return this.http
 			.get(this.API_URL + "/api/users/")
 			.pipe(map((data: any) => data))
