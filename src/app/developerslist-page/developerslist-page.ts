@@ -15,8 +15,8 @@ export class DevelopersListComponent implements OnInit {
 
 
 	public users: any[];
-	private fakeUsers: any[];
-	private startNum = 0;
+	public fakeUsers: any[];
+	public  startNum = 0;
 	public displayUsers = [];
 
 
