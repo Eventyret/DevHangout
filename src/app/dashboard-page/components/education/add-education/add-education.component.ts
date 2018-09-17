@@ -17,7 +17,6 @@ export class AddEducationComponent implements OnInit {
 	public current: boolean;
 	private user: number;
 	public name: string;
-	private id: number;
 	private today = new Date().toJSON().slice(0, 10);
 
 
