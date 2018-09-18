@@ -5,7 +5,7 @@
 		</div>
 		<div class="container testimonals my-5">
 			<div class="row">
-				<article class="col-md-4" *ngFor="let info of testimonials| slice: 0:6">
+				<article class="col-md-4" *ngFor="let info of testimonials | slice: 0:6">
 					<div class="testimonal-container">
 						<div class="testimonal-card" routerLink="profile/{{info.id}}/{{info.username}}">
 							<img src="{{info.profile[0].avatar}}" alt="{{info.profile[0].username}}" class="profile">

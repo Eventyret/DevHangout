@@ -1,5 +1,7 @@
-export interface Metadata {}
 
+/**
+ *  Stripe Card Details
+ */
 export interface Card {
 	id: string;
 	object: string;
@@ -20,11 +22,15 @@ export interface Card {
 	fingerprint: string;
 	funding: string;
 	last4: string;
-	metadata: Metadata;
+	metadata: any;
 	name?: any;
 	tokenization_method?: any;
 }
 
+
+/**
+ * Stripe token
+ */
 export interface StripeToken {
 	id: string;
 	object: string;

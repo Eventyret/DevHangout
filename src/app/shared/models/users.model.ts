@@ -1,3 +1,7 @@
+
+/**
+ * A Single Users Profile Data
+ */
 export interface Profile {
 	id: number;
 	firstName?: string;
@@ -18,6 +22,10 @@ export interface Profile {
 	donator: boolean;
 }
 
+
+/**
+ * A users Education data
+ */
 export interface Education {
 	id: number;
 	user: number;
@@ -29,6 +37,10 @@ export interface Education {
 	current: boolean;
 }
 
+
+/**
+ * A users Experience data
+ */
 export interface Experience {
 	id: number;
 	user: number;
@@ -40,13 +52,23 @@ export interface Experience {
 	current: boolean;
 }
 
+
+/**
+ * A single skill for a user
+ */
 export interface Skill {
-	id: number;
+	user: number;
+	id?: number;
+	skillID: any;
 	name: string;
 	icon: string;
 	owned: boolean;
 }
 
+
+/**
+ * Fake users Github Repo Data
+ */
 export interface Repo {
 	name: string;
 	html_url: string;
@@ -57,9 +79,14 @@ export interface Repo {
 	open_issues_count: number;
 	updated_at: string;
 	project: Project;
+	homepage?: string;
 	tabs: Tab[];
 }
 
+
+/**
+ * A Single donation
+ */
 export interface Donations {
 	id: number;
 	user: number;
@@ -69,6 +96,10 @@ export interface Donations {
 	ip: string;
 }
 
+
+/**
+ * Fake folder used in Fake users github data
+ */
 export interface Folder {
 	name: string;
 	icon: string;
@@ -76,6 +107,10 @@ export interface Folder {
 	date: string;
 }
 
+
+/**
+ * Fake file used in Fake users github data
+ */
 export interface File {
 	name: string;
 	icon: string;
@@ -83,6 +118,10 @@ export interface File {
 	date: string;
 }
 
+
+/**
+ * Project structure used for Fake users Github Data
+ */
 export interface Project {
 	name: string;
 	folders: Folder[];
@@ -90,12 +129,21 @@ export interface Project {
 	readmeContent: string;
 }
 
+
+/**
+ * Tab structure used for Fake users Github Data
+ */
 export interface Tab {
 	name: string;
 	icon: string;
 	description: string;
 }
 
+
+/**
+ * A Single User fake or real
+ * The repo is optional for fake users.
+ */
 export interface User {
 	id: number;
 	username: string;

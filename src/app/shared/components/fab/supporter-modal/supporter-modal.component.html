@@ -10,7 +10,7 @@
 	</div>
 	<div class="modal-body">
 		<div>
-			<form novalidate (ngSubmit)="buy($event)" [formGroup]="stripeTest">
+			<form novalidate (ngSubmit)="buy($event)" [formGroup]="stripeForm">
 				<div class="form-group">
 
 					<input class="form-control" type="text" formControlName="cardName" placeholder="Cardholders Name">

@@ -2,6 +2,7 @@ import { SupporterModalComponent } from "./supporter-modal/supporter-modal.compo
 import { InfoModalComponent } from "./info-modal/info-modal.component";
 import { Component, OnInit } from "@angular/core";
 import { NgbModal, NgbActiveModal, NgbTooltip } from "@ng-bootstrap/ng-bootstrap";
+import { SharedService } from "../../services/misc/shared.service";
 
 @Component({
 	selector: "app-fab",
@@ -9,35 +10,52 @@ import { NgbModal, NgbActiveModal, NgbTooltip } from "@ng-bootstrap/ng-bootstrap
 	styleUrls: ["./fab.component.scss"]
 })
 export class FabComponent implements OnInit {
-	comp: any;
-	name: string;
-	loggedIn: boolean;
-	spin: any;
-	constructor(private modalService: NgbModal) {}
-	ngOnInit() {
-	}
 
-	open(event: any) {
+	private comp: any;
+	public name = "";
+	private loggedIn: boolean;
+	public spin: any;
+
+
+	/**
+	 * Creates an instance of fab component.
+	 * @param modalService  Handling opening a new modal
+	 * @param sharedService Passing data with the username or anonymous to the other modals
+	 */
+	constructor(private modalService: NgbModal, private sharedService: SharedService) {}
+
+	ngOnInit() {}
+
+
+	/**
+	 * Opens and controls which modal to open.
+	 * This will check what button it is by it's ID then open
+	 * the correct component. It will also store the username
+	 * if it exists if not it will be refered to as anonymous
+	 * @param event
+	 */
+	public open(event: any) {
 		const target = event.target.id;
 		if (target === "infoButton") {
 			this.comp = InfoModalComponent;
 		} else if (target === "supporterButton") {
 			this.comp = SupporterModalComponent;
 		}
-		if (!localStorage.getItem("username")  || !this.name) {
+		if (!localStorage.getItem("username") || !this.name) {
 			this.loggedIn = false;
-			this.name = "Anonymous";
 		} else {
 			this.loggedIn = true;
-			this.name = localStorage.getItem("username");
 		}
 		const modalRef = this.modalService.open(this.comp, {
 			centered: true,
 			size: "lg",
-			backdropClass: "light-blue-backdrop",
-			backdrop: "static"
+			backdrop: "static",
+			beforeDismiss: () => {
+				this.sharedService.setDonatorName(this.name);
+				return true;
+			}
 		});
-		modalRef.componentInstance.name = this.name;
+		modalRef.componentInstance.name = this.sharedService.donatorName;
 		modalRef.componentInstance.loggedIn = this.loggedIn;
 	}
 }

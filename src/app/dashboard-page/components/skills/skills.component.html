@@ -1,7 +1,7 @@
 <section>
 	<div class="modal-header">
-		<h4 class="modal-title">Editing your Skills</h4>
-		<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+		<h4 class="modal-title">Pick your Skills</h4>
+		<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('👋👋')">
 			<i class="fas fa-times"></i>
 		</button>
 	</div>
@@ -9,16 +9,27 @@
 		<div class="skills">
 			<div class="container">
 				<div class="row">
-					<p>We are currently working on this feature and will release it soon
-						Please check back at a later time</p>
-					<div *ngFor="let skill of allSkills">
-						<div class="col-sm-6" *ngIf="!skill?.owned">
-							<i class="{{skill?.icon}}" (click)="updateSkill(skill)"></i>
-						</div>
+					<div class="col-sm-12">
+						<p>Here you can show off different languages, libraries and skills you might have to other people!
+							It's as simple as click on it and it's added.
+						</p>
 					</div>
-					<div *ngFor="let skill of userSkills">
-						<div class="col-sm-6" *ngIf="skill?.owned">
-							<i class="{{skill?.icon}}"></i>
+					<div class="row">
+						<div class="col-sm-12">
+							<h2>Pick a Skill</h2>
+							<ul class="list-inline">
+								<li class="list-inline-item" *ngFor="let skill of allSkills">
+									<i class="{{skill?.icon}}" ngbTooltip="{{skill?.name}}" (click)="addSkill(skill)"></i>
+								</li>
+							</ul>
+						</div>
+						<div class="col-sm-12">
+							<h2> Your Skills</h2>
+							<ul class="list-inline">
+								<li class="list-inline-item" *ngFor="let skill of userSkills">
+									<i class="{{skill?.icon}}" ngbTooltip="{{skill?.name}}" (click)="deleteSkill(skill?.name,skill?.id)"></i>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>

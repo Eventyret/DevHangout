@@ -4,7 +4,6 @@ import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { RouterModule, Routes } from "@angular/router";
 import { JwtModule } from "@auth0/angular-jwt";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { TruncateModule } from "@yellowspot/ng-truncate";
@@ -46,28 +45,16 @@ import { ProfileComponent } from "./userprofile/userprofile.component";
 import { SessionExpiredPage } from "./expired-page/expired-page";
 import { SkillsComponent } from "./dashboard-page/components/skills/skills.component";
 import { ThankYouModalComponent } from "./shared/components/fab/thank-you-modal/thank-you-modal.component";
+import { EducationComponent } from "./userprofile/components/education/education.component";
+import { ExperienceComponent } from "./userprofile/components/experience/experience.component";
+import { GithubComponent } from "./userprofile/components/github/github.component";
+import { SocialIconsComponent } from "./userprofile/components/social-icons/social-icons.component";
+import { DonationsMobileViewComponent } from "./dashboard-page/components/donations-mobile-view/donations-mobile-view.component";
+import { EducationMobileViewComponent } from "./dashboard-page/components/education/education-mobile-view/education-mobile-view.component";
+import { ExperienceMobileViewComponent } from "./dashboard-page/components/experience/experience-mobile-view/experience-mobile-view.component";
+import { AppRoutingModule } from ".//app-routing.module";
 
-const routes: Routes = [
-	{ path: "", component: HomePage, pathMatch: "full" },
-	{ path: "login", component: LoginComponent, pathMatch: "full" },
-	{ path: "expired", component: SessionExpiredComponent, pathMatch: "full" },
-	{ path: "profiles", component: DevelopersListComponent, pathMatch: "full" },
-	{ path: "signup", component: SignupComponent, pathMatch: "full" },
-	{ path: "profile/:id/:username", component: ProfileComponent, pathMatch: "full", canActivate: [AuthGuard] },
-	{ path: "profile/edit", component: EditProfileComponent, canActivate: [AuthGuard] },
-	{ path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] },
-	{ path: "donate", component: SupporterModalComponent },
-	{ path: "donate/info", component: InfoModalComponent },
-	{ path: "donate/thank-you", component: ThankYouModalComponent },
-	{ path: "github/:username/:repo", component: FakeGithubPage },
-	{ path: "education/add", component: AddEducationComponent, canActivate: [AuthGuard] },
-	{ path: "education/edit/:id", component: EditEducationComponent, canActivate: [AuthGuard] },
-	{ path: "experience/add", component: AddExperienceComponent, canActivate: [AuthGuard] },
-	{ path: "experience/edit/:id", component: EditExperienceComponent, canActivate: [AuthGuard] },
-	{ path: "skills/edit/:id", component: SkillsComponent, canActivate: [AuthGuard] },
-	{ path: "session-expired", component: SessionExpiredPage },
-	{ path: "**", component: PageNotFoundComponent } // Page not found
-];
+
 
 @NgModule({
 	declarations: [
@@ -95,13 +82,20 @@ const routes: Routes = [
 		SessionExpiredComponent,
 		SessionExpiredPage,
 		SkillsComponent,
-		ThankYouModalComponent
+		ThankYouModalComponent,
+		EducationComponent,
+		ExperienceComponent,
+		GithubComponent,
+		SocialIconsComponent,
+		DonationsMobileViewComponent,
+		EducationMobileViewComponent,
+		ExperienceMobileViewComponent
 	],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
-		RouterModule.forRoot(routes),
 		NgbModule.forRoot(),
+		AppRoutingModule,
 		CommonModule,
 		NgxSpinnerModule,
 		HttpClientModule,
@@ -125,13 +119,16 @@ const routes: Routes = [
 		}),
 		Ng2SearchPipeModule,
 		InfiniteScrollModule,
-		ScrollToModule.forRoot()
+		ScrollToModule.forRoot(),
 	],
 	providers: [FakeService, GithubService, AuthService, AuthGuard, HomePageService],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}
 
+/**
+ *  Helper function to get the token from localStorage
+ */
 export function getToken() {
 	return localStorage.getItem("token");
 }

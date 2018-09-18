@@ -1,6 +1,6 @@
-from django.shortcuts import render
-from rest_framework import viewsets
 from django.contrib.auth.models import User
+from rest_framework import viewsets
+from .permissions import IsOwner
 from ..models import Skill
 from .serializers import SkillsSerializer
 
@@ -9,6 +9,7 @@ from .serializers import SkillsSerializer
 
 class SkillsView(viewsets.ModelViewSet):
     """ A list of skills each user might have """
+    permission_classes = (IsOwner, )
     queryset = Skill.objects.all()
     serializer_class = SkillsSerializer
     serializer = SkillsSerializer(many=True)

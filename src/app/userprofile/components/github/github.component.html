@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col-md-6">
+		<a href="{{repos?.html_url}}" class="repo-name" target="_blank">
+			<h4>{{repos?.name}}</h4>
+		</a>
+		<p>{{repos?.description}}</p>
+		<small>Last Updated: {{repos?.updated_at | date: "MMM d y hh:mm:ss"}}</small>
+	</div>
+	<div class="col-md-6">
+		<span class="badge badge-primary mr-1"><i class="fas fa-star"></i> Stars: {{repos?.stargazers_count}} </span>
+		<span class="badge badge-primary mr-1"><i class="fas fa-eye"></i> Watchers: {{repos?.watchers_count}}</span>
+		<span class="badge badge-primary mr-1"><i class="fas fa-code-branch"></i> Forks: {{repos?.forks_count}}</span>
+		<a href="{{repos?.html_url}}/issues" target="_blank" class="mr-3"><span class="badge badge-danger"><i class="fas fa-exclamation-circle"></i>
+				Issues: {{repos?.open_issues_count}}</span></a>
+		<a href="{{repos?.homepage}}" target="_blank" *ngIf="repos?.homepage"><span class="badge badge-success"><i
+				 class="fas fa-globe"></i>
+				Visit Demo Page</span></a>
+	</div>
+</div>

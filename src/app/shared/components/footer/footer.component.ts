@@ -1,5 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 
+
+
+/**
+ * @ignore
+ */
 @Component({
 	selector: "app-footer",
 	templateUrl: "./footer.component.html",

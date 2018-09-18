@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { SessionExpiredComponent } from "../shared/components/session-expired/session-expired.component";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { AuthService } from "../shared/services/auth/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
 	selector: "app-expired-page",
@@ -9,18 +9,38 @@ import { AuthService } from "../shared/services/auth/auth.service";
 	styleUrls: ["./expired-page.scss"]
 })
 export class SessionExpiredPage implements OnInit {
-	constructor(public auth: AuthService, private modalService: NgbModal) {}
 
+	/**
+	 * Creates an instance of session expired page.
+	 * @param modalService Opens the modal for Session Expired Component
+	 * @param router Used to redirect the user if the close the modal
+	 */
+	constructor(private modalService: NgbModal, private router: Router) {}
+
+	/**
+	 * on init
+	 * Due that we would get normally an error
+	 * we set a timeout on 300 milliseconds before we auto open the modal
+	 */
 	ngOnInit() {
 		setTimeout(() => {
 			this.openModal();
 		}, 300);
 	}
-	openModal() {
+
+	/**
+	 * Opens the Session Expired Modal
+	 * If a user closes the modal we will redirect them to the front page
+	 */
+	public openModal() {
 		this.modalService.open(SessionExpiredComponent, {
 			centered: true,
 			size: "lg",
-			backdrop: "static"
+			backdrop: "static",
+			beforeDismiss: () => {
+				this.router.navigate(["/"]);
+				return true;
+			}
 		});
 	}
 }

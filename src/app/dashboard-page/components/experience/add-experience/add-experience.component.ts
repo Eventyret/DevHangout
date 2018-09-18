@@ -12,22 +12,20 @@ import { AuthService } from "../../../../shared/services/auth/auth.service";
 	styleUrls: ["./add-experience.component.scss"]
 })
 export class AddExperienceComponent implements OnInit {
-	name: string;
-	experience: Experience;
-	id: number;
-	current = false;
-	updatedForm: Experience;
+	public experience: Experience;
+	private updatedForm: Experience;
+	public current = false;
+	public name: string;
+	private today = new Date().toJSON().slice(0, 10);
 
-	addForm = new FormGroup({
-		current: new FormControl(false, Validators.required),
-		dateFrom: new FormControl("", Validators.required),
-		dateTo: new FormControl(""),
-		company: new FormControl("", Validators.required),
-		jobTitle: new FormControl("", Validators.required),
-		location: new FormControl(""),
-		user: new FormControl(parseInt(localStorage.getItem("user_id"), 10), Validators.required)
-	});
-
+	/**
+	 * Creates an instance of add education component.
+	 * @param activeModal The instance of this modal
+	 * @param dataService Responsible for the CRUD operations.
+	 * @param notify Responsible for notifying the user with a toast message
+	 * @param auth  Responsible for making sure the user is authenticated
+	 * and refreshing the refreshToken
+	 */
 	constructor(
 		public activeModal: NgbActiveModal,
 		private dataService: DataService,
@@ -35,12 +33,36 @@ export class AddExperienceComponent implements OnInit {
 		private auth: AuthService
 	) {}
 
+	/**
+	 * The form the user fills out to add new education data.
+	 * We are also adding the user by parsing it from localStorage.
+	 */
+	public addForm = new FormGroup({
+		current: new FormControl(false, Validators.required),
+		dateFrom: new FormControl("", Validators.required),
+		dateTo: new FormControl(this.today),
+		company: new FormControl("", Validators.required),
+		jobTitle: new FormControl("", Validators.required),
+		location: new FormControl(""),
+		user: new FormControl(parseInt(localStorage.getItem("user_id"), 10), Validators.required)
+	});
+
+	/**
+	 * on init
+	 * We are refreshing the JWT token and listing for changes.
+	 */
 	ngOnInit() {
 		this.auth.refreshToken().subscribe(nothing => {
 			this.onChanges();
 		});
 	}
-	onChanges() {
+
+	/**
+	 * Listing for changes that the user is doing to the form.
+	 * This ensures we always have up to date data.
+	 * As every keystroke updates the object
+	 */
+	private onChanges() {
 		this.addForm.valueChanges.subscribe(val => {
 			this.updatedForm = val;
 		});
@@ -49,7 +71,11 @@ export class AddExperienceComponent implements OnInit {
 		});
 	}
 
-	add() {
+	/**
+	 * Posting the new data from the user
+	 * It takes the updated form that the user has provided
+	 */
+	public addExperience() {
 		this.dataService.newDetails("experience", this.updatedForm).subscribe(
 			results => {},
 			error => {

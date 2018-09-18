@@ -1,5 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 
+
+/**
+ * @ignore
+ * This component has no logic
+ */
 @Component({
 	selector: "app-page-not-found",
 	templateUrl: "./page-not-found.component.html",

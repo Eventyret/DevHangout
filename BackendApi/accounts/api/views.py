@@ -3,13 +3,17 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from django.contrib.auth.models import User
 from .permissions import IsOwner
 from ..models import Profile, Education, Experience
-from .serializers import ProfileSerializer, UserSerializer, EducationSerializer, ExperienceSerializer, UserRegistrationSerializer
+from .serializers import (ProfileSerializer,
+                          UserSerializer, EducationSerializer,
+                          ExperienceSerializer, UserRegistrationSerializer)
 
 
 # Creating a view for the api endpoint
 
 
 class ProfileView(viewsets.ModelViewSet):
+    """The view for the profile.
+    We are also checking if the user requested is the same one that is logged in """
     permission_classes = (IsOwner, )
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
@@ -24,6 +28,8 @@ class ProfileView(viewsets.ModelViewSet):
 
 
 class EducationView(viewsets.ModelViewSet):
+    """The view for the users Education.
+    We are also checking if the user requested is the same one that is logged in """
     permission_classes = (IsOwner, )
     queryset = Education.objects.all()
     serializer_class = EducationSerializer
@@ -38,6 +44,8 @@ class EducationView(viewsets.ModelViewSet):
 
 
 class ExperienceView(viewsets.ModelViewSet):
+    """The view for the users Experience.
+    We are also checking if the user requested is the same one that is logged in """
     permission_classes = (IsOwner, )
     queryset = Experience.objects.all()
     serializer_class = ExperienceSerializer
@@ -52,11 +60,14 @@ class ExperienceView(viewsets.ModelViewSet):
 
 
 class UserViewSet(viewsets.ModelViewSet):
+    """"Showing a list of all users,
+    the user has to be authenticated else we will se this to read only"""
     permission_classes = (IsAuthenticatedOrReadOnly, )
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
 
 class UserRegistrationViewSet(viewsets.ModelViewSet):
+    """The view for registering a user"""
     queryset = User.objects.all()
     serializer_class = UserRegistrationSerializer

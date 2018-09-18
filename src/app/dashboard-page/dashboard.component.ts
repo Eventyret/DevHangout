@@ -18,14 +18,21 @@ import { SkillsComponent } from "./components/skills/skills.component";
 	styleUrls: ["./dashboard.component.scss"]
 })
 export class DashboardComponent implements OnInit {
-	user: User;
-	support = false;
-	id: number = parseInt(localStorage.getItem("user_id"), 10);
-	LocalUser = localStorage.getItem("user");
-	comp: any;
-	profile: Profile;
-	firstVisit: boolean;
+	public user: User;
+	public support = false;
+	private id: number = parseInt(localStorage.getItem("user_id"), 10);
+	private comp: any;
+	public profile: Profile;
+	private firstVisit: boolean;
 
+	/**
+	 * Creates an instance of dashboard component.
+	 * @param modalService Responsible for opening the correct Modal
+	 * @param spinner The pacman spinner indicating to the user we are loading data.
+	 * @param auth gets the user data and also refreshes the JWT token
+	 * @param dataService Handles the CRUD operations for the profile and modals.
+	 * @param notify Will display toast notifications to the user.
+	 */
 	constructor(
 		private modalService: NgbModal,
 		private spinner: NgxSpinnerService,
@@ -39,7 +46,13 @@ export class DashboardComponent implements OnInit {
 		this.firstVisit = JSON.parse(sessionStorage.getItem("firstVisit"));
 		this.getUserData(this.id);
 	}
-	open(event: any, id?: number) {
+
+	/**
+	 * Opens the different modals
+	 * @param event - The button click to find out what the id is.
+	 * @param id Optional but if we pass an ID we store it to pass to the modals.
+	 */
+	public open(event: any, id?: number) {
 		const target = event.target.id;
 		if (target === "addEdu") {
 			this.comp = AddEducationComponent;
@@ -57,7 +70,6 @@ export class DashboardComponent implements OnInit {
 		const modalRef = this.modalService.open(this.comp, {
 			centered: true,
 			size: "lg",
-			backdropClass: "light-blue-backdrop",
 			backdrop: "static"
 		});
 		modalRef.componentInstance.name = this.user.username;
@@ -71,16 +83,27 @@ export class DashboardComponent implements OnInit {
 			},
 			onrejected => {
 				this.auth.refreshToken().subscribe(val => {});
-				this.notify.info("Nothing was saved 👍");
+				this.notify.info(onrejected);
 			}
 		);
 	}
 
+	/**
+	 * This will open a href link in a new window.
+	 * As we need to go outside the Angular Application
+	 * we pass window.open and the website the user clicked on
+	 */
 	openLink() {
 		window.open("//" + this.profile.website, "_blank");
 	}
 
-	getUserData(id) {
+	/**
+	 * This gets the user data from the service.
+	 * If this is the first time the user visits we will automatically
+	 * open EditProfileComponent
+	 * @param id The ID of the user.
+	 */
+	private getUserData(id: number) {
 		this.auth.getUser(id).subscribe((data: User) => {
 			this.user = data;
 			this.profile = data.profile[0];
@@ -90,7 +113,6 @@ export class DashboardComponent implements OnInit {
 				const modalRef = this.modalService.open(EditProfileComponent, {
 					centered: true,
 					size: "lg",
-					backdropClass: "light-blue-backdrop",
 					backdrop: "static"
 				});
 				modalRef.componentInstance.name = this.user.username;
@@ -98,7 +120,15 @@ export class DashboardComponent implements OnInit {
 			}
 		});
 	}
-	deleteDetail(event, id, name) {
+
+	/**
+	 * This will delete
+	 * @param event The event id of the button
+	 * @param id  the ID of the object
+	 * @param name the name component
+	 *
+	 */
+	public deleteDetail(event: any, id: number, name: string) {
 		const target = event.target.id;
 		if (target === "deleteEdu") {
 			this.comp = "Education";

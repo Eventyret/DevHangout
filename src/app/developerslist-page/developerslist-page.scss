@@ -1,5 +1,5 @@
 .size-2 {
-	font-size: 1.65rem;
+	font-size: 2rem;
 }
 
 .profile {
@@ -10,14 +10,14 @@
 	min-width: 250px;
 	max-width: 250px;
 	width: 100%;
-	background: #112938;
+	background: #fff;
 	color: #333;
 	text-align: center;
 	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 	font-size: 16px;
 	cursor: pointer;
-
+	min-height: 490px;
 
 	&:focus {
 		outline: none;
@@ -36,7 +36,7 @@
 	}
 	.image {
 		position: relative;
-		border-bottom: 4px solid transparent;
+		border-bottom: 2px solid #212121;
 		z-index: 1;
 		max-height: 250px;
 		overflow: hidden;
@@ -69,6 +69,10 @@
 			transform: translateY(-50%);
 			opacity: 0;
 			font-style: italic;
+		}
+		.visit-profile {
+			color: #34495e;
+			font-family: "Ubuntu";
 		}
 	}
 	.profile-text {
@@ -170,4 +174,8 @@
 }
 .fa-star {
 	color: #ffea00;
+}
+
+.push-down {
+	margin-top: 8rem !important;
 }

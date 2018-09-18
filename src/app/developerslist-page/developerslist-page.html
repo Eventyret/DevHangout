@@ -17,7 +17,7 @@
 							</span>
 						</div>
 					</div>
-					<p>
+					<p class="visit-profile">
 						Visit Profile
 					</p>
 				</div>
@@ -27,7 +27,7 @@
 					<h5>{{user?.profile[0].title}}</h5>
 					<div class="icons">
 						<ul class="list-inline">
-							<li class="list-inline-item" *ngFor="let skills of user?.skills">
+							<li class="list-inline-item" *ngFor="let skills of user?.skills | slice: 0:10">
 								<i class="{{skills.icon}} size-2" placement="top" ngbTooltip="{{skills.name}}"></i>
 						</ul>
 					</div>
@@ -35,6 +35,6 @@
 			</div>
 		</article>
 	</div>
-	<div infiniteScroll [infiniteScrollDistance]="4" [infiniteScrollThrottle]="500" (scrolled)="loadMore()">
+	<div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="500" (scrolled)="loadMore()">
 	</div>
 </section>

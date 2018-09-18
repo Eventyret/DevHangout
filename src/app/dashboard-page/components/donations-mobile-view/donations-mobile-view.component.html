@@ -1,0 +1,25 @@
+<h3 class="text-center my-3">Donations</h3>
+<ul class="list-group">
+	<div class="my-3" *ngFor="let donation of user?.donation">
+		<li class=" list-group-item d-flex
+				 justify-content-between align-items-center">
+			<span><i class="far fa-money-bill-alt"></i> Amount:</span>
+			{{donation?.amount | currency: ["USD"]}}
+		</li>
+		<li class=" list-group-item d-flex
+				 justify-content-between align-items-center">
+			<span><i class="fas fa-clock"></i> Date:</span>
+			{{donation?.date * 1000 | date: "dd MMM yyyy - hh:mm"}}
+		</li>
+		<li class=" list-group-item d-flex
+				 justify-content-between align-items-center">
+			<span><i class="fab fa-cc-stripe"></i>Token:</span>
+			<span class="text-truncate">{{donation?.token}}</span>
+		</li>
+		<li class=" list-group-item d-flex
+				 justify-content-between align-items-center">
+			<span><i class="fas fa-hdd"></i> IP:</span>
+			{{donation?.ip}}
+		</li>
+	</div>
+</ul>

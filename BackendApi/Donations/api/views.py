@@ -1,11 +1,12 @@
 from django.contrib.auth.models import User
-from .permissions import IsOwner
 from rest_framework import viewsets
+from .permissions import IsOwner
 from ..models import Donation
 from .serializers import DonationSerializer
 
 
 class DonationView(viewsets.ModelViewSet):
+    """"This view will display a single Donation from a user"""
     permission_classes = (IsOwner, )
     queryset = Donation.objects.all()
     serializer_class = DonationSerializer

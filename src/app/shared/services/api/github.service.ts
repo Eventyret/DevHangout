@@ -9,14 +9,23 @@ import { throwError } from "rxjs";
 	providedIn: "root"
 })
 export class GithubService {
-	clientID: string = environment.github_client_id;
-	clientSecret: string = environment.github_client_secret;
-	githubUrl: string = environment.githubapi_url;
-	fakeUsers: string = environment.fake_users;
+
+	private clientID: string = environment.github_client_id;
+	private clientSecret: string = environment.github_client_secret;
+	private githubUrl: string = environment.githubapi_url;
+	private fakeUsers: string = environment.fake_users;
 
 	constructor(private http: HttpClient) {}
 
-	gitRepo(username) {
+
+	/**
+	 * Contacts the github API to get the users repos
+	 * We are also setting this to be sorted as descendant
+	 * as the user profiles show last 5 in that order
+	 * @param {string} username that the user provided
+	 * @returns  The github profile for that user
+	 */
+	public gitRepo(username: string) {
 		return this.http
 			.get(
 				this.githubUrl +
@@ -35,7 +44,17 @@ export class GithubService {
 				return throwError(error);
 			});
 	}
-	fakeGitHubRepo() {
+
+
+
+	/**
+	 *  Used to return the fakeusers data
+	 *
+	 * @returns An [Array] of all fake users
+	 * This also includes their git data
+	 *
+	 */
+	public fakeGitHubRepo() {
 		return this.http
 			.get("/assets/" + this.fakeUsers)
 			.pipe(map((data: any) => data))

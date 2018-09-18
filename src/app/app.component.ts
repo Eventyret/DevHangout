@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { interval } from "rxjs";
 import { AuthService } from "./shared/services/auth/auth.service";
+import { SharedService } from "./shared/services/misc/shared.service";
 
 @Component({
 	selector: "app-root",
@@ -9,20 +10,47 @@ import { AuthService } from "./shared/services/auth/auth.service";
 })
 export class AppComponent implements OnInit {
 	public loggedIn: boolean;
+	private name: string;
 	public loading: boolean;
-	constructor(private auth: AuthService) {}
+
+
+	/**
+	 * Creates an instance of app component.
+	 * @param auth Responsible for refreshing the JWT token if a user exists.
+	 * @param sharedService Passing the name of Anonymous or the username
+	 * This is used in FAB buttons if the user clicks it.
+	 */
+	constructor(private auth: AuthService, private sharedService: SharedService) {}
+
+
+	/**
+	 * on init
+	 */
 	ngOnInit() {
 		this.loading = true;
 		if (localStorage.getItem("user_id")) {
 			this.auth.refreshToken$.subscribe(val => {
 				if (val) {
-					// val is true, refreshToken has been notified
 					this.loggedIn = true;
 				}
 			});
 		}
+		if (!localStorage.getItem("username") || !this.name) {
+			this.loggedIn = false;
+			this.name = "Anonymous";
+		} else {
+			this.loggedIn = true;
+			this.name = localStorage.getItem("username");
+		}
+		this.sharedService.setDonatorName(this.name);
 		this.appOnline();
 	}
+
+	/**
+	 * Heroku will make our backend sleep from time to time.
+	 * This is to establish connection to the backend then hide
+	 * the loading spinner from the user
+	 */
 	appOnline() {
 		this.auth.checkConnection().subscribe(
 			data => {},

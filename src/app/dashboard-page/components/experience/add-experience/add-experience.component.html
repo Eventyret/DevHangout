@@ -1,7 +1,7 @@
 <section>
 	<div class="modal-header">
 		<h4 class="modal-title">Add Your Experience {{name}}!</h4>
-		<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+		<button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Nothing was saved👍 ')">
 			<i class="fas fa-times"></i>
 		</button>
 	</div>
@@ -12,7 +12,7 @@
 					<div class="col-md-8 m-auto">
 						<p class="text-center">Add any developer/programming positions that you have had in the past</p>
 						<small class="d-block pb-3">* = required field</small>
-						<form [formGroup]="addForm" (ngSubmit)="add()">
+						<form [formGroup]="addForm" (ngSubmit)="addExperience()">
 							<div class="form-group">
 								<input formControlName="company" type="text" name="company" class="form-control form-control-lg" placeholder="* Company">
 							</div>
