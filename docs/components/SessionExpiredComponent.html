@@ -371,7 +371,7 @@ and notify the user</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/shared/components/session-expired/session-expired.component.ts:71</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/shared/components/session-expired/session-expired.component.ts:75</a></div>
                             </td>
                         </tr>
 
@@ -648,7 +648,7 @@ to the front page and dismiss the modal</p>
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/shared/components/session-expired/session-expired.component.ts:83</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/shared/components/session-expired/session-expired.component.ts:87</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -726,7 +726,11 @@ export class SessionExpiredComponent implements OnInit {
 	 *
 	 */
 	public dismiss() {
-		this.authService.sessionExpired();
+		if (!this.username) {
+			this.authService.notLoggedIn();
+		} else {
+			this.authService.sessionExpired();
+		}
 		this.activeModal.dismiss();
 	}
 

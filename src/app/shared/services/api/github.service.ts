@@ -15,6 +15,12 @@ export class GithubService {
 	private githubUrl: string = environment.githubapi_url;
 	private fakeUsers: string = environment.fake_users;
 
+
+	/**
+	 * Creates an instance of github service.
+	 * @param http Responsible for making the
+	 * http requests from the app to the API
+	 */
 	constructor(private http: HttpClient) {}
 
 

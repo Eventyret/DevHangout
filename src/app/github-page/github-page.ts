@@ -29,7 +29,7 @@ export class FakeGithubPage implements OnInit {
 	 * @param github The Service that gets data from Github.
 	 * If its  a fake user it will get it from fakeusers-env.json Where env is the enviroment.
 	 * @param router  Used to get the username and the reponame from the profile visited
-	 * @param spinner
+	 * @param spinner The pacman spinner we are showing the user when loading
 	 */
 	constructor(private github: GithubService, private router: ActivatedRoute, private spinner: NgxSpinnerService) {}
 

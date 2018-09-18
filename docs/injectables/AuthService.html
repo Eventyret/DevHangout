@@ -1338,7 +1338,7 @@ export class AuthService {
 	 */
 	public notLoggedIn() {
 		this.router.navigate([&quot;/&quot;]);
-		this.notify.info(&quot;You need to be logged in&quot;);
+		this.notify.info(&quot;You need to be logged in to view profiles&quot;);
 		localStorage.clear();
 		this.currentUser &#x3D; null;
 	}

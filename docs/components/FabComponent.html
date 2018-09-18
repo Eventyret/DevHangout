@@ -273,7 +273,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/shared/components/fab/fab.component.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/shared/components/fab/fab.component.ts:39</a></div>
                             </td>
                         </tr>
 
@@ -428,11 +428,6 @@ if it exists if not it will be refered to as anonymous</p>
 
                         </td>
                     </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>&quot;&quot;</code>
-                        </td>
-                    </tr>
                         <tr>
                             <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/components/fab/fab.component.ts:15</a></div>
@@ -497,7 +492,7 @@ import { SharedService } from &quot;../../services/misc/shared.service&quot;;
 export class FabComponent implements OnInit {
 
 	private comp: any;
-	public name &#x3D; &quot;&quot;;
+	public name: string;
 	private loggedIn: boolean;
 	public spin: any;
 
@@ -509,7 +504,9 @@ export class FabComponent implements OnInit {
 	 */
 	constructor(private modalService: NgbModal, private sharedService: SharedService) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.name &#x3D; &quot;&quot;;
+	}
 
 
 	/**

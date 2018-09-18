@@ -25,7 +25,7 @@ Navigating a Dashboard can always be tricky so be sure to see "Professor Oak" an
 
 The Pokemon list acts as the Poké Dex, where you can find a small image of each pokemon and some stats about them, this was intended to be looking and styled as a Pokedex, but due to the layout and how the page looks, I felt that this should be more of a table.
 Though on Mobile a Table can be hard to read, so this was redone to fetch data as small cards for easier understanding and reading on mobile devices.
-
+	
 ### Pokémon Battles
 
 ### Page Not Found
@@ -302,6 +302,7 @@ If you are building this to be uploaded directly to the root folder of a domain 
 ```console
 ng build --prod
 ```
+##### Fake Data
 
 ##### Backend
 
