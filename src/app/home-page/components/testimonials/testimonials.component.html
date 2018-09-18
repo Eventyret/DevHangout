@@ -6,15 +6,17 @@
 		<div class="container testimonals my-5">
 			<div class="row">
 				<article class="col-md-4" *ngFor="let info of testimonials | slice: 0:6">
-					<div class="testimonal-container">
-						<div class="testimonal-card" routerLink="profile/{{info.id}}/{{info.username}}">
-							<img src="{{info.profile[0].avatar}}" alt="{{info.profile[0].username}}" class="profile">
-							<blockquote>{{info.profile[0].testimonal | truncate :130}}</blockquote>
-							<h3>{{info.profile[0].firstName}} {{ info.profile[0].lastName}}
-								<span>{{info.profile[0].title}}</span>
-							</h3>
+					<a routerLink="profile/{{info?.id}}/{{info?.username}}">
+						<div class="testimonal-container">
+							<div class="testimonal-card">
+								<img src="{{info.profile[0].avatar}}" alt="{{info.profile[0].username}}" class="profile">
+								<blockquote>{{info.profile[0].testimonal | truncate :130}}</blockquote>
+								<h3>{{info.profile[0].firstName}} {{ info.profile[0].lastName}}
+									<span>{{info.profile[0].title}}</span>
+								</h3>
+							</div>
 						</div>
-					</div>
+					</a>
 				</article>
 			</div>
 		</div>
