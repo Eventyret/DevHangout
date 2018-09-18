@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from Skills.models import Skill
 
 
 class Profile(models.Model):
@@ -31,6 +30,7 @@ class Profile(models.Model):
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
+        """Once a user is created we also need to create their Profile using default values."""
         if created:
             Profile.objects.create(user=instance)
 

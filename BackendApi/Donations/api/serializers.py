@@ -3,8 +3,8 @@ from ..models import Donation
 
 
 class DonationSerializer(serializers.ModelSerializer):
-    """ A Serializer that will have read only access but using the modal one """
+    """This shows one single donation from a user"""
     class Meta:
         model = Donation
-        fields = ("id", "user", "amount", "date",  "token", "ip")
+        fields = ("id", "user", "amount", "date", "token", "ip")
         write_only_fields = ("ip,")
