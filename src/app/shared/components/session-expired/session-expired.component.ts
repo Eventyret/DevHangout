@@ -58,7 +58,11 @@ export class SessionExpiredComponent implements OnInit {
 	 *
 	 */
 	public dismiss() {
-		this.authService.sessionExpired();
+		if (!this.username) {
+			this.authService.notLoggedIn();
+		} else {
+			this.authService.sessionExpired();
+		}
 		this.activeModal.dismiss();
 	}
 

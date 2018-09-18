@@ -12,7 +12,7 @@ import { SharedService } from "../../services/misc/shared.service";
 export class FabComponent implements OnInit {
 
 	private comp: any;
-	public name = "";
+	public name: string;
 	private loggedIn: boolean;
 	public spin: any;
 
@@ -24,7 +24,9 @@ export class FabComponent implements OnInit {
 	 */
 	constructor(private modalService: NgbModal, private sharedService: SharedService) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.name = "";
+	}
 
 
 	/**

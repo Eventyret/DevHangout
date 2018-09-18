@@ -1,7 +1,7 @@
 This is a list of thigns in the feature works
-
+```
 News:
-	A blog / News list from the admin team posted from django
+#A blog / News list from the admin team posted from django
 	☐ Generate Component
 	☐ Generate Model
 	☐  Generate App
@@ -10,7 +10,7 @@ News:
 	☐  Generate Markup
 
 Contact Service:
-	A service to have users contact other users
+#A way for users to contact eachother.
 	☐ Generate Component
 	☐ Generate Model
 	☐  Generate App
@@ -18,19 +18,17 @@ Contact Service:
 	☐  Wire Up component
 	☐  Generate Markup
 
-User Experience:
-	Give the user a better experience
-
-	AutoLogin:
-	Currently you have to manually log in after you register. This should automate the process.
+AutoLogin:
+#Currently you have to manually log in after you register. This should automate the process.
 	☐ Create function
 	☐ Pass data User and PW to Login function
 	☐ Post Login data to Backend
-	☐  Process and redirect to dashboard
+	☐ Process and redirect to dashboard
 
-	Forgotten Password:
-	Currently there is no way for a user to change or say they forgotten the password
+Forgotten Password:
+#Currently there is no way for a user to change or say they forgotten the password
 	☐ Create function
 	☐ Pass data User and PW to Login function
 	☐ Update User data.
 	☐ Post to the backend with new updated data
+```

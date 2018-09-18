@@ -142,6 +142,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Creates an instance of github service.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -150,6 +152,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -164,6 +167,11 @@
                                                             No
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>Responsible for making the
+http requests from the app to the API</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -203,7 +211,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/shared/services/api/github.service.ts:57</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/shared/services/api/github.service.ts:63</a></div>
                             </td>
                         </tr>
 
@@ -252,7 +260,7 @@ This also includes their git data</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/shared/services/api/github.service.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/shared/services/api/github.service.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -499,6 +507,12 @@ export class GithubService {
 	private githubUrl: string &#x3D; environment.githubapi_url;
 	private fakeUsers: string &#x3D; environment.fake_users;
 
+
+	/**
+	 * Creates an instance of github service.
+	 * @param http Responsible for making the
+	 * http requests from the app to the API
+	 */
 	constructor(private http: HttpClient) {}
 
 

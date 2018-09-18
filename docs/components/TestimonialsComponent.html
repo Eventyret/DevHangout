@@ -245,7 +245,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/home-page/components/testimonials/testimonials.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/home-page/components/testimonials/testimonials.component.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -317,34 +317,32 @@ import { sampleSize as _sampleSize } from &quot;lodash&quot;;
 import { FakeService } from &quot;../../../shared/services/api/fake.service&quot;;
 
 @Component({
-  selector: &quot;app-testimonials&quot;,
-  templateUrl: &quot;./testimonials.component.html&quot;,
-  styleUrls: [&quot;./testimonials.component.scss&quot;]
+	selector: &quot;app-testimonials&quot;,
+	templateUrl: &quot;./testimonials.component.html&quot;,
+	styleUrls: [&quot;./testimonials.component.scss&quot;]
 })
 export class TestimonialsComponent implements OnInit {
 	public testimonials: any[];
 
+	/**
+	 * Creates an instance of testimonials component.
+	 * @param fakeService This is the service getting the fake users.
+	 */
+	constructor(private fakeService: FakeService) {}
 
-  /**
-   * Creates an instance of testimonials component.
-   * @param fakeService This is the service getting the fake users.
-   */
-  constructor(private fakeService: FakeService) { }
+	ngOnInit() {
+		this.getTestimonials();
+	}
 
-  ngOnInit() {
-	this.getTestimonials();
-}
-
-
-/**
- * Gets testimonials from the fake users.
- * Then we generate a new list of 20 on random and display 6 of them
- */
-private getTestimonials() {
-	this.fakeService.getFakeUsers().subscribe(data &#x3D;&gt; {
-		this.testimonials &#x3D; _sampleSize(data, 20);
-	});
-}
+	/**
+	 * Gets testimonials from the fake users.
+	 * Then we generate a new list of 20 on random and display 6 of them
+	 */
+	private getTestimonials() {
+		this.fakeService.getFakeUsers().subscribe(data &#x3D;&gt; {
+			this.testimonials &#x3D; _sampleSize(data, 20);
+		});
+	}
 }
 </code></pre>
     </div>
@@ -358,15 +356,17 @@ private getTestimonials() {
 		&lt;div class&#x3D;&quot;container testimonals my-5&quot;&gt;
 			&lt;div class&#x3D;&quot;row&quot;&gt;
 				&lt;article class&#x3D;&quot;col-md-4&quot; *ngFor&#x3D;&quot;let info of testimonials | slice: 0:6&quot;&gt;
-					&lt;div class&#x3D;&quot;testimonal-container&quot;&gt;
-						&lt;div class&#x3D;&quot;testimonal-card&quot; routerLink&#x3D;&quot;profile/{{info.id}}/{{info.username}}&quot;&gt;
-							&lt;img src&#x3D;&quot;{{info.profile[0].avatar}}&quot; alt&#x3D;&quot;{{info.profile[0].username}}&quot; class&#x3D;&quot;profile&quot;&gt;
-							&lt;blockquote&gt;{{info.profile[0].testimonal | truncate :130}}&lt;/blockquote&gt;
-							&lt;h3&gt;{{info.profile[0].firstName}} {{ info.profile[0].lastName}}
-								&lt;span&gt;{{info.profile[0].title}}&lt;/span&gt;
-							&lt;/h3&gt;
+					&lt;a routerLink&#x3D;&quot;profile/{{info?.id}}/{{info?.username}}&quot;&gt;
+						&lt;div class&#x3D;&quot;testimonal-container&quot;&gt;
+							&lt;div class&#x3D;&quot;testimonal-card&quot;&gt;
+								&lt;img src&#x3D;&quot;{{info.profile[0].avatar}}&quot; alt&#x3D;&quot;{{info.profile[0].username}}&quot; class&#x3D;&quot;profile&quot;&gt;
+								&lt;blockquote&gt;{{info.profile[0].testimonal | truncate :130}}&lt;/blockquote&gt;
+								&lt;h3&gt;{{info.profile[0].firstName}} {{ info.profile[0].lastName}}
+									&lt;span&gt;{{info.profile[0].title}}&lt;/span&gt;
+								&lt;/h3&gt;
+							&lt;/div&gt;
 						&lt;/div&gt;
-					&lt;/div&gt;
+					&lt;/a&gt;
 				&lt;/article&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
@@ -399,7 +399,7 @@ private getTestimonials() {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">	<div class="row divider">		<div class="col-md-12">			<h2 class="py-5">What do people say?</h2>		</div>		<div class="container testimonals my-5">			<div class="row">				<article class="col-md-4" *ngFor="let info of testimonials | slice: 0:6">					<div class="testimonal-container">						<div class="testimonal-card" routerLink="profile/{{info.id}}/{{info.username}}">							<img src="{{info.profile[0].avatar}}" alt="{{info.profile[0].username}}" class="profile">							<blockquote>{{info.profile[0].testimonal | truncate :130}}</blockquote>							<h3>{{info.profile[0].firstName}} {{ info.profile[0].lastName}}								<span>{{info.profile[0].title}}</span>							</h3>						</div>					</div>				</article>			</div>		</div>	</div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">	<div class="row divider">		<div class="col-md-12">			<h2 class="py-5">What do people say?</h2>		</div>		<div class="container testimonals my-5">			<div class="row">				<article class="col-md-4" *ngFor="let info of testimonials | slice: 0:6">					<a routerLink="profile/{{info?.id}}/{{info?.username}}">						<div class="testimonal-container">							<div class="testimonal-card">								<img src="{{info.profile[0].avatar}}" alt="{{info.profile[0].username}}" class="profile">								<blockquote>{{info.profile[0].testimonal | truncate :130}}</blockquote>								<h3>{{info.profile[0].firstName}} {{ info.profile[0].lastName}}									<span>{{info.profile[0].title}}</span>								</h3>							</div>						</div>					</a>				</article>			</div>		</div>	</div></div>'
     var COMPONENTS = [{'name': 'AddEducationComponent', 'selector': 'app-add-education'},{'name': 'AddExperienceComponent', 'selector': 'app-add-experience'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DevelopersListComponent', 'selector': 'app-profiles'},{'name': 'DonationsMobileViewComponent', 'selector': 'donations-mobile-view'},{'name': 'EditEducationComponent', 'selector': 'app-edit-education'},{'name': 'EditExperienceComponent', 'selector': 'app-edit-experience'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'EducationComponent', 'selector': 'app-education'},{'name': 'EducationMobileViewComponent', 'selector': 'education-mobile-view'},{'name': 'ExperienceComponent', 'selector': 'app-experience'},{'name': 'ExperienceMobileViewComponent', 'selector': 'experience-mobile-view'},{'name': 'FabComponent', 'selector': 'app-fab'},{'name': 'FakeGithubPage', 'selector': 'app-fake-github'},{'name': 'GithubComponent', 'selector': 'app-github'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoModalComponent', 'selector': 'app-info-modal'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SectionsComponent', 'selector': 'app-sections'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'SessionExpiredPage', 'selector': 'app-expired-page'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SkillsComponent', 'selector': 'app-skills'},{'name': 'SocialIconsComponent', 'selector': 'app-social-icons'},{'name': 'SupporterModalComponent', 'selector': 'app-supporter-modal'},{'name': 'TestimonialsComponent', 'selector': 'app-testimonials'},{'name': 'ThankYouModalComponent', 'selector': 'app-thank-you-modal'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TestimonialsComponent'};
