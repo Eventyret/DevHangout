@@ -10,7 +10,6 @@ import { SharedService } from "../../../services/misc/shared.service";
 	styleUrls: ["./info-modal.component.scss"]
 })
 export class InfoModalComponent implements OnInit {
-	public name = "";
 	private comp: any;
 	public loggedIn: boolean;
 
@@ -22,9 +21,7 @@ export class InfoModalComponent implements OnInit {
 	 */
 	constructor(public activeModal: NgbActiveModal, private modalService: NgbModal, private sharedService: SharedService) {}
 
-	ngOnInit() {
-		this.name = this.sharedService.donatorName;
-	}
+	ngOnInit() {}
 
 	/**
 	 * Opens the modal either for donate or the login.
@@ -43,10 +40,6 @@ export class InfoModalComponent implements OnInit {
 			centered: true,
 			size: "lg",
 			backdrop: "static",
-			beforeDismiss: () => {
-				this.sharedService.setDonatorName(this.name);
-				return true;
-			}
 		});
 		modalRef.componentInstance.name = this.sharedService.donatorName;
 	}

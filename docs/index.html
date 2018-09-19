@@ -34,50 +34,45 @@
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1 id="pok-dash">PokéDash</h1>
-<p>Reading about Pokémon is one thing, knowing about the 700+ different ones are another.
-How about an easy to understand chart to break down what types of Pokémon that exists?
-Or your own Pokedex? Even better what about an amazing simulated battle to watch two Pokémon fight each other.</p>
-<p>Welcome to PokéDash, the dashboard that gives you the overview with a dash of fun in!
-So come and start your own journey!</p>
-<h1 id="pok-dash-live-demo"><a href="https://eventyret.github.io/PokeDash/">PokéDash Live Demo</a></h1>
+<p><img src="https://raw.githubusercontent.com/Eventyret/DevHangout/develop/src/assets/logo-share.png" alt="Developers Hangout" class="img-responsive"></p>
+<p>Are you a lonesome developer? Sitting at work or maybe in your own room typing away the code?
+Do you wish that you could meet fellow developers instead of hundreds of Facebook groups and LinkedIn Groups?
+Well Developers Hangout have ya covered, its a community made by a developer for other developers!</p>
+<h1 id="developers-hangout-website"><a href="https://www.devhangout.co">Developers Hangout Website</a></h1>
 <h2 id="ux">UX</h2>
-<p>This was a simple dashboard, but I as a developer found it boring to just have a &quot;Dashboard&quot; they all look the same. Since this was for a well-known game and stats around this, the people should feel right at home. It should feel like they are in the World of Pokémon&#39;s.</p>
-<p>The whole thing starts with the loading screen with an animated intro from Pokémon Gold.
-Just as in the game you would have a &quot;Start Button&quot;</p>
+<p>The UX is made with simplicity in mind, it&#39;s ment to be easy to navigate and simple information with icons to process.</p>
 <h3 id="the-dashboard">The Dashboard</h3>
-<p>Navigating a Dashboard can always be tricky so be sure to see &quot;Professor Oak&quot; and he will gladly explain what Pokémon&#39;s are and a bit about the page. This was meant for a rough intro to it for users. Once closed the user will not see this again unless the Poké Dex icon in the menu is clicked.</p>
-<h3 id="pokemon-list">Pokemon List</h3>
-<p>The Pokemon list acts as the Poké Dex, where you can find a small image of each pokemon and some stats about them, this was intended to be looking and styled as a Pokedex, but due to the layout and how the page looks, I felt that this should be more of a table.
-Though on Mobile a Table can be hard to read, so this was redone to fetch data as small cards for easier understanding and reading on mobile devices.</p>
-<h3 id="pok-mon-battles">Pokémon Battles</h3>
+<p>The Dashboard is the main area for a user to edit all their profile.
+Simple buttons that provide the user with a modal for editing, adding skills, experience, education and their profile details.</p>
+<p>It also comes with a simple table in desktop mode to have a overview of all the information.
+As tables are not looking good for a user experience on mobile, I chose to switch this to cards as its easier for the user to consume.</p>
+<h3 id="developers-list">Developers List</h3>
+<h3 id="your-profile">Your Profile</h3>
+<h3 id="fake-github-pages">Fake Github Pages</h3>
 <h3 id="page-not-found">Page Not Found</h3>
 <p>I always love good 404 pages, they are supposed to be fun but still have a meaning for the user.
-This will ruin the surprise with a screenshot so please do visit our the live demo <a href="https://eventyret.github.io/PokeDash/not-found">here</a></p>
+This will ruin the surprise with a screenshot so please do visit our the live demo <a href="https://www.devhangout.co/not-found">here</a></p>
 <h2 id="features">Features</h2>
-<h3 id="pok-mon-by-type">Pokémon by type</h3>
+<h3 id="your-skills">Your skills</h3>
 <ul>
 <li>You can visualise the data and clearly see the amount of Pokémon&#39;s by their type.
 This means its easy to see how many &quot;Steel&quot;, &quot;Electric&quot;, &quot;Fairy&quot; types of pokemon there is.</li>
 </ul>
-<h3 id="pok-mon-avg-stats">Pokémon Avg Stats</h3>
+<h3 id="your-profile">Your Profile</h3>
 <ul>
 <li>This is will display the average stats for the all Pokémon&#39;s combined.</li>
 </ul>
-<h3 id="pok-mon-list">Pokémon List</h3>
-<ul>
-<li>This is a simple table displaying data about each pokemon along with the picture of it.</li>
-</ul>
-<h3 id="pok-mon-battle">Pokémon Battle</h3>
-<ul>
-<li>A minigame for the visitor to take part in to have fun and play a small round of Pokémon!</li>
-</ul>
 <h2 id="features-left-to-implement">Features Left to Implement</h2>
 <ul>
-<li>The minigame (aka Battle) needs a bit more attention to details, some people have requested to make use of stats to make a winner instead of random.</li>
-<li>Legend for BarChart, this is working fine for Pie Chart but due to the package, it seems to have an issue with loading undefined on Bar charts.</li>
-<li>Filter by other types. Currently it the table only sorts.</li>
-<li>If the server does not respond and we get an error, you will be stuck on a loading screen, I&#39;m working on implementing an error handler to remove the loading screen and show an error. The reason was I sadly did not get enough time to implement this, but the idea is then to redirect to a page. As without the data we are unable to display anything to the user. - <strong><em>This is now implemented</em></strong></li>
+<li><p>Auto sign in
+  Currently a user will need to register then gets taken to the login screen, this should be a better flow where we post the same data to the login once we get a response.</p>
+</li>
+<li><p>Portfolio
+  User will have a the abilities to add portfolio, this will be the same asadding education and experience, except it should be shown on their public profile as a gallery.</p>
+</li>
+<li><p>Contact User
+  Implementing a way to have a internal message system is in the works. This should make it easier to connect with other members!</p>
+</li>
 </ul>
 <h2 id="technologies-used">Technologies Used</h2>
 <p>These are technologies and third-party packages that are used throughout the project</p>
@@ -120,12 +115,15 @@ This is a small dev dependency to make it easier to deploy our project to Github
 <p>Publish to any gh-pages branch on GitHub (or any other branch on any other remote). Made for angular-cli users.</p>
 </blockquote>
 </li>
-<li><a href="https://github.com/yuyang041060120/ng2-validation">ng5-validation</a>
-Angular5 custom validation, inspired by jQuery validation, this is the modified version of the ng2-validation from yuyang, it is compiled for angular5.</li>
-<li><a href="https://github.com/auth0/angular2-jwt">@auth0/angular-jwt</a>
-This library provides an HttpInterceptor which automatically attaches a JSON Web Token to HttpClient requests.</li>
-<li><a href="https://github.com/nicky-lenaers/ngx-scroll-to">@nicky-lenaers/ngx-scroll-to</a>
-A simple Angular 4+ plugin enabling you to smooth scroll to any element on your page and enhance scroll-based features in your app.</li>
+<li><p><a href="https://github.com/yuyang041060120/ng2-validation">ng5-validation</a>
+Angular5 custom validation, inspired by jQuery validation, this is the modified version of the ng2-validation from yuyang, it is compiled for angular5.</p>
+</li>
+<li><p><a href="https://github.com/auth0/angular2-jwt">@auth0/angular-jwt</a>
+This library provides an HttpInterceptor which automatically attaches a JSON Web Token to HttpClient requests.</p>
+</li>
+<li><p><a href="https://github.com/nicky-lenaers/ngx-scroll-to">@nicky-lenaers/ngx-scroll-to</a>
+A simple Angular 4+ plugin enabling you to smooth scroll to any element on your page and enhance scroll-based features in your app.</p>
+</li>
 <li><p><a href="https://github.com/yellowspot/ng2-truncate">@yellowspot/ng-truncate</a>
 A small angular pipe to truncate text as you want.</p>
 </li>
@@ -135,8 +133,9 @@ Angular 2+ wrapper for StripeJS.</p>
 </ul>
 <h3 id="back-end">Back end</h3>
 <ul>
-<li><a href="https://www.python.org/">Python</a>
-The whole backend is written in <a href="https://www.python.org/">Python</a> as <a href="http://flask.pocoo.org/">Flask</a> is written in Python.<blockquote>
+<li><p><a href="https://www.python.org/">Python</a>
+The whole backend is written in <a href="https://www.python.org/">Python</a> as <a href="http://flask.pocoo.org/">Flask</a> is written in Python.</p>
+<blockquote>
 <p>Python is a programming language that lets you work quickly and integrate systems more effectively.</p>
 </blockquote>
 </li>
@@ -152,26 +151,16 @@ Our choice of Django API</p>
 <p>Django REST framework is a powerful and flexible toolkit for building Web APIs.</p>
 </blockquote>
 </li>
-<li><a href="https://www.heroku.com/">Heroku</a>
+<li><p><a href="https://www.heroku.com/">Heroku</a>
 When hosting different applications that are not static <a href="https://www.heroku.com/">Heroku</a> is a great choice at least I think.
 If the backend is Django, Flask, Node, Ruby On Rails or any other this is a great hosting environment which simplifies a lot of work, it&#39;s also FREE.
-We can simply push our app to Heroku using their <a href="https://devcenter.heroku.com/articles/heroku-cli">CLI</a> and from there it does everything for you, you can also setup pipelines and pull from a GitHub repo.<blockquote>
-<p>Heroku is a cloud platform as a service supporting several programming languages.
-See more about this in <a href="##Deployment">Deployment</a> below.</p>
+We can simply push our app to Heroku using their <a href="https://devcenter.heroku.com/articles/heroku-cli">CLI</a> and from there it does everything for you, you can also setup pipelines and pull from a GitHub repo.</p>
+<blockquote>
+<p>Heroku is a cloud platform as a service supporting several programming languages.</p>
 </blockquote>
 </li>
 </ul>
 <h2 id="testing">Testing</h2>
-<h3 id="automatic-testing-">Automatic Testing:</h3>
-<p>The course teaches and goes into the dept of TDD and writing automatic testing.
-I&#39;m a person that loves the challenge of searching then test and write code.
-So I admit that writing a lot of TDD has not been the biggest but I wanted to give it a go.</p>
-<p>I wrote a quick and simple test to see if we can get a response with <code>content_type=&quot;application/json&quot;</code> and a response code of <code>200</code>.
-This test should simply check that the route is correct and that it will give you the correct data back.</p>
-<p>You can run the unit test by executing the following:</p>
-<div><pre class="line-numbers"><code class="language-console">python api\test.py</code></pre></div><p><strong>Note:</strong> If you are in the folder <code>api</code> you can simply run</p>
-<div><pre class="line-numbers"><code class="language-console">python test.py</code></pre></div><h3 id="manual-tests">Manual Tests</h3>
-<p>I&#39;m fairly certain that I have done a lot of tests. So for manual tests, we have tested the following</p>
 <h4 id="responsive-testing">Responsive Testing</h4>
 <h5 id="browsers">Browsers</h5>
 <div><pre class="line-numbers"><code class="language-none">Microsoft Explorer 11
@@ -184,25 +173,6 @@ The user would start a battle and the help text would be <code>Get Ready to figh
 Now the bug would the be that if a user clicked stop it would still display this message. This was fixed in the following commit <a href="https://github.com/Eventyret/PokeDash/commit/d92268082b31c66d9670458f1e038ea157174f3b">#d922680</a></p>
 <h3 id="known-bugs">Known Bugs</h3>
 <p>Since the project is built with Bootstrap 4 (Bootswatch) I&#39;m fairly certain things are responsive, though there will always be widths and heights that are uncommon and will &quot;glitch&quot;.</p>
-<ol>
-<li>An example of this was pointed out to me on the following widths and heights</li>
-</ol>
-<div><pre class="line-numbers"><code class="language-none">710-726px x 837px
-919-935px x 837px</code></pre></div><p>The bug here would be regarding ChartJS and the Angular 2 Charts, where it would try to resize itself and go into an infinite loop. I&#39;m currently working finding a solution but trying to delay the resize or change the breakpoint will then cause it to break on a different breakpoint.</p>
-<ol>
-<li>Go to the Pokémon Stats page</li>
-<li>Resize to any of the above sizes. <code>710-726px X 837px</code> or <code>919-935px X 837px</code></li>
-<li>You will see that the Chart will try to auto update and flickers.</li>
-</ol>
-<p>There is also a bug where if Bar Chart Legend is enabled it will display <code>undefined</code>, I think the reason for this is that it writes and creates the Legends BEFORE it fetches the data. Sadly I have been unable to fix this, so if you have a way to do this please let me know so this can be fixed.
-<strong><em>To reproduce the bug or test this:</em></strong></p>
-<ol>
-<li>Open <code>bar-chart.components.ts</code></li>
-<li>Change line 38 <code>public barChartLegend = false;</code> to <code>public barChartLegend = true;</code></li>
-<li><code>ng serve</code> to start the server</li>
-<li>Open PokéDash Stats Page or navigate to <code>/dashboard</code></li>
-</ol>
-<p>You will now see that at the top of the Bar Chart the legend it&#39;s undefined`</p>
 <h2 id="installing-and-building">Installing and building</h2>
 <h3 id="requirements">Requirements</h3>
 <div><pre class="line-numbers"><code class="language-console">Python 3+ (Built with 3.6.6)
@@ -216,25 +186,50 @@ MySQL 5.6+</code></pre></div><h5 id="installing">Installing</h5>
 <ol>
 <li>Clone the project (The documentation consider the <code>PokeDash</code> the root folder)</li>
 </ol>
-<div><pre class="line-numbers"><code class="language-console">git clone https://github.com/Eventyret/PokeDash.git</code></pre></div><ol start="2">
+<div><pre class="line-numbers"><code class="language-console">git clone https://github.com/Eventyret/DevHangout.git</code></pre></div><ol start="2">
 <li>Change Directory into the root folder</li>
 </ol>
-<div><pre class="line-numbers"><code class="language-console">cd PokeDash</code></pre></div><ol start="3">
+<div><pre class="line-numbers"><code class="language-console">cd DevHangout</code></pre></div><ol start="3">
 <li>Create a Virtual Environment (This creates a folder named <code>.venv</code> to hold python environment files)</li>
 </ol>
 <div><pre class="line-numbers"><code class="language-console">virtualenv .venv</code></pre></div><ol start="4">
 <li>Install Python dependencies (This installs all flask dependencies)</li>
 </ol>
-<div><pre class="line-numbers"><code class="language-console">pip install -r api\requirements.txt</code></pre></div><ol start="5">
+<div><pre class="line-numbers"><code class="language-console">pip install -r BackendApi\requirements.txt</code></pre></div><ol start="5">
 <li>Install Angular dependencies by running (This installs all the angular dependencies)</li>
 </ol>
 <div><pre class="line-numbers"><code class="language-console">npm install</code></pre></div><h4 id="running-project-locally-">Running project locally.</h4>
-<p>As a developer, I feel its important to give you different ways to run your backend in a simple and clean way, so I have made two ways to run your backend project.</p>
+<p>As a developer, I feel its important to give you different ways to run your backend in a simple and clean way, so I have made two ways to run your backend project.
+Regardless of project you <strong>WILL</strong> need a Mysql database. and create an <code>env.py</code> file to hold the information.</p>
+<ul>
+<li>Create a new file in the folder <code>BackendApi</code> root folder (where you have manage.py) name it <code>env.py</code></li>
+<li>Paste the content below and switch use your own information.</li>
+<li>Generate a Secret Key (A tip you can use <a href="https://passwordsgenerator.net/">PasswordGenerator.net</a> Select 64 and generate it)</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-python">import os
+envset = os.environ.setdefault
+# DEVELOPMENT TYPE
+envset(&quot;ENV&quot;, &#39;development&#39;)
+
+# DJANGO SECRET KEY
+envset(&quot;SECRET_KEY&quot;, &quot;YOUR SECRET GENERATED KEY&quot;)
+
+# Database
+envset(&quot;DBNAME&quot;, &quot;YOUR DATABASE NAME&quot;)
+envset(&quot;DBUSER&quot;, &quot;YOUR DATABASE USER&quot;)
+envset(&quot;DBPASS&quot;, &quot;YOUR DATABASE PASSWORD&quot;)
+envset(&quot;DBHOST&quot;, &quot;YOUR DATABASE HOSTNAME&quot;)
+envset(&quot;DBPORT&quot;, &quot;3306&quot;)
+
+DEBUG = True
+</code></pre></div><p><strong>Once done your ready to continue</strong></p>
 <h4 id="backend">Backend</h4>
-<p><strong><em>Sidenote</em></strong>: The project has set up a default database to connect to on developer mode, check <a href="#Deployment">Deployment</a> for info on how to create a database etc to connect to.</p>
 <ol>
-<li>Docker (Recommended)
-If you have <a href="https://www.docker.com/">Docker</a> installed you can simply run the command below (This will start the server on port <code>5000</code>)</li>
+<li><p>Docker (Recommended)
+If you have <a href="https://www.docker.com/">Docker</a> installed you can simply run the command below (This will start the server on port <code>5000</code>)</p>
+<p>With docker you still need to migrate and make migrations and create a super user, so before running the command below please see the manual step on how
+makemigrations and migrate and create a super user. Once done you can use the below command to start the server.</p>
+</li>
 </ol>
 <div><pre class="line-numbers"><code class="language-console">docker-compose up</code></pre></div><ol start="2">
 <li><p>Manual</p>
@@ -245,9 +240,17 @@ If you have <a href="https://www.docker.com/">Docker</a> installed you can simpl
 <p>Windows:</p>
 <div><pre class="line-numbers"><code class="language-console">.venv\Scripts\Active</code></pre></div><p>Unix:</p>
 <div><pre class="line-numbers"><code class="language-console">source .venv/bin/activate</code></pre></div><ul>
-<li>Start the server</li>
+<li>Make migrations &amp; Migrate</li>
 </ul>
-<div><pre class="line-numbers"><code class="language-console">python api/app.py</code></pre></div><h4 id="frontend">Frontend</h4>
+<div><pre class="line-numbers"><code class="language-console">python BackendApi\manage.py makemigrations
+python BackendApi\manage.py migrate</code></pre></div><ul>
+<li><p>Create Superuser</p>
+<div><pre class="line-numbers"><code class="language-console">python BackendApi\manage.py createsuperuser</code></pre></div><p>Follow the onscreen instructions to create your user.</p>
+</li>
+<li><p>Start the Server</p>
+</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-console">python BackendApi\manage.py runserver</code></pre></div><h4 id="frontend">Frontend</h4>
 <p>Since we are using angular for our build it&#39;s as simple as running: <code>ng serve</code> in the root folder of the project.
 This will start our development server on port <code>4200</code></p>
 <h4 id="building-the-application">Building the application</h4>
@@ -262,15 +265,17 @@ This will start our development server on port <code>4200</code></p>
 <h4 id="the-api">The API</h4>
 <p>There is a simple but great git command we can use to upload JUST the backend instead of the whole project folder.
 We can use the power of git and use <code>git subtree</code> to upload and deploy ONLY the API to Heroku you can use the following command.</p>
-<div><pre class="line-numbers"><code class="language-console">git subtree push --prefix BackendApi heroku master</code></pre></div><p><em>note the BackendApi here which is the folder name we want to push</em></p>
-<h4 id="the-database">The Database</h4>
-<p>As we are using mlab to host our database please follow this guide <a href="https://devcenter.heroku.com/articles/mongolab">mLab MongoDB | Heroku Dev Center</a> - This will help you set up a database to connect to.</p>
+<div><pre class="line-numbers"><code class="language-console">git subtree push --prefix BackendApi heroku master</code></pre></div><p><em>Note: The BackendApi here is the folder name we want to push</em></p>
 <p><strong>Heroku Environment variables</strong>
 We need to set a secret variable so Heroku knows what database to use.</p>
-<div><pre class="line-numbers"><code class="language-console">heroku config:set Development=False</code></pre></div><p>This tells the server that we are in a production environment and chooses the correct database accordingly.</p>
-<div><pre class="line-numbers"><code class="language-console">heroku config: set SECRET_URI=&quot;mongodb://dbuser:dbpassword&#64;hostname:port/databasename&quot;</code></pre></div><p>All this information you can find on <a href="https://www.mlab.com/databases/">mlab Dashboard</a> once you are logged in. You are looking for an URL like the one in this picture.
-<img src="https://i.imgur.com/0r2UfHC.png" alt="0r2UfHC.png" class="img-responsive">
-Make sure you change the following in that string: - <code>dbuser</code> your mlab username for the database - <code>dbpassword</code> your mlab password for the database</p>
+<div><pre class="line-numbers"><code class="language-console">heroku config:set Development=False
+heroku config:set DBHOST=YOU DB HOST
+heroku config:set DBNAME=YOUR DB NAME
+heroku config:set DBPASS=YOUR DB PASSWORD
+heroku config:set DBPORT=3306
+heroku config:set DBUSER=YOUR DB USER
+heroku config:set DISABLE_COLLECTSTATIC=1
+heroku config:set SECRET_KEY=YOUR SECRET KEY</code></pre></div><p><em>Note: You might have to go into heroku after creating the app and make sure it has not added a postgreesql url, if this is the case remove it as it will use that as a priority</em></p>
 <p><strong>NOTE: Make sure you set the configurations before you push to Heroku, else you won&#39;t get any data back.</strong></p>
 <h3 id="frontend">Frontend</h3>
 <p>After you have <strong>built</strong> your application you got a few options.</p>
@@ -279,7 +284,7 @@ Make sure you change the following in that string: - <code>dbuser</code> your ml
 <li>If you want to deploy to GitHub Pages there is an amazing dev dependency installed in the project for you named <a href="https://github.com/angular-schule/angular-cli-ghpages">GitHub pages for angular-cli users</a>. So all you need to do is issue the command <code>npx ngh</code> and the npm package will automatically publish this to your GitHub pages.</li>
 </ol>
 <p><strong><em>Sidenote:</em></strong> If your using this method make sure you do the following command. This is to make it compatible with GitHub pages.</p>
-<div><pre class="line-numbers"><code class="language-console">ng build --prod --base-href=&quot;https://USERNAME.github.io/REPOSITORY_NAME/&quot;</code></pre></div><h2 id="credits">Credits</h2>
+<div><pre class="line-numbers"><code class="language-console">ng build --prod &amp;&amp; npx ngh&quot;</code></pre></div><h2 id="credits">Credits</h2>
 <h3 id="content">Content</h3>
 <ul>
 <li><a href="https://codepen.io/royutoan/pen/JXOwwL">Pikachu - SVG Animation</a> - Loading Animation Pikachu</li>

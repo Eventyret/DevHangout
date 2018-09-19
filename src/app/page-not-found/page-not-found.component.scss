@@ -10,11 +10,12 @@ body {
 	position: absolute;
 	width: 100%;
 	min-height: 100%;
+	margin-top: -9px;
 	background: url("https://i.imgur.com/qhMbkGi.jpg") #112938 no-repeat center center fixed;
 	background-size: contain;
 }
 .content {
-	color:  #fff;
+	color: #fff;
 	background-color: transparent;
 	z-index: 2;
 	position: absolute;
@@ -48,32 +49,31 @@ p {
 .btn-outline-white {
 	position: absolute;
 	width: 120px;
-    right: 22.2%;
-    bottom: 35%;
+	right: 22.2%;
+	bottom: 35%;
 	z-index: 500;
 	-webkit-animation: travoltaMagic 4s infinite 0.35s linear;
-	        animation: travoltaMagic 4s infinite 0.35s linear;
-
+	animation: travoltaMagic 4s infinite 0.35s linear;
 }
 
-@-webkit-keyframes travoltaMagic{
-    0%{
-		background: #FF5722;
-		color:  #fff;
+@-webkit-keyframes travoltaMagic {
+	0% {
+		background: #ff5722;
+		color: #fff;
 	}
-    50%{
-		color:  #fff;
+	50% {
+		color: #fff;
 		background: transparent;
-        }
+	}
 }
 
-@keyframes travoltaMagic{
-    0%{
-		background: #FF5722;
-		color:  #fff;
+@keyframes travoltaMagic {
+	0% {
+		background: #ff5722;
+		color: #fff;
 	}
-    50%{
-		color:  #fff;
+	50% {
+		color: #fff;
 		background: transparent;
-        }
+	}
 }
