@@ -2,42 +2,51 @@
 
 Are you a lonesome developer? Sitting at work or maybe in your own room typing away the code?
 Do you wish that you could meet fellow developers instead of hundreds of Facebook groups and LinkedIn Groups?
-Well Developers Hangout have ya covered, its a community made by a developer for other developers!
+Well, Developers Hangout have ya covered, its a community made by a developer for other developers!
 
 # [Developers Hangout Website](https://www.devhangout.co)
+### [More indept documentation created with compodoc](https://eventyret.github.io/DevHangout)
+#### This documentation will cover the following
+- Methods and functions in detail
+- Components
+- Services
+- Injections
+- Guards
+- Interfaces
+
+*This is built with [Compodoc - The missing documentation tool for your Angular application](https://compodoc.app/)*
 
 ## UX
 
-The UX is made with simplicity in mind, it's ment to be easy to navigate and simple information with icons to process.
+The UX is made with simplicity in mind, it's meant to be easy to navigate and simple information with icons to process.
 
 ### The Dashboard
 
-The Dashboard is the main area for a user to edit all their profile.
+The Dashboard is the main area for a user to edit all of their profile.
 Simple buttons that provide the user with a modal for editing, adding skills, experience, education and their profile details.
 
-It also comes with a simple table in desktop mode to have a overview of all the information.
+It also comes with a simple table in desktop mode to have an overview of all the information.
 As tables are not looking good for a user experience on mobile, I chose to switch this to cards as its easier for the user to consume.
 
 ### Developers List
 
-The developers list is a simple card list showing all developers registered + 1000 fake users.
-We have added infinite scroll to make the user experice more plesant.
-The displayed data will start with 8 and for each scroll it will add 8 more to see.
+The Developers list is a simple card list showing all developers registered + 1000 fake users.
+We have added infinite scroll to make the user experience more pleasant.
+The displayed data will start with 8 and for each scroll, it will add 8 more to see.
 This then improves loading speed as we don't load 1000 users but only 8 when the user requests it.
 
 ### Your Profile
 
-This is where a user can make themself stand out, by adding information we are dynamicly displaying this.
+This is where a user can make themselves stand out, by adding information we are dynamically displaying this.
 A registered user with no information will have a more or less blank profile, but a user with more information
 will then stand out!
 
 ### Fake Github Pages
 
-When a real user adds their Github Handle we will then search the Github Api for the users provided handle and display
-the last 5 repos, with their stars, watch, and followers. If they have added a live url site we also will link to that.
+When a real user adds their Github Handle we will then search the Github API for the users repo with the provided handle and display the last 5 repos, with their stars, watch, and followers. If they have added a live URL site we also will link to that.
 
-BUT we have fake users, and I didnt want to stop there, so i created a "look a like" Github repo.
-Every fake user has 2 different templates they use with all fake data. But it was more the astetic of getting things looking better.
+BUT we have fake users, and I didn't want to stop there, so I created a "look-alike" Github repo.
+Every fake user has 2 different templates they use with all fake data. But it was more the aesthetic of getting things looking better.
 
 ### Page Not Found
 
@@ -52,34 +61,34 @@ This will ruin the surprise with a screenshot so please do visit our the live de
 
 ### Your Profile
 
--   Make yourself stand out, your own avatar, all your skills and github repo!
+-   Make yourself stand out, your own avatar, all your skills and GitHub repo!
 
 ### The Fake data
 
-Createing fake data was not easy, with the help of faker.js and json-serve I created a custom skills.js file
-You can use this and just change the amount of users you would like to generate.
+Creating fake data was not easy, with the help of faker.js and json-serve I created a custom skills.js file
+You can use this and just change the number of users you would like to generate.
 The file is located in the root under `skills.js`
 
 Simple said, it will run the other functions X amount of times, and populate the same data as a user would have.
-They will have a fake username, email github, social media so on and so on.
-Thought the fake avatars are used with [RoboHash](https://robohash.org/) we are passing it the email we generated and some random numbers to get totaly random icons for that user.
+They will have a fake username, email GitHub, social media so on and so on.
+Thought the fake avatars are used with [RoboHash](https://robohash.org/) we are passing it the email we generated and some random numbers to get totally random icons for that user.
 
 ## Features Left to Implement
 
 -   Auto sign in
-    Currently a user will need to register then gets taken to the login screen, this should be a better flow where we post the same data to the login once we get a response.
+    Currently, a user will need to register then gets taken to the login screen, this should be a better flow where we post the same data to the login once we get a response.
 
 -   Portfolio
-    User will have a the abilities to add portfolio, this will be the same asadding education and experience, except it should be shown on their public profile as a gallery.
+    A user will have the abilities to add a portfolio, this will be the same as adding education and experience, except it should be shown on their public profile as a gallery.
 
 -   Contact User
-    Implementing a way to have a internal message system is in the works. This should make it easier to connect with other members!
+    Implementing a way to have an internal message system is in the works. This should make it easier to connect with other members!
 
 -   Filters & Search
-    For now a user can only pick a user from the list or by knowing their ID and username. I been working on adding a search filter and ability to filter down by skills etc.
-	
+    For now, a user can only pick a user from the list or by knowing their ID and username. I have been working on adding a search filter and the ability to filter down by skills etc.
+    
 - Edit / Delete skill on mobile
-	As this has been moved to it's own component I have not implemented so a user can edit or delete their skills on mobile.
+    As this has been moved to its own component I have not implemented so a user can edit or delete their skills on mobile.
 
 ## Technologies Used
 
@@ -141,17 +150,17 @@ These are technologies and third-party packages that are used throughout the pro
 -   [Django](https://www.djangoproject.com/)
     The whole backend is built with Django and added DRT(Django Rest Framework) on top of it.
 
-    > Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.
+    > Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.
 
 -   [Django Rest Framework](http://www.django-rest-framework.org/)
-    We are using DRF to add a out of the box API for our project
+    We are using DRF to add an out of the box API for our project
 
     > Django REST framework is a powerful and flexible toolkit for building Web APIs.
 
 -   [Django Rest Framework](https://github.com/davesque/django-rest-framework-simplejwt)
     A JSON Web Token authentication plugin for the Django REST Framework.
 
-    > Simple JWT provides a JSON Web Token authentication backend for the Django REST Framework. It aims to provide an out-of-the-box solution for JWT authentication which avoids some of the common pitfalls of the JWT specification. Assuming users of the library don't extensively and invasively subclass everything, Simple JWT's behavior shouldn't be surprising. Settings variable defaults should be safe.
+    > Simple JWT provides a JSON Web Token authentication backend for the Django REST Framework. It aims to provide an out-of-the-box solution for JWT authentication which avoids some of the common pitfalls of the JWT specification. Assuming users of the library don't extensively and invasively subclass everything, Simple JWT's behaviour shouldn't be surprising. Settings variable defaults should be safe.
 
 -   [Heroku](https://www.heroku.com/)
     When hosting different applications that are not static [Heroku](https://www.heroku.com/) is a great choice at least I think.
@@ -167,14 +176,14 @@ These are technologies and third-party packages that are used throughout the pro
     > Generate massive amounts of fake data in Node.js and the browser
 
 -   [json-server](https://github.com/typicode/json-server)
-    This is the webserver that makes us able to convert our fake data from faker.js into a JSON object we can use.
-	Plaese do read their github project on how to use it.
+    This is the web server that makes us able to convert our fake data from faker.js into a JSON object we can use.
+    Please do read their GitHub project on how to use it.
     > Get a full fake REST API with zero coding in less than 30 seconds (seriously)
 
 ## Testing
-In Code Insititute we are told to code in TDD and automatic testing has never been a strong side of me, but testing itself is important.
+In Code Insititute, we are told to code in TDD and automatic testing has never been a strong side of me, but testing itself is important.
 I do prefer to have human testers, report bugs etc and then fix it. Bug hunting is awesome!
-Thought for a propper buisness page / app etc unit testing and e2e testing is essential.
+Thought for a proper business page/app etc unit testing and e2e testing is essential.
 
 #### Responsive Testing
 
@@ -189,28 +198,34 @@ Firefox Developer Edition (v62)
 
 ##### Frontend
 
-400 Bad Requests on adding experience or education without an end date.
+**400 Bad Requests on adding experience or education without an end date.**
 
-**User Story:**
-The User would login to their profile to proceed to add their education or experience.
+*UserStory:*
+The User would log in to their profile to proceed to add their education or experience.
  This would then give a 400 error as the field would not be correct when posted. The "End date" would be blank.
- As this was not treated as null it would throw an expection and error.
+ As this was not treated as null it would throw an exception and error.
  
  This was fixed shortly after as we added a check for this, and also we added a date to it.
- So if the user would not fill it in we would pass null. If they toggled the `currently working here` we would grab todays date.
+ So if the user would not fill it in we would pass null. If they toggled the `currently working here` we would grab today's date.
  We also changed the backend to by default make it required.
  
- Skills looked wierd:
-  The skills would be on top and the users skills itself would be at the bottom. Clicking a skill would remove the skills from the top but also the next one in the array. This would make it hard for the user to do this.
+ **Skills looked weird**
+ 
+ *UserStory:*
+  The skills would be on top and the user's skills itself would be at the bottom. Clicking a skill would remove the skills from the top but also the next one in the array. This would make it hard for the user to do this.
   
-  After this I redesigned it in the way that you if you click a skill we first check if the user has the skill, if they don't we make a post request with that skill and add it to the user skills.
+  After this, I redesigned it in the way that you if you click a skill we first check if the user has the skill if they don't we make a post request with that skill and add it to the user skills.
   If they already have it we will just `return` and give the user a notification.
  
- Mobile not looking to good for the profile and front page.
- There where some issues with smaller devices where things did not look good. Users reported to me that there where things that could be done.
+ **Mobile not looking too good for the profile and front page.**
+ 
+ *UserStory:*
+ There were some issues with smaller devices where things did not look good. Users reported to me that there were things that could be done.
  I redesigned it with smaller icons better breakpoints.
  
- Tables to cards
+ **Tables to cards**
+ 
+ *UserStory:*
  Looking at the table on mobile was hard,  so I used bootstrap to hide the tables on mobile and show cards instead.
  
  
@@ -218,7 +233,7 @@ The User would login to their profile to proceed to add their education or exper
 
 Since the project is built with Bootstrap 4 (Bootswatch) I'm fairly certain things are responsive, though there will always be widths and heights that are uncommon and will "glitch".
 
-There is a known glitch with the FAB button regarding the Name property been undefnied. I tried multiple fixes, but as this has been intermitted bug i decied late on that I would remove the name to give the user a better experience until i could hunt down the propper cause.
+There is a known glitch with the FAB button regarding the Name property been undefined. I tried multiple fixes, but as this has been intermitted bug I decided late on that I would remove the name to give the user a better experience until I could hunt down the proper cause.
 
 ## Installing and building
 
@@ -227,14 +242,14 @@ There is a known glitch with the FAB button regarding the Name property been und
 ```console
 Python 3+ (Built with 3.6.6)
 Django 2+ (Built with 2.0.5)
-Django Restframework 3+  (Built with 3.8.2)
+Django Rest framework 3+  (Built with 3.8.2)
 NPM 5+ (Built with 6.2.0)
 NodeJS 8+ (Built with 10.9.0)
 Angular 5+ (Built with 6.1.7)
 Angular CLI (Built with 6.2.1)
 MySQL 5.6+
 json-server (Only yo create your own fake users)
-faker
+faker.js (Only yo create your own fake users)
 ```
 
 ##### Installing
@@ -272,7 +287,7 @@ npm install
 #### Running project locally.
 
 As a developer, I feel its important to give you different ways to run your backend in a simple and clean way, so I have made two ways to run your backend project.
-Regardless of project you **WILL** need a Mysql database. and create an `env.py` file to hold the information.
+Regardless of the project, you **WILL** need a Mysql database. and create an `env.py` file to hold the information.
 
 -   Create a new file in the folder `BackendApi` root folder (where you have manage.py) name it `env.py`
 -   Paste the content below and switch use your own information.
@@ -297,15 +312,50 @@ envset("DBPORT", "3306")
 DEBUG = True
 ```
 
-**Once done your ready to continue**
+Angular has 2 `environment.ts` files. one is for development other one is for  production please create 2 files named `environment.ts` and `environment.prod.ts` and use the following content
+
+You can get the following API keys from these places:
+- [Github Secret & Client ID](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/)
+- [Stripe API Key](https://stripe.com/docs/keys)
+
+```json
+// For local development
+export const environment = {
+  production: false,
+  publish_api_key: "YOUR STRIPE API KEY",
+  github_client_id: "YOUR GITHUB CLIENT ID",
+  github_client_secret: "YOUR GITHUB SECRET KEY",
+  api_url: "http://localhost:8000",
+  fake_users: "fakeusers-dev.json",
+  skills: "skills.json",
+  githubapi_url: "https://api.github.com/"
+};
+
+```
+
+```json
+// For production servers
+export const environment = {
+  production: true,
+  publish_api_key: "YOUR STRIPE API KEY",
+  github_client_id: "YOUR GITHUB CLIENT ID",
+  github_client_secret: "YOUR GITHUB SECRET KEY",
+  api_url: "INSERT YOUR URL HERE", // do not include the last /
+  fake_users: "fakeusers-prod.json",
+  skills: "skills.json",
+  githubapi_url: "https://api.github.com/"
+};
+
+```
+
+**Once done you're ready to continue**
 
 #### Backend
 
 1. Docker (Recommended)
-   If you have [Docker](https://www.docker.com/) installed you can simply run the command below (This will start the server on port `5000`)
+   If you have [Docker](https://www.docker.com/) installed you can simply run the command below (This will start the server on port `8000`)
 
-    With docker you still need to migrate and make migrations and create a super user, so before running the command below please see the manual step on how
-    makemigrations and migrate and create a super user. Once done you can use the below command to start the server.
+***With Docker, you still need to migrate and make migrations and create a superuser, so before running the command below please see the manual step on how makemigrations and migrate and create a superuser. Once done you can use the below command to start the server.***
 
 ```console
 docker-compose up
@@ -370,6 +420,151 @@ ng build --prod
 ```
 
 ##### Fake Data
+Below is the functions written for the fake data. 
+I have removed the dummy data so please see `skills.js` file in root of the project to use it with json-server to generate your own
+```javascript
+module.exports = () => {
+	let faker = require("faker");
+	let _ = require("lodash");
+	return {
+		users: _.times(1001, function(n) {
+			let skillsData = [];
+			let titlesData = [];
+			let githubUrl = "https://YOURDOMAIN/github/"
+			let username = faker.internet.userName();
+			let randomSet = _.sample([1, 2, 3, 4]);
+			let diplomaData = _.sample(diploma);
+			let studyData = _.sample(study);
+			let location = faker.address.country();
+			let email = faker.internet.email();
+			titlesData.push(titles);
+
+			_.times(
+				faker.random.number({
+					min: 1,
+					max: 5
+				}),
+				function(n) {
+					let newSkills = _.sampleSize(skills, 5);
+					skillsData = _.uniqBy(newSkills, "name");
+				}
+			);
+			function randomEdu(id) {
+				let eduData = [];
+				_.times(
+					faker.random.number({
+						min: 1,
+						max: 5
+					}),
+					function() {
+						let education = {
+							user: id,
+							school: faker.company.companyName(),
+							qualification: diplomaData,
+							fieldOfStudy: studyData,
+							dateFrom: faker.date.between(1980, 2012),
+							dateTo: faker.date.between(2012, 2018),
+							description: faker.lorem.sentence()
+						};
+						eduData.push(education);
+					}
+				);
+				return eduData;
+			}
+			function randomExp(id) {
+				let expData = [];
+				_.times(
+					faker.random.number({
+						min: 1,
+						max: 5
+					}),
+					function() {
+						experience = {
+							user: 9000 + n,
+							jobTitle: _.sample(titles),
+							company: faker.company.companyName(),
+							dateFrom: faker.date.between(1980, 2012),
+							dateTo: faker.date.between(2012, 2018),
+							current: faker.random.boolean(),
+							description: faker.lorem.sentence(),
+							location: location
+						};
+						expData.push(experience);
+					}
+				);
+				return expData;
+			}
+			function githubRepo() {
+				let githubData = [];
+				_.times(
+					faker.random.number({
+						min: 1,
+						max: 5
+					}),
+					function() {
+						const reponame = faker.lorem.word();
+						const randomNumberLow =  faker.random.number({
+							min: 1,
+							max: 100
+						});
+						const randomNumberHigh =  faker.random.number({
+							min: 1,
+							max: 900
+						});
+						gitData  =  {
+							name: reponame,
+							html_url: githubUrl + username + "/" + reponame,
+							description: faker.hacker.phrase(),
+							stargazers_count: randomNumberHigh,
+							watchers_count: randomNumberLow,
+							forks_count: randomNumberLow,
+							open_issues_count: randomNumberLow,
+							updated_at: faker.date.recent(),
+							project: _.sample(project),
+							tabs: tabs
+							}
+							githubData.push(gitData);
+					}
+				);
+				return githubData;
+			}
+
+
+
+			return {
+				id: 9000 + n,
+				username: username,
+				email: email,
+				profile: {
+					user: 9000 + n,
+					firstName: faker.name.firstName(),
+					lastName: faker.name.lastName(),
+					avatar: "https://robohash.org/" + email + "?gravatar=yes&set=set" + randomSet + "&size=300x300&bgset=bg" + randomSet,
+					location: location,
+					website: faker.internet.url(),
+					company: faker.company.companyName(),
+					title: _.sample(titles),
+					backgroundImage: "https://picsum.photos/1920/1080?random",
+					bio: faker.lorem.paragraphs(1),
+					twitter: username,
+					facebook: username,
+					linkedin: username,
+					instagram: username,
+					youtube: username,
+					github: username,
+					donator: faker.random.boolean(),
+					testimonal: faker.lorem.paragraphs(1),
+				},
+				education: randomEdu(9000 + n),
+				experience: randomExp(9000 + n),
+				skills: skillsData,
+				repo: githubRepo()
+			};
+		})
+	};
+};
+```
+
 
 ##### Backend
 
@@ -404,7 +599,7 @@ heroku config:set DISABLE_COLLECTSTATIC=1
 heroku config:set SECRET_KEY=YOUR SECRET KEY
 ```
 
-_Note: You might have to go into heroku after creating the app and make sure it has not added a postgreesql url, if this is the case remove it as it will use that as a priority_
+_Note: You might have to go into Heroku after creating the app and make sure it has not added a PostgreSQL url if this is the case remove it as it will use that as a priority_
 
 **NOTE: Make sure you set the configurations before you push to Heroku, else you won't get any data back.**
 
@@ -426,6 +621,6 @@ ng build --prod && npx ngh"
 -   [CSS + SVG Loading Spinner](https://codepen.io/JavaScriptErika/pen/GvPyMG) - Our Awesome SVG Loading animation
 -   [RoboHash](https://robohash.org/) - For the awesome generated avatars for our fake users.
 
-## Disclamer
+## Disclaimer
 
 This is for educational purposes only.
