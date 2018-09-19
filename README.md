@@ -318,7 +318,7 @@ You can get the following API keys from these places:
 - [Github Secret & Client ID](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/)
 - [Stripe API Key](https://stripe.com/docs/keys)
 
-```json
+```typescript
 // For local development
 export const environment = {
   production: false,
@@ -333,14 +333,14 @@ export const environment = {
 
 ```
 
-```json
-// For production servers
+```typescript
+// For production servers - Do not include ending / in api_url
 export const environment = {
   production: true,
   publish_api_key: "YOUR STRIPE API KEY",
   github_client_id: "YOUR GITHUB CLIENT ID",
   github_client_secret: "YOUR GITHUB SECRET KEY",
-  api_url: "INSERT YOUR URL HERE", // do not include the last /
+  api_url: "INSERT YOUR URL HERE", 
   fake_users: "fakeusers-prod.json",
   skills: "skills.json",
   githubapi_url: "https://api.github.com/"
