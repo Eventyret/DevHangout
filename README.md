@@ -18,10 +18,24 @@ It also comes with a simple table in desktop mode to have a overview of all the 
 As tables are not looking good for a user experience on mobile, I chose to switch this to cards as its easier for the user to consume.
 
 ### Developers List
+
+The developers list is a simple card list showing all developers registered + 1000 fake users.
+We have added infinite scroll to make the user experice more plesant. 
+The displayed data will start with 8 and for each scroll it will add 8 more to see.
+This then improves loading speed as we don't load 1000 users but only 8 when the user requests it.
 	
 ### Your Profile
 
+This is where a user can make themself stand out, by adding information we are dynamicly displaying this.
+A registered user with no information will have a more or less blank profile, but a user with more information
+will then stand out!
+
 ### Fake Github Pages
+When a real user adds their Github Handle we will then search the Github Api for the users provided handle and display
+the last 5 repos, with their stars, watch, and followers. If they have added a live url site we also will link to that.
+
+BUT we have fake users, and I didnt want to stop there, so i created a "look a like" Github repo. 
+Every fake user has 2 different templates they use with all fake data. But it was more the astetic of getting things looking better.
 
 ### Page Not Found
 
@@ -33,12 +47,13 @@ This will ruin the surprise with a screenshot so please do visit our the live de
 
 ### Your skills
 
--   You can visualise the data and clearly see the amount of Pokémon's by their type.
-    This means its easy to see how many "Steel", "Electric", "Fairy" types of pokemon there is.
+-  Adding skills should be easy. So we are using DevIcons
 
 ### Your Profile
 
 -   This is will display the average stats for the all Pokémon's combined.
+
+### The Fake data
 
 ## Features Left to Implement
 
@@ -50,6 +65,9 @@ This will ruin the surprise with a screenshot so please do visit our the live de
 
 - Contact User
 	Implementing a way to have a internal message system is in the works. This should make it easier to connect with other members!
+
+- Filters & Search
+	For now a user can only pick a user from the list or by knowing their ID and username. I been working on adding a search filter and ability to filter down by skills etc. 
 
 
 ## Technologies Used
@@ -120,6 +138,15 @@ These are technologies and third-party packages that are used throughout the pro
     We can simply push our app to Heroku using their [CLI](https://devcenter.heroku.com/articles/heroku-cli) and from there it does everything for you, you can also setup pipelines and pull from a GitHub repo.
     > Heroku is a cloud platform as a service supporting several programming languages.
 
+### Development (Frontend)
+
+-   [faker.js](https://github.com/Marak/faker.js)
+    Used to generate our fake users
+    > Generate massive amounts of fake data in Node.js and the browser
+
+-   [json-server](https://github.com/typicode/json-server)
+    This is the webserver that makes us able to convert our fake data from faker.js into a JSON object we can use.
+    > Get a full fake REST API with zero coding in less than 30 seconds (seriously)
 ## Testing
 
 #### Responsive Testing
@@ -159,6 +186,8 @@ NodeJS 8+ (Built with 10.9.0)
 Angular 5+ (Built with 6.1.7)
 Angular CLI (Built with 6.2.1)
 MySQL 5.6+
+json-server (Only yo create your own fake users)
+faker
 ```
 
 ##### Installing
@@ -344,13 +373,9 @@ ng build --prod && npx ngh"
 ```
 
 ## Credits
+- [Devicon](http://konpa.github.io/devicon/) - For the Awesome skill icons we are using just like font awesome just developer skills.
+- [Font Awesome](https://fontawesome.com) - Icons 
+- [CSS + SVG Loading Spinner](https://codepen.io/JavaScriptErika/pen/GvPyMG) - Our Awesome SVG Loading animation
 
-### Content
-
--   [Pikachu - SVG Animation](https://codepen.io/royutoan/pen/JXOwwL) - Loading Animation Pikachu
-
-### Media
-
--   [PokéAPI · GitHub](https://github.com/PokeAPI) - For all Pokémon Sprites
--   [I Like Sticker](https://www.ilikesticker.com/LineStickerAnimation/S002997-Pok%C3%A9mon-The-Oaks/en) - Professor Oak image
--   [Pokemon Gold Desktop Background Animation - Album on Imgur](https://imgur.com/gallery/0Gi6O) - Start Screen
+## Disclamer
+This is for educational purposes only.
