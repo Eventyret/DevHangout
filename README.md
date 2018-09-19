@@ -1,4 +1,4 @@
-# Developers Hangout
+![Developers Hangout](https://raw.githubusercontent.com/Eventyret/DevHangout/develop/src/assets/logo-share.png)
 
 Are you a lonesome developer? Sitting at work or maybe in your own room typing away the code?
 Do you wish that you could meet fellow developers instead of hundreds of Facebook groups and LinkedIn Groups?
@@ -8,51 +8,35 @@ Well Developers Hangout have ya covered, its a community made by a developer for
 
 ## UX
 
-The UX is made with simplicity in mind, it's ment to be easy to navigate and rather
+The UX is made with simplicity in mind, it's ment to be easy to navigate and simple information with icons to process.
 
 ### The Dashboard
 
-Navigating a Dashboard can always be tricky so be sure to see "Professor Oak" and he will gladly explain what Pokémon's are and a bit about the page. This was meant for a rough intro to it for users. Once closed the user will not see this again unless the Poké Dex icon in the menu is clicked.
-
-### Pokemon List
-
-
-The Pokemon list acts as the Poké Dex, where you can find a small image of each pokemon and some stats about them, this was intended to be looking and styled as a Pokedex, but due to the layout and how the page looks, I felt that this should be more of a table.
-Though on Mobile a Table can be hard to read, so this was redone to fetch data as small cards for easier understanding and reading on mobile devices.
+### Developers List
 	
-### Pokémon Battles
+### Your Profile
+
+### Fake Github Pages
 
 ### Page Not Found
 
 I always love good 404 pages, they are supposed to be fun but still have a meaning for the user.
-This will ruin the surprise with a screenshot so please do visit our the live demo [here](https://eventyret.github.io/PokeDash/not-found)
+This will ruin the surprise with a screenshot so please do visit our the live demo [here](https://www.devhangout.co/not-found)
 
 
 ## Features
 
-### Pokémon by type
+### Your skills
 
 -   You can visualise the data and clearly see the amount of Pokémon's by their type.
     This means its easy to see how many "Steel", "Electric", "Fairy" types of pokemon there is.
 
-### Pokémon Avg Stats
+### Your Profile
 
 -   This is will display the average stats for the all Pokémon's combined.
 
-### Pokémon List
-
--   This is a simple table displaying data about each pokemon along with the picture of it.
-
-### Pokémon Battle
-
--   A minigame for the visitor to take part in to have fun and play a small round of Pokémon!
-
 ## Features Left to Implement
 
--   The minigame (aka Battle) needs a bit more attention to details, some people have requested to make use of stats to make a winner instead of random.
--   Legend for BarChart, this is working fine for Pie Chart but due to the package, it seems to have an issue with loading undefined on Bar charts.
--   Filter by other types. Currently it the table only sorts.
--   If the server does not respond and we get an error, you will be stuck on a loading screen, I'm working on implementing an error handler to remove the loading screen and show an error. The reason was I sadly did not get enough time to implement this, but the idea is then to redirect to a page. As without the data we are unable to display anything to the user. - **_This is now implemented_**
 
 ## Technologies Used
 
@@ -81,18 +65,21 @@ These are technologies and third-party packages that are used throughout the pro
     > A modern JavaScript utility library delivering modularity, performance & extras.
 -   [NgxSpinner](https://napster2210.github.io/ngx-spinner/)
     Animated loading spinner service, this is the small clock you will see when making API calls and waiting for data. This then gives a simple service which you can call with `.show()` or `.hide()`
-
     > An animated loading spinner for Angular 4/5 that is intended to inform the user that an operation is in progress.
 
 -   [GitHub pages for angular-cli users](https://github.com/angular-schule/angular-cli-ghpages)
     This is a small dev dependency to make it easier to deploy our project to Github Pages.
     > Publish to any gh-pages branch on GitHub (or any other branch on any other remote). Made for angular-cli users.
+
 -   [ng5-validation](https://github.com/yuyang041060120/ng2-validation)
     Angular5 custom validation, inspired by jQuery validation, this is the modified version of the ng2-validation from yuyang, it is compiled for angular5.
+
 -   [@auth0/angular-jwt](https://github.com/auth0/angular2-jwt)
     This library provides an HttpInterceptor which automatically attaches a JSON Web Token to HttpClient requests.
+
 -   [@nicky-lenaers/ngx-scroll-to](https://github.com/nicky-lenaers/ngx-scroll-to)
     A simple Angular 4+ plugin enabling you to smooth scroll to any element on your page and enhance scroll-based features in your app.
+
 -   [@yellowspot/ng-truncate](https://github.com/yellowspot/ng2-truncate)
     A small angular pipe to truncate text as you want.
 
@@ -104,47 +91,22 @@ These are technologies and third-party packages that are used throughout the pro
 -   [Python](https://www.python.org/)
     The whole backend is written in [Python](https://www.python.org/) as [Flask](http://flask.pocoo.org/) is written in Python.
     > Python is a programming language that lets you work quickly and integrate systems more effectively.
+
 -   [Django](https://www.djangoproject.com/)
     The whole backend is built with Django and added DRT(Django Rest Framework) on top of it.
-
     > Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.
 
 -   [Django Rest Framework](http://www.django-rest-framework.org/)
     Our choice of Django API
     > Django REST framework is a powerful and flexible toolkit for building Web APIs.
+
 -   [Heroku](https://www.heroku.com/)
     When hosting different applications that are not static [Heroku](https://www.heroku.com/) is a great choice at least I think.
     If the backend is Django, Flask, Node, Ruby On Rails or any other this is a great hosting environment which simplifies a lot of work, it's also FREE.
     We can simply push our app to Heroku using their [CLI](https://devcenter.heroku.com/articles/heroku-cli) and from there it does everything for you, you can also setup pipelines and pull from a GitHub repo.
     > Heroku is a cloud platform as a service supporting several programming languages.
-    See more about this in [Deployment](##Deployment) below.
 
 ## Testing
-
-### Automatic Testing:
-
-The course teaches and goes into the dept of TDD and writing automatic testing.
-I'm a person that loves the challenge of searching then test and write code.
-So I admit that writing a lot of TDD has not been the biggest but I wanted to give it a go.
-
-I wrote a quick and simple test to see if we can get a response with `content_type="application/json"` and a response code of `200`.
-This test should simply check that the route is correct and that it will give you the correct data back.
-
-You can run the unit test by executing the following:
-
-```console
-python api\test.py
-```
-
-**Note:** If you are in the folder `api` you can simply run
-
-```console
-python test.py
-```
-
-### Manual Tests
-
-I'm fairly certain that I have done a lot of tests. So for manual tests, we have tested the following
 
 #### Responsive Testing
 
@@ -169,28 +131,6 @@ Now the bug would the be that if a user clicked stop it would still display this
 
 Since the project is built with Bootstrap 4 (Bootswatch) I'm fairly certain things are responsive, though there will always be widths and heights that are uncommon and will "glitch".
 
-1. An example of this was pointed out to me on the following widths and heights
-
-```
-710-726px x 837px
-919-935px x 837px
-```
-
-The bug here would be regarding ChartJS and the Angular 2 Charts, where it would try to resize itself and go into an infinite loop. I'm currently working finding a solution but trying to delay the resize or change the breakpoint will then cause it to break on a different breakpoint.
-
-1.  Go to the Pokémon Stats page
-2.  Resize to any of the above sizes. `710-726px X 837px` or `919-935px X 837px`
-3.  You will see that the Chart will try to auto update and flickers.
-
-There is also a bug where if Bar Chart Legend is enabled it will display `undefined`, I think the reason for this is that it writes and creates the Legends BEFORE it fetches the data. Sadly I have been unable to fix this, so if you have a way to do this please let me know so this can be fixed.
-**_To reproduce the bug or test this:_**
-
-1. Open `bar-chart.components.ts`
-2. Change line 38 `public barChartLegend = false;` to `public barChartLegend = true;`
-3. `ng serve` to start the server
-4. Open PokéDash Stats Page or navigate to `/dashboard`
-
-You will now see that at the top of the Bar Chart the legend it's undefined`
 
 ## Installing and building
 
@@ -212,13 +152,13 @@ MySQL 5.6+
 1. Clone the project (The documentation consider the `PokeDash` the root folder)
 
 ```console
-git clone https://github.com/Eventyret/PokeDash.git
+git clone https://github.com/Eventyret/DevHangout.git
 ```
 
 2. Change Directory into the root folder
 
 ```console
-cd PokeDash
+cd DevHangout
 ```
 
 3. Create a Virtual Environment (This creates a folder named `.venv` to hold python environment files)
@@ -230,7 +170,7 @@ virtualenv .venv
 4. Install Python dependencies (This installs all flask dependencies)
 
 ```console
-pip install -r api\requirements.txt
+pip install -r BackendApi\requirements.txt
 ```
 
 5. Install Angular dependencies by running (This installs all the angular dependencies)
@@ -273,7 +213,7 @@ source .venv/bin/activate
 -   Start the server
 
 ```console
-python api/app.py
+python BackendApi\manage.py runserver
 ```
 
 #### Frontend
@@ -319,7 +259,7 @@ _note the BackendApi here which is the folder name we want to push_
 
 #### The Database
 
-As we are using mlab to host our database please follow this guide [mLab MongoDB | Heroku Dev Center](https://devcenter.heroku.com/articles/mongolab) - This will help you set up a database to connect to.
+You will need a MySQL database and provide the data
 
 **Heroku Environment variables**
 We need to set a secret variable so Heroku knows what database to use.
