@@ -11,6 +11,11 @@ Well Developers Hangout have ya covered, its a community made by a developer for
 The UX is made with simplicity in mind, it's ment to be easy to navigate and simple information with icons to process.
 
 ### The Dashboard
+The Dashboard is the main area for a user to edit all their profile.
+Simple buttons that provide the user with a modal for editing, adding skills, experience, education and their profile details.
+
+It also comes with a simple table in desktop mode to have a overview of all the information.
+As tables are not looking good for a user experience on mobile, I chose to switch this to cards as its easier for the user to consume.
 
 ### Developers List
 	
@@ -36,6 +41,15 @@ This will ruin the surprise with a screenshot so please do visit our the live de
 -   This is will display the average stats for the all Pokémon's combined.
 
 ## Features Left to Implement
+
+- Auto sign in
+	Currently a user will need to register then gets taken to the login screen, this should be a better flow where we post the same data to the login once we get a response.
+
+- Portfolio
+	User will have a the abilities to add portfolio, this will be the same asadding education and experience, except it should be shown on their public profile as a gallery.
+
+- Contact User
+	Implementing a way to have a internal message system is in the works. This should make it easier to connect with other members!
 
 
 ## Technologies Used

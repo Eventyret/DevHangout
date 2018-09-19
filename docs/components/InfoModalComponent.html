@@ -136,10 +136,6 @@
                                     <span class="modifier">Public</span>
                                 <a href="#loggedIn">loggedIn</a>
                             </li>
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#name">name</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -179,7 +175,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/components/fab/info-modal/info-modal.component.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/shared/components/fab/info-modal/info-modal.component.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -289,7 +285,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/shared/components/fab/info-modal/info-modal.component.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/shared/components/fab/info-modal/info-modal.component.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -378,7 +374,7 @@ so we know what modal to open</li>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/shared/components/fab/info-modal/info-modal.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/shared/components/fab/info-modal/info-modal.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -418,7 +414,7 @@ so we know what modal to open</li>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/shared/components/fab/info-modal/info-modal.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/components/fab/info-modal/info-modal.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -453,47 +449,7 @@ so we know what modal to open</li>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/shared/components/fab/info-modal/info-modal.component.ts:15</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="name"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            name
-                            </b>
-                            <a href="#name"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>name:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>&quot;&quot;</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/shared/components/fab/info-modal/info-modal.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/shared/components/fab/info-modal/info-modal.component.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -518,7 +474,6 @@ import { SharedService } from &quot;../../../services/misc/shared.service&quot;;
 	styleUrls: [&quot;./info-modal.component.scss&quot;]
 })
 export class InfoModalComponent implements OnInit {
-	public name &#x3D; &quot;&quot;;
 	private comp: any;
 	public loggedIn: boolean;
 
@@ -530,9 +485,7 @@ export class InfoModalComponent implements OnInit {
 	 */
 	constructor(public activeModal: NgbActiveModal, private modalService: NgbModal, private sharedService: SharedService) {}
 
-	ngOnInit() {
-		this.name &#x3D; this.sharedService.donatorName;
-	}
+	ngOnInit() {}
 
 	/**
 	 * Opens the modal either for donate or the login.
@@ -551,10 +504,6 @@ export class InfoModalComponent implements OnInit {
 			centered: true,
 			size: &quot;lg&quot;,
 			backdrop: &quot;static&quot;,
-			beforeDismiss: () &#x3D;&gt; {
-				this.sharedService.setDonatorName(this.name);
-				return true;
-			}
 		});
 		modalRef.componentInstance.name &#x3D; this.sharedService.donatorName;
 	}
@@ -582,7 +531,7 @@ export class InfoModalComponent implements OnInit {
 	&lt;div class&#x3D;&quot;modal-body&quot;&gt;
 		&lt;div class&#x3D;&quot;donate-info&quot;&gt;
 			&lt;p&gt;
-				Thank you {{name}} for considering donating to us, all donations goes towards server costs and to make the site even
+				Thank you for considering donating to us, all donations goes towards server costs and to make the site even
 				better!&lt;/p&gt;
 				&lt;p&gt;
 				As a thank you for your kind donation (of any amount) to our project we prepared some awesome stuff for you
@@ -649,7 +598,7 @@ export class InfoModalComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ngx-spinner bdColor="rgba(39,128,227,0)"             size="large"             color="#FFEB3B">	<p>Playing balls with stripe</p></ngx-spinner><section>	<div class="modal-header">		<h4 class="modal-title">Donation Information</h4>		<button type="button"		        class="close"		        aria-label="Close"		        (click)="activeModal.dismiss()">			<i class="fas fa-times"></i>		</button>	</div>	<div class="modal-body">		<div class="donate-info">			<p>				Thank you {{name}} for considering donating to us, all donations goes towards server costs and to make the site even				better!</p>				<p>				As a thank you for your kind donation (of any amount) to our project we prepared some awesome stuff for you			</p>			<div class="container-fluid">				<div class="row">					<div class="col-sm-3">						<span class="icons"						      ngbTooltip="Add your own background to your profile!"><i class="fas fa-image"></i></span>					</div>					<div class="col-sm-3">						<span class="icons"						      ngbTooltip="Add Portfolio items and show off your work (Work in progress)"><i class="fas fa-briefcase"></i></span>					</div>					<div class="col-sm-3">						<span class="icons"						      ngbTooltip="A Super Awesome badge to show off on your profile!"><i class="fas fa-ribbon"></i></span>					</div>					<div class="col-sm-3">						<span class="icons"						      ngbTooltip="Our eternal gratitude!"><i class="fas fa-heart"></i></span>					</div>				</div>				<small *ngIf="!loggedIn">Make sure your logged in if you want these awesome perks!</small>			</div>		</div>	</div>	<div class="modal-footer">			<a (click)="open($event)" id="login" class="btn btn-secondary btn-md text-white" *ngIf="!loggedIn">I would love to login first</a>			<a (click)="open($event)" id="donate" class="btn btn-secondary btn-md text-white">				<span *ngIf="!loggedIn">I want to donate anonymously</span>				<span *ngIf="loggedIn">Donate</span>			</a>		</div></section></div>'
+        var COMPONENT_TEMPLATE = '<div><ngx-spinner bdColor="rgba(39,128,227,0)"             size="large"             color="#FFEB3B">	<p>Playing balls with stripe</p></ngx-spinner><section>	<div class="modal-header">		<h4 class="modal-title">Donation Information</h4>		<button type="button"		        class="close"		        aria-label="Close"		        (click)="activeModal.dismiss()">			<i class="fas fa-times"></i>		</button>	</div>	<div class="modal-body">		<div class="donate-info">			<p>				Thank you for considering donating to us, all donations goes towards server costs and to make the site even				better!</p>				<p>				As a thank you for your kind donation (of any amount) to our project we prepared some awesome stuff for you			</p>			<div class="container-fluid">				<div class="row">					<div class="col-sm-3">						<span class="icons"						      ngbTooltip="Add your own background to your profile!"><i class="fas fa-image"></i></span>					</div>					<div class="col-sm-3">						<span class="icons"						      ngbTooltip="Add Portfolio items and show off your work (Work in progress)"><i class="fas fa-briefcase"></i></span>					</div>					<div class="col-sm-3">						<span class="icons"						      ngbTooltip="A Super Awesome badge to show off on your profile!"><i class="fas fa-ribbon"></i></span>					</div>					<div class="col-sm-3">						<span class="icons"						      ngbTooltip="Our eternal gratitude!"><i class="fas fa-heart"></i></span>					</div>				</div>				<small *ngIf="!loggedIn">Make sure your logged in if you want these awesome perks!</small>			</div>		</div>	</div>	<div class="modal-footer">			<a (click)="open($event)" id="login" class="btn btn-secondary btn-md text-white" *ngIf="!loggedIn">I would love to login first</a>			<a (click)="open($event)" id="donate" class="btn btn-secondary btn-md text-white">				<span *ngIf="!loggedIn">I want to donate anonymously</span>				<span *ngIf="loggedIn">Donate</span>			</a>		</div></section></div>'
     var COMPONENTS = [{'name': 'AddEducationComponent', 'selector': 'app-add-education'},{'name': 'AddExperienceComponent', 'selector': 'app-add-experience'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DevelopersListComponent', 'selector': 'app-profiles'},{'name': 'DonationsMobileViewComponent', 'selector': 'donations-mobile-view'},{'name': 'EditEducationComponent', 'selector': 'app-edit-education'},{'name': 'EditExperienceComponent', 'selector': 'app-edit-experience'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'EducationComponent', 'selector': 'app-education'},{'name': 'EducationMobileViewComponent', 'selector': 'education-mobile-view'},{'name': 'ExperienceComponent', 'selector': 'app-experience'},{'name': 'ExperienceMobileViewComponent', 'selector': 'experience-mobile-view'},{'name': 'FabComponent', 'selector': 'app-fab'},{'name': 'FakeGithubPage', 'selector': 'app-fake-github'},{'name': 'GithubComponent', 'selector': 'app-github'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'InfoModalComponent', 'selector': 'app-info-modal'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'SectionsComponent', 'selector': 'app-sections'},{'name': 'SessionExpiredComponent', 'selector': 'app-session-expired'},{'name': 'SessionExpiredPage', 'selector': 'app-expired-page'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'SkillsComponent', 'selector': 'app-skills'},{'name': 'SocialIconsComponent', 'selector': 'app-social-icons'},{'name': 'SupporterModalComponent', 'selector': 'app-supporter-modal'},{'name': 'TestimonialsComponent', 'selector': 'app-testimonials'},{'name': 'ThankYouModalComponent', 'selector': 'app-thank-you-modal'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'InfoModalComponent'};
