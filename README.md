@@ -235,6 +235,11 @@ Since the project is built with Bootstrap 4 (Bootswatch) I'm fairly certain thin
 
 There is a known glitch with the FAB button regarding the Name property been undefined. I tried multiple fixes, but as this has been intermitted bug I decided late on that I would remove the name to give the user a better experience until I could hunt down the proper cause.
 
+This has been proven to be if a user is logged in and come back the token will have expired. This will then cause it to throw an error.
+Normally for now a workaround has been a force refresh and then click the button again.
+
+Currently investigating this
+
 ## Installing and building
 
 ### Requirements
