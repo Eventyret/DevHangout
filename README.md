@@ -182,13 +182,40 @@ npm install
 #### Running project locally.
 
 As a developer, I feel its important to give you different ways to run your backend in a simple and clean way, so I have made two ways to run your backend project.
+Regardless of project you **WILL** need a Mysql database. and create an `env.py` file to hold the information.
+
+- Create a new file in the folder `BackendApi` root folder (where you have manage.py) name it `env.py`
+- Paste the content below and switch use your own information.
+- Generate a Secret Key (A tip you can use [PasswordGenerator.net](https://passwordsgenerator.net/) Select 64 and generate it)
+
+```python
+import os
+envset = os.environ.setdefault
+# DEVELOPMENT TYPE
+envset("ENV", 'development')
+
+# DJANGO SECRET KEY
+envset("SECRET_KEY", "YOUR SECRET GENERATED KEY")
+
+# Database
+envset("DBNAME", "YOUR DATABASE NAME")
+envset("DBUSER", "YOUR DATABASE USER")
+envset("DBPASS", "YOUR DATABASE PASSWORD")
+envset("DBHOST", "YOUR DATABASE HOSTNAME")
+envset("DBPORT", "3306")
+
+DEBUG = True
+
+```
+**Once done your ready to continue**
 
 #### Backend
 
-**_Sidenote_**: The project has set up a default database to connect to on developer mode, check [Deployment](#Deployment) for info on how to create a database etc to connect to.
-
 1. Docker (Recommended)
    If you have [Docker](https://www.docker.com/) installed you can simply run the command below (This will start the server on port `5000`)
+   
+   With docker you still need to migrate and make migrations and create a super user, so before running the command below please see the manual step on how
+   makemigrations and migrate and create a super user. Once done you can use the below command to start the server.
 
 ```console
 docker-compose up
@@ -210,7 +237,19 @@ Unix:
 source .venv/bin/activate
 ```
 
--   Start the server
+- Make migrations & Migrate
+
+```console
+python BackendApi\manage.py makemigrations
+python BackendApi\manage.py migrate
+```
+- Create Superuser
+```console
+python BackendApi\manage.py createsuperuser
+```
+Follow the onscreen instructions to create your user.
+
+- Start the Server
 
 ```console
 python BackendApi\manage.py runserver
@@ -255,28 +294,25 @@ We can use the power of git and use `git subtree` to upload and deploy ONLY the 
 git subtree push --prefix BackendApi heroku master
 ```
 
-_note the BackendApi here which is the folder name we want to push_
+_Note: The BackendApi here is the folder name we want to push_
 
-#### The Database
-
-You will need a MySQL database and provide the data
 
 **Heroku Environment variables**
 We need to set a secret variable so Heroku knows what database to use.
 
 ```console
 heroku config:set Development=False
+heroku config:set DBHOST=YOU DB HOST
+heroku config:set DBNAME=YOUR DB NAME
+heroku config:set DBPASS=YOUR DB PASSWORD
+heroku config:set DBPORT=3306
+heroku config:set DBUSER=YOUR DB USER
+heroku config:set DISABLE_COLLECTSTATIC=1
+heroku config:set SECRET_KEY=YOUR SECRET KEY
 ```
 
-This tells the server that we are in a production environment and chooses the correct database accordingly.
+_Note: You might have to go into heroku after creating the app and make sure it has not added a postgreesql url, if this is the case remove it as it will use that as a priority_
 
-```console
-heroku config: set SECRET_URI="mongodb://dbuser:dbpassword@hostname:port/databasename"
-```
-
-All this information you can find on [mlab Dashboard](https://www.mlab.com/databases/) once you are logged in. You are looking for an URL like the one in this picture.
-![0r2UfHC.png](https://i.imgur.com/0r2UfHC.png)
-Make sure you change the following in that string: - `dbuser` your mlab username for the database - `dbpassword` your mlab password for the database
 
 **NOTE: Make sure you set the configurations before you push to Heroku, else you won't get any data back.**
 
@@ -290,7 +326,7 @@ After you have **built** your application you got a few options.
 **_Sidenote:_** If your using this method make sure you do the following command. This is to make it compatible with GitHub pages.
 
 ```console
-ng build --prod --base-href="https://USERNAME.github.io/REPOSITORY_NAME/"
+ng build --prod && npx ngh"
 ```
 
 ## Credits
