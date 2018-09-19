@@ -37,41 +37,74 @@
 <p><img src="https://raw.githubusercontent.com/Eventyret/DevHangout/develop/src/assets/logo-share.png" alt="Developers Hangout" class="img-responsive"></p>
 <p>Are you a lonesome developer? Sitting at work or maybe in your own room typing away the code?
 Do you wish that you could meet fellow developers instead of hundreds of Facebook groups and LinkedIn Groups?
-Well Developers Hangout have ya covered, its a community made by a developer for other developers!</p>
+Well, Developers Hangout have ya covered, its a community made by a developer for other developers!</p>
 <h1 id="developers-hangout-website"><a href="https://www.devhangout.co">Developers Hangout Website</a></h1>
+<h3 id="more-indept-documentation-created-with-compodoc"><a href="https://eventyret.github.io/DevHangout">More indept documentation created with compodoc</a></h3>
+<h4 id="this-documentation-will-cover-the-following">This documentation will cover the following</h4>
+<ul>
+<li>Methods and functions in detail</li>
+<li>Components</li>
+<li>Services</li>
+<li>Injections</li>
+<li>Guards</li>
+<li>Interfaces</li>
+</ul>
+<p><em>This is built with <a href="https://compodoc.app/">Compodoc - The missing documentation tool for your Angular application</a></em></p>
 <h2 id="ux">UX</h2>
-<p>The UX is made with simplicity in mind, it&#39;s ment to be easy to navigate and simple information with icons to process.</p>
+<p>The UX is made with simplicity in mind, it&#39;s meant to be easy to navigate and simple information with icons to process.</p>
 <h3 id="the-dashboard">The Dashboard</h3>
-<p>The Dashboard is the main area for a user to edit all their profile.
+<p>The Dashboard is the main area for a user to edit all of their profile.
 Simple buttons that provide the user with a modal for editing, adding skills, experience, education and their profile details.</p>
-<p>It also comes with a simple table in desktop mode to have a overview of all the information.
+<p>It also comes with a simple table in desktop mode to have an overview of all the information.
 As tables are not looking good for a user experience on mobile, I chose to switch this to cards as its easier for the user to consume.</p>
 <h3 id="developers-list">Developers List</h3>
+<p>The Developers list is a simple card list showing all developers registered + 1000 fake users.
+We have added infinite scroll to make the user experience more pleasant.
+The displayed data will start with 8 and for each scroll, it will add 8 more to see.
+This then improves loading speed as we don&#39;t load 1000 users but only 8 when the user requests it.</p>
 <h3 id="your-profile">Your Profile</h3>
+<p>This is where a user can make themselves stand out, by adding information we are dynamically displaying this.
+A registered user with no information will have a more or less blank profile, but a user with more information
+will then stand out!</p>
 <h3 id="fake-github-pages">Fake Github Pages</h3>
+<p>When a real user adds their Github Handle we will then search the Github API for the users repo with the provided handle and display the last 5 repos, with their stars, watch, and followers. If they have added a live URL site we also will link to that.</p>
+<p>BUT we have fake users, and I didn&#39;t want to stop there, so I created a &quot;look-alike&quot; Github repo.
+Every fake user has 2 different templates they use with all fake data. But it was more the aesthetic of getting things looking better.</p>
 <h3 id="page-not-found">Page Not Found</h3>
 <p>I always love good 404 pages, they are supposed to be fun but still have a meaning for the user.
 This will ruin the surprise with a screenshot so please do visit our the live demo <a href="https://www.devhangout.co/not-found">here</a></p>
 <h2 id="features">Features</h2>
 <h3 id="your-skills">Your skills</h3>
 <ul>
-<li>You can visualise the data and clearly see the amount of Pokémon&#39;s by their type.
-This means its easy to see how many &quot;Steel&quot;, &quot;Electric&quot;, &quot;Fairy&quot; types of pokemon there is.</li>
+<li>Adding skills should be easy. So we are using DevIcons and with a click of a button you can show off your skills!</li>
 </ul>
 <h3 id="your-profile">Your Profile</h3>
 <ul>
-<li>This is will display the average stats for the all Pokémon&#39;s combined.</li>
+<li>Make yourself stand out, your own avatar, all your skills and GitHub repo!</li>
 </ul>
+<h3 id="the-fake-data">The Fake data</h3>
+<p>Creating fake data was not easy, with the help of faker.js and json-serve I created a custom skills.js file
+You can use this and just change the number of users you would like to generate.
+The file is located in the root under <code>skills.js</code></p>
+<p>Simple said, it will run the other functions X amount of times, and populate the same data as a user would have.
+They will have a fake username, email GitHub, social media so on and so on.
+Thought the fake avatars are used with <a href="https://robohash.org/">RoboHash</a> we are passing it the email we generated and some random numbers to get totally random icons for that user.</p>
 <h2 id="features-left-to-implement">Features Left to Implement</h2>
 <ul>
 <li><p>Auto sign in
-  Currently a user will need to register then gets taken to the login screen, this should be a better flow where we post the same data to the login once we get a response.</p>
+Currently, a user will need to register then gets taken to the login screen, this should be a better flow where we post the same data to the login once we get a response.</p>
 </li>
 <li><p>Portfolio
-  User will have a the abilities to add portfolio, this will be the same asadding education and experience, except it should be shown on their public profile as a gallery.</p>
+A user will have the abilities to add a portfolio, this will be the same as adding education and experience, except it should be shown on their public profile as a gallery.</p>
 </li>
 <li><p>Contact User
-  Implementing a way to have a internal message system is in the works. This should make it easier to connect with other members!</p>
+Implementing a way to have an internal message system is in the works. This should make it easier to connect with other members!</p>
+</li>
+<li><p>Filters &amp; Search
+For now, a user can only pick a user from the list or by knowing their ID and username. I have been working on adding a search filter and the ability to filter down by skills etc.</p>
+</li>
+<li><p>Edit / Delete skill on mobile
+  As this has been moved to its own component I have not implemented so a user can edit or delete their skills on mobile.</p>
 </li>
 </ul>
 <h2 id="technologies-used">Technologies Used</h2>
@@ -134,7 +167,7 @@ Angular 2+ wrapper for StripeJS.</p>
 <h3 id="back-end">Back end</h3>
 <ul>
 <li><p><a href="https://www.python.org/">Python</a>
-The whole backend is written in <a href="https://www.python.org/">Python</a> as <a href="http://flask.pocoo.org/">Flask</a> is written in Python.</p>
+The whole backend is written in <a href="https://www.python.org/">Python</a> as <a href="https://www.djangoproject.com/">Django</a> is written in Python.</p>
 <blockquote>
 <p>Python is a programming language that lets you work quickly and integrate systems more effectively.</p>
 </blockquote>
@@ -142,13 +175,19 @@ The whole backend is written in <a href="https://www.python.org/">Python</a> as 
 <li><p><a href="https://www.djangoproject.com/">Django</a>
 The whole backend is built with Django and added DRT(Django Rest Framework) on top of it.</p>
 <blockquote>
-<p>Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.</p>
+<p>Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.</p>
 </blockquote>
 </li>
 <li><p><a href="http://www.django-rest-framework.org/">Django Rest Framework</a>
-Our choice of Django API</p>
+We are using DRF to add an out of the box API for our project</p>
 <blockquote>
 <p>Django REST framework is a powerful and flexible toolkit for building Web APIs.</p>
+</blockquote>
+</li>
+<li><p><a href="https://github.com/davesque/django-rest-framework-simplejwt">Django Rest Framework</a>
+A JSON Web Token authentication plugin for the Django REST Framework.</p>
+<blockquote>
+<p>Simple JWT provides a JSON Web Token authentication backend for the Django REST Framework. It aims to provide an out-of-the-box solution for JWT authentication which avoids some of the common pitfalls of the JWT specification. Assuming users of the library don&#39;t extensively and invasively subclass everything, Simple JWT&#39;s behaviour shouldn&#39;t be surprising. Settings variable defaults should be safe.</p>
 </blockquote>
 </li>
 <li><p><a href="https://www.heroku.com/">Heroku</a>
@@ -160,31 +199,69 @@ We can simply push our app to Heroku using their <a href="https://devcenter.hero
 </blockquote>
 </li>
 </ul>
+<h3 id="development-frontend-">Development (Frontend)</h3>
+<ul>
+<li><p><a href="https://github.com/Marak/faker.js">faker.js</a>
+Used to generate our fake users</p>
+<blockquote>
+<p>Generate massive amounts of fake data in Node.js and the browser</p>
+</blockquote>
+</li>
+<li><p><a href="https://github.com/typicode/json-server">json-server</a>
+This is the web server that makes us able to convert our fake data from faker.js into a JSON object we can use.
+Please do read their GitHub project on how to use it.</p>
+<blockquote>
+<p>Get a full fake REST API with zero coding in less than 30 seconds (seriously)</p>
+</blockquote>
+</li>
+</ul>
 <h2 id="testing">Testing</h2>
+<p>In Code Insititute, we are told to code in TDD and automatic testing has never been a strong side of me, but testing itself is important.
+I do prefer to have human testers, report bugs etc and then fix it. Bug hunting is awesome!
+Thought for a proper business page/app etc unit testing and e2e testing is essential.</p>
 <h4 id="responsive-testing">Responsive Testing</h4>
 <h5 id="browsers">Browsers</h5>
 <div><pre class="line-numbers"><code class="language-none">Microsoft Explorer 11
 Microsoft Edge (v18)
 Chrome (v70)
 Firefox Developer Edition (v62)</code></pre></div><h5 id="frontend">Frontend</h5>
-<p>I had some issues regarding the battle, where the help text would not update. This was simply because I forgot to rename the help text in <code>battles.component.ts</code> this was fixed at a later date but now updates correctly.</p>
-<p><strong>User Story:</strong>
-The user would start a battle and the help text would be <code>Get Ready to fight</code>. The user then would start the fight and the text would change to <code>Fight in progress</code>, once the fight was completed it would say <code>Please stop the Fight to continue</code>.
-Now the bug would the be that if a user clicked stop it would still display this message. This was fixed in the following commit <a href="https://github.com/Eventyret/PokeDash/commit/d92268082b31c66d9670458f1e038ea157174f3b">#d922680</a></p>
+<p><strong>400 Bad Requests on adding experience or education without an end date.</strong></p>
+<p><em>UserStory:</em>
+The User would log in to their profile to proceed to add their education or experience.
+ This would then give a 400 error as the field would not be correct when posted. The &quot;End date&quot; would be blank.
+ As this was not treated as null it would throw an exception and error.</p>
+<p> This was fixed shortly after as we added a check for this, and also we added a date to it.
+ So if the user would not fill it in we would pass null. If they toggled the <code>currently working here</code> we would grab today&#39;s date.
+ We also changed the backend to by default make it required.</p>
+<p> <strong>Skills looked weird</strong></p>
+<p> <em>UserStory:</em>
+  The skills would be on top and the user&#39;s skills itself would be at the bottom. Clicking a skill would remove the skills from the top but also the next one in the array. This would make it hard for the user to do this.</p>
+<p>  After this, I redesigned it in the way that you if you click a skill we first check if the user has the skill if they don&#39;t we make a post request with that skill and add it to the user skills.
+  If they already have it we will just <code>return</code> and give the user a notification.</p>
+<p> <strong>Mobile not looking too good for the profile and front page.</strong></p>
+<p> <em>UserStory:</em>
+ There were some issues with smaller devices where things did not look good. Users reported to me that there were things that could be done.
+ I redesigned it with smaller icons better breakpoints.</p>
+<p> <strong>Tables to cards</strong></p>
+<p> <em>UserStory:</em>
+ Looking at the table on mobile was hard,  so I used bootstrap to hide the tables on mobile and show cards instead.</p>
 <h3 id="known-bugs">Known Bugs</h3>
 <p>Since the project is built with Bootstrap 4 (Bootswatch) I&#39;m fairly certain things are responsive, though there will always be widths and heights that are uncommon and will &quot;glitch&quot;.</p>
+<p>There is a known glitch with the FAB button regarding the Name property been undefined. I tried multiple fixes, but as this has been intermitted bug I decided late on that I would remove the name to give the user a better experience until I could hunt down the proper cause.</p>
 <h2 id="installing-and-building">Installing and building</h2>
 <h3 id="requirements">Requirements</h3>
 <div><pre class="line-numbers"><code class="language-console">Python 3+ (Built with 3.6.6)
 Django 2+ (Built with 2.0.5)
-Django Restframework 3+  (Built with 3.8.2)
+Django Rest framework 3+  (Built with 3.8.2)
 NPM 5+ (Built with 6.2.0)
 NodeJS 8+ (Built with 10.9.0)
 Angular 5+ (Built with 6.1.7)
 Angular CLI (Built with 6.2.1)
-MySQL 5.6+</code></pre></div><h5 id="installing">Installing</h5>
+MySQL 5.6+
+json-server (Only yo create your own fake users)
+faker.js (Only yo create your own fake users)</code></pre></div><h5 id="installing">Installing</h5>
 <ol>
-<li>Clone the project (The documentation consider the <code>PokeDash</code> the root folder)</li>
+<li>Clone the project (The documentation consider the <code>DevHangout</code> the root folder)</li>
 </ol>
 <div><pre class="line-numbers"><code class="language-console">git clone https://github.com/Eventyret/DevHangout.git</code></pre></div><ol start="2">
 <li>Change Directory into the root folder</li>
@@ -193,14 +270,14 @@ MySQL 5.6+</code></pre></div><h5 id="installing">Installing</h5>
 <li>Create a Virtual Environment (This creates a folder named <code>.venv</code> to hold python environment files)</li>
 </ol>
 <div><pre class="line-numbers"><code class="language-console">virtualenv .venv</code></pre></div><ol start="4">
-<li>Install Python dependencies (This installs all flask dependencies)</li>
+<li>Install Python dependencies (This installs all our project dependencies)</li>
 </ol>
 <div><pre class="line-numbers"><code class="language-console">pip install -r BackendApi\requirements.txt</code></pre></div><ol start="5">
 <li>Install Angular dependencies by running (This installs all the angular dependencies)</li>
 </ol>
 <div><pre class="line-numbers"><code class="language-console">npm install</code></pre></div><h4 id="running-project-locally-">Running project locally.</h4>
 <p>As a developer, I feel its important to give you different ways to run your backend in a simple and clean way, so I have made two ways to run your backend project.
-Regardless of project you <strong>WILL</strong> need a Mysql database. and create an <code>env.py</code> file to hold the information.</p>
+Regardless of the project, you <strong>WILL</strong> need a Mysql database. and create an <code>env.py</code> file to hold the information.</p>
 <ul>
 <li>Create a new file in the folder <code>BackendApi</code> root folder (where you have manage.py) name it <code>env.py</code></li>
 <li>Paste the content below and switch use your own information.</li>
@@ -221,16 +298,41 @@ envset(&quot;DBPASS&quot;, &quot;YOUR DATABASE PASSWORD&quot;)
 envset(&quot;DBHOST&quot;, &quot;YOUR DATABASE HOSTNAME&quot;)
 envset(&quot;DBPORT&quot;, &quot;3306&quot;)
 
-DEBUG = True
-</code></pre></div><p><strong>Once done your ready to continue</strong></p>
+DEBUG = True</code></pre></div><p>Angular has 2 <code>environment.ts</code> files. one is for development other one is for  production please create 2 files named <code>environment.ts</code> and <code>environment.prod.ts</code> and use the following content</p>
+<p>You can get the following API keys from these places:</p>
+<ul>
+<li><a href="https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/">Github Secret &amp; Client ID</a></li>
+<li><a href="https://stripe.com/docs/keys">Stripe API Key</a></li>
+</ul>
+<div><pre class="line-numbers"><code class="language-json">// For local development
+export const environment = {
+  production: false,
+  publish_api_key: &quot;YOUR STRIPE API KEY&quot;,
+  github_client_id: &quot;YOUR GITHUB CLIENT ID&quot;,
+  github_client_secret: &quot;YOUR GITHUB SECRET KEY&quot;,
+  api_url: &quot;http://localhost:8000&quot;,
+  fake_users: &quot;fakeusers-dev.json&quot;,
+  skills: &quot;skills.json&quot;,
+  githubapi_url: &quot;https://api.github.com/&quot;
+};
+</code></pre></div><div><pre class="line-numbers"><code class="language-json">// For production servers
+export const environment = {
+  production: true,
+  publish_api_key: &quot;YOUR STRIPE API KEY&quot;,
+  github_client_id: &quot;YOUR GITHUB CLIENT ID&quot;,
+  github_client_secret: &quot;YOUR GITHUB SECRET KEY&quot;,
+  api_url: &quot;INSERT YOUR URL HERE&quot;, // do not include the last /
+  fake_users: &quot;fakeusers-prod.json&quot;,
+  skills: &quot;skills.json&quot;,
+  githubapi_url: &quot;https://api.github.com/&quot;
+};
+</code></pre></div><p><strong>Once done you&#39;re ready to continue</strong></p>
 <h4 id="backend">Backend</h4>
 <ol>
-<li><p>Docker (Recommended)
-If you have <a href="https://www.docker.com/">Docker</a> installed you can simply run the command below (This will start the server on port <code>5000</code>)</p>
-<p>With docker you still need to migrate and make migrations and create a super user, so before running the command below please see the manual step on how
-makemigrations and migrate and create a super user. Once done you can use the below command to start the server.</p>
-</li>
+<li>Docker (Recommended)
+If you have <a href="https://www.docker.com/">Docker</a> installed you can simply run the command below (This will start the server on port <code>8000</code>)</li>
 </ol>
+<p><strong><em>With Docker, you still need to migrate and make migrations and create a superuser, so before running the command below please see the manual step on how makemigrations and migrate and create a superuser. Once done you can use the below command to start the server.</em></strong></p>
 <div><pre class="line-numbers"><code class="language-console">docker-compose up</code></pre></div><ol start="2">
 <li><p>Manual</p>
 </li>
@@ -244,11 +346,11 @@ makemigrations and migrate and create a super user. Once done you can use the be
 </ul>
 <div><pre class="line-numbers"><code class="language-console">python BackendApi\manage.py makemigrations
 python BackendApi\manage.py migrate</code></pre></div><ul>
-<li><p>Create Superuser</p>
+<li>Create Superuser</li>
+</ul>
 <div><pre class="line-numbers"><code class="language-console">python BackendApi\manage.py createsuperuser</code></pre></div><p>Follow the onscreen instructions to create your user.</p>
-</li>
-<li><p>Start the Server</p>
-</li>
+<ul>
+<li>Start the Server</li>
 </ul>
 <div><pre class="line-numbers"><code class="language-console">python BackendApi\manage.py runserver</code></pre></div><h4 id="frontend">Frontend</h4>
 <p>Since we are using angular for our build it&#39;s as simple as running: <code>ng serve</code> in the root folder of the project.
@@ -258,7 +360,148 @@ This will start our development server on port <code>4200</code></p>
 <p>To build your app and make it ready for deployment Angular again gives you a simple command to build and make this ready</p>
 <div><pre class="line-numbers"><code class="language-console">ng build --prod --base-href &quot;https://yourdomain.com/</code></pre></div><p>If you are building this to be uploaded directly to the root folder of a domain you can also shorten this by doing</p>
 <div><pre class="line-numbers"><code class="language-console">ng build --prod</code></pre></div><h5 id="fake-data">Fake Data</h5>
-<h5 id="backend">Backend</h5>
+<p>Below is the functions written for the fake data. 
+I have removed the dummy data so please see <code>skills.js</code> file in root of the project to use it with json-server to generate your own</p>
+<div><pre class="line-numbers"><code class="language-javascript">module.exports = () =&gt; {
+    let faker = require(&quot;faker&quot;);
+    let _ = require(&quot;lodash&quot;);
+    return {
+        users: _.times(1001, function(n) {
+            let skillsData = [];
+            let titlesData = [];
+            let githubUrl = &quot;https://YOURDOMAIN/github/&quot;
+            let username = faker.internet.userName();
+            let randomSet = _.sample([1, 2, 3, 4]);
+            let diplomaData = _.sample(diploma);
+            let studyData = _.sample(study);
+            let location = faker.address.country();
+            let email = faker.internet.email();
+            titlesData.push(titles);
+
+            _.times(
+                faker.random.number({
+                    min: 1,
+                    max: 5
+                }),
+                function(n) {
+                    let newSkills = _.sampleSize(skills, 5);
+                    skillsData = _.uniqBy(newSkills, &quot;name&quot;);
+                }
+            );
+            function randomEdu(id) {
+                let eduData = [];
+                _.times(
+                    faker.random.number({
+                        min: 1,
+                        max: 5
+                    }),
+                    function() {
+                        let education = {
+                            user: id,
+                            school: faker.company.companyName(),
+                            qualification: diplomaData,
+                            fieldOfStudy: studyData,
+                            dateFrom: faker.date.between(1980, 2012),
+                            dateTo: faker.date.between(2012, 2018),
+                            description: faker.lorem.sentence()
+                        };
+                        eduData.push(education);
+                    }
+                );
+                return eduData;
+            }
+            function randomExp(id) {
+                let expData = [];
+                _.times(
+                    faker.random.number({
+                        min: 1,
+                        max: 5
+                    }),
+                    function() {
+                        experience = {
+                            user: 9000 + n,
+                            jobTitle: _.sample(titles),
+                            company: faker.company.companyName(),
+                            dateFrom: faker.date.between(1980, 2012),
+                            dateTo: faker.date.between(2012, 2018),
+                            current: faker.random.boolean(),
+                            description: faker.lorem.sentence(),
+                            location: location
+                        };
+                        expData.push(experience);
+                    }
+                );
+                return expData;
+            }
+            function githubRepo() {
+                let githubData = [];
+                _.times(
+                    faker.random.number({
+                        min: 1,
+                        max: 5
+                    }),
+                    function() {
+                        const reponame = faker.lorem.word();
+                        const randomNumberLow =  faker.random.number({
+                            min: 1,
+                            max: 100
+                        });
+                        const randomNumberHigh =  faker.random.number({
+                            min: 1,
+                            max: 900
+                        });
+                        gitData  =  {
+                            name: reponame,
+                            html_url: githubUrl + username + &quot;/&quot; + reponame,
+                            description: faker.hacker.phrase(),
+                            stargazers_count: randomNumberHigh,
+                            watchers_count: randomNumberLow,
+                            forks_count: randomNumberLow,
+                            open_issues_count: randomNumberLow,
+                            updated_at: faker.date.recent(),
+                            project: _.sample(project),
+                            tabs: tabs
+                            }
+                            githubData.push(gitData);
+                    }
+                );
+                return githubData;
+            }
+
+
+
+            return {
+                id: 9000 + n,
+                username: username,
+                email: email,
+                profile: {
+                    user: 9000 + n,
+                    firstName: faker.name.firstName(),
+                    lastName: faker.name.lastName(),
+                    avatar: &quot;https://robohash.org/&quot; + email + &quot;?gravatar=yes&amp;set=set&quot; + randomSet + &quot;&amp;size=300x300&amp;bgset=bg&quot; + randomSet,
+                    location: location,
+                    website: faker.internet.url(),
+                    company: faker.company.companyName(),
+                    title: _.sample(titles),
+                    backgroundImage: &quot;https://picsum.photos/1920/1080?random&quot;,
+                    bio: faker.lorem.paragraphs(1),
+                    twitter: username,
+                    facebook: username,
+                    linkedin: username,
+                    instagram: username,
+                    youtube: username,
+                    github: username,
+                    donator: faker.random.boolean(),
+                    testimonal: faker.lorem.paragraphs(1),
+                },
+                education: randomEdu(9000 + n),
+                experience: randomExp(9000 + n),
+                skills: skillsData,
+                repo: githubRepo()
+            };
+        })
+    };
+};</code></pre></div><h5 id="backend">Backend</h5>
 <p>There is no compiling / building for the backend, so you can just continue to read about deploying the backend.</p>
 <h2 id="deployment">Deployment</h2>
 <h3 id="backend">Backend</h3>
@@ -275,7 +518,7 @@ heroku config:set DBPASS=YOUR DB PASSWORD
 heroku config:set DBPORT=3306
 heroku config:set DBUSER=YOUR DB USER
 heroku config:set DISABLE_COLLECTSTATIC=1
-heroku config:set SECRET_KEY=YOUR SECRET KEY</code></pre></div><p><em>Note: You might have to go into heroku after creating the app and make sure it has not added a postgreesql url, if this is the case remove it as it will use that as a priority</em></p>
+heroku config:set SECRET_KEY=YOUR SECRET KEY</code></pre></div><p><em>Note: You might have to go into Heroku after creating the app and make sure it has not added a PostgreSQL url if this is the case remove it as it will use that as a priority</em></p>
 <p><strong>NOTE: Make sure you set the configurations before you push to Heroku, else you won&#39;t get any data back.</strong></p>
 <h3 id="frontend">Frontend</h3>
 <p>After you have <strong>built</strong> your application you got a few options.</p>
@@ -283,18 +526,15 @@ heroku config:set SECRET_KEY=YOUR SECRET KEY</code></pre></div><p><em>Note: You 
 <li>If you are uploading to your own domain, just upload the content of the <code>dist</code> folder and you&#39;re ready to go.</li>
 <li>If you want to deploy to GitHub Pages there is an amazing dev dependency installed in the project for you named <a href="https://github.com/angular-schule/angular-cli-ghpages">GitHub pages for angular-cli users</a>. So all you need to do is issue the command <code>npx ngh</code> and the npm package will automatically publish this to your GitHub pages.</li>
 </ol>
-<p><strong><em>Sidenote:</em></strong> If your using this method make sure you do the following command. This is to make it compatible with GitHub pages.</p>
 <div><pre class="line-numbers"><code class="language-console">ng build --prod &amp;&amp; npx ngh&quot;</code></pre></div><h2 id="credits">Credits</h2>
-<h3 id="content">Content</h3>
 <ul>
-<li><a href="https://codepen.io/royutoan/pen/JXOwwL">Pikachu - SVG Animation</a> - Loading Animation Pikachu</li>
+<li><a href="http://konpa.github.io/devicon/">Devicon</a> - For the Awesome skill icons we are using just like font awesome just developer skills.</li>
+<li><a href="https://fontawesome.com">Font Awesome</a> - Icons</li>
+<li><a href="https://codepen.io/JavaScriptErika/pen/GvPyMG">CSS + SVG Loading Spinner</a> - Our Awesome SVG Loading animation</li>
+<li><a href="https://robohash.org/">RoboHash</a> - For the awesome generated avatars for our fake users.</li>
 </ul>
-<h3 id="media">Media</h3>
-<ul>
-<li><a href="https://github.com/PokeAPI">PokéAPI · GitHub</a> - For all Pokémon Sprites</li>
-<li><a href="https://www.ilikesticker.com/LineStickerAnimation/S002997-Pok%C3%A9mon-The-Oaks/en">I Like Sticker</a> - Professor Oak image</li>
-<li><a href="https://imgur.com/gallery/0Gi6O">Pokemon Gold Desktop Background Animation - Album on Imgur</a> - Start Screen</li>
-</ul>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>This is for educational purposes only.</p>
 
 
 
