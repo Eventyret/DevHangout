@@ -1,20 +1,14 @@
-# PokéDash
+# Developers Hangout
 
-Reading about Pokémon is one thing, knowing about the 700+ different ones are another.
-How about an easy to understand chart to break down what types of Pokémon that exists?
-Or your own Pokedex? Even better what about an amazing simulated battle to watch two Pokémon fight each other.
+Are you a lonesome developer? Sitting at work or maybe in your own room typing away the code?
+Do you wish that you could meet fellow developers instead of hundreds of Facebook groups and LinkedIn Groups?
+Well Developers Hangout have ya covered, its a community made by a developer for other developers!
 
-Welcome to PokéDash, the dashboard that gives you the overview with a dash of fun in!
-So come and start your own journey!
-
-# [PokéDash Live Demo](https://eventyret.github.io/PokeDash/)
+# [Developers Hangout Website](https://www.devhangout.co)
 
 ## UX
 
-This was a simple dashboard, but I as a developer found it boring to just have a "Dashboard" they all look the same. Since this was for a well-known game and stats around this, the people should feel right at home. It should feel like they are in the World of Pokémon's.
-
-The whole thing starts with the loading screen with an animated intro from Pokémon Gold.
-Just as in the game you would have a "Start Button"
+The UX is made with simplicity in mind, it's ment to be easy to navigate and rather
 
 ### The Dashboard
 
