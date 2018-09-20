@@ -26,7 +26,6 @@ export class SupporterModalComponent implements OnInit {
 	};
 	public payInProgress = false;
 	private  amount: number;
-	public name: string;
 	public cardName: string;
 
 
@@ -61,7 +60,6 @@ export class SupporterModalComponent implements OnInit {
  * We are mounting this to #card-element
  */
 ngOnInit() {
-
 		this.stripeForm = this.fb.group({
 			cardName: ["", [Validators.required]],
 			amount: ["", [Validators.required]]
@@ -100,7 +98,7 @@ ngOnInit() {
 				this.openThankYou(results);
 			} else if (results.error) {
 				console.log(results.error.message);
-				this.notify.error("Hey " + this.name, results.error.message);
+				this.notify.error("Hey " + this.cardName, results.error.message);
 				this.spinner.hide();
 			}
 		});
@@ -120,7 +118,7 @@ ngOnInit() {
 			size: "lg",
 			backdrop: "static",
 			beforeDismiss: () => {
-				this.sharedService.setDonatorName(this.name);
+				this.sharedService.setDonatorName(this.cardName);
 				return true;
 			}
 		});

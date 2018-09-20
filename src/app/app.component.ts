@@ -25,6 +25,8 @@ export class AppComponent implements OnInit {
 
 	/**
 	 * on init
+     * We are checking if we have a username in localStorage.
+     * if we do we pass it to our shared service. And if we don't we pass in "Anonymous"
 	 */
 	ngOnInit() {
 		this.loading = true;

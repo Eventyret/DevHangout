@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { LoginComponent } from "../../login/login.component";
 import { SupporterModalComponent } from "../supporter-modal/supporter-modal.component";
-import { SharedService } from "../../../services/misc/shared.service";
 
 @Component({
 	selector: "app-info-modal",
@@ -19,7 +18,7 @@ export class InfoModalComponent implements OnInit {
 	 * @param modalService Handling opening a new modal
 	 * @param sharedService Passing data with the username or anonymous to the other modals
 	 */
-	constructor(public activeModal: NgbActiveModal, private modalService: NgbModal, private sharedService: SharedService) {}
+	constructor(public activeModal: NgbActiveModal, private modalService: NgbModal) {}
 
 	ngOnInit() {}
 
@@ -41,6 +40,5 @@ export class InfoModalComponent implements OnInit {
 			size: "lg",
 			backdrop: "static",
 		});
-		modalRef.componentInstance.name = this.sharedService.donatorName;
 	}
 }
