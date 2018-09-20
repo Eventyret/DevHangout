@@ -1,8 +1,7 @@
 ![Developers Hangout](https://raw.githubusercontent.com/Eventyret/DevHangout/develop/src/assets/logo-share.png)
 
-Are you a lonesome developer? Sitting at work or maybe in your own room typing away the code?
-Do you wish that you could meet fellow developers instead of hundreds of Facebook groups and LinkedIn Groups?
-Well, Developers Hangout have ya covered, its a community made by a developer for other developers!
+Are you a lonesome developer? Sitting at work or maybe in your own room typing away the code? Do you wish that you could meet fellow developers instead of hundreds of Facebook groups and LinkedIn Groups? Well, Developers Hangout have ya covered, it’s a community made by a developer for developers!
+
 
 # [Developers Hangout Website](https://www.devhangout.co)
 ### [More indept documentation created with compodoc](https://eventyret.github.io/DevHangout)
@@ -22,36 +21,34 @@ The UX is made with simplicity in mind, it's meant to be easy to navigate and si
 
 ### The Dashboard
 
-The Dashboard is the main area for a user to edit all of their profile.
-Simple buttons that provide the user with a modal for editing, adding skills, experience, education and their profile details.
+The Dashboard is the main area for a user to edit all of their profile. Simple buttons that provide the user with a modal for editing, adding skills, experience, education and their profile details.
 
-It also comes with a simple table in desktop mode to have an overview of all the information.
-As tables are not looking good for a user experience on mobile, I chose to switch this to cards as its easier for the user to consume.
+It also comes with a simple table in desktop mode to have an overview of all the information. As tables are not good looking for the user experience on mobile, I chose to switch this to cards as its easier for the user to identify and work with.
+
 
 ### Developers List
 
-The Developers list is a simple card list showing all developers registered + 1000 fake users.
-We have added infinite scroll to make the user experience more pleasant.
-The displayed data will start with 8 and for each scroll, it will add 8 more to see.
-This then improves loading speed as we don't load 1000 users but only 8 when the user requests it.
+The Developers list is a simple card list showing all developers registered + 1000 fake users. We have added infinite scroll to make the user experience more pleasant. The displayed data will start with 8 and for each scroll, it will add 8 more to see. 
+
+This then improves loading speed as we don't load a 1000 users at once, but only 8 at a time, as the user requests information.
+
 
 ### Your Profile
 
-This is where a user can make themselves stand out, by adding information we are dynamically displaying this.
-A registered user with no information will have a more or less blank profile, but a user with more information
-will then stand out!
+This is where a user can make themselves stand out. As information is added, it displayed dynamically. A registered user with no information will have a more or less blank profile, but a user with more information will then stand out!
+
 
 ### Fake Github Pages
 
-When a real user adds their Github Handle we will then search the Github API for the users repo with the provided handle and display the last 5 repos, with their stars, watch, and followers. If they have added a live URL site we also will link to that.
+When a real user adds their Github Handle we search the Github API for the user's repo with the provided their handle and display their last 5 repos, with their stars, watch and followers. If they have added a live URL site we also will link to that.
 
-BUT we have fake users, and I didn't want to stop there, so I created a "look-alike" Github repo.
-Every fake user has 2 different templates they use with all fake data. But it was more the aesthetic of getting things looking better.
+BUT we have fake users and I didn't want to stop there, so I created a "look-alike" Github repo. Every fake user has 2 different templates they use, with all fake data. But it was more the aesthetics of getting things to look better.
+
 
 ### Page Not Found
 
-I always love good 404 pages, they are supposed to be fun but still have a meaning for the user.
-This will ruin the surprise with a screenshot so please do visit our the live demo [here](https://www.devhangout.co/not-found)
+I always love good 404 pages; they are supposed to be fun but still have a meaning for the user. 
+This will ruin the surprise with a screenshot so please do visit the live demo <a href="https://www.devhangout.co/not-found" target="_blank">here</a>
 
 ## Features
 
@@ -61,25 +58,27 @@ This will ruin the surprise with a screenshot so please do visit our the live de
 
 ### Your Profile
 
--   Make yourself stand out, your own avatar, all your skills and GitHub repo!
+-  Make yourself stand out, your own avatar, all your skills and GitHub repo!
 
 ### The Fake data
 
-Creating fake data was not easy, with the help of faker.js and json-serve I created a custom skills.js file
-You can use this and just change the number of users you would like to generate.
-The file is located in the root under `skills.js`
+Creating fake data was not easy, with the help of faker.js and json-serve I created a custom skills.js file You can use this and just change the number of users you would like to generate. The file is located in the root under skills.js
 
-Simple said, it will run the other functions X amount of times, and populate the same data as a user would have.
-They will have a fake username, email GitHub, social media so on and so on.
-Thought the fake avatars are used with [RoboHash](https://robohash.org/) we are passing it the email we generated and some random numbers to get totally random icons for that user.
+Simply said, it will run the other functions, an X number of times and populate the same data as a user would have. 
+
+They will have a fake username, email GitHub, social media so on and so on. Even though the fake avatar is made with
+ [RoboHash](https://robohash.org/)  I pass it the email address that we generated and some random numbers, to generate random icons for that user.
+
 
 ## Features Left to Implement
 
--   Auto sign in
-    Currently, a user will need to register then gets taken to the login screen, this should be a better flow where we post the same data to the login once we get a response.
+-   Auto sign in: 
+    Currently a user will need to register then gets taken to the login screen, this should be a better flow where we post the same data to the login once we get a response.
+
 
 -   Portfolio
-    A user will have the abilities to add a portfolio, this will be the same as adding education and experience, except it should be shown on their public profile as a gallery.
+   A user will have the ability to add a personal portfolio. This will be the same as adding an education or experience.  The exception is that it should be shown on their public profile as their gallery.
+
 
 -   Contact User
     Implementing a way to have an internal message system is in the works. This should make it easier to connect with other members!
@@ -92,13 +91,15 @@ Thought the fake avatars are used with [RoboHash](https://robohash.org/) we are 
 
 ## Technologies Used
 
-These are technologies and third-party packages that are used throughout the project
+These are the technologies and third-party packages that have been used throughout the project
 
 ### Front End
 
 -   [Angular](https://angular.io)
     I'm using this to build all the front end logic and components for my app. As Typescript makes it easy to compile and also easy to scaffold code.
+
     > Angular (commonly referred to as "Angular 2+") is a TypeScript-based open-source front-end web application platform led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.
+    
 -   [Bootswatch - United](https://bootswatch.com/)
     Bootswatch is a collection of bootstrap themes. We are using the Cosmo theme modified with some material colours.
 
@@ -143,23 +144,20 @@ These are technologies and third-party packages that are used throughout the pro
 ### Back end
 
 -   [Python](https://www.python.org/)
-    The whole backend is written in [Python](https://www.python.org/) as [Django](https://www.djangoproject.com/) is written in Python.
-
+    The whole backend code is written in [Python](https://www.python.org/) because [Django](https://www.djangoproject.com/) is written in Python.
     > Python is a programming language that lets you work quickly and integrate systems more effectively.
 
 -   [Django](https://www.djangoproject.com/)
     The whole backend is built with Django and added DRT(Django Rest Framework) on top of it.
-
     > Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.
 
 -   [Django Rest Framework](http://www.django-rest-framework.org/)
-    We are using DRF to add an out of the box API for our project
+    I am using DRF to add an out of the box API for our project
 
     > Django REST framework is a powerful and flexible toolkit for building Web APIs.
 
 -   [Django Rest Framework](https://github.com/davesque/django-rest-framework-simplejwt)
     A JSON Web Token authentication plugin for the Django REST Framework.
-
     > Simple JWT provides a JSON Web Token authentication backend for the Django REST Framework. It aims to provide an out-of-the-box solution for JWT authentication which avoids some of the common pitfalls of the JWT specification. Assuming users of the library don't extensively and invasively subclass everything, Simple JWT's behaviour shouldn't be surprising. Settings variable defaults should be safe.
 
 -   [Heroku](https://www.heroku.com/)
@@ -181,9 +179,9 @@ These are technologies and third-party packages that are used throughout the pro
     > Get a full fake REST API with zero coding in less than 30 seconds (seriously)
 
 ## Testing
-In Code Insititute, we are told to code in TDD and automatic testing has never been a strong side of me, but testing itself is important.
-I do prefer to have human testers, report bugs etc and then fix it. Bug hunting is awesome!
-Thought for a proper business page/app etc unit testing and e2e testing is essential.
+At the Code Insititute, we are encouraged to code using TDD methods.  
+Automatic testing has never been a strong point for me, but testing itself is important. I do prefer to have human testers, report bugs etc and then fix it. Bug hunting is awesome! For a proper business page/app etc unit testing and e2e testing is essential.
+
 
 #### Responsive Testing
 
@@ -201,27 +199,26 @@ Firefox Developer Edition (v62)
 **400 Bad Requests on adding experience or education without an end date.**
 
 *UserStory:*
-The User would log in to their profile to proceed to add their education or experience.
- This would then give a 400 error as the field would not be correct when posted. The "End date" would be blank.
- As this was not treated as null it would throw an exception and error.
- 
- This was fixed shortly after as we added a check for this, and also we added a date to it.
- So if the user would not fill it in we would pass null. If they toggled the `currently working here` we would grab today's date.
- We also changed the backend to by default make it required.
+The user would log in to their profile to proceed to add their education or experience. 
+This would then give a 400 error as the field would not be correct when posted. The "End date" would be blank. As this was not treated as null it would throw an exception and error.
+
+This was fixed shortly after as we added a check for this, and also we added a date to it. So if the user would not fill it in we would pass null. If they toggled the currently working here we would grab today's date. We also changed the backend to by default make it required.
+
  
  **Skills looked weird**
  
  *UserStory:*
-  The skills would be on top and the user's skills itself would be at the bottom. Clicking a skill would remove the skills from the top but also the next one in the array. This would make it hard for the user to do this.
+The skills would be on top and the user's skills itself would be at the bottom. Clicking a skill would remove the skills from the top but also the next one in the array. This would make it hard for the user to do this.
   
-  After this, I redesigned it in the way that you if you click a skill we first check if the user has the skill if they don't we make a post request with that skill and add it to the user skills.
-  If they already have it we will just `return` and give the user a notification.
+After this, I redesigned it in the way that if you click on a skill we first check if the user has the skill.  If they don't we make a post request with that skill and add it to the user skills. 
+If they already have it we will just `return` and give the user a notification.
  
  **Mobile not looking too good for the profile and front page.**
  
  *UserStory:*
- There were some issues with smaller devices where things did not look good. Users reported to me that there were things that could be done.
+ There were some issues with smaller devices where things did not look good. Users reported to me that there were things that could be done. 
  I redesigned it with smaller icons better breakpoints.
+
  
  **Tables to cards**
  
@@ -235,12 +232,9 @@ Since the project is built with Bootstrap 4 (Bootswatch) I'm fairly certain thin
 
 There is a known glitch with the FAB button regarding the Name property been undefined. I tried multiple fixes, but as this has been intermitted bug I decided late on that I would remove the name to give the user a better experience until I could hunt down the proper cause.
 
-This has been proven to be if a user is logged in and come back the token will have expired. This will then cause it to throw an error.
-Normally for now a workaround has been a force refresh and then click the button again.
+This has been proven to be if a user is logged in and come back the token will have expired. This will then cause it to throw an error. Normally, for now, a workaround has been a force refresh and then click the button again.
 
-There is also a known bug in Firefox (63.0b7) Developer Edition where the button won't work at all.
-It seems to be a issue with ng-bootstrap and the way the modal is opened. Regardless of how its opened it will throw an error that the component it's trying to open is undefined.
-Currently I'm waiting on a fix. [More Info](https://github.com/ng-bootstrap/ng-bootstrap/issues/2509)
+There is also a known bug in Firefox (63.0b7) Developer Edition where the button won't work at all. It seems to be an issue with ng-bootstrap and the way the modal is opened. Regardless of how its opened, it will throw an error that the component it's trying to open is undefined. Currently, I'm waiting on a fix.  [More Info](https://github.com/ng-bootstrap/ng-bootstrap/issues/2509)
 
 ## Installing and building
 
@@ -407,7 +401,7 @@ python BackendApi\manage.py runserver
 
 #### Frontend
 
-Since we are using angular for our build it's as simple as running: `ng serve` in the root folder of the project.
+Since I are using angular for our build it's as simple as running: `ng serve` in the root folder of the project.
 This will start our development server on port `4200`
 
 #### Building the application
@@ -623,8 +617,8 @@ ng build --prod && npx ngh"
 
 ## Credits
 
--   [Devicon](http://konpa.github.io/devicon/) - For the Awesome skill icons we are using just like font awesome just developer skills.
--   [Font Awesome](https://fontawesome.com) - Icons
+-   [Devicon](http://konpa.github.io/devicon/) - For the Awesome skill icons we are using just like font awesome just developer skills icons instead of generic icons.
+-   [Font Awesome](https://fontawesome.com) - Generic Web Icons used
 -   [CSS + SVG Loading Spinner](https://codepen.io/JavaScriptErika/pen/GvPyMG) - Our Awesome SVG Loading animation
 -   [RoboHash](https://robohash.org/) - For the awesome generated avatars for our fake users.
 
