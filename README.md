@@ -238,7 +238,9 @@ There is a known glitch with the FAB button regarding the Name property been und
 This has been proven to be if a user is logged in and come back the token will have expired. This will then cause it to throw an error.
 Normally for now a workaround has been a force refresh and then click the button again.
 
-Currently investigating this
+There is also a known bug in Firefox (63.0b7) Developer Edition where the button won't work at all.
+It seems to be a issue with ng-bootstrap and the way the modal is opened. Regardless of how its opened it will throw an error that the component it's trying to open is undefined.
+Currently I'm waiting on a fix. [More Info](https://github.com/ng-bootstrap/ng-bootstrap/issues/2509)
 
 ## Installing and building
 
