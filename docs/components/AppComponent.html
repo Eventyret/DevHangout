@@ -267,7 +267,7 @@ This is used in FAB buttons if the user clicks it.</p>
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/app.component.ts:54</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/app.component.ts:56</a></div>
                             </td>
                         </tr>
 
@@ -432,6 +432,8 @@ export class AppComponent implements OnInit {
 
 	/**
 	 * on init
+     * We are checking if we have a username in localStorage.
+     * if we do we pass it to our shared service. And if we don&#x27;t we pass in &quot;Anonymous&quot;
 	 */
 	ngOnInit() {
 		this.loading &#x3D; true;

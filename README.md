@@ -616,7 +616,7 @@ After you have **built** your application you got a few options.
 2. If you want to deploy to GitHub Pages there is an amazing dev dependency installed in the project for you named [GitHub pages for angular-cli users](https://github.com/angular-schule/angular-cli-ghpages). So all you need to do is issue the command `npx ngh` and the npm package will automatically publish this to your GitHub pages.
 
 ```console
-ng build --prod && npx ngh"
+ng build --prod && npx ngh
 ```
 
 ## Credits
