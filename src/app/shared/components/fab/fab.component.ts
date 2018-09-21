@@ -56,7 +56,7 @@ export class FabComponent implements OnInit {
 				this.sharedService.setDonatorName(this.name);
 				return true;
 			}
-		});
+        });
 		modalRef.componentInstance.loggedIn = this.loggedIn;
 	}
 }
