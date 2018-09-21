@@ -254,7 +254,7 @@ faker.js (Only yo create your own fake users)
 ```
 
 ##### Database Outline
-<img src=https://raw.githubusercontent.com/Eventyret/DevHangout/master/DBDiagram.svg?sanitize=true">
+<img src="https://raw.githubusercontent.com/Eventyret/DevHangout/master/DBDiagram.svg?sanitize=true">
 
 
 ##### Installing
