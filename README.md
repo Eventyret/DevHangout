@@ -253,6 +253,10 @@ json-server (Only yo create your own fake users)
 faker.js (Only yo create your own fake users)
 ```
 
+##### Database Outline
+<img src=https://raw.githubusercontent.com/Eventyret/DevHangout/master/DBDiagram.svg?sanitize=true">
+
+
 ##### Installing
 
 1. Clone the project (The documentation consider the `DevHangout` the root folder)
