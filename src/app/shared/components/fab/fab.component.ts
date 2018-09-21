@@ -38,9 +38,9 @@ export class FabComponent implements OnInit {
 	 */
 	public open(event: any) {
 		const target = event.target.id;
-		if (target === "infoButton" || "infoIcon") {
+		if (target === "infoButton") {
 			this.comp = InfoModalComponent;
-		} else if (target === "supporterButton" || "supporterIcon") {
+		} else if (target === "supporterButton") {
 			this.comp = SupporterModalComponent;
 		}
 		if (!localStorage.getItem("username") || !this.name) {

@@ -1,11 +1,11 @@
 <simple-notifications></simple-notifications>
 <aside class="fab-sticky">
 	<button class="fab-buttons blue" (click)="open($event)" ngbTooltip="Find out more" placement="left" container="body" aria-label="Donation Information" id="infoButton">
-		<i class="fas fa-info" id="infoIcon"></i>
+		<i class="fas fa-info" id="infoButton"></i>
 	</button>
 	<button type="button" class="fab-buttons red" (click)="open($event)" (mouseover)="spin = true" (mouseout)="spin = false"
 	 placement="left" container="body" ngbTooltip="Want o show us some love?" id="supporter" aria-label="Donate Today"  id="supporterButton">
-		<i class="fas fa-heart" [class.ani-pulse]="spin" id="supporterIcon"></i>
+		<i class="fas fa-heart" [class.ani-pulse]="spin"  id="supporterButton"></i>
 	</button>
 	<button type="button" class="fab-buttons" aria-label="Information & Donation Buttons">
 		<i class="fas fa-question"></i>
